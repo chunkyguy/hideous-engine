@@ -1,0 +1,320 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		19A6E5791732781F006ACD91 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A6E5781732781F006ACD91 /* UIKit.framework */; };
+		19A6E57B1732781F006ACD91 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A6E57A1732781F006ACD91 /* Foundation.framework */; };
+		19A6E57D1732781F006ACD91 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A6E57C1732781F006ACD91 /* CoreGraphics.framework */; };
+		19A6E57F1732781F006ACD91 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A6E57E1732781F006ACD91 /* GLKit.framework */; };
+		19A6E5811732781F006ACD91 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A6E5801732781F006ACD91 /* OpenGLES.framework */; };
+		19A6E5871732781F006ACD91 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19A6E5851732781F006ACD91 /* InfoPlist.strings */; };
+		19A6E5891732781F006ACD91 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E5881732781F006ACD91 /* main.m */; };
+		19A6E58D1732781F006ACD91 /* HEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E58C1732781F006ACD91 /* HEAppDelegate.m */; };
+		19A6E58F1732781F006ACD91 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A6E58E1732781F006ACD91 /* Default.png */; };
+		19A6E5911732781F006ACD91 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A6E5901732781F006ACD91 /* Default@2x.png */; };
+		19A6E5931732781F006ACD91 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A6E5921732781F006ACD91 /* Default-568h@2x.png */; };
+		19A6E5951732781F006ACD91 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 19A6E5941732781F006ACD91 /* Shader.fsh */; };
+		19A6E5971732781F006ACD91 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 19A6E5961732781F006ACD91 /* Shader.vsh */; };
+		19A6E59A1732781F006ACD91 /* HEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E5991732781F006ACD91 /* HEViewController.m */; };
+		19A6E59D1732781F006ACD91 /* HEViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A6E59B1732781F006ACD91 /* HEViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		19A6E5751732781F006ACD91 /* HideousGameEngine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HideousGameEngine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		19A6E5781732781F006ACD91 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		19A6E57A1732781F006ACD91 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		19A6E57C1732781F006ACD91 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		19A6E57E1732781F006ACD91 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		19A6E5801732781F006ACD91 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		19A6E5841732781F006ACD91 /* HideousGameEngine-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HideousGameEngine-Info.plist"; sourceTree = "<group>"; };
+		19A6E5861732781F006ACD91 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		19A6E5881732781F006ACD91 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		19A6E58A1732781F006ACD91 /* HideousGameEngine-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HideousGameEngine-Prefix.pch"; sourceTree = "<group>"; };
+		19A6E58B1732781F006ACD91 /* HEAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HEAppDelegate.h; sourceTree = "<group>"; };
+		19A6E58C1732781F006ACD91 /* HEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HEAppDelegate.m; sourceTree = "<group>"; };
+		19A6E58E1732781F006ACD91 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		19A6E5901732781F006ACD91 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		19A6E5921732781F006ACD91 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		19A6E5941732781F006ACD91 /* Shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
+		19A6E5961732781F006ACD91 /* Shader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
+		19A6E5981732781F006ACD91 /* HEViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HEViewController.h; sourceTree = "<group>"; };
+		19A6E5991732781F006ACD91 /* HEViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HEViewController.m; sourceTree = "<group>"; };
+		19A6E59C1732781F006ACD91 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HEViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		19A6E5721732781F006ACD91 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19A6E5791732781F006ACD91 /* UIKit.framework in Frameworks */,
+				19A6E57B1732781F006ACD91 /* Foundation.framework in Frameworks */,
+				19A6E57D1732781F006ACD91 /* CoreGraphics.framework in Frameworks */,
+				19A6E57F1732781F006ACD91 /* GLKit.framework in Frameworks */,
+				19A6E5811732781F006ACD91 /* OpenGLES.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19A6E56C1732781E006ACD91 = {
+			isa = PBXGroup;
+			children = (
+				19A6E5821732781F006ACD91 /* HideousGameEngine */,
+				19A6E5771732781F006ACD91 /* Frameworks */,
+				19A6E5761732781F006ACD91 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		19A6E5761732781F006ACD91 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				19A6E5751732781F006ACD91 /* HideousGameEngine.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		19A6E5771732781F006ACD91 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				19A6E5781732781F006ACD91 /* UIKit.framework */,
+				19A6E57A1732781F006ACD91 /* Foundation.framework */,
+				19A6E57C1732781F006ACD91 /* CoreGraphics.framework */,
+				19A6E57E1732781F006ACD91 /* GLKit.framework */,
+				19A6E5801732781F006ACD91 /* OpenGLES.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		19A6E5821732781F006ACD91 /* HideousGameEngine */ = {
+			isa = PBXGroup;
+			children = (
+				19A6E58B1732781F006ACD91 /* HEAppDelegate.h */,
+				19A6E58C1732781F006ACD91 /* HEAppDelegate.m */,
+				19A6E5941732781F006ACD91 /* Shader.fsh */,
+				19A6E5961732781F006ACD91 /* Shader.vsh */,
+				19A6E5981732781F006ACD91 /* HEViewController.h */,
+				19A6E5991732781F006ACD91 /* HEViewController.m */,
+				19A6E59B1732781F006ACD91 /* HEViewController.xib */,
+				19A6E5831732781F006ACD91 /* Supporting Files */,
+			);
+			path = HideousGameEngine;
+			sourceTree = "<group>";
+		};
+		19A6E5831732781F006ACD91 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				19A6E5841732781F006ACD91 /* HideousGameEngine-Info.plist */,
+				19A6E5851732781F006ACD91 /* InfoPlist.strings */,
+				19A6E5881732781F006ACD91 /* main.m */,
+				19A6E58A1732781F006ACD91 /* HideousGameEngine-Prefix.pch */,
+				19A6E58E1732781F006ACD91 /* Default.png */,
+				19A6E5901732781F006ACD91 /* Default@2x.png */,
+				19A6E5921732781F006ACD91 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		19A6E5741732781F006ACD91 /* HideousGameEngine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19A6E5A01732781F006ACD91 /* Build configuration list for PBXNativeTarget "HideousGameEngine" */;
+			buildPhases = (
+				19A6E5711732781F006ACD91 /* Sources */,
+				19A6E5721732781F006ACD91 /* Frameworks */,
+				19A6E5731732781F006ACD91 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HideousGameEngine;
+			productName = HideousGameEngine;
+			productReference = 19A6E5751732781F006ACD91 /* HideousGameEngine.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		19A6E56D1732781E006ACD91 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = HE;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = whackylabs;
+			};
+			buildConfigurationList = 19A6E5701732781E006ACD91 /* Build configuration list for PBXProject "HideousGameEngine" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 19A6E56C1732781E006ACD91;
+			productRefGroup = 19A6E5761732781F006ACD91 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				19A6E5741732781F006ACD91 /* HideousGameEngine */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		19A6E5731732781F006ACD91 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19A6E5871732781F006ACD91 /* InfoPlist.strings in Resources */,
+				19A6E58F1732781F006ACD91 /* Default.png in Resources */,
+				19A6E5911732781F006ACD91 /* Default@2x.png in Resources */,
+				19A6E5931732781F006ACD91 /* Default-568h@2x.png in Resources */,
+				19A6E5951732781F006ACD91 /* Shader.fsh in Resources */,
+				19A6E5971732781F006ACD91 /* Shader.vsh in Resources */,
+				19A6E59D1732781F006ACD91 /* HEViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		19A6E5711732781F006ACD91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19A6E5891732781F006ACD91 /* main.m in Sources */,
+				19A6E58D1732781F006ACD91 /* HEAppDelegate.m in Sources */,
+				19A6E59A1732781F006ACD91 /* HEViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		19A6E5851732781F006ACD91 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19A6E5861732781F006ACD91 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		19A6E59B1732781F006ACD91 /* HEViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19A6E59C1732781F006ACD91 /* en */,
+			);
+			name = HEViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		19A6E59E1732781F006ACD91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		19A6E59F1732781F006ACD91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		19A6E5A11732781F006ACD91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HideousGameEngine/HideousGameEngine-Prefix.pch";
+				INFOPLIST_FILE = "HideousGameEngine/HideousGameEngine-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		19A6E5A21732781F006ACD91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HideousGameEngine/HideousGameEngine-Prefix.pch";
+				INFOPLIST_FILE = "HideousGameEngine/HideousGameEngine-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		19A6E5701732781E006ACD91 /* Build configuration list for PBXProject "HideousGameEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19A6E59E1732781F006ACD91 /* Debug */,
+				19A6E59F1732781F006ACD91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		19A6E5A01732781F006ACD91 /* Build configuration list for PBXNativeTarget "HideousGameEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19A6E5A11732781F006ACD91 /* Debug */,
+				19A6E5A21732781F006ACD91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 19A6E56D1732781E006ACD91 /* Project object */;
+}
