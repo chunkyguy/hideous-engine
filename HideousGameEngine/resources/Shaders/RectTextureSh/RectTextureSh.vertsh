@@ -1,0 +1,17 @@
+//
+//  RectTextureSh.vertsh
+//  HideousGameEngine
+//
+//  Created by Sid on 10/02/13.
+//  Copyright (c) 2013 whackylabs. All rights reserved.
+//
+
+attribute vec2 a_position;
+attribute vec2 a_texcoord;
+varying vec2 v_texcoord;
+uniform mat4 u_mvp;
+
+void main(){
+	v_texcoord = a_texcoord;
+	gl_Position = u_mvp * vec4(a_position, 0.0, 1.0);
+}

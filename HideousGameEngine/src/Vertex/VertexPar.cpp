@@ -1,0 +1,41 @@
+//
+//  VertexPar.cpp
+//  HEAssets
+//
+//  Created by Sid on 29/04/13.
+//  Copyright (c) 2013 whackylabs. All rights reserved.
+//
+
+#include <he/Vertex/VertexPar.h>
+
+namespace he{
+	////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// MARK: VertexPar
+	////////////////////////////////////////////////////////////////////////////////////////////////////////
+	VertexPar::VertexPar(int count, double point_size) :
+	position_data_(count),
+	count_(count),
+	point_size_(point_size)
+	{	}
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// MARK: VertexParData
+	////////////////////////////////////////////////////////////////////////////////////////////////////////
+	VertexParData::VertexParData(int count){
+		size_ = sizeof(GLfloat) * 2 * count;
+		data_ = new GLfloat[size_];
+	}
+	
+	VertexParData::~VertexParData(){
+		delete data_;
+	}
+
+	GLfloat *VertexParData::GetData(){
+		return data_;
+	}
+	
+	GLsizei VertexParData::GetSize(){
+		return size_;
+	}
+	
+}

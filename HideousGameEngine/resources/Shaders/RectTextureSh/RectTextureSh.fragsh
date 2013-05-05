@@ -1,0 +1,13 @@
+//
+//  RectTextureSh.fragsh
+//  HideousGameEngine
+//
+//  Created by Sid on 10/02/13.
+//  Copyright (c) 2013 whackylabs. All rights reserved.
+//
+varying lowp vec2 v_texcoord;
+uniform sampler2D u_tex;
+
+void main(){
+	gl_FragColor = texture2D(u_tex, v_texcoord);
+}

@@ -1,0 +1,13 @@
+//
+//  RectColorSh.fragsh
+//  HideousGameEngine
+//
+//  Created by Sid on 10/02/13.
+//  Copyright (c) 2013 whackylabs. All rights reserved.
+//
+
+uniform lowp vec4 u_clr;
+
+void main(){
+	gl_FragColor = u_clr;
+}
