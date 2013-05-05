@@ -5,7 +5,7 @@
 //  Created by Sid on 24/02/13.
 //  Copyright (c) 2013 whackylabs. All rights reserved.
 //
-
+ 
 #ifndef __HideousGameEngine__Texture__
 #define __HideousGameEngine__Texture__
 #include <OpenGLES/ES2/gl.h>

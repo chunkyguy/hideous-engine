@@ -5,7 +5,7 @@
 //  Created by Sid on 26/04/13.
 //  Copyright (c) 2013 whackylabs. All rights reserved.
 //
-
+ 
 #ifndef __HEAssets__RectTextureSh__
 #define __HEAssets__RectTextureSh__
 #include <OpenGLES/ES2/gl.h>

@@ -7,7 +7,7 @@
 //
 
 // Directly coupled with Shader code.
-
+ 
 #ifndef ParticleSystem_ParticleShader_h
 #define ParticleSystem_ParticleShader_h
 

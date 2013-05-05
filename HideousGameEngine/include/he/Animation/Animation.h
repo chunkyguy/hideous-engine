@@ -73,7 +73,7 @@ namespace he{
 		virtual ~IAnimatable(){}
 		virtual bool NextFrame() = 0;
 	};
-	
+	 
 	//	Binds the TweenFrame's object with the client's object
 	template<typename T>
 	class Animation : public IAnimatable{

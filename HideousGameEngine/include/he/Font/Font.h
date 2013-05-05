@@ -4,16 +4,17 @@
 //
 //  Created by Sid on 26/04/13.
 //  Copyright (c) 2013 whackylabs. All rights reserved.
-//
+// 
 
 #ifndef __HEAssets__Font__
 #define __HEAssets__Font__
 #include <string>
-#include <list>
 #include <GLKit/GLKMath.h>
 #include <OpenGLES/ES2/gl.h>
 #include "ft2build.h"
 #include FT_FREETYPE_H
+
+#include <he/Utils/Transform.h>
 
 //	Instructions to add libFreetype2
 /*
@@ -43,29 +44,39 @@ namespace he{
 	class Texture;
 	class RectTextSh;
 	
-	class GlyphData{
+	class Text{
 	public:
-		GlyphData(std::string font_name, std::string char_name, FT_GlyphSlot &glyph, GLKVector2 penPosition,	RectTextSh *shader, GLKVector4 color);
-		~GlyphData();
+		class Glyph{
+		public:
+			Glyph(std::string font_name, std::string char_name, FT_GlyphSlot &glyph, GLKVector2 penPosition,	RectTextSh *shader, GLKVector4 color);
+			~Glyph();
+			
+			Transform transform_;
+			RenderObject *render_object_;
+			GLKVector2 size_;
+		private:
+			Texture *texture_;
+			VertexTex *vertex_data_;
+		};
+
+		Text(std::string string = "", Transform transform = Transform(), GLKVector4 color = GLKVector4Make(0,0,0,1));
+		~Text();
+		void Render();
+		void SetTransform(Transform transform);
+		GLKVector2 GetSize();
 		
-		GLKVector2 position_;
-		RenderObject *render_object_;
-		GLKVector2 size_;
-	private:
-		Texture *texture_;
-		VertexTex *vertex_data_;
+		Glyph ** data_;
+		std::string string_;
+		Transform transform_;
+		GLKVector4 color_;
 	};
-	
 	
 	class Font{
 	public:
-		Font(std::string name, unsigned int size, GLKVector4 color);
+		Font(std::string name, unsigned int size);
 		~Font();
-		void LoadGlyph(std::string text, GLKVector2 penPosition = GLKVector2Make(0,0));
-		void UnloadGlyph();
-		std::list<GlyphData *> &GetGlyph();
+		void LoadText(Text *text);
 		
-		GLKVector4 color_;
 	private:
 		class Library{
 		public:
@@ -80,7 +91,6 @@ namespace he{
 		std::string name_;
 		FT_Face face_;
 		int glyph_count_;
-		std::list<GlyphData *>glyph_data_;
 		RectTextSh *shader_;
 		static Library *library_;
 	};
