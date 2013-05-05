@@ -14,7 +14,6 @@
 #include <he/Shaders/RectTextureSh/RectTextureSh.h>
 #include <he/Texture/Texture.h>
 #include <he/Texture/TextureAtlas.h>
-#include <he/Utils/Screen.h>
 #include <he/Utils/Utils.h>
 #include <he/Vertex/VertexCol.h>
 #include <he/Vertex/VertexTex.h>
@@ -51,7 +50,7 @@ void ObjectFactory::load_assets(){
 	tex_sh_ = new he::RectTextureSh;
 	
 	// text obj
-	font_ = new he::Font("Silom.ttf", 48, GLKVector4Make(0.0, 0.0, 0.0, 1.0));
+	font_ = new he::Font("Silom.ttf", 48);
 	
 }
 void ObjectFactory::unload_assets(){
@@ -77,16 +76,11 @@ ColObj::ColObj(he::RectColorSh *shader){
 	vert_ = new he::VertexCol(dimension/2, dimension/2);
 	GLKVector4 color = GLKVector4Make(he::Randf(), he::Randf(), he::Randf(), he::Randf());
 	object_ = new he::RenderObject(vert_, shader, 0, he::g_Screen.projection_, color);
-	pos_ = GLKVector2Make(he::Randf()*he::g_Screen.width_ - he::g_Screen.width_/2, he::Randf()*he::g_Screen.height_ - he::g_Screen.height_/2);
+	transform_.SetPosition( GLKVector2Make(he::Randf()*he::g_Screen.width_ - he::g_Screen.width_/2, he::Randf()*he::g_Screen.height_ - he::g_Screen.height_/2));
 }
+
 void ColObj::Render(){
-	GLKMatrix4 tMat;
-	GLKMatrix4 mvpMat;
-
-	tMat = GLKMatrix4MakeTranslation(pos_.x, pos_.y, -0.1);
-	mvpMat = GLKMatrix4Multiply(he::g_Screen.projection_, tMat);
-	object_->mvp_ = mvpMat;
-
+	object_->mvp_ = transform_.GetMVP();
 	object_->Render();
 }
 
@@ -98,16 +92,10 @@ TextureObj::~TextureObj(){
 }
 TextureObj::TextureObj(he::RectTextureSh *shader, he::Texture *texture, 	he::VertexTex *vert){
 	object_ = new he::RenderObject(vert, shader, texture, he::g_Screen.projection_);
-	pos_ = GLKVector2Make(he::Randf()*he::g_Screen.width_ - he::g_Screen.width_/2, he::Randf()*he::g_Screen.height_ - he::g_Screen.height_/2);
+	transform_.SetPosition( GLKVector2Make(he::Randf()*he::g_Screen.width_ - he::g_Screen.width_/2, he::Randf()*he::g_Screen.height_ - he::g_Screen.height_/2) );
 }
 void TextureObj::Render(){
-	GLKMatrix4 tMat;
-	GLKMatrix4 mvpMat;
-
-	tMat = GLKMatrix4MakeTranslation(pos_.x, pos_.y, -0.1);
-	mvpMat = GLKMatrix4Multiply(he::g_Screen.projection_, tMat);
-	object_->mvp_ = mvpMat;
-
+	object_->mvp_ = transform_.GetMVP();
 	object_->Render();
 }
 
@@ -115,24 +103,14 @@ void TextureObj::Render(){
 //	MARK: TextObj
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 TextObj::~TextObj(){
+	delete text_;
 }
 TextObj::TextObj(he::Font *font){
-	font->LoadGlyph("Whacky?!");
-	glyph_data_ = font->GetGlyph();
-	pos_ = GLKVector2Make(he::Randf()*he::g_Screen.width_ - he::g_Screen.width_/2, he::Randf()*he::g_Screen.height_ - he::g_Screen.height_/2);
+	text_ = new he::Text("Whacky");
+	font->LoadText(text_);
+	transform_.SetPosition(GLKVector2Make(he::Randf()*he::g_Screen.width_ - he::g_Screen.width_/2, he::Randf()*he::g_Screen.height_ - he::g_Screen.height_/2));
 }
 void TextObj::Render(){
-	GLKMatrix4 tMat;
-	GLKMatrix4 mvpMat;
-	
-	for(std::list<he::GlyphData *>::iterator it = glyph_data_.begin(); it != glyph_data_.end(); ++it){
-		he::RenderObject *object = (*it)->render_object_;
-		//pos = (*it)->position;
-		tMat = GLKMatrix4MakeTranslation(pos_.x, pos_.y, -0.1);
-		mvpMat = GLKMatrix4Multiply(he::g_Screen.projection_, tMat);
-		object->mvp_ = mvpMat;
-		//r->clr = GLKVector4Make(he::Randf(), he::Randf(), he::Randf(), 1.0);	// Epilepsy warning
-		object->Render();
-	}
+	text_->Render();
 }
 //EOF

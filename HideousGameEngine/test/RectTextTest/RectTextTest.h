@@ -12,6 +12,7 @@
 
 namespace he{
 	class Font;
+	class Text;
 }
 
 class RectTextTest : public ITest{
@@ -27,5 +28,6 @@ private:
 	void handle_gestures();
 
 	he::Font *font_;
+	he::Text *text_;
 };
 #endif /* defined(__HideousGameEngine__RectTextTest__) */

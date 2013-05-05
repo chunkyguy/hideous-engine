@@ -13,6 +13,7 @@
 #define __HideousGameEngine__RunningSquare__
 
 #include <GLKit/GLKMath.h>
+#include <he/Utils/Transform.h>
 
 namespace he{
 	class RectColorSh;
@@ -29,19 +30,16 @@ public:
 	void Update(double dt);
 	void Render();
 	//Getter-Setters
-	GLKVector2 GetPosition();
-	void SetPosition(GLKVector2 position);
 	Life GetLifeState();
 	void SetDead();
 	
 private:
+	GLKVector4 color_;
+	GLKVector2 direction_;		//direction
 	Life life_state_;
 	GLKVector2 speed_;	//speed
-	GLKVector2 direction_;		//direction
-	GLKVector2 position_;		//position
 	he::RenderObject *sprite_;	//sprite
-	GLKMatrix4 mvp_;
-	GLKVector4 color_;
+	he::Transform transform_;		//transform
 	he::VertexCol *vertex_data_;
 };
 #endif /* defined(__HideousGameEngine__RunningSquare__) */

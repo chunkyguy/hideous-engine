@@ -12,9 +12,11 @@
 #include <list>
 #include <GLKit/GLKMath.h>
 
+#include <he/Utils/Transform.h>
+
 namespace he{
 	class Font;
-	class GlyphData;
+	class Text;
 	class RectColorSh;
 	class RectTextureSh;
 	class RenderObject;
@@ -33,7 +35,7 @@ public:
 private:
 	he::RenderObject *object_;
 	he::VertexCol *vert_;
-	GLKVector2 pos_;
+	he::Transform transform_;
 };
 
 class TextureObj{
@@ -44,7 +46,7 @@ public:
 	
 private:
 	he::RenderObject *object_;
-	GLKVector2 pos_;
+	he::Transform transform_;
 };
 
 class TextObj{
@@ -54,8 +56,8 @@ public:
 	void Render();
 	
 private:
-	std::list<he::GlyphData *> glyph_data_;
-	GLKVector2 pos_;
+	he::Text *text_;
+	he::Transform transform_;
 };
 
 class ObjectFactory{

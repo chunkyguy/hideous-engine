@@ -17,14 +17,15 @@
 
 namespace he{
 	class Font;
-	class GlyphData;
+	class Text;
 	class VertexCol;
 }
 
 class Label{
 public:
-	Label(std::string text, he::Font *font);
-	void SetText(std::string text);
+	Label(std::string string, he::Font *font);
+	~Label();
+	void SetText(std::string string);
 	void SetColor(GLKVector4 color);
 	he::VertexCol GetBox();
 	void Render();
@@ -32,8 +33,7 @@ public:
 	he::Transform transform_;
 
 private:
-	std::string text_;
+	he::Text *text_;
 	he::Font *font_;
-	GLKVector2 size_;
 };
 #endif /* defined(__HideousGameEngine__Label__) */

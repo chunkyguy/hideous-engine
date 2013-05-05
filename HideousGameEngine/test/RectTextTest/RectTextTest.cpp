@@ -20,7 +20,9 @@ RectTextTest::~RectTextTest(){
 }
 
 RectTextTest::RectTextTest(double w, double h) :
-font_(0){
+font_(0),
+text_(0)
+{
 		FILE_LOG(logDEBUG) <<"{" <<w << "," << h << "}";
 		//<<"{" << he::g_Screen.width/2 << "," << he::g_Screen.height << "}";
 		
@@ -44,23 +46,9 @@ void RectTextTest::Update(double dt){
 void RectTextTest::Render(){	
 	glClearColor(0.5, 0.5, 0.5, 1.0);
 	glClear(GL_COLOR_BUFFER_BIT);
-	
-	if(font_){
-		std::list<he::GlyphData *> gd = font_->GetGlyph();
-		
-		GLKVector2 pos = GLKVector2Make(-100,0);
-		GLKMatrix4 tMat;
-		GLKMatrix4 mvpMat;
-		
-		for(std::list<he::GlyphData *>::iterator it = gd.begin(); it != gd.end(); ++it){
-			he::RenderObject *r = (*it)->render_object_;
-			//pos = (*it)->position;
-			tMat = GLKMatrix4MakeTranslation(pos.x, pos.y, -0.1);
-			mvpMat = GLKMatrix4Multiply(he::g_Screen.projection_, tMat);
-			r->mvp_ = mvpMat;
-			//r->clr = GLKVector4Make(he::Randf(), he::Randf(), he::Randf(), 1.0);	// Epilepsy warning
-			r->Render();
-		}
+
+	if(text_){
+		text_->Render();
 	}
 }
 
@@ -69,12 +57,14 @@ void RectTextTest::load_text(){
 		unload_text();
 	}
 	//Draw a text
-	font_ = new he::Font("Silom.ttf", 48, GLKVector4Make(0.0, 0.0, 0.0, 1.0));
-	font_->LoadGlyph("Whacky?!");
+	font_ = new he::Font("Silom.ttf", 48);
+	text_ = new he::Text("Whacky ?!",  GLKVector2Make(-100,0), GLKVector4Make(0.0, 0.0, 0.0, 1.0));
+	font_->LoadText(text_);
 }
 
 void RectTextTest::unload_text(){
 	delete font_; font_ = 0;
+	delete text_; text_ = 0;
 }
 
 void RectTextTest::handle_gestures(){

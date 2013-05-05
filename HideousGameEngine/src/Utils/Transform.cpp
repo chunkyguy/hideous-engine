@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 whackylabs. All rights reserved.
 //
 
+#include <he/Utils/Screen.h>
 #include <he/Utils/Transform.h>
 
 namespace he{
@@ -20,6 +21,22 @@ namespace he{
 		GLKMatrix4 rMat = GLKMatrix4MakeRotation(rotation_, 0.0, 0.0, 1.0);
 		GLKMatrix4 sMat = GLKMatrix4MakeScale(scale_.x, scale_.y, 1.0);
 		return GLKMatrix4Multiply(GLKMatrix4Multiply(tMat, rMat), sMat);
+	}
+
+	Transform::Transform(const Transform &other){
+		position_ = other.position_;
+		rotation_ = other.rotation_;
+		scale_ = other.scale_;
+	}
+	
+	void Transform::operator=(const Transform &other){
+		position_ = other.position_;
+		rotation_ = other.rotation_;
+		scale_ = other.scale_;		
+	}
+	
+	GLKMatrix4 Transform::GetMVP(){
+		return GLKMatrix4Multiply(he::g_Screen.projection_, GetMV());
 	}
 	
 	const double Transform::GetRotation() const{

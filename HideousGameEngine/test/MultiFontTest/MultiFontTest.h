@@ -12,6 +12,7 @@
 
 namespace he{
 	class Font;
+	class Text;
 };
 
 class MultiFontTest : public ITest{
@@ -24,6 +25,8 @@ public:
 private:
 	he::Font *courier_;
 	he::Font *simsun_;
+	he::Text *whacky_;
+	he::Text *labs_;
 	
 	void load_text();
 	void unload_text();

@@ -48,7 +48,7 @@ scale_animation_(0)
 	he::g_Screen = he::Screen(w, h);
 	
 	//start things here
-	font_ = new he::Font("Silom.ttf", 34, GLKVector4Make(1.0, 0.0, 0.0, 1.0));
+	font_ = new he::Font("Silom.ttf", 34);
 	label_ = new Label("Sid the best", font_);
 	label_->transform_.SetPosition(GLKVector2Make(10, 20));
 

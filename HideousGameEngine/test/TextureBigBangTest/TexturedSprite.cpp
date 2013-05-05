@@ -25,10 +25,10 @@ sprite_(0),
 life_state_(kLiving){
 }
 
-bool TexturedSprite::Init(int iD, he::RenderObject *sp, GLKVector2 at){
+bool TexturedSprite::Init(int iD, he::RenderObject *sp, he::Transform transform){
 	ID_ = iD;
 	sprite_ = sp;
-	position_ = at;
+	transform_ = transform;
 	return true;
 }
 
@@ -38,25 +38,26 @@ void TexturedSprite::Update(double dt){
 
 	//setPos(position_);
 
-	GLKVector2 newPos = GLKVector2Add(position_, GLKVector2Multiply(direction_, speed_));
+	GLKVector2 newPos = GLKVector2Add(transform_.GetPosition(), GLKVector2Multiply(direction_, speed_));
 	if(newPos.x < -he::g_Screen.width_/2 || newPos.x > he::g_Screen.width_/2 || newPos.y < -he::g_Screen.height_/2 || newPos.y > he::g_Screen.height_/2){
 		life_state_ = kZombie;
 	}else{
-		SetPosition(newPos);
+		transform_.SetPosition(newPos);
+		sprite_->mvp_ = transform_.GetMVP();
 	}
 }
 
-GLKVector2 TexturedSprite::GetPosition(){
-	return position_;
-}
+//GLKVector2 TexturedSprite::GetPosition(){
+//	return position_;
+//}
 
-void TexturedSprite::SetPosition(GLKVector2 p){
-	//FILE_LOG(logDEBUG) << ID << "{" << p.x << "," << p.y << "}";
-	position_ = p;
-	GLKMatrix4 tMat = GLKMatrix4MakeTranslation(position_.x, position_.y, -0.1);
-	GLKMatrix4 mvpMat = GLKMatrix4Multiply(he::g_Screen.projection_, tMat);
-	sprite_->mvp_ = mvpMat;
-}
+//void TexturedSprite::SetPosition(GLKVector2 p){
+//	//FILE_LOG(logDEBUG) << ID << "{" << p.x << "," << p.y << "}";
+//	position_ = p;
+//	GLKMatrix4 tMat = GLKMatrix4MakeTranslation(position_.x, position_.y, -0.1);
+//	GLKMatrix4 mvpMat = GLKMatrix4Multiply(he::g_Screen.projection_, tMat);
+//	sprite_->mvp_ = mvpMat;
+//}
 TexturedSprite::Life TexturedSprite::GetLifeState(){
 	return life_state_;
 }

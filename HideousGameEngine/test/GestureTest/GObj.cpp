@@ -25,15 +25,14 @@ GObj::GObj() :
 direction_(GLKVector2Make(0,0)),
 vert_(new he::VertexCol(-10, 10)),
 shader_(new he::RectColorSh),
-color_( GLKVector4Make(1.0, 1.0, 1.0, 1.0)),
-position_(GLKVector2Make(0, 0))
+color_( GLKVector4Make(1.0, 1.0, 1.0, 1.0))
 {
 	render_object_ = new he::RenderObject(vert_, shader_, 0, he::g_Screen.projection_, color_);
 }
 
 void GObj::Update(double dt){
-	position_ = GLKVector2Add(position_, GLKVector2MultiplyScalar(direction_, kSpeed));
-	render_object_->mvp_ = GLKMatrix4Multiply(he::g_Screen.projection_, GLKMatrix4MakeTranslation(position_.x, position_.y, -0.5));
+	transform_.SetPosition(GLKVector2Add(transform_.GetPosition(), GLKVector2MultiplyScalar(direction_, kSpeed)));
+	render_object_->mvp_ = transform_.GetMVP();
 	render_object_->color_ = GLKVector4Make(color_.r, color_.g, color_.b, color_.a);
 }
 
@@ -41,8 +40,8 @@ void GObj::Render(){
 	render_object_->Render();
 }
 
-void GObj::SetPosition(GLKVector2 newPos){
-	position_ = newPos;
+void GObj::SetTransform(he::Transform transform){
+	transform_ = transform;
 }
 void GObj::SetColor(GLKVector4 newClr){
 	color_ = newClr;

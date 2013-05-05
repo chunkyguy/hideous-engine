@@ -10,6 +10,7 @@
 #define __HideousGameEngine__GObj__
 
 #include <he/Utils/Screen.h>
+#include <he/Utils/Transform.h>
 
 namespace he{
 	class RenderObject;
@@ -23,7 +24,7 @@ public:
 	GObj();
 	void Update(double dt);
 	void Render();
-	void SetPosition(GLKVector2 new_positon);
+	void SetTransform(he::Transform tranform);
 	void SetColor(GLKVector4 new_color);
 	void SetDirection(he::Screen::Grid direction);
 	
@@ -33,7 +34,7 @@ private:
 	he::RenderObject *render_object_;
 	he::VertexCol *vert_;
 	he::RectColorSh *shader_;
-	GLKVector2 position_;
+	he::Transform transform_;
 	GLKVector4 color_;
 	GLKVector2 direction_;
 };
