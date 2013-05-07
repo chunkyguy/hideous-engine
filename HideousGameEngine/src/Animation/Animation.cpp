@@ -7,123 +7,101 @@
 //
 
 #include <he/Animation/Animation.h>
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Tweens
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
-namespace{
-	double Linear(double a, double b, double t){
-		return a + (b-a)*t;
-	}
-	
-	double EaseIn(double a, double b, double t){
-		return a + (b-a) * t * t;
-	}
-	
-	double EaseOut(double a, double b, double t){
-		return a - (b-a)*t*(t-2);
-	}
-	
-	double EaseInOut(double a, double b, double t){
-		t *= 2;
-		if(t<=1.0){return a + (b-a)/2 * t * t;}
-		t -= 1;
-		return a - (b-a)/2*(t*(t-2)-1);
-	}
-	
-	double EaseOutCubic(double a, double b, double t){
-		t -= 1;
-		return a + (b-a)*(t*t*t+1);
-	}
-}
+#include <he/Animation/easing.h>
 
 namespace he{
-
+	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// TweenFrame Utils
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////
-	TweenFrame<GLKVector2> *MakeTweenFrame2D(int steps ,GLKVector2 start, GLKVector2 end, TweenFrame<GLKVector2>::Type animType){
-		
-//	GLKVector2 dPos = GLKVector2Make((end.x - start.x)/(steps-1), (end.y - start.y)/(steps-1));
-//		FILE_LOG(logDEBUG) << "start: " << "{" << start.x << "," << start.y << "}";
-//		FILE_LOG(logDEBUG) << "end: " << "{" << end.x << "," << end.y << "}";
-//		FILE_LOG(logDEBUG) << "dPos: " << "{" << dPos.x << "," << dPos.y << "}";
-		
-		GLKVector2 *tween = new GLKVector2[steps];
-		int s = 0;
-		double t = 0.0;
-		for(double dt = 1.0/(double)(steps-1); s < steps-1; s++){
-			switch(animType){
-				case TweenFrame<GLKVector2>::kLinear:		//a + (b-a)*t;
-					tween[s] = GLKVector2Make(Linear(start.x, end.x, t), Linear(start.y, end.y, t));
-					break;
-					
-				case TweenFrame<GLKVector2>::kEaseIn:		//a + (b-a) * t * t;
-					tween[s] = GLKVector2Make(EaseIn(start.x, end.x, t), EaseIn(start.y, end.y, t));
-					break;
-					
-				case TweenFrame<GLKVector2>::kEaseOut:	//a - (b-a)*t*(t-2);
-					tween[s] = GLKVector2Make(EaseOut(start.x, end.x, t), EaseOut(start.y, end.y, t));
-					break;
-					
-				case TweenFrame<GLKVector2>::kEaseInOut:	//t *= 2; if(t<=1.0){return a + (b-a)/2 * t * t;} t -= 1; return a - (b-a)/2*(t*(t-2)-1);
-					tween[s] = GLKVector2Make(EaseInOut(start.x, end.x, t), EaseInOut(start.y, end.y, t));
-					break;
-					
-				case TweenFrame<GLKVector2>::kEaseOutCubic:	//t -= 1; return a + (b-a)*(t*t*t+1);
-					tween[s] = GLKVector2Make(EaseOutCubic(start.x, end.x, t), EaseOutCubic(start.y, end.y, t));
-					break;
-			}
-			t += dt;
-			//			FILE_LOG(logDEBUG) << "tween: [" << s << "]: " << "{" << tween[s].x << "," << tween[s].y << "}";
+	easing::AHEasingFunction type_to_function(EasingFunction easing_func){
+		he::easing::AHEasingFunction function = nullptr;
+		switch(easing_func){
+			case kLinear: function = easing::LinearInterpolation; break;
+				
+			case kQuadraticEaseIn: function = easing::QuadraticEaseIn; break;
+			case	 kQuadraticEaseOut: function = easing::QuadraticEaseOut; break;
+			case	 kQuadraticEaseInOut: function = easing::QuadraticEaseInOut; break;
+				
+			case	 kCubicEaseIn: function = easing::CubicEaseIn;break;
+			case	 kCubicEaseOut: function = easing::CubicEaseOut;break;
+			case kCubicEaseInOut: function = easing::CubicEaseInOut; break;
+				
+			case	 kQuarticEaseIn: function = easing::QuarticEaseIn; break;
+			case	 kQuarticEaseOut: function = easing::QuarticEaseOut; break;
+			case	 kQuarticEaseInOut: function = easing::QuarticEaseInOut; break;
+				
+			case kQuinticEaseIn: function = easing::QuinticEaseIn;break;
+			case kQuinticEaseOut: function = easing::QuinticEaseOut;break;
+			case kQuinticEaseInOut: function = easing::QuinticEaseInOut;break;
+				
+			case kSineEaseIn: function = easing::SineEaseIn;break;
+			case kSineEaseOut: function = easing::SineEaseOut;break;
+			case kSineEaseInOut: function = easing::SineEaseInOut;break;
+				
+			case kCircularEaseIn: function = easing::CircularEaseIn;break;
+			case kCircularEaseOut: function = easing::CircularEaseOut; break;
+			case kCircularEaseInOut: function = easing::CircularEaseInOut; break;
+				
+			case kExponentialEaseIn: function = easing::ExponentialEaseIn;break;
+			case kExponentialEaseOut: function = easing::ExponentialEaseOut; break;
+			case kExponentialEaseInOut: function = easing::ExponentialEaseInOut; break;
+				
+			case kElasticEaseIn: function = easing::ElasticEaseIn; break;
+			case kElasticEaseOut: function = easing::ElasticEaseOut; break;
+			case kElasticEaseInOut: function = easing::ElasticEaseInOut; break;
+				
+			case kBackEaseIn: function = easing::BackEaseIn;break;
+			case kBackEaseOut: function = easing::BackEaseOut; break;
+			case kBackEaseInOut: function = easing::BackEaseInOut; break;
+				
+			case kBounceEaseIn: function = easing::BounceEaseIn; break;
+			case kBounceEaseOut: function = easing::BounceEaseOut; break;
+			case kBounceEaseInOut: function = easing::BounceEaseInOut; break;
 		}
-		tween[s] = end;
-		//		FILE_LOG(logDEBUG) << "tween: [" << s << "]: " << "{" << tween[s].x << "," << tween[s].y << "}";
+		
+		return function;
+	}
+	
+	TweenFrame<GLKVector2> *MakeTweenFrames(int steps, EasingFunction easing_func, GLKVector2 end_point[2]){
+		
+		FILE_LOG(logDEBUG) << "start: " << "{" << end_point[0].x << "," << end_point[0].y << "}";
+		FILE_LOG(logDEBUG) << "end: " << "{" << end_point[1].x << "," << end_point[1].y << "}";
+		FILE_LOG(logDEBUG) << "steps: " << steps;
+		
+		he::easing::AHEasingFunction function = type_to_function(easing_func);
+		GLKVector2 *tween = new GLKVector2[steps];
+		double t = 0.0;
+		double dt = 1.0 / (steps - 1);
+		for(int frame = 0; frame < steps; ++frame, t += dt)	{
+			double x = end_point[0].x + function(t) * (end_point[1].x - end_point[0].x);
+			double y = end_point[0].y + function(t) * (end_point[1].y - end_point[0].y);
+			FILE_LOG(logDEBUG) << "at:[" << frame << "]: {" << x << "," << y << "}";
+			tween[frame] = GLKVector2Make(x,y);
+		}
+		
 		return new TweenFrame<GLKVector2>(steps, tween);
 	}
-
 	
-	TweenFrame<double> *MakeTweenFrame1D(int steps ,double start, double end, TweenFrame<double>::Type animType){
+	
+	TweenFrame<double> *MakeTweenFrames(int steps, EasingFunction easing_func, double end_point[2]){
 		
 		//		double dRot = (end - start)/(steps-1);
 		
-//		FILE_LOG(logDEBUG) << "start: " << "{" << start << "}";
-//		FILE_LOG(logDEBUG) << "end: " << "{" << end << "}";
-//		FILE_LOG(logDEBUG) << "dPos: " << "{" << dRot << "}";
-		
+		//		FILE_LOG(logDEBUG) << "start: " << "{" << start << "}";
+		//		FILE_LOG(logDEBUG) << "end: " << "{" << end << "}";
+		//		FILE_LOG(logDEBUG) << "dPos: " << "{" << dRot << "}";
+		he::easing::AHEasingFunction function = type_to_function(easing_func);
 		double *tween = new double[steps];
-		int s = 0;
 		double t = 0.0;
-		for(double dt = 1.0/(double)(steps-1); s < steps-1; s++){
-			switch(animType){
-				case TweenFrame<double>::kLinear:		//a + (b-a)*t;
-					tween[s] = Linear(start, end, t);
-					break;
-					
-				case TweenFrame<double>::kEaseIn:		//a + (b-a) * t * t;
-					tween[s] = Linear(start, end, t);
-					break;
-					
-				case TweenFrame<double>::kEaseOut:	//a - (b-a)*t*(t-2);
-					tween[s] = Linear(start, end, t);
-					break;
-					
-				case TweenFrame<double>::kEaseInOut:	//t *= 2; if(t<=1.0){return a + (b-a)/2 * t * t;} t -= 1; return a - (b-a)/2*(t*(t-2)-1);
-					tween[s] = Linear(start, end, t);
-					break;
-					
-				case TweenFrame<double>::kEaseOutCubic:	//t -= 1; return a + (b-a)*(t*t*t+1);
-					tween[s] = Linear(start, end, t);
-					break;
-			}
-			t += dt;
-			//			FILE_LOG(logDEBUG) << "tween: [" << s << "]: " << "{" << tween[s] << "}";
+		double dt = 1.0 / (steps - 1);
+		for(int frame = 0; frame < steps; ++frame, t += dt)	{
+			tween[frame] = end_point[0] + function(t) * (end_point[1] - end_point[0]);
 		}
-		tween[s] = end;
-		//		FILE_LOG(logDEBUG) << "tween: [" << s << "]: " << "{" << tween[s] << "}";
+		
 		return new TweenFrame<double>(steps, tween);
 	}
-
+	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// AnimationChain
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -156,6 +134,6 @@ namespace he{
 		}
 		return true;
 	}
-
+	
 }
 ///EOF

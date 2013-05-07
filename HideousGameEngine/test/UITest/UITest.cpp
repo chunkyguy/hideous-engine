@@ -89,8 +89,11 @@ void UITest::handle_gesture(){
 		scale_animation_ = new he::AnimationChain;
 
 		GLKVector2 scaleUp = GLKVector2MultiplyScalar(label_->transform_.scale_, 1.25);
-		scale_animation_->Push(new he::Animation<GLKVector2>(&label_->transform_.scale_, he::MakeTweenFrame2D(3, label_->transform_.scale_, scaleUp, he::TweenFrame<GLKVector2>::kLinear)));
-		scale_animation_->Push(new he::Animation<GLKVector2>(&label_->transform_.scale_, he::MakeTweenFrame2D(3, scaleUp, label_->transform_.scale_, he::TweenFrame<GLKVector2>::kLinear)));
+		GLKVector2 scale_up_points[2] = {label_->transform_.scale_, scaleUp};
+		scale_animation_->Push(new he::Animation<GLKVector2>(&label_->transform_.scale_, he::MakeTweenFrames(3, he::kLinear, scale_up_points)));
+		
+		GLKVector2 scale_down_points[2] = {scaleUp, label_->transform_.scale_};
+		scale_animation_->Push(new he::Animation<GLKVector2>(&label_->transform_.scale_, he::MakeTweenFrames(3, he::kLinear, scale_down_points)));
 	}else{
 		label_->transform_.position_ = pt;
 	}

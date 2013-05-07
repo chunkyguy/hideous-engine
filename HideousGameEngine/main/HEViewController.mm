@@ -21,11 +21,11 @@
 //#define TEST_RECT_TEXT
 //#define TEST_MULTI_SHADERS
 //#define TEST_MULTI_FONT
-//#define TEST_ANIMATION
+#define TEST_ANIMATION
 //#define TEST_TEXTURE_BIG_BANG
 //#define TEST_GESTURE
 //#define TEST_PARTICLES
-#define TEST_UI
+//#define TEST_UI
 
 ITest *GetTestFromFactory(double w, double h){
 	

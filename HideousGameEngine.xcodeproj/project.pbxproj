@@ -90,6 +90,7 @@
 		19A6E69E173278A1006ACD91 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A6E653173278A1006ACD91 /* Icon@2x.png */; };
 		19A6E6A1173278B4006ACD91 /* WLAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E6A0173278B4006ACD91 /* WLAppDelegate.mm */; };
 		19A6E6A3173278BE006ACD91 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 19A6E6A2173278BE006ACD91 /* README.md */; };
+		19EB949F1738C8F200FAF69C /* easing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19EB949E1738C8F200FAF69C /* easing.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -229,6 +230,8 @@
 		19A6E69F173278B4006ACD91 /* WLAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLAppDelegate.h; sourceTree = "<group>"; };
 		19A6E6A0173278B4006ACD91 /* WLAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WLAppDelegate.mm; sourceTree = "<group>"; };
 		19A6E6A2173278BE006ACD91 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		19EB949E1738C8F200FAF69C /* easing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = easing.cpp; sourceTree = "<group>"; };
+		19EB94A01738C92D00FAF69C /* easing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = easing.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				199582521734575F0094714E /* Animation.h */,
+				19EB94A01738C92D00FAF69C /* easing.h */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -556,6 +560,7 @@
 			isa = PBXGroup;
 			children = (
 				19A6E5E6173278A1006ACD91 /* Animation.cpp */,
+				19EB949E1738C8F200FAF69C /* easing.cpp */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -978,6 +983,7 @@
 				19A6E692173278A1006ACD91 /* Label.cpp in Sources */,
 				19A6E693173278A1006ACD91 /* UITest.cpp in Sources */,
 				19A6E6A1173278B4006ACD91 /* WLAppDelegate.mm in Sources */,
+				19EB949F1738C8F200FAF69C /* easing.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

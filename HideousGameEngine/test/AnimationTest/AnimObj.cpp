@@ -72,10 +72,17 @@ void AnimObj::TouchEnd(GLKVector2 pt){
 	tmp_transform_ = new he::Transform(transform_);
 	anim_chain_ = new he::AnimationChain;
 	
-	anim_chain_->Push(new he::Animation<GLKVector2>(&tmp_transform_->scale_, he::MakeTweenFrame2D(10, tmp_transform_->scale_, GLKVector2MultiplyScalar(tmp_transform_->scale_, 2.0), he::TweenFrame<GLKVector2>::kEaseOut)));
-	anim_chain_->Push(new he::Animation<GLKVector2>(&tmp_transform_->scale_, he::MakeTweenFrame2D(10, GLKVector2MultiplyScalar(tmp_transform_->scale_, 2.0), tmp_transform_->scale_, he::TweenFrame<GLKVector2>::kEaseIn)));
-	anim_chain_->Push(new he::Animation<GLKVector2>(&tmp_transform_->position_, he::MakeTweenFrame2D(10, tmp_transform_->position_, pt, he::TweenFrame<GLKVector2>::kEaseOutCubic)));
-	anim_chain_->Push(new he::Animation<double>(&tmp_transform_->rotation_, he::MakeTweenFrame1D(10, tmp_transform_->rotation_, atan2(pt.y, pt.x), he::TweenFrame<double>::kEaseOutCubic)));
+	GLKVector2 scale_up_points[2] = {tmp_transform_->scale_, GLKVector2MultiplyScalar(tmp_transform_->scale_, 1.2)};
+	anim_chain_->Push( new he::Animation<GLKVector2>(&tmp_transform_->scale_, he::MakeTweenFrames(30, he::kElasticEaseIn, scale_up_points)));
+	
+	GLKVector2 trans_points[2] = {tmp_transform_->position_, pt};
+	anim_chain_->Push(new he::Animation<GLKVector2>(&tmp_transform_->position_, he::MakeTweenFrames(60, he::kBounceEaseOut, trans_points)));
+
+	GLKVector2 scale_down_points[2] = {GLKVector2MultiplyScalar(tmp_transform_->scale_, 1.2), tmp_transform_->scale_};
+	anim_chain_->Push(new he::Animation<GLKVector2>(&tmp_transform_->scale_, he::MakeTweenFrames(30, he::kElasticEaseOut, scale_down_points)));
+
+	double rotation_points[2] = {tmp_transform_->rotation_, atan2(pt.y, pt.x)};
+	anim_chain_->Push(new he::Animation<double>(&tmp_transform_->rotation_, he::MakeTweenFrames(20, he::kLinear, rotation_points)));
 }
 
 void AnimObj::Render(){
