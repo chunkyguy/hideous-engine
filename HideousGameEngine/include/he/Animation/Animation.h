@@ -24,12 +24,56 @@ namespace he{
 	//	Animation -> TweenFrame
 	//	AnimationChain -> Animation
 	
+	typedef enum{
+		kLinear,
+		
+		kQuadraticEaseIn,
+		kQuadraticEaseOut,
+		kQuadraticEaseInOut,
+		
+		kCubicEaseIn,
+		kCubicEaseOut,
+		kCubicEaseInOut,
+		
+		kQuarticEaseIn,
+		kQuarticEaseOut,
+		kQuarticEaseInOut,
+		
+		kQuinticEaseIn,
+		kQuinticEaseOut,
+		kQuinticEaseInOut,
+		
+		kSineEaseIn,
+		kSineEaseOut,
+		kSineEaseInOut,
+		
+		kCircularEaseIn,
+		kCircularEaseOut,
+		kCircularEaseInOut,
+		
+		kExponentialEaseIn,
+		kExponentialEaseOut,
+		kExponentialEaseInOut,
+		
+		kElasticEaseIn,
+		kElasticEaseOut,
+		kElasticEaseInOut,
+		
+		kBackEaseIn,
+		kBackEaseOut,
+		kBackEaseInOut,
+		
+		kBounceEaseIn,
+		kBounceEaseOut,
+		kBounceEaseInOut,
+		
+	}EasingFunction;
+
+	
 	// Generate tweens between two end points with selected algorithm.
 	template <typename T>
 	class TweenFrame {
 	public:
-		typedef enum{kLinear, kEaseIn, kEaseOut, kEaseInOut, kEaseOutCubic}Type;
-		
 		TweenFrame(int steps, T *tweens) :
 		container_(tweens),
 		container_size_(steps),
@@ -64,8 +108,8 @@ namespace he{
 	
 	// Helper factory methods to create TweenFrames for 1D and 2D
 	//	Don't own the objects.
-	TweenFrame<GLKVector2> *MakeTweenFrame2D(int steps ,GLKVector2 start, GLKVector2 end, TweenFrame<GLKVector2>::Type animType);
-	TweenFrame<double> *MakeTweenFrame1D(int steps ,double start, double end, TweenFrame<double>::Type animType);
+	TweenFrame<GLKVector2> *MakeTweenFrames(int steps, EasingFunction easing_func, GLKVector2 end_point[2]);
+	TweenFrame<double> *MakeTweenFrames(int steps, EasingFunction easing_func, double end_point[2]);
 	
 	//	Base class for every animatable object
 	class IAnimatable{
