@@ -169,7 +169,7 @@ namespace he{
 			1, 1
 		};
 		
-		texture_ = new Texture(font_name, char_name, pixels, GLKVector2Make(w,h), 1);
+		texture_ = new Texture(font_name + char_name, pixels, GLKVector2Make(w,h), 1);
 		delete [] pixels;
 		vertex_data_ = new VertexTex(0, 0);
 		vertex_data_->position_data_ = VertexData(p_data);

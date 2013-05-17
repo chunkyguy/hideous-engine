@@ -60,4 +60,8 @@ ParticleTest *MakeParticlesTest(double w, double h){
 	return new ParticleTest(w,h);
 }
 
+#include "SpineTest/SpineTest.h"
+SpineTest *MakeSpineTest(double w, double h){
+	return new SpineTest(w, h);
+}
 #endif

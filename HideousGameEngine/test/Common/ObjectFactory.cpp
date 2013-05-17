@@ -15,6 +15,7 @@
 #include <he/Texture/Texture.h>
 #include <he/Texture/TextureAtlas.h>
 #include <he/Utils/Utils.h>
+#include <he/Utils/ResourcePath.hpp>
 #include <he/Vertex/VertexCol.h>
 #include <he/Vertex/VertexTex.h>
 
@@ -44,9 +45,9 @@ void ObjectFactory::load_assets(){
 	col_sh_ = new he::RectColorSh;
 	
 	// texture obj
-	texture_ = new he::Texture("texture","png");
+	texture_ = new he::Texture(he::ResourcePath() + "texture.png");
 	vert_ = new he::VertexTex(200, 200);
-	atlas_ = new he::TextureAtlas("tex_atlas","png");
+	atlas_ = new he::TextureAtlas(he::ResourcePath() + "tex_atlas.png", he::ResourcePath() + "tex_atlas.plist");
 	tex_sh_ = new he::RectTextureSh;
 	
 	// text obj

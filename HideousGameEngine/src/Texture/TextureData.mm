@@ -14,12 +14,11 @@
 
 namespace he{
 		
-	TextureData::TextureData(std::string &name, std::string extension){
-		NSString *name_str = [[NSString alloc] initWithCString:name.c_str() encoding:NSASCIIStringEncoding];
-		NSString *extension_str = [[NSString alloc] initWithCString:extension.c_str() encoding:NSASCIIStringEncoding];
-		NSData *texData = [[NSData alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name_str ofType:extension_str]];
+	TextureData::TextureData(std::string path){
+		NSString *path_str = [[NSString alloc] initWithCString:path.c_str() encoding:NSASCIIStringEncoding];
+		NSData *texData = [[NSData alloc] initWithContentsOfFile:path_str];
 		UIImage *image = [[UIImage alloc] initWithData:texData];
-		NSLog(@"Loading texture: %@.%@",name_str,extension_str);
+		NSLog(@"Loading texture: %@",path_str);
 		assert(image);
 		width_ = NextPOT(CGImageGetWidth(image.CGImage));
 		height_ = NextPOT(CGImageGetHeight(image.CGImage));
@@ -37,8 +36,7 @@ namespace he{
 		CGContextRelease(context);
 		[image release];
 		[texData release];
-		[extension_str release];
-		[name_str release];
+		[path_str release];
 	}
 	
 	TextureData::~TextureData(){

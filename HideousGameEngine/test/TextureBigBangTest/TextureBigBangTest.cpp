@@ -14,6 +14,7 @@
 #include <he/Texture/Texture.h>
 #include <he/Texture/TextureAtlas.h>
 #include <he/Utils/DebugLog.h>
+#include <he/Utils/ResourcePath.hpp>
 #include <he/Utils/Screen.h>
 #include <he/Utils/Utils.h>
 #include <he/Vertex/VertexTex.h>
@@ -114,7 +115,7 @@ void TextureBigBangTest::handle_gesture(){
 }
 
 void TextureBigBangTest::load_assets(){
-	texture_ = new he::Texture("clock","png");
+	texture_ = new he::Texture(he::ResourcePath() + "clock.png");
 	vertex_data_ = new he::VertexTex(50, 50);
 	shader_ = new he::RectTextureSh;
 	sprite_ = new he::RenderObject(vertex_data_, shader_, texture_);

@@ -12,6 +12,12 @@
 
 #include <list>
 
+//#define SPINE_TEXTURE_OBJECT
+#if defined(SPINE_TEXTURE_OBJECT)
+#include "spine.h"
+ 
+#endif
+
 namespace he{
 	class RenderObject;
 	class Texture;
@@ -37,6 +43,14 @@ private:
 	std::list<he::VertexTex *>vertex_datas_;
 	he::TextureAtlas *atlas_;
 	he::RectTextureSh *shader_;
+
+#if defined(SPINE_TEXTURE_OBJECT)
+	void load_goblin();
+	void load_spineboy();
+	GLKVector4 convert_to_tex_coords(GLKVector4 frame, GLKVector2 fullFrameSize);
+
+	spine::Atlas* spine_atlas_;
+#endif
 };
 
 #endif /* defined(__HideousGameEngine__RectTextureTest__) */

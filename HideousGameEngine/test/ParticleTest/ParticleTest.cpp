@@ -15,6 +15,7 @@
 #include <he/Shaders/ParticleSh/ParticleSh.h>
 #include <he/Texture/Texture.h>
 #include <he/Utils/DebugLog.h>
+#include <he/Utils/ResourcePath.hpp>
 #include <he/Utils/Screen.h>
 #include <he/Utils/Utils.h>
 #include <he/Vertex/VertexPar.h>
@@ -53,7 +54,7 @@ count_(0){
 
 	//start things here
 	shader_ = new he::ParticleSh;
-	texture_ = new he::Texture("snow_particle","png");
+	texture_ = new he::Texture(he::ResourcePath() + "snow_particle.png");
 }
 
 void ParticleTest::Update(double dt){
