@@ -31,21 +31,20 @@ namespace spine {
 	
 	
 	Slot::Slot (SlotData* data, Skeleton* skeleton, Bone* bone) :
-	internal_( new Internal),
+	attachment_(nullptr),
+	attachmentTime_(0.0),
+	bone_ (bone),
+	color_(GLKVector4Make(1,1,1,1)),
 	data_ (data),
-	skeleton_( skeleton),
-	bone_ (bone)
+	skeleton_( skeleton)
 	{
 		SetToSetupPose();
 	}
 	
-	Slot::~Slot () {
-		delete internal_;
-	}
 	
 	void Slot::SetAttachment ( Attachment* attachment) {
 		attachment_ = attachment;
-		internal_->attachmentTime_ = skeleton_->GetTime();
+		attachmentTime_ = skeleton_->GetTime();
 	}
 	
 	Attachment *Slot::GetAttachment(){
@@ -53,11 +52,11 @@ namespace spine {
 	}
 	
 	void Slot::SetAttachmentTime ( float time) {
-		internal_->attachmentTime_ = skeleton_->GetTime() - time;
+		attachmentTime_ = skeleton_->GetTime() - time;
 	}
 	
 	float Slot::GetAttachmentTime () const {
-		return skeleton_->GetTime() - internal_->attachmentTime_;
+		return skeleton_->GetTime() - attachmentTime_;
 	}
 	
 	void Slot::SetToSetupPose () {

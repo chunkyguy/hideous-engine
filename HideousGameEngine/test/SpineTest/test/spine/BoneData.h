@@ -48,9 +48,9 @@ namespace spine {
 		void SetLength(float len);
 		
 	private:
+		float length_;
 		std::string name_;
 		BoneData *parent_;
-		float length_;
 		float rotation_;
 		GLKVector2 scale_;	// scaleX_, scaleY_;
 		GLKVector2 xy_;	// x_, y_;

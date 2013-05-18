@@ -38,7 +38,6 @@ namespace spine {
 		~Bone (){};
 
 		void SetYDown (bool yDown);
-
 		void SetToSetupPose ();
 		void UpdateWorldTransform ( bool flipX, bool flipY);
 		GLKVector2 GetXY();
@@ -53,17 +52,14 @@ namespace spine {
 		
 	private:
 		BoneData *data_;
+		GLKMatrix2 m_;// m00_, m01_, m10_, m11_ => a, b, c, d
 		Bone *parent_;
-		GLKVector2 xy_;	// x_, y_
 		float rotation_;
 		GLKVector2 scale_;	//scaleX_, scaleY_;
-		
-//		float m00_, m01_, worldX_; /* a b x */
-//		float m10_, m11_, worldY_; /* c d y */
-		GLKVector2 worldXY_;		//worldX_, worldY_
-		GLKMatrix2 m_;// m00_, m01_, m10_, m11_
 		float worldRotation_;
 		GLKVector2 worldScale_;	//worldScaleX_, worldScaleY_;
+		GLKVector2 worldXY_;		//worldX_, worldY_ => x, y
+		GLKVector2 xy_;	// x_, y_
 		bool yDown_;
 	};
 	

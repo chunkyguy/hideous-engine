@@ -62,18 +62,22 @@ namespace spine {
 		void clear_queue();
 		
 		struct Internal{
-			Animation *previous;
-			float previousTime;
-			bool previousLoop;
-			float mixTime;
-			float mixDuration;
+			Internal();
 			
 			struct Entry {
+				Entry();
+				
 				Animation* animation;
-				bool loop;
 				float delay;
+				bool loop;
 				Entry* next;
 			};
+			
+			bool previousLoop;
+			float mixDuration;
+			float mixTime;
+			Animation *previous;
+			float previousTime;
 			Entry* queue;
 		} ;
 		

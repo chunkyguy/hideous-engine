@@ -35,7 +35,7 @@ namespace spine {
 	// MARK: Animation
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 	Animation::Animation (std::string name, int timelineCount) :
-	duration_(0),
+	duration_(0.0),
 	name_(name),
 	timeline_count_(timelineCount),
 	timelines_(new Timeline *[timelineCount])
@@ -235,9 +235,12 @@ namespace spine {
 	// MARK: BoneBaseTimeline
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 	BoneBaseTimeline::BoneBaseTimeline (int frameCount, int frameSize) :
-	BaseTimeline(frameCount, frameSize){}
+	BaseTimeline(frameCount, frameSize),
+	bone_index_(0)
+	{}
 	
 	void BoneBaseTimeline::SetFrame( int , float , float , float ){
+		assert(0); /*this method should have been implemented*/
 	}
 
 	int BoneBaseTimeline::GetBoneIndex(){
@@ -251,7 +254,9 @@ namespace spine {
 	// MARK: SlotBaseTimeline
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 	SlotBaseTimeline::SlotBaseTimeline (int frameCount, int frameSize) :
-	BaseTimeline(frameCount, frameSize){}
+	BaseTimeline(frameCount, frameSize),
+	slot_index_(0)
+	{}
 	
 	int SlotBaseTimeline::GetSlotIndex(){
 		return slot_index_;

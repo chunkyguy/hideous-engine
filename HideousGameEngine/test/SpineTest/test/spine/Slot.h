@@ -39,7 +39,6 @@ namespace spine {
 	class Slot {
 	public:
 		Slot(SlotData* data, struct Skeleton* skeleton, Bone* bone);
-		~Slot();
 		
 		/* @param attachment May be 0 to clear the attachment for the slot. */
 		void SetAttachment ( Attachment* attachment);
@@ -53,15 +52,12 @@ namespace spine {
 		SlotData *GetData();
 		
 	private:
-		struct Internal{
-			float attachmentTime_;
-		};
-		Internal *internal_;
-		SlotData* const data_;
-		Skeleton* const skeleton_;
+		Attachment* attachment_;
+		float attachmentTime_;
 		Bone *bone_;
 		GLKVector4 color_;
-		Attachment* attachment_;
+		SlotData* const data_;
+		Skeleton* const skeleton_;
 	};
 }
 

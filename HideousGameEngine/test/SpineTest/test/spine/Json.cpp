@@ -50,15 +50,15 @@ namespace spine {
 	
 	/* Parse an object - create a new root, and populate. */
 	Json::Json (std::string value) :
-	ep_(0),
-	next_(0),
-	prev_(0),
-	child_(0),
+	ep_(nullptr),
+	next_(nullptr),
+	prev_(nullptr),
+	child_(nullptr),
 	type_(0),
-	valuestring_(0),
+	valuestring_(nullptr),
 	valueint_(0),
 	valuefloat_(0),
-	name_(0)
+	name_(nullptr)
 	{
 		const char* end = parse_value(skip(value.c_str()));
 		assert(end);	/* parse failure. ep is set. */
@@ -66,15 +66,15 @@ namespace spine {
 
 
 	Json::Json () :
-	ep_(0),
-	next_(0),
-	prev_(0),
-	child_(0),
+	ep_(nullptr),
+	next_(nullptr),
+	prev_(nullptr),
+	child_(nullptr),
 	type_(0),
-	valuestring_(0),
+	valuestring_(nullptr),
 	valueint_(0),
 	valuefloat_(0),
-	name_(0)
+	name_(nullptr)
 	{	}
 
 	/* Delete a Json structure. */

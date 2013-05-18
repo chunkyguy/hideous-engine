@@ -47,18 +47,17 @@ namespace spine {
 		std::string GetName();
 
 	private:
-		class Internal {
-		public:
-
-			class Entry {
-			public:
+		struct Internal {
+			Internal();
+			
+			struct Entry {
 				Entry(int slotIndex, std::string name, Attachment* attachment);
 				~Entry();
 				
-				int slotIndex_;
-				std::string name_;
 				Attachment* attachment_;
+				std::string name_;
 				Entry* next_;
+				int slotIndex_;
 			};
 
 			Entry* entries_;

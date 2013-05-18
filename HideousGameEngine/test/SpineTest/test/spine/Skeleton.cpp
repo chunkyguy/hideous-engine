@@ -29,20 +29,28 @@
 
 namespace spine {
 	
-	Skeleton::Skeleton (SkeletonData* data) {
-		int i, ii;
-		
-		data_ = data;
-		
-		boneCount_ = data_->GetBoneCount();
+	Skeleton::Skeleton (SkeletonData* data) :
+	bones_(nullptr),
+	boneCount_(0),
+	color_(GLKVector4Make(1, 1, 1, 1)),
+	data_(data),
+	drawOrder_(nullptr),
+	flipX_(false), flipY_(false),
+	root_(nullptr),
+	skin_(nullptr),
+	slotCount_(0),
+	slots_(nullptr),
+	time_(0.0)
+	{
+		boneCount_ = data->GetBoneCount();
 		bones_ = new Bone* [boneCount_];
 		
-		for (i = 0; i < boneCount_; ++i) {
+		for (int i = 0; i < boneCount_; ++i) {
 			BoneData* boneData = data_->GetBoneDataAtIndex(i);
 			Bone* parent = 0;
 			if (boneData->GetParent()) {
 				/* Find parent bone. */
-				for (ii = 0; ii < boneCount_; ++ii) {
+				for (int ii = 0; ii < boneCount_; ++ii) {
 					if (data->GetBoneDataAtIndex(ii) == boneData->GetParent()) {
 						parent = bones_[ii];
 						break;
@@ -55,24 +63,24 @@ namespace spine {
 		
 		slotCount_ = data->GetSlotCount();
 		slots_ = new Slot* [slotCount_];
-		for (i = 0; i < slotCount_; ++i) {
-			SlotData *slotData = data->GetSlotDataAtIndex(i);
+		for (int i = 0; i < slotCount_; ++i) {
+			SlotData* slotData = data->GetSlotDataAtIndex(i);
 			
 			/* Find bone for the slotData's boneData. */
-			Bone *bone = nullptr;
-			for (ii = 0; ii < boneCount_; ++ii) {
+			Bone* bone = nullptr;
+			for (int ii = 0; ii < boneCount_; ++ii) {
 				if (data->GetBoneDataAtIndex(ii) == slotData->GetBoneData()) {
 					bone = bones_[ii];
 					break;
 				}
 			}
+			assert(bone);
 			
 			slots_[i] = new Slot(slotData, this, bone);
 		}
 		
 		drawOrder_ = new Slot* [slotCount_];
 		memcpy(drawOrder_, slots_, sizeof(Slot*) * slotCount_);
-		color_ = GLKVector4Make(1, 1, 1, 1);
 	}
 	
 	Skeleton::~Skeleton () {

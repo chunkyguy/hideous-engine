@@ -56,16 +56,16 @@ namespace spine {
 		void SetSize(GLKVector2 size);
 		
 	private:
-		GLKVector2 xy_;
+		he::VertexData offset_;
+		he::TextureAtlas *rendererObject_;
+		GLKVector2 regionOffset_;	/* Pixels stripped from the bottom left, unrotated. */
+		GLKVector2 regionOriginalSize_;	/* Unrotated, unstripped pixel size. */
+		GLKVector2 regionSize_;	/* Unrotated, stripped pixel size. */
+		float rotation_;
 		GLKVector2 scale_;
 		GLKVector2 size_;
-		float rotation_;
-		GLKVector2 regionOffset_;	/* Pixels stripped from the bottom left, unrotated. */
-		GLKVector2 regionSize_;	/* Unrotated, stripped pixel size. */
-		GLKVector2 regionOriginalSize_;	/* Unrotated, unstripped pixel size. */
-		he::TextureAtlas *rendererObject_;
-		he::VertexData offset_;
 		he::VertexData uvs_;
+		GLKVector2 xy_;
 	};
 	
 }

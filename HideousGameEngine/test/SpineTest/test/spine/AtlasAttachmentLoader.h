@@ -32,16 +32,16 @@ namespace he{
 }
 
 namespace spine {
+	
+	class AtlasAttachmentLoader : public AttachmentLoader{
+	public:
+		explicit AtlasAttachmentLoader(he::TextureAtlas *atlas);
+		Attachment* NewAttachment ( Skin* skin, AttachmentType type, std::string name);
 		
-		class AtlasAttachmentLoader : public AttachmentLoader{
-		public:
-			explicit AtlasAttachmentLoader(he::TextureAtlas *atlas);
-			Attachment* NewAttachment ( Skin* skin, AttachmentType type, std::string name);
-
-		private:
-			he::TextureAtlas* atlas_;
-		};
-		
+	private:
+		he::TextureAtlas* atlas_;
+	};
+	
 }
 
 #endif /* SPINE_ATLASATTACHMENTLOADER_H_ */

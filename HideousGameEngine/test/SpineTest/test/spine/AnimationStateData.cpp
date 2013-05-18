@@ -33,7 +33,7 @@ namespace spine {
 	AnimationStateData::ToEntry::ToEntry (Animation* to, float duration)  :
 	animation_(to),
 	duration_(duration),
-	next_(0)
+	next_(nullptr)
 	{		}
 	
 	
@@ -42,8 +42,8 @@ namespace spine {
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	AnimationStateData::FromEntry::FromEntry (Animation* from) :
 	animation_(from),
-	toEntries_(0),
-	next_(0)
+	toEntries_(nullptr),
+	next_(nullptr)
 	{		}
 
 	
@@ -52,7 +52,7 @@ namespace spine {
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	AnimationStateData::AnimationStateData (SkeletonData* skeletonData)  :
 	skeletonData_(skeletonData),
-	entries_(0)
+	entries_(nullptr)
 	{	}
 	
 	AnimationStateData::~AnimationStateData () {

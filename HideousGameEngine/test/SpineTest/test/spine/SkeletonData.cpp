@@ -32,13 +32,13 @@ namespace spine {
 
 
 	SkeletonData::SkeletonData (int bones, int slots, int skins, int animations) :
-	bones_(new BoneData *[bones]),
+	bones_(new BoneData* [bones]),
 	boneCount_(0),
-	slots_(new SlotData *[slots]),
+	slots_(new SlotData* [slots]),
 	slotCount_(0),
-	skins_(new Skin *[skins]),
+	skins_(new Skin* [skins]),
 	skinCount_(0),
-	animations_(new Animation *[animations]),
+	animations_(new Animation* [animations]),
 	animationCount_(0)
 	{}
 	

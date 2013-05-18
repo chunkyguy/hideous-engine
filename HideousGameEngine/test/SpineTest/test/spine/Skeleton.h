@@ -78,20 +78,17 @@ namespace spine {
 		SkeletonData *GetData();
 		
 	private:
-		SkeletonData *data_;
-		
+		Bone** bones_;
 		int boneCount_;
-		Bone* *bones_;
-		Bone *root_;
-		
-		int slotCount_;
-		Slot **slots_;
-		Slot **drawOrder_;
-		
-		Skin *skin_;
 		GLKVector4 color_;
-		float time_;
+		SkeletonData *data_;
+		Slot** drawOrder_;
 		bool flipX_, flipY_;
+		Bone* root_;
+		Skin* skin_;
+		int slotCount_;
+		Slot** slots_;
+		float time_;
 	};
 }
 

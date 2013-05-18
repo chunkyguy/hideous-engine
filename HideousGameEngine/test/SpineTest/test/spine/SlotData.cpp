@@ -30,14 +30,11 @@ namespace spine {
 	
 	SlotData::SlotData (std::string name, BoneData* boneData,
 						std::string attachment, GLKVector4 color) :
-	name_( name),
-	boneData_( boneData),
 	attachmentName_(attachment),
-	color_(color)
+	boneData_( boneData),
+	color_(color),
+	name_( name)
 	{}
-	
-	SlotData::~SlotData() {
-	}
 	
 	void SlotData::SetAttachmentName (std::string attachmentName) {
 			attachmentName_ = attachmentName;

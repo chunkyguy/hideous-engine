@@ -70,24 +70,20 @@ namespace spine {
 	
 	SkeletonJson::SkeletonJson (AttachmentLoader* attachmentLoader) :
 	attachmentLoader_(attachmentLoader),
-	internal_( new Internal),
-	scale_(1),
-	error_("")
-	{
-		internal_->ownsLoader = false;
-	}
+	error_(""),
+	ownsLoader_(false),
+	scale_(1)
+	{	}
 	
 	SkeletonJson::SkeletonJson (he::TextureAtlas* atlas) :
 	attachmentLoader_( new AtlasAttachmentLoader(atlas)),
-	internal_(new Internal),
+	ownsLoader_(true),
 	scale_(1),
 	error_("")
-	{
-		internal_->ownsLoader = true;
-	}
+	{	}
 	
 	SkeletonJson::~SkeletonJson () {
-		if (internal_->ownsLoader) {
+		if (ownsLoader_) {
 			delete attachmentLoader_;
 		}
 	}

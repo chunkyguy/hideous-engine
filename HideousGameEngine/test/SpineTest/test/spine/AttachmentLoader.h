@@ -30,6 +30,7 @@
 #include "Skin.h"
 
 namespace spine {
+	
 	class AttachmentLoader {
 	public:
 		AttachmentLoader();
@@ -50,6 +51,7 @@ namespace spine {
 		std::string error1_;
 		std::string error2_;
 	};	
+
 }
 
 #endif /* SPINE_ATTACHMENTLOADER_H_ */

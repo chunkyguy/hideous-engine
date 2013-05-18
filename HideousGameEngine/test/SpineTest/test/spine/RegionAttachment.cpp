@@ -32,7 +32,16 @@ namespace spine {
 	
 	RegionAttachment::RegionAttachment (std::string name)  :
 	Attachment(name, ATTACHMENT_REGION),
-	scale_(GLKVector2Make(1,1))
+	offset_(he::VertexData()),
+	rendererObject_(nullptr),
+	regionOffset_(GLKVector2Make(0,0)),
+	regionOriginalSize_(GLKVector2Make(0,0)),
+	regionSize_(GLKVector2Make(0,0)),
+	rotation_(0),
+	scale_(GLKVector2Make(1,1)),
+	size_(GLKVector2Make(0,0)),
+	uvs_(he::VertexData()),
+	xy_(GLKVector2Make(0,0))
 	{	}
 	
 	void RegionAttachment::SetUVs ( GLKVector4 texCoords, bool rotate) {

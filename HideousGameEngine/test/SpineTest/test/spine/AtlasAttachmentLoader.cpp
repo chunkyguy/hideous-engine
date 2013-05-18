@@ -28,7 +28,11 @@
 #include "RegionAttachment.h"
 
 namespace spine {
-	
+
+	AtlasAttachmentLoader::AtlasAttachmentLoader (he::TextureAtlas* atlas)  :
+	atlas_(atlas)
+	{	}
+
 	Attachment* AtlasAttachmentLoader::NewAttachment ( Skin* skin, AttachmentType type, std::string name){
 		
 		switch (type) {
@@ -50,9 +54,4 @@ namespace spine {
 				return 0;
 		}
 	}
-	
-	AtlasAttachmentLoader::AtlasAttachmentLoader (he::TextureAtlas* atlas)  :
-	atlas_(atlas)
-	{	}
-	
 }

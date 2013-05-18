@@ -29,26 +29,28 @@
 
 namespace spine {
 	
-	void Bone::SetYDown (bool value) {
-		yDown_ = value;
-	}
 	
 	Bone::Bone (BoneData* data, Bone* parent)  :
 	data_(data),
 	parent_(parent),
-	xy_(GLKVector2Make(0,0)),
-	rotation_(0),
+	rotation_(0.0),
 	scale_(GLKVector2Make(0,0)),
+	worldRotation_(0.0),
 	worldXY_(GLKVector2Make(0,0)), // x y
-	worldRotation_(0),
-	worldScale_(GLKVector2Make(0,0))
+	worldScale_(GLKVector2Make(0,0)),
+	xy_(GLKVector2Make(0,0)),
+	yDown_(false)
 	{
 		m_.m00 = 0;	m_.m01 = 0;	/* a b  */
 		m_.m10 = 0; m_.m11 = 0;	/* c d */
 
 		SetToSetupPose();
 	}
-	
+
+	void Bone::SetYDown (bool value) {
+		yDown_ = value;
+	}
+
 	void Bone::SetToSetupPose () {
 		xy_ = data_->GetXY();
 		rotation_ = data_->GetRotation();

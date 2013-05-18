@@ -29,7 +29,10 @@
 
 namespace spine {
 
-	AttachmentLoader::AttachmentLoader(){}
+	AttachmentLoader::AttachmentLoader() :
+	error1_(""),
+	error2_("")
+	{}
 	
 	Attachment* AttachmentLoader::NewAttachment ( Skin* skin, AttachmentType type, std::string name) {
 		return nullptr;

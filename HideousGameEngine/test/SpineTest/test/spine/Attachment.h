@@ -28,6 +28,7 @@
 #include <string>
 
 namespace spine {
+	
 	class Slot;
 	
 	typedef enum {
@@ -45,5 +46,6 @@ namespace spine {
 		std::string name_;
 		AttachmentType type_;
 	};
+	
 }
 #endif /* SPINE_ATTACHMENT_H_ */

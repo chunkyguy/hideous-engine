@@ -61,13 +61,11 @@ namespace spine {
 		SkeletonData* read_skeleton_data ( std::string json);
 		Animation* read_animation ( Json* root, SkeletonData *skeletonData);
 			
-		struct Internal {
-			bool ownsLoader;
-		} ;
-		Internal *internal_;
-		float scale_;
+
 		AttachmentLoader* attachmentLoader_;
 		std::string error_;
+		bool ownsLoader_;
+		float scale_;
 	} ;
 	
 	

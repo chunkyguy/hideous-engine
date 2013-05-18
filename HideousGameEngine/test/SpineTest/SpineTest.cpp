@@ -71,7 +71,7 @@ SpineTest::SpineTest(double width, double height){
 	if (!skeletonData_) printf("Error: %s\n", json->GetError().c_str());
 	printf("Default skin name: %s\n", skeletonData_->GetDefaultSkin()->GetName().c_str());
 	
-	spine::Animation* walkAnimation = skeletonData_->FindAnimation( "walk");
+	spine::Animation* walkAnimation = skeletonData_->FindAnimation( "jump");
 	if (!walkAnimation) printf("Error: %s\n", json->GetError().c_str());
 	printf("Animation timelineCount: %d\n", walkAnimation->GetTimelineCount());
 	delete json;

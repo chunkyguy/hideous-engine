@@ -29,9 +29,9 @@
 namespace spine {
 	
 	BoneData::BoneData (std::string name, BoneData* parent, float length, float rotation, GLKVector2 scale, GLKVector2 xy) :
+	length_(length),
 	name_(name),
 	parent_(parent),
-	length_(length),
 	rotation_(rotation),
 	scale_(scale),
 	xy_(xy)

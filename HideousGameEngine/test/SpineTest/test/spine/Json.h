@@ -39,8 +39,13 @@ namespace spine {
 	/* The Json structure: */
 	class Json {
 	public:
+		/* Supply a block of JSON, and this returns a Json object you can interrogate. Call Json_dispose when finished. */
+		/* Parse an object - create a new root, and populate. */
 		explicit Json (std::string value);
+		
 		Json();
+		
+		/* Delete a Json entity and all subentities. */
 		~Json();
 		
 		/* Returns the number of items in an array (or object). */
@@ -77,29 +82,30 @@ namespace spine {
 		const char *parse_object (const char *value);
 
 		const char *ep_;
+		
 		/* next/prev allow you to walk array/object chains. Alternatively, use getSize/getItemAt/getItem */
 		Json* next_;
 		Json* prev_;
+
 		/* An array or object item will have a child pointer pointing to a chain of the items in the array/object. */
 		Json* child_;
 		
-		int type_; /* The type of the item, as above. */
+		/* The type of the item, as above. */
+		int type_;
 		
-		char *valuestring_; /* The item's string, if type==Json_String */
-		int valueint_; /* The item's number, if type==Json_Number */
-		float valuefloat_; /* The item's number, if type==Json_Number */
+		/* The item's string, if type==Json_String */
+		char *valuestring_;
 		
-		char *name_; /* The item's name string, if this item is the child of, or is in the list of subitems of an object. */
-
+		 /* The item's number, if type==Json_Number */
+		int valueint_;
+		
+		/* The item's number, if type==Json_Number */
+		float valuefloat_;
+		
+		/* The item's name string, if this item is the child of, or is in the list of subitems of an object. */
+		char *name_;
 	};
 	
-	/* Supply a block of JSON, and this returns a Json object you can interrogate. Call Json_dispose when finished. */
-	/* Parse an object - create a new root, and populate. */
-	Json *Json_Create(std::string value);
-	
-	/* Delete a Json entity and all subentities. */
-	void Json_Dispose(Json *);
-
 }
 
 #endif /* SPINE_JSON_H_ */

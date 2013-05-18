@@ -35,7 +35,6 @@ namespace spine {
 	public:
 		SlotData(std::string name = "", BoneData* boneData = 0,
 				 std::string attachment = "", GLKVector4 color = GLKVector4Make(1,1,1,1));
-		~SlotData();
 		
 		/* @param attachmentName May be 0 for no setup pose attachment. */
 		void SetAttachmentName ( std::string attachmentName);
@@ -46,10 +45,10 @@ namespace spine {
 		std::string GetName();
 		
 	private:
-		std::string name_;
-		BoneData * boneData_;
 		std::string attachmentName_;
+		BoneData * boneData_;
 		GLKVector4 color_;
+		std::string name_;
 	};
 }
 

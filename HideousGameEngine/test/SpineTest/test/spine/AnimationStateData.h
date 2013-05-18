@@ -61,8 +61,8 @@ namespace spine {
 			FromEntry* next_;
 		};
 
-		SkeletonData *skeletonData_;
 		void *entries_;
+		SkeletonData *skeletonData_;
 	} ;
 }
 #endif /* SPINE_ANIMATIONSTATEDATA_H_ */
