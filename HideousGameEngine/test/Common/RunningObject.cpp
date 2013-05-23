@@ -15,7 +15,7 @@
 RunningObject::RunningObject(he::RenderObject *object) :
 speed_(GLKVector2Make(0.1 + he::Randf()*5.0, 0.1 + he::Randf()*5.0)),
 dir_(GLKVector2Make(rand()%2?-1:1, rand()%2?-1:1)),
-pos_(GLKVector2Make(-he::g_Screen.width_/2+he::Randf()*he::g_Screen.width_, -he::g_Screen.height_/2+he::Randf()*he::g_Screen.height_)),
+pos_(GLKVector2Make(-he::g_Screen->width_/2+he::Randf()*he::g_Screen->width_, -he::g_Screen->height_/2+he::Randf()*he::g_Screen->height_)),
 sprite_(object)
 {}
 
@@ -26,13 +26,13 @@ GLKVector2 RunningObject::GetPosition(){
 void RunningObject::SetPosition(GLKVector2 position){
 	pos_ = position;
 	GLKMatrix4 tMat = GLKMatrix4MakeTranslation(pos_.x, pos_.y, -0.1);
-	sprite_->mvp_ = GLKMatrix4Multiply(he::g_Screen.projection_, tMat);
+	sprite_->mvp_ = GLKMatrix4Multiply(he::g_Screen->projection_, tMat);
 }
 
 void RunningObject::Update(double dt){
 	
 	GLKVector2 newPos = GLKVector2Add(pos_, GLKVector2Multiply(dir_, speed_));
-	if(newPos.x < -he::g_Screen.width_/2 || newPos.x > he::g_Screen.width_/2 || newPos.y < -he::g_Screen.height_/2 || newPos.y > he::g_Screen.height_/2){
+	if(newPos.x < -he::g_Screen->width_/2 || newPos.x > he::g_Screen->width_/2 || newPos.y < -he::g_Screen->height_/2 || newPos.y > he::g_Screen->height_/2){
 		dir_ = GLKVector2Negate(dir_);
 	}else{
 		SetPosition(newPos);

@@ -10,6 +10,8 @@
 #define __HideousGameEngine__SpineTest__
 #include "TestTemplate.h"
 
+#include <he/EventLoop/Gesture.h>
+
 #include "test/spine/spine.h"
 #include "test/spine/extension.h"
 
@@ -52,11 +54,16 @@ public:
 	SpineTest(double width, double height);
 	void Update(double dt);
 	void Render();
+	void HandleGesture(const he::Gesture &gesture);
 	
 private:
-	//	spine::Atlas* atlas_;
+	void load(std::string animation_name);
+	void unload();
+	
+	int animation_index_;
 	he::TextureAtlas *atlas_;
-	spine::SkeletonData *skeletonData_;
 	SkeletonDrawable* drawable_;
+	spine::SkeletonData *skeletonData_;
+	he::GestureListener<SpineTest> *gesture_listener_;
 };
 #endif /* defined(__HideousGameEngine__SpineTest__) */

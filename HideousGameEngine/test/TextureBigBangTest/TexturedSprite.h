@@ -8,7 +8,7 @@
 
 #ifndef __HideousGameEngine__TexturedSprite__
 #define __HideousGameEngine__TexturedSprite__
-#include <GLKit/GLKMath.h>
+#include <he/Utils/GLKMath_Additions.h>
 #include <he/Utils/Transform.h>
 
 namespace he{

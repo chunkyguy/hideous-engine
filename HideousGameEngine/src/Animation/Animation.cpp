@@ -10,7 +10,97 @@
 #include <he/Animation/easing.h>
 
 namespace he{
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// MARK: Animatable
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/**
+	 Base class for Animation.
+	 */
+	Animatable::~Animatable(){
+			if(child_){
+				delete child_;
+			}
+		}
+		
+		Animatable::Animatable(int animation_id) :
+		id_(animation_id),
+		next_(nullptr),
+		child_(nullptr),
+		listener_(nullptr),
+		active_(true)
+		{		}
+		
+		//	Here are the steps that happens in order:
+		//	1. update it self untill runs out of frames.
+		//	2. If any listener is registered, call it.
+		//	3. If has any child animation update it.
+		void Animatable::Update(double dt){
+			if(active_){		// do self update
+				update(dt);
+			}else if(listener_){		// callback
+				listener_->PerformAction(id_);
+				listener_ = nullptr;
+			}else if(child_){	// let child update
+				child_->Update(dt);
+			}
+		}
+		
+		//	Registers a child, to be executed after it finished.
+		//	Owns it.
+		void Animatable::AddChild(Animatable *child){
+			child_ = child;
+		}
+		
+		//	Registers a listener. Calls it as soon as the animation finishes (before the child gets active)
+		void Animatable::AddListner(AnimationListenable *listener){
+			listener_ = listener;
+		}
+		
+		int Animatable::GetID() const{
+			return id_;
+		}
+		
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// MARK: AnimationLoop
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/**
+	 Start if from some good place and add/remove animations at runtime. If not active, no animation is going to run.
+	 This is the heart of all animations.
+	 */
+	AnimationLoop::AnimationLoop():
+		head_(nullptr)
+		{}
+		
+		void AnimationLoop::AddAnimation(Animatable *a){
+			if(!head_){
+				head_ = a;
+			}else{
+				a->next_ = head_;
+				head_ = a;
+			}
+		}
 	
+		void AnimationLoop::RemoveAnimation(Animatable *a){
+			if(a == head_){
+				head_ = a->next_;
+			}else{
+				Animatable *b = head_;
+				for(; b->next_ != a; b = b->next_)
+					;
+				b->next_ = a->next_;
+			}
+		}
+		
+		void AnimationLoop::Update(double dt){
+			for(Animatable *a = head_; a; a = a->next_){
+				a->Update(dt);
+			}
+		}
+
+	AnimationLoop *g_AnimationLoop = nullptr;
+	
+/*
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// TweenFrame Utils
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -134,6 +224,6 @@ namespace he{
 		}
 		return true;
 	}
-	
+*/
 }
 ///EOF

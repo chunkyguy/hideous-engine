@@ -27,7 +27,7 @@ namespace he{
 		delete parser_;
 	}
 
-	VertexTex *TextureAtlas::createTextureData(std::string image_name,
+	VertexTex *TextureAtlas::CreateTextureData(std::string image_name,
 											   double width, double height, bool aspect_correct ){
 		TextureAtlasRegion tex_region = GetTextureAtlasRegion(image_name);
 		FILE_LOG(logDEBUG) << "TextureAtlas: get texture: " << image_name;
@@ -44,6 +44,10 @@ namespace he{
 		std::map<std::string, TextureAtlasRegion>::iterator itr = parser_->GetTable().find(image_name);
 		assert(itr != parser_->GetTable().end());
 		return itr->second;
+	}
+	
+	Texture *TextureAtlas::GetTexture() const{
+		return texture_;
 	}
 
 }//EOF

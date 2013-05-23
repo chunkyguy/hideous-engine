@@ -9,6 +9,9 @@
 #ifndef __HideousGameEngine__MultiShadersTest__
 #define __HideousGameEngine__MultiShadersTest__
 #include "TestTemplate.h"
+
+#include <he/EventLoop/Gesture.h>
+
 #include "../Common/ObjectFactory.h"
 
 class MultiShadersTest : public ITest{
@@ -17,17 +20,18 @@ public:
 	MultiShadersTest(double w, double h);
 	void Update(double dt);
 	void Render();
+	void HandleGesture(const he::Gesture &gesture);
 	
 private:
-	ObjectFactory *factory_;
-	int load_indx_[3];
-	ColObj *color_object_;
-	TextureObj *texture_object_;
-	TextObj *text_object_;
-	
 	void load_objects();
 	void unload_objects();
-	void handle_gestures();
+
+	ColObj *color_object_;
+	ObjectFactory *factory_;
+	he::GestureListener<MultiShadersTest> *gesture_listner_;
+	int load_indx_[3];
+	TextObj *text_object_;
+	TextureObj *texture_object_;
 };
 
 #endif /* defined(__HideousGameEngine__MultiShadersTest__) */

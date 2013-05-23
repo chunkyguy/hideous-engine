@@ -50,6 +50,7 @@ namespace spine {
 	
 	AnimationState::~AnimationState () {
 		clear_queue();
+		delete internal_;
 	}
 	
 #include <stdio.h>

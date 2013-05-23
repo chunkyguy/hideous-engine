@@ -10,62 +10,91 @@
 
 #include <OpenGLES/ES2/gl.h>
 
+#include <he/Animation/Animation.h>
+#include <he/Shaders/RectColorSh/RectColorSh.h>
 #include <he/Utils/DebugLog.h>
-#include <he/Utils/Screen.h>
-#include <he/EventLoop/Gesture.h>
+#include <he/Utils/Utils.h>
 
 AnimationTest::~AnimationTest(){
-	if(anim_obj_){
+	if(objects_){
 		unload();
 	}
+	he::g_EventLoop->RemoveListener(gesture_listner_);
+	delete gesture_listner_;
+
+	he::GlobalsDestroy();
 }
 
 AnimationTest::AnimationTest(double width, double height) :
-anim_obj_(0)
+kObjects_(2),
+objects_(nullptr),
+active_object_(-1),
+gesture_listner_(nullptr)
 {
-	//setup globals
+	he::GlobalsInit(width, height);
+	
 	//debugger
 	const std::string loglevel("DEBUG1");
 	FILELog::ReportingLevel() = FILELog::FromString(loglevel);
 	FILE_LOG(logDEBUG) << "AnimationTest Logging Enabled: " << loglevel << std::endl;
-	he::g_Screen = he::Screen(width, height);
+	
+	gesture_listner_ = new he::GestureListener<AnimationTest>(this, &AnimationTest::HandleGesture);
+	he::g_EventLoop->AddListener(gesture_listner_);
+	
+	
 }
 
 void AnimationTest::Update(double dt){
-	handle_gesture();
-	if(anim_obj_){
-		anim_obj_->Update(dt);
+	he::g_AnimationLoop->Update(dt);
+
+	if(objects_){
+		for (int i = 0; i < kObjects_; ++i) {
+			objects_[i]->Update(dt);
+		}
 	}
 }
 void AnimationTest::Render(){
 	glClearColor(0.5, 0.5, 0.5, 1.0);
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	if(anim_obj_){
-		anim_obj_->Render();
+	if(objects_){
+		for (int i = 0; i < kObjects_; ++i) {
+			objects_[i]->Render();
+		}
 	}
 }
 
-void AnimationTest::handle_gesture(){
-	if(he::g_Gesture.action_ != he::Gesture::kTap){
-		return;
+void AnimationTest::HandleGesture(const he::Gesture &gesture){
+	if(gesture.action_ == he::Gesture::kTap && gesture.state_ == he::Gesture::kEnd){
+		if(objects_){
+			GLKVector2 pt = gesture.GetHitPoint();
+			objects_[active_object_++]->TouchEnd(pt);
+			if(active_object_ >= kObjects_){
+				active_object_ = 0;
+			}
+		}else{
+			load();
+		}
 	}
-	if(anim_obj_){
-		GLKVector2 pt = he::g_Gesture.GetHitPoint();
-		anim_obj_->TouchEnd(pt);
-	}else{
-		load();
-	}
-	he::g_Gesture.Reset();
 }
 
 void AnimationTest::load(){
-	if(anim_obj_){
+	if(objects_){
 		unload();
 	}
-	anim_obj_ = new AnimObj;
+	shader_ = new he::RectColorSh;
+	objects_ = new AnimObj* [kObjects_];
+	for(int i = 0; i < kObjects_; ++i){
+		objects_[i] = new AnimObj(shader_);
+	}
+	active_object_ = 0;
 }
 void AnimationTest::unload(){
-	delete anim_obj_; anim_obj_ = 0;
+	for(int i = 0; i < kObjects_; ++i){
+		delete objects_[i];
+	}
+	delete [] objects_; objects_ = nullptr;
+	active_object_ = -1;
+	delete shader_;
 }
 ////EOF

@@ -10,7 +10,15 @@
 #define __HideousGameEngine__AnimationTest__
 
 #include "TestTemplate.h"
+
+#include <he/EventLoop/Gesture.h>
+
 #include "AnimObj.h"
+
+namespace he{
+	class RectColorSh;
+}
+
 
 class AnimationTest : public ITest{
 public:
@@ -18,13 +26,18 @@ public:
 	AnimationTest(double width, double height);
 	void Update(double dt);
 	void Render();
-
+	void HandleGesture(const he::Gesture &gesture);
+	
 private:
-	void handle_gesture();
+	const int kObjects_;
+	
 	void load();
 	void unload();
 	
-	AnimObj *anim_obj_;
+	AnimObj **objects_;
+	int active_object_;
+	he::GestureListener<AnimationTest> *gesture_listner_;
+	he::RectColorSh *shader_;
 };
 
 #endif /* defined(__HideousGameEngine__AnimationTest__) */

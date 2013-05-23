@@ -11,11 +11,13 @@
 #include "TestTemplate.h"
 
 #include <list>
+#include <he/EventLoop/Gesture.h>
+
 
 //#define SPINE_TEXTURE_OBJECT
 #if defined(SPINE_TEXTURE_OBJECT)
 #include "spine.h"
- 
+
 #endif
 
 namespace he{
@@ -32,17 +34,18 @@ public:
 	RectTextureTest(double w, double h);
 	void Update(double dt);
 	void Render();
+	void HandleGesture(const he::Gesture &gesture);
 	
 private:
 	void load_textures();
 	void unload_textures();
-	void handle_gestures();
 	
 	std::list<he::RenderObject *>render_objects_;
 	std::list<he::Texture *>textures_;
 	std::list<he::VertexTex *>vertex_datas_;
 	he::TextureAtlas *atlas_;
 	he::RectTextureSh *shader_;
+	he::GestureListener<RectTextureTest> *gesture_listener_;
 
 #if defined(SPINE_TEXTURE_OBJECT)
 	void load_goblin();

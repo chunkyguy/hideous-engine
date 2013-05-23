@@ -9,7 +9,7 @@
 #include <he/Utils/Screen.h>
 
 namespace he{
-	Screen g_Screen;
+	Screen* g_Screen = nullptr;
 	
 	Screen::Screen(double width, double height) :
 	width_(width),

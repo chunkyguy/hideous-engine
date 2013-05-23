@@ -8,40 +8,44 @@
 
 #include "RectTextTest.h"
 
-#include <he/EventLoop/Gesture.h>
 #include <he/Font/Font.h>
 #include <he/RenderObject/RenderObject.h>
 #include <he/Utils/DebugLog.h>
-#include <he/Utils/Screen.h>
 #include <he/Utils/Utils.h>
 
 RectTextTest::~RectTextTest(){
 	unload_text();
+	
+	he::g_EventLoop->RemoveListener(gesture_listener_);
+	delete gesture_listener_;
+
+	he::GlobalsDestroy();
 }
 
 RectTextTest::RectTextTest(double w, double h) :
-font_(0),
-text_(0)
+font_(nullptr),
+text_(nullptr),
+gesture_listener_(nullptr)
 {
-		FILE_LOG(logDEBUG) <<"{" <<w << "," << h << "}";
-		//<<"{" << he::g_Screen.width/2 << "," << he::g_Screen.height << "}";
-		
 		//setup globals
+		he::GlobalsInit(w, h);
+	
 		//debugger
 		const std::string loglevel("DEBUG1");
 		FILELog::ReportingLevel() = FILELog::FromString(loglevel);
 		FILE_LOG(logDEBUG) << "Logging Enabled: RectTextTest" << loglevel << std::endl;
+		FILE_LOG(logDEBUG) <<"{" <<w << "," << h << "}";
+
 		//random
 		srand(time(NULL));
-		//screen constants
-		he::g_Screen = he::Screen(w, h);
 		
-		//start things here
+	gesture_listener_ = new he::GestureListener<RectTextTest>(this, &RectTextTest::HandleGesture);
+	he::g_EventLoop->AddListener(gesture_listener_);
+	
 		//waiting for input
 }
 
 void RectTextTest::Update(double dt){
-	handle_gestures();
 }
 void RectTextTest::Render(){	
 	glClearColor(0.5, 0.5, 0.5, 1.0);
@@ -67,10 +71,9 @@ void RectTextTest::unload_text(){
 	delete text_; text_ = 0;
 }
 
-void RectTextTest::handle_gestures(){
-	if(he::g_Gesture.action_ == he::Gesture::kTap){
+void RectTextTest::HandleGesture(const he::Gesture &gesture){
+	if(gesture.action_ == he::Gesture::kTap){
 		load_text();
-		he::g_Gesture.Reset();
 	}
 }
 

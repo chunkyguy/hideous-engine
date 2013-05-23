@@ -21,12 +21,12 @@
 //#define TEST_RECT_TEXT
 //#define TEST_MULTI_SHADERS
 //#define TEST_MULTI_FONT
-//#define TEST_ANIMATION
+#define TEST_ANIMATION
 //#define TEST_TEXTURE_BIG_BANG
 //#define TEST_GESTURE
 //#define TEST_PARTICLES
 //#define TEST_UI
-#define TEST_SPINE
+//#define TEST_SPINE
 
 ITest *GetTestFromFactory(double w, double h){
 	
@@ -139,5 +139,17 @@ ITest *GetTestFromFactory(double w, double h){
 	[super viewDidDisappear:YES];
 	self.loop = nil;
     [EAGLContext setCurrentContext:self.context];
+}
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+	[self.gestureCollector touches:touches action:kBegan withEvent:event];
+}
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+	[self.gestureCollector touches:touches action:kEnded withEvent:event];
+}
+-(void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{
+	[self.gestureCollector touches:touches action:kCancelled withEvent:event];
+}
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+	[self.gestureCollector touches:touches action:kMoved withEvent:event];
 }
 @end

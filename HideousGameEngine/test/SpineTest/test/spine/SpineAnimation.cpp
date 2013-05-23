@@ -25,7 +25,7 @@
 
 #include "SpineAnimation.h"
 #include <math.h>
-#include <GLKit/GLKMath.h>
+#include <he/Utils/GLKMath_Additions.h>
 
 #include "Bone.h"
 #include "Skeleton.h"

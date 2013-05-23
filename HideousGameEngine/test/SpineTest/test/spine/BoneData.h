@@ -27,7 +27,7 @@
 #define SPINE_BONEDATA_H_
 
 #include <string>
-#include <GLKit/GLKMath.h>
+#include <he/Utils/GLKMath_Additions.h>
 
 namespace spine {
 	

@@ -8,41 +8,46 @@
 
 #include "MultiFontTest.h"
 
-#include <he/EventLoop/Gesture.h>
 #include <he/Font/Font.h>
 #include <he/RenderObject/RenderObject.h>
 #include <he/Utils/DebugLog.h>
-#include <he/Utils/Screen.h>
 #include <he/Utils/Utils.h>
 
 MultiFontTest::~MultiFontTest(){
 	unload_text();
+	he::g_EventLoop->RemoveListener(gesture_listner_);
+	delete gesture_listner_;
+
+	he::GlobalsDestroy();
 }
 
 MultiFontTest::MultiFontTest(double w, double h) :
-courier_(0),
-simsun_(0),
-whacky_(0),
-labs_(0)
+courier_(nullptr),
+simsun_(nullptr),
+whacky_(nullptr),
+labs_(nullptr),
+gesture_listner_(nullptr)
 {
-	FILE_LOG(logDEBUG) <<"{" <<w << "," << h << "}";
-	//<<"{" << he::g_Screen.width/2 << "," << he::g_Screen.height << "}";
-	
 	//setup globals
+	he::GlobalsInit(w, h);
+
 	//debugger
 	const std::string loglevel("DEBUG1");
 	FILELog::ReportingLevel() = FILELog::FromString(loglevel);
 	FILE_LOG(logDEBUG) << "Logging Enabled: MultiFontTest" << loglevel << std::endl;
+	FILE_LOG(logDEBUG) <<"{" <<w << "," << h << "}";
+
 	//random
 	srand(time(NULL));
-	//screen constants
-	he::g_Screen = he::Screen(w, h);
-	//start things here
+
+	
+	gesture_listner_ = new he::GestureListener<MultiFontTest>(this, &MultiFontTest::HandleGesture);
+	he::g_EventLoop->AddListener(gesture_listner_);
+	
 	//waiting for input
 }
 
 void MultiFontTest::Update(double dt){
-	handle_gestures();
 }
 void MultiFontTest::Render(){
 	glClearColor(0.5, 0.5, 0.5, 1.0);
@@ -80,10 +85,9 @@ void MultiFontTest::unload_text(){
 	delete labs_; labs_ = 0;
 }
 
-void MultiFontTest::handle_gestures(){
-	if(he::g_Gesture.action_ == he::Gesture::kTap){
+void MultiFontTest::HandleGesture(const he::Gesture &gesture){
+	if(gesture.action_ == he::Gesture::kTap){
 		load_text();
-		he::g_Gesture.Reset();
 	}
 }
 

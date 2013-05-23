@@ -9,6 +9,9 @@
 #ifndef __HideousGameEngine__TextureBigBangTest__
 #define __HideousGameEngine__TextureBigBangTest__
 #include "TestTemplate.h"
+
+#include <he/EventLoop/Gesture.h>
+
 #include "TexturedSprite.h"
 
 namespace he{
@@ -25,6 +28,7 @@ public:
 	TextureBigBangTest(double width, double height);
 	void Update(double dt);
 	void Render();
+	void HandleGesture(const he::Gesture &gesture);
 	
 private:
 	const int kTotal_tex_sprites = 1000;
@@ -32,7 +36,6 @@ private:
 
 	void load(GLKVector2 at);
 	void unload();
-	void handle_gesture();
 	void load_assets();
 	void unload_assets();
 
@@ -44,5 +47,6 @@ private:
 	TexturedSprite **squares_;
 	State state_;
 	double delay_;
+	he::GestureListener<TextureBigBangTest> *gesture_listener_;
 };
 #endif /* defined(__HideousGameEngine__TextureBigBangTest__) */

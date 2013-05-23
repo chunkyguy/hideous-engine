@@ -8,7 +8,6 @@
 
 #include "ParticleTest.h"
 
-#include <he/EventLoop/Gesture.h>
 #include <he/ParticleSystem/Particle.h>
 #include <he/ParticleSystem/ParticleEnv.h>
 #include <he/RenderObject/RenderObject.h>
@@ -16,7 +15,6 @@
 #include <he/Texture/Texture.h>
 #include <he/Utils/DebugLog.h>
 #include <he/Utils/ResourcePath.hpp>
-#include <he/Utils/Screen.h>
 #include <he/Utils/Utils.h>
 #include <he/Vertex/VertexPar.h>
 
@@ -33,32 +31,42 @@ ParticleTest::~ParticleTest(){
 	if(count_){
 		unload();
 	}
+	
+	he::g_EventLoop->RemoveListener(gesture_listner_);
+	delete gesture_listner_;
+	
+	he::GlobalsDestroy();
 }
 
 ParticleTest::ParticleTest(double w, double h) :
-count_(0){
-	FILE_LOG(logDEBUG) <<"{" <<w << "," << h << "}";
-	//<<"{" << he::g_Screen.width/2 << "," << he::g_Screen.height << "}";
-	
-	//setup globals
+render_object_(nullptr),
+shader_(new he::ParticleSh),
+texture_(new he::Texture(he::ResourcePath() + "snow_particle.png")),
+vertex_data_(nullptr),
+environment_(nullptr),
+particles_(nullptr),
+gesture_listner_(nullptr),
+count_(0)
+{
+	//globals
+	he::GlobalsInit(w, h);
+
 	//debugger
 	const std::string loglevel("DEBUG1");
 	FILELog::ReportingLevel() = FILELog::FromString(loglevel);
 	FILE_LOG(logDEBUG) << "Logging Enabled: " << loglevel << std::endl;
+	FILE_LOG(logDEBUG) <<"{" <<w << "," << h << "}";
+	
 	//random
 	srand(time(NULL));
-	//screen constants
-	he::g_Screen.width_ = w;
-	he::g_Screen.height_ = h;
-	he::g_Screen.projection_ = GLKMatrix4MakeOrtho(-w/2, w/2, -h/2, h/2, 0.1, 100.0);
-
+	
+	gesture_listner_ = new he::GestureListener<ParticleTest>(this, &ParticleTest::HandleGesture);
+	he::g_EventLoop->AddListener(gesture_listner_);
+	
 	//start things here
-	shader_ = new he::ParticleSh;
-	texture_ = new he::Texture(he::ResourcePath() + "snow_particle.png");
 }
 
 void ParticleTest::Update(double dt){
-	HandleGestures();
 	for(int i = 0; i < count_; ++i){
 		particles_[i]->Update(dt);
 	}
@@ -71,20 +79,19 @@ void ParticleTest::Render(){
 	for(int i = 0; i < count_; ++i){
 		GLKVector2 pos = particles_[i]->position_;
 		GLKMatrix4 tMat = GLKMatrix4MakeTranslation(pos.x, pos.y, -0.1);
-		GLKMatrix4 mvpMat = GLKMatrix4Multiply(he::g_Screen.projection_, tMat);
+		GLKMatrix4 mvpMat = GLKMatrix4Multiply(he::g_Screen->projection_, tMat);
 		render_object_->mvp_ = mvpMat;
 		render_object_->Render();
 	}
 	
 }
 
-void ParticleTest::HandleGestures(){
-	if(he::g_Gesture.action_ == he::Gesture::kTap){
+void ParticleTest::HandleGesture(const he::Gesture &gesture){
+	if(gesture.action_ == he::Gesture::kTap){
 		if(count_){
 			unload();
 		}
-		load(he::g_Gesture.GetHitPoint());
-		he::g_Gesture.Reset();
+		load(gesture.GetHitPoint());
 	}
 }
 
@@ -119,7 +126,7 @@ void ParticleTest::load(GLKVector2 pos){
 //	<< "color: {" << color.r << "," << color.g << "," << color.b << "," << color.a << "}" << std::endl;
 	
 	vertex_data_ = new he::VertexPar(count_, 10 + he::Randf() * 10);
-	render_object_ = new he::RenderObject(vertex_data_, shader_, texture_, he::g_Screen.projection_, color);
+	render_object_ = new he::RenderObject(vertex_data_, shader_, texture_, he::g_Screen->projection_, color);
 	environment_ = new he::ParticleEnv(birth_delay_range, birth_rate_range,
 									   box, color,
 									   deathrate_range, life_range,

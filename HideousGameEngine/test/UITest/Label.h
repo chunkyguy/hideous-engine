@@ -9,7 +9,7 @@
 #ifndef __HideousGameEngine__Label__
 #define __HideousGameEngine__Label__
 
-#include <GLKit/GLKMath.h>
+#include <he/Utils/GLKMath_Additions.h>
 #include <string>
 #include <list>
 

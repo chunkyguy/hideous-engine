@@ -39,7 +39,7 @@ void TexturedSprite::Update(double dt){
 	//setPos(position_);
 
 	GLKVector2 newPos = GLKVector2Add(transform_.GetPosition(), GLKVector2Multiply(direction_, speed_));
-	if(newPos.x < -he::g_Screen.width_/2 || newPos.x > he::g_Screen.width_/2 || newPos.y < -he::g_Screen.height_/2 || newPos.y > he::g_Screen.height_/2){
+	if(newPos.x < -he::g_Screen->width_/2 || newPos.x > he::g_Screen->width_/2 || newPos.y < -he::g_Screen->height_/2 || newPos.y > he::g_Screen->height_/2){
 		life_state_ = kZombie;
 	}else{
 		transform_.SetPosition(newPos);

@@ -25,4 +25,41 @@ namespace he{
 			shader_->Render(this);
 		}
 	}
+	
+	void RenderObject::SetColor(const GLKVector4 &color){
+		color_ = color;
+	}
+	GLKVector4 RenderObject::GetColor() const{
+		return color_;
+	}
+	
+	void RenderObject::SetMVP(const GLKMatrix4 &mvp){
+		mvp_ = mvp;
+	}
+	GLKMatrix4 RenderObject::GetMVP() const{
+		return mvp_;
+	}
+	
+	void RenderObject::SetShader(IShader *shader){
+		shader_ = shader;
+	}
+	IShader *RenderObject::GetShader() const{
+		return shader_;
+	}
+	
+	void RenderObject::SetTexture(Texture *texture){
+		texture_ = texture;
+	}
+	Texture *RenderObject::GetTexture() const{
+		return texture_;
+	}
+	
+	void RenderObject::SetVertexData(IVertex *data){
+		vertex_data_ = data;
+	}
+	IVertex *RenderObject::GetVertexData() const{
+		return vertex_data_;
+	}
+
+
 }

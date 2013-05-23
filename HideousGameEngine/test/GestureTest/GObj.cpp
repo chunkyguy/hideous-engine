@@ -27,7 +27,7 @@ vert_(new he::VertexCol(-10, 10)),
 shader_(new he::RectColorSh),
 color_( GLKVector4Make(1.0, 1.0, 1.0, 1.0))
 {
-	render_object_ = new he::RenderObject(vert_, shader_, 0, he::g_Screen.projection_, color_);
+	render_object_ = new he::RenderObject(vert_, shader_, 0, he::g_Screen->projection_, color_);
 }
 
 void GObj::Update(double dt){

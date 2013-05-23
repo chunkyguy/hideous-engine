@@ -8,42 +8,44 @@
 
 #include "RectTextureTest.h"
 
-#include <he/EventLoop/Gesture.h>
 #include <he/RenderObject/RenderObject.h>
 #include <he/Shaders/RectTextureSh/RectTextureSh.h>
 #include <he/Texture/Texture.h>
 #include <he/Texture/TextureAtlas.h>
 #include <he/Utils/DebugLog.h>
-#include <he/Utils/Screen.h>
 #include <he/Utils/ResourcePath.hpp>
 #include <he/Utils/Utils.h>
 #include <he/Vertex/VertexTex.h>
 
 RectTextureTest::~RectTextureTest(){
 	unload_textures();
+	he::g_EventLoop->RemoveListener(gesture_listener_);
+	delete gesture_listener_;
+
+	he::GlobalsDestroy();
 }
 
 RectTextureTest::RectTextureTest(double w, double h):
 atlas_(0)
 {
-	FILE_LOG(logDEBUG) <<"{" <<w << "," << h << "}";
-	
 	//setup globals
+	he::GlobalsInit(w, h);
+	
 	//debugger
 	const std::string loglevel("DEBUG1");
 	FILELog::ReportingLevel() = FILELog::FromString(loglevel);
 	FILE_LOG(logDEBUG) << "Logging Enabled: " << loglevel << std::endl;
+	FILE_LOG(logDEBUG) <<"{" <<w << "," << h << "}";
+
 	//random
 	srand(time(NULL));
-	//screen constants
-	he::g_Screen = he::Screen(w, h);
 	
-	//start things here
+	gesture_listener_ = new he::GestureListener<RectTextureTest>(this, &RectTextureTest::HandleGesture);
+	he::g_EventLoop->AddListener(gesture_listener_);
 	// waiting for input
 }
 
 void RectTextureTest::Update(double dt){
-	handle_gestures();
 }
 
 void RectTextureTest::Render(){
@@ -78,7 +80,7 @@ void RectTextureTest::load_textures(){
 	
 	pos = GLKVector2Make(-150.0, 0.0);
 	tMat = GLKMatrix4MakeTranslation(pos.x, pos.y, -0.1);
-	mvpMat = GLKMatrix4Multiply(he::g_Screen.projection_, tMat);
+	mvpMat = GLKMatrix4Multiply(he::g_Screen->projection_, tMat);
 	he::RenderObject *r = new he::RenderObject(v, shader_, r1t, mvpMat);
 	render_objects_.push_back(r);
 	textures_.push_back(r1t);
@@ -89,7 +91,7 @@ void RectTextureTest::load_textures(){
 	v = new he::VertexTex(50, 25);
 	pos = GLKVector2Make(-50.0, 0.0);
 	tMat = GLKMatrix4MakeTranslation(pos.x, pos.y, -0.1);
-	mvpMat = GLKMatrix4Multiply(he::g_Screen.projection_, tMat);
+	mvpMat = GLKMatrix4Multiply(he::g_Screen->projection_, tMat);
 	he::RenderObject *r2 = new he::RenderObject(v, shader_, r2t, mvpMat);
 	render_objects_.push_back(r2);
 	textures_.push_back(r2t);
@@ -100,29 +102,29 @@ void RectTextureTest::load_textures(){
 	
 	//fish
 	for(int i = 0; i < 2; ++i){
-		v = atlas_->createTextureData("fish.png", 100, 100, i%2);
+		v = atlas_->CreateTextureData("fish.png", 100, 100, i%2);
 		GLKVector2 pos = GLKVector2Make(50.0, -100.0 + i*100.0);
 		GLKMatrix4 tMat = GLKMatrix4MakeTranslation(pos.x, pos.y, -0.1);
-		GLKMatrix4 mvpMat = GLKMatrix4Multiply(he::g_Screen.projection_, tMat);
+		GLKMatrix4 mvpMat = GLKMatrix4Multiply(he::g_Screen->projection_, tMat);
 		he::RenderObject *r3 = new he::RenderObject(v, shader_, atlas_->texture_, mvpMat);
 		render_objects_.push_back(r3);
 		vertex_datas_.push_back(v);
 	}
 	
 	//rope
-	v = atlas_->createTextureData("rope.png");
+	v = atlas_->CreateTextureData("rope.png");
 	pos = GLKVector2Make(150.0, 0.0);
 	tMat = GLKMatrix4MakeTranslation(pos.x, pos.y, -0.1);
-	mvpMat = GLKMatrix4Multiply(he::g_Screen.projection_, tMat);
+	mvpMat = GLKMatrix4Multiply(he::g_Screen->projection_, tMat);
 	he::RenderObject *r4 = new he::RenderObject(v, shader_, atlas_->texture_, mvpMat);
 	render_objects_.push_back(r4);
 	vertex_datas_.push_back(v);
 	
 	//seaweed
-	v = atlas_->createTextureData("seaweed.png");
+	v = atlas_->CreateTextureData("seaweed.png", 100.0);
 	pos = GLKVector2Make(0.0, -100.0);
 	tMat = GLKMatrix4MakeTranslation(pos.x, pos.y, -0.1);
-	mvpMat = GLKMatrix4Multiply(he::g_Screen.projection_, tMat);
+	mvpMat = GLKMatrix4Multiply(he::g_Screen->projection_, tMat);
 	he::RenderObject *r5 = new he::RenderObject(v, shader_, atlas_->texture_, mvpMat);
 	render_objects_.push_back(r5);
 	vertex_datas_.push_back(v);
@@ -145,10 +147,9 @@ void RectTextureTest::unload_textures(){
 	if(shader_) delete shader_;
 }
 
-void RectTextureTest::handle_gestures(){
-	if(he::g_Gesture.action_ == he::Gesture::kTap){
+void RectTextureTest::HandleGesture(const he::Gesture &gesture){
+	if(gesture.action_ == he::Gesture::kTap){
 		load_textures();
-		he::g_Gesture.Reset();
 	}
 }
 

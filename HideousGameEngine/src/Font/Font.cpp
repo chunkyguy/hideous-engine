@@ -114,6 +114,10 @@ namespace he{
 		transform_ = transform;
 	}
 	
+	const Transform &Text::GetTransform() const{
+		return transform_;
+	}
+	
 	GLKVector2 Text::GetSize(){
 		GLKVector2 size = GLKVector2Make(0,0);
 		for(int i = 0; i < string_.size(); ++i){

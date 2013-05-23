@@ -11,27 +11,32 @@
 #include <string>
 #include <algorithm>
 
-#include <he/EventLoop/Gesture.h>
 #include <he/Utils/DebugLog.h>
-#include <he/Utils/Screen.h>
 #include <he/Utils/Utils.h>
 
 MultiShadersTest::~MultiShadersTest(){
 	unload_objects();
+	he::g_EventLoop->RemoveListener(gesture_listner_);
+	delete gesture_listner_;
+	
+	he::GlobalsDestroy();
 }
 
 MultiShadersTest::MultiShadersTest(double w, double h) :
-factory_(0),
-color_object_(0),
-texture_object_(0),
-text_object_(0)
+color_object_(nullptr),
+factory_(nullptr),
+gesture_listner_(nullptr),
+load_indx_(),
+text_object_(nullptr),
+texture_object_(nullptr)
 {
 	//setup globals
+	he::GlobalsInit(w, h);
+
 	//debugger
 	const std::string loglevel("DEBUG1");
 	FILELog::ReportingLevel() = FILELog::FromString(loglevel);
 	FILE_LOG(logDEBUG) << "MultiShadersTest Logging Enabled: " << loglevel << std::endl;
-	he::g_Screen = he::Screen(w, h);
 
 	//start things here
 	load_indx_[0] = 0;
@@ -39,6 +44,9 @@ text_object_(0)
 	load_indx_[2] = 2;
 	srand(time(NULL));
 	
+	gesture_listner_ = new he::GestureListener<MultiShadersTest>(this, &MultiShadersTest::HandleGesture);
+	he::g_EventLoop->AddListener(gesture_listner_);
+
 	//waiting for input
 }
 void MultiShadersTest::Render(){
@@ -58,7 +66,6 @@ void MultiShadersTest::Render(){
 
 
 void MultiShadersTest::Update(double dt){
-	handle_gestures();
 }
 
 void MultiShadersTest::load_objects(){
@@ -97,10 +104,9 @@ void MultiShadersTest::unload_objects(){
 	delete factory_; factory_ = 0;
 }
 
-void MultiShadersTest::handle_gestures(){
-	if(he::g_Gesture.action_ == he::Gesture::kTap){
+void MultiShadersTest::HandleGesture(const he::Gesture &gesture){
+	if(gesture.action_ == he::Gesture::kTap && gesture.state_ == he::Gesture::kEnd){
 		load_objects();
-		he::g_Gesture.Reset();
 	}
 }
 //EOF

@@ -102,7 +102,7 @@ namespace spine {
 		}
 	}
 	
-	SkeletonData* SkeletonJson::ReadSkeletonDataFile ( std::string path) {
+	SkeletonData* SkeletonJson::CreateSkeletonData ( std::string path) {
 		he::FileBuffer buffer(path);
 		
 		std::string json = buffer.GetString();

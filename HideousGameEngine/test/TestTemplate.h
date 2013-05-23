@@ -11,7 +11,7 @@
 
 #ifndef __HideousGameEngine__TestTemplate__
 #define __HideousGameEngine__TestTemplate__
-#include <GLKit/GLKMath.h>
+#include <he/Utils/GLKMath_Additions.h>
 
 class ITest{
 public:

@@ -7,10 +7,26 @@
 //
 
 #include <he/Utils/Utils.h>
+
 #include <fstream>
+
+#include <he/Animation/Animation.h>
+#include <he/EventLoop/Gesture.h>
 
 namespace he{
 	
+	void GlobalsInit(double w, double h){
+		g_Screen = new Screen(w, h);
+		g_EventLoop = new EventLoop;
+		g_AnimationLoop = new AnimationLoop;
+	}
+	
+	void GlobalsDestroy(){
+		delete g_Screen;
+		delete g_EventLoop;
+		delete g_AnimationLoop;
+	}
+
 	//Set to next power of 2
 	int NextPOT (int a){
 		int rval = 1;

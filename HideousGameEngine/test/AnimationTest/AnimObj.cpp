@@ -16,31 +16,43 @@
 #include <he/Vertex/VertexCol.h>
 
 AnimObj::~AnimObj(){
-	if(anim_chain_){
-		delete anim_chain_;	anim_chain_ = 0;
-		delete tmp_transform_; tmp_transform_ = 0;
+	if(scale_animation_){
+		he::g_AnimationLoop->RemoveAnimation(scale_animation_); delete scale_animation_;
 	}
+	if(trans_animation_){
+		he::g_AnimationLoop->RemoveAnimation(trans_animation_); delete trans_animation_;
+	}
+//	if(anim_chain_){
+//		delete anim_chain_;	anim_chain_ = 0;
+//		delete tmp_transform_; tmp_transform_ = 0;
+//	}
 	delete render_object_;
-	delete shader_;
 	delete vert_data_;
+	if(animation_listener_){
+		delete animation_listener_;
+	}
 }
 
-AnimObj::AnimObj() :
+AnimObj::AnimObj(he::RectColorSh *shader) :
 transform_(GLKVector2Make(0.0, 0.0), 0.0, GLKVector2Make(1.0, 1.0)),
-tmp_transform_(0),
-anim_chain_(0)
+//tmp_transform_(0),
+//anim_chain_(0)
+shader_(shader),
+scale_animation_(nullptr),
+trans_animation_(nullptr),
+animation_listener_(nullptr)
 {
-	shader_ = new he::RectColorSh;
 	vert_data_ = new he::VertexCol(-50.0, 50.0);
-	GLKVector4 color = GLKVector4Make(he::Randf(), he::Randf(), he::Randf(), he::Randf());
-	render_object_ = new he::RenderObject(vert_data_, shader_, 0, he::g_Screen.projection_, color);
+	GLKVector4 color = GLKVector4Make(0.0, 0.0, 0.0, 1.0);
+	render_object_ = new he::RenderObject(vert_data_, shader_, 0, he::g_Screen->projection_, color);
+	animation_listener_ = new he::AnimationListener<AnimObj>(this, &AnimObj::AnimationCallback);
 }
 
 void AnimObj::Update(double dt){
 
 	// Get MV-matrix from transform or tmpTransform.
-	GLKMatrix4 mvMat;
-
+	//	GLKMatrix4 mvMat = transform_.GetMV();;
+/*
 	//	Run animations if available.
 	if(anim_chain_){
 		if(!anim_chain_->NextFrame()){
@@ -56,14 +68,49 @@ void AnimObj::Update(double dt){
 	}else{
 		mvMat = transform_.GetMV();
 	}
-	
-	GLKMatrix4 mvpMat = GLKMatrix4Multiply(he::g_Screen.projection_, mvMat);
-	render_object_->mvp_ = mvpMat;
+	*/
+	render_object_->SetMVP(transform_.GetMVP());
 }
 
 #pragma mark - Animations
 void AnimObj::TouchEnd(GLKVector2 pt){
-
+	if(scale_animation_){
+		he::g_AnimationLoop->RemoveAnimation(scale_animation_);
+		delete scale_animation_; scale_animation_ = nullptr;
+	}
+	GLKVector2 scale_points[2] = {transform_.scale_, GLKVector2MultiplyScalar(transform_.scale_, 2.0)};
+	scale_animation_ = new he::Animation<GLKVector2>(1,
+													 &transform_.scale_,
+													 he::Tweener<GLKVector2>(he::BackEaseIn, scale_points[0], scale_points[1]),
+													 100);
+	he::Animation<GLKVector2> *scale_down_anim = new he::Animation<GLKVector2>(11,
+																			   &transform_.scale_,
+																			   he::Tweener<GLKVector2>(he::BounceEaseOut, scale_points[1], scale_points[0]),
+																			   50);
+	GLKVector4 rand_color = GLKVector4Make(he::Randf(),he::Randf(),he::Randf(),1.0);
+	he::Animation<GLKVector4> *color_switch = new he::Animation<GLKVector4>(111,
+																			&render_object_->color_,
+																			he::Tweener<GLKVector4>(he::Linear, render_object_->color_, rand_color),
+																			100);
+	color_switch->AddListner(animation_listener_);
+	scale_down_anim->AddChild(color_switch);
+	scale_animation_->AddChild(scale_down_anim);
+	he::g_AnimationLoop->AddAnimation(scale_animation_);
+	
+	if(trans_animation_){
+		he::g_AnimationLoop->RemoveAnimation(trans_animation_);
+		delete trans_animation_; trans_animation_ = nullptr;
+	}
+	trans_animation_ = new he::Animation<GLKVector2>(2,
+													 &transform_.position_,
+													 he::Tweener<GLKVector2>(he::Linear, transform_.position_, pt),
+													 100);
+	trans_animation_->AddChild(new he::Animation<double>(21,
+														 &transform_.rotation_,
+														 he::Tweener<double>(he::Linear, transform_.rotation_, atan2(pt.y, pt.x)),
+														 80));
+	he::g_AnimationLoop->AddAnimation(trans_animation_);
+/*
 	if(anim_chain_){
 		delete anim_chain_; anim_chain_ = 0;
 		delete tmp_transform_; tmp_transform_ = 0;
@@ -83,9 +130,15 @@ void AnimObj::TouchEnd(GLKVector2 pt){
 
 	double rotation_points[2] = {tmp_transform_->rotation_, atan2(pt.y, pt.x)};
 	anim_chain_->Push(new he::Animation<double>(&tmp_transform_->rotation_, he::MakeTweenFrames(20, he::kLinear, rotation_points)));
+ */
 }
 
 void AnimObj::Render(){
 	render_object_->Render();
+}
+
+void AnimObj::AnimationCallback(int animation_id){
+	transform_ = he::Transform(GLKVector2Make(0.0, 0.0), 0.0, GLKVector2Make(1.0, 1.0));
+	render_object_->SetColor( GLKVector4Make(0.0, 0.0, 0.0, 1.0) );
 }
 ///EOF

@@ -35,13 +35,13 @@
 		195FE5961740B5A1003A10CA /* spineboy.png in Resources */ = {isa = PBXBuildFile; fileRef = 195FE58B1740B5A1003A10CA /* spineboy.png */; };
 		195FE5971740B5A1003A10CA /* spineboy.zwd in Resources */ = {isa = PBXBuildFile; fileRef = 195FE58C1740B5A1003A10CA /* spineboy.zwd */; };
 		1962B846173B7070004E9A1C /* SpineTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1962B844173B7068004E9A1C /* SpineTest.cpp */; };
+		199C766C174C885700882A9C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 199C766B174C885600882A9C /* CoreFoundation.framework */; };
 		19A6E5791732781F006ACD91 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A6E5781732781F006ACD91 /* UIKit.framework */; };
 		19A6E57B1732781F006ACD91 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A6E57A1732781F006ACD91 /* Foundation.framework */; };
 		19A6E57D1732781F006ACD91 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A6E57C1732781F006ACD91 /* CoreGraphics.framework */; };
-		19A6E57F1732781F006ACD91 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A6E57E1732781F006ACD91 /* GLKit.framework */; };
 		19A6E5811732781F006ACD91 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A6E5801732781F006ACD91 /* OpenGLES.framework */; };
 		19A6E5871732781F006ACD91 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19A6E5851732781F006ACD91 /* InfoPlist.strings */; };
-		19A6E5891732781F006ACD91 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E5881732781F006ACD91 /* main.m */; };
+		19A6E5891732781F006ACD91 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E5881732781F006ACD91 /* main.mm */; };
 		19A6E654173278A1006ACD91 /* HEViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E5D3173278A1006ACD91 /* HEViewController.mm */; };
 		19A6E655173278A1006ACD91 /* libFreetype2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A6E5D6173278A1006ACD91 /* libFreetype2.a */; };
 		19A6E656173278A1006ACD91 /* ParticleSh.fragsh in Resources */ = {isa = PBXBuildFile; fileRef = 19A6E5D9173278A1006ACD91 /* ParticleSh.fragsh */; };
@@ -118,10 +118,13 @@
 		19A6E69E173278A1006ACD91 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A6E653173278A1006ACD91 /* Icon@2x.png */; };
 		19A6E6A1173278B4006ACD91 /* WLAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E6A0173278B4006ACD91 /* WLAppDelegate.mm */; };
 		19A6E6A3173278BE006ACD91 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 19A6E6A2173278BE006ACD91 /* README.md */; };
+		19CE12CD174C8F8200F3BE52 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CE12CC174C8F8200F3BE52 /* GLKit.framework */; };
 		19EB949F1738C8F200FAF69C /* easing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19EB949E1738C8F200FAF69C /* easing.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19062FD8174C9E7D00E42681 /* GLKMath_Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLKMath_Additions.h; sourceTree = "<group>"; };
+		19062FD9174C9F1D00E42681 /* HideousGameEngine-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HideousGameEngine-Prefix.pch"; sourceTree = "<group>"; };
 		193A5EA21743F2DB00CB945B /* AnimationState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AnimationState.cpp; sourceTree = "<group>"; };
 		193A5EA31743F2DB00CB945B /* AnimationState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationState.h; sourceTree = "<group>"; };
 		193A5EA41743F2DB00CB945B /* AnimationStateData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AnimationStateData.cpp; sourceTree = "<group>"; };
@@ -198,16 +201,16 @@
 		1995827A1734575F0094714E /* VertexData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexData.h; sourceTree = "<group>"; };
 		1995827B1734575F0094714E /* VertexPar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexPar.h; sourceTree = "<group>"; };
 		1995827C1734575F0094714E /* VertexTex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexTex.h; sourceTree = "<group>"; };
+		199C7656174C75E700882A9C /* Tweener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tweener.h; sourceTree = "<group>"; };
+		199C766B174C885600882A9C /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		19A6E5751732781F006ACD91 /* HideousGameEngine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HideousGameEngine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19A6E5781732781F006ACD91 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		19A6E57A1732781F006ACD91 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		19A6E57C1732781F006ACD91 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		19A6E57E1732781F006ACD91 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		19A6E5801732781F006ACD91 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		19A6E5841732781F006ACD91 /* HideousGameEngine-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HideousGameEngine-Info.plist"; sourceTree = "<group>"; };
 		19A6E5861732781F006ACD91 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		19A6E5881732781F006ACD91 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		19A6E58A1732781F006ACD91 /* HideousGameEngine-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HideousGameEngine-Prefix.pch"; sourceTree = "<group>"; };
+		19A6E5881732781F006ACD91 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		19A6E5D2173278A1006ACD91 /* HEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEViewController.h; sourceTree = "<group>"; };
 		19A6E5D3173278A1006ACD91 /* HEViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HEViewController.mm; sourceTree = "<group>"; };
 		19A6E5D6173278A1006ACD91 /* libFreetype2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFreetype2.a; sourceTree = "<group>"; };
@@ -305,6 +308,7 @@
 		19A6E69F173278B4006ACD91 /* WLAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLAppDelegate.h; sourceTree = "<group>"; };
 		19A6E6A0173278B4006ACD91 /* WLAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WLAppDelegate.mm; sourceTree = "<group>"; };
 		19A6E6A2173278BE006ACD91 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		19CE12CC174C8F8200F3BE52 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		19EB949E1738C8F200FAF69C /* easing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = easing.cpp; sourceTree = "<group>"; };
 		19EB94A01738C92D00FAF69C /* easing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = easing.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -314,10 +318,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19CE12CD174C8F8200F3BE52 /* GLKit.framework in Frameworks */,
+				199C766C174C885700882A9C /* CoreFoundation.framework in Frameworks */,
 				19A6E5791732781F006ACD91 /* UIKit.framework in Frameworks */,
 				19A6E57B1732781F006ACD91 /* Foundation.framework in Frameworks */,
 				19A6E57D1732781F006ACD91 /* CoreGraphics.framework in Frameworks */,
-				19A6E57F1732781F006ACD91 /* GLKit.framework in Frameworks */,
 				19A6E5811732781F006ACD91 /* OpenGLES.framework in Frameworks */,
 				19A6E655173278A1006ACD91 /* libFreetype2.a in Frameworks */,
 			);
@@ -444,6 +449,7 @@
 			children = (
 				199582521734575F0094714E /* Animation.h */,
 				19EB94A01738C92D00FAF69C /* easing.h */,
+				199C7656174C75E700882A9C /* Tweener.h */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -555,6 +561,7 @@
 				199582741734575F0094714E /* Screen.h */,
 				199582751734575F0094714E /* Transform.h */,
 				199582761734575F0094714E /* Utils.h */,
+				19062FD8174C9E7D00E42681 /* GLKMath_Additions.h */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -591,10 +598,11 @@
 		19A6E5771732781F006ACD91 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				19CE12CC174C8F8200F3BE52 /* GLKit.framework */,
+				199C766B174C885600882A9C /* CoreFoundation.framework */,
 				19A6E5781732781F006ACD91 /* UIKit.framework */,
 				19A6E57A1732781F006ACD91 /* Foundation.framework */,
 				19A6E57C1732781F006ACD91 /* CoreGraphics.framework */,
-				19A6E57E1732781F006ACD91 /* GLKit.framework */,
 				19A6E5801732781F006ACD91 /* OpenGLES.framework */,
 			);
 			name = Frameworks;
@@ -618,10 +626,10 @@
 		19A6E5831732781F006ACD91 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				19062FD9174C9F1D00E42681 /* HideousGameEngine-Prefix.pch */,
 				19A6E5841732781F006ACD91 /* HideousGameEngine-Info.plist */,
 				19A6E5851732781F006ACD91 /* InfoPlist.strings */,
-				19A6E5881732781F006ACD91 /* main.m */,
-				19A6E58A1732781F006ACD91 /* HideousGameEngine-Prefix.pch */,
+				19A6E5881732781F006ACD91 /* main.mm */,
 				19A6E69F173278B4006ACD91 /* WLAppDelegate.h */,
 				19A6E6A0173278B4006ACD91 /* WLAppDelegate.mm */,
 			);
@@ -1111,7 +1119,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19A6E5891732781F006ACD91 /* main.m in Sources */,
+				19A6E5891732781F006ACD91 /* main.mm in Sources */,
 				19A6E654173278A1006ACD91 /* HEViewController.mm in Sources */,
 				19A6E65E173278A1006ACD91 /* Animation.cpp in Sources */,
 				19A6E65F173278A1006ACD91 /* Gesture.cpp in Sources */,

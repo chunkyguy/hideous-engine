@@ -20,9 +20,9 @@
 		[view addGestureRecognizer:singleTapDownGesture];
 		[singleTapDownGesture release];
 		
-		UITapGestureRecognizer *singleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapGestureAction:)];
-		[view addGestureRecognizer:singleTapGesture];
-		[singleTapGesture release];
+//		UITapGestureRecognizer *singleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapGestureAction:)];
+//		[view addGestureRecognizer:singleTapGesture];
+//		[singleTapGesture release];
 		
 		lastPinchScale = 1.0;
 		UIPinchGestureRecognizer *pinchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchGestureAction:)];
@@ -36,140 +36,93 @@
 	return self;
 }
 
-
+// Long press event.
 -(void)singleTapDownGestureAction:(UILongPressGestureRecognizer *)gesture{
-	switch(gesture.state){
-		case UIGestureRecognizerStateBegan:
-			he::g_Gesture.state_ = he::Gesture::kBegin;
-			break;
-		case UIGestureRecognizerStateChanged:
-			he::g_Gesture.state_ = he::Gesture::kChange;
-			break;
-		case UIGestureRecognizerStateEnded:
-			he::g_Gesture.state_ = he::Gesture::kEnd;
-			break;
-		case UIGestureRecognizerStateCancelled:
-			he::g_Gesture.state_ = he::Gesture::kCancel;
-			break;
-		case UIGestureRecognizerStateFailed:
-			he::g_Gesture.state_ = he::Gesture::kFail;
-			break;
-		case UIGestureRecognizerStatePossible:
-			he::g_Gesture.state_ = he::Gesture::kPossible;
-			break;
-	}
-	
-	if(gesture.state == UIGestureRecognizerStateBegan){
-		he::g_Gesture.continious_ = true;
-		he::g_Gesture.fingers_ = [gesture numberOfTouches];
-		he::g_Gesture.taps_ = 1;
-		he::g_Gesture.action_ = he::Gesture::kTap;
-		CGPoint tPt = [gesture locationInView:view];
-		he::g_Gesture.touch_point_ = GLKVector2Make(tPt.x, tPt.y);
-	}else if(gesture.state == UIGestureRecognizerStateEnded){
-		he::g_Gesture.Reset();
-	}
-}
+	he::Gesture g;
+	g.continious_ = true;
+	g.fingers_ = [gesture numberOfTouches];
+	g.taps_ = 1;
+	g.action_ = he::Gesture::kLongTap;
+	CGPoint tPt = [gesture locationInView:view];
+	g.touch_point_ = GLKVector2Make(tPt.x, tPt.y);
 
--(void)singleTapGestureAction:(UITapGestureRecognizer *)gesture{
 	switch(gesture.state){
-		case UIGestureRecognizerStateBegan:
-			he::g_Gesture.state_ = he::Gesture::kBegin;
-			break;
-		case UIGestureRecognizerStateChanged:
-			he::g_Gesture.state_ = he::Gesture::kChange;
-			break;
-		case UIGestureRecognizerStateEnded:
-			he::g_Gesture.state_ = he::Gesture::kEnd;
-			break;
-		case UIGestureRecognizerStateCancelled:
-			he::g_Gesture.state_ = he::Gesture::kCancel;
-			break;
-		case UIGestureRecognizerStateFailed:
-			he::g_Gesture.state_ = he::Gesture::kFail;
-			break;
-		case UIGestureRecognizerStatePossible:
-			he::g_Gesture.state_ = he::Gesture::kPossible;
-			break;
+			
+		case UIGestureRecognizerStateBegan:		g.state_ = he::Gesture::kBegin;		break;
+		case UIGestureRecognizerStateChanged:	g.state_ = he::Gesture::kChange;		break;
+		case UIGestureRecognizerStateEnded:		g.state_ = he::Gesture::kEnd;		break;
+		case UIGestureRecognizerStateCancelled:	g.state_ = he::Gesture::kCancel;		break;
+		case UIGestureRecognizerStateFailed:		g.state_ = he::Gesture::kFail;		break;
+		case UIGestureRecognizerStatePossible:	g.state_ = he::Gesture::kPossible;	break;
 	}
-	
-	if(gesture.state == UIGestureRecognizerStateEnded){
-		he::g_Gesture.continious_ = false;
-		he::g_Gesture.fingers_ = [gesture numberOfTouches];
-		he::g_Gesture.taps_ = 1;
-		he::g_Gesture.action_ = he::Gesture::kTap;
-		CGPoint tPt = [gesture locationInView:view];
-		he::g_Gesture.touch_point_ = GLKVector2Make(tPt.x, tPt.y);
-	}
+
+	he::g_EventLoop->SetGesture(g);
 }
 
 -(void) pinchGestureAction:(UIPinchGestureRecognizer *)gesture{
+	he::Gesture g;
+	if(gesture.scale < lastPinchScale){	//zoom out
+		g.action_ = he::Gesture::kZoomOut;
+	}else{	// zoom in
+		g.action_ = he::Gesture::kZoomIn;
+	}
+	g.continious_ = true;
+	g.fingers_ = 2;
+	g.velocity_ = GLKVector2MultiplyScalar(g.velocity_, fabs(gesture.velocity));
+	lastPinchScale = gesture.scale;
+	
 	switch(gesture.state){
-		case UIGestureRecognizerStateBegan:
-			he::g_Gesture.state_ = he::Gesture::kBegin;
-			break;
-		case UIGestureRecognizerStateChanged:
-			he::g_Gesture.state_ = he::Gesture::kChange;
-			break;
-		case UIGestureRecognizerStateEnded:
-			he::g_Gesture.state_ = he::Gesture::kEnd;
-			break;
-		case UIGestureRecognizerStateCancelled:
-			he::g_Gesture.state_ = he::Gesture::kCancel;
-			break;
-		case UIGestureRecognizerStateFailed:
-			he::g_Gesture.state_ = he::Gesture::kFail;
-			break;
-		case UIGestureRecognizerStatePossible:
-			he::g_Gesture.state_ = he::Gesture::kPossible;
-			break;
+		case UIGestureRecognizerStateBegan:		g.state_ = he::Gesture::kBegin;		break;
+		case UIGestureRecognizerStateChanged:	g.state_ = he::Gesture::kChange;		break;
+		case UIGestureRecognizerStateEnded:		g.state_ = he::Gesture::kEnd;		break;
+		case UIGestureRecognizerStateCancelled:	g.state_ = he::Gesture::kCancel;		break;
+		case UIGestureRecognizerStateFailed:		g.state_ = he::Gesture::kFail;		break;
+		case UIGestureRecognizerStatePossible:	g.state_ = he::Gesture::kPossible;	break;
 	}
-
-	if(gesture.state == UIGestureRecognizerStateBegan){
-		if(gesture.scale < lastPinchScale){	//zoom out
-			he::g_Gesture.action_ = he::Gesture::kZoomOut;
-		}else{	// zoom in
-			he::g_Gesture.action_ = he::Gesture::kZoomIn;
-		}
-		he::g_Gesture.continious_ = true;
-		he::g_Gesture.fingers_ = 2;
-		he::g_Gesture.velocity_
-		= GLKVector2MultiplyScalar(he::g_Gesture.velocity_, fabs(gesture.velocity));
-		lastPinchScale = gesture.scale;
-	}else if(gesture.state == UIGestureRecognizerStateEnded){
-		he::g_Gesture.Reset();
-	}
+	
+	he::g_EventLoop->SetGesture(g);
 }
 
--(void)dragGestureAction:(UIPanGestureRecognizer *)gesture{
+-(void)dragGestureAction:(UIPanGestureRecognizer *)gesture{	
+	he::Gesture g;
+	CGPoint pt = [gesture translationInView:view];
+	g.touch_point_ = GLKVector2Make(pt.x, pt.y);
+	g.action_ = he::Gesture::kDrag;
+	g.continious_ = true;
+
 	switch(gesture.state){
-		case UIGestureRecognizerStateBegan:
-			he::g_Gesture.state_ = he::Gesture::kBegin;
-			break;
-		case UIGestureRecognizerStateChanged:
-			he::g_Gesture.state_ = he::Gesture::kChange;
-			break;
-		case UIGestureRecognizerStateEnded:
-			he::g_Gesture.state_ = he::Gesture::kEnd;
-			break;
-		case UIGestureRecognizerStateCancelled:
-			he::g_Gesture.state_ = he::Gesture::kCancel;
-			break;
-		case UIGestureRecognizerStateFailed:
-			he::g_Gesture.state_ = he::Gesture::kFail;
-			break;
-		case UIGestureRecognizerStatePossible:
-			he::g_Gesture.state_ = he::Gesture::kPossible;
-			break;
+		case UIGestureRecognizerStateBegan:		g.state_ = he::Gesture::kBegin;		break;
+		case UIGestureRecognizerStateChanged:	g.state_ = he::Gesture::kChange;		break;
+		case UIGestureRecognizerStateEnded:		g.state_ = he::Gesture::kEnd;		break;
+		case UIGestureRecognizerStateCancelled:	g.state_ = he::Gesture::kCancel;		break;
+		case UIGestureRecognizerStateFailed:		g.state_ = he::Gesture::kFail;		break;
+		case UIGestureRecognizerStatePossible:	g.state_ = he::Gesture::kPossible;	break;
 	}
 
-	if(gesture.state == UIGestureRecognizerStateBegan || gesture.state == UIGestureRecognizerStateChanged){
-		CGPoint pt = [gesture translationInView:view];
-		he::g_Gesture.touch_point_ = GLKVector2Make(pt.x, pt.y);
-		he::g_Gesture.action_ = he::Gesture::kDrag;
-		he::g_Gesture.continious_ = true;
-	}else{
-		he::g_Gesture.Reset();
-	}
+	he::g_EventLoop->SetGesture(g);
 }
+
+// For single tap gesture
+-(void)touches:(NSSet *)touches action:(TouchesAction)action withEvent:(UIEvent *)event{
+	he::Gesture g;
+	g.continious_ = false;
+	g.fingers_ = 1;
+	g.taps_ = 1;
+	g.action_ = he::Gesture::kTap;
+	CGPoint tPt = [[touches anyObject] locationInView:view];
+	g.touch_point_ = GLKVector2Make(tPt.x, tPt.y);
+	
+	switch(action){
+			
+		case kBegan:		g.state_ = he::Gesture::kBegin;	break;
+		case kEnded:		g.state_ = he::Gesture::kEnd;	break;
+		case kCancelled:	g.state_ = he::Gesture::kCancel;	break;
+		case kMoved:
+		default:
+			break;
+	}
+	
+	he::g_EventLoop->SetGesture(g);
+}
+
 @end

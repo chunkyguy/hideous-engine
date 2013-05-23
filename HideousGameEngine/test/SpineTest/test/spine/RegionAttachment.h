@@ -28,7 +28,7 @@
 
 #include "Attachment.h"
 
-#include <GLKit/GLKMath.h>
+#include <he/Utils/GLKMath_Additions.h>
 #include <he/Vertex/VertexData.h>
 
 #include "Slot.h"

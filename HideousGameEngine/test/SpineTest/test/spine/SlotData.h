@@ -25,7 +25,7 @@
 
 #ifndef SPINE_SLOTDATA_H_
 #define SPINE_SLOTDATA_H_
-#include <GLKit/GLKMath.h>
+#include <he/Utils/GLKMath_Additions.h>
 
 #include "BoneData.h"
 

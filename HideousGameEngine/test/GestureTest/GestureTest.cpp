@@ -8,31 +8,39 @@
 
 #include "GestureTest.h"
 
-#include <GLKit/GLKMath.h>
+#include <he/Utils/GLKMath_Additions.h>
 #include <OpenGLES/ES2/gl.h>
 
-#include <he/EventLoop/Gesture.h>
 #include <he/Utils/DebugLog.h>
-#include <he/Utils/Screen.h>
-
-GestureTest::GestureTest(double width, double height){
-	FILE_LOG(logDEBUG) <<"{" << width << "," << height << "}";
-	//<<"{" << he::g_Screen.width/2 << "," << he::g_Screen.height << "}";
-	
+#include <he/Utils/Utils.h>
+GestureTest::GestureTest(double width, double height) :
+gesture_listner_(nullptr)
+{
 	//setup globals
+	he::GlobalsInit(width, height);
+
 	//debugger
 	const std::string loglevel("DEBUG1");
 	FILELog::ReportingLevel() = FILELog::FromString(loglevel);
 	FILE_LOG(logDEBUG) << "Logging Enabled: " << loglevel << std::endl;
+	FILE_LOG(logDEBUG) <<"{" << width << "," << height << "}";
+
 	//random
 	srand(time(NULL));
-	//screen constants
-	he::g_Screen = he::Screen(width, height);
+	
+	gesture_listner_ = new he::GestureListener<GestureTest>(this, &GestureTest::HandleGesture);
+	he::g_EventLoop->AddListener(gesture_listner_);
+	
 	//start things here
+}
+GestureTest::~GestureTest(){
+	he::g_EventLoop->RemoveListener(gesture_listner_);
+	delete gesture_listner_;
+	
+	he::GlobalsDestroy();
 }
 
 void GestureTest::Update(double dt){
-	handle_gesture();
 	obj_.Update(dt);
 }
 
@@ -44,15 +52,15 @@ void GestureTest::Render(){
 }
 
 //	Long press = movement
-void GestureTest::handle_gesture(){
-	switch(he::g_Gesture.action_){
+void GestureTest::HandleGesture(const he::Gesture &gesture){
+	switch(gesture.action_){
 			
 		case he::Gesture::kTap:{
-			if(he::g_Gesture.continious_){
-				obj_.SetDirection(he::g_Screen.MapPointToGrid(he::g_Gesture.GetHitPoint()));
+			if(gesture.continious_){
+				obj_.SetDirection(he::g_Screen->MapPointToGrid(gesture.GetHitPoint()));
 			}else{
 				GLKVector4 clr = GLKVector4Make(0.0, 0.0, 0.0, 1.0);
-				switch(he::g_Screen.MapPointToGrid(he::g_Gesture.GetHitPoint())){
+				switch(he::g_Screen->MapPointToGrid(gesture.GetHitPoint())){
 					case he::Screen::Grid::kTopLeft:		clr.r = 0.3;break;
 					case he::Screen::Grid::kTop:			clr.r = 0.6;break;
 					case he::Screen::Grid::kTopRight:		 clr.r = 1.0;break;
@@ -68,7 +76,6 @@ void GestureTest::handle_gesture(){
 					case he::Screen::Grid::kUnknown:		 break;
 				}
 				obj_.SetColor(clr);
-				he::g_Gesture.Reset();
 			}
 		}			break;
 			
@@ -79,6 +86,9 @@ void GestureTest::handle_gesture(){
 			break;
 			
 		case he::Gesture::kDrag:
+			break;
+			
+		case he::Gesture::kLongTap:
 			break;
 			
 		case he::Gesture::kNone:{

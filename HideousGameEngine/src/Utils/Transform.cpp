@@ -16,7 +16,7 @@ namespace he{
 	scale_(scale)
 	{}
 	
-	GLKMatrix4 Transform::GetMV(){
+	GLKMatrix4 Transform::GetMV() const{
 		GLKMatrix4 tMat = GLKMatrix4MakeTranslation(position_.x, position_.y, -0.1);
 		GLKMatrix4 rMat = GLKMatrix4MakeRotation(rotation_, 0.0, 0.0, 1.0);
 		GLKMatrix4 sMat = GLKMatrix4MakeScale(scale_.x, scale_.y, 1.0);
@@ -35,8 +35,8 @@ namespace he{
 		scale_ = other.scale_;		
 	}
 	
-	GLKMatrix4 Transform::GetMVP(){
-		return GLKMatrix4Multiply(he::g_Screen.projection_, GetMV());
+	GLKMatrix4 Transform::GetMVP() const{
+		return GLKMatrix4Multiply(he::g_Screen->projection_, GetMV());
 	}
 	
 	const double Transform::GetRotation() const{

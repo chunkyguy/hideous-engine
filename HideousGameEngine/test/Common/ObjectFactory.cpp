@@ -73,11 +73,11 @@ ColObj::~ColObj(){
 	delete object_;
 }
 ColObj::ColObj(he::RectColorSh *shader){
-	double dimension = he::Randf() * he::g_Screen.width_/2 + 10.0;
+	double dimension = he::Randf() * he::g_Screen->width_/2 + 10.0;
 	vert_ = new he::VertexCol(dimension/2, dimension/2);
 	GLKVector4 color = GLKVector4Make(he::Randf(), he::Randf(), he::Randf(), he::Randf());
-	object_ = new he::RenderObject(vert_, shader, 0, he::g_Screen.projection_, color);
-	transform_.SetPosition( GLKVector2Make(he::Randf()*he::g_Screen.width_ - he::g_Screen.width_/2, he::Randf()*he::g_Screen.height_ - he::g_Screen.height_/2));
+	object_ = new he::RenderObject(vert_, shader, 0, he::g_Screen->projection_, color);
+	transform_.SetPosition( GLKVector2Make(he::Randf()*he::g_Screen->width_ - he::g_Screen->width_/2, he::Randf()*he::g_Screen->height_ - he::g_Screen->height_/2));
 }
 
 void ColObj::Render(){
@@ -92,8 +92,8 @@ TextureObj::~TextureObj(){
 	delete object_;
 }
 TextureObj::TextureObj(he::RectTextureSh *shader, he::Texture *texture, 	he::VertexTex *vert){
-	object_ = new he::RenderObject(vert, shader, texture, he::g_Screen.projection_);
-	transform_.SetPosition( GLKVector2Make(he::Randf()*he::g_Screen.width_ - he::g_Screen.width_/2, he::Randf()*he::g_Screen.height_ - he::g_Screen.height_/2) );
+	object_ = new he::RenderObject(vert, shader, texture, he::g_Screen->projection_);
+	transform_.SetPosition( GLKVector2Make(he::Randf()*he::g_Screen->width_ - he::g_Screen->width_/2, he::Randf()*he::g_Screen->height_ - he::g_Screen->height_/2) );
 }
 void TextureObj::Render(){
 	object_->mvp_ = transform_.GetMVP();
@@ -109,7 +109,7 @@ TextObj::~TextObj(){
 TextObj::TextObj(he::Font *font){
 	text_ = new he::Text("Whacky");
 	font->LoadText(text_);
-	transform_.SetPosition(GLKVector2Make(he::Randf()*he::g_Screen.width_ - he::g_Screen.width_/2, he::Randf()*he::g_Screen.height_ - he::g_Screen.height_/2));
+	transform_.SetPosition(GLKVector2Make(he::Randf()*he::g_Screen->width_ - he::g_Screen->width_/2, he::Randf()*he::g_Screen->height_ - he::g_Screen->height_/2));
 }
 void TextObj::Render(){
 	text_->Render();

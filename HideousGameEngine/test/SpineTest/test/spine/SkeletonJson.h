@@ -49,8 +49,8 @@ namespace spine {
 		
 		~SkeletonJson ();
 
-		// Load file into memory
-		SkeletonData* ReadSkeletonDataFile ( std::string path);
+		// Load file into memory and create skeleton data
+		SkeletonData* CreateSkeletonData ( std::string path);
 		
 		std::string GetError();
 		

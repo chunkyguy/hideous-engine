@@ -10,6 +10,8 @@
 #define __HideousGameEngine__MultiFontTest__
 #include "TestTemplate.h"
 
+#include <he/EventLoop/Gesture.h>
+
 namespace he{
 	class Font;
 	class Text;
@@ -21,15 +23,18 @@ public:
 	MultiFontTest(double w, double h);
 	void Update(double dt);
 	void Render();
+	void HandleGesture(const he::Gesture &gesture);
 	
 private:
 	he::Font *courier_;
 	he::Font *simsun_;
+	
 	he::Text *whacky_;
 	he::Text *labs_;
 	
+	he::GestureListener<MultiFontTest> *gesture_listner_;
+	
 	void load_text();
 	void unload_text();
-	void handle_gestures();
 };
 #endif /* defined(__HideousGameEngine__MultiFontTest__) */

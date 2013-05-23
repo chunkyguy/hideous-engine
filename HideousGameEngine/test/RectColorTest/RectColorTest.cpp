@@ -8,39 +8,42 @@
 
 #include "RectColorTest.h"
 
-#include <he/EventLoop/Gesture.h>
 #include <he/Shaders/RectColorSh/RectColorSh.h>
 #include <he/Utils/DebugLog.h>
-#include <he/Utils/Screen.h>
 #include <he/Utils/Utils.h>
 
 RectColorTest::~RectColorTest(){
 	delete shader_;
+	he::g_EventLoop->RemoveListener(gesture_listner_);
+	delete gesture_listner_;
+	
+	he::GlobalsDestroy();
 }
 RectColorTest::RectColorTest(double w, double h) :
 squares_(0),
 shader_(new he::RectColorSh)
 {
-	FILE_LOG(logDEBUG) <<"{" <<w << "," << h << "}";
-	//<<"{" << he::g_Screen.width/2 << "," << he::g_Screen.height << "}";
-	
-	//setup globals
+	// Init globals
+	he::GlobalsInit(w, h);
+
 	//debugger
 	const std::string loglevel("DEBUG1");
 	FILELog::ReportingLevel() = FILELog::FromString(loglevel);
 	FILE_LOG(logDEBUG) << "Logging Enabled: RectColorTest " << loglevel << std::endl;
+	FILE_LOG(logDEBUG) <<"{" <<w << "," << h << "}";
+
 	//random
 	srand(time(NULL));
-	//screen constants
-	he::g_Screen = he::Screen(w, h);
 
-	//start things here
+
+	gesture_listner_ = new he::GestureListener<RectColorTest>(this, &RectColorTest::HandleGesture);
+	he::g_EventLoop->AddListener(gesture_listner_);
+	
 	// waiting for gesture
 }
 
 
 void RectColorTest::Update(double dt){
-	handle_gestures();
 
 	if(!squares_){
 		return;
@@ -95,10 +98,9 @@ void RectColorTest::unload_squares(){
 	//	will get loaded again at next instance of RectColor
 	//	he::RectColor::cleanAsset();
 }
-void RectColorTest::	handle_gestures(){
-	if(he::g_Gesture.action_ == he::Gesture::kTap){
+void RectColorTest::	HandleGesture(const he::Gesture &gesture){
+	if(gesture.action_ == he::Gesture::kTap){
 		load_squares();
-		he::g_Gesture.Reset();
 	}
 }
 

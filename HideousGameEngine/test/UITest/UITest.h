@@ -11,9 +11,11 @@
 #define __HideousGameEngine__UITest__
 #include "TestTemplate.h"
 
+#include <he/EventLoop/Gesture.h>
+
 namespace he{
 	class RenderObject;
-	class AnimationChain;
+	//	class AnimationChain;
 	class RectColorSh;
 	class VertexCol;
 	class Font;
@@ -26,16 +28,17 @@ public:
 	UITest(double width, double height);
 	void Update(double dt);
 	void Render();
-
+	void HandleGesture(const he::Gesture &gesture);
+	
 private:
-	void handle_gesture();
 	
 	he::Font *font_;
 	Label *label_;
 	he::RenderObject *render_object_;
 	he::RectColorSh *shader_;
 	he::VertexCol *vertex_data_;
-	he::AnimationChain *scale_animation_;
+	//	he::AnimationChain *scale_animation_;
+	he::GestureListener<UITest> *gesture_listener_;
 };
 
 

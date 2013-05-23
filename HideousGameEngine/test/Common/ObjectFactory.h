@@ -10,7 +10,7 @@
 #define __HEAssets__ObjectFactory__
 
 #include <list>
-#include <GLKit/GLKMath.h>
+#include <he/Utils/GLKMath_Additions.h>
 
 #include <he/Utils/Transform.h>
 
@@ -41,7 +41,7 @@ private:
 class TextureObj{
 public:
 	~TextureObj();
-	TextureObj(he::RectTextureSh *shader, he::Texture *texture, 	he::VertexTex *vert);
+	TextureObj(he::RectTextureSh *shader, he::Texture *texture, he::VertexTex *vert);
 	void Render();
 	
 private:

@@ -8,34 +8,42 @@
 
 #include "TextureBigBangTest.h"
 
-#include <he/EventLoop/Gesture.h>
 #include	 <he/RenderObject/RenderObject.h>
 #include <he/Shaders/RectTextureSh/RectTextureSh.h>
 #include <he/Texture/Texture.h>
 #include <he/Texture/TextureAtlas.h>
 #include <he/Utils/DebugLog.h>
 #include <he/Utils/ResourcePath.hpp>
-#include <he/Utils/Screen.h>
 #include <he/Utils/Utils.h>
 #include <he/Vertex/VertexTex.h>
 
 TextureBigBangTest::~TextureBigBangTest(){
 	unload_assets();
+	
+	he::g_EventLoop->RemoveListener(gesture_listener_);
+	delete gesture_listener_;
+
+	he::GlobalsDestroy();
 }
 
 TextureBigBangTest::TextureBigBangTest(double w, double h){
-	FILE_LOG(logDEBUG) <<"{" <<w << "," << h << "}";
 	//setup globals
+	he::GlobalsInit(w, h);
+	
 	//debugger
 	const std::string loglevel("DEBUG1");
 	FILELog::ReportingLevel() = FILELog::FromString(loglevel);
 	FILE_LOG(logDEBUG) << "Logging Enabled: " << loglevel << std::endl;
+	FILE_LOG(logDEBUG) <<"{" <<w << "," << h << "}";
+
 	//random
 	srand(time(NULL));
-	//screen constants
-	he::g_Screen = he::Screen(w, h);
 
 	load_assets();
+	
+	gesture_listener_ = new he::GestureListener<TextureBigBangTest>(this, &TextureBigBangTest::HandleGesture);
+	he::g_EventLoop->AddListener(gesture_listener_);
+	
 	state_ = kDead;
 }
 
@@ -68,7 +76,6 @@ void TextureBigBangTest::unload(){
 }
 
 void TextureBigBangTest::Update(double dt){
-	handle_gesture();
 	
 	if(state_ != kRunning){
 		return;
@@ -99,18 +106,17 @@ void TextureBigBangTest::Render(){
 	//	k.Render();
 }
 
-void TextureBigBangTest::handle_gesture(){
-	if(he::g_Gesture.action_ == he::Gesture::kTap){
+void TextureBigBangTest::HandleGesture(const he::Gesture &gesture){
+	if(gesture.action_ == he::Gesture::kTap){
 		switch(state_){
 			case kRunning:
 				unload();
 				break;
 				
 			case kDead:
-				load(he::g_Gesture.GetHitPoint());
+				load(gesture.GetHitPoint());
 				break;
 		}
-		he::g_Gesture.Reset();
 	}
 }
 

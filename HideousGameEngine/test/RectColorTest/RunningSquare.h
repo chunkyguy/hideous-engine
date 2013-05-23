@@ -12,7 +12,7 @@
 #ifndef __HideousGameEngine__RunningSquare__
 #define __HideousGameEngine__RunningSquare__
 
-#include <GLKit/GLKMath.h>
+#include <he/Utils/GLKMath_Additions.h>
 #include <he/Utils/Transform.h>
 
 namespace he{

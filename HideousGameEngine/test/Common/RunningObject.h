@@ -9,7 +9,7 @@
 #ifndef __HEAssets__RunningObject__
 #define __HEAssets__RunningObject__
 
-#include <GLKit/GLKMath.h>
+#include <he/Utils/GLKMath_Additions.h>
 
 namespace he{
 	class RenderObject;

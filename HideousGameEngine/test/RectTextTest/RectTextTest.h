@@ -10,6 +10,8 @@
 #define __HideousGameEngine__RectTextTest__
 #include "TestTemplate.h"
 
+#include <he/EventLoop/Gesture.h>
+
 namespace he{
 	class Font;
 	class Text;
@@ -21,13 +23,14 @@ public:
 	RectTextTest(double width, double height);
 	void Update(double dt);
 	void Render();
+	void HandleGesture(const he::Gesture &gesture);
 	
 private:
 	void load_text();
 	void unload_text();
-	void handle_gestures();
 
 	he::Font *font_;
 	he::Text *text_;
+	he::GestureListener<RectTextTest> *gesture_listener_;
 };
 #endif /* defined(__HideousGameEngine__RectTextTest__) */

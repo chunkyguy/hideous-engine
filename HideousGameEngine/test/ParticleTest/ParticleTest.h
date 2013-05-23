@@ -11,6 +11,8 @@
 
 #include "TestTemplate.h"
 
+#include <he/EventLoop/Gesture.h>
+
 namespace he{
 	class RenderObject;
 	class ParticleSh;
@@ -26,7 +28,7 @@ public:
 	ParticleTest(double w, double h);
 	void Update(double dt);
 	void Render();
-	void HandleGestures();
+	void HandleGesture(const he::Gesture &gesture);
 	
 private:
 	he::RenderObject *render_object_;
@@ -35,6 +37,7 @@ private:
 	he::VertexPar *vertex_data_;
 	he::ParticleEnv *environment_;
 	he::Particle ** particles_;
+	he::GestureListener<ParticleTest> *gesture_listner_;
 	int count_;
 	
 	

@@ -9,7 +9,7 @@
 #include "SpineTest.h"
 
 #include <cstdio>
-#include <GLKit/GLKMath.h>
+#include <he/Utils/GLKMath_Additions.h>
 
 #include <he/RenderObject/RenderObject.h>
 #if defined(DEBUG_DRAW)
@@ -25,28 +25,42 @@
 #include <he/Vertex/VertexData.h>
 #include <he/Utils/DebugLog.h>
 #include <he/Utils/ResourcePath.hpp>
-#include <he/Utils/Screen.h>
+#include <he/Utils/Utils.h>
 
 //#define GOBLIN
 #define SPINEBOY
+#define PRINT_LOG
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // MARK: SpintTest
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 SpineTest::~SpineTest(){
-	delete skeletonData_;
-	//Atlas_dispose(atlas_);
-	delete atlas_;
-	delete drawable_;
+	he::g_EventLoop->RemoveListener(gesture_listener_);
+	delete gesture_listener_;
+
+	he::GlobalsDestroy();
 }
 
-SpineTest::SpineTest(double width, double height){
+SpineTest::SpineTest(double width, double height) :
+animation_index_(0),
+atlas_(nullptr),
+drawable_(nullptr),
+gesture_listener_(nullptr),
+skeletonData_(nullptr)
+{
+	he::GlobalsInit(width, height);
+	
 	const std::string loglevel("DEBUG1");
 	FILELog::ReportingLevel() = FILELog::FromString(loglevel);
 	FILE_LOG(logDEBUG) << "Logging Enabled: SpineTest: " << loglevel << std::endl;
 
-	he::g_Screen = he::Screen(width, height);
+	gesture_listener_ = new he::GestureListener<SpineTest>(this, &SpineTest::HandleGesture);
+	he::g_EventLoop->AddListener(gesture_listener_);
 	
+	// waiting for input...
+}
+
+void SpineTest::load(std::string animation_name){
 #if defined(SPINEBOY)
 	std::string atlas_image_fpath = he::ResourcePath() + "spineboy.png";
 	std::string atlas_file_fpath = he::ResourcePath() + "spineboy.plist";
@@ -67,13 +81,22 @@ SpineTest::SpineTest(double width, double height){
 	atlas_ = new he::TextureAtlas(atlas_image_fpath, atlas_file_fpath);
 	spine::SkeletonJson* json = new spine::SkeletonJson(atlas_);
 
-	skeletonData_ = json->ReadSkeletonDataFile( json_fpath.c_str());
+	skeletonData_ = json->CreateSkeletonData( json_fpath.c_str());
 	if (!skeletonData_) printf("Error: %s\n", json->GetError().c_str());
+
+#if defined(PRINT_LOG)
 	printf("Default skin name: %s\n", skeletonData_->GetDefaultSkin()->GetName().c_str());
+#endif
 	
-	spine::Animation* walkAnimation = skeletonData_->FindAnimation( "jump");
-	if (!walkAnimation) printf("Error: %s\n", json->GetError().c_str());
+	spine::Animation* walkAnimation = skeletonData_->FindAnimation( animation_name);
+
+#if defined(PRINT_LOG)
+	if (!walkAnimation){
+		printf("Error: %s\n", json->GetError().c_str());
+	}
 	printf("Animation timelineCount: %d\n", walkAnimation->GetTimelineCount());
+#endif
+
 	delete json;
 
 	drawable_ = new SkeletonDrawable(skeletonData_);
@@ -93,15 +116,38 @@ SpineTest::SpineTest(double width, double height){
 	skeleton->UpdateWorldTransform();
 	
 	drawable_->state_->SetAnimation( walkAnimation, true);
+}
 
+void SpineTest::unload(){
+	delete skeletonData_; skeletonData_ = nullptr;
+	delete atlas_; atlas_ = nullptr;
+	delete drawable_; drawable_ = nullptr;
+}
+
+void SpineTest::HandleGesture(const he::Gesture &gesture){
+	if(gesture.action_ != he::Gesture::kTap){
+		return;
+	}
+	std::string animations[] = {"walk", "jump"};
+	if(++animation_index_ > 1){
+		animation_index_ = 0;
+	}
+	if(drawable_){
+		unload();
+	}
+	load(animations[animation_index_]);
 }
 
 void SpineTest::Update(double dt){
-	drawable_->Update(dt);
+	if(drawable_){
+		drawable_->Update(dt);
+	}
 }
 
 void SpineTest::Render(){
-	drawable_->Render();
+	if(drawable_){
+		drawable_->Render();
+	}
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -110,7 +156,6 @@ void SpineTest::Render(){
 
 SkeletonDrawable::SkeletonDrawable (spine::SkeletonData* skeletonData, spine::AnimationStateData* stateData) :
 timeScale_(1)
-//vertexArray(new VertexArray(Quads, skeletonData->boneCount * 4))
 {
 #if defined(DEBUG_DRAW)
 	shader_ = new he::RectColorSh;
@@ -140,16 +185,28 @@ void SkeletonDrawable::Render() {
 
 	he::VertexData vertexPositions;
 	for (int i = 0; i < skeleton_->GetSlotCount(); ++i) {
+
+#if defined(PRINT_LOG)
 		printf("Slot #: %d\n",i);
+#endif
 
 		spine::Slot* slot = skeleton_->GetSlotAtIndex(i);
 		spine::Attachment* attachment = slot->GetAttachment();
 		if (!attachment) {
+
+#if defined(PRINT_LOG)
 			printf("No attachment!\n");
+#endif
+			
 			continue;
 		}
+		
 		if (attachment->GetType() != spine::ATTACHMENT_REGION){
-			printf("Attachment is not region!\n");
+
+#if defined(PRINT_LOG)
+printf("Attachment is not region!\n");
+#endif
+			
 			continue;
 		}
 		spine::RegionAttachment* regionAttachment = (spine::RegionAttachment*)attachment;
@@ -162,6 +219,8 @@ void SkeletonDrawable::Render() {
 #else
 		he::TextureAtlas *atlas = regionAttachment->GetRendererObject();;
 		he::TextureAtlasRegion region = atlas->GetTextureAtlasRegion(regionAttachment->GetName());
+
+#if defined(PRINT_LOG)
 		printf("name:\t\t\t\t\t\t\t%s\n"
 			   "{{x, y}, {width, height}}:\t\t{{%.2f, %.2f}, {%.2f, %.2f}}\n"
 			   "{{u,v},{u2,v2}}:\t\t\t\t{{%.2f, %.2f}, {%.2f, %.2f}}\n"
@@ -178,8 +237,11 @@ void SkeletonDrawable::Render() {
 			   region.texture_rotated?"y":"n",
 			   region.sprite_trimmed?"y":"n"
 			   );
-
+#endif
+		
 		he::Texture *texture = atlas->texture_;
+		
+#if defined(PRINT_LOG)
 		GLKVector2 tex_size = texture->GetSize();
 		printf("size:\t\t\t\t\t\t\t{%.2f, %.2f}\n",tex_size.x,tex_size.y);
 
@@ -190,44 +252,43 @@ void SkeletonDrawable::Render() {
 			printf("%.2f, %.2f,\n", pos_data[vd_indx], pos_data[vd_indx+1]);
 		}
 		printf("};\n");
-
+#endif
+		
 		GLKVector4 eff_frame = region.sprite_color_rect;
 		//rotate if image is roated
 		if(region.texture_rotated){
 			float tmp;
 			tmp = eff_frame.z; eff_frame.z = eff_frame.w; eff_frame.w = tmp;
-			printf("{{x', y'}, {width', height'}}:\t\t{{%.2f, %.2f}, {%.2f, %.2f}}\n",eff_frame.x, eff_frame.y, eff_frame.z, eff_frame.w);
 
-//			pos_data[0] = vertexPositions[spine::VERTEX_Y1];		pos_data[1] = vertexPositions[spine::VERTEX_X1];
-//			pos_data[2] = vertexPositions[spine::VERTEX_Y4];		pos_data[3] = vertexPositions[spine::VERTEX_X4];
-//			pos_data[4] = vertexPositions[spine::VERTEX_Y2];		pos_data[5] = vertexPositions[spine::VERTEX_X2];
-//			pos_data[6] = vertexPositions[spine::VERTEX_Y3];		pos_data[7] = vertexPositions[spine::VERTEX_X3];
-//			
-//			printf("GLfloat pos_data'[] = {\n");
-//			for(int vd_indx = 0; vd_indx < 8; vd_indx += 2){
-//				printf("%.2f, %.2f,\n", pos_data[vd_indx], pos_data[vd_indx+1]);
-//			}
-//			printf("};\n");
+#if defined(PRINT_LOG)
+			printf("{{x', y'}, {width', height'}}:\t\t{{%.2f, %.2f}, {%.2f, %.2f}}\n",eff_frame.x, eff_frame.y, eff_frame.z, eff_frame.w);
+#endif
+
 		}
 
 		GLKVector4 tex_coords = region.tex_coords;
+
+#if defined(PRINT_LOG)
 		printf("tex_coords:\t\t\t\t\t{{%.2f, %.2f}, {%.2f, %.2f}}\n", tex_coords.x, tex_coords.y, tex_coords.z, tex_coords.w);
+#endif
 		
 		he::VertexTex *vertex_data = new he::VertexTex(eff_frame.z, eff_frame.w, false, tex_coords);
 		
 		vertex_data->position_data_ = vertexPositions;
 		
+#if defined(PRINT_LOG)
 		printf("GLfloat tex_data[] = {\n");
 		GLfloat *vtex_data = vertex_data->texture_data_.GetData();
 		for(int vd_indx = 0; vd_indx < 8; vd_indx += 2){
 			printf("%.2f, %.2f,\n", vtex_data[vd_indx], vtex_data[vd_indx+1]);
 		}
 		printf("};\n");
+#endif
 
 #endif
 		GLKVector2 pos = GLKVector2Make(0.0, -150);
 		GLKMatrix4 tMat = GLKMatrix4MakeTranslation(pos.x, pos.y, -0.1);
-		GLKMatrix4 mvpMat = GLKMatrix4Multiply(he::g_Screen.projection_, tMat);
+		GLKMatrix4 mvpMat = GLKMatrix4Multiply(he::g_Screen->projection_, tMat);
 
 
 		GLKVector4 color = GLKVector4Multiply(skeleton_->GetColor(), slot->GetColor());
@@ -239,6 +300,7 @@ void SkeletonDrawable::Render() {
 	}
 }
 
+// Use this to make use of .atlas files
 //GLKVector4 SkeletonDrawable::convert_to_tex_coords(GLKVector4 frame, GLKVector2 fullFrameSize){
 //	float u = frame.x;
 //	float v = frame.y;
