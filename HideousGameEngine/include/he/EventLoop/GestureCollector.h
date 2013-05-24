@@ -9,9 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+typedef enum{
+	kBegan, kMoved, kEnded, kCancelled
+} TouchesAction;
+
 @interface GestureCollector : NSObject{
 	UIView *view;
 	double lastPinchScale;	// To monitor change in scale
 }
 -(id)initWithView:(UIView *)view;
+-(void)touches:(NSSet *)touches action:(TouchesAction)action withEvent:(UIEvent *)event;
 @end

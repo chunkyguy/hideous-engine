@@ -39,9 +39,10 @@ std::ostringstream& DebugLog<T>::Get(TLogLevel level)
 {
 	os.precision(5);
 	os << std::fixed;
-    os << "- " << NowTime();
-    os << " " << ToString(level) << ": ";
+    os << "$(" << NowTime();
+    os << " " << ToString(level);
     os << std::string(level > logDEBUG ? level - logDEBUG : 0, '\t');
+	os << ") ";
     return os;
 }
 
@@ -158,7 +159,7 @@ inline std::string NowTime()
 #include <sys/time.h>
 
 inline std::string NowTime()
-{
+{ 
     char buffer[11];
     time_t t;
     time(&t);

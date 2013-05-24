@@ -11,7 +11,7 @@
 #ifndef ParticleSystem_Particle_h
 #define ParticleSystem_Particle_h
 
-#include <GLKit/GLKMath.h>
+#include <he/Utils/GLKMath_Additions.h>
 
 namespace he{
 	

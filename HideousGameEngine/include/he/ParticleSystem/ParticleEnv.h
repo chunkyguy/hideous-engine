@@ -10,7 +10,7 @@
 
 #ifndef ParticleSystem_ParticleEnv_h
 #define ParticleSystem_ParticleEnv_h
-#include <GLKit/GLKMath.h>
+#include <he/Utils/GLKMath_Additions.h>
 namespace he{
 	
 	class ParticleEnv{

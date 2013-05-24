@@ -11,7 +11,7 @@
 #ifndef ParticleSystem_ParticleShader_h
 #define ParticleSystem_ParticleShader_h
 
-#include <GLKit/GLKMath.h>
+#include <he/Utils/GLKMath_Additions.h>
 #include <OpenGLES/ES2/gl.h>
 
 #include <he/Shaders/IShader.h>

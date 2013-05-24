@@ -8,7 +8,7 @@
  
 #ifndef __HEAssets__RenderObject__
 #define __HEAssets__RenderObject__
-#include <GLKit/GLKMath.h>
+#include <he/Utils/GLKMath_Additions.h>
 
 namespace he{
 	
@@ -24,7 +24,22 @@ namespace he{
 					 GLKMatrix4 mvp = GLKMatrix4Identity,
  					 GLKVector4 color = GLKVector4Make(1.0,1.0,1.0,1.0));
 		void Render();
-
+		
+		void SetColor(const GLKVector4 &color);
+		GLKVector4 GetColor() const;
+		
+		void SetMVP(const GLKMatrix4 &mvp);
+		GLKMatrix4 GetMVP() const;
+		
+		void SetShader(IShader *shader);
+		IShader *GetShader() const;
+		
+		void SetTexture(Texture *texture);
+		Texture *GetTexture() const;
+		
+		void SetVertexData(IVertex *data);
+		IVertex *GetVertexData() const;
+		
 		GLKVector4 color_;
 		GLKMatrix4 mvp_;
 		IShader *shader_;

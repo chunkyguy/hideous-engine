@@ -10,7 +10,7 @@
 
 #ifndef __HideousGameEngine__Screen__
 #define __HideousGameEngine__Screen__
-#include <GLKit/GLKMath.h>
+#include <he/Utils/GLKMath_Additions.h>
 
 namespace he{
 	//Dividing the Screen into a rect of 3x3, with key mapping as
@@ -40,6 +40,6 @@ namespace he{
 		GLKMatrix4 projection_;
 	};
 	
-	extern Screen g_Screen;	
+	extern Screen* g_Screen;
 }
 #endif /* defined(__HideousGameEngine__Screen__) */

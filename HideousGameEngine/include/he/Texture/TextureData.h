@@ -15,7 +15,7 @@ namespace he{
 	
 	class TextureData{
 	public:
-		TextureData(std::string &name, std::string extension);
+		TextureData(std::string path);
 		~TextureData();
 		
 		GLuint width_;

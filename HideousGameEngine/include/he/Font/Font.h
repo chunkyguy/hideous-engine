@@ -9,7 +9,7 @@
 #ifndef __HEAssets__Font__
 #define __HEAssets__Font__
 #include <string>
-#include <GLKit/GLKMath.h>
+#include <he/Utils/GLKMath_Additions.h>
 #include <OpenGLES/ES2/gl.h>
 #include "ft2build.h"
 #include FT_FREETYPE_H
@@ -63,6 +63,7 @@ namespace he{
 		~Text();
 		void Render();
 		void SetTransform(Transform transform);
+		const Transform &GetTransform() const;
 		GLKVector2 GetSize();
 		
 		Glyph ** data_;

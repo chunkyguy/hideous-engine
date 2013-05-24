@@ -10,23 +10,24 @@
 #define __HideousGameEngine__Texture__
 #include <OpenGLES/ES2/gl.h>
 #include <string>
-#include <GLKit/GLKMath.h>
+#include <he/Utils/GLKMath_Additions.h>
 
 namespace he{
 	
 	class Texture{
 	public:
-		Texture(std::string name, std::string extension, GLint align = 4);
-		Texture(std::string name, std::string extension, GLubyte *data, GLKVector2 size, GLint align = 4);
+		Texture(std::string path, GLint align = 4);
+		Texture(std::string path, GLubyte *data, GLKVector2 size, GLint align = 4);
 		explicit Texture(Texture *texture);
 		~Texture();
+		GLKVector2 GetSize();
 		
-		std::string name_;
-		std::string extension_;
 		GLuint object_;
+		std::string path_;
+		GLKVector2 size_;
 		
 	private:
-		void load_texture(GLubyte *data, GLKVector2 size, GLint align = 4);
+		void load_texture(GLubyte *data, GLint align = 4);
 		
 		bool destructible_;	// in case of original texture
 	};

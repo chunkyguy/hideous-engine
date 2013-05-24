@@ -8,15 +8,15 @@
 
 #ifndef __HideousGameEngine__Transform__
 #define __HideousGameEngine__Transform__
-#include <GLKit/GLKMath.h>
+#include <he/Utils/GLKMath_Additions.h>
 namespace he{
 	class Transform{
 	public:
 		Transform(GLKVector2 position = GLKVector2Make(0,0), double r = 0, GLKVector2 s = GLKVector2Make(1.0,1.0));
 		Transform(const Transform &other);
 		void operator=(const Transform &other);
-		GLKMatrix4 GetMV();
-		GLKMatrix4 GetMVP();
+		GLKMatrix4 GetMV() const;
+		GLKMatrix4 GetMVP() const;
 		const GLKVector2 &GetPosition() const;
 		void SetPosition(const GLKVector2 &position);
 		const double GetRotation() const;

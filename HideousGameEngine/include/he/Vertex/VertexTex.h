@@ -8,7 +8,7 @@
 
 #ifndef __HEAssets__VertexTex__
 #define __HEAssets__VertexTex__
-#include <GLKit/GLKMath.h>
+#include <he/Utils/GLKMath_Additions.h>
 
 #include <he/Vertex/IVertex.h>
 #include <he/Vertex/VertexData.h>
