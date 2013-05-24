@@ -78,6 +78,7 @@ private:
 	he::Texture *texture_;
 	he::VertexTex *vert_;
 	he::TextureAtlas *atlas_;
+	he::Texture *atlas_texture_;
 	he::RectTextureSh *tex_sh_;
 	
 	// text obj

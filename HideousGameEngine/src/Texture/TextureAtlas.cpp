@@ -16,14 +16,11 @@ namespace he{
 	///////////////////////////////////////////////////////////////////////////////////////////////////
 	// MARK: TextureAtlas
 	///////////////////////////////////////////////////////////////////////////////////////////////////
-	TextureAtlas::TextureAtlas(std::string image_path, std::string data_path)
-	{
-		texture_ = new Texture(image_path);
-		parser_ = new TextureAtlasParser(data_path);
-	}
+	TextureAtlas::TextureAtlas(std::string data_path) :
+	parser_(new TextureAtlasParser(data_path))
+	{	}
 
 	TextureAtlas::~TextureAtlas(){
-		delete texture_;
 		delete parser_;
 	}
 
@@ -46,8 +43,12 @@ namespace he{
 		return itr->second;
 	}
 	
-	Texture *TextureAtlas::GetTexture() const{
+	void TextureAtlas::SetTexture(he::Texture * texture){
+		texture_ = texture;
+	}
+	he::Texture *TextureAtlas::GetTexture() const{
 		return texture_;
 	}
+
 
 }//EOF

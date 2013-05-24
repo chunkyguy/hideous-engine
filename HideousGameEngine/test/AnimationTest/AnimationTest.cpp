@@ -85,7 +85,7 @@ void AnimationTest::load(){
 	shader_ = new he::RectColorSh;
 	objects_ = new AnimObj* [kObjects_];
 	for(int i = 0; i < kObjects_; ++i){
-		objects_[i] = new AnimObj(shader_);
+		objects_[i] = new AnimObj(i+1, shader_);
 	}
 	active_object_ = 0;
 }

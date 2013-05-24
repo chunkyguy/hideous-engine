@@ -47,7 +47,8 @@ void ObjectFactory::load_assets(){
 	// texture obj
 	texture_ = new he::Texture(he::ResourcePath() + "texture.png");
 	vert_ = new he::VertexTex(200, 200);
-	atlas_ = new he::TextureAtlas(he::ResourcePath() + "tex_atlas.png", he::ResourcePath() + "tex_atlas.plist");
+	atlas_texture_ = new he::Texture(he::ResourcePath() + "tex_atlas.png");
+	atlas_ = new he::TextureAtlas( he::ResourcePath() + "tex_atlas.plist");
 	tex_sh_ = new he::RectTextureSh;
 	
 	// text obj
@@ -57,6 +58,7 @@ void ObjectFactory::load_assets(){
 void ObjectFactory::unload_assets(){
 	delete col_sh_;
 
+	delete atlas_texture_;
 	delete texture_;
 	delete vert_;
 	delete atlas_;

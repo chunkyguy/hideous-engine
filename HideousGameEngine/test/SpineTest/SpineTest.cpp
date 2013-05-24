@@ -78,7 +78,10 @@ void SpineTest::load(std::string animation_name){
 //	atlas_ = spine::Atlas_readAtlasFile(atlas_fpath.c_str());
 //	printf("First region name: %s, x: %d, y: %d\n", atlas_->regions->name, atlas_->regions->x, atlas_->regions->y);
 //	printf("First page name: %s, size: %d, %d\n", atlas_->pages->name, atlas_->pages->width, atlas_->pages->height);
-	atlas_ = new he::TextureAtlas(atlas_image_fpath, atlas_file_fpath);
+	atlas_texture_ = new he::Texture(atlas_image_fpath);
+	atlas_ = new he::TextureAtlas( atlas_file_fpath);
+	atlas_->SetTexture(atlas_texture_);
+	
 	spine::SkeletonJson* json = new spine::SkeletonJson(atlas_);
 
 	skeletonData_ = json->CreateSkeletonData( json_fpath.c_str());
@@ -121,6 +124,7 @@ void SpineTest::load(std::string animation_name){
 void SpineTest::unload(){
 	delete skeletonData_; skeletonData_ = nullptr;
 	delete atlas_; atlas_ = nullptr;
+	delete atlas_texture_; atlas_texture_ = nullptr;
 	delete drawable_; drawable_ = nullptr;
 }
 
@@ -239,7 +243,7 @@ printf("Attachment is not region!\n");
 			   );
 #endif
 		
-		he::Texture *texture = atlas->texture_;
+		he::Texture *texture = atlas->GetTexture();
 		
 #if defined(PRINT_LOG)
 		GLKVector2 tex_size = texture->GetSize();

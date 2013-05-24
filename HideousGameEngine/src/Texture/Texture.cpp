@@ -35,7 +35,7 @@ namespace he{
 	path_(path),
 	size_(size)
 	{
-		//FILE_LOG(logDEBUG) << "Creating texture: " << name << "." << extn;
+		FILE_LOG(logDEBUG) << "Creating texture: " << path;
 		load_texture(data, align);
 	}
 

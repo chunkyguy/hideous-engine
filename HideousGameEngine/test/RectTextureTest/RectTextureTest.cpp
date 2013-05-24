@@ -98,7 +98,8 @@ void RectTextureTest::load_textures(){
 	vertex_datas_.push_back(v);
 	
 	//Draw a texture from atlas
-	atlas_ = new he::TextureAtlas(he::ResourcePath() + "tex_atlas.png", he::ResourcePath() + "tex_atlas.plist");
+	atlas_texture_ = new he::Texture(he::ResourcePath() + "tex_atlas.png");
+	atlas_ = new he::TextureAtlas( he::ResourcePath() + "tex_atlas.plist");
 	
 	//fish
 	for(int i = 0; i < 2; ++i){
@@ -106,7 +107,7 @@ void RectTextureTest::load_textures(){
 		GLKVector2 pos = GLKVector2Make(50.0, -100.0 + i*100.0);
 		GLKMatrix4 tMat = GLKMatrix4MakeTranslation(pos.x, pos.y, -0.1);
 		GLKMatrix4 mvpMat = GLKMatrix4Multiply(he::g_Screen->projection_, tMat);
-		he::RenderObject *r3 = new he::RenderObject(v, shader_, atlas_->texture_, mvpMat);
+		he::RenderObject *r3 = new he::RenderObject(v, shader_, atlas_texture_, mvpMat);
 		render_objects_.push_back(r3);
 		vertex_datas_.push_back(v);
 	}
@@ -116,7 +117,7 @@ void RectTextureTest::load_textures(){
 	pos = GLKVector2Make(150.0, 0.0);
 	tMat = GLKMatrix4MakeTranslation(pos.x, pos.y, -0.1);
 	mvpMat = GLKMatrix4Multiply(he::g_Screen->projection_, tMat);
-	he::RenderObject *r4 = new he::RenderObject(v, shader_, atlas_->texture_, mvpMat);
+	he::RenderObject *r4 = new he::RenderObject(v, shader_, atlas_texture_, mvpMat);
 	render_objects_.push_back(r4);
 	vertex_datas_.push_back(v);
 	
@@ -125,7 +126,7 @@ void RectTextureTest::load_textures(){
 	pos = GLKVector2Make(0.0, -100.0);
 	tMat = GLKMatrix4MakeTranslation(pos.x, pos.y, -0.1);
 	mvpMat = GLKMatrix4Multiply(he::g_Screen->projection_, tMat);
-	he::RenderObject *r5 = new he::RenderObject(v, shader_, atlas_->texture_, mvpMat);
+	he::RenderObject *r5 = new he::RenderObject(v, shader_, atlas_texture_, mvpMat);
 	render_objects_.push_back(r5);
 	vertex_datas_.push_back(v);
 }
@@ -144,6 +145,7 @@ void RectTextureTest::unload_textures(){
 	}
 	vertex_datas_.clear();
 	if(atlas_) delete atlas_;
+	if(atlas_texture_) delete atlas_texture_;
 	if(shader_) delete shader_;
 }
 

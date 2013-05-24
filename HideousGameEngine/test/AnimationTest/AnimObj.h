@@ -23,22 +23,23 @@ namespace he{
 class AnimObj{
 public:
 	~AnimObj();
-	AnimObj(he::RectColorSh *shader);
+	AnimObj(int ID, he::RectColorSh *shader);
 	void Update(double dt);
 	void Render();
 	void TouchEnd(GLKVector2 pt);
 	void AnimationCallback(int animation_id);
 	
 private:
-
+	void end_animations();
 	
+	int id_;
 	he::RenderObject *render_object_;
 	he::VertexCol *vert_data_;
 	he::RectColorSh *shader_;
 	he::Transform transform_;
-	he::Animation<GLKVector2> *scale_animation_;
-	he::Animation<GLKVector2> *trans_animation_;
 	he::AnimationListener<AnimObj> *animation_listener_;
+	unsigned long scale_anim_descent_id_;
+	unsigned long trans_anim_descent_id_;
 	//he::Transform *tmp_transform_;	//While animating hold transform vars.
 									//he::AnimationChain *anim_chain_;
 };
