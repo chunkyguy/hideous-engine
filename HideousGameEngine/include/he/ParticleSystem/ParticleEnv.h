@@ -16,6 +16,7 @@ namespace he{
 	class ParticleEnv{
 	public:
 		ParticleEnv(
+					double point_size,
 					double birth_delay[2],
 					double birth_rate[2],
 					GLKVector2 box[2],
@@ -25,7 +26,8 @@ namespace he{
 					GLKVector2 velocity[2]
 					);
 		
-		double birth_delay_[2];
+		double point_size_;			// the size of each particle
+		double birth_delay_[2];		
 		double birth_rate_[2];
 		GLKVector2 box_[2];
 		GLKVector4 color_;

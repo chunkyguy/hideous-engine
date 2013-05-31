@@ -17,7 +17,7 @@ namespace he{
 	//TODO: Gestures not tested for all kind of events.
 	class Gesture{
 	public:
-		typedef enum{ kTap, kLongTap, kZoomIn, kZoomOut, kDrag, kNone } Action;
+		typedef enum{ kTap, /*kLongTap,*/ kZoomIn, kZoomOut, kDrag, kNone } Action;
 		typedef enum{ kBegin, kChange, kEnd, kCancel, kFail, kPossible } State;
 
 		Gesture();

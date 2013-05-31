@@ -21,7 +21,8 @@ namespace he{
 	//	Just trying to hide the fact that the parsing is done in ObjC.
 	class TextureAtlas{
 	public:
-		TextureAtlas(std::string data_path);
+		//	Owns the texture
+		TextureAtlas(std::string data_path, std::string texture_path);
 		~TextureAtlas();
 		
 		// image_name as stored in the atlas.
@@ -31,7 +32,6 @@ namespace he{
 									 bool aspect_correct = true);
 		TextureAtlasRegion GetTextureAtlasRegion(std::string image_name);
 
-		void SetTexture(he::Texture * texture);
 		he::Texture *GetTexture() const;
 
 	private:

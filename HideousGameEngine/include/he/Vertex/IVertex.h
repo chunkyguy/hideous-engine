@@ -8,7 +8,28 @@
 
 #ifndef HEAssets_IVertex_h
 #define HEAssets_IVertex_h
+#include <OpenGLES/ES2/gl.h>
+
 namespace he{
-	struct IVertex{};
+	class IVertex{
+	public:
+		IVertex(GLint count = 4) : count_(count){}
+		virtual ~IVertex(){
+		}
+		virtual const GLfloat *GetPositionData() const{
+			return nullptr;
+		};
+		virtual const GLfloat *GetTextureData() const {
+			return nullptr;
+		}
+		const GLint GetCount() const{
+			return count_;
+		}
+		void SetCount(GLint count){
+			count_ = count;
+		}
+	private:
+		GLint count_;
+	};
 }
 #endif

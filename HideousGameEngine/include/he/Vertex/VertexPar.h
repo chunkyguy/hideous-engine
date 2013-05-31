@@ -10,28 +10,28 @@
 #define __HEAssets__VertexPar__
 
 #include <OpenGLES/ES2/gl.h>
+
+#include <he/Utils/GLKMath_Additions.h>
 #include <he/Vertex/IVertex.h>
 
 namespace he{
-
-	class VertexParData{
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// MARK: VertexPar
+	////////////////////////////////////////////////////////////////////////////////////////////////////////
+	class VertexPar : public IVertex{
 	public:
-		VertexParData(int count);
-		~VertexParData();
-		GLfloat *GetData();
-		GLsizei GetSize();
-		
+		const GLfloat *GetPositionData() const;
+
+		~VertexPar();
+		VertexPar(int count, double point_size = 15.0);
+		void SetData(int index, const GLKVector2 &data);
+		GLfloat GetPointSize() const;
+		GLsizei GetSize() const;
+
 	private:
 		GLfloat *data_;
 		GLsizei size_;
-	};
-	
-	class VertexPar : public IVertex{
-	public:
-		VertexPar(int count, double point_size = 15.0);
-		
-		VertexParData position_data_;
-		int count_;
 		double point_size_;
 	};
 }

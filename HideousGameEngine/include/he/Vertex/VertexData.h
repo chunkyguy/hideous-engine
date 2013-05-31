@@ -32,13 +32,13 @@ namespace he{
 		// for skewed / rotated squares
 		VertexData(GLKVector2 a, GLKVector2 b, GLKVector2 c, GLKVector2 d);
 		VertexData(const VertexData &other);
-		bool Contains(GLfloat x, GLfloat y);
-		GLfloat *GetData();
-		GLsizei GetSize();
+		bool Contains(GLfloat x, GLfloat y) const;
+		const GLfloat *GetData() const;
+		GLsizei GetSize() const;
 		void Scale(GLfloat x, GLfloat y);
 		void operator=(const VertexData &other);
 		void SetVertex(VertexIndex index, GLKVector2 value);
-		GLKVector2 GetVertex(VertexIndex index);
+		GLKVector2 GetVertex(VertexIndex index) const;
 		
 	private:
 		enum{Ax = 0, Ay = 1, Bx = 2, By = 3, Cx = 4, Cy = 5, Dx = 6, Dy = 7};

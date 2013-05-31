@@ -35,6 +35,8 @@ namespace he{
 		void SetProjection(GLKMatrix4 projection = GLKMatrix4Identity);
 		Grid MapPointToGrid(GLKVector2 point);
 		
+		GLKVector2 GetSize() const;
+		
 		double width_;
 		double height_;
 		GLKMatrix4 projection_;

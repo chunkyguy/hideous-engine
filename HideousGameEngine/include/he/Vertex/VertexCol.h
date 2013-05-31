@@ -15,9 +15,15 @@
 namespace he{
 	class VertexCol : public IVertex{
 	public:
+		
+		const GLfloat *GetPositionData() const;
+		const GLfloat *GetTextureData() const;
+
 		VertexCol(double width, double height);
 		VertexCol(double x0, double y0, double x1, double y1);
+		const VertexData &GetVertexData() const;
 		
+	private:
 		VertexData position_data_;
 	};
 }
