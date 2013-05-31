@@ -14,12 +14,10 @@
 #include <he/EventLoop/Gesture.h>
 
 namespace he{
-	class RenderObject;
-	class ParticleSh;
-	class VertexPar;
 	class Texture;
 	class ParticleEnv;
-	class Particle;
+	class ParticleBatch;
+	class ParticleSh;
 }
 
 class ParticleTest : public ITest{
@@ -31,14 +29,11 @@ public:
 	void HandleGesture(const he::Gesture &gesture);
 	
 private:
-	he::RenderObject *render_object_;
 	he::ParticleSh *shader_;
 	he::Texture *texture_;
-	he::VertexPar *vertex_data_;
 	he::ParticleEnv *environment_;
-	he::Particle ** particles_;
+	he::ParticleBatch *particles_;
 	he::GestureListener<ParticleTest> *gesture_listner_;
-	int count_;
 	
 	
 	void load(GLKVector2 at);

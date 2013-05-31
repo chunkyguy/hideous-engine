@@ -11,9 +11,11 @@
 
 namespace he{
 	
-	ParticleEnv::ParticleEnv(double birth_delay[2],	double birth_rate[2], GLKVector2 box[2],
-							 GLKVector4 color, double death_rate[2],	 double life_span[2],
-							 GLKVector2 velocity[2])
+	ParticleEnv::ParticleEnv(double point_size, double birth_delay[2],	double birth_rate[2],
+							 GLKVector2 box[2], GLKVector4 color,
+							 double death_rate[2],	 double life_span[2],
+							 GLKVector2 velocity[2]) :
+	point_size_(point_size)
 	{
 		for(int i = 0; i < 2; ++i){
 			birth_delay_[i] = birth_delay[i];

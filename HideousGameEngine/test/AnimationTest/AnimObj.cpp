@@ -80,7 +80,7 @@ void AnimObj::TouchEnd(GLKVector2 pt){
 	he::Animation<GLKVector4> *color_switch = new he::Animation<GLKVector4>(&render_object_->color_,
 																			he::Tweener<GLKVector4>(he::Linear, render_object_->color_, rand_color),
 																			100);
-	color_switch->SetListner(animation_listener_);
+	color_switch->SetListener(animation_listener_);
 	scale_down_anim->AddChild(color_switch);
 	scale_animation->AddChild(scale_down_anim);
 	he::g_AnimationLoop->AddAnimation(scale_animation);

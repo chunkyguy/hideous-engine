@@ -44,7 +44,6 @@ private:
 	std::list<he::Texture *>textures_;
 	std::list<he::VertexTex *>vertex_datas_;
 	he::TextureAtlas *atlas_;
-	he::Texture *atlas_texture_;
 	he::RectTextureSh *shader_;
 	he::GestureListener<RectTextureTest> *gesture_listener_;
 

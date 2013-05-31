@@ -175,9 +175,9 @@ namespace he{
 		
 		texture_ = new Texture(font_name + char_name, pixels, GLKVector2Make(w,h), 1);
 		delete [] pixels;
-		vertex_data_ = new VertexTex(0, 0);
-		vertex_data_->position_data_ = VertexData(p_data);
-		vertex_data_->texture_data_ = VertexData(t_data);
+		VertexData position_data = VertexData(p_data);
+		VertexData texture_data = VertexData(t_data);
+		vertex_data_ = new VertexTex(position_data, texture_data);
 		render_object_ = new RenderObject(vertex_data_, shader, texture_, GLKMatrix4Identity, color);
 	}
 	

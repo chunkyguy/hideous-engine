@@ -78,9 +78,7 @@ void SpineTest::load(std::string animation_name){
 //	atlas_ = spine::Atlas_readAtlasFile(atlas_fpath.c_str());
 //	printf("First region name: %s, x: %d, y: %d\n", atlas_->regions->name, atlas_->regions->x, atlas_->regions->y);
 //	printf("First page name: %s, size: %d, %d\n", atlas_->pages->name, atlas_->pages->width, atlas_->pages->height);
-	atlas_texture_ = new he::Texture(atlas_image_fpath);
-	atlas_ = new he::TextureAtlas( atlas_file_fpath);
-	atlas_->SetTexture(atlas_texture_);
+	atlas_ = new he::TextureAtlas( atlas_file_fpath, atlas_image_fpath);
 	
 	spine::SkeletonJson* json = new spine::SkeletonJson(atlas_);
 
@@ -124,7 +122,6 @@ void SpineTest::load(std::string animation_name){
 void SpineTest::unload(){
 	delete skeletonData_; skeletonData_ = nullptr;
 	delete atlas_; atlas_ = nullptr;
-	delete atlas_texture_; atlas_texture_ = nullptr;
 	delete drawable_; drawable_ = nullptr;
 }
 
@@ -251,7 +248,7 @@ printf("Attachment is not region!\n");
 
 		// calc position data
 		printf("GLfloat pos_data[] = {\n");
-		GLfloat *pos_data = vertexPositions.GetData();
+		const GLfloat *pos_data = vertexPositions.GetData();
 		for(int vd_indx = 0; vd_indx < 8; vd_indx += 2){
 			printf("%.2f, %.2f,\n", pos_data[vd_indx], pos_data[vd_indx+1]);
 		}
@@ -275,14 +272,13 @@ printf("Attachment is not region!\n");
 #if defined(PRINT_LOG)
 		printf("tex_coords:\t\t\t\t\t{{%.2f, %.2f}, {%.2f, %.2f}}\n", tex_coords.x, tex_coords.y, tex_coords.z, tex_coords.w);
 #endif
-		
-		he::VertexTex *vertex_data = new he::VertexTex(eff_frame.z, eff_frame.w, false, tex_coords);
-		
-		vertex_data->position_data_ = vertexPositions;
+
+		he::VertexTex vertex_data_tex(eff_frame.z, eff_frame.w, false, tex_coords);
+		he::VertexTex *vertex_data = new he::VertexTex(vertexPositions, vertex_data_tex.GetVertexTextureData());
 		
 #if defined(PRINT_LOG)
 		printf("GLfloat tex_data[] = {\n");
-		GLfloat *vtex_data = vertex_data->texture_data_.GetData();
+		const GLfloat *vtex_data = vertex_data->GetTextureData();
 		for(int vd_indx = 0; vd_indx < 8; vd_indx += 2){
 			printf("%.2f, %.2f,\n", vtex_data[vd_indx], vtex_data[vd_indx+1]);
 		}

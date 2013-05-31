@@ -59,8 +59,9 @@ UITest::UITest(double w, double h)
 
 	shader_ = new he::RectColorSh;
 	
-	vertex_data_ = new he::VertexCol(0,0);
-	vertex_data_->position_data_ = label_->GetBox().position_data_;
+	vertex_data_ = new he::VertexCol( label_->GetBox() );
+//	vertex_data_ = new he::VertexCol(label_->GetBox(),0);
+//	vertex_data_->position_data_ = label_->GetBox().position_data_;
 	GLKMatrix4 tMat = GLKMatrix4MakeTranslation(0, 0, -0.5);
 	GLKMatrix4 mvpMat = GLKMatrix4Multiply(he::g_Screen->projection_, tMat);
 	render_object_ = new he::RenderObject(vertex_data_, shader_, 0, mvpMat, GLKVector4Make(0.6, 0.8, 0.0, 0.5));
@@ -92,7 +93,7 @@ void UITest::HandleGesture(const he::Gesture &gesture){
 	}
 	
 	GLKVector2 pt = gesture.GetHitPoint();
-	if(label_->GetBox().position_data_.Contains(pt.x, pt.y)){
+	if(label_->GetBox().GetVertexData().Contains(pt.x, pt.y)){
 //		scale_animation_ = new he::AnimationChain;
 //
 //		GLKVector2 scaleUp = GLKVector2MultiplyScalar(label_->transform_.scale_, 1.25);

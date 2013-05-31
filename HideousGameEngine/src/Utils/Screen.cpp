@@ -21,6 +21,10 @@ namespace he{
 	void Screen::SetProjection(GLKMatrix4 projection){
 		projection_ = projection;
 	}
+
+	GLKVector2 Screen::GetSize() const{
+		return GLKVector2Make(width_, height_);
+	}
 	
 	Screen::Grid Screen::MapPointToGrid(GLKVector2 point){
 		double scr_w_one_third = width_/3;

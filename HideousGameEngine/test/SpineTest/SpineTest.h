@@ -63,7 +63,6 @@ private:
 	
 	int animation_index_;
 	he::TextureAtlas *atlas_;
-	he::Texture *atlas_texture_;
 	SkeletonDrawable* drawable_;
 	spine::SkeletonData *skeletonData_;
 	he::GestureListener<SpineTest> *gesture_listener_;

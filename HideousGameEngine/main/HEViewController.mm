@@ -19,9 +19,9 @@
 //#define TEST_RECT_COLOR
 //#define TEST_RECT_TEXTURE
 //#define TEST_RECT_TEXT
-//#define TEST_MULTI_SHADERS
+#define TEST_MULTI_SHADERS
 //#define TEST_MULTI_FONT
-#define TEST_ANIMATION
+//#define TEST_ANIMATION
 //#define TEST_TEXTURE_BIG_BANG
 //#define TEST_GESTURE
 //#define TEST_PARTICLES
@@ -141,15 +141,19 @@ ITest *GetTestFromFactory(double w, double h){
     [EAGLContext setCurrentContext:self.context];
 }
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+	NSLog(@"ViewController: touchesBegan");
 	[self.gestureCollector touches:touches action:kBegan withEvent:event];
 }
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+	NSLog(@"ViewController: touchesEnded");
 	[self.gestureCollector touches:touches action:kEnded withEvent:event];
 }
 -(void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{
+	NSLog(@"ViewController: touchesCancelled");
 	[self.gestureCollector touches:touches action:kCancelled withEvent:event];
 }
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+	NSLog(@"ViewController: touchesMoved");
 	[self.gestureCollector touches:touches action:kMoved withEvent:event];
 }
 @end

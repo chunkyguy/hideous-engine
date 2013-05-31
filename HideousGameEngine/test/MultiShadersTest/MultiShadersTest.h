@@ -14,6 +14,15 @@
 
 #include "../Common/ObjectFactory.h"
 
+namespace he {
+	class Texture;
+	class ParticleEnv;
+	class ParticleBatch;
+	class ParticleSh;
+}
+
+const int kShaders = 4;
+
 class MultiShadersTest : public ITest{
 public:
 	~MultiShadersTest();
@@ -29,9 +38,15 @@ private:
 	ColObj *color_object_;
 	ObjectFactory *factory_;
 	he::GestureListener<MultiShadersTest> *gesture_listner_;
-	int load_indx_[3];
+	int load_indx_[kShaders];
 	TextObj *text_object_;
 	TextureObj *texture_object_;
+	
+	//particles
+	he::ParticleSh *particle_shader_;
+	he::Texture *particle_texture_;
+	he::ParticleEnv *environment_;
+	he::ParticleBatch *particles_;
 };
 
 #endif /* defined(__HideousGameEngine__MultiShadersTest__) */

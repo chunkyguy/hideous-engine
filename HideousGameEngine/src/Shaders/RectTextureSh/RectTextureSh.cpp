@@ -34,22 +34,20 @@ namespace he{
 	}
 	
 	void RectTextureSh::Render(RenderObject *render_object){
-		VertexTex *vertex_data = static_cast<VertexTex *>(render_object->vertex_data_);
-		
 		glUseProgram(program_->object_);
 		
 		glActiveTexture(GL_TEXTURE0);
 		glBindTexture(GL_TEXTURE_2D, render_object->texture_->object_);
 		
-		glVertexAttribPointer(a_position, 2, GL_FLOAT, GL_FALSE, 0, vertex_data->position_data_.GetData());
+		glVertexAttribPointer(a_position, 2, GL_FLOAT, GL_FALSE, 0, render_object->GetVertexData()->GetPositionData());
 		glEnableVertexAttribArray(a_position);
 		
-		glVertexAttribPointer(a_texcoord, 2, GL_FLOAT, GL_FALSE, 0, vertex_data->texture_data_.GetData());
+		glVertexAttribPointer(a_texcoord, 2, GL_FLOAT, GL_FALSE, 0, render_object->GetVertexData()->GetTextureData());
 		glEnableVertexAttribArray(a_texcoord);
 		
 		glUniformMatrix4fv(u_mvp, 1, GL_FALSE, render_object->mvp_.m);
 		glUniform1i(u_tex, 0);
-		glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+		glDrawArrays(GL_TRIANGLE_STRIP, 0, render_object->GetVertexData()->GetCount());
 		
 		glDisableVertexAttribArray(a_position);
 		glDisableVertexAttribArray(a_texcoord);

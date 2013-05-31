@@ -47,8 +47,7 @@ void ObjectFactory::load_assets(){
 	// texture obj
 	texture_ = new he::Texture(he::ResourcePath() + "texture.png");
 	vert_ = new he::VertexTex(200, 200);
-	atlas_texture_ = new he::Texture(he::ResourcePath() + "tex_atlas.png");
-	atlas_ = new he::TextureAtlas( he::ResourcePath() + "tex_atlas.plist");
+	atlas_ = new he::TextureAtlas( he::ResourcePath() + "tex_atlas.plist", he::ResourcePath() + "tex_atlas.png");
 	tex_sh_ = new he::RectTextureSh;
 	
 	// text obj
@@ -58,7 +57,6 @@ void ObjectFactory::load_assets(){
 void ObjectFactory::unload_assets(){
 	delete col_sh_;
 
-	delete atlas_texture_;
 	delete texture_;
 	delete vert_;
 	delete atlas_;
@@ -77,7 +75,7 @@ ColObj::~ColObj(){
 ColObj::ColObj(he::RectColorSh *shader){
 	double dimension = he::Randf() * he::g_Screen->width_/2 + 10.0;
 	vert_ = new he::VertexCol(dimension/2, dimension/2);
-	GLKVector4 color = GLKVector4Make(he::Randf(), he::Randf(), he::Randf(), he::Randf());
+	GLKVector4 color = GLKVector4Make(he::Randf(), he::Randf(), he::Randf(), 0.8);
 	object_ = new he::RenderObject(vert_, shader, 0, he::g_Screen->projection_, color);
 	transform_.SetPosition( GLKVector2Make(he::Randf()*he::g_Screen->width_ - he::g_Screen->width_/2, he::Randf()*he::g_Screen->height_ - he::g_Screen->height_/2));
 }

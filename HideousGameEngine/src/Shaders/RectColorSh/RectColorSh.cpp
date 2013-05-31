@@ -30,13 +30,12 @@ namespace he{
 	void RectColorSh::Render(RenderObject *render_object){
 		glUseProgram(program_->object_);
 		
-		VertexCol *vertex_data = static_cast<VertexCol *>(render_object->vertex_data_);
-		glVertexAttribPointer(a_position, 2, GL_FLOAT, GL_FALSE, 0, vertex_data->position_data_.GetData());
+		glVertexAttribPointer(a_position, 2, GL_FLOAT, GL_FALSE, 0, render_object->GetVertexData()->GetPositionData());
 		glEnableVertexAttribArray(a_position);
 		
 		glUniform4f(u_clr, render_object->color_.r, render_object->color_.g, render_object->color_.b, render_object->color_.a);
 		glUniformMatrix4fv(u_mvp, 1, GL_FALSE, render_object->mvp_.m);
-		glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+		glDrawArrays(GL_TRIANGLE_STRIP, 0, render_object->GetVertexData()->GetCount());
 		
 		glDisableVertexAttribArray(a_position);
 		glUseProgram(0);

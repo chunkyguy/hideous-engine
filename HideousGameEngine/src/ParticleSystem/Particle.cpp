@@ -12,17 +12,23 @@
 #include <he/Utils/Utils.h>
 #include <he/Utils/DebugLog.h>
 
+#include <he/RenderObject/RenderObject.h>
+#include <he/Texture/Texture.h>
+#include <he/Shaders/ParticleSh/ParticleSh.h>
+#include <he/Utils/Screen.h>
+#include <he/Vertex/VertexPar.h>
+
 namespace {
-	double double_rand(double a, double b){
-		return a + (b - a) * he::Randf();
-	}
 	GLKVector2 GLKVector2_rand(GLKVector2 a, GLKVector2 b){
-		return GLKVector2Make(double_rand(a.x, b.x), double_rand(a.y, b.y));
+		return GLKVector2Make(he::Randf(a.x, b.x), he::Randf(a.y, b.y));
 	}
 }
 
 namespace he{
-	
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// MARK: Particle
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	Particle::Particle(ParticleEnv *environment) :
 	environment_(environment)
 	{
@@ -39,10 +45,10 @@ namespace he{
 	void Particle::load_vars(){
 		is_dead_ = 0;
 		position_ = GLKVector2_rand(environment_->box_[0], environment_->box_[1]);
-		life_span_ = double_rand(environment_->life_span_[0], environment_->life_span_[1]);
-		death_rate_ = double_rand(environment_->death_rate_[0], environment_->death_rate_[1]);
-		birth_delay_ = double_rand(environment_->birth_delay_[0],environment_->birth_delay_[1]);
-		birth_rate_ = double_rand(environment_->birth_rate_[0], environment_->birth_rate_[1]);
+		life_span_ = he::Randf(environment_->life_span_[0], environment_->life_span_[1]);
+		death_rate_ = he::Randf(environment_->death_rate_[0], environment_->death_rate_[1]);
+		birth_delay_ = he::Randf(environment_->birth_delay_[0],environment_->birth_delay_[1]);
+		birth_rate_ = he::Randf(environment_->birth_rate_[0], environment_->birth_rate_[1]);
 		velocity_ = GLKVector2_rand(environment_->velocity_[0], environment_->velocity_[1]);
 
 		
@@ -70,5 +76,58 @@ namespace he{
 			}
 		}
 	}
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// MARK: ParticleBatch
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	ParticleBatch::ParticleBatch(int count, ParticleEnv *environment, const GLKVector2 &position, ParticleSh *shader, Texture *texture, const GLKVector4 &color) :
+	count_(count),
+	particles_(new Particle* [count]),
+	render_object_(nullptr),
+	vertex_data_(nullptr)
+	{
+		for(int i = 0; i < count; ++i){
+			particles_[i] = new Particle(environment);
+		}
+		vertex_data_ = new VertexPar(count, environment->point_size_);
+		GLKMatrix4 tMat = GLKMatrix4MakeTranslation(position.x, position.y, -0.1);
+		GLKMatrix4 mvp = GLKMatrix4Multiply(he::g_Screen->projection_, tMat);
+		render_object_ = new RenderObject(vertex_data_, shader, texture, mvp, color);
+	}
 	
+	ParticleBatch::~ParticleBatch(){
+		for (int i = 0; i < count_; ++i) {
+			delete particles_[i];
+		}
+		delete [] particles_;
+		delete vertex_data_;
+		delete render_object_;
+	}
+
+	void ParticleBatch::SetPosition(const GLKVector2 &position){
+		GLKMatrix4 tMat = GLKMatrix4MakeTranslation(position.x, position.y, -0.1);
+		GLKMatrix4 mvp = GLKMatrix4Multiply(he::g_Screen->projection_, tMat);
+		render_object_->SetMVP(mvp);
+	}
+	
+	void ParticleBatch::Update(double dt){
+		for( int i = 0; i < count_; ++i){
+			particles_[i]->Update(dt);
+			vertex_data_->SetData(i, particles_[i]->position_);
+		}
+	}
+
+	void ParticleBatch::Render(){
+		render_object_->Render();
+
+//		for(int i = 0; i < count_; ++i){
+//			GLKVector2 pos = particles_[i]->position_;
+//			GLKMatrix4 tMat = GLKMatrix4MakeTranslation(pos.x, pos.y, -0.1);
+//			GLKMatrix4 mvpMat = GLKMatrix4Multiply(he::g_Screen->projection_, tMat);
+//			render_object_->mvp_ = mvpMat;
+//			render_object_->Render();
+//		}
+	}
+
 }

@@ -16,12 +16,14 @@ namespace he{
 	///////////////////////////////////////////////////////////////////////////////////////////////////
 	// MARK: TextureAtlas
 	///////////////////////////////////////////////////////////////////////////////////////////////////
-	TextureAtlas::TextureAtlas(std::string data_path) :
-	parser_(new TextureAtlasParser(data_path))
+	TextureAtlas::TextureAtlas(std::string data_path, std::string texture_path) :
+	parser_(new TextureAtlasParser(data_path)),
+	texture_(new he::Texture(texture_path))
 	{	}
 
 	TextureAtlas::~TextureAtlas(){
 		delete parser_;
+		delete texture_;
 	}
 
 	VertexTex *TextureAtlas::CreateTextureData(std::string image_name,
@@ -43,9 +45,6 @@ namespace he{
 		return itr->second;
 	}
 	
-	void TextureAtlas::SetTexture(he::Texture * texture){
-		texture_ = texture;
-	}
 	he::Texture *TextureAtlas::GetTexture() const{
 		return texture_;
 	}

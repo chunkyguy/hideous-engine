@@ -46,15 +46,15 @@ namespace he{
 		data_[Dx] = d_x; data_[Dy] = d_y;	//D
 	}
 	
-	GLfloat *VertexData::GetData(){
+	const GLfloat *VertexData::GetData() const{
 		return &data_[0];
 	}
 	
-	GLsizei VertexData::GetSize(){
+	GLsizei VertexData::GetSize() const{
 		return sizeof(data_);
 	}
 	
-	bool VertexData::Contains(GLfloat x, GLfloat y){
+	bool VertexData::Contains(GLfloat x, GLfloat y) const{
 		//printf("%f %f %f %f %f %f\n",x,y,data[eAx],data[eAy],data[eDx],data[eDy]);
 		return ((x > data_[Ax] && x < data_[Dx]) && (y > data_[Ay] && y < data_[Dy]));
 	}
@@ -82,7 +82,7 @@ namespace he{
 				break;
 		}
 	}
-	GLKVector2 VertexData::GetVertex(VertexIndex index){
+	GLKVector2 VertexData::GetVertex(VertexIndex index) const{
 		GLKVector2 ret;
 		switch(index){
 			case kA:

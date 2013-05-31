@@ -23,10 +23,8 @@ public:
 	void Render();
 	void HandleGesture(const he::Gesture &gesture);
 	
-private:
-
-	
-	GObj obj_;
+private:	
+	GObj *obj_;
 	he::GestureListener<GestureTest> *gesture_listner_;
 };
 

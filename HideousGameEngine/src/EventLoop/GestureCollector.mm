@@ -9,6 +9,11 @@
 #import <he/EventLoop/GestureCollector.h>
 #include <he/EventLoop/Gesture.h>
 
+@interface GestureCollector (){
+
+}
+@end
+
 @implementation GestureCollector
 -(id)initWithView:(UIView *)vw{
 	self = [super init];
@@ -16,9 +21,9 @@
 		view = vw;
 		
 		// Resgistering Gestures
-		UILongPressGestureRecognizer *singleTapDownGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapDownGestureAction:)];
-		[view addGestureRecognizer:singleTapDownGesture];
-		[singleTapDownGesture release];
+//		UILongPressGestureRecognizer *singleTapDownGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapDownGestureAction:)];
+//		[view addGestureRecognizer:singleTapDownGesture];
+//		[singleTapDownGesture release];
 		
 //		UITapGestureRecognizer *singleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapGestureAction:)];
 //		[view addGestureRecognizer:singleTapGesture];
@@ -37,6 +42,7 @@
 }
 
 // Long press event.
+/*
 -(void)singleTapDownGestureAction:(UILongPressGestureRecognizer *)gesture{
 	he::Gesture g;
 	g.continious_ = true;
@@ -58,6 +64,7 @@
 
 	he::g_EventLoop->SetGesture(g);
 }
+*/
 
 -(void) pinchGestureAction:(UIPinchGestureRecognizer *)gesture{
 	he::Gesture g;
