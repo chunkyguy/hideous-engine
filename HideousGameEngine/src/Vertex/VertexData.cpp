@@ -22,29 +22,25 @@ namespace he{
 			data_[i] = data[i];
 		}
 	}
-	VertexData::VertexData(const VertexData &other){
-		for(int i = 0; i < 8; ++i){
-			data_[i] = other.data_[i];
-		}
-	}
 	VertexData::VertexData(GLKVector2 a, GLKVector2 b, GLKVector2 c, GLKVector2 d){
 		data_[Ax] = a.x; data_[Ay] = a.y;	//A
 		data_[Bx] = b.x; data_[By] = b.y;	//B
 		data_[Cx] = c.x; data_[Cy] = c.y;	//C
 		data_[Dx] = d.x; data_[Dy] = d.y;	//D
 	}
-	void VertexData::operator=(const VertexData &other){
-		for(int i = 0; i < 8; ++i){
-			data_[i] = other.data_[i];
-		}
-	}
-	
 	VertexData::VertexData(GLfloat a_x, GLfloat a_y, GLfloat d_x, GLfloat d_y){
 		data_[Ax] = a_x; data_[Ay] = a_y;	//A
 		data_[Bx] = d_x; data_[By] = a_y;	//B
 		data_[Cx] = a_x; data_[Cy] = d_y;	//C
 		data_[Dx] = d_x; data_[Dy] = d_y;	//D
 	}
+	VertexData::VertexData(GLKVector2 a, GLKVector2 d){
+		data_[Ax] = a.x; data_[Ay] = a.y;	//A
+		data_[Bx] = d.x; data_[By] = a.y;	//B
+		data_[Cx] = a.x; data_[Cy] = d.y;	//C
+		data_[Dx] = d.x; data_[Dy] = d.y;	//D
+	}
+
 	
 	const GLfloat *VertexData::GetData() const{
 		return &data_[0];
@@ -59,6 +55,25 @@ namespace he{
 		return ((x > data_[Ax] && x < data_[Dx]) && (y > data_[Ay] && y < data_[Dy]));
 	}
 	
+	bool VertexData::Contains(const GLKVector2 &point) const{
+		return Contains(point.x, point.y);
+	}
+
+	bool VertexData::Contains(const he::VertexData &other) const{
+		return (Contains(other.GetVertex(kA)) && Contains(other.GetVertex(kB)) && Contains(other.GetVertex(kC)) && Contains(other.GetVertex(kD)));
+	}
+	
+	void VertexData::Translate(GLfloat x, GLfloat y){
+		int j = 0;
+		for(int i = 0; i < 4; ++i){
+			data_[j++] += x;
+			data_[j++] += y;
+		}
+	}
+	void VertexData::Translate(const GLKVector2 &point){
+		Translate(point.x, point.y);
+	}
+	
 	void VertexData::Scale(GLfloat x, GLfloat y){
 		int j = 0;
 		for(int i = 0; i < 4; ++i){
@@ -66,6 +81,10 @@ namespace he{
 			data_[j++] *= y;
 		}
 	}
+	void VertexData::Scale(const GLKVector2 &value){
+		Scale(value.x, value.y);
+	}
+
 	void VertexData::SetVertex(VertexIndex index, GLKVector2 value){
 		switch(index){
 			case kA:
