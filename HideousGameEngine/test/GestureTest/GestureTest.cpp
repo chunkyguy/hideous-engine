@@ -51,7 +51,7 @@ namespace {
 	}
 }
 
-GestureTest::GestureTest(double width, double height) :
+GestureTest::GestureTest(float width, float height) :
 gesture_listner_(nullptr)
 {
 	//setup globals
@@ -80,7 +80,7 @@ GestureTest::~GestureTest(){
 	he::GlobalsDestroy();
 }
 
-void GestureTest::Update(double dt){
+void GestureTest::Update(float dt){
 	obj_->Update(dt);
 }
 

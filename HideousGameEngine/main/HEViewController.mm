@@ -28,7 +28,7 @@
 //#define TEST_UI
 //#define TEST_SPINE
 
-ITest *GetTestFromFactory(double w, double h){
+ITest *GetTestFromFactory(float w, float h){
 	
 #if defined(TEST_RECT_COLOR)
 	return MakeRectColorTest(w, h);

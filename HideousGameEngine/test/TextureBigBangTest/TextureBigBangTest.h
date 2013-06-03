@@ -25,8 +25,8 @@ namespace he{
 class TextureBigBangTest : public ITest{
 public:
 	~TextureBigBangTest();
-	TextureBigBangTest(double width, double height);
-	void Update(double dt);
+	TextureBigBangTest(float width, float height);
+	void Update(float dt);
 	void Render();
 	void HandleGesture(const he::Gesture &gesture);
 	
@@ -46,7 +46,7 @@ private:
 	he::RectTextureSh *shader_;
 	TexturedSprite **squares_;
 	State state_;
-	double delay_;
+	float delay_;
 	he::GestureListener<TextureBigBangTest> *gesture_listener_;
 };
 #endif /* defined(__HideousGameEngine__TextureBigBangTest__) */

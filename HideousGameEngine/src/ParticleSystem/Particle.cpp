@@ -61,7 +61,7 @@ namespace he{
 //		<< "vel: {" << velocity.x << "," << velocity.y << "}" << std::endl;
 
 	}
-	void Particle::Update(double dt){
+	void Particle::Update(float dt){
 		if(is_dead_ && birth_rate_ > 0.0){	//dead + rebirth possible
 			birth_delay_ -= (dt * birth_rate_);
 			is_dead_ = (birth_delay_ > 0.0) ? 1: 0;
@@ -111,7 +111,7 @@ namespace he{
 		render_object_->SetMVP(mvp);
 	}
 	
-	void ParticleBatch::Update(double dt){
+	void ParticleBatch::Update(float dt){
 		for( int i = 0; i < count_; ++i){
 			particles_[i]->Update(dt);
 			vertex_data_->SetData(i, particles_[i]->position_);

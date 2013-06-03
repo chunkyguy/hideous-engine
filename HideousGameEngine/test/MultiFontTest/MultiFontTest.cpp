@@ -21,7 +21,7 @@ MultiFontTest::~MultiFontTest(){
 	he::GlobalsDestroy();
 }
 
-MultiFontTest::MultiFontTest(double w, double h) :
+MultiFontTest::MultiFontTest(float w, float h) :
 courier_(nullptr),
 simsun_(nullptr),
 whacky_(nullptr),
@@ -47,7 +47,7 @@ gesture_listner_(nullptr)
 	//waiting for input
 }
 
-void MultiFontTest::Update(double dt){
+void MultiFontTest::Update(float dt){
 }
 void MultiFontTest::Render(){
 	glClearColor(0.5, 0.5, 0.5, 1.0);

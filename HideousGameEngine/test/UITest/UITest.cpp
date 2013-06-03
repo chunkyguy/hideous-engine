@@ -34,7 +34,7 @@ UITest::~UITest(){
 	he::GlobalsDestroy();
 }
 
-UITest::UITest(double w, double h)
+UITest::UITest(float w, float h)
 //:scale_animation_(0)
 {
 	//setup globals
@@ -67,7 +67,7 @@ UITest::UITest(double w, double h)
 	render_object_ = new he::RenderObject(vertex_data_, shader_, 0, mvpMat, GLKVector4Make(0.6, 0.8, 0.0, 0.5));
 }
 
-void UITest::Update(double dt){
+void UITest::Update(float dt){
 //	if(scale_animation_){
 //		if(!scale_animation_->NextFrame()){
 //			delete scale_animation_; scale_animation_ = 0;

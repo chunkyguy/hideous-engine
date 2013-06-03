@@ -23,8 +23,8 @@ namespace he{
 class ParticleTest : public ITest{
 public:
 	~ParticleTest();
-	ParticleTest(double w, double h);
-	void Update(double dt);
+	ParticleTest(float w, float h);
+	void Update(float dt);
 	void Render();
 	void HandleGesture(const he::Gesture &gesture);
 	

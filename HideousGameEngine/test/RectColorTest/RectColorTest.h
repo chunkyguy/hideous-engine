@@ -23,8 +23,8 @@ namespace he{
 class RectColorTest : public ITest{
 public:
 	~RectColorTest();
-	RectColorTest(double w, double h);
-	void Update(double dt);
+	RectColorTest(float w, float h);
+	void Update(float dt);
 	void Render();
 	void HandleGesture(const he::Gesture &gesture);
 	

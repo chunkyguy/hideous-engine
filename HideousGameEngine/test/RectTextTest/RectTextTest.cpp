@@ -22,7 +22,7 @@ RectTextTest::~RectTextTest(){
 	he::GlobalsDestroy();
 }
 
-RectTextTest::RectTextTest(double w, double h) :
+RectTextTest::RectTextTest(float w, float h) :
 font_(nullptr),
 text_(nullptr),
 gesture_listener_(nullptr)
@@ -45,7 +45,7 @@ gesture_listener_(nullptr)
 		//waiting for input
 }
 
-void RectTextTest::Update(double dt){
+void RectTextTest::Update(float dt){
 }
 void RectTextTest::Render(){	
 	glClearColor(0.5, 0.5, 0.5, 1.0);

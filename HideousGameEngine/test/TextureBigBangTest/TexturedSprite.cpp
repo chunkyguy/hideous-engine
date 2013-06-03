@@ -32,7 +32,7 @@ bool TexturedSprite::Init(int iD, he::RenderObject *sp, he::Transform transform)
 	return true;
 }
 
-void TexturedSprite::Update(double dt){
+void TexturedSprite::Update(float dt){
 	if(life_state_ != kLiving)
 		return;
 

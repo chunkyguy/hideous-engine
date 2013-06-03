@@ -25,7 +25,7 @@ RectTextureTest::~RectTextureTest(){
 	he::GlobalsDestroy();
 }
 
-RectTextureTest::RectTextureTest(double w, double h):
+RectTextureTest::RectTextureTest(float w, float h):
 atlas_(0)
 {
 	//setup globals
@@ -45,7 +45,7 @@ atlas_(0)
 	// waiting for input
 }
 
-void RectTextureTest::Update(double dt){
+void RectTextureTest::Update(float dt){
 }
 
 void RectTextureTest::Render(){

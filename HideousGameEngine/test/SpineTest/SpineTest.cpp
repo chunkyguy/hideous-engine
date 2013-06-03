@@ -41,7 +41,7 @@ SpineTest::~SpineTest(){
 	he::GlobalsDestroy();
 }
 
-SpineTest::SpineTest(double width, double height) :
+SpineTest::SpineTest(float width, float height) :
 animation_index_(0),
 atlas_(nullptr),
 drawable_(nullptr),
@@ -139,7 +139,7 @@ void SpineTest::HandleGesture(const he::Gesture &gesture){
 	load(animations[animation_index_]);
 }
 
-void SpineTest::Update(double dt){
+void SpineTest::Update(float dt){
 	if(drawable_){
 		drawable_->Update(dt);
 	}

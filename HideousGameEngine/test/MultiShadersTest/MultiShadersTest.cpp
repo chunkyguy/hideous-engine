@@ -20,8 +20,8 @@
 #include <he/Utils/ResourcePath.hpp>
 
 namespace{
-	double randf_epsilon(double d){
-		return he::Randf() * d + std::numeric_limits<double>::epsilon();
+	float randf_epsilon(float d){
+		return he::Randf() * d + std::numeric_limits<float>::epsilon();
 	}
 }
 
@@ -33,7 +33,7 @@ MultiShadersTest::~MultiShadersTest(){
 	he::GlobalsDestroy();
 }
 
-MultiShadersTest::MultiShadersTest(double w, double h) :
+MultiShadersTest::MultiShadersTest(float w, float h) :
 color_object_(nullptr),
 factory_(nullptr),
 gesture_listner_(nullptr),
@@ -85,7 +85,7 @@ void MultiShadersTest::Render(){
 }
 
 
-void MultiShadersTest::Update(double dt){
+void MultiShadersTest::Update(float dt){
 	if(particles_){
 		particles_->Update(dt);
 	}
@@ -119,16 +119,16 @@ void MultiShadersTest::load_objects(){
 				particle_shader_ = new he::ParticleSh;
 				particle_texture_ = new he::Texture(he::ResourcePath() + "snow_particle.png");
 				GLKVector2 box[2] = {GLKVector2Make(-3, -3), GLKVector2Make(3, 3)};
-				double life_range[2] = {randf_epsilon(0.1), randf_epsilon(0.5)};
-				double deathrate_range[2] = {randf_epsilon(0.01), randf_epsilon(0.08)};
-				double birth_delay_range[2] = {randf_epsilon(0.1), randf_epsilon(0.3)};
-				double birth_rate_range[2] = {randf_epsilon(0.01), randf_epsilon(0.3)};
+				float life_range[2] = {randf_epsilon(0.1), randf_epsilon(0.5)};
+				float deathrate_range[2] = {randf_epsilon(0.01), randf_epsilon(0.08)};
+				float birth_delay_range[2] = {randf_epsilon(0.1), randf_epsilon(0.3)};
+				float birth_rate_range[2] = {randf_epsilon(0.01), randf_epsilon(0.3)};
 				GLKVector2 vel_range[2] = {GLKVector2Make(randf_epsilon(-20.0), randf_epsilon(-20.0)), GLKVector2Make(randf_epsilon(20.0), randf_epsilon(20.0))};
 				GLKVector4 color = GLKVector4Make(1, 1, 1, 0.8);
 				//	GLKVector4 color = GLKVector4Make(he::Randf(), he::Randf(), he::Randf(), 0.5 + he::Randf()/2.0);
 				
 				int count  = 100;
-				double point_size = 15.0;
+				float point_size = 15.0;
 				GLKVector2 pos = GLKVector2Make(0, 0);
 				environment_ = new he::ParticleEnv(point_size, birth_delay_range, birth_rate_range,
 												   box, color, deathrate_range, life_range,

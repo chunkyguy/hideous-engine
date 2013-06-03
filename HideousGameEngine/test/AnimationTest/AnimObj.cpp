@@ -40,7 +40,7 @@ trans_anim_descent_id_(0UL)
 	animation_listener_ = new he::AnimationListener<AnimObj>(this, &AnimObj::AnimationCallback);
 }
 
-void AnimObj::Update(double dt){
+void AnimObj::Update(float dt){
 	
 	// Get MV-matrix from transform or tmpTransform.
 	//	GLKMatrix4 mvMat = transform_.GetMV();;
@@ -89,8 +89,8 @@ void AnimObj::TouchEnd(GLKVector2 pt){
 	he::Animation<GLKVector2> *trans_animation = new he::Animation<GLKVector2>(&transform_.position_,
 																			   he::Tweener<GLKVector2>(he::Linear, transform_.position_, pt),
 																			   100);
-	trans_animation->AddChild(new he::Animation<double>(&transform_.rotation_,
-														he::Tweener<double>(he::Linear, transform_.rotation_, atan2(pt.y, pt.x)),
+	trans_animation->AddChild(new he::Animation<float>(&transform_.rotation_,
+														he::Tweener<float>(he::Linear, transform_.rotation_, atan2(pt.y, pt.x)),
 														80));
 	he::g_AnimationLoop->AddAnimation(trans_animation);
 	trans_anim_descent_id_ = trans_animation->GetDescentID();
@@ -113,8 +113,8 @@ void AnimObj::TouchEnd(GLKVector2 pt){
 	 GLKVector2 scale_down_points[2] = {GLKVector2MultiplyScalar(tmp_transform_->scale_, 1.2), tmp_transform_->scale_};
 	 anim_chain_->Push(new he::Animation<GLKVector2>(&tmp_transform_->scale_, he::MakeTweenFrames(30, he::kElasticEaseOut, scale_down_points)));
 	 
-	 double rotation_points[2] = {tmp_transform_->rotation_, atan2(pt.y, pt.x)};
-	 anim_chain_->Push(new he::Animation<double>(&tmp_transform_->rotation_, he::MakeTweenFrames(20, he::kLinear, rotation_points)));
+	 float rotation_points[2] = {tmp_transform_->rotation_, atan2(pt.y, pt.x)};
+	 anim_chain_->Push(new he::Animation<float>(&tmp_transform_->rotation_, he::MakeTweenFrames(20, he::kLinear, rotation_points)));
 	 */
 }
 

@@ -23,8 +23,8 @@ namespace he{
 class AnimationTest : public ITest{
 public:
 	~AnimationTest();
-	AnimationTest(double width, double height);
-	void Update(double dt);
+	AnimationTest(float width, float height);
+	void Update(float dt);
 	void Render();
 	void HandleGesture(const he::Gesture &gesture);
 	

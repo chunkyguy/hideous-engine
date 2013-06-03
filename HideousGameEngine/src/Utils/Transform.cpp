@@ -10,7 +10,7 @@
 #include <he/Utils/Transform.h>
 
 namespace he{
-	Transform::Transform(GLKVector2 position, double rotation, GLKVector2 scale) :
+	Transform::Transform(GLKVector2 position, float rotation, GLKVector2 scale) :
 	position_(position),
 	rotation_(rotation),
 	scale_(scale)
@@ -39,10 +39,10 @@ namespace he{
 		return GLKMatrix4Multiply(he::g_Screen->projection_, GetMV());
 	}
 	
-	const double Transform::GetRotation() const{
+	const float Transform::GetRotation() const{
 		return rotation_;
 	}
-	void Transform::SetRotation(const double rotation){
+	void Transform::SetRotation(const float rotation){
 		rotation_ = rotation;
 	}
 	

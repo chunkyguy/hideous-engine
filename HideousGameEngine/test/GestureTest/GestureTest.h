@@ -17,9 +17,9 @@
 
 class GestureTest : public ITest{
 public:
-	GestureTest(double width, double height);
+	GestureTest(float width, float height);
 	~GestureTest();
-	void Update(double dt);
+	void Update(float dt);
 	void Render();
 	void HandleGesture(const he::Gesture &gesture);
 	

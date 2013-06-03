@@ -19,7 +19,7 @@ RectColorTest::~RectColorTest(){
 	
 	he::GlobalsDestroy();
 }
-RectColorTest::RectColorTest(double w, double h) :
+RectColorTest::RectColorTest(float w, float h) :
 squares_(0),
 shader_(new he::RectColorSh)
 {
@@ -43,7 +43,7 @@ shader_(new he::RectColorSh)
 }
 
 
-void RectColorTest::Update(double dt){
+void RectColorTest::Update(float dt){
 
 	if(!squares_){
 		return;

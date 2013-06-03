@@ -73,7 +73,7 @@ ColObj::~ColObj(){
 	delete object_;
 }
 ColObj::ColObj(he::RectColorSh *shader){
-	double dimension = he::Randf() * he::g_Screen->width_/2 + 10.0;
+	float dimension = he::Randf() * he::g_Screen->width_/2 + 10.0;
 	vert_ = new he::VertexCol(dimension/2, dimension/2);
 	GLKVector4 color = GLKVector4Make(he::Randf(), he::Randf(), he::Randf(), 0.8);
 	object_ = new he::RenderObject(vert_, shader, 0, he::g_Screen->projection_, color);

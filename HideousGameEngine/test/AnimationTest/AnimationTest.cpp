@@ -25,7 +25,7 @@ AnimationTest::~AnimationTest(){
 	he::GlobalsDestroy();
 }
 
-AnimationTest::AnimationTest(double width, double height) :
+AnimationTest::AnimationTest(float width, float height) :
 kObjects_(2),
 objects_(nullptr),
 active_object_(-1),
@@ -44,7 +44,7 @@ gesture_listner_(nullptr)
 	
 }
 
-void AnimationTest::Update(double dt){
+void AnimationTest::Update(float dt){
 	he::g_AnimationLoop->Update(dt);
 
 	if(objects_){

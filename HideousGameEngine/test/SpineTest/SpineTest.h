@@ -52,8 +52,8 @@ public:
 class SpineTest : public ITest{
 public:
 	~SpineTest();
-	SpineTest(double width, double height);
-	void Update(double dt);
+	SpineTest(float width, float height);
+	void Update(float dt);
 	void Render();
 	void HandleGesture(const he::Gesture &gesture);
 	

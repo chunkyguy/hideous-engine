@@ -31,8 +31,8 @@ namespace he{
 class RectTextureTest : public ITest{
 public:
 	~RectTextureTest();
-	RectTextureTest(double w, double h);
-	void Update(double dt);
+	RectTextureTest(float w, float h);
+	void Update(float dt);
 	void Render();
 	void HandleGesture(const he::Gesture &gesture);
 	

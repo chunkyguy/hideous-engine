@@ -9,12 +9,12 @@
 #include <he/Vertex/VertexCol.h>
 namespace he{
 	
-	VertexCol::VertexCol(double width, double height) :
+	VertexCol::VertexCol(float width, float height) :
 	IVertex(4),
 	position_data_(VertexData(-width/2, -height/2, width/2, height/2))
 	{	}
 	
-	VertexCol::VertexCol(double x0, double y0, double x1, double y1) :
+	VertexCol::VertexCol(float x0, float y0, float x1, float y1) :
 	IVertex(4),
 	position_data_(VertexData(x0, y0, x1, y1))
 	{	}

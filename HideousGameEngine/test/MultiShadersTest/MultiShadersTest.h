@@ -26,8 +26,8 @@ const int kShaders = 4;
 class MultiShadersTest : public ITest{
 public:
 	~MultiShadersTest();
-	MultiShadersTest(double w, double h);
-	void Update(double dt);
+	MultiShadersTest(float w, float h);
+	void Update(float dt);
 	void Render();
 	void HandleGesture(const he::Gesture &gesture);
 	

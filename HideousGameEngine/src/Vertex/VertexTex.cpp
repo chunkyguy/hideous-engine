@@ -17,15 +17,15 @@ namespace he{
 	{}
 
 	
-	VertexTex::VertexTex(double width, double height, bool aspect_lock, GLKVector4 texture_coords) :
+	VertexTex::VertexTex(float width, float height, bool aspect_lock, GLKVector4 texture_coords) :
 	IVertex(4),
 	position_data_(VertexData(-width/2.0, -height/2.0, width/2.0, height/2.0)),
 	texture_data_(texture_coords.x, texture_coords.y, texture_coords.z, texture_coords.w)
 	{
 		if(aspect_lock){
-			double eff_w = texture_coords.z - texture_coords.x;
-			double eff_h = texture_coords.w - texture_coords.y;
-			double aspect_ratio;
+			float eff_w = texture_coords.z - texture_coords.x;
+			float eff_h = texture_coords.w - texture_coords.y;
+			float aspect_ratio;
 			if(eff_w < eff_h){
 				aspect_ratio = eff_w/eff_h;
 				position_data_.Scale(aspect_ratio, 1.0);

@@ -22,7 +22,7 @@ public:
 	~TexturedSprite();
 	TexturedSprite();
 	bool Init(int iD, he::RenderObject *sp, he::Transform transform);
-	void Update(double dt);
+	void Update(float dt);
 	//Getter-Setters
 //	he::Transform GetTransform();
 //	void SetTransform(GLKVector2 transform);

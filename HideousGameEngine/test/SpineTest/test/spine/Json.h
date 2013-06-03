@@ -20,7 +20,7 @@
  THE SOFTWARE.
  */
 
-/* Esoteric Software: Removed everything except parsing, shorter method names, more get methods, double to float, formatted. */
+/* Esoteric Software: Removed everything except parsing, shorter method names, more get methods, float to float, formatted. */
 
 #ifndef SPINE_JSON_H_
 #define SPINE_JSON_H_

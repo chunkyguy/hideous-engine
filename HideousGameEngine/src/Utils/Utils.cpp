@@ -15,7 +15,7 @@
 
 namespace he{
 	
-	void GlobalsInit(double w, double h){
+	void GlobalsInit(float w, float h){
 		g_Screen = new Screen(w, h);
 		g_EventLoop = new EventLoop;
 		g_AnimationLoop = new AnimationLoop;

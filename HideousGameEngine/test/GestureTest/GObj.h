@@ -22,14 +22,14 @@ class GObj{
 public:
 	~GObj();
 	GObj();
-	void Update(double dt);
+	void Update(float dt);
 	void Render();
 	void SetTransform(he::Transform tranform);
 	void SetColor(GLKVector4 new_color);
 	void SetDirection(he::Screen::Grid direction);
 	
 private:
-	const double kSpeed = 1.0;
+	const float kSpeed = 1.0;
 
 	he::RenderObject *render_object_;
 	he::VertexCol *vert_;

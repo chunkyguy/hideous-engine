@@ -11,7 +11,7 @@
 namespace he{
 	Screen* g_Screen = nullptr;
 	
-	Screen::Screen(double width, double height) :
+	Screen::Screen(float width, float height) :
 	width_(width),
 	height_(height)
 	{
@@ -27,8 +27,8 @@ namespace he{
 	}
 	
 	Screen::Grid Screen::MapPointToGrid(GLKVector2 point){
-		double scr_w_one_third = width_/3;
-		double scr_h_one_third = height_/3;
+		float scr_w_one_third = width_/3;
+		float scr_h_one_third = height_/3;
 		int touch_index_x = point.x/scr_w_one_third;
 		int touch_index_y = point.y/scr_h_one_third;
 		

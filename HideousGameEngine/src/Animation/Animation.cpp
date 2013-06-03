@@ -52,7 +52,7 @@ namespace he{
 	//	1. update it self untill runs out of frames.
 	//	2. If any listener is registered, call it.
 	//	3. If has any child animation update it.
-	void Animatable::Update(double dt){
+	void Animatable::Update(float dt){
 		if(state_ == kAlive){
 			update(dt);
 		}
@@ -123,7 +123,7 @@ namespace he{
 	//	1 - Remove all zombie animations.
 	//	2 - Merge all pending new animations.
 	//	3 - Update all animations
-	void AnimationLoop::Update(double dt){
+	void AnimationLoop::Update(float dt){
 		remove_animations();
 		add_animations();
 		
@@ -267,11 +267,11 @@ namespace he{
 	 
 	 he::easing::AHEasingFunction function = type_to_function(easing_func);
 	 GLKVector2 *tween = new GLKVector2[steps];
-	 double t = 0.0;
-	 double dt = 1.0 / (steps - 1);
+	 float t = 0.0;
+	 float dt = 1.0 / (steps - 1);
 	 for(int frame = 0; frame < steps; ++frame, t += dt)	{
-	 double x = end_point[0].x + function(t) * (end_point[1].x - end_point[0].x);
-	 double y = end_point[0].y + function(t) * (end_point[1].y - end_point[0].y);
+	 float x = end_point[0].x + function(t) * (end_point[1].x - end_point[0].x);
+	 float y = end_point[0].y + function(t) * (end_point[1].y - end_point[0].y);
 	 FILE_LOG(logDEBUG) << "at:[" << frame << "]: {" << x << "," << y << "}";
 	 tween[frame] = GLKVector2Make(x,y);
 	 }
@@ -280,22 +280,22 @@ namespace he{
 	 }
 	 
 	 
-	 TweenFrame<double> *MakeTweenFrames(int steps, EasingFunction easing_func, double end_point[2]){
+	 TweenFrame<float> *MakeTweenFrames(int steps, EasingFunction easing_func, float end_point[2]){
 	 
-	 //		double dRot = (end - start)/(steps-1);
+	 //		float dRot = (end - start)/(steps-1);
 	 
 	 //		FILE_LOG(logDEBUG) << "start: " << "{" << start << "}";
 	 //		FILE_LOG(logDEBUG) << "end: " << "{" << end << "}";
 	 //		FILE_LOG(logDEBUG) << "dPos: " << "{" << dRot << "}";
 	 he::easing::AHEasingFunction function = type_to_function(easing_func);
-	 double *tween = new double[steps];
-	 double t = 0.0;
-	 double dt = 1.0 / (steps - 1);
+	 float *tween = new float[steps];
+	 float t = 0.0;
+	 float dt = 1.0 / (steps - 1);
 	 for(int frame = 0; frame < steps; ++frame, t += dt)	{
 	 tween[frame] = end_point[0] + function(t) * (end_point[1] - end_point[0]);
 	 }
 	 
-	 return new TweenFrame<double>(steps, tween);
+	 return new TweenFrame<float>(steps, tween);
 	 }
 	 
 	 /////////////////////////////////////////////////////////////////////////////////////////////////////////

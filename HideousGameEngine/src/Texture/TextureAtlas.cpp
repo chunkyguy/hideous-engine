@@ -27,7 +27,7 @@ namespace he{
 	}
 
 	VertexTex *TextureAtlas::CreateTextureData(std::string image_name,
-											   double width, double height, bool aspect_correct ){
+											   float width, float height, bool aspect_correct ){
 		TextureAtlasRegion tex_region = GetTextureAtlasRegion(image_name);
 		FILE_LOG(logDEBUG) << "TextureAtlas: get texture: " << image_name;
 		if(width < 0.0){

@@ -11,9 +11,9 @@
 
 namespace he{
 	
-	ParticleEnv::ParticleEnv(double point_size, double birth_delay[2],	double birth_rate[2],
+	ParticleEnv::ParticleEnv(float point_size, float birth_delay[2],	float birth_rate[2],
 							 GLKVector2 box[2], GLKVector4 color,
-							 double death_rate[2],	 double life_span[2],
+							 float death_rate[2],	 float life_span[2],
 							 GLKVector2 velocity[2]) :
 	point_size_(point_size)
 	{

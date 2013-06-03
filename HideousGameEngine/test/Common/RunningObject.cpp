@@ -29,7 +29,7 @@ void RunningObject::SetPosition(GLKVector2 position){
 	sprite_->mvp_ = GLKMatrix4Multiply(he::g_Screen->projection_, tMat);
 }
 
-void RunningObject::Update(double dt){
+void RunningObject::Update(float dt){
 	
 	GLKVector2 newPos = GLKVector2Add(pos_, GLKVector2Multiply(dir_, speed_));
 	if(newPos.x < -he::g_Screen->width_/2 || newPos.x > he::g_Screen->width_/2 || newPos.y < -he::g_Screen->height_/2 || newPos.y > he::g_Screen->height_/2){

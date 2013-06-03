@@ -24,7 +24,7 @@ class AnimObj{
 public:
 	~AnimObj();
 	AnimObj(int ID, he::RectColorSh *shader);
-	void Update(double dt);
+	void Update(float dt);
 	void Render();
 	void TouchEnd(GLKVector2 pt);
 	void AnimationCallback(int animation_id);

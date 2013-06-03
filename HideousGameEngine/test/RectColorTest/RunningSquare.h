@@ -27,7 +27,7 @@ public:
 
 	~RunningSquare();
 	RunningSquare(he::RectColorSh *shader);
-	void Update(double dt);
+	void Update(float dt);
 	void Render();
 	//Getter-Setters
 	Life GetLifeState();

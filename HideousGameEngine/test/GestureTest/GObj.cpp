@@ -30,7 +30,7 @@ color_( GLKVector4Make(1.0, 1.0, 1.0, 1.0))
 	render_object_ = new he::RenderObject(vert_, shader_, 0, he::g_Screen->projection_, color_);
 }
 
-void GObj::Update(double dt){
+void GObj::Update(float dt){
 	transform_.SetPosition(GLKVector2Add(transform_.GetPosition(), GLKVector2MultiplyScalar(direction_, kSpeed)));
 	render_object_->mvp_ = transform_.GetMVP();
 	render_object_->color_ = GLKVector4Make(color_.r, color_.g, color_.b, color_.a);

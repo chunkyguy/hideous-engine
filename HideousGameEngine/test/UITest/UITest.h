@@ -25,8 +25,8 @@ class Label;
 class UITest : public ITest{
 public:
 	~UITest();
-	UITest(double width, double height);
-	void Update(double dt);
+	UITest(float width, float height);
+	void Update(float dt);
 	void Render();
 	void HandleGesture(const he::Gesture &gesture);
 	

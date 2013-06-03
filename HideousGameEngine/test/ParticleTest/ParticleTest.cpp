@@ -17,8 +17,8 @@
 #include <he/Utils/Utils.h>
 
 namespace{
-	double randf_epsilon(double d){
-		return he::Randf() * d + std::numeric_limits<double>::epsilon();
+	float randf_epsilon(float d){
+		return he::Randf() * d + std::numeric_limits<float>::epsilon();
 	}
 }
 
@@ -36,7 +36,7 @@ ParticleTest::~ParticleTest(){
 	he::GlobalsDestroy();
 }
 
-ParticleTest::ParticleTest(double w, double h) :
+ParticleTest::ParticleTest(float w, float h) :
 shader_(new he::ParticleSh),
 texture_(new he::Texture(he::ResourcePath() + "snow_particle.png")),
 environment_(nullptr),
@@ -61,7 +61,7 @@ gesture_listner_(nullptr)
 	//start things here
 }
 
-void ParticleTest::Update(double dt){
+void ParticleTest::Update(float dt){
 	if(particles_){
 		particles_->Update(dt);
 	}
@@ -91,10 +91,10 @@ void ParticleTest::unload(){
 void ParticleTest::load(GLKVector2 pos){
 	
 	GLKVector2 box[2] = {GLKVector2Make(-3, -3), GLKVector2Make(3, 3)};
-	double life_range[2] = {randf_epsilon(0.1), randf_epsilon(0.5)};
-	double deathrate_range[2] = {randf_epsilon(0.01), randf_epsilon(0.08)};
-	double birth_delay_range[2] = {randf_epsilon(0.1), randf_epsilon(0.3)};
-	double birth_rate_range[2] = {randf_epsilon(0.01), randf_epsilon(0.3)};
+	float life_range[2] = {randf_epsilon(0.1), randf_epsilon(0.5)};
+	float deathrate_range[2] = {randf_epsilon(0.01), randf_epsilon(0.08)};
+	float birth_delay_range[2] = {randf_epsilon(0.1), randf_epsilon(0.3)};
+	float birth_rate_range[2] = {randf_epsilon(0.01), randf_epsilon(0.3)};
 	GLKVector2 vel_range[2] = {GLKVector2Make(randf_epsilon(-20.0), randf_epsilon(-20.0)), GLKVector2Make(randf_epsilon(20.0), randf_epsilon(20.0))};
 	GLKVector4 color = GLKVector4Make(he::Randf(), he::Randf(), he::Randf(), 0.5 + he::Randf()/2.0);
 	
@@ -109,7 +109,7 @@ void ParticleTest::load(GLKVector2 pos){
 	//	FILE_LOG(logDEBUG) << "Particles: " << count_ << std::endl;
 
 	int count  = 2500;
-	double point_size = 15.0;
+	float point_size = 15.0;
 	environment_ = new he::ParticleEnv(point_size, birth_delay_range, birth_rate_range,
 									   box, color, deathrate_range, life_range,
 									   vel_range);

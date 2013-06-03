@@ -20,8 +20,8 @@ namespace he{
 class MultiFontTest : public ITest{
 public:
 	~MultiFontTest();
-	MultiFontTest(double w, double h);
-	void Update(double dt);
+	MultiFontTest(float w, float h);
+	void Update(float dt);
 	void Render();
 	void HandleGesture(const he::Gesture &gesture);
 	

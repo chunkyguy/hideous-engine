@@ -18,7 +18,7 @@ namespace he{
 class RunningObject{
 public:
 	RunningObject(he::RenderObject *object);
-	void Update(double dt);
+	void Update(float dt);
 	void Render();
 	//Getter-Setters
 	GLKVector2 GetPosition();

@@ -26,7 +26,7 @@ TextureBigBangTest::~TextureBigBangTest(){
 	he::GlobalsDestroy();
 }
 
-TextureBigBangTest::TextureBigBangTest(double w, double h){
+TextureBigBangTest::TextureBigBangTest(float w, float h){
 	//setup globals
 	he::GlobalsInit(w, h);
 	
@@ -75,7 +75,7 @@ void TextureBigBangTest::unload(){
 	glClear(GL_COLOR_BUFFER_BIT);
 }
 
-void TextureBigBangTest::Update(double dt){
+void TextureBigBangTest::Update(float dt){
 	
 	if(state_ != kRunning){
 		return;
