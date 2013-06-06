@@ -7,12 +7,12 @@
 //
 
 
-#include <cassert>
 #include <fstream>
 
 #include <he/Program/Program.h>
 #include <he/Utils/ResourcePath.hpp>
 #include <he/Utils/DebugLog.h>
+#include <he/Utils/DebugHelper.h>
 
 namespace he{
 	////////////////////////////////////////////////////////////////////////////////////////////////////

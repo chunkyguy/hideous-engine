@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		191B223B176072B1001F6F1C /* FlashTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 191B2239176072B1001F6F1C /* FlashTest.cpp */; };
+		191B223F1760C644001F6F1C /* DebugHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 191B223D1760C644001F6F1C /* DebugHelper.cpp */; };
 		193A5EC61743F2DB00CB945B /* AnimationState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 193A5EA21743F2DB00CB945B /* AnimationState.cpp */; };
 		193A5EC71743F2DB00CB945B /* AnimationStateData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 193A5EA41743F2DB00CB945B /* AnimationStateData.cpp */; };
 		193A5EC91743F2DB00CB945B /* AtlasAttachmentLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 193A5EA81743F2DB00CB945B /* AtlasAttachmentLoader.cpp */; };
@@ -123,6 +125,10 @@
 /* Begin PBXFileReference section */
 		19062FD8174C9E7D00E42681 /* GLKMath_Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLKMath_Additions.h; sourceTree = "<group>"; };
 		19062FD9174C9F1D00E42681 /* HideousGameEngine-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HideousGameEngine-Prefix.pch"; sourceTree = "<group>"; };
+		191B2239176072B1001F6F1C /* FlashTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FlashTest.cpp; sourceTree = "<group>"; };
+		191B223A176072B1001F6F1C /* FlashTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashTest.h; sourceTree = "<group>"; };
+		191B223D1760C644001F6F1C /* DebugHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DebugHelper.cpp; sourceTree = "<group>"; };
+		191B22401760C6C6001F6F1C /* DebugHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DebugHelper.h; sourceTree = "<group>"; };
 		193A5EA21743F2DB00CB945B /* AnimationState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AnimationState.cpp; sourceTree = "<group>"; };
 		193A5EA31743F2DB00CB945B /* AnimationState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationState.h; sourceTree = "<group>"; };
 		193A5EA41743F2DB00CB945B /* AnimationStateData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AnimationStateData.cpp; sourceTree = "<group>"; };
@@ -327,6 +333,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		191B22381760728C001F6F1C /* FlashTest */ = {
+			isa = PBXGroup;
+			children = (
+				191B2239176072B1001F6F1C /* FlashTest.cpp */,
+				191B223A176072B1001F6F1C /* FlashTest.h */,
+			);
+			path = FlashTest;
+			sourceTree = "<group>";
+		};
 		193A5E9F1743F2DB00CB945B /* spine */ = {
 			isa = PBXGroup;
 			children = (
@@ -551,6 +566,7 @@
 		1995826F1734575F0094714E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				191B22401760C6C6001F6F1C /* DebugHelper.h */,
 				199582701734575F0094714E /* DebugLog.h */,
 				199582711734575F0094714E /* GLState.h */,
 				199582731734575F0094714E /* ResourcePath.hpp */,
@@ -835,6 +851,7 @@
 				19A6E605173278A1006ACD91 /* Screen.cpp */,
 				19A6E606173278A1006ACD91 /* Transform.cpp */,
 				19A6E607173278A1006ACD91 /* Utils.cpp */,
+				191B223D1760C644001F6F1C /* DebugHelper.cpp */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -856,6 +873,7 @@
 				19A6E63A173278A1006ACD91 /* TestFactory.h */,
 				19A6E63B173278A1006ACD91 /* TestTemplate.cpp */,
 				19A6E63C173278A1006ACD91 /* TestTemplate.h */,
+				191B22381760728C001F6F1C /* FlashTest */,
 				19A6E629173278A1006ACD91 /* RectColorTest */,
 				19A6E60E173278A1006ACD91 /* AnimationTest */,
 				19A6E613173278A1006ACD91 /* Common */,
@@ -1175,6 +1193,8 @@
 				193A5ED61743F2DB00CB945B /* SlotData.cpp in Sources */,
 				193A5ED81743F4FB00CB945B /* RegionAttachment.cpp in Sources */,
 				193A5EDB1743F8AA00CB945B /* SpineAnimation.cpp in Sources */,
+				191B223B176072B1001F6F1C /* FlashTest.cpp in Sources */,
+				191B223F1760C644001F6F1C /* DebugHelper.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

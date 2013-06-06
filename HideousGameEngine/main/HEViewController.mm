@@ -19,7 +19,7 @@
 //#define TEST_RECT_COLOR
 //#define TEST_RECT_TEXTURE
 //#define TEST_RECT_TEXT
-#define TEST_MULTI_SHADERS
+//#define TEST_MULTI_SHADERS
 //#define TEST_MULTI_FONT
 //#define TEST_ANIMATION
 //#define TEST_TEXTURE_BIG_BANG
@@ -27,31 +27,34 @@
 //#define TEST_PARTICLES
 //#define TEST_UI
 //#define TEST_SPINE
+#define TEST_FLASH
 
 ITest *GetTestFromFactory(float w, float h){
 	
 #if defined(TEST_RECT_COLOR)
-	return MakeRectColorTest(w, h);
+	return MakeTest<RectColorTest>(w, h);
 #elif defined(TEST_RECT_TEXTURE)
-	return MakeRectTextureTest(w, h);
+	return MakeTest<RectTextureTest>(w, h);
 #elif defined(TEST_RECT_TEXT)
-	return MakeRectTextTest(w, h);
+	return MakeTest<RectTextTest>(w, h);
 #elif defined(TEST_MULTI_SHADERS)
-	return MakeMultiShadersTest(w, h);
+	return MakeTest<MultiShadersTest>(w, h);
 #elif defined(TEST_MULTI_FONT)
-	return MakeMultiFontTest(w, h);
+	return MakeTest<MultiFontTest>(w, h);
 #elif defined(TEST_ANIMATION)
-	return MakeAnimationTest(w, h);
+	return MakeTest<AnimationTest>(w, h);
 #elif defined(TEST_TEXTURE_BIG_BANG)
-	return MakeTextureBigBangTest(w, h);
+	return MakeTest<TextureBigBangTest>(w, h);
 #elif defined(TEST_GESTURE)
-	return MakeGestureTest(w, h);
+	return MakeTest<GestureTest>(w, h);
 #elif defined(TEST_UI)
-	return MakeUITest(w, h);
+	return MakeTest<UITest>(w, h);
 #elif defined(TEST_PARTICLES)
-	return MakeParticlesTest(w, h);
+	return MakeTest<ParticleTest>(w, h);
 #elif defined(TEST_SPINE)
-	return MakeSpineTest(w,h);
+	return MakeTest<SpineTest>(w, h);
+#elif defined(TEST_FLASH)
+	return MakeTest<FlashTest>(w, h);
 #endif
 	
 }

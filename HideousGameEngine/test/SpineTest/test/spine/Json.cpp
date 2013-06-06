@@ -27,7 +27,7 @@
 #include <cmath>
 #include <cstdio>
 #include <cctype>
-#include <cassert>
+#include <he/Utils/DebugHelper.h>
 
 namespace{
 	/* Utility to jump whitespace and cr/lf */

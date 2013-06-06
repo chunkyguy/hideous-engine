@@ -5,9 +5,9 @@
 //  Created by Sid on 29/04/13.
 //  Copyright (c) 2013 whackylabs. All rights reserved.
 //
-#include <cassert>
 
 #include <he/Vertex/VertexPar.h>
+#include <he/Utils/DebugHelper.h>
 
 namespace he{
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
