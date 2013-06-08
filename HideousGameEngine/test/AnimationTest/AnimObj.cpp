@@ -10,7 +10,8 @@
 
 #include <he/Utils/DebugLog.h>
 #include <he/Utils/Utils.h>
-#include <he/Animation/Animation.h>
+#include <he/Animation/RawAnimation.h>
+#include <he/Animation/AnimationLoop.h>
 #include <he/RenderObject/RenderObject.h>
 #include <he/Shaders/RectColorSh/RectColorSh.h>
 #include <he/Vertex/VertexCol.h>
@@ -70,14 +71,14 @@ void AnimObj::TouchEnd(GLKVector2 pt){
 	end_animations();
 	
 	GLKVector2 scale_points[2] = {transform_.scale_, GLKVector2MultiplyScalar(transform_.scale_, 2.0)};
-	he::Animation<GLKVector2> *scale_animation = new he::Animation<GLKVector2>(&transform_.scale_,
+	he::RawAnimation<GLKVector2> *scale_animation = new he::RawAnimation<GLKVector2>(&transform_.scale_,
 																			   he::Tweener<GLKVector2>(he::BackEaseIn, scale_points[0], scale_points[1]),
 																			   100);
-	he::Animation<GLKVector2> *scale_down_anim = new he::Animation<GLKVector2>(&transform_.scale_,
+	he::RawAnimation<GLKVector2> *scale_down_anim = new he::RawAnimation<GLKVector2>(&transform_.scale_,
 																			   he::Tweener<GLKVector2>(he::BounceEaseOut, scale_points[1], scale_points[0]),
 																			   50);
 	GLKVector4 rand_color = GLKVector4Make(he::Randf(),he::Randf(),he::Randf(),1.0);
-	he::Animation<GLKVector4> *color_switch = new he::Animation<GLKVector4>(&render_object_->color_,
+	he::RawAnimation<GLKVector4> *color_switch = new he::RawAnimation<GLKVector4>(&render_object_->color_,
 																			he::Tweener<GLKVector4>(he::Linear, render_object_->color_, rand_color),
 																			100);
 	color_switch->SetListener(animation_listener_);
@@ -86,10 +87,10 @@ void AnimObj::TouchEnd(GLKVector2 pt){
 	he::g_AnimationLoop->AddAnimation(scale_animation);
 	scale_anim_descent_id_ = scale_animation->GetDescentID();
 	
-	he::Animation<GLKVector2> *trans_animation = new he::Animation<GLKVector2>(&transform_.position_,
+	he::RawAnimation<GLKVector2> *trans_animation = new he::RawAnimation<GLKVector2>(&transform_.position_,
 																			   he::Tweener<GLKVector2>(he::Linear, transform_.position_, pt),
 																			   100);
-	trans_animation->AddChild(new he::Animation<float>(&transform_.rotation_,
+	trans_animation->AddChild(new he::RawAnimation<float>(&transform_.rotation_,
 														he::Tweener<float>(he::Linear, transform_.rotation_, atan2(pt.y, pt.x)),
 														80));
 	he::g_AnimationLoop->AddAnimation(trans_animation);
@@ -121,7 +122,7 @@ void AnimObj::TouchEnd(GLKVector2 pt){
 struct end_anim {
 	end_anim(unsigned long des_id) : des_id_(des_id)	{}
 	
-	void operator()(he::Animatable *animation){
+	void operator()(he::Animation *animation){
 		if(animation->GetDescentID() == des_id_){
 			animation->Die();
 		}

@@ -21,7 +21,7 @@
 	#include <he/Vertex/VertexTex.h>
 #endif
 #include <he/Texture/TextureAtlas.h>
-#include <he/Texture/TextureAtlasParser.h>
+#include <he/Texture/TextureAtlasRegion.h>
 #include <he/Vertex/VertexData.h>
 #include <he/Utils/DebugLog.h>
 #include <he/Utils/ResourcePath.hpp>
@@ -78,7 +78,7 @@ void SpineTest::load(std::string animation_name){
 //	atlas_ = spine::Atlas_readAtlasFile(atlas_fpath.c_str());
 //	printf("First region name: %s, x: %d, y: %d\n", atlas_->regions->name, atlas_->regions->x, atlas_->regions->y);
 //	printf("First page name: %s, size: %d, %d\n", atlas_->pages->name, atlas_->pages->width, atlas_->pages->height);
-	atlas_ = new he::TextureAtlas( atlas_file_fpath, atlas_image_fpath);
+	atlas_ = new he::TextureAtlas( atlas_file_fpath, atlas_image_fpath, he::TextureAtlas::Zwoptex);
 	
 	spine::SkeletonJson* json = new spine::SkeletonJson(atlas_);
 
@@ -219,7 +219,7 @@ printf("Attachment is not region!\n");
 		he::Texture *texture = 0;
 #else
 		he::TextureAtlas *atlas = regionAttachment->GetRendererObject();;
-		he::TextureAtlasRegion region = atlas->GetTextureAtlasRegion(regionAttachment->GetName());
+		const he::TextureAtlasRegion *region = atlas->GetTextureAtlasRegion(regionAttachment->GetName());
 
 #if defined(PRINT_LOG)
 		printf("name:\t\t\t\t\t\t\t%s\n"
@@ -230,13 +230,13 @@ printf("Attachment is not region!\n");
 			   "rotate:\t\t\t\t\t\t\t%s\n"
 			   "trimmed:\t\t\t\t\t\t\t%s\n"
 			   ,
-			   region.name.c_str(),
-			   region.sprite_color_rect.x, region.sprite_color_rect.y, region.sprite_color_rect.z, region.sprite_color_rect.w,
-			   region.tex_coords.x, region.tex_coords.y, region.tex_coords.z, region.tex_coords.w,
-			   region.sprite_offset.x, region.sprite_offset.y,
-			   region.sprite_source_size.x, region.sprite_source_size.y,
-			   region.texture_rotated?"y":"n",
-			   region.sprite_trimmed?"y":"n"
+			   region->name_.c_str(),
+			   region->sprite_color_rect_.x, region->sprite_color_rect_.y, region->sprite_color_rect_.z, region->sprite_color_rect_.w,
+			   region->tex_coords_.x, region->tex_coords_.y, region->tex_coords_.z, region->tex_coords_.w,
+			   region->sprite_offset_.x, region->sprite_offset_.y,
+			   region->sprite_source_size_.x, region->sprite_source_size_.y,
+			   region->texture_rotated_?"y":"n",
+			   region->sprite_trimmed_?"y":"n"
 			   );
 #endif
 		
@@ -255,9 +255,9 @@ printf("Attachment is not region!\n");
 		printf("};\n");
 #endif
 		
-		GLKVector4 eff_frame = region.sprite_color_rect;
+		GLKVector4 eff_frame = region->sprite_color_rect_;
 		//rotate if image is roated
-		if(region.texture_rotated){
+		if(region->texture_rotated_){
 			float tmp;
 			tmp = eff_frame.z; eff_frame.z = eff_frame.w; eff_frame.w = tmp;
 
@@ -267,7 +267,7 @@ printf("Attachment is not region!\n");
 
 		}
 
-		GLKVector4 tex_coords = region.tex_coords;
+		GLKVector4 tex_coords = region->tex_coords_;
 
 #if defined(PRINT_LOG)
 		printf("tex_coords:\t\t\t\t\t{{%.2f, %.2f}, {%.2f, %.2f}}\n", tex_coords.x, tex_coords.y, tex_coords.z, tex_coords.w);

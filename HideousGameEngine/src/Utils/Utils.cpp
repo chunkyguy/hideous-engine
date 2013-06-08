@@ -10,7 +10,7 @@
 
 #include <fstream>
 
-#include <he/Animation/Animation.h>
+#include <he/Animation/AnimationLoop.h>
 #include <he/EventLoop/Gesture.h>
 
 namespace he{

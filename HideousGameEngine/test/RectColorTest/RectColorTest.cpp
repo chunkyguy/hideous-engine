@@ -9,7 +9,7 @@
 #include "RectColorTest.h"
 
 #include <he/Shaders/RectColorSh/RectColorSh.h>
-#include <he/Utils/DebugLog.h>
+#include <he/Utils/DebugHelper.h>
 #include <he/Utils/Utils.h>
 
 RectColorTest::~RectColorTest(){
@@ -26,15 +26,8 @@ shader_(new he::RectColorSh)
 	// Init globals
 	he::GlobalsInit(w, h);
 
-	//debugger
-	const std::string loglevel("DEBUG1");
-	FILELog::ReportingLevel() = FILELog::FromString(loglevel);
-	FILE_LOG(logDEBUG) << "Logging Enabled: RectColorTest " << loglevel << std::endl;
-	FILE_LOG(logDEBUG) <<"{" <<w << "," << h << "}";
-
 	//random
 	srand(time(NULL));
-
 
 	gesture_listner_ = new he::GestureListener<RectColorTest>(this, &RectColorTest::HandleGesture);
 	he::g_EventLoop->AddListener(gesture_listner_);

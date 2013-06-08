@@ -13,44 +13,64 @@ namespace he{
 	// MARK:	VertexData
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	VertexData::VertexData(){
-		for(int i = 0; i < 8; ++i){
-			data_[i] = 0;
-		}
+		GLfloat data[8] = {0};
+		load(data);
 	}
-	VertexData::VertexData(GLfloat *data){
+	VertexData::VertexData(const GLfloat *data){
+		load(data);
+	}
+	VertexData::VertexData(const GLKVector2 &a, const GLKVector2 &b, const GLKVector2 &c, const GLKVector2 &d){
+		GLfloat data[8] = {
+			a.x, a.y,	//A
+			b.x, b.y,	//B
+			c.x, c.y,	//C
+			d.x, d.y,	//D
+		};
+		load(data);
+	}
+	VertexData::VertexData(const GLfloat a_x, const GLfloat a_y, const GLfloat d_x, const GLfloat d_y){
+		GLfloat data[8] = {
+			a_x, a_y,	//A
+			d_x, a_y,	//B
+			a_x, d_y,	//C
+			d_x, d_y,	//D
+		};
+		load(data);
+	}
+	VertexData::VertexData(const GLKVector2 &a, const GLKVector2 &d){
+		GLfloat data[8] = {
+			a.x, a.y,	//A
+			d.x, a.y,	//B
+			a.x, d.y,	//C
+			d.x, d.y,	//D
+		};
+		load(data);
+	}
+	VertexData::VertexData(const GLKVector4 &a_d){
+		GLfloat data[8] = {
+			a_d.x, a_d.y,	//A
+			a_d.z, a_d.y,	//B
+			a_d.x, a_d.w,	//C
+			a_d.z, a_d.w,	//D
+		};
+		load(data);
+	}
+
+	void VertexData::load(const GLfloat *data){
 		for(int i = 0; i < 8; ++i){
 			data_[i] = data[i];
 		}
 	}
-	VertexData::VertexData(GLKVector2 a, GLKVector2 b, GLKVector2 c, GLKVector2 d){
-		data_[Ax] = a.x; data_[Ay] = a.y;	//A
-		data_[Bx] = b.x; data_[By] = b.y;	//B
-		data_[Cx] = c.x; data_[Cy] = c.y;	//C
-		data_[Dx] = d.x; data_[Dy] = d.y;	//D
-	}
-	VertexData::VertexData(GLfloat a_x, GLfloat a_y, GLfloat d_x, GLfloat d_y){
-		data_[Ax] = a_x; data_[Ay] = a_y;	//A
-		data_[Bx] = d_x; data_[By] = a_y;	//B
-		data_[Cx] = a_x; data_[Cy] = d_y;	//C
-		data_[Dx] = d_x; data_[Dy] = d_y;	//D
-	}
-	VertexData::VertexData(GLKVector2 a, GLKVector2 d){
-		data_[Ax] = a.x; data_[Ay] = a.y;	//A
-		data_[Bx] = d.x; data_[By] = a.y;	//B
-		data_[Cx] = a.x; data_[Cy] = d.y;	//C
-		data_[Dx] = d.x; data_[Dy] = d.y;	//D
-	}
-
 	
 	const GLfloat *VertexData::GetData() const{
 		return &data_[0];
 	}
 	
-	GLsizei VertexData::GetSize() const{
+	const GLsizei VertexData::GetSize() const{
 		return sizeof(data_);
 	}
 	
-	bool VertexData::Contains(GLfloat x, GLfloat y) const{
+	bool VertexData::Contains(const GLfloat x, const GLfloat y) const{
 		//printf("%f %f %f %f %f %f\n",x,y,data[eAx],data[eAy],data[eDx],data[eDy]);
 		return ((x > data_[Ax] && x < data_[Dx]) && (y > data_[Ay] && y < data_[Dy]));
 	}
@@ -63,7 +83,7 @@ namespace he{
 		return (Contains(other.GetVertex(kA)) && Contains(other.GetVertex(kB)) && Contains(other.GetVertex(kC)) && Contains(other.GetVertex(kD)));
 	}
 	
-	void VertexData::Translate(GLfloat x, GLfloat y){
+	void VertexData::Translate(const GLfloat x, const GLfloat y){
 		int j = 0;
 		for(int i = 0; i < 4; ++i){
 			data_[j++] += x;
@@ -74,7 +94,7 @@ namespace he{
 		Translate(point.x, point.y);
 	}
 	
-	void VertexData::Scale(GLfloat x, GLfloat y){
+	void VertexData::Scale(const GLfloat x, const GLfloat y){
 		int j = 0;
 		for(int i = 0; i < 4; ++i){
 			data_[j++] *= x;
@@ -85,7 +105,7 @@ namespace he{
 		Scale(value.x, value.y);
 	}
 
-	void VertexData::SetVertex(VertexIndex index, GLKVector2 value){
+	void VertexData::SetVertex(const VertexIndex index, const GLKVector2 &value){
 		switch(index){
 			case kA:
 				data_[Ax] = value.x; data_[Ay] = value.y;	//A
@@ -101,7 +121,7 @@ namespace he{
 				break;
 		}
 	}
-	GLKVector2 VertexData::GetVertex(VertexIndex index) const{
+	const GLKVector2 VertexData::GetVertex(const VertexIndex index) const{
 		GLKVector2 ret;
 		switch(index){
 			case kA:
@@ -119,5 +139,14 @@ namespace he{
 		}
 		return ret;
 	}
+	
+	std::ostream &operator<<(std::ostream &os, const VertexData &data){
+		os << "A: " << data.GetVertex(VertexData::kA) << "\n";
+		os << "B: " << data.GetVertex(VertexData::kB) << "\n";
+		os << "C: " << data.GetVertex(VertexData::kC) << "\n";
+		os << "D: " << data.GetVertex(VertexData::kD) << "\n";
+		return os;
+	}
+
 }
 ///EOF

@@ -9,44 +9,60 @@
 #include <he/Texture/TextureAtlas.h>
 
 #include <he/Texture/Texture.h>
-#include <he/Utils/DebugLog.h>
+#include <he/Texture/TextureAtlasParser.h>
+#include <he/Texture/TextureAtlasRegion.h>
+#include <he/Utils/DebugHelper.h>
 #include <he/Vertex/VertexTex.h>
 
 namespace he{
 	///////////////////////////////////////////////////////////////////////////////////////////////////
 	// MARK: TextureAtlas
 	///////////////////////////////////////////////////////////////////////////////////////////////////
-	TextureAtlas::TextureAtlas(std::string data_path, std::string texture_path) :
-	parser_(new TextureAtlasParser(data_path)),
+	TextureAtlas::TextureAtlas(const std::string &data_path, const std::string &texture_path, const AtlasFormat format) :
+	parser_(nullptr),
 	texture_(new he::Texture(texture_path))
-	{	}
+	{
+		switch(format){
+			case Zwoptex:
+				parser_ = new ZwoptexDataParser(data_path);
+				break;
+				
+			case Starling:
+				parser_ = new StarlingDataParser(data_path);
+				break;
+		}
+		assert(parser_);		// Uninitialized parser
+		assert(texture_);	// Uninitialized texture
+	}
 
 	TextureAtlas::~TextureAtlas(){
 		delete parser_;
 		delete texture_;
 	}
-
-	VertexTex *TextureAtlas::CreateTextureData(std::string image_name,
-											   float width, float height, bool aspect_correct ){
-		TextureAtlasRegion tex_region = GetTextureAtlasRegion(image_name);
-		FILE_LOG(logDEBUG) << "TextureAtlas: get texture: " << image_name;
-		if(width < 0.0){
-			width = tex_region.sprite_size.x;
-		}
-		if(height < 0.0){
-			height = tex_region.sprite_size.y;
-		}
-		return new VertexTex(width, height, aspect_correct, tex_region.tex_coords);
-	}
 	
-	TextureAtlasRegion TextureAtlas::GetTextureAtlasRegion(std::string image_name){
-		std::map<std::string, TextureAtlasRegion>::iterator itr = parser_->GetTable().find(image_name);
-		assert(itr != parser_->GetTable().end());
-		return itr->second;
+	const TextureAtlasRegion *TextureAtlas::GetTextureAtlasRegion(const std::string &image_name) const{
+		he_Trace("TextureAtlas: fullname '%@'\n",image_name);
+		std::map<const std::string, TextureAtlasRegion>::const_iterator itr = parser_->GetTable().find(image_name);
+		if(itr != parser_->GetTable().end()){
+			return &(itr->second);
+		}
+		return nullptr;
 	}
 	
 	he::Texture *TextureAtlas::GetTexture() const{
 		return texture_;
+	}
+
+	VertexTex *CreateTextureData(const TextureAtlas *atlas,
+								 const std::string &image_name,
+								 float width,
+								 float height,
+								 const bool aspect_correct ){
+		const TextureAtlasRegion *tex_region = atlas->GetTextureAtlasRegion(image_name);
+		if(tex_region){
+			return new VertexTex(tex_region, width, height, aspect_correct);
+		}
+		return nullptr;
 	}
 
 

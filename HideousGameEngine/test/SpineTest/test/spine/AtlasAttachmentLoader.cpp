@@ -25,6 +25,7 @@
 
 #include "AtlasAttachmentLoader.h"
 #include <he/Texture/TextureAtlas.h>
+#include <he/Texture/TextureAtlasRegion.h>
 #include "RegionAttachment.h"
 
 namespace spine {
@@ -39,14 +40,14 @@ namespace spine {
 			case ATTACHMENT_REGION: {
 				std::string eff_name = name + ".png";	// becuase the json file doesn't has .png appended
 				printf("AtlasAttachmentLoader: NewAttachment: %s\n",eff_name.c_str());
-				he::TextureAtlasRegion region = atlas_->GetTextureAtlasRegion(eff_name);
+				const he::TextureAtlasRegion *region = atlas_->GetTextureAtlasRegion(eff_name);
 				
 				RegionAttachment* attachment = new RegionAttachment(eff_name);
 				attachment->SetRendererObject(atlas_);
-				attachment->SetUVs(region.tex_coords, region.texture_rotated);
-				attachment->SetRegionOffset(region.sprite_offset);
-				attachment->SetRegionSize( region.sprite_size);
-				attachment->SetRegionOriginalSize(region.sprite_source_size);
+				attachment->SetUVs(region->tex_coords_, region->texture_rotated_);
+				attachment->SetRegionOffset(region->sprite_offset_);
+				attachment->SetRegionSize( region->sprite_size_);
+				attachment->SetRegionOriginalSize(region->sprite_source_size_);
 				return attachment;
 			}
 			default:

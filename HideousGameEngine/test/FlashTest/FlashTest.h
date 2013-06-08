@@ -11,12 +11,19 @@
 
 #include "../TestTemplate.h"
 
+class FlashMovie;
+class FlashMovieAssets;
+
 class FlashTest : public ITest {
 public:
 	FlashTest(float w, float h);
 	~FlashTest();
 	void Update(float dt);
 	void Render();
+	
+private:
+	FlashMovie *movie_;
+	FlashMovieAssets *assets_;
 };
 
 #endif /* defined(__HideousGameEngine__FlashTest__) */

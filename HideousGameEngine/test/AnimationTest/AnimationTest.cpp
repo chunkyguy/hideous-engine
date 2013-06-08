@@ -10,7 +10,7 @@
 
 #include <OpenGLES/ES2/gl.h>
 
-#include <he/Animation/Animation.h>
+#include <he/Animation/AnimationLoop.h>
 #include <he/Shaders/RectColorSh/RectColorSh.h>
 #include <he/Utils/DebugLog.h>
 #include <he/Utils/Utils.h>

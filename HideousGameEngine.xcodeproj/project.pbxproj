@@ -25,6 +25,13 @@
 		193A5ED61743F2DB00CB945B /* SlotData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 193A5EC21743F2DB00CB945B /* SlotData.cpp */; };
 		193A5ED81743F4FB00CB945B /* RegionAttachment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 193A5ED71743F4FA00CB945B /* RegionAttachment.cpp */; };
 		193A5EDB1743F8AA00CB945B /* SpineAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 193A5ED91743F8A200CB945B /* SpineAnimation.cpp */; };
+		194F4D421762EDEB002AD10E /* GLKMath_Additions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 194F4D401762EDEB002AD10E /* GLKMath_Additions.cpp */; };
+		194F4D471762F1BD002AD10E /* polygons.png in Resources */ = {isa = PBXBuildFile; fileRef = 194F4D431762F1BD002AD10E /* polygons.png */; };
+		194F4D481762F1BD002AD10E /* polygons.xml in Resources */ = {isa = PBXBuildFile; fileRef = 194F4D441762F1BD002AD10E /* polygons.xml */; };
+		194F4D491762F1BD002AD10E /* rotating_square.png in Resources */ = {isa = PBXBuildFile; fileRef = 194F4D451762F1BD002AD10E /* rotating_square.png */; };
+		194F4D4A1762F1BD002AD10E /* rotating_square.xml in Resources */ = {isa = PBXBuildFile; fileRef = 194F4D461762F1BD002AD10E /* rotating_square.xml */; };
+		194F4D4D17636527002AD10E /* fishmotion.png in Resources */ = {isa = PBXBuildFile; fileRef = 194F4D4B17636526002AD10E /* fishmotion.png */; };
+		194F4D4E17636527002AD10E /* fishmotion.xml in Resources */ = {isa = PBXBuildFile; fileRef = 194F4D4C17636527002AD10E /* fishmotion.xml */; };
 		195FE58D1740B5A1003A10CA /* goblin.plist in Resources */ = {isa = PBXBuildFile; fileRef = 195FE5821740B5A1003A10CA /* goblin.plist */; };
 		195FE58E1740B5A1003A10CA /* goblin.png in Resources */ = {isa = PBXBuildFile; fileRef = 195FE5831740B5A1003A10CA /* goblin.png */; };
 		195FE58F1740B5A1003A10CA /* goblin.zwd in Resources */ = {isa = PBXBuildFile; fileRef = 195FE5841740B5A1003A10CA /* goblin.zwd */; };
@@ -37,6 +44,11 @@
 		195FE5961740B5A1003A10CA /* spineboy.png in Resources */ = {isa = PBXBuildFile; fileRef = 195FE58B1740B5A1003A10CA /* spineboy.png */; };
 		195FE5971740B5A1003A10CA /* spineboy.zwd in Resources */ = {isa = PBXBuildFile; fileRef = 195FE58C1740B5A1003A10CA /* spineboy.zwd */; };
 		1962B846173B7070004E9A1C /* SpineTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1962B844173B7068004E9A1C /* SpineTest.cpp */; };
+		198403AC1761B86B00D0B7EA /* TextureAtlasRegion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 198403AA1761B86A00D0B7EA /* TextureAtlasRegion.cpp */; };
+		198403B21761EA2F00D0B7EA /* AnimationLoop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 198403B01761EA2F00D0B7EA /* AnimationLoop.cpp */; };
+		198403B51761EAAA00D0B7EA /* AnimationUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 198403B31761EAAA00D0B7EA /* AnimationUtils.cpp */; };
+		198403B91761F10300D0B7EA /* FlashMovie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 198403B71761F10300D0B7EA /* FlashMovie.cpp */; };
+		198403BC1761F85000D0B7EA /* SpriteAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 198403BA1761F85000D0B7EA /* SpriteAnimation.cpp */; };
 		199C766C174C885700882A9C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 199C766B174C885600882A9C /* CoreFoundation.framework */; };
 		19A6E5791732781F006ACD91 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A6E5781732781F006ACD91 /* UIKit.framework */; };
 		19A6E57B1732781F006ACD91 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A6E57A1732781F006ACD91 /* Foundation.framework */; };
@@ -163,6 +175,13 @@
 		193A5ED91743F8A200CB945B /* SpineAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpineAnimation.cpp; sourceTree = "<group>"; };
 		193A5EDA1743F8A500CB945B /* SpineAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpineAnimation.h; sourceTree = "<group>"; };
 		193A5EDD174430BA00CB945B /* GLKMathsAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLKMathsAdditions.h; sourceTree = "<group>"; };
+		194F4D401762EDEB002AD10E /* GLKMath_Additions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLKMath_Additions.cpp; sourceTree = "<group>"; };
+		194F4D431762F1BD002AD10E /* polygons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = polygons.png; sourceTree = "<group>"; };
+		194F4D441762F1BD002AD10E /* polygons.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = polygons.xml; sourceTree = "<group>"; };
+		194F4D451762F1BD002AD10E /* rotating_square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rotating_square.png; sourceTree = "<group>"; };
+		194F4D461762F1BD002AD10E /* rotating_square.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = rotating_square.xml; sourceTree = "<group>"; };
+		194F4D4B17636526002AD10E /* fishmotion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fishmotion.png; sourceTree = "<group>"; };
+		194F4D4C17636527002AD10E /* fishmotion.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = fishmotion.xml; sourceTree = "<group>"; };
 		195FE5821740B5A1003A10CA /* goblin.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = goblin.plist; sourceTree = "<group>"; };
 		195FE5831740B5A1003A10CA /* goblin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goblin.png; sourceTree = "<group>"; };
 		195FE5841740B5A1003A10CA /* goblin.zwd */ = {isa = PBXFileReference; lastKnownFileType = file; path = goblin.zwd; sourceTree = "<group>"; };
@@ -176,6 +195,17 @@
 		195FE58C1740B5A1003A10CA /* spineboy.zwd */ = {isa = PBXFileReference; lastKnownFileType = file; path = spineboy.zwd; sourceTree = "<group>"; };
 		1962B844173B7068004E9A1C /* SpineTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpineTest.cpp; sourceTree = "<group>"; };
 		1962B845173B706C004E9A1C /* SpineTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpineTest.h; sourceTree = "<group>"; };
+		198403A91761B80B00D0B7EA /* TextureAtlasRegion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextureAtlasRegion.h; sourceTree = "<group>"; };
+		198403AA1761B86A00D0B7EA /* TextureAtlasRegion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextureAtlasRegion.cpp; sourceTree = "<group>"; };
+		198403AD1761E8C700D0B7EA /* RawAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RawAnimation.h; sourceTree = "<group>"; };
+		198403AE1761E95C00D0B7EA /* AnimationLoop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationLoop.h; sourceTree = "<group>"; };
+		198403AF1761E9B500D0B7EA /* AnimationUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationUtils.h; sourceTree = "<group>"; };
+		198403B01761EA2F00D0B7EA /* AnimationLoop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AnimationLoop.cpp; sourceTree = "<group>"; };
+		198403B31761EAAA00D0B7EA /* AnimationUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AnimationUtils.cpp; sourceTree = "<group>"; };
+		198403B61761EFA400D0B7EA /* SpriteAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpriteAnimation.h; sourceTree = "<group>"; };
+		198403B71761F10300D0B7EA /* FlashMovie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FlashMovie.cpp; sourceTree = "<group>"; };
+		198403B81761F10300D0B7EA /* FlashMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashMovie.h; sourceTree = "<group>"; };
+		198403BA1761F85000D0B7EA /* SpriteAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpriteAnimation.cpp; sourceTree = "<group>"; };
 		199582521734575F0094714E /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
 		199582541734575F0094714E /* Gesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gesture.h; sourceTree = "<group>"; };
 		199582551734575F0094714E /* GestureCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureCollector.h; sourceTree = "<group>"; };
@@ -336,8 +366,11 @@
 		191B22381760728C001F6F1C /* FlashTest */ = {
 			isa = PBXGroup;
 			children = (
+				19535B241760C9F90053A2AE /* assets */,
 				191B2239176072B1001F6F1C /* FlashTest.cpp */,
 				191B223A176072B1001F6F1C /* FlashTest.h */,
+				198403B71761F10300D0B7EA /* FlashMovie.cpp */,
+				198403B81761F10300D0B7EA /* FlashMovie.h */,
 			);
 			path = FlashTest;
 			sourceTree = "<group>";
@@ -383,6 +416,19 @@
 			name = spine;
 			path = HideousGameEngine/test/SpineTest/test/spine;
 			sourceTree = SOURCE_ROOT;
+		};
+		19535B241760C9F90053A2AE /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				194F4D4B17636526002AD10E /* fishmotion.png */,
+				194F4D4C17636527002AD10E /* fishmotion.xml */,
+				194F4D431762F1BD002AD10E /* polygons.png */,
+				194F4D441762F1BD002AD10E /* polygons.xml */,
+				194F4D451762F1BD002AD10E /* rotating_square.png */,
+				194F4D461762F1BD002AD10E /* rotating_square.xml */,
+			);
+			path = assets;
+			sourceTree = "<group>";
 		};
 		195FE5811740B5A1003A10CA /* zwoptex */ = {
 			isa = PBXGroup;
@@ -461,6 +507,10 @@
 				199582521734575F0094714E /* Animation.h */,
 				19EB94A01738C92D00FAF69C /* easing.h */,
 				199C7656174C75E700882A9C /* Tweener.h */,
+				198403AD1761E8C700D0B7EA /* RawAnimation.h */,
+				198403AE1761E95C00D0B7EA /* AnimationLoop.h */,
+				198403AF1761E9B500D0B7EA /* AnimationUtils.h */,
+				198403B61761EFA400D0B7EA /* SpriteAnimation.h */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -559,6 +609,7 @@
 				1995826C1734575F0094714E /* TextureAtlas.h */,
 				1995826D1734575F0094714E /* TextureAtlasParser.h */,
 				1995826E1734575F0094714E /* TextureData.h */,
+				198403A91761B80B00D0B7EA /* TextureAtlasRegion.h */,
 			);
 			path = Texture;
 			sourceTree = "<group>";
@@ -742,7 +793,10 @@
 			isa = PBXGroup;
 			children = (
 				19A6E5E6173278A1006ACD91 /* Animation.cpp */,
+				198403B01761EA2F00D0B7EA /* AnimationLoop.cpp */,
 				19EB949E1738C8F200FAF69C /* easing.cpp */,
+				198403B31761EAAA00D0B7EA /* AnimationUtils.cpp */,
+				198403BA1761F85000D0B7EA /* SpriteAnimation.cpp */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -839,6 +893,7 @@
 				19A6E5FE173278A1006ACD91 /* TextureAtlas.cpp */,
 				19A6E5FF173278A1006ACD91 /* TextureAtlasParser.mm */,
 				19A6E600173278A1006ACD91 /* TextureData.mm */,
+				198403AA1761B86A00D0B7EA /* TextureAtlasRegion.cpp */,
 			);
 			path = Texture;
 			sourceTree = "<group>";
@@ -852,6 +907,7 @@
 				19A6E606173278A1006ACD91 /* Transform.cpp */,
 				19A6E607173278A1006ACD91 /* Utils.cpp */,
 				191B223D1760C644001F6F1C /* DebugHelper.cpp */,
+				194F4D401762EDEB002AD10E /* GLKMath_Additions.cpp */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1119,6 +1175,12 @@
 				195FE5971740B5A1003A10CA /* spineboy.zwd in Resources */,
 				19B5A588175B81DE0031834C /* Icon.png in Resources */,
 				19B5A58A175B81E20031834C /* Icon@2x.png in Resources */,
+				194F4D471762F1BD002AD10E /* polygons.png in Resources */,
+				194F4D481762F1BD002AD10E /* polygons.xml in Resources */,
+				194F4D491762F1BD002AD10E /* rotating_square.png in Resources */,
+				194F4D4A1762F1BD002AD10E /* rotating_square.xml in Resources */,
+				194F4D4D17636527002AD10E /* fishmotion.png in Resources */,
+				194F4D4E17636527002AD10E /* fishmotion.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1195,6 +1257,12 @@
 				193A5EDB1743F8AA00CB945B /* SpineAnimation.cpp in Sources */,
 				191B223B176072B1001F6F1C /* FlashTest.cpp in Sources */,
 				191B223F1760C644001F6F1C /* DebugHelper.cpp in Sources */,
+				198403AC1761B86B00D0B7EA /* TextureAtlasRegion.cpp in Sources */,
+				198403B21761EA2F00D0B7EA /* AnimationLoop.cpp in Sources */,
+				198403B51761EAAA00D0B7EA /* AnimationUtils.cpp in Sources */,
+				198403B91761F10300D0B7EA /* FlashMovie.cpp in Sources */,
+				198403BC1761F85000D0B7EA /* SpriteAnimation.cpp in Sources */,
+				194F4D421762EDEB002AD10E /* GLKMath_Additions.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

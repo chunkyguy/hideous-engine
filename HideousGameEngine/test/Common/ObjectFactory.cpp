@@ -47,7 +47,7 @@ void ObjectFactory::load_assets(){
 	// texture obj
 	texture_ = new he::Texture(he::ResourcePath() + "texture.png");
 	vert_ = new he::VertexTex(200, 200);
-	atlas_ = new he::TextureAtlas( he::ResourcePath() + "tex_atlas.plist", he::ResourcePath() + "tex_atlas.png");
+	atlas_ = new he::TextureAtlas( he::ResourcePath() + "tex_atlas.plist", he::ResourcePath() + "tex_atlas.png", he::TextureAtlas::Zwoptex);
 	tex_sh_ = new he::RectTextureSh;
 	
 	// text obj

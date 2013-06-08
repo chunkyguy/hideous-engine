@@ -98,11 +98,11 @@ void RectTextureTest::load_textures(){
 	vertex_datas_.push_back(v);
 	
 	//Draw a texture from atlas
-	atlas_ = new he::TextureAtlas( he::ResourcePath() + "tex_atlas.plist", he::ResourcePath() + "tex_atlas.png");
+	atlas_ = new he::TextureAtlas( he::ResourcePath() + "tex_atlas.plist", he::ResourcePath() + "tex_atlas.png", he::TextureAtlas::Zwoptex);
 	
 	//fish
 	for(int i = 0; i < 2; ++i){
-		v = atlas_->CreateTextureData("fish.png", 100, 100, i%2);
+		v = CreateTextureData(atlas_, "fish.png", 100, 100, i%2);
 		GLKVector2 pos = GLKVector2Make(50.0, -100.0 + i*100.0);
 		GLKMatrix4 tMat = GLKMatrix4MakeTranslation(pos.x, pos.y, -0.1);
 		GLKMatrix4 mvpMat = GLKMatrix4Multiply(he::g_Screen->projection_, tMat);
@@ -112,7 +112,7 @@ void RectTextureTest::load_textures(){
 	}
 	
 	//rope
-	v = atlas_->CreateTextureData("rope.png");
+	v = CreateTextureData(atlas_, "rope.png");
 	pos = GLKVector2Make(150.0, 0.0);
 	tMat = GLKMatrix4MakeTranslation(pos.x, pos.y, -0.1);
 	mvpMat = GLKMatrix4Multiply(he::g_Screen->projection_, tMat);
@@ -121,7 +121,7 @@ void RectTextureTest::load_textures(){
 	vertex_datas_.push_back(v);
 	
 	//seaweed
-	v = atlas_->CreateTextureData("seaweed.png", 100.0);
+	v = CreateTextureData(atlas_, "seaweed.png", 100.0);
 	pos = GLKVector2Make(0.0, -100.0);
 	tMat = GLKMatrix4MakeTranslation(pos.x, pos.y, -0.1);
 	mvpMat = GLKMatrix4Multiply(he::g_Screen->projection_, tMat);
