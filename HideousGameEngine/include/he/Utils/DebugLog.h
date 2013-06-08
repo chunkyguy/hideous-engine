@@ -1,4 +1,5 @@
 //	Debug log messages to console or file.
+//	This class is now deprecated. Use Logger instead.
 
 #ifndef __DEBUGLOG_H__
 #define __DEBUGLOG_H__

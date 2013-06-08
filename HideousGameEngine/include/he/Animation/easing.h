@@ -14,7 +14,7 @@
 #define AH_EASING_H
 
 #ifdef AH_EASING_USE_DBL_PRECIS
-#define AHFloat double
+#define AHFloat float
 #else
 #define AHFloat float
 #endif

@@ -32,7 +32,7 @@ namespace he{
 		//	time := [0, 1] always.
 		//	So at time = 0, returned value is start
 		//	And at time = 1, returned value is end
-		T operator()(double time){
+		T operator()(float time){
 			return start_ + function_(time) * (end_ - start_);
 		}
 		

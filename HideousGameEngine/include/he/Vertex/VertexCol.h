@@ -19,8 +19,8 @@ namespace he{
 		const GLfloat *GetPositionData() const;
 		const GLfloat *GetTextureData() const;
 
-		VertexCol(double width, double height);
-		VertexCol(double x0, double y0, double x1, double y1);
+		VertexCol(float width, float height);
+		VertexCol(float x0, float y0, float x1, float y1);
 		const VertexData &GetVertexData() const;
 		
 	private:

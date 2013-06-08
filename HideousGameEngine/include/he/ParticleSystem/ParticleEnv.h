@@ -16,23 +16,23 @@ namespace he{
 	class ParticleEnv{
 	public:
 		ParticleEnv(
-					double point_size,
-					double birth_delay[2],
-					double birth_rate[2],
+					float point_size,
+					float birth_delay[2],
+					float birth_rate[2],
 					GLKVector2 box[2],
 					GLKVector4 color,
-					double death_rate[2],
-					double life_span[2],
+					float death_rate[2],
+					float life_span[2],
 					GLKVector2 velocity[2]
 					);
 		
-		double point_size_;			// the size of each particle
-		double birth_delay_[2];		
-		double birth_rate_[2];
+		float point_size_;			// the size of each particle
+		float birth_delay_[2];		
+		float birth_rate_[2];
 		GLKVector2 box_[2];
 		GLKVector4 color_;
-		double death_rate_[2];
-		double life_span_[2];
+		float death_rate_[2];
+		float life_span_[2];
 		GLKVector2 velocity_[2];
 	};
 }

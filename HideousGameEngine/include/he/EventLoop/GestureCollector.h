@@ -15,7 +15,7 @@ typedef enum{
 
 @interface GestureCollector : NSObject{
 	UIView *view;
-	double lastPinchScale;	// To monitor change in scale
+	float lastPinchScale;	// To monitor change in scale
 }
 -(id)initWithView:(UIView *)view;
 -(void)touches:(NSSet *)touches action:(TouchesAction)action withEvent:(UIEvent *)event;

@@ -24,7 +24,7 @@ namespace he{
 		const GLfloat *GetPositionData() const;
 
 		~VertexPar();
-		VertexPar(int count, double point_size = 15.0);
+		VertexPar(int count, float point_size = 15.0);
 		void SetData(int index, const GLKVector2 &data);
 		GLfloat GetPointSize() const;
 		GLsizei GetSize() const;
@@ -32,7 +32,7 @@ namespace he{
 	private:
 		GLfloat *data_;
 		GLsizei size_;
-		double point_size_;
+		float point_size_;
 	};
 }
 #endif /* defined(__HEAssets__VertexPar__) */

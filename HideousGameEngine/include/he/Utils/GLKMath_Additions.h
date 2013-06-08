@@ -574,6 +574,10 @@ inline GLKQuaternion operator *= (GLKQuaternion& left, const GLKQuaternion& righ
 //	return GLKQuaternionSlerp(a, b, t);
 //}
 
+#include <he/Utils/DebugHelper.h>
+std::ostream &operator<<(std::ostream &os, GLKVector2);
+std::ostream &operator<<(std::ostream &os, GLKVector3);
+std::ostream &operator<<(std::ostream &os, GLKVector4);
 
 #endif
 #endif

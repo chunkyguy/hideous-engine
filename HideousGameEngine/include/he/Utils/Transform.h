@@ -12,20 +12,20 @@
 namespace he{
 	class Transform{
 	public:
-		Transform(GLKVector2 position = GLKVector2Make(0,0), double r = 0, GLKVector2 s = GLKVector2Make(1.0,1.0));
+		Transform(GLKVector2 position = GLKVector2Make(0,0), float r = 0, GLKVector2 s = GLKVector2Make(1.0,1.0));
 		Transform(const Transform &other);
 		void operator=(const Transform &other);
 		GLKMatrix4 GetMV() const;
 		GLKMatrix4 GetMVP() const;
 		const GLKVector2 &GetPosition() const;
 		void SetPosition(const GLKVector2 &position);
-		const double GetRotation() const;
-		void SetRotation(const double rotation);
+		const float GetRotation() const;
+		void SetRotation(const float rotation);
 		const GLKVector2 &GetScale() const;
 		void SetScale(const GLKVector2 &scale);
 
 		GLKVector2 position_;
-		double rotation_;
+		float rotation_;
 		GLKVector2 scale_;
 	};
 }

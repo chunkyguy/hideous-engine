@@ -24,7 +24,7 @@ void operator=(const TypeName&)
 
 namespace he{
 	
-	void GlobalsInit(double w, double h);
+	void GlobalsInit(float w, float h);
 	
 	void GlobalsDestroy();
 	
@@ -35,10 +35,17 @@ namespace he{
 	
 	// next power of 2
 	int NextPOT(int a);
+
+	// Returns a value between [start, end]
+	// random has to be between [start, end]. Hint: use Randf() to create random
+	template<typename T>
+	inline T Rand(const T &start, const T &end, const T &random){
+		return start + random * (end - start);
+	}
 	
 	//Returns a value between [start, end]; Default: [0.0, 1.0]
-	inline double Randf(double start = 0.0, double end = 1.0){
-		return start + static_cast<double>(rand())/static_cast<double>(RAND_MAX) * (end - start);
+	inline float Randf(float start = 0.0, float end = 1.0){
+		return start + static_cast<float>(rand())/static_cast<float>(RAND_MAX) * (end - start);
 	}
 	
 	//	Convert point from CoreGraphics coordinates space to OpenGL coordinate space

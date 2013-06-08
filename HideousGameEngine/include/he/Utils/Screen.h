@@ -31,14 +31,15 @@ namespace he{
 			kUnknown
 		}Grid;
 
-		Screen(double width = 0.0, double height = 0.0);
+		Screen(float width = 0.0, float height = 0.0);
 		void SetProjection(GLKMatrix4 projection = GLKMatrix4Identity);
 		Grid MapPointToGrid(GLKVector2 point);
 		
-		GLKVector2 GetSize() const;
+		const GLKVector2 GetSize() const;
+		const GLKMatrix4 &GetProjection() const;
 		
-		double width_;
-		double height_;
+		float width_;
+		float height_;
 		GLKMatrix4 projection_;
 	};
 	

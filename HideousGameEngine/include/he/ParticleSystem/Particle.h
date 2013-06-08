@@ -24,14 +24,14 @@ namespace he{
 	public:
 		explicit Particle(ParticleEnv *environment);
 		~Particle();
-		void Update(double dt);
+		void Update(float dt);
 		void UpdateEnvironment(ParticleEnv *environment);
 		
-		double birth_delay_;			//	wait time before can reborn
-		double birth_rate_;			//  if <= 0.0; you live only once.
-		double death_rate_;			//	rate of dying. Greater means dying quick.
+		float birth_delay_;			//	wait time before can reborn
+		float birth_rate_;			//  if <= 0.0; you live only once.
+		float death_rate_;			//	rate of dying. Greater means dying quick.
 		int is_dead_;				//	flag set when life is over.
-		double life_span_;			//	total life time available, decrease at each tick by factor of death_rate
+		float life_span_;			//	total life time available, decrease at each tick by factor of death_rate
 		GLKVector2 position_;		//	position in space-time, relative to some core box
 		GLKVector2 velocity_;		//	velocity at which spreading out of the core box
 		ParticleEnv *environment_;
@@ -54,7 +54,7 @@ namespace he{
 		ParticleBatch(int count, ParticleEnv *environment, const GLKVector2 &position, ParticleSh *shader, Texture *texture, const GLKVector4 &color);
 		~ParticleBatch();
 		void SetPosition(const GLKVector2 &position);
-		void Update(double dt);
+		void Update(float dt);
 		void Render();
 		
 	private:

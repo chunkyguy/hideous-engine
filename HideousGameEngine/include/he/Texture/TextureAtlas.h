@@ -10,9 +10,9 @@
 #define __HideousGameEngine__TextureAtlas__
 
 #include <string>
-#include <he/Texture/TextureAtlasParser.h>
 
 namespace he{
+	class TextureAtlasRegion;
 	class TextureAtlasParser;
 	class VertexTex;
 	class Texture;
@@ -21,16 +21,13 @@ namespace he{
 	//	Just trying to hide the fact that the parsing is done in ObjC.
 	class TextureAtlas{
 	public:
+		enum AtlasFormat {Zwoptex, Starling};
+
 		//	Owns the texture
-		TextureAtlas(std::string data_path, std::string texture_path);
+		TextureAtlas(const std::string &data_path, const std::string &texture_path, const AtlasFormat format);
 		~TextureAtlas();
-		
-		// image_name as stored in the atlas.
-		// if width / height are not provided, pick the size from atlas data.
-		VertexTex *CreateTextureData(std::string image_name,
-									 double width = -1.0, double height = -1.0,
-									 bool aspect_correct = true);
-		TextureAtlasRegion GetTextureAtlasRegion(std::string image_name);
+				
+		const TextureAtlasRegion *GetTextureAtlasRegion(const std::string &image_name) const;
 
 		he::Texture *GetTexture() const;
 
@@ -38,5 +35,14 @@ namespace he{
 		he::Texture *texture_;
 		TextureAtlasParser *parser_;
 	};
-}
+	
+	// image_name as stored in the atlas.
+	// if width / height are not provided, pick the size from atlas data.
+	VertexTex *CreateTextureData(const TextureAtlas *atlas,
+								 const std::string &image_name,
+								 float width = -1.0,
+								 float height = -1.0,
+								 const bool aspect_correct = true);
+
+} /*namespace he*/
 #endif /* defined(__HideousGameEngine__TextureAtlas__) */
