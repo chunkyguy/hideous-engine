@@ -10,36 +10,47 @@
 
 #include <he/Utils/DebugHelper.h>
 namespace he{
-	
-	ColorVertex::ColorVertex(float width, float height) :
+
+	ColorVertex::ColorVertex(const Data &a, const Data &b, const Data &c, const Data &d) :
 	IVertex(4),
+	color_data_(),
 	position_data_()
 	{
-		GLKVector2 min = GLKVector2Make(-width/2, -height/2);
-		GLKVector2 max = GLKVector2Make(width/2, height/2);
-		Vertex::Set(position_data_, min, max);
-		he_Trace("ColorVertex:\nmin = %@\nmax = %@\n",min, max);
-		he_Trace("ColorVertex:\n%@\n",position_data_);
+		Vertex::Set(position_data_, a.position, b.position, c.position, d.position);
+		Vertex::Set(color_data_, a.color, a.color, d.color, d.color);
 	}
-	
-	ColorVertex::ColorVertex(float x0, float y0, float x1, float y1) :
+
+	ColorVertex::ColorVertex(const Data &a, const Data &d) :
 	IVertex(4),
+	color_data_(),
 	position_data_()
 	{
-		GLKVector2 min = GLKVector2Make(x0, y0);
-		GLKVector2 max = GLKVector2Make(x1, y1);
-		Vertex::Set(position_data_, min, max);
-		he_Trace("ColorVertex:\n%@\n",position_data_);
+		Vertex::Set(position_data_, a.position, d.position);
+		he_Trace("position: \n%@\n",position_data_);
+
+		he_Trace("filing color:\n %@\n",a.color);
+		Vertex::Set(color_data_, a.color, a.color, d.color, d.color);
+		he_Trace("color: \n%@\n",color_data_);
 	}
 	
-	const GLfloat *ColorVertex::GetPositionData() const{
-		return &position_data_.data[0];
-	}
-	const GLfloat *ColorVertex::GetTextureData() const{
+	const GLfloat *ColorVertex::GetRawData(const DataType dt) const{
+		switch(dt){
+			case IVertex::kPosition:
+				return &position_data_.data[0]; break;
+				
+			case IVertex::kColor:
+				return &color_data_.data[0]; break;
+				
+			case IVertex::kTexture:
+				return nullptr;
+		}
 		return nullptr;
 	}
 	const Vertex::V2 &ColorVertex::GetVertexData() const{
 		return position_data_;
+	}
+	const Vertex::V4 &ColorVertex::GetColorData() const{
+		return color_data_;
 	}
 
 }

@@ -74,7 +74,10 @@ ColObj::~ColObj(){
 }
 ColObj::ColObj(he::ColorShader *shader){
 	float dimension = he::Randf() * he::g_Screen->width_/2 + 10.0;
-	vert_ = new he::ColorVertex(dimension/2, dimension/2);
+	he::ColorVertex::Data min = {GLKVector2Make(-dimension/2.0f, -dimension/2.0f), GLKVector4Make(1.0, 0.0, 0.0, 1.0)};
+	he::ColorVertex::Data max = {GLKVector2Make(dimension/2.0f, dimension/2.0f), GLKVector4Make(0.0, 1.0, 0.0, 1.0)};
+
+	vert_ = new he::ColorVertex(min, max);
 	GLKVector4 color = GLKVector4Make(he::Randf(), he::Randf(), he::Randf(), 0.8);
 	object_ = new he::RenderObject(vert_, shader, 0, he::g_Screen->projection_, color);
 	transform_.SetPosition( GLKVector2Make(he::Randf()*he::g_Screen->width_ - he::g_Screen->width_/2, he::Randf()*he::g_Screen->height_ - he::g_Screen->height_/2));

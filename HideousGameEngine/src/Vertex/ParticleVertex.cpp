@@ -33,8 +33,17 @@ namespace he{
 		data_[eff_indx+1] = data.y;
 	}
 	
-	const GLfloat *ParticleVertex::GetPositionData() const{
-		return data_;
+	const GLfloat *ParticleVertex::GetRawData(const DataType dt) const{
+		switch(dt){
+			case IVertex::kPosition:
+				return data_; break;
+				
+			case IVertex::kColor:
+				return nullptr;
+			case IVertex::kTexture:
+				return nullptr;
+		}
+		return nullptr;
 	}
 	
 	GLfloat ParticleVertex::GetPointSize() const{

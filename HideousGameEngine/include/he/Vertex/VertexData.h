@@ -30,11 +30,11 @@ namespace he{
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		// MARK: Types
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		typedef int Index;
-		const int kA = 0;
-		const int kB = 1;
-		const int kC = 2;
-		const int kD = 3;
+		typedef unsigned short Index;
+		const Index kA = 0;
+		const Index kB = 1;
+		const Index kC = 2;
+		const Index kD = 3;
 		
 		// 2 floats per vertex
 		struct V2{
@@ -72,37 +72,43 @@ namespace he{
 		// Create with raw data. Requires a pointer to array vertex_count floats
 		template<typename V>
 		void Set(V &slf, const GLfloat *data, int start = 0, int end = V::vertex_count * 4){
+			he_Trace("Set(slf,data,start[%d],end[%d])\n",start,end);
 			assert(start >= 0);
 			assert(end <= V::vertex_count * 4);
-			for(int i = start; i < end; ++i){
-				slf.data[i] = data[i];
-				he_Trace("Set data[%d]=%f\n",i,slf.data[i]);
-			}
+			memcpy(static_cast<GLfloat *>(&slf.data[start]), data, sizeof(GLfloat)*(end-start));
+//			int j = 0;
+//			for(int i = start; i < end; ++i){
+//				slf.data[i] = data[j++];
+//				he_Trace("Set data[%d]=%f:%f\n",i,slf.data[i]);
+//			}
 		}
 		
 		// Create with raw data at a given index
 		template<typename V>
 		void Set(V &slf, const GLfloat *data, Index vi){
+			he_Trace("Set(slf,data,vi)\n");
 			int start = vi * V::vertex_count;
 			int end = start + V::vertex_count;
+			he_Trace("Set between{%d - %d}\n",start,end);
 			Set(slf, data, start, end);
 		}
 		
 		// Set individual vertex index
-		template<typename V, typename GLKVector>
-		void Set(V &slf, const GLKVector &vec, Index vi){
-			int start = vi * V::vertex_count;
-			int end = start + V::vertex_count;
-			Set(slf, vec.v, start, end);
-		}
+//		template<typename V, typename GLKVector>
+//		void Set(V &slf, const GLKVector &vec, Index vi){
+//			int start = vi * V::vertex_count;
+//			int end = start + V::vertex_count;
+//			Set(slf, vec.v, start, end);
+//		}
 		
 		// Create with 4 endpoints. Use for cases like skewed / rotated rectangles
 		template <typename V, typename GLKVector>
 		void Set(V &slf, const GLKVector &a, const GLKVector &b, const GLKVector &c, const GLKVector &d){
-			Set(slf, a, kA);
-			Set(slf, b, kB);
-			Set(slf, c, kC);
-			Set(slf, d, kD);
+			he_Trace("Set(slf,a,b,c,d)\n");
+			Set(slf, a.v, kA);
+			Set(slf, b.v, kB);
+			Set(slf, d.v, kC);
+			Set(slf, d.v, kD);
 		}
 
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -146,9 +152,11 @@ namespace he{
 		
 		
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		// MARK: Modify
+		// MARK: Utility
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		std::ostream &operator<<(std::ostream &os, const V2 &slf);
+		std::ostream &operator<<(std::ostream &os, const V3 &slf);
+		std::ostream &operator<<(std::ostream &os, const V4 &slf);
 		
 
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

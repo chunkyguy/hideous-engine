@@ -324,8 +324,8 @@
 		19B0EBC91765AF0900CD3D79 /* TextShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextShader.cpp; sourceTree = "<group>"; };
 		19B0EBCA1765AF0900CD3D79 /* ParticleShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParticleShader.cpp; sourceTree = "<group>"; };
 		19B0EBCB1765AF0900CD3D79 /* ColorShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColorShader.cpp; sourceTree = "<group>"; };
-		19B0EBD11765B15E00CD3D79 /* ColorShader.fragsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ColorShader.fragsh; sourceTree = "<group>"; };
-		19B0EBD21765B15E00CD3D79 /* ColorShader.vertsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ColorShader.vertsh; sourceTree = "<group>"; };
+		19B0EBD11765B15E00CD3D79 /* ColorShader.fragsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = ColorShader.fragsh; sourceTree = "<group>"; };
+		19B0EBD21765B15E00CD3D79 /* ColorShader.vertsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = ColorShader.vertsh; sourceTree = "<group>"; };
 		19B0EBD41765B15E00CD3D79 /* TextShader.fragsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TextShader.fragsh; sourceTree = "<group>"; };
 		19B0EBD51765B15E00CD3D79 /* TextShader.vertsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TextShader.vertsh; sourceTree = "<group>"; };
 		19B0EBD71765B15E00CD3D79 /* TextureShader.fragsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TextureShader.fragsh; sourceTree = "<group>"; };

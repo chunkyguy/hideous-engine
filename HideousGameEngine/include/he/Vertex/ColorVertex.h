@@ -13,18 +13,26 @@
 #include <he/Vertex/VertexData.h>
 
 namespace he{
+	
 	class ColorVertex : public IVertex{
 	public:
+		struct Data{
+			GLKVector2 position;
+			GLKVector4 color;
+		};
 		
-		const GLfloat *GetPositionData() const;
-		const GLfloat *GetTextureData() const;
+		const GLfloat *GetRawData(const IVertex::DataType dt) const;
 
-		ColorVertex(float width, float height);
-		ColorVertex(float x0, float y0, float x1, float y1);
+		// As square of two colors
+		ColorVertex(const Data &a, const Data &d);
+		// As rect of 4 colors
+		ColorVertex(const Data &a, const Data &b, const Data &c, const Data &d);
 		const Vertex::V2 &GetVertexData() const;
+		const Vertex::V4 &GetColorData() const;
 		
 	private:
 		Vertex::V2 position_data_;
+		Vertex::V4 color_data_;
 	};
 }
 

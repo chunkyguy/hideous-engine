@@ -13,15 +13,14 @@
 namespace he{
 	class IVertex{
 	public:
+		enum DataType {kPosition, kTexture, kColor};
+
 		IVertex(GLint count = 4) : count_(count){}
 		virtual ~IVertex(){
 		}
-		virtual const GLfloat *GetPositionData() const{
+		virtual const GLfloat *GetRawData(const DataType dt) const{
 			return nullptr;
 		};
-		virtual const GLfloat *GetTextureData() const {
-			return nullptr;
-		}
 		const GLint GetCount() const{
 			return count_;
 		}

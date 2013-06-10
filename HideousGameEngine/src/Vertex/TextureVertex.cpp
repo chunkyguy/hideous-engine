@@ -70,13 +70,21 @@ namespace he{
 			he::Vertex::Scale(position_data_, scale);
 		}
 	}
-	
-	const GLfloat *TextureVertex::GetPositionData() const{
-		return position_data_.data;
+
+	const GLfloat *TextureVertex::GetRawData(const DataType dt) const{
+		switch(dt){
+			case IVertex::kPosition:
+				return &position_data_.data[0]; break;
+				
+			case IVertex::kColor:
+				return &texture_data_.data[0]; break;
+
+			case IVertex::kTexture:
+				return nullptr;
+		}
+		return nullptr;
 	}
-	const GLfloat *TextureVertex::GetTextureData() const{
-		return texture_data_.data;
-	}
+
 	const Vertex::V2 &TextureVertex::GetVertexPositionData() const{
 		return position_data_;
 	}

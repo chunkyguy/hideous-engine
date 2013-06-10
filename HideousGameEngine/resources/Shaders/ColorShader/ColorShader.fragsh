@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 whackylabs. All rights reserved.
 //
 
-uniform lowp vec4 u_clr;
+varying lowp vec4 v_color;
 
 void main(){
-	gl_FragColor = u_clr;
+	gl_FragColor = v_color;
 }

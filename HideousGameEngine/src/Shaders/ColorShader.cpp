@@ -14,12 +14,13 @@
 namespace he{
 	ColorShader::ColorShader(){
 		a_position = 0;
+		a_color = 1;
 		std::map<std::string, GLint *>attribs;
 		attribs["a_position"] = &a_position;
+		attribs["a_color"] = &a_color;
 		
 		std::map<std::string, GLint *>uniforms;
 		uniforms["u_mvp"] = &u_mvp;
-		uniforms["u_clr"] = &u_clr;
 		
 		program_ = new Program("ColorShader", BindAttrib(attribs),BindUniform(uniforms));
 	}
@@ -31,14 +32,16 @@ namespace he{
 	void ColorShader::Render(RenderObject *render_object){
 		glUseProgram(program_->object_);
 		
-		glVertexAttribPointer(a_position, 2, GL_FLOAT, GL_FALSE, 0, render_object->GetVertexData()->GetPositionData());
+		glVertexAttribPointer(a_position, 2, GL_FLOAT, GL_FALSE, 0, render_object->GetVertexData()->GetRawData(IVertex::kPosition));
 		glEnableVertexAttribArray(a_position);
+		glVertexAttribPointer(a_color, 4, GL_FLOAT, GL_FALSE, 0, render_object->GetVertexData()->GetRawData(IVertex::kColor));
+		glEnableVertexAttribArray(a_color);
 		
-		glUniform4f(u_clr, render_object->color_.r, render_object->color_.g, render_object->color_.b, render_object->color_.a);
 		glUniformMatrix4fv(u_mvp, 1, GL_FALSE, render_object->mvp_.m);
 		glDrawArrays(GL_TRIANGLE_STRIP, 0, render_object->GetVertexData()->GetCount());
 		
 		glDisableVertexAttribArray(a_position);
+		glDisableVertexAttribArray(a_color);
 		glUseProgram(0);
 	}
 }

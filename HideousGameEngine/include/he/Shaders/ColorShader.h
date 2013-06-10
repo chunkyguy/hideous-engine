@@ -26,8 +26,8 @@ namespace he{
 		
 		he::Program *program_;
 		GLint a_position;
+		GLint a_color;
 		GLint u_mvp;
-		GLint u_clr;
 	};
 }
 #endif /* defined(__HEAssets__ColorShader__) */

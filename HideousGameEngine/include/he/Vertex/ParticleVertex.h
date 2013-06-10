@@ -21,7 +21,7 @@ namespace he{
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
 	class ParticleVertex : public IVertex{
 	public:
-		const GLfloat *GetPositionData() const;
+		const GLfloat *GetRawData(const IVertex::DataType dt) const;
 
 		~ParticleVertex();
 		ParticleVertex(int count, float point_size = 15.0);

@@ -278,7 +278,7 @@ printf("Attachment is not region!\n");
 		
 #if defined(PRINT_LOG)
 		printf("GLfloat tex_data[] = {\n");
-		const GLfloat *vtex_data = vertex_data->GetTextureData();
+		const GLfloat *vtex_data = vertex_data->GetRawData(he::IVertex::kTexture);
 		for(int vd_indx = 0; vd_indx < 8; vd_indx += 2){
 			printf("%.2f, %.2f,\n", vtex_data[vd_indx], vtex_data[vd_indx+1]);
 		}

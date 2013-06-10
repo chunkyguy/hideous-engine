@@ -46,15 +46,15 @@ namespace spine {
 	
 	void RegionAttachment::SetUVs ( GLKVector4 texCoords, bool rotate) {
 		if (rotate) {
-			he::Vertex::Set(uvs_, GLKVector2Make(texCoords.z, texCoords.w), he::Vertex::kA);
-			he::Vertex::Set(uvs_, GLKVector2Make(texCoords.x, texCoords.w), he::Vertex::kA);
-			he::Vertex::Set(uvs_, GLKVector2Make(texCoords.x, texCoords.y), he::Vertex::kA);
-			he::Vertex::Set(uvs_, GLKVector2Make(texCoords.z, texCoords.y), he::Vertex::kA);
+			he::Vertex::Set(uvs_, GLKVector2Make(texCoords.z, texCoords.w).v, he::Vertex::kA);
+			he::Vertex::Set(uvs_, GLKVector2Make(texCoords.x, texCoords.w).v, he::Vertex::kA);
+			he::Vertex::Set(uvs_, GLKVector2Make(texCoords.x, texCoords.y).v, he::Vertex::kA);
+			he::Vertex::Set(uvs_, GLKVector2Make(texCoords.z, texCoords.y).v, he::Vertex::kA);
 		} else {
-			he::Vertex::Set(uvs_, GLKVector2Make(texCoords.x, texCoords.w), he::Vertex::kA);
-			he::Vertex::Set(uvs_, GLKVector2Make(texCoords.x, texCoords.y), he::Vertex::kA);
-			he::Vertex::Set(uvs_, GLKVector2Make(texCoords.z, texCoords.y), he::Vertex::kA);
-			he::Vertex::Set(uvs_, GLKVector2Make(texCoords.z, texCoords.w), he::Vertex::kA);
+			he::Vertex::Set(uvs_, GLKVector2Make(texCoords.x, texCoords.w).v, he::Vertex::kA);
+			he::Vertex::Set(uvs_, GLKVector2Make(texCoords.x, texCoords.y).v, he::Vertex::kA);
+			he::Vertex::Set(uvs_, GLKVector2Make(texCoords.z, texCoords.y).v, he::Vertex::kA);
+			he::Vertex::Set(uvs_, GLKVector2Make(texCoords.z, texCoords.w).v, he::Vertex::kA);
 		}
 	}
 	
@@ -74,10 +74,10 @@ namespace spine {
 		GLKVector2 localSin = GLKVector2MultiplyScalar(local, sine);
 		GLKVector2 local2Cos = GLKVector2Add(GLKVector2MultiplyScalar(local2, cosine), xy_);
 		GLKVector2 local2Sin = GLKVector2MultiplyScalar(local2, sine);
-		he::Vertex::Set(offset_, GLKVector2Make(localCos.x - localSin.y, localCos.y + localSin.x), he::Vertex::kA);
-		he::Vertex::Set(offset_, GLKVector2Make(localCos.x - local2Sin.y, local2Cos.y + localSin.x), he::Vertex::kB);
-		he::Vertex::Set(offset_, GLKVector2Make(local2Cos.x - local2Sin.y, local2Cos.y + local2Sin.x), he::Vertex::kC);
-		he::Vertex::Set(offset_, GLKVector2Make(local2Cos.x - localSin.y, localCos.y + local2Sin.x), he::Vertex::kD);
+		he::Vertex::Set(offset_, GLKVector2Make(localCos.x - localSin.y, localCos.y + localSin.x).v, he::Vertex::kA);
+		he::Vertex::Set(offset_, GLKVector2Make(localCos.x - local2Sin.y, local2Cos.y + localSin.x).v, he::Vertex::kB);
+		he::Vertex::Set(offset_, GLKVector2Make(local2Cos.x - local2Sin.y, local2Cos.y + local2Sin.x).v, he::Vertex::kC);
+		he::Vertex::Set(offset_, GLKVector2Make(local2Cos.x - localSin.y, localCos.y + local2Sin.x).v, he::Vertex::kD);
 	}
 	
 	he::Vertex::V2 RegionAttachment::ComputeVertices ( Slot* slot) {

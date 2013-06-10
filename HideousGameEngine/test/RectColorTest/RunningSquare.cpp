@@ -13,6 +13,7 @@
 #include <he/Utils/DebugLog.h>
 #include <he/Utils/Screen.h>
 #include <he/Utils/Utils.h>
+#include <he/Utils/DebugHelper.h>
 #include <he/Vertex/ColorVertex.h>
 
 RunningSquare::~RunningSquare(){
@@ -27,7 +28,13 @@ sprite_(0),
 life_state_(kLiving),
 color_(GLKVector4Make(he::Randf(), he::Randf(), he::Randf(),he::Randf()))
 {
-	vertex_data_ = new he::ColorVertex(he::Randf(70.0, 100.0), he::Randf(70.0, 100.0));
+	float width = he::Randf(70.0, 100.0);
+	float height = he::Randf(70.0, 100.0);
+	he::ColorVertex::Data min = {GLKVector2Make(-width/2.0f, -height/2.0f), GLKVector4Make(he::Randf(0.0f, 1.0f), he::Randf(0.0f, 1.0f), he::Randf(0.0f, 1.0f), 1.0)};
+	he::ColorVertex::Data max = {GLKVector2Make(width/2.0f, height/2.0f), GLKVector4Make(he::Randf(0.0f, 1.0f), he::Randf(0.0f, 1.0f), he::Randf(0.0f, 1.0f), 1.0)};
+	he_Trace("RectColorTest: \nmin = %@\nmax = %@\n",min.color,max.color);
+	vertex_data_ = new he::ColorVertex(min, max);
+
 	sprite_ = new he::RenderObject(vertex_data_, shader, 0, he::g_Screen->projection_, color_);
 	transform_.position_ = GLKVector2Make(-he::g_Screen->width_/2+he::Randf()*he::g_Screen->width_, -he::g_Screen->height_/2+he::Randf()*he::g_Screen->height_);
 }

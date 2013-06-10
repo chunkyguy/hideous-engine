@@ -19,8 +19,7 @@ namespace he{
 	class TextureVertex : public IVertex{
 	public:
 		
-		const GLfloat *GetPositionData() const;
-		const GLfloat *GetTextureData() const;
+		const GLfloat *GetRawData(const IVertex::DataType dt) const;
 		
 		// Create vertex data. Aspect lock is applicable for disproportioned texCoords not posCoords
 		TextureVertex(float width, float height,

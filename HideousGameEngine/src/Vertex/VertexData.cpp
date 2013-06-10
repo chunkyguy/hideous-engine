@@ -35,6 +35,20 @@ namespace he{
 			os << "D: " << GetVertex(slf, kD) << "\n";
 			return os;
 		}
+		std::ostream &operator<<(std::ostream &os, const V3 &slf){
+			os << "A: " << GetVertex(slf, kA) << "\n";
+			os << "B: " << GetVertex(slf, kB) << "\n";
+			os << "C: " << GetVertex(slf, kC) << "\n";
+			os << "D: " << GetVertex(slf, kD) << "\n";
+			return os;
+		}
+		std::ostream &operator<<(std::ostream &os, const V4 &slf){
+			os << "A: " << GetVertex(slf, kA) << "\n";
+			os << "B: " << GetVertex(slf, kB) << "\n";
+			os << "C: " << GetVertex(slf, kC) << "\n";
+			os << "D: " << GetVertex(slf, kD) << "\n";
+			return os;
+		}
 		
 		void Set(V2 &slf, const GLKVector2 &a, const GLKVector2 &d){
 			GLfloat data[8] = {

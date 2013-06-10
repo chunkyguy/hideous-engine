@@ -35,7 +35,11 @@ animation_listener_(nullptr),
 scale_anim_descent_id_(0UL),
 trans_anim_descent_id_(0UL)
 {
-	vert_data_ = new he::ColorVertex(-50.0, 50.0);
+	float dimension = 100.0f;
+	he::ColorVertex::Data min = {GLKVector2Make(-dimension/2.0f, -dimension/2.0f), GLKVector4Make(1.0, 0.0, 0.0, 1.0)};
+	he::ColorVertex::Data max = {GLKVector2Make(dimension/2.0f, dimension/2.0f), GLKVector4Make(0.0, 1.0, 0.0, 1.0)};
+	
+	vert_data_ = new he::ColorVertex(min, max);
 	GLKVector4 color = GLKVector4Make(0.0, 0.0, 0.0, 1.0);
 	render_object_ = new he::RenderObject(vert_data_, shader_, 0, he::g_Screen->projection_, color);
 	animation_listener_ = new he::AnimationListener<AnimObj>(this, &AnimObj::AnimationCallback);

@@ -42,10 +42,10 @@ namespace he{
 		glActiveTexture(GL_TEXTURE2);
 		glBindTexture(GL_TEXTURE_2D, render_object->texture_->object_);
 		
-		glVertexAttribPointer(a_position, 2, GL_FLOAT, GL_FALSE, 0, render_object->GetVertexData()->GetPositionData());
+		glVertexAttribPointer(a_position, 2, GL_FLOAT, GL_FALSE, 0, render_object->GetVertexData()->GetRawData(IVertex::kPosition));
 		glEnableVertexAttribArray(a_position);
 		
-		glVertexAttribPointer(a_texcoord, 2, GL_FLOAT, GL_FALSE, 0, render_object->GetVertexData()->GetTextureData());
+		glVertexAttribPointer(a_texcoord, 2, GL_FLOAT, GL_FALSE, 0, render_object->GetVertexData()->GetRawData(IVertex::kTexture));
 		glEnableVertexAttribArray(a_texcoord);
 		
 		glUniform4f(u_clr, render_object->color_.r, render_object->color_.g, render_object->color_.b, render_object->color_.a);

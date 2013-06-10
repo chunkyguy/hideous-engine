@@ -23,10 +23,16 @@ GObj::~GObj(){
 
 GObj::GObj() :
 direction_(GLKVector2Make(0,0)),
-vert_(new he::ColorVertex(-10, 10)),
+vert_(),
 shader_(new he::ColorShader),
 color_( GLKVector4Make(1.0, 1.0, 1.0, 1.0))
 {
+	float dimension = 20.0f;
+	he::ColorVertex::Data min = {GLKVector2Make(-dimension/2.0f, -dimension/2.0f), GLKVector4Make(1.0, 0.0, 0.0, 1.0)};
+	he::ColorVertex::Data max = {GLKVector2Make(dimension/2.0f, dimension/2.0f), GLKVector4Make(0.0, 1.0, 0.0, 1.0)};
+	
+	vert_ = new he::ColorVertex(min, max);
+
 	render_object_ = new he::RenderObject(vert_, shader_, 0, he::g_Screen->projection_, color_);
 }
 
