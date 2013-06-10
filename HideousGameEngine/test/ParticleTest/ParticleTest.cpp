@@ -10,7 +10,7 @@
 
 #include <he/ParticleSystem/Particle.h>
 #include <he/ParticleSystem/ParticleEnv.h>
-#include <he/Shaders/ParticleSh/ParticleSh.h>
+#include <he/Shaders/ParticleShader.h>
 #include <he/Texture/Texture.h>
 #include <he/Utils/DebugLog.h>
 #include <he/Utils/ResourcePath.hpp>
@@ -37,7 +37,7 @@ ParticleTest::~ParticleTest(){
 }
 
 ParticleTest::ParticleTest(float w, float h) :
-shader_(new he::ParticleSh),
+shader_(new he::ParticleShader),
 texture_(new he::Texture(he::ResourcePath() + "snow_particle.png")),
 environment_(nullptr),
 particles_(nullptr),

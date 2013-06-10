@@ -10,12 +10,13 @@
 
 namespace he{
 	Screen* g_Screen = nullptr;
-	
-	Screen::Screen(float width, float height) :
+		
+	Screen::Screen(const float width, const float height, const float z_min, const float z_max) :
 	width_(width),
-	height_(height)
+	height_(height),
+	z_((z_max - z_min)/2.0)
 	{
-		projection_ = GLKMatrix4MakeOrtho(-width_/2, width_/2, -height_/2, height_/2, 0.1, 100.0);
+		projection_ = GLKMatrix4MakeOrtho(-width_/2, width_/2, -height_/2, height_/2, z_min, z_max);
 	}
 
 	void Screen::SetProjection(GLKMatrix4 projection){

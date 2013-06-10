@@ -1,15 +1,16 @@
 //
-//  RectTextureSh.h
+//  TextureShader.h
 //  HEAssets
 //
 //  Created by Sid on 26/04/13.
 //  Copyright (c) 2013 whackylabs. All rights reserved.
 //
  
-#ifndef __HEAssets__RectTextureSh__
-#define __HEAssets__RectTextureSh__
-#include <OpenGLES/ES2/gl.h>
+#ifndef __HEAssets__TextureShader__
+#define __HEAssets__TextureShader__
 #include <string>
+
+#include <OpenGLES/ES2/gl.h>
 
 #include <he/Shaders/IShader.h>
 
@@ -17,10 +18,10 @@ namespace he{
 	class Program;
 	class RenderObject;
 	
-	class RectTextureSh : public IShader{
+	class TextureShader : public IShader{
 	public:
-		~RectTextureSh();
-		RectTextureSh();
+		~TextureShader();
+		TextureShader();
 		void Render(RenderObject *render_object);
 		
 		he::Program *program_;
@@ -30,4 +31,4 @@ namespace he{
 		GLint u_tex;
 	};
 }
-#endif /* defined(__HEAssets__RectTextureSh__) */
+#endif /* defined(__HEAssets__TextureShader__) */

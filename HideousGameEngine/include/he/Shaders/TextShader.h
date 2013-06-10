@@ -1,13 +1,13 @@
 //
-//  RectTextSh.h
+//  TextShader.h
 //  HEAssets
 //
 //  Created by Sid on 26/04/13.
 //  Copyright (c) 2013 whackylabs. All rights reserved.
 //
  
-#ifndef __HEAssets__RectTextSh__
-#define __HEAssets__RectTextSh__
+#ifndef __HEAssets__TextShader__
+#define __HEAssets__TextShader__
 #include <OpenGLES/ES2/gl.h>
 #include <string>
 
@@ -17,11 +17,11 @@ namespace he{
 	class Program;
 	class RenderObject;
 
-	class RectTextSh : public IShader{
+	class TextShader : public IShader{
 	public:
 		
-		RectTextSh();
-		~RectTextSh();
+		TextShader();
+		~TextShader();
 		void Render(RenderObject *render_object);
 		
 		he::Program *program_;
@@ -33,4 +33,4 @@ namespace he{
 
 	};
 }
-#endif /* defined(__HEAssets__RectTextSh__) */
+#endif /* defined(__HEAssets__TextShader__) */

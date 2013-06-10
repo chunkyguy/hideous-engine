@@ -11,8 +11,8 @@
 
 #include <he/Program/Program.h>
 #include <he/Utils/ResourcePath.hpp>
-#include <he/Utils/DebugLog.h>
 #include <he/Utils/DebugHelper.h>
+#include <he/Utils/Utils.h>
 
 namespace he{
 	////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -31,23 +31,13 @@ namespace he{
 	{
 		//read code
 		std::string	filePath = ResourcePath() + filename + (type == GL_VERTEX_SHADER?".vertsh":".fragsh");
-		FILE_LOG(logDEBUG) << "Shader(): " << filePath;
-		std::ifstream fin;
-		fin.open(filePath.c_str());
-		assert(fin.is_open());
-		
-		fin.seekg(0, std::ios::end);
-		int len = fin.tellg();
-		fin.seekg(0, std::ios::beg);
-		char *codeBuffer = new char[len + 1];
-		fin.read(codeBuffer, len);
-		codeBuffer[len] = 0;
-		
+		FileBuffer file(filePath);
+		const char *codeBuffer = file.GetData();		
 		//compile
 		object_ = glCreateShader(type);
 		assert(object_);
 		
-		glShaderSource(object_, 1, (const GLchar **)&codeBuffer,NULL);
+		glShaderSource(object_, 1, &codeBuffer,NULL);
 		glCompileShader(object_);
 		
 		// check for errors
@@ -63,13 +53,11 @@ namespace he{
 			delete[] log;
 			glDeleteShader(object_);
 			object_ = 0;
-			FILE_LOG(logERROR) << msg << std::endl;
+			he_Trace("%@ %@\n",filename, msg);
 		}
-		delete codeBuffer;
 	}
 
 	Shader::~Shader(){
-		FILE_LOG(logDEBUG) << "~Shader()";
 		if(object_){
 			glDeleteShader(object_);
 			object_ = 0;
@@ -82,7 +70,6 @@ namespace he{
 	Program::Program(std::string filename, BindAttrib b, BindUniform u) :
 	object_(0)
 	{
-		FILE_LOG(logDEBUG) << "Program()";
 		Shader vsh(GL_VERTEX_SHADER, filename);;
 		Shader fsh(GL_FRAGMENT_SHADER, filename);
 		
@@ -106,16 +93,15 @@ namespace he{
 			glGetProgramiv(object_, GL_INFO_LOG_LENGTH, &infologlen);
 			char *log = new char[infologlen + 1];
 			glGetProgramInfoLog(object_, infologlen, NULL, log);
-			std::string msg("Linking error");
+			std::string msg("Linking error: ");
 			msg += log;
 			delete [] log;
 			glDeleteProgram(object_);
-			FILE_LOG(logERROR) << msg << std::endl;
+			he_Trace("%@ %@\n",filename,msg);
 		}
 	}
 	
 	Program::~Program(){
-		FILE_LOG(logDEBUG) << "~Program()";
 		if(object_){
 			glDeleteProgram(object_);
 			object_ = 0;

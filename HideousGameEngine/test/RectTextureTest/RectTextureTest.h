@@ -24,7 +24,7 @@ namespace he{
 	class RenderObject;
 	class Texture;
 	class TextureAtlas;
-	class RectTextureSh;
+	class TextureShader;
 	class VertexTex;
 }
 
@@ -44,7 +44,7 @@ private:
 	std::list<he::Texture *>textures_;
 	std::list<he::VertexTex *>vertex_datas_;
 	he::TextureAtlas *atlas_;
-	he::RectTextureSh *shader_;
+	he::TextureShader *shader_;
 	he::GestureListener<RectTextureTest> *gesture_listener_;
 
 #if defined(SPINE_TEXTURE_OBJECT)

@@ -1,21 +1,21 @@
 //
-//  RectTextureSh.cpp
+//  TextureShader.cpp
 //  HEAssets
 //
 //  Created by Sid on 26/04/13.
 //  Copyright (c) 2013 whackylabs. All rights reserved.
 //
+#include <he/Shaders/TextureShader.h>
 
 #include <map>
 
 #include <he/Program/Program.h>
 #include <he/RenderObject/RenderObject.h>
-#include <he/Shaders/RectTextureSh/RectTextureSh.h>
 #include <he/Texture/Texture.h>
 #include <he/Vertex/VertexTex.h>
 
 namespace he{
-	RectTextureSh::RectTextureSh(){
+	TextureShader::TextureShader(){
 		a_position = 0;
 		a_texcoord = 1;
 		std::map<std::string, GLint *> attribs;
@@ -26,14 +26,14 @@ namespace he{
 		uniforms["u_mvp"] = &u_mvp;
 		uniforms["u_tex"] = &u_tex;
 		
-		program_ = new Program("RectTextureSh", BindAttrib(attribs),BindUniform(uniforms));
+		program_ = new Program("TextureShader", BindAttrib(attribs),BindUniform(uniforms));
 	}
 
-	RectTextureSh::~RectTextureSh(){
+	TextureShader::~TextureShader(){
 		delete program_;
 	}
 	
-	void RectTextureSh::Render(RenderObject *render_object){
+	void TextureShader::Render(RenderObject *render_object){
 		glUseProgram(program_->object_);
 		
 		glActiveTexture(GL_TEXTURE0);

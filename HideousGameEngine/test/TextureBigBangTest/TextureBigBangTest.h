@@ -18,7 +18,7 @@ namespace he{
 	class RenderObject;
 	class Texture;
 	class TextureAtlas;
-	class RectTextureSh;
+	class TextureShader;
 	class VertexTex;
 }
 
@@ -43,7 +43,7 @@ private:
 	he::Texture *texture_;
 	he::VertexTex *vertex_data_;
 	he::TextureAtlas *atlas_;
-	he::RectTextureSh *shader_;
+	he::TextureShader *shader_;
 	TexturedSprite **squares_;
 	State state_;
 	float delay_;

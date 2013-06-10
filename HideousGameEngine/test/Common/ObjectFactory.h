@@ -17,8 +17,8 @@
 namespace he{
 	class Font;
 	class Text;
-	class RectColorSh;
-	class RectTextureSh;
+	class ColorShader;
+	class TextureShader;
 	class RenderObject;
 	class Texture;
 	class TextureAtlas;
@@ -29,7 +29,7 @@ namespace he{
 class ColObj{
 public:
 	~ColObj();
-	ColObj(he::RectColorSh *shader);
+	ColObj(he::ColorShader *shader);
 	void Render();
 	
 private:
@@ -41,7 +41,7 @@ private:
 class TextureObj{
 public:
 	~TextureObj();
-	TextureObj(he::RectTextureSh *shader, he::Texture *texture, he::VertexTex *vert);
+	TextureObj(he::TextureShader *shader, he::Texture *texture, he::VertexTex *vert);
 	void Render();
 	
 private:
@@ -73,12 +73,12 @@ private:
 	void unload_assets();
 	
 	// colored obj
-	he::RectColorSh *col_sh_;
+	he::ColorShader *col_sh_;
 	// texture obj
 	he::Texture *texture_;
 	he::VertexTex *vert_;
 	he::TextureAtlas *atlas_;
-	he::RectTextureSh *tex_sh_;
+	he::TextureShader *tex_sh_;
 	
 	// text obj
 	he::Font *font_;

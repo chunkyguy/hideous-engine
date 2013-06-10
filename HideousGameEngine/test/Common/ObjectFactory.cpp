@@ -10,8 +10,8 @@
 
 #include <he/Font/Font.h>
 #include <he/RenderObject/RenderObject.h>
-#include <he/Shaders/RectColorSh/RectColorSh.h>
-#include <he/Shaders/RectTextureSh/RectTextureSh.h>
+#include <he/Shaders/ColorShader.h>
+#include <he/Shaders/TextureShader.h>
 #include <he/Texture/Texture.h>
 #include <he/Texture/TextureAtlas.h>
 #include <he/Utils/Utils.h>
@@ -42,13 +42,13 @@ TextObj *ObjectFactory::CreateTextObject(){
 }
 
 void ObjectFactory::load_assets(){
-	col_sh_ = new he::RectColorSh;
+	col_sh_ = new he::ColorShader;
 	
 	// texture obj
 	texture_ = new he::Texture(he::ResourcePath() + "texture.png");
 	vert_ = new he::VertexTex(200, 200);
 	atlas_ = new he::TextureAtlas( he::ResourcePath() + "tex_atlas.plist", he::ResourcePath() + "tex_atlas.png", he::TextureAtlas::Zwoptex);
-	tex_sh_ = new he::RectTextureSh;
+	tex_sh_ = new he::TextureShader;
 	
 	// text obj
 	font_ = new he::Font("Silom.ttf", 48);
@@ -72,7 +72,7 @@ ColObj::~ColObj(){
 	delete vert_;
 	delete object_;
 }
-ColObj::ColObj(he::RectColorSh *shader){
+ColObj::ColObj(he::ColorShader *shader){
 	float dimension = he::Randf() * he::g_Screen->width_/2 + 10.0;
 	vert_ = new he::VertexCol(dimension/2, dimension/2);
 	GLKVector4 color = GLKVector4Make(he::Randf(), he::Randf(), he::Randf(), 0.8);
@@ -91,7 +91,7 @@ void ColObj::Render(){
 TextureObj::~TextureObj(){
 	delete object_;
 }
-TextureObj::TextureObj(he::RectTextureSh *shader, he::Texture *texture, 	he::VertexTex *vert){
+TextureObj::TextureObj(he::TextureShader *shader, he::Texture *texture, 	he::VertexTex *vert){
 	object_ = new he::RenderObject(vert, shader, texture, he::g_Screen->projection_);
 	transform_.SetPosition( GLKVector2Make(he::Randf()*he::g_Screen->width_ - he::g_Screen->width_/2, he::Randf()*he::g_Screen->height_ - he::g_Screen->height_/2) );
 }

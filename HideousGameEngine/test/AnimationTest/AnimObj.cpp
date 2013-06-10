@@ -13,7 +13,7 @@
 #include <he/Animation/RawAnimation.h>
 #include <he/Animation/AnimationLoop.h>
 #include <he/RenderObject/RenderObject.h>
-#include <he/Shaders/RectColorSh/RectColorSh.h>
+#include <he/Shaders/ColorShader.h>
 #include <he/Vertex/VertexCol.h>
 
 AnimObj::~AnimObj(){
@@ -25,7 +25,7 @@ AnimObj::~AnimObj(){
 	}
 }
 
-AnimObj::AnimObj( int ID, he::RectColorSh *shader ) :
+AnimObj::AnimObj( int ID, he::ColorShader *shader ) :
 id_(ID),
 transform_(GLKVector2Make(0.0, 0.0), 0.0, GLKVector2Make(1.0, 1.0)),
 //tmp_transform_(0),

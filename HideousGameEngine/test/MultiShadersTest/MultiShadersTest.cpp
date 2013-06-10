@@ -13,7 +13,7 @@
 
 #include <he/ParticleSystem/Particle.h>
 #include <he/ParticleSystem/ParticleEnv.h>
-#include <he/Shaders/ParticleSh/ParticleSh.h>
+#include <he/Shaders/ParticleShader.h>
 #include <he/Texture/Texture.h>
 #include <he/Utils/DebugLog.h>
 #include <he/Utils/Utils.h>
@@ -116,7 +116,7 @@ void MultiShadersTest::load_objects(){
 				break;
 				
 			case 3:{
-				particle_shader_ = new he::ParticleSh;
+				particle_shader_ = new he::ParticleShader;
 				particle_texture_ = new he::Texture(he::ResourcePath() + "snow_particle.png");
 				GLKVector2 box[2] = {GLKVector2Make(-3, -3), GLKVector2Make(3, 3)};
 				float life_range[2] = {randf_epsilon(0.1), randf_epsilon(0.5)};

@@ -11,7 +11,7 @@
 #include <OpenGLES/ES2/gl.h>
 
 #include <he/Animation/AnimationLoop.h>
-#include <he/Shaders/RectColorSh/RectColorSh.h>
+#include <he/Shaders/ColorShader.h>
 #include <he/Utils/DebugLog.h>
 #include <he/Utils/Utils.h>
 
@@ -82,7 +82,7 @@ void AnimationTest::load(){
 	if(objects_){
 		unload();
 	}
-	shader_ = new he::RectColorSh;
+	shader_ = new he::ColorShader;
 	objects_ = new AnimObj* [kObjects_];
 	for(int i = 0; i < kObjects_; ++i){
 		objects_[i] = new AnimObj(i+1, shader_);

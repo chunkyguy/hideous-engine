@@ -16,6 +16,9 @@
 #include <he/Utils/DebugHelper.h>
 
 namespace he{
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// MARK: FrameLoop
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	class FrameLoop{
 	public:
 		FrameLoop(const std::string &name, const TextureAtlas *atlas) :
@@ -58,15 +61,20 @@ namespace he{
 		bool done_;
 		const TextureAtlasRegion *region_;
 	};
-	
-	SpriteAnimation::SpriteAnimation(VertexTex **vertex_data, const TextureAtlas *atlas, const std::string &name, const int final_frame_index, const float fps) :
-	active_frame_(nullptr),
+
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// MARK: SpriteAnimation
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	SpriteAnimation::SpriteAnimation(VertexTex **vertex_data, const TextureAtlas *atlas, const std::string &name,
+									 const int repeat_count, const int final_frame_index, const float fps) :
+	vertex_data_(vertex_data),
+	final_vertex_data_(nullptr),
 	head_(nullptr),
 	tail_(nullptr),
+	active_frame_(nullptr),
 	clock_(0.0f),
 	delay_(1.0f/fps),
-	vertex_data_(vertex_data),
-	final_vertex_data_(nullptr)
+	repeat_count_(repeat_count)
 	{
 		int frame_count = 0;
 		for(FrameLoop loop_var(name, atlas); !loop_var.Done(); ++loop_var, ++frame_count){
@@ -113,15 +121,21 @@ namespace he{
 	}
 	
 	void SpriteAnimation::update(float dt){
-		clock_ += dt;
+		clock_ += dt;											// sit idle till next delay is over
 		if(clock_ > delay_){
-			active_frame_ = active_frame_->next_;
-			if(!active_frame_){
-				state_ = kNaturalDeath;
-				*vertex_data_ = final_vertex_data_;
+			active_frame_ = active_frame_->next_;				// move to next frame
+			if(!active_frame_){									// animation done
+				if(--repeat_count_ == 0){						// no repeats left
+					state_ = kNaturalDeath;						// make zombie. Will be removed at next update cycle.
+					*vertex_data_ = final_vertex_data_;			// set the sprite state to final state (picked at ctor)
+				}else{	//restart loop
+					active_frame_ = head_;						// set active-frame to head
+					*vertex_data_ = active_frame_->vertex_;		// move to next frame
+					clock_ = 0.0f;								// reset clock
+				}
 			}else{
-				*vertex_data_ = active_frame_->vertex_;
-				clock_ = 0.0f;
+				*vertex_data_ = active_frame_->vertex_;			// move to next frame
+				clock_ = 0.0f;									// reset clock
 			}
 		}
 	}

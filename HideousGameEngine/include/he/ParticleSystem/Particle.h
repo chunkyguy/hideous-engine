@@ -46,12 +46,12 @@ namespace he{
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	class RenderObject;
 	class VertexPar;
-	class ParticleSh;
+	class ParticleShader;
 	class Texture;
 
 	class ParticleBatch{
 	public:
-		ParticleBatch(int count, ParticleEnv *environment, const GLKVector2 &position, ParticleSh *shader, Texture *texture, const GLKVector4 &color);
+		ParticleBatch(int count, ParticleEnv *environment, const GLKVector2 &position, ParticleShader *shader, Texture *texture, const GLKVector4 &color);
 		~ParticleBatch();
 		void SetPosition(const GLKVector2 &position);
 		void Update(float dt);

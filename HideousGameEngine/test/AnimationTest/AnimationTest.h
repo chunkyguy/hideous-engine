@@ -16,7 +16,7 @@
 #include "AnimObj.h"
 
 namespace he{
-	class RectColorSh;
+	class ColorShader;
 }
 
 
@@ -37,7 +37,7 @@ private:
 	AnimObj **objects_;
 	int active_object_;
 	he::GestureListener<AnimationTest> *gesture_listner_;
-	he::RectColorSh *shader_;
+	he::ColorShader *shader_;
 };
 
 #endif /* defined(__HideousGameEngine__AnimationTest__) */

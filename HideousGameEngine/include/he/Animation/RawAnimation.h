@@ -26,13 +26,13 @@ namespace he{
 			delete [] frames_;
 		}
 		
-		RawAnimation(T *value, Tweener<T> tweener, int frames, float delay = 0.0f) :
+		RawAnimation(T *value, Tweener<T> tweener, int frames, float fps = 24.0f) :
 		value_(value),
 		frames_(new T [frames]),
 		frame_count_(frames),
 		active_frame_(-1),
 		clock_(0.0f),
-		delay_(delay)
+		delay_(1.0f/fps)
 		{
 			// Here is a sample of how these values looks like:
 			//	Lets say, frames = 5.

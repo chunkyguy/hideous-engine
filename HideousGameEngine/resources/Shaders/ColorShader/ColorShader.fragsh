@@ -1,5 +1,5 @@
 //
-//  RectColorSh.fragsh
+//  ColorShader.fragsh
 //  HideousGameEngine
 //
 //  Created by Sid on 10/02/13.
@@ -9,5 +9,6 @@
 uniform lowp vec4 u_clr;
 
 void main(){
-	gl_FragColor = u_clr;
+	lowp vec4 u_clr2 = vec4(1.0, 0.0, 0.0, 0.5);
+	gl_FragColor = mix( u_clr, u_clr2, gl_FragCoord.y);
 }

@@ -58,14 +58,6 @@
 		19A6E5891732781F006ACD91 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E5881732781F006ACD91 /* main.mm */; };
 		19A6E654173278A1006ACD91 /* HEViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E5D3173278A1006ACD91 /* HEViewController.mm */; };
 		19A6E655173278A1006ACD91 /* libFreetype2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A6E5D6173278A1006ACD91 /* libFreetype2.a */; };
-		19A6E656173278A1006ACD91 /* ParticleSh.fragsh in Resources */ = {isa = PBXBuildFile; fileRef = 19A6E5D9173278A1006ACD91 /* ParticleSh.fragsh */; };
-		19A6E657173278A1006ACD91 /* ParticleSh.vertsh in Resources */ = {isa = PBXBuildFile; fileRef = 19A6E5DA173278A1006ACD91 /* ParticleSh.vertsh */; };
-		19A6E658173278A1006ACD91 /* RectColorSh.fragsh in Resources */ = {isa = PBXBuildFile; fileRef = 19A6E5DC173278A1006ACD91 /* RectColorSh.fragsh */; };
-		19A6E659173278A1006ACD91 /* RectColorSh.vertsh in Resources */ = {isa = PBXBuildFile; fileRef = 19A6E5DD173278A1006ACD91 /* RectColorSh.vertsh */; };
-		19A6E65A173278A1006ACD91 /* RectTextSh.fragsh in Resources */ = {isa = PBXBuildFile; fileRef = 19A6E5DF173278A1006ACD91 /* RectTextSh.fragsh */; };
-		19A6E65B173278A1006ACD91 /* RectTextSh.vertsh in Resources */ = {isa = PBXBuildFile; fileRef = 19A6E5E0173278A1006ACD91 /* RectTextSh.vertsh */; };
-		19A6E65C173278A1006ACD91 /* RectTextureSh.fragsh in Resources */ = {isa = PBXBuildFile; fileRef = 19A6E5E2173278A1006ACD91 /* RectTextureSh.fragsh */; };
-		19A6E65D173278A1006ACD91 /* RectTextureSh.vertsh in Resources */ = {isa = PBXBuildFile; fileRef = 19A6E5E3173278A1006ACD91 /* RectTextureSh.vertsh */; };
 		19A6E65E173278A1006ACD91 /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E5E6173278A1006ACD91 /* Animation.cpp */; };
 		19A6E65F173278A1006ACD91 /* Gesture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E5E8173278A1006ACD91 /* Gesture.cpp */; };
 		19A6E660173278A1006ACD91 /* GestureCollector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E5E9173278A1006ACD91 /* GestureCollector.mm */; };
@@ -74,10 +66,6 @@
 		19A6E663173278A1006ACD91 /* ParticleEnv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E5EE173278A1006ACD91 /* ParticleEnv.cpp */; };
 		19A6E664173278A1006ACD91 /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E5F0173278A1006ACD91 /* Program.cpp */; };
 		19A6E665173278A1006ACD91 /* RenderObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E5F2173278A1006ACD91 /* RenderObject.cpp */; };
-		19A6E666173278A1006ACD91 /* ParticleSh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E5F5173278A1006ACD91 /* ParticleSh.cpp */; };
-		19A6E667173278A1006ACD91 /* RectColorSh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E5F7173278A1006ACD91 /* RectColorSh.cpp */; };
-		19A6E668173278A1006ACD91 /* RectTextSh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E5F9173278A1006ACD91 /* RectTextSh.cpp */; };
-		19A6E669173278A1006ACD91 /* RectTextureSh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E5FB173278A1006ACD91 /* RectTextureSh.cpp */; };
 		19A6E66A173278A1006ACD91 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E5FD173278A1006ACD91 /* Texture.cpp */; };
 		19A6E66B173278A1006ACD91 /* TextureAtlas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E5FE173278A1006ACD91 /* TextureAtlas.cpp */; };
 		19A6E66C173278A1006ACD91 /* TextureAtlasParser.mm in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E5FF173278A1006ACD91 /* TextureAtlasParser.mm */; };
@@ -128,6 +116,18 @@
 		19A6E69A173278A1006ACD91 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A6E64F173278A1006ACD91 /* Default@2x.png */; };
 		19A6E6A1173278B4006ACD91 /* WLAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E6A0173278B4006ACD91 /* WLAppDelegate.mm */; };
 		19A6E6A3173278BE006ACD91 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 19A6E6A2173278BE006ACD91 /* README.md */; };
+		19B0EBCC1765AF0900CD3D79 /* TextureShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19B0EBC81765AF0900CD3D79 /* TextureShader.cpp */; };
+		19B0EBCD1765AF0900CD3D79 /* TextShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19B0EBC91765AF0900CD3D79 /* TextShader.cpp */; };
+		19B0EBCE1765AF0900CD3D79 /* ParticleShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19B0EBCA1765AF0900CD3D79 /* ParticleShader.cpp */; };
+		19B0EBCF1765AF0900CD3D79 /* ColorShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19B0EBCB1765AF0900CD3D79 /* ColorShader.cpp */; };
+		19B0EBDC1765B15E00CD3D79 /* ColorShader.fragsh in Resources */ = {isa = PBXBuildFile; fileRef = 19B0EBD11765B15E00CD3D79 /* ColorShader.fragsh */; };
+		19B0EBDD1765B15E00CD3D79 /* ColorShader.vertsh in Resources */ = {isa = PBXBuildFile; fileRef = 19B0EBD21765B15E00CD3D79 /* ColorShader.vertsh */; };
+		19B0EBDE1765B15E00CD3D79 /* TextShader.fragsh in Resources */ = {isa = PBXBuildFile; fileRef = 19B0EBD41765B15E00CD3D79 /* TextShader.fragsh */; };
+		19B0EBDF1765B15E00CD3D79 /* TextShader.vertsh in Resources */ = {isa = PBXBuildFile; fileRef = 19B0EBD51765B15E00CD3D79 /* TextShader.vertsh */; };
+		19B0EBE01765B15E00CD3D79 /* TextureShader.fragsh in Resources */ = {isa = PBXBuildFile; fileRef = 19B0EBD71765B15E00CD3D79 /* TextureShader.fragsh */; };
+		19B0EBE11765B15E00CD3D79 /* TextureShader.vertsh in Resources */ = {isa = PBXBuildFile; fileRef = 19B0EBD81765B15E00CD3D79 /* TextureShader.vertsh */; };
+		19B0EBE21765B15E00CD3D79 /* ParticleShader.fragsh in Resources */ = {isa = PBXBuildFile; fileRef = 19B0EBDA1765B15E00CD3D79 /* ParticleShader.fragsh */; };
+		19B0EBE31765B15E00CD3D79 /* ParticleShader.vertsh in Resources */ = {isa = PBXBuildFile; fileRef = 19B0EBDB1765B15E00CD3D79 /* ParticleShader.vertsh */; };
 		19B5A588175B81DE0031834C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 19B5A587175B81DE0031834C /* Icon.png */; };
 		19B5A58A175B81E20031834C /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19B5A589175B81E20031834C /* Icon@2x.png */; };
 		19CE12CD174C8F8200F3BE52 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CE12CC174C8F8200F3BE52 /* GLKit.framework */; };
@@ -216,10 +216,6 @@
 		1995825D1734575F0094714E /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
 		1995825F1734575F0094714E /* RenderObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderObject.h; sourceTree = "<group>"; };
 		199582611734575F0094714E /* IShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IShader.h; sourceTree = "<group>"; };
-		199582631734575F0094714E /* ParticleSh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticleSh.h; sourceTree = "<group>"; };
-		199582651734575F0094714E /* RectColorSh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectColorSh.h; sourceTree = "<group>"; };
-		199582671734575F0094714E /* RectTextSh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectTextSh.h; sourceTree = "<group>"; };
-		199582691734575F0094714E /* RectTextureSh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectTextureSh.h; sourceTree = "<group>"; };
 		1995826B1734575F0094714E /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
 		1995826C1734575F0094714E /* TextureAtlas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureAtlas.h; sourceTree = "<group>"; };
 		1995826D1734575F0094714E /* TextureAtlasParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureAtlasParser.h; sourceTree = "<group>"; };
@@ -248,14 +244,6 @@
 		19A6E5D2173278A1006ACD91 /* HEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEViewController.h; sourceTree = "<group>"; };
 		19A6E5D3173278A1006ACD91 /* HEViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HEViewController.mm; sourceTree = "<group>"; };
 		19A6E5D6173278A1006ACD91 /* libFreetype2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFreetype2.a; sourceTree = "<group>"; };
-		19A6E5D9173278A1006ACD91 /* ParticleSh.fragsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ParticleSh.fragsh; sourceTree = "<group>"; };
-		19A6E5DA173278A1006ACD91 /* ParticleSh.vertsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ParticleSh.vertsh; sourceTree = "<group>"; };
-		19A6E5DC173278A1006ACD91 /* RectColorSh.fragsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RectColorSh.fragsh; sourceTree = "<group>"; };
-		19A6E5DD173278A1006ACD91 /* RectColorSh.vertsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RectColorSh.vertsh; sourceTree = "<group>"; };
-		19A6E5DF173278A1006ACD91 /* RectTextSh.fragsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RectTextSh.fragsh; sourceTree = "<group>"; };
-		19A6E5E0173278A1006ACD91 /* RectTextSh.vertsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RectTextSh.vertsh; sourceTree = "<group>"; };
-		19A6E5E2173278A1006ACD91 /* RectTextureSh.fragsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RectTextureSh.fragsh; sourceTree = "<group>"; };
-		19A6E5E3173278A1006ACD91 /* RectTextureSh.vertsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RectTextureSh.vertsh; sourceTree = "<group>"; };
 		19A6E5E6173278A1006ACD91 /* Animation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Animation.cpp; sourceTree = "<group>"; };
 		19A6E5E8173278A1006ACD91 /* Gesture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gesture.cpp; sourceTree = "<group>"; };
 		19A6E5E9173278A1006ACD91 /* GestureCollector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GestureCollector.mm; sourceTree = "<group>"; };
@@ -264,10 +252,6 @@
 		19A6E5EE173278A1006ACD91 /* ParticleEnv.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParticleEnv.cpp; sourceTree = "<group>"; };
 		19A6E5F0173278A1006ACD91 /* Program.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Program.cpp; sourceTree = "<group>"; };
 		19A6E5F2173278A1006ACD91 /* RenderObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RenderObject.cpp; sourceTree = "<group>"; };
-		19A6E5F5173278A1006ACD91 /* ParticleSh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParticleSh.cpp; sourceTree = "<group>"; };
-		19A6E5F7173278A1006ACD91 /* RectColorSh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RectColorSh.cpp; sourceTree = "<group>"; };
-		19A6E5F9173278A1006ACD91 /* RectTextSh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RectTextSh.cpp; sourceTree = "<group>"; };
-		19A6E5FB173278A1006ACD91 /* RectTextureSh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RectTextureSh.cpp; sourceTree = "<group>"; };
 		19A6E5FD173278A1006ACD91 /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
 		19A6E5FE173278A1006ACD91 /* TextureAtlas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextureAtlas.cpp; sourceTree = "<group>"; };
 		19A6E5FF173278A1006ACD91 /* TextureAtlasParser.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TextureAtlasParser.mm; sourceTree = "<group>"; };
@@ -338,6 +322,22 @@
 		19A6E69F173278B4006ACD91 /* WLAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLAppDelegate.h; sourceTree = "<group>"; };
 		19A6E6A0173278B4006ACD91 /* WLAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WLAppDelegate.mm; sourceTree = "<group>"; };
 		19A6E6A2173278BE006ACD91 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		19B0EBC41765ADC300CD3D79 /* TextureShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TextureShader.h; path = HideousGameEngine/include/he/Shaders/TextureShader.h; sourceTree = SOURCE_ROOT; };
+		19B0EBC51765ADC300CD3D79 /* TextShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TextShader.h; path = HideousGameEngine/include/he/Shaders/TextShader.h; sourceTree = SOURCE_ROOT; };
+		19B0EBC61765ADC300CD3D79 /* ParticleShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ParticleShader.h; path = HideousGameEngine/include/he/Shaders/ParticleShader.h; sourceTree = SOURCE_ROOT; };
+		19B0EBC71765ADC300CD3D79 /* ColorShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ColorShader.h; path = HideousGameEngine/include/he/Shaders/ColorShader.h; sourceTree = SOURCE_ROOT; };
+		19B0EBC81765AF0900CD3D79 /* TextureShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextureShader.cpp; sourceTree = "<group>"; };
+		19B0EBC91765AF0900CD3D79 /* TextShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextShader.cpp; sourceTree = "<group>"; };
+		19B0EBCA1765AF0900CD3D79 /* ParticleShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParticleShader.cpp; sourceTree = "<group>"; };
+		19B0EBCB1765AF0900CD3D79 /* ColorShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColorShader.cpp; sourceTree = "<group>"; };
+		19B0EBD11765B15E00CD3D79 /* ColorShader.fragsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ColorShader.fragsh; sourceTree = "<group>"; };
+		19B0EBD21765B15E00CD3D79 /* ColorShader.vertsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ColorShader.vertsh; sourceTree = "<group>"; };
+		19B0EBD41765B15E00CD3D79 /* TextShader.fragsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TextShader.fragsh; sourceTree = "<group>"; };
+		19B0EBD51765B15E00CD3D79 /* TextShader.vertsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TextShader.vertsh; sourceTree = "<group>"; };
+		19B0EBD71765B15E00CD3D79 /* TextureShader.fragsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TextureShader.fragsh; sourceTree = "<group>"; };
+		19B0EBD81765B15E00CD3D79 /* TextureShader.vertsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TextureShader.vertsh; sourceTree = "<group>"; };
+		19B0EBDA1765B15E00CD3D79 /* ParticleShader.fragsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ParticleShader.fragsh; sourceTree = "<group>"; };
+		19B0EBDB1765B15E00CD3D79 /* ParticleShader.vertsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ParticleShader.vertsh; sourceTree = "<group>"; };
 		19B5A587175B81DE0031834C /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../../Icon.png; sourceTree = "<group>"; };
 		19B5A589175B81E20031834C /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../../Icon@2x.png"; sourceTree = "<group>"; };
 		19CE12CC174C8F8200F3BE52 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
@@ -562,44 +562,12 @@
 			isa = PBXGroup;
 			children = (
 				199582611734575F0094714E /* IShader.h */,
-				199582621734575F0094714E /* ParticleSh */,
-				199582641734575F0094714E /* RectColorSh */,
-				199582661734575F0094714E /* RectTextSh */,
-				199582681734575F0094714E /* RectTextureSh */,
+				19B0EBC41765ADC300CD3D79 /* TextureShader.h */,
+				19B0EBC51765ADC300CD3D79 /* TextShader.h */,
+				19B0EBC61765ADC300CD3D79 /* ParticleShader.h */,
+				19B0EBC71765ADC300CD3D79 /* ColorShader.h */,
 			);
 			path = Shaders;
-			sourceTree = "<group>";
-		};
-		199582621734575F0094714E /* ParticleSh */ = {
-			isa = PBXGroup;
-			children = (
-				199582631734575F0094714E /* ParticleSh.h */,
-			);
-			path = ParticleSh;
-			sourceTree = "<group>";
-		};
-		199582641734575F0094714E /* RectColorSh */ = {
-			isa = PBXGroup;
-			children = (
-				199582651734575F0094714E /* RectColorSh.h */,
-			);
-			path = RectColorSh;
-			sourceTree = "<group>";
-		};
-		199582661734575F0094714E /* RectTextSh */ = {
-			isa = PBXGroup;
-			children = (
-				199582671734575F0094714E /* RectTextSh.h */,
-			);
-			path = RectTextSh;
-			sourceTree = "<group>";
-		};
-		199582681734575F0094714E /* RectTextureSh */ = {
-			isa = PBXGroup;
-			children = (
-				199582691734575F0094714E /* RectTextureSh.h */,
-			);
-			path = RectTextureSh;
 			sourceTree = "<group>";
 		};
 		1995826A1734575F0094714E /* Texture */ = {
@@ -728,48 +696,12 @@
 		19A6E5D7173278A1006ACD91 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
-				19A6E5D8173278A1006ACD91 /* ParticleSh */,
-				19A6E5DB173278A1006ACD91 /* RectColorSh */,
-				19A6E5DE173278A1006ACD91 /* RectTextSh */,
-				19A6E5E1173278A1006ACD91 /* RectTextureSh */,
+				19B0EBD01765B15E00CD3D79 /* ColorShader */,
+				19B0EBD31765B15E00CD3D79 /* TextShader */,
+				19B0EBD61765B15E00CD3D79 /* TextureShader */,
+				19B0EBD91765B15E00CD3D79 /* ParticleShader */,
 			);
 			path = Shaders;
-			sourceTree = "<group>";
-		};
-		19A6E5D8173278A1006ACD91 /* ParticleSh */ = {
-			isa = PBXGroup;
-			children = (
-				19A6E5D9173278A1006ACD91 /* ParticleSh.fragsh */,
-				19A6E5DA173278A1006ACD91 /* ParticleSh.vertsh */,
-			);
-			path = ParticleSh;
-			sourceTree = "<group>";
-		};
-		19A6E5DB173278A1006ACD91 /* RectColorSh */ = {
-			isa = PBXGroup;
-			children = (
-				19A6E5DC173278A1006ACD91 /* RectColorSh.fragsh */,
-				19A6E5DD173278A1006ACD91 /* RectColorSh.vertsh */,
-			);
-			path = RectColorSh;
-			sourceTree = "<group>";
-		};
-		19A6E5DE173278A1006ACD91 /* RectTextSh */ = {
-			isa = PBXGroup;
-			children = (
-				19A6E5DF173278A1006ACD91 /* RectTextSh.fragsh */,
-				19A6E5E0173278A1006ACD91 /* RectTextSh.vertsh */,
-			);
-			path = RectTextSh;
-			sourceTree = "<group>";
-		};
-		19A6E5E1173278A1006ACD91 /* RectTextureSh */ = {
-			isa = PBXGroup;
-			children = (
-				19A6E5E2173278A1006ACD91 /* RectTextureSh.fragsh */,
-				19A6E5E3173278A1006ACD91 /* RectTextureSh.vertsh */,
-			);
-			path = RectTextureSh;
 			sourceTree = "<group>";
 		};
 		19A6E5E4173278A1006ACD91 /* src */ = {
@@ -846,44 +778,12 @@
 		19A6E5F3173278A1006ACD91 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
-				19A6E5F4173278A1006ACD91 /* ParticleSh */,
-				19A6E5F6173278A1006ACD91 /* RectColorSh */,
-				19A6E5F8173278A1006ACD91 /* RectTextSh */,
-				19A6E5FA173278A1006ACD91 /* RectTextureSh */,
+				19B0EBC81765AF0900CD3D79 /* TextureShader.cpp */,
+				19B0EBC91765AF0900CD3D79 /* TextShader.cpp */,
+				19B0EBCA1765AF0900CD3D79 /* ParticleShader.cpp */,
+				19B0EBCB1765AF0900CD3D79 /* ColorShader.cpp */,
 			);
 			path = Shaders;
-			sourceTree = "<group>";
-		};
-		19A6E5F4173278A1006ACD91 /* ParticleSh */ = {
-			isa = PBXGroup;
-			children = (
-				19A6E5F5173278A1006ACD91 /* ParticleSh.cpp */,
-			);
-			path = ParticleSh;
-			sourceTree = "<group>";
-		};
-		19A6E5F6173278A1006ACD91 /* RectColorSh */ = {
-			isa = PBXGroup;
-			children = (
-				19A6E5F7173278A1006ACD91 /* RectColorSh.cpp */,
-			);
-			path = RectColorSh;
-			sourceTree = "<group>";
-		};
-		19A6E5F8173278A1006ACD91 /* RectTextSh */ = {
-			isa = PBXGroup;
-			children = (
-				19A6E5F9173278A1006ACD91 /* RectTextSh.cpp */,
-			);
-			path = RectTextSh;
-			sourceTree = "<group>";
-		};
-		19A6E5FA173278A1006ACD91 /* RectTextureSh */ = {
-			isa = PBXGroup;
-			children = (
-				19A6E5FB173278A1006ACD91 /* RectTextureSh.cpp */,
-			);
-			path = RectTextureSh;
 			sourceTree = "<group>";
 		};
 		19A6E5FC173278A1006ACD91 /* Texture */ = {
@@ -1083,6 +983,42 @@
 			path = assets;
 			sourceTree = "<group>";
 		};
+		19B0EBD01765B15E00CD3D79 /* ColorShader */ = {
+			isa = PBXGroup;
+			children = (
+				19B0EBD11765B15E00CD3D79 /* ColorShader.fragsh */,
+				19B0EBD21765B15E00CD3D79 /* ColorShader.vertsh */,
+			);
+			path = ColorShader;
+			sourceTree = "<group>";
+		};
+		19B0EBD31765B15E00CD3D79 /* TextShader */ = {
+			isa = PBXGroup;
+			children = (
+				19B0EBD41765B15E00CD3D79 /* TextShader.fragsh */,
+				19B0EBD51765B15E00CD3D79 /* TextShader.vertsh */,
+			);
+			path = TextShader;
+			sourceTree = "<group>";
+		};
+		19B0EBD61765B15E00CD3D79 /* TextureShader */ = {
+			isa = PBXGroup;
+			children = (
+				19B0EBD71765B15E00CD3D79 /* TextureShader.fragsh */,
+				19B0EBD81765B15E00CD3D79 /* TextureShader.vertsh */,
+			);
+			path = TextureShader;
+			sourceTree = "<group>";
+		};
+		19B0EBD91765B15E00CD3D79 /* ParticleShader */ = {
+			isa = PBXGroup;
+			children = (
+				19B0EBDA1765B15E00CD3D79 /* ParticleShader.fragsh */,
+				19B0EBDB1765B15E00CD3D79 /* ParticleShader.vertsh */,
+			);
+			path = ParticleShader;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1136,14 +1072,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				19A6E5871732781F006ACD91 /* InfoPlist.strings in Resources */,
-				19A6E656173278A1006ACD91 /* ParticleSh.fragsh in Resources */,
-				19A6E657173278A1006ACD91 /* ParticleSh.vertsh in Resources */,
-				19A6E658173278A1006ACD91 /* RectColorSh.fragsh in Resources */,
-				19A6E659173278A1006ACD91 /* RectColorSh.vertsh in Resources */,
-				19A6E65A173278A1006ACD91 /* RectTextSh.fragsh in Resources */,
-				19A6E65B173278A1006ACD91 /* RectTextSh.vertsh in Resources */,
-				19A6E65C173278A1006ACD91 /* RectTextureSh.fragsh in Resources */,
-				19A6E65D173278A1006ACD91 /* RectTextureSh.vertsh in Resources */,
 				19A6E67E173278A1006ACD91 /* Courier New.ttf in Resources */,
 				19A6E680173278A1006ACD91 /* SimSun.ttf in Resources */,
 				19A6E683173278A1006ACD91 /* snow_particle.png in Resources */,
@@ -1181,6 +1109,14 @@
 				194F4D4A1762F1BD002AD10E /* rotating_square.xml in Resources */,
 				194F4D4D17636527002AD10E /* fishmotion.png in Resources */,
 				194F4D4E17636527002AD10E /* fishmotion.xml in Resources */,
+				19B0EBDC1765B15E00CD3D79 /* ColorShader.fragsh in Resources */,
+				19B0EBDD1765B15E00CD3D79 /* ColorShader.vertsh in Resources */,
+				19B0EBDE1765B15E00CD3D79 /* TextShader.fragsh in Resources */,
+				19B0EBDF1765B15E00CD3D79 /* TextShader.vertsh in Resources */,
+				19B0EBE01765B15E00CD3D79 /* TextureShader.fragsh in Resources */,
+				19B0EBE11765B15E00CD3D79 /* TextureShader.vertsh in Resources */,
+				19B0EBE21765B15E00CD3D79 /* ParticleShader.fragsh in Resources */,
+				19B0EBE31765B15E00CD3D79 /* ParticleShader.vertsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1201,10 +1137,6 @@
 				19A6E663173278A1006ACD91 /* ParticleEnv.cpp in Sources */,
 				19A6E664173278A1006ACD91 /* Program.cpp in Sources */,
 				19A6E665173278A1006ACD91 /* RenderObject.cpp in Sources */,
-				19A6E666173278A1006ACD91 /* ParticleSh.cpp in Sources */,
-				19A6E667173278A1006ACD91 /* RectColorSh.cpp in Sources */,
-				19A6E668173278A1006ACD91 /* RectTextSh.cpp in Sources */,
-				19A6E669173278A1006ACD91 /* RectTextureSh.cpp in Sources */,
 				19A6E66A173278A1006ACD91 /* Texture.cpp in Sources */,
 				19A6E66B173278A1006ACD91 /* TextureAtlas.cpp in Sources */,
 				19A6E66C173278A1006ACD91 /* TextureAtlasParser.mm in Sources */,
@@ -1263,6 +1195,10 @@
 				198403B91761F10300D0B7EA /* FlashMovie.cpp in Sources */,
 				198403BC1761F85000D0B7EA /* SpriteAnimation.cpp in Sources */,
 				194F4D421762EDEB002AD10E /* GLKMath_Additions.cpp in Sources */,
+				19B0EBCC1765AF0900CD3D79 /* TextureShader.cpp in Sources */,
+				19B0EBCD1765AF0900CD3D79 /* TextShader.cpp in Sources */,
+				19B0EBCE1765AF0900CD3D79 /* ParticleShader.cpp in Sources */,
+				19B0EBCF1765AF0900CD3D79 /* ColorShader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

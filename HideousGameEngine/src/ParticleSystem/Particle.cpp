@@ -14,7 +14,7 @@
 
 #include <he/RenderObject/RenderObject.h>
 #include <he/Texture/Texture.h>
-#include <he/Shaders/ParticleSh/ParticleSh.h>
+#include <he/Shaders/ParticleShader.h>
 #include <he/Utils/Screen.h>
 #include <he/Vertex/VertexPar.h>
 
@@ -81,7 +81,7 @@ namespace he{
 	// MARK: ParticleBatch
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	ParticleBatch::ParticleBatch(int count, ParticleEnv *environment, const GLKVector2 &position, ParticleSh *shader, Texture *texture, const GLKVector4 &color) :
+	ParticleBatch::ParticleBatch(int count, ParticleEnv *environment, const GLKVector2 &position, ParticleShader *shader, Texture *texture, const GLKVector4 &color) :
 	count_(count),
 	particles_(new Particle* [count]),
 	render_object_(nullptr),

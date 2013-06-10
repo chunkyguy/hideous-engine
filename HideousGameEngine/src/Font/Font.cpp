@@ -8,7 +8,7 @@
 
 #include <he/Font/Font.h>
 #include <he/RenderObject/RenderObject.h>
-#include <he/Shaders/RectTextSh/RectTextSh.h>
+#include <he/Shaders/TextShader.h>
 #include <he/Texture/Texture.h>
 #include <he/Utils/DebugLog.h>
 #include <he/Utils/ResourcePath.hpp>
@@ -34,7 +34,7 @@ namespace he{
 		assert(!error); // "Unable to open font"
 		FT_Set_Pixel_Sizes(face_, 0, size);
 		
-		shader_ = new RectTextSh;
+		shader_ = new TextShader;
 	}
 	
 	void Font::LoadText(Text *text){
@@ -139,7 +139,7 @@ namespace he{
 		delete vertex_data_;
 	}
 	
-	Text::Glyph::Glyph(std::string font_name, std::string char_name, FT_GlyphSlot &glyph, GLKVector2 penPos, RectTextSh *shader, GLKVector4 color)
+	Text::Glyph::Glyph(std::string font_name, std::string char_name, FT_GlyphSlot &glyph, GLKVector2 penPos, TextShader *shader, GLKVector4 color)
 	{
 		//FILE_LOG(logDEBUG) << "GlyphData" << std::endl;
 		int w = NextPOT(glyph->bitmap.width);

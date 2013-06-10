@@ -13,10 +13,10 @@
 
 #include <he/RenderObject/RenderObject.h>
 #if defined(DEBUG_DRAW)
-	#include <he/Shaders/RectColorSh/RectColorSh.h>
+	#include <he/Shaders/ColorShader.h>
 	#include <he/Vertex/VertexCol.h>
 #else
-	#include <he/Shaders/RectTextureSh/RectTextureSh.h>
+	#include <he/Shaders/TextureShader.h>
 	#include <he/Texture/Texture.h>
 	#include <he/Vertex/VertexTex.h>
 #endif
@@ -159,9 +159,9 @@ SkeletonDrawable::SkeletonDrawable (spine::SkeletonData* skeletonData, spine::An
 timeScale_(1)
 {
 #if defined(DEBUG_DRAW)
-	shader_ = new he::RectColorSh;
+	shader_ = new he::ColorShader;
 #else
-	shader_ = new he::RectTextureSh;
+	shader_ = new he::TextureShader;
 #endif
 	skeleton_ = new spine::Skeleton(skeletonData);
 	state_ = new spine::AnimationState(stateData);

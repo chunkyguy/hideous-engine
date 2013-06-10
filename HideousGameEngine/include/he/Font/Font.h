@@ -42,13 +42,13 @@ namespace he{
 	class RenderObject;
 	class VertexTex;
 	class Texture;
-	class RectTextSh;
+	class TextShader;
 	
 	class Text{
 	public:
 		class Glyph{
 		public:
-			Glyph(std::string font_name, std::string char_name, FT_GlyphSlot &glyph, GLKVector2 penPosition,	RectTextSh *shader, GLKVector4 color);
+			Glyph(std::string font_name, std::string char_name, FT_GlyphSlot &glyph, GLKVector2 penPosition,	TextShader *shader, GLKVector4 color);
 			~Glyph();
 			
 			Transform transform_;
@@ -92,7 +92,7 @@ namespace he{
 		std::string name_;
 		FT_Face face_;
 		int glyph_count_;
-		RectTextSh *shader_;
+		TextShader *shader_;
 		static Library *library_;
 	};
 }

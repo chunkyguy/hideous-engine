@@ -15,7 +15,7 @@
 namespace he{
 	class RenderObject;
 	class VertexCol;
-	class RectColorSh;
+	class ColorShader;
 }
 
 class GObj{
@@ -33,7 +33,7 @@ private:
 
 	he::RenderObject *render_object_;
 	he::VertexCol *vert_;
-	he::RectColorSh *shader_;
+	he::ColorShader *shader_;
 	he::Transform transform_;
 	GLKVector4 color_;
 	GLKVector2 direction_;

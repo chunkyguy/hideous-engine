@@ -18,7 +18,7 @@ namespace he {
 	class Texture;
 	class ParticleEnv;
 	class ParticleBatch;
-	class ParticleSh;
+	class ParticleShader;
 }
 
 const int kShaders = 4;
@@ -43,7 +43,7 @@ private:
 	TextureObj *texture_object_;
 	
 	//particles
-	he::ParticleSh *particle_shader_;
+	he::ParticleShader *particle_shader_;
 	he::Texture *particle_texture_;
 	he::ParticleEnv *environment_;
 	he::ParticleBatch *particles_;

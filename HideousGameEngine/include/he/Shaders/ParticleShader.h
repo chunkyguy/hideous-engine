@@ -20,10 +20,10 @@ namespace he{
 	class Program;
 	class RenderObject;
 	
-	class ParticleSh : public IShader{
+	class ParticleShader : public IShader{
 	public:
-		ParticleSh();
-		~ParticleSh();
+		ParticleShader();
+		~ParticleShader();
 		void Render(RenderObject *render_object);
 		
 		Program *program_;

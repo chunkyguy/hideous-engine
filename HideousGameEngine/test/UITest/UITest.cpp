@@ -11,7 +11,7 @@
 #include <he/Animation/Animation.h>
 #include <he/Font/Font.h>
 #include <he/RenderObject/RenderObject.h>
-#include <he/Shaders/RectColorSh/RectColorSh.h>
+#include <he/Shaders/ColorShader.h>
 #include <he/Utils/DebugLog.h>
 #include <he/Utils/Utils.h>
 #include <he/Utils/Transform.h>
@@ -57,7 +57,7 @@ UITest::UITest(float w, float h)
 	label_ = new Label("Sid the best", font_);
 	label_->transform_.SetPosition(GLKVector2Make(10, 20));
 
-	shader_ = new he::RectColorSh;
+	shader_ = new he::ColorShader;
 	
 	vertex_data_ = new he::VertexCol( label_->GetBox() );
 //	vertex_data_ = new he::VertexCol(label_->GetBox(),0);

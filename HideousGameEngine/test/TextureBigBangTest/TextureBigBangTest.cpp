@@ -9,7 +9,7 @@
 #include "TextureBigBangTest.h"
 
 #include	 <he/RenderObject/RenderObject.h>
-#include <he/Shaders/RectTextureSh/RectTextureSh.h>
+#include <he/Shaders/TextureShader.h>
 #include <he/Texture/Texture.h>
 #include <he/Texture/TextureAtlas.h>
 #include <he/Utils/DebugLog.h>
@@ -123,7 +123,7 @@ void TextureBigBangTest::HandleGesture(const he::Gesture &gesture){
 void TextureBigBangTest::load_assets(){
 	texture_ = new he::Texture(he::ResourcePath() + "clock.png");
 	vertex_data_ = new he::VertexTex(50, 50);
-	shader_ = new he::RectTextureSh;
+	shader_ = new he::TextureShader;
 	sprite_ = new he::RenderObject(vertex_data_, shader_, texture_);
 }
 void TextureBigBangTest::unload_assets(){

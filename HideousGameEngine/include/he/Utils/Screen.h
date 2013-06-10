@@ -31,7 +31,7 @@ namespace he{
 			kUnknown
 		}Grid;
 
-		Screen(float width = 0.0, float height = 0.0);
+		Screen(const float width = 0.0, const float height = 0.0, const float z_min = 0.1f, const float z_max = 100.0f);
 		void SetProjection(GLKMatrix4 projection = GLKMatrix4Identity);
 		Grid MapPointToGrid(GLKVector2 point);
 		
@@ -40,6 +40,7 @@ namespace he{
 		
 		float width_;
 		float height_;
+		const float z_;
 		GLKMatrix4 projection_;
 	};
 	

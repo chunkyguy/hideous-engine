@@ -16,7 +16,7 @@
 #include <he/Utils/Transform.h>
 
 namespace he{
-	class RectColorSh;
+	class ColorShader;
 	class RenderObject;
 	class VertexCol;
 }
@@ -26,7 +26,7 @@ public:
 	typedef enum {kLiving, kZombie, kDead} Life;
 
 	~RunningSquare();
-	RunningSquare(he::RectColorSh *shader);
+	RunningSquare(he::ColorShader *shader);
 	void Update(float dt);
 	void Render();
 	//Getter-Setters

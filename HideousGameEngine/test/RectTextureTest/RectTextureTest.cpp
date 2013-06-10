@@ -9,7 +9,7 @@
 #include "RectTextureTest.h"
 
 #include <he/RenderObject/RenderObject.h>
-#include <he/Shaders/RectTextureSh/RectTextureSh.h>
+#include <he/Shaders/TextureShader.h>
 #include <he/Texture/Texture.h>
 #include <he/Texture/TextureAtlas.h>
 #include <he/Utils/DebugLog.h>
@@ -66,7 +66,7 @@ void RectTextureTest::load_textures(){
 	GLKMatrix4 tMat;
 	GLKMatrix4 mvpMat;
 	he::VertexTex *v;
-	shader_ = new he::RectTextureSh;
+	shader_ = new he::TextureShader;
 
 #if defined(SPINE_TEXTURE_OBJECT)
 	//Draw a texture in proportion

@@ -35,7 +35,7 @@ namespace he{
 		return rval;
 	}
 	
-	FileBuffer::FileBuffer(std::string path){
+	FileBuffer::FileBuffer(const std::string &path){
 		std::ifstream fin;
 		fin.open(path.c_str());
 		assert(fin.is_open());
@@ -51,10 +51,13 @@ namespace he{
 		delete buffer_;
 		buffer_ = 0;
 	}
-	std::string FileBuffer::GetString(){
+	std::string FileBuffer::GetString() const{
 		return std::string(buffer_);
 	}
-	int FileBuffer::GetLength(){
+	const char *FileBuffer::GetData() const{
+		return buffer_;
+	}
+	int FileBuffer::GetLength() const{
 		return length_;
 	}
 

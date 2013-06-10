@@ -19,9 +19,9 @@
 
 namespace he{
 #if defined(DEBUG_DRAW)
-	class RectColorSh;
+	class ColorShader;
 #else
-	class RectTextureSh;
+	class TextureShader;
 #endif
 	class TextureAtlas;
 	class Texture;
@@ -32,9 +32,9 @@ public:
 	spine::Skeleton* skeleton_;
 	spine::AnimationState* state_;
 #if defined(DEBUG_DRAW)
-	he::RectColorSh *shader_;
+	he::ColorShader *shader_;
 #else
-	he::RectTextureSh *shader_;
+	he::TextureShader *shader_;
 #endif
 	float timeScale_;
 	

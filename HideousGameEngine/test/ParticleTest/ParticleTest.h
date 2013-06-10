@@ -17,7 +17,7 @@ namespace he{
 	class Texture;
 	class ParticleEnv;
 	class ParticleBatch;
-	class ParticleSh;
+	class ParticleShader;
 }
 
 class ParticleTest : public ITest{
@@ -29,7 +29,7 @@ public:
 	void HandleGesture(const he::Gesture &gesture);
 	
 private:
-	he::ParticleSh *shader_;
+	he::ParticleShader *shader_;
 	he::Texture *texture_;
 	he::ParticleEnv *environment_;
 	he::ParticleBatch *particles_;

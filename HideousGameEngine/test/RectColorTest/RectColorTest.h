@@ -17,7 +17,7 @@
 #include "RunningSquare.h"
 
 namespace he{
-	class RectColorSh;
+	class ColorShader;
 }
 
 class RectColorTest : public ITest{
@@ -29,13 +29,13 @@ public:
 	void HandleGesture(const he::Gesture &gesture);
 	
 private:
-	const int kTotal_squares = 300;
+	const int kTotal_squares = 3;
 	
 	void load_squares();
 	void unload_squares();
 	
 	RunningSquare **squares_;
-	he::RectColorSh *shader_;
+	he::ColorShader *shader_;
 	he::GestureListener<RectColorTest> *gesture_listner_;
 };
 

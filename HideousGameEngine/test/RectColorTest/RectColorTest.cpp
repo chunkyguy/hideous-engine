@@ -8,7 +8,7 @@
 
 #include "RectColorTest.h"
 
-#include <he/Shaders/RectColorSh/RectColorSh.h>
+#include <he/Shaders/ColorShader.h>
 #include <he/Utils/DebugHelper.h>
 #include <he/Utils/Utils.h>
 
@@ -21,8 +21,9 @@ RectColorTest::~RectColorTest(){
 }
 RectColorTest::RectColorTest(float w, float h) :
 squares_(0),
-shader_(new he::RectColorSh)
+shader_(new he::ColorShader)
 {
+	he_Trace("RectColorTest");
 	// Init globals
 	he::GlobalsInit(w, h);
 
@@ -92,7 +93,7 @@ void RectColorTest::unload_squares(){
 	//	he::RectColor::cleanAsset();
 }
 void RectColorTest::	HandleGesture(const he::Gesture &gesture){
-	if(gesture.action_ == he::Gesture::kTap){
+	if(gesture.action_ == he::Gesture::kTap && gesture.state_ == he::Gesture::kEnd){
 		load_squares();
 	}
 }

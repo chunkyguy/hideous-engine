@@ -55,10 +55,11 @@ namespace he{
 
 	class FileBuffer{
 	public:
-		FileBuffer(std::string path);
+		FileBuffer(const std::string &path);
 		~FileBuffer();
-		std::string GetString();
-		int GetLength();
+		std::string GetString() const;
+		const char *GetData() const;
+		int GetLength() const;
 		
 	private:
 		char *buffer_;

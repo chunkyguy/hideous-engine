@@ -1,15 +1,16 @@
 //
-//  RectColorSh.h
+//  ColorShader.h
 //  HEAssets
 //
 //  Created by Sid on 26/04/13.
 //  Copyright (c) 2013 whackylabs. All rights reserved.
 //
  
-#ifndef __HEAssets__RectColorSh__
-#define __HEAssets__RectColorSh__
-#include <OpenGLES/ES2/gl.h>
+#ifndef __HEAssets__ColorShader__
+#define __HEAssets__ColorShader__
 #include <string>
+
+#include <OpenGLES/ES2/gl.h>
 
 #include <he/Shaders/IShader.h>
 
@@ -17,10 +18,10 @@ namespace he{
 	class Program;
 	class RenderObject;
 	
-	class RectColorSh : public IShader{
+	class ColorShader : public IShader{
 	public:
-		RectColorSh();
-		~RectColorSh();
+		ColorShader();
+		~ColorShader();
 		void Render(RenderObject *render_object);
 		
 		he::Program *program_;
@@ -29,4 +30,4 @@ namespace he{
 		GLint u_clr;
 	};
 }
-#endif /* defined(__HEAssets__RectColorSh__) */
+#endif /* defined(__HEAssets__ColorShader__) */
