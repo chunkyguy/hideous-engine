@@ -12,7 +12,7 @@
 #include <he/Program/Program.h>
 #include <he/RenderObject/RenderObject.h>
 #include <he/Texture/Texture.h>
-#include <he/Vertex/VertexTex.h>
+#include <he/Vertex/TextureVertex.h>
 
 namespace he{
 	

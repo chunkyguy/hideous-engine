@@ -15,7 +15,7 @@
 #include <he/Utils/DebugLog.h>
 #include <he/Utils/ResourcePath.hpp>
 #include <he/Utils/Utils.h>
-#include <he/Vertex/VertexTex.h>
+#include <he/Vertex/TextureVertex.h>
 
 RectTextureTest::~RectTextureTest(){
 	unload_textures();
@@ -65,7 +65,7 @@ void RectTextureTest::load_textures(){
 	GLKVector2 pos;
 	GLKMatrix4 tMat;
 	GLKMatrix4 mvpMat;
-	he::VertexTex *v;
+	he::TextureVertex *v;
 	shader_ = new he::TextureShader;
 
 #if defined(SPINE_TEXTURE_OBJECT)
@@ -76,7 +76,7 @@ void RectTextureTest::load_textures(){
 #endif
 	
 	he::Texture *r1t = new he::Texture(he::ResourcePath() + "texture.png");
-	v = new he::VertexTex(200, 200);
+	v = new he::TextureVertex(200, 200);
 	
 	pos = GLKVector2Make(-150.0, 0.0);
 	tMat = GLKMatrix4MakeTranslation(pos.x, pos.y, -0.1);
@@ -88,7 +88,7 @@ void RectTextureTest::load_textures(){
 	
 	//Draw a texture out of proportion
 	he::Texture *r2t = new he::Texture(he::ResourcePath() + "texture_alpha.png");
-	v = new he::VertexTex(50, 25);
+	v = new he::TextureVertex(50, 25);
 	pos = GLKVector2Make(-50.0, 0.0);
 	tMat = GLKMatrix4MakeTranslation(pos.x, pos.y, -0.1);
 	mvpMat = GLKMatrix4Multiply(he::g_Screen->projection_, tMat);
@@ -139,7 +139,7 @@ void RectTextureTest::unload_textures(){
 		delete *it;
 	}
 	textures_.clear();
-	for(std::list<he::VertexTex *>::iterator it = vertex_datas_.begin(); it != vertex_datas_.end(); ++it){
+	for(std::list<he::TextureVertex *>::iterator it = vertex_datas_.begin(); it != vertex_datas_.end(); ++it){
 		delete *it;
 	}
 	vertex_datas_.clear();
@@ -160,7 +160,7 @@ void RectTextureTest::load_goblin(){
 	GLKVector2 pos;
 	GLKMatrix4 tMat;
 	GLKMatrix4 mvpMat;
-	he::VertexTex *vertex_data;
+	he::TextureVertex *vertex_data;
 	
 	he::Texture *goblin_tex = new he::Texture(he::ResourcePath() + "goblins.png");
 	
@@ -212,7 +212,7 @@ void RectTextureTest::load_goblin(){
 	//	tex_coords = GLKVector4Make(region->u, region->v, region->u2, region->v2);
 	printf("tex_coords:\t\t\t\t\t{{%.2f, %.2f}, {%.2f, %.2f}}\n", tex_coords.x, tex_coords.y, tex_coords.z, tex_coords.w);
 	
-	vertex_data = new he::VertexTex(eff_frame.z, eff_frame.w, false, tex_coords);
+	vertex_data = new he::TextureVertex(eff_frame.z, eff_frame.w, false, tex_coords);
 	printf("GLfloat pos_data[] = {\n");
 	GLfloat *vpos_data = vertex_data->position_data_.GetData();
 	for(int vd_indx = 0; vd_indx < 8; vd_indx += 2){
@@ -241,12 +241,12 @@ void RectTextureTest::load_spineboy(){
 	GLKVector2 pos;
 	GLKMatrix4 tMat;
 	GLKMatrix4 mvpMat;
-	he::VertexTex *v;
+	he::TextureVertex *v;
 	he::Texture *goblin_tex = new he::Texture(he::ResourcePath() + "spineboy.png");
 	spine::AtlasRegion *region = Atlas_findRegion(spine_atlas_, "head");
 	//	GLKVector4 draw_frame = GLKVector4Make(1, 122, 121, 132);
 	GLKVector4 draw_frame = GLKVector4Make(region->x, region->y, region->width,region->height);
-	v = new he::VertexTex(121, 132, false, convert_to_tex_coords(draw_frame, goblin_tex->GetSize()));
+	v = new he::TextureVertex(121, 132, false, convert_to_tex_coords(draw_frame, goblin_tex->GetSize()));
 	pos = GLKVector2Make(0.0, 0.0);
 	tMat = GLKMatrix4MakeTranslation(pos.x, pos.y, -0.1);
 	mvpMat = GLKMatrix4Multiply(he::g_Screen.projection_, tMat);

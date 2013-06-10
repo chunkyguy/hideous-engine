@@ -12,7 +12,7 @@
 #include <he/Texture/TextureAtlasParser.h>
 #include <he/Texture/TextureAtlasRegion.h>
 #include <he/Utils/DebugHelper.h>
-#include <he/Vertex/VertexTex.h>
+#include <he/Vertex/TextureVertex.h>
 
 namespace he{
 	///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -53,14 +53,14 @@ namespace he{
 		return texture_;
 	}
 
-	VertexTex *CreateTextureData(const TextureAtlas *atlas,
+	TextureVertex *CreateTextureData(const TextureAtlas *atlas,
 								 const std::string &image_name,
 								 float width,
 								 float height,
 								 const bool aspect_correct ){
 		const TextureAtlasRegion *tex_region = atlas->GetTextureAtlasRegion(image_name);
 		if(tex_region){
-			return new VertexTex(tex_region, width, height, aspect_correct);
+			return new TextureVertex(tex_region, width, height, aspect_correct);
 		}
 		return nullptr;
 	}

@@ -13,7 +13,7 @@
 #include <he/Utils/DebugLog.h>
 #include <he/Utils/ResourcePath.hpp>
 #include <he/Utils/Utils.h>
-#include <he/Vertex/VertexTex.h>
+#include <he/Vertex/TextureVertex.h>
 
 namespace he{
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -175,9 +175,11 @@ namespace he{
 		
 		texture_ = new Texture(font_name + char_name, pixels, GLKVector2Make(w,h), 1);
 		delete [] pixels;
-		VertexData position_data = VertexData(p_data);
-		VertexData texture_data = VertexData(t_data);
-		vertex_data_ = new VertexTex(position_data, texture_data);
+		Vertex::V2 position_data;
+		Vertex::Set(position_data, p_data);
+		Vertex::V2 texture_data;
+		Vertex::Set(texture_data, t_data);
+		vertex_data_ = new TextureVertex(position_data, texture_data);
 		render_object_ = new RenderObject(vertex_data_, shader, texture_, GLKMatrix4Identity, color);
 	}
 	

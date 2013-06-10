@@ -18,7 +18,7 @@
 namespace he{
 	class ColorShader;
 	class RenderObject;
-	class VertexCol;
+	class ColorVertex;
 }
 
 class RunningSquare{
@@ -35,11 +35,11 @@ public:
 	
 private:
 	GLKVector4 color_;
-	GLKVector2 direction_;		//direction
+	GLKVector2 direction_;			//direction
 	Life life_state_;
-	GLKVector2 speed_;	//speed
-	he::RenderObject *sprite_;	//sprite
+	GLKVector2 speed_;				//speed
+	he::RenderObject *sprite_;		//sprite
 	he::Transform transform_;		//transform
-	he::VertexCol *vertex_data_;
+	he::ColorVertex *vertex_data_;
 };
 #endif /* defined(__HideousGameEngine__RunningSquare__) */

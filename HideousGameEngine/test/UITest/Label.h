@@ -18,7 +18,7 @@
 namespace he{
 	class Font;
 	class Text;
-	class VertexCol;
+	class ColorVertex;
 }
 
 class Label{
@@ -27,7 +27,7 @@ public:
 	~Label();
 	void SetText(std::string string);
 	void SetColor(GLKVector4 color);
-	he::VertexCol GetBox();
+	he::ColorVertex GetBox();
 	void Render();
 
 	he::Transform transform_;

@@ -22,8 +22,8 @@ namespace he{
 	class RenderObject;
 	class Texture;
 	class TextureAtlas;
-	class VertexCol;
-	class VertexTex;
+	class ColorVertex;
+	class TextureVertex;
 };
 
 class ColObj{
@@ -34,14 +34,14 @@ public:
 	
 private:
 	he::RenderObject *object_;
-	he::VertexCol *vert_;
+	he::ColorVertex *vert_;
 	he::Transform transform_;
 };
 
 class TextureObj{
 public:
 	~TextureObj();
-	TextureObj(he::TextureShader *shader, he::Texture *texture, he::VertexTex *vert);
+	TextureObj(he::TextureShader *shader, he::Texture *texture, he::TextureVertex *vert);
 	void Render();
 	
 private:
@@ -76,7 +76,7 @@ private:
 	he::ColorShader *col_sh_;
 	// texture obj
 	he::Texture *texture_;
-	he::VertexTex *vert_;
+	he::TextureVertex *vert_;
 	he::TextureAtlas *atlas_;
 	he::TextureShader *tex_sh_;
 	

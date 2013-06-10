@@ -15,11 +15,11 @@
 namespace he {
 
 	class TextureAtlas;
-	class VertexTex;
+	class TextureVertex;
 	
 	class SpriteAnimation : public Animation{
 	public:
-		SpriteAnimation(VertexTex **vertex_data,				/*Sprite to be rendered*/
+		SpriteAnimation(TextureVertex **vertex_data,				/*Sprite to be rendered*/
 						const TextureAtlas *atlas,			/*Atlas source*/
 						const std::string &name,				/*Name of animation in the atlas*/
 						const int repeat_count = 1,				/*Num of repeat. -1 means infinite*/
@@ -30,18 +30,18 @@ namespace he {
 	private:
 		class Frame{
 		public:
-			Frame(VertexTex *vertex);
+			Frame(TextureVertex *vertex);
 			~Frame();
 			
-			VertexTex *vertex_;
+			TextureVertex *vertex_;
 			Frame *next_;
 		};
 		
 		void update(float dt);
 		void next_frame();
 		
-		VertexTex **vertex_data_;
-		VertexTex *final_vertex_data_;
+		TextureVertex **vertex_data_;
+		TextureVertex *final_vertex_data_;
 
 		Frame *head_;
 		Frame *tail_;

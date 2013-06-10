@@ -17,7 +17,7 @@ namespace he{
 	class RenderObject;
 	//	class AnimationChain;
 	class ColorShader;
-	class VertexCol;
+	class ColorVertex;
 	class Font;
 }
 class Label;
@@ -36,7 +36,7 @@ private:
 	Label *label_;
 	he::RenderObject *render_object_;
 	he::ColorShader *shader_;
-	he::VertexCol *vertex_data_;
+	he::ColorVertex *vertex_data_;
 	//	he::AnimationChain *scale_animation_;
 	he::GestureListener<UITest> *gesture_listener_;
 };

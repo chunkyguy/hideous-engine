@@ -32,7 +32,7 @@ namespace spine {
 	
 	RegionAttachment::RegionAttachment (std::string name)  :
 	Attachment(name, ATTACHMENT_REGION),
-	offset_(he::VertexData()),
+	offset_(he::Vertex::V2()),
 	rendererObject_(nullptr),
 	regionOffset_(GLKVector2Make(0,0)),
 	regionOriginalSize_(GLKVector2Make(0,0)),
@@ -40,21 +40,21 @@ namespace spine {
 	rotation_(0),
 	scale_(GLKVector2Make(1,1)),
 	size_(GLKVector2Make(0,0)),
-	uvs_(he::VertexData()),
+	uvs_(he::Vertex::V2()),
 	xy_(GLKVector2Make(0,0))
 	{	}
 	
 	void RegionAttachment::SetUVs ( GLKVector4 texCoords, bool rotate) {
 		if (rotate) {
-			uvs_.SetVertex(he::VertexData::kA, GLKVector2Make(texCoords.z, texCoords.w));
-			uvs_.SetVertex(he::VertexData::kA, GLKVector2Make(texCoords.x, texCoords.w));
-			uvs_.SetVertex(he::VertexData::kA, GLKVector2Make(texCoords.x, texCoords.y));
-			uvs_.SetVertex(he::VertexData::kA, GLKVector2Make(texCoords.z, texCoords.y));
+			he::Vertex::Set(uvs_, GLKVector2Make(texCoords.z, texCoords.w), he::Vertex::kA);
+			he::Vertex::Set(uvs_, GLKVector2Make(texCoords.x, texCoords.w), he::Vertex::kA);
+			he::Vertex::Set(uvs_, GLKVector2Make(texCoords.x, texCoords.y), he::Vertex::kA);
+			he::Vertex::Set(uvs_, GLKVector2Make(texCoords.z, texCoords.y), he::Vertex::kA);
 		} else {
-			uvs_.SetVertex(he::VertexData::kA, GLKVector2Make(texCoords.x, texCoords.w));
-			uvs_.SetVertex(he::VertexData::kA, GLKVector2Make(texCoords.x, texCoords.y));
-			uvs_.SetVertex(he::VertexData::kA, GLKVector2Make(texCoords.z, texCoords.y));
-			uvs_.SetVertex(he::VertexData::kA, GLKVector2Make(texCoords.z, texCoords.w));
+			he::Vertex::Set(uvs_, GLKVector2Make(texCoords.x, texCoords.w), he::Vertex::kA);
+			he::Vertex::Set(uvs_, GLKVector2Make(texCoords.x, texCoords.y), he::Vertex::kA);
+			he::Vertex::Set(uvs_, GLKVector2Make(texCoords.z, texCoords.y), he::Vertex::kA);
+			he::Vertex::Set(uvs_, GLKVector2Make(texCoords.z, texCoords.w), he::Vertex::kA);
 		}
 	}
 	
@@ -74,19 +74,22 @@ namespace spine {
 		GLKVector2 localSin = GLKVector2MultiplyScalar(local, sine);
 		GLKVector2 local2Cos = GLKVector2Add(GLKVector2MultiplyScalar(local2, cosine), xy_);
 		GLKVector2 local2Sin = GLKVector2MultiplyScalar(local2, sine);
-		offset_.SetVertex(he::VertexData::kA, GLKVector2Make(localCos.x - localSin.y, localCos.y + localSin.x));
-		offset_.SetVertex(he::VertexData::kB, GLKVector2Make(localCos.x - local2Sin.y, local2Cos.y + localSin.x));
-		offset_.SetVertex(he::VertexData::kC, GLKVector2Make(local2Cos.x - local2Sin.y, local2Cos.y + local2Sin.x));
-		offset_.SetVertex(he::VertexData::kD, GLKVector2Make(local2Cos.x - localSin.y, localCos.y + local2Sin.x));
+		he::Vertex::Set(offset_, GLKVector2Make(localCos.x - localSin.y, localCos.y + localSin.x), he::Vertex::kA);
+		he::Vertex::Set(offset_, GLKVector2Make(localCos.x - local2Sin.y, local2Cos.y + localSin.x), he::Vertex::kB);
+		he::Vertex::Set(offset_, GLKVector2Make(local2Cos.x - local2Sin.y, local2Cos.y + local2Sin.x), he::Vertex::kC);
+		he::Vertex::Set(offset_, GLKVector2Make(local2Cos.x - localSin.y, localCos.y + local2Sin.x), he::Vertex::kD);
 	}
 	
-	he::VertexData RegionAttachment::ComputeVertices ( Slot* slot) {
+	he::Vertex::V2 RegionAttachment::ComputeVertices ( Slot* slot) {
 		Bone* bone = slot->GetBone();
-		GLKVector2 a = GLKVector2Add(bone->GetWorldXY(), GLKMatrix2Multiply(bone->GetM(), offset_.GetVertex(he::VertexData::kA)));
-		GLKVector2 b = GLKVector2Add(bone->GetWorldXY(), GLKMatrix2Multiply(bone->GetM(), offset_.GetVertex(he::VertexData::kB)));
-		GLKVector2 c = GLKVector2Add(bone->GetWorldXY(), GLKMatrix2Multiply(bone->GetM(), offset_.GetVertex(he::VertexData::kC)));
-		GLKVector2 d = GLKVector2Add(bone->GetWorldXY(), GLKMatrix2Multiply(bone->GetM(), offset_.GetVertex(he::VertexData::kD)));
-		return	he::VertexData(a, d, b, c);
+		
+		GLKVector2 a = GLKVector2Add(bone->GetWorldXY(), GLKMatrix2Multiply(bone->GetM(), he::Vertex::GetVertex(offset_, he::Vertex::kA)));
+		GLKVector2 b = GLKVector2Add(bone->GetWorldXY(), GLKMatrix2Multiply(bone->GetM(), he::Vertex::GetVertex(offset_, he::Vertex::kB)));
+		GLKVector2 c = GLKVector2Add(bone->GetWorldXY(), GLKMatrix2Multiply(bone->GetM(), he::Vertex::GetVertex(offset_, he::Vertex::kC)));
+		GLKVector2 d = GLKVector2Add(bone->GetWorldXY(), GLKMatrix2Multiply(bone->GetM(), he::Vertex::GetVertex(offset_, he::Vertex::kD)));
+		he::Vertex::V2 v;
+		he::Vertex::Set(v, a, b, c, d);
+		return	v;
 	}
 	
 	he::TextureAtlas *RegionAttachment::GetRendererObject(){

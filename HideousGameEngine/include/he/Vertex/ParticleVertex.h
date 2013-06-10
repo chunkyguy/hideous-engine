@@ -1,13 +1,13 @@
 //
-//  VertexPar.h
+//  ParticleVertex.h
 //  HEAssets
 //
 //  Created by Sid on 29/04/13.
 //  Copyright (c) 2013 whackylabs. All rights reserved.
 //
 
-#ifndef __HEAssets__VertexPar__
-#define __HEAssets__VertexPar__
+#ifndef __HEAssets__ParticleVertex__
+#define __HEAssets__ParticleVertex__
 
 #include <OpenGLES/ES2/gl.h>
 
@@ -17,14 +17,14 @@
 namespace he{
 	
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// MARK: VertexPar
+	// MARK: ParticleVertex
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
-	class VertexPar : public IVertex{
+	class ParticleVertex : public IVertex{
 	public:
 		const GLfloat *GetPositionData() const;
 
-		~VertexPar();
-		VertexPar(int count, float point_size = 15.0);
+		~ParticleVertex();
+		ParticleVertex(int count, float point_size = 15.0);
 		void SetData(int index, const GLKVector2 &data);
 		GLfloat GetPointSize() const;
 		GLsizei GetSize() const;
@@ -35,4 +35,4 @@ namespace he{
 		float point_size_;
 	};
 }
-#endif /* defined(__HEAssets__VertexPar__) */
+#endif /* defined(__HEAssets__ParticleVertex__) */

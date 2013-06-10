@@ -16,7 +16,7 @@
 #include <he/Texture/Texture.h>
 #include <he/Shaders/ParticleShader.h>
 #include <he/Utils/Screen.h>
-#include <he/Vertex/VertexPar.h>
+#include <he/Vertex/ParticleVertex.h>
 
 namespace {
 	GLKVector2 GLKVector2_rand(GLKVector2 a, GLKVector2 b){
@@ -90,7 +90,7 @@ namespace he{
 		for(int i = 0; i < count; ++i){
 			particles_[i] = new Particle(environment);
 		}
-		vertex_data_ = new VertexPar(count, environment->point_size_);
+		vertex_data_ = new ParticleVertex(count, environment->point_size_);
 		GLKMatrix4 tMat = GLKMatrix4MakeTranslation(position.x, position.y, -0.1);
 		GLKMatrix4 mvp = GLKMatrix4Multiply(he::g_Screen->projection_, tMat);
 		render_object_ = new RenderObject(vertex_data_, shader, texture, mvp, color);

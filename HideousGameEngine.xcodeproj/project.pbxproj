@@ -75,10 +75,7 @@
 		19A6E671173278A1006ACD91 /* Screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E605173278A1006ACD91 /* Screen.cpp */; };
 		19A6E672173278A1006ACD91 /* Transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E606173278A1006ACD91 /* Transform.cpp */; };
 		19A6E673173278A1006ACD91 /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E607173278A1006ACD91 /* Utils.cpp */; };
-		19A6E674173278A1006ACD91 /* VertexCol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E609173278A1006ACD91 /* VertexCol.cpp */; };
 		19A6E675173278A1006ACD91 /* VertexData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E60A173278A1006ACD91 /* VertexData.cpp */; };
-		19A6E676173278A1006ACD91 /* VertexPar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E60B173278A1006ACD91 /* VertexPar.cpp */; };
-		19A6E677173278A1006ACD91 /* VertexTex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E60C173278A1006ACD91 /* VertexTex.cpp */; };
 		19A6E678173278A1006ACD91 /* AnimationTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E60F173278A1006ACD91 /* AnimationTest.cpp */; };
 		19A6E679173278A1006ACD91 /* AnimObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E611173278A1006ACD91 /* AnimObj.cpp */; };
 		19A6E67A173278A1006ACD91 /* ObjectFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E614173278A1006ACD91 /* ObjectFactory.cpp */; };
@@ -128,6 +125,9 @@
 		19B0EBE11765B15E00CD3D79 /* TextureShader.vertsh in Resources */ = {isa = PBXBuildFile; fileRef = 19B0EBD81765B15E00CD3D79 /* TextureShader.vertsh */; };
 		19B0EBE21765B15E00CD3D79 /* ParticleShader.fragsh in Resources */ = {isa = PBXBuildFile; fileRef = 19B0EBDA1765B15E00CD3D79 /* ParticleShader.fragsh */; };
 		19B0EBE31765B15E00CD3D79 /* ParticleShader.vertsh in Resources */ = {isa = PBXBuildFile; fileRef = 19B0EBDB1765B15E00CD3D79 /* ParticleShader.vertsh */; };
+		19B0EBEA1765B6E200CD3D79 /* ColorVertex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19B0EBE71765B6E200CD3D79 /* ColorVertex.cpp */; };
+		19B0EBEB1765B6E200CD3D79 /* ParticleVertex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19B0EBE81765B6E200CD3D79 /* ParticleVertex.cpp */; };
+		19B0EBEC1765B6E200CD3D79 /* TextureVertex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19B0EBE91765B6E200CD3D79 /* TextureVertex.cpp */; };
 		19B5A588175B81DE0031834C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 19B5A587175B81DE0031834C /* Icon.png */; };
 		19B5A58A175B81E20031834C /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19B5A589175B81E20031834C /* Icon@2x.png */; };
 		19CE12CD174C8F8200F3BE52 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CE12CC174C8F8200F3BE52 /* GLKit.framework */; };
@@ -227,10 +227,7 @@
 		199582751734575F0094714E /* Transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transform.h; sourceTree = "<group>"; };
 		199582761734575F0094714E /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		199582781734575F0094714E /* IVertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVertex.h; sourceTree = "<group>"; };
-		199582791734575F0094714E /* VertexCol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexCol.h; sourceTree = "<group>"; };
 		1995827A1734575F0094714E /* VertexData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexData.h; sourceTree = "<group>"; };
-		1995827B1734575F0094714E /* VertexPar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexPar.h; sourceTree = "<group>"; };
-		1995827C1734575F0094714E /* VertexTex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexTex.h; sourceTree = "<group>"; };
 		199C7656174C75E700882A9C /* Tweener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tweener.h; sourceTree = "<group>"; };
 		199C766B174C885600882A9C /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		19A6E5751732781F006ACD91 /* HideousGameEngine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HideousGameEngine.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -261,10 +258,7 @@
 		19A6E605173278A1006ACD91 /* Screen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Screen.cpp; sourceTree = "<group>"; };
 		19A6E606173278A1006ACD91 /* Transform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Transform.cpp; sourceTree = "<group>"; };
 		19A6E607173278A1006ACD91 /* Utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utils.cpp; sourceTree = "<group>"; };
-		19A6E609173278A1006ACD91 /* VertexCol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VertexCol.cpp; sourceTree = "<group>"; };
 		19A6E60A173278A1006ACD91 /* VertexData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VertexData.cpp; sourceTree = "<group>"; };
-		19A6E60B173278A1006ACD91 /* VertexPar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VertexPar.cpp; sourceTree = "<group>"; };
-		19A6E60C173278A1006ACD91 /* VertexTex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VertexTex.cpp; sourceTree = "<group>"; };
 		19A6E60F173278A1006ACD91 /* AnimationTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AnimationTest.cpp; sourceTree = "<group>"; };
 		19A6E610173278A1006ACD91 /* AnimationTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationTest.h; sourceTree = "<group>"; };
 		19A6E611173278A1006ACD91 /* AnimObj.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AnimObj.cpp; sourceTree = "<group>"; };
@@ -338,6 +332,12 @@
 		19B0EBD81765B15E00CD3D79 /* TextureShader.vertsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TextureShader.vertsh; sourceTree = "<group>"; };
 		19B0EBDA1765B15E00CD3D79 /* ParticleShader.fragsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ParticleShader.fragsh; sourceTree = "<group>"; };
 		19B0EBDB1765B15E00CD3D79 /* ParticleShader.vertsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ParticleShader.vertsh; sourceTree = "<group>"; };
+		19B0EBE41765B66F00CD3D79 /* ColorVertex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ColorVertex.h; path = HideousGameEngine/include/he/Vertex/ColorVertex.h; sourceTree = SOURCE_ROOT; };
+		19B0EBE51765B66F00CD3D79 /* ParticleVertex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ParticleVertex.h; path = HideousGameEngine/include/he/Vertex/ParticleVertex.h; sourceTree = SOURCE_ROOT; };
+		19B0EBE61765B66F00CD3D79 /* TextureVertex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TextureVertex.h; path = HideousGameEngine/include/he/Vertex/TextureVertex.h; sourceTree = SOURCE_ROOT; };
+		19B0EBE71765B6E200CD3D79 /* ColorVertex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColorVertex.cpp; sourceTree = "<group>"; };
+		19B0EBE81765B6E200CD3D79 /* ParticleVertex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParticleVertex.cpp; sourceTree = "<group>"; };
+		19B0EBE91765B6E200CD3D79 /* TextureVertex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextureVertex.cpp; sourceTree = "<group>"; };
 		19B5A587175B81DE0031834C /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../../Icon.png; sourceTree = "<group>"; };
 		19B5A589175B81E20031834C /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../../Icon@2x.png"; sourceTree = "<group>"; };
 		19CE12CC174C8F8200F3BE52 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
@@ -601,10 +601,10 @@
 			isa = PBXGroup;
 			children = (
 				199582781734575F0094714E /* IVertex.h */,
-				199582791734575F0094714E /* VertexCol.h */,
 				1995827A1734575F0094714E /* VertexData.h */,
-				1995827B1734575F0094714E /* VertexPar.h */,
-				1995827C1734575F0094714E /* VertexTex.h */,
+				19B0EBE41765B66F00CD3D79 /* ColorVertex.h */,
+				19B0EBE51765B66F00CD3D79 /* ParticleVertex.h */,
+				19B0EBE61765B66F00CD3D79 /* TextureVertex.h */,
 			);
 			path = Vertex;
 			sourceTree = "<group>";
@@ -815,10 +815,10 @@
 		19A6E608173278A1006ACD91 /* Vertex */ = {
 			isa = PBXGroup;
 			children = (
-				19A6E609173278A1006ACD91 /* VertexCol.cpp */,
 				19A6E60A173278A1006ACD91 /* VertexData.cpp */,
-				19A6E60B173278A1006ACD91 /* VertexPar.cpp */,
-				19A6E60C173278A1006ACD91 /* VertexTex.cpp */,
+				19B0EBE71765B6E200CD3D79 /* ColorVertex.cpp */,
+				19B0EBE81765B6E200CD3D79 /* ParticleVertex.cpp */,
+				19B0EBE91765B6E200CD3D79 /* TextureVertex.cpp */,
 			);
 			path = Vertex;
 			sourceTree = "<group>";
@@ -1146,10 +1146,7 @@
 				19A6E671173278A1006ACD91 /* Screen.cpp in Sources */,
 				19A6E672173278A1006ACD91 /* Transform.cpp in Sources */,
 				19A6E673173278A1006ACD91 /* Utils.cpp in Sources */,
-				19A6E674173278A1006ACD91 /* VertexCol.cpp in Sources */,
 				19A6E675173278A1006ACD91 /* VertexData.cpp in Sources */,
-				19A6E676173278A1006ACD91 /* VertexPar.cpp in Sources */,
-				19A6E677173278A1006ACD91 /* VertexTex.cpp in Sources */,
 				19A6E678173278A1006ACD91 /* AnimationTest.cpp in Sources */,
 				19A6E679173278A1006ACD91 /* AnimObj.cpp in Sources */,
 				19A6E67A173278A1006ACD91 /* ObjectFactory.cpp in Sources */,
@@ -1199,6 +1196,9 @@
 				19B0EBCD1765AF0900CD3D79 /* TextShader.cpp in Sources */,
 				19B0EBCE1765AF0900CD3D79 /* ParticleShader.cpp in Sources */,
 				19B0EBCF1765AF0900CD3D79 /* ColorShader.cpp in Sources */,
+				19B0EBEA1765B6E200CD3D79 /* ColorVertex.cpp in Sources */,
+				19B0EBEB1765B6E200CD3D79 /* ParticleVertex.cpp in Sources */,
+				19B0EBEC1765B6E200CD3D79 /* TextureVertex.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

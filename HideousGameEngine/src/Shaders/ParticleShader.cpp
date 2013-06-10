@@ -10,7 +10,7 @@
 #include <he/Program/Program.h>
 #include <he/RenderObject/RenderObject.h>
 #include <he/Texture/Texture.h>
-#include <he/Vertex/VertexPar.h>
+#include <he/Vertex/ParticleVertex.h>
 
 namespace he{
 
@@ -49,7 +49,7 @@ namespace he{
 		glUniform4f(u_clr, render_object->color_.r, render_object->color_.g, render_object->color_.b, render_object->color_.a);
 		glUniformMatrix4fv(u_mvp, 1, GL_FALSE, render_object->mvp_.m);
 		glUniform1i(u_tex, 1);
-		glUniform1f(u_size, static_cast<VertexPar *>(render_object->GetVertexData())->GetPointSize());
+		glUniform1f(u_size, static_cast<ParticleVertex *>(render_object->GetVertexData())->GetPointSize());
 		
 		glDrawArrays(GL_POINTS, 0, render_object->GetVertexData()->GetCount());
 		

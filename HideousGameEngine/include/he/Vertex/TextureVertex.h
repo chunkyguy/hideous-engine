@@ -1,13 +1,13 @@
 //
-//  VertexTex.h
+//  TextureVertex.h
 //  HEAssets
 //
 //  Created by Sid on 26/04/13.
 //  Copyright (c) 2013 whackylabs. All rights reserved.
 //
 
-#ifndef __HEAssets__VertexTex__
-#define __HEAssets__VertexTex__
+#ifndef __HEAssets__TextureVertex__
+#define __HEAssets__TextureVertex__
 #include <he/Utils/GLKMath_Additions.h>
 
 #include <he/Vertex/IVertex.h>
@@ -16,29 +16,30 @@
 namespace he{
 	class TextureAtlasRegion;
 	
-	class VertexTex : public IVertex{
+	class TextureVertex : public IVertex{
 	public:
 		
 		const GLfloat *GetPositionData() const;
 		const GLfloat *GetTextureData() const;
 		
 		// Create vertex data. Aspect lock is applicable for disproportioned texCoords not posCoords
-		VertexTex(float width, float height,
+		TextureVertex(float width, float height,
 				  bool aspect_lock = true, GLKVector4 texture_coords = GLKVector4Make(0, 0, 1, 1));
 		
-		VertexTex(const VertexData &position_data, const VertexData &texture_data);
+		TextureVertex(const Vertex::V2 &position_data, const Vertex::V2 &texture_data);
 		
 		// if width / height are not provided, pick the size from atlas data.
-		VertexTex(const TextureAtlasRegion *region, float width = -1, float height = -1, const bool aspect_lock = true);
+		TextureVertex(const TextureAtlasRegion *region, float width = -1, float height = -1, const bool aspect_lock = true);
 		
-		const VertexData &GetVertexPositionData() const;
-		const VertexData &GetVertexTextureData() const;
+		const Vertex::V2 &GetVertexPositionData() const;
+		const Vertex::V2 &GetVertexTextureData() const;
 
 	private:
+		void set_data(const GLKVector4 &pos_coords, const GLKVector4 &tex_coords, const bool aspect_lock);
 		void apply_aspect_correctnes(const GLKVector4 &texture_coords);
 		
-		VertexData position_data_;
-		VertexData texture_data_;
+		Vertex::V2 position_data_;
+		Vertex::V2 texture_data_;
 	};
 }
-#endif /* defined(__HEAssets__VertexTex__) */
+#endif /* defined(__HEAssets__TextureVertex__) */

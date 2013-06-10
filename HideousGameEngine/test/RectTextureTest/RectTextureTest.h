@@ -25,7 +25,7 @@ namespace he{
 	class Texture;
 	class TextureAtlas;
 	class TextureShader;
-	class VertexTex;
+	class TextureVertex;
 }
 
 class RectTextureTest : public ITest{
@@ -42,7 +42,7 @@ private:
 	
 	std::list<he::RenderObject *>render_objects_;
 	std::list<he::Texture *>textures_;
-	std::list<he::VertexTex *>vertex_datas_;
+	std::list<he::TextureVertex *>vertex_datas_;
 	he::TextureAtlas *atlas_;
 	he::TextureShader *shader_;
 	he::GestureListener<RectTextureTest> *gesture_listener_;

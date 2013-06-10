@@ -15,7 +15,7 @@
 #include <he/Utils/DebugLog.h>
 #include <he/Utils/Utils.h>
 #include <he/Utils/Transform.h>
-#include <he/Vertex/VertexCol.h>
+#include <he/Vertex/ColorVertex.h>
 
 #include "Label.h"
 
@@ -59,8 +59,8 @@ UITest::UITest(float w, float h)
 
 	shader_ = new he::ColorShader;
 	
-	vertex_data_ = new he::VertexCol( label_->GetBox() );
-//	vertex_data_ = new he::VertexCol(label_->GetBox(),0);
+	vertex_data_ = new he::ColorVertex( label_->GetBox() );
+//	vertex_data_ = new he::ColorVertex(label_->GetBox(),0);
 //	vertex_data_->position_data_ = label_->GetBox().position_data_;
 	GLKMatrix4 tMat = GLKMatrix4MakeTranslation(0, 0, -0.5);
 	GLKMatrix4 mvpMat = GLKMatrix4Multiply(he::g_Screen->projection_, tMat);
@@ -91,9 +91,9 @@ void UITest::HandleGesture(const he::Gesture &gesture){
 	if(gesture.action_ != he::Gesture::kTap){
 		return;
 	}
-	
+
 	GLKVector2 pt = gesture.GetHitPoint();
-	if(label_->GetBox().GetVertexData().Contains(pt.x, pt.y)){
+	if(he::Vertex::Contains(label_->GetBox().GetVertexData(), pt)){
 //		scale_animation_ = new he::AnimationChain;
 //
 //		GLKVector2 scaleUp = GLKVector2MultiplyScalar(label_->transform_.scale_, 1.25);

@@ -12,7 +12,7 @@
 #include <he/RenderObject/RenderObject.h>
 #include <he/Texture/TextureAtlas.h>
 #include <he/Texture/TextureAtlasRegion.h>
-#include <he/Vertex/VertexTex.h>
+#include <he/Vertex/TextureVertex.h>
 #include <he/Utils/DebugHelper.h>
 
 namespace he{
@@ -65,7 +65,7 @@ namespace he{
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// MARK: SpriteAnimation
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	SpriteAnimation::SpriteAnimation(VertexTex **vertex_data, const TextureAtlas *atlas, const std::string &name,
+	SpriteAnimation::SpriteAnimation(TextureVertex **vertex_data, const TextureAtlas *atlas, const std::string &name,
 									 const int repeat_count, const int final_frame_index, const float fps) :
 	vertex_data_(vertex_data),
 	final_vertex_data_(nullptr),
@@ -79,13 +79,13 @@ namespace he{
 		int frame_count = 0;
 		for(FrameLoop loop_var(name, atlas); !loop_var.Done(); ++loop_var, ++frame_count){
 			const TextureAtlasRegion *region = loop_var.Get();
-			VertexTex *v_data = new VertexTex(region, region->sprite_size_.x, region->sprite_size_.y, false);
+			TextureVertex *v_data = new TextureVertex(region, region->sprite_size_.x, region->sprite_size_.y, false);
 			GLKVector2 offset = region->sprite_offset_;
 			if(offset.x || offset.y){	// translate
-				VertexData pos_data = v_data->GetVertexPositionData();
-				pos_data.Translate(offset);
-				VertexTex *del = v_data;
-				v_data = new VertexTex(pos_data, del->GetVertexTextureData());
+				Vertex::V2 pos_data = v_data->GetVertexPositionData();
+				Vertex::Translate(pos_data, offset);
+				TextureVertex *del = v_data;
+				v_data = new TextureVertex(pos_data, del->GetVertexTextureData());
 				delete del;
 			}
 			Frame *frame = new Frame(v_data);
@@ -97,7 +97,7 @@ namespace he{
 				tail_ = frame;
 			}
 			if(frame_count == final_frame_index && !final_vertex_data_){
-				final_vertex_data_ = new VertexTex(region, region->sprite_size_.x, region->sprite_size_.y, false);
+				final_vertex_data_ = new TextureVertex(region, region->sprite_size_.x, region->sprite_size_.y, false);
 			}
 			assert(final_vertex_data_);		// No data to load when the animation end, maybe the frame index provided is out of range.
 			he_Trace("SpriteAnimation: v-data:\n%@",tail_->vertex_->GetVertexPositionData());
@@ -141,7 +141,7 @@ namespace he{
 	}
 
 	
-	SpriteAnimation::Frame::Frame(VertexTex *vertex) :
+	SpriteAnimation::Frame::Frame(TextureVertex *vertex) :
 	vertex_(vertex),
 	next_(nullptr)
 	{}

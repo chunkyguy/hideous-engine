@@ -12,7 +12,7 @@
 #include <he/RenderObject/RenderObject.h>
 #include <he/Utils/Utils.h>
 #include <he/Utils/Screen.h>
-#include <he/Vertex/VertexCol.h>
+#include <he/Vertex/ColorVertex.h>
 
 Label::Label(std::string string, he::Font *font) :
 font_(font),
@@ -33,9 +33,9 @@ void Label::SetText(std::string string){
 	font_->LoadText(text_);
 }
 
-he::VertexCol Label::GetBox(){
+he::ColorVertex Label::GetBox(){
 	GLKVector2 size = text_->GetSize();
-	return he::VertexCol(text_->transform_.position_.x, text_->transform_.position_.y,
+	return he::ColorVertex(text_->transform_.position_.x, text_->transform_.position_.y,
 						 text_->transform_.position_.x + size.x, text_->transform_.position_.y + size.y);
 }
 

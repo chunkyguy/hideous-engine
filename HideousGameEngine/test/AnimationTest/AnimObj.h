@@ -17,7 +17,7 @@
 namespace he{
 	class RenderObject;
 	class ColorShader;
-	class VertexCol;
+	class ColorVertex;
 }
 
 class AnimObj{
@@ -34,7 +34,7 @@ private:
 	
 	int id_;
 	he::RenderObject *render_object_;
-	he::VertexCol *vert_data_;
+	he::ColorVertex *vert_data_;
 	he::ColorShader *shader_;
 	he::Transform transform_;
 	he::AnimationListener<AnimObj> *animation_listener_;

@@ -23,7 +23,7 @@ RectColorTest::RectColorTest(float w, float h) :
 squares_(0),
 shader_(new he::ColorShader)
 {
-	he_Trace("RectColorTest");
+	he_Trace("RectColorTest\n");
 	// Init globals
 	he::GlobalsInit(w, h);
 

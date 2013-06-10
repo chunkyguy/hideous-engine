@@ -9,7 +9,7 @@
 
 #include <he/Program/Program.h>
 #include <he/RenderObject/RenderObject.h>
-#include <he/Vertex/VertexCol.h>
+#include <he/Vertex/ColorVertex.h>
 
 namespace he{
 	ColorShader::ColorShader(){

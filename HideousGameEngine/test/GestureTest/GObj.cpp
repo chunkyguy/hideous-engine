@@ -12,7 +12,7 @@
 #include <he/Shaders/ColorShader.h>
 #include <he/Utils/DebugLog.h>
 #include <he/Utils/Screen.h>
-#include <he/Vertex/VertexCol.h>
+#include <he/Vertex/ColorVertex.h>
 
 
 GObj::~GObj(){
@@ -23,7 +23,7 @@ GObj::~GObj(){
 
 GObj::GObj() :
 direction_(GLKVector2Make(0,0)),
-vert_(new he::VertexCol(-10, 10)),
+vert_(new he::ColorVertex(-10, 10)),
 shader_(new he::ColorShader),
 color_( GLKVector4Make(1.0, 1.0, 1.0, 1.0))
 {

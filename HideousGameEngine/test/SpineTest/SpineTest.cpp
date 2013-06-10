@@ -14,11 +14,11 @@
 #include <he/RenderObject/RenderObject.h>
 #if defined(DEBUG_DRAW)
 	#include <he/Shaders/ColorShader.h>
-	#include <he/Vertex/VertexCol.h>
+	#include <he/Vertex/ColorVertex.h>
 #else
 	#include <he/Shaders/TextureShader.h>
 	#include <he/Texture/Texture.h>
-	#include <he/Vertex/VertexTex.h>
+	#include <he/Vertex/TextureVertex.h>
 #endif
 #include <he/Texture/TextureAtlas.h>
 #include <he/Texture/TextureAtlasRegion.h>
@@ -184,7 +184,7 @@ void SkeletonDrawable::Render() {
 	glClearColor(0.5, 0.5, 0.5, 1.0);
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	he::VertexData vertexPositions;
+	he::Vertex::V2 vertexPositions;
 	for (int i = 0; i < skeleton_->GetSlotCount(); ++i) {
 
 #if defined(PRINT_LOG)
@@ -214,7 +214,7 @@ printf("Attachment is not region!\n");
 		vertexPositions = regionAttachment->ComputeVertices( slot);
 		
 #if defined(DEBUG_DRAW)
-		he::VertexCol *vertex_data = new he::VertexCol(0,0);
+		he::ColorVertex *vertex_data = new he::ColorVertex(0,0);
 		vertex_data->position_data_ = he::VertexData(pos_data);
 		he::Texture *texture = 0;
 #else
@@ -248,7 +248,7 @@ printf("Attachment is not region!\n");
 
 		// calc position data
 		printf("GLfloat pos_data[] = {\n");
-		const GLfloat *pos_data = vertexPositions.GetData();
+		const GLfloat *pos_data = &vertexPositions.data[0];
 		for(int vd_indx = 0; vd_indx < 8; vd_indx += 2){
 			printf("%.2f, %.2f,\n", pos_data[vd_indx], pos_data[vd_indx+1]);
 		}
@@ -273,8 +273,8 @@ printf("Attachment is not region!\n");
 		printf("tex_coords:\t\t\t\t\t{{%.2f, %.2f}, {%.2f, %.2f}}\n", tex_coords.x, tex_coords.y, tex_coords.z, tex_coords.w);
 #endif
 
-		he::VertexTex vertex_data_tex(eff_frame.z, eff_frame.w, false, tex_coords);
-		he::VertexTex *vertex_data = new he::VertexTex(vertexPositions, vertex_data_tex.GetVertexTextureData());
+		he::TextureVertex vertex_data_tex(eff_frame.z, eff_frame.w, false, tex_coords);
+		he::TextureVertex *vertex_data = new he::TextureVertex(vertexPositions, vertex_data_tex.GetVertexTextureData());
 		
 #if defined(PRINT_LOG)
 		printf("GLfloat tex_data[] = {\n");

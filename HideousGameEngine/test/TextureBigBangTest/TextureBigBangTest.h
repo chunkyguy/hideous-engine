@@ -19,7 +19,7 @@ namespace he{
 	class Texture;
 	class TextureAtlas;
 	class TextureShader;
-	class VertexTex;
+	class TextureVertex;
 }
 
 class TextureBigBangTest : public ITest{
@@ -41,7 +41,7 @@ private:
 
 	he::RenderObject *sprite_;
 	he::Texture *texture_;
-	he::VertexTex *vertex_data_;
+	he::TextureVertex *vertex_data_;
 	he::TextureAtlas *atlas_;
 	he::TextureShader *shader_;
 	TexturedSprite **squares_;

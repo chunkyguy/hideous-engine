@@ -44,7 +44,7 @@ namespace spine {
 		explicit RegionAttachment (std::string name);
 		void SetUVs ( GLKVector4 texCoords, bool rotate);
 		void UpdateOffset ();
-		he::VertexData ComputeVertices ( Slot* slot);
+		he::Vertex::V2 ComputeVertices ( Slot* slot);
 		he::TextureAtlas* GetRendererObject();
 		void SetRendererObject(he::TextureAtlas *atlas);
 		void SetRegionOffset(GLKVector2 v);
@@ -56,7 +56,7 @@ namespace spine {
 		void SetSize(GLKVector2 size);
 		
 	private:
-		he::VertexData offset_;
+		he::Vertex::V2 offset_;
 		he::TextureAtlas *rendererObject_;
 		GLKVector2 regionOffset_;	/* Pixels stripped from the bottom left, unrotated. */
 		GLKVector2 regionOriginalSize_;	/* Unrotated, unstripped pixel size. */
@@ -64,7 +64,7 @@ namespace spine {
 		float rotation_;
 		GLKVector2 scale_;
 		GLKVector2 size_;
-		he::VertexData uvs_;
+		he::Vertex::V2 uvs_;
 		GLKVector2 xy_;
 	};
 	

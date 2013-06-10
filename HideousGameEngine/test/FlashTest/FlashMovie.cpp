@@ -18,7 +18,7 @@
 #include <he/Texture/TextureAtlas.h>
 #include <he/Utils/DebugHelper.h>
 #include <he/Utils/Screen.h>
-#include <he/Vertex/VertexTex.h>
+#include <he/Vertex/TextureVertex.h>
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // MARK: FlashMovie
@@ -71,7 +71,7 @@ void FlashMovie::Update(double dt){
 }
 
 void FlashMovie::Render(){
-	he::VertexTex *v = dynamic_cast<he::VertexTex *>(render_object_->GetVertexData());
+	he::TextureVertex *v = dynamic_cast<he::TextureVertex *>(render_object_->GetVertexData());
 	assert(v);
 	render_object_->Render();
 }

@@ -14,7 +14,7 @@
 namespace he{
 	class TextureAtlasRegion;
 	class TextureAtlasParser;
-	class VertexTex;
+	class TextureVertex;
 	class Texture;
 	
 	//	Just a wrapper class around the TextureAtlasParser.
@@ -38,7 +38,7 @@ namespace he{
 	
 	// image_name as stored in the atlas.
 	// if width / height are not provided, pick the size from atlas data.
-	VertexTex *CreateTextureData(const TextureAtlas *atlas,
+	TextureVertex *CreateTextureData(const TextureAtlas *atlas,
 								 const std::string &image_name,
 								 float width = -1.0,
 								 float height = -1.0,

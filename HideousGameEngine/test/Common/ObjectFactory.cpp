@@ -16,8 +16,8 @@
 #include <he/Texture/TextureAtlas.h>
 #include <he/Utils/Utils.h>
 #include <he/Utils/ResourcePath.hpp>
-#include <he/Vertex/VertexCol.h>
-#include <he/Vertex/VertexTex.h>
+#include <he/Vertex/ColorVertex.h>
+#include <he/Vertex/TextureVertex.h>
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -46,7 +46,7 @@ void ObjectFactory::load_assets(){
 	
 	// texture obj
 	texture_ = new he::Texture(he::ResourcePath() + "texture.png");
-	vert_ = new he::VertexTex(200, 200);
+	vert_ = new he::TextureVertex(200, 200);
 	atlas_ = new he::TextureAtlas( he::ResourcePath() + "tex_atlas.plist", he::ResourcePath() + "tex_atlas.png", he::TextureAtlas::Zwoptex);
 	tex_sh_ = new he::TextureShader;
 	
@@ -74,7 +74,7 @@ ColObj::~ColObj(){
 }
 ColObj::ColObj(he::ColorShader *shader){
 	float dimension = he::Randf() * he::g_Screen->width_/2 + 10.0;
-	vert_ = new he::VertexCol(dimension/2, dimension/2);
+	vert_ = new he::ColorVertex(dimension/2, dimension/2);
 	GLKVector4 color = GLKVector4Make(he::Randf(), he::Randf(), he::Randf(), 0.8);
 	object_ = new he::RenderObject(vert_, shader, 0, he::g_Screen->projection_, color);
 	transform_.SetPosition( GLKVector2Make(he::Randf()*he::g_Screen->width_ - he::g_Screen->width_/2, he::Randf()*he::g_Screen->height_ - he::g_Screen->height_/2));
@@ -91,7 +91,7 @@ void ColObj::Render(){
 TextureObj::~TextureObj(){
 	delete object_;
 }
-TextureObj::TextureObj(he::TextureShader *shader, he::Texture *texture, 	he::VertexTex *vert){
+TextureObj::TextureObj(he::TextureShader *shader, he::Texture *texture, 	he::TextureVertex *vert){
 	object_ = new he::RenderObject(vert, shader, texture, he::g_Screen->projection_);
 	transform_.SetPosition( GLKVector2Make(he::Randf()*he::g_Screen->width_ - he::g_Screen->width_/2, he::Randf()*he::g_Screen->height_ - he::g_Screen->height_/2) );
 }

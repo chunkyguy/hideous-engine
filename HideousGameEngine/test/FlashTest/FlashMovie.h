@@ -16,7 +16,7 @@ namespace he {
 	class RenderObject;
 	class TextureShader;
 	class TextureAtlas;
-	class VertexTex;
+	class TextureVertex;
 }
 
 class FlashMovieAssets{
@@ -48,7 +48,7 @@ private:
 	GLKVector3 angle_;
 	GLKVector2 position_;
 	he::RenderObject *render_object_;
-	he::VertexTex *vertex_data_;
+	he::TextureVertex *vertex_data_;
 };
 
 #endif /* defined(__HideousGameEngine__FlashMovie__) */

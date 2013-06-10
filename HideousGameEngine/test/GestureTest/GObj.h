@@ -14,7 +14,7 @@
 
 namespace he{
 	class RenderObject;
-	class VertexCol;
+	class ColorVertex;
 	class ColorShader;
 }
 
@@ -32,7 +32,7 @@ private:
 	const float kSpeed = 1.0;
 
 	he::RenderObject *render_object_;
-	he::VertexCol *vert_;
+	he::ColorVertex *vert_;
 	he::ColorShader *shader_;
 	he::Transform transform_;
 	GLKVector4 color_;

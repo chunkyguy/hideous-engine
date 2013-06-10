@@ -15,7 +15,7 @@
 #include <he/Utils/DebugLog.h>
 #include <he/Utils/ResourcePath.hpp>
 #include <he/Utils/Utils.h>
-#include <he/Vertex/VertexTex.h>
+#include <he/Vertex/TextureVertex.h>
 
 TextureBigBangTest::~TextureBigBangTest(){
 	unload_assets();
@@ -122,7 +122,7 @@ void TextureBigBangTest::HandleGesture(const he::Gesture &gesture){
 
 void TextureBigBangTest::load_assets(){
 	texture_ = new he::Texture(he::ResourcePath() + "clock.png");
-	vertex_data_ = new he::VertexTex(50, 50);
+	vertex_data_ = new he::TextureVertex(50, 50);
 	shader_ = new he::TextureShader;
 	sprite_ = new he::RenderObject(vertex_data_, shader_, texture_);
 }

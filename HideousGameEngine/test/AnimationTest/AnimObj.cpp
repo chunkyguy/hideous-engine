@@ -14,7 +14,7 @@
 #include <he/Animation/AnimationLoop.h>
 #include <he/RenderObject/RenderObject.h>
 #include <he/Shaders/ColorShader.h>
-#include <he/Vertex/VertexCol.h>
+#include <he/Vertex/ColorVertex.h>
 
 AnimObj::~AnimObj(){
 	end_animations();
@@ -35,7 +35,7 @@ animation_listener_(nullptr),
 scale_anim_descent_id_(0UL),
 trans_anim_descent_id_(0UL)
 {
-	vert_data_ = new he::VertexCol(-50.0, 50.0);
+	vert_data_ = new he::ColorVertex(-50.0, 50.0);
 	GLKVector4 color = GLKVector4Make(0.0, 0.0, 0.0, 1.0);
 	render_object_ = new he::RenderObject(vert_data_, shader_, 0, he::g_Screen->projection_, color);
 	animation_listener_ = new he::AnimationListener<AnimObj>(this, &AnimObj::AnimationCallback);

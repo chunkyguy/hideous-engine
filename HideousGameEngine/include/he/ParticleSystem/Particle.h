@@ -45,7 +45,7 @@ namespace he{
 	// MARK: ParticleBatch
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	class RenderObject;
-	class VertexPar;
+	class ParticleVertex;
 	class ParticleShader;
 	class Texture;
 
@@ -59,7 +59,7 @@ namespace he{
 		
 	private:
 		he::RenderObject *render_object_;
-		he::VertexPar *vertex_data_;		
+		he::ParticleVertex *vertex_data_;		
 		Particle **particles_;
 		int count_;
 	};

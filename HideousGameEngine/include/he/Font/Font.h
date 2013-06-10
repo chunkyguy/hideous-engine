@@ -40,7 +40,7 @@
 namespace he{
 	
 	class RenderObject;
-	class VertexTex;
+	class TextureVertex;
 	class Texture;
 	class TextShader;
 	
@@ -56,7 +56,7 @@ namespace he{
 			GLKVector2 size_;
 		private:
 			Texture *texture_;
-			VertexTex *vertex_data_;
+			TextureVertex *vertex_data_;
 		};
 
 		Text(std::string string = "", Transform transform = Transform(), GLKVector4 color = GLKVector4Make(0,0,0,1));

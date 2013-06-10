@@ -9,6 +9,5 @@
 uniform lowp vec4 u_clr;
 
 void main(){
-	lowp vec4 u_clr2 = vec4(1.0, 0.0, 0.0, 0.5);
-	gl_FragColor = mix( u_clr, u_clr2, gl_FragCoord.y);
+	gl_FragColor = u_clr;
 }
