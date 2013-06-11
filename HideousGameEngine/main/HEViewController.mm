@@ -16,7 +16,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //Enable only one of these
-#define TEST_RECT_COLOR
+//#define TEST_RECT_COLOR
 //#define TEST_RECT_TEXTURE
 //#define TEST_RECT_TEXT
 //#define TEST_MULTI_SHADERS
@@ -27,7 +27,7 @@
 //#define TEST_PARTICLES
 //#define TEST_UI
 //#define TEST_SPINE
-//#define TEST_FLASH
+#define TEST_FLASH
 
 ITest *GetTestFromFactory(float w, float h){
 	

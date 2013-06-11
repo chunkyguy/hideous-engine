@@ -107,7 +107,7 @@ void TextureBigBangTest::Render(){
 }
 
 void TextureBigBangTest::HandleGesture(const he::Gesture &gesture){
-	if(gesture.action_ == he::Gesture::kTap){
+	if(gesture.action_ == he::Gesture::kTap && gesture.state_ == he::Gesture::kEnd){
 		switch(state_){
 			case kRunning:
 				unload();

@@ -77,10 +77,10 @@ namespace he{
 				return &position_data_.data[0]; break;
 				
 			case IVertex::kColor:
-				return &texture_data_.data[0]; break;
+				return nullptr;
 
 			case IVertex::kTexture:
-				return nullptr;
+				return &texture_data_.data[0]; break;
 		}
 		return nullptr;
 	}
