@@ -56,7 +56,7 @@ FlashMovie::~FlashMovie(){
 
 void FlashMovie::Update(double dt){
 	// translation
-	GLKMatrix4 mvMat = GLKMatrix4MakeTranslation(position_.x, position_.y, -he::g_Screen->z_);
+	GLKMatrix4 mvMat = GLKMatrix4MakeTranslation(position_.x, position_.y, he::g_Screen->z_);
 	// rotation
 	//	mvMat = GLKMatrix4RotateY(mvMat, GLKMathDegreesToRadians(angle_.x));		// determines facing front-back
 	

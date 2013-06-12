@@ -37,10 +37,11 @@ namespace he{
 		
 		const GLKVector2 GetSize() const;
 		const GLKMatrix4 &GetProjection() const;
+		const float GetHalfDepth() const;				/**< The halfway depth. Could be used for z-indexing. Always > 0 ( = -z_) */
 		
 		float width_;
 		float height_;
-		const float z_;
+		const float z_;								/**< z is midpoint of the total depth possible. Always < 0*/
 		GLKMatrix4 projection_;
 	};
 	

@@ -14,7 +14,7 @@ namespace he{
 	Screen::Screen(const float width, const float height, const float z_min, const float z_max) :
 	width_(width),
 	height_(height),
-	z_((z_max - z_min)/2.0)
+	z_(-(z_max - z_min)/2.0)
 	{
 		projection_ = GLKMatrix4MakeOrtho(-width_/2, width_/2, -height_/2, height_/2, z_min, z_max);
 	}
@@ -31,6 +31,10 @@ namespace he{
 		return projection_;
 	}
 	
+	const float Screen::GetHalfDepth() const{
+		return -z_;
+	}
+
 	Screen::Grid Screen::MapPointToGrid(GLKVector2 point){
 		float scr_w_one_third = width_/3;
 		float scr_h_one_third = height_/3;
