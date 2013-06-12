@@ -19,15 +19,16 @@ namespace he {
 	
 	class SpriteAnimation : public Animation{
 	public:
-		SpriteAnimation(TextureVertex **vertex_data,				/*Sprite to be rendered*/
+		SpriteAnimation(TextureVertex **vertex_data,			/*Sprite data to be rendered*/
 						const TextureAtlas *atlas,			/*Atlas source*/
 						const std::string &name,				/*Name of animation in the atlas*/
-						const int repeat_count = 1,				/*Num of repeat. -1 means infinite*/
+						const int repeat_count = 1,			/*Num of repeat. -1 means infinite*/
 						const int final_frame_index	 = 0,	/*Frame index to be used when animation is over. Default 0*/
 						const float fps = 24.0f);			/*Desired fps. Default is 24*/
 		~SpriteAnimation();
 		
 	private:
+		// Internal structure. Data for each frame of the animation.
 		class Frame{
 		public:
 			Frame(TextureVertex *vertex);

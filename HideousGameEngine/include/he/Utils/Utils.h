@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 whackylabs. All rights reserved.
 //
 //	General Utilities inline functions
+
 #ifndef __HideousGameEngine__Utils__
 #define __HideousGameEngine__Utils__
 

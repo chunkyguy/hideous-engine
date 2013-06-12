@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		19361F2517682A800062B239 /* Documentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 19361F2617682A800062B239 /* Build configuration list for PBXAggregateTarget "Documentation" */;
+			buildPhases = (
+				19361F2917682A900062B239 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Documentation;
+			productName = Documentation;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		191B223B176072B1001F6F1C /* FlashTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 191B2239176072B1001F6F1C /* FlashTest.cpp */; };
 		191B223F1760C644001F6F1C /* DebugHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 191B223D1760C644001F6F1C /* DebugHelper.cpp */; };
@@ -195,6 +209,7 @@
 		195FE58C1740B5A1003A10CA /* spineboy.zwd */ = {isa = PBXFileReference; lastKnownFileType = file; path = spineboy.zwd; sourceTree = "<group>"; };
 		1962B844173B7068004E9A1C /* SpineTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpineTest.cpp; sourceTree = "<group>"; };
 		1962B845173B706C004E9A1C /* SpineTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpineTest.h; sourceTree = "<group>"; };
+		197ADE82176833D8001CBA53 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = HideousGameEngine/include/he/README.md; sourceTree = SOURCE_ROOT; };
 		198403A91761B80B00D0B7EA /* TextureAtlasRegion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextureAtlasRegion.h; sourceTree = "<group>"; };
 		198403AA1761B86A00D0B7EA /* TextureAtlasRegion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextureAtlasRegion.cpp; sourceTree = "<group>"; };
 		198403AD1761E8C700D0B7EA /* RawAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RawAnimation.h; sourceTree = "<group>"; };
@@ -487,6 +502,7 @@
 		199582501734575F0094714E /* he */ = {
 			isa = PBXGroup;
 			children = (
+				197ADE82176833D8001CBA53 /* README.md */,
 				199582511734575F0094714E /* Animation */,
 				199582531734575F0094714E /* EventLoop */,
 				199582561734575F0094714E /* Font */,
@@ -1062,6 +1078,7 @@
 			projectRoot = "";
 			targets = (
 				19A6E5741732781F006ACD91 /* HideousGameEngine */,
+				19361F2517682A800062B239 /* Documentation */,
 			);
 		};
 /* End PBXProject section */
@@ -1121,6 +1138,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		19361F2917682A900062B239 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/Applications/Doxygen.app/Contents/Resources/doxygen /Volumes/DrivePlusPlus/Languages/repo/he/HideousGameEngine/HideousGameEngine/doc/Doxyfile";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		19A6E5711732781F006ACD91 /* Sources */ = {
@@ -1216,6 +1249,20 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		19361F2717682A800062B239 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		19361F2817682A800062B239 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		19A6E59E1732781F006ACD91 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1307,6 +1354,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		19361F2617682A800062B239 /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19361F2717682A800062B239 /* Debug */,
+				19361F2817682A800062B239 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		19A6E5701732781E006ACD91 /* Build configuration list for PBXProject "HideousGameEngine" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
