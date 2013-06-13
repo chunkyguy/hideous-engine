@@ -18,7 +18,6 @@ namespace he {
 		// MARK: Button
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		Button::Button(IButtonListner *listner,
-					   ImageView *img_vw,
 					  const Frame frame,
 					   int tag) :
 		View(frame),
@@ -34,8 +33,6 @@ namespace he {
 			
 			// add animation listener
 			//			animation_listener_ = new he::AnimationListener<Button>(this, &Button::AnimationFinish);
-
-			AddSubview(img_vw);
 		}
 
 		Button::~Button(){

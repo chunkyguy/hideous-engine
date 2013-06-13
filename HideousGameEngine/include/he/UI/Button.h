@@ -43,10 +43,9 @@ namespace he {
 		};
 		
 		
-		class ImageView;
 		class Button : public View{
 		public:
-			Button(IButtonListner *listner, ImageView *img_vw, const Frame frame = Frame(), int tag = -1);
+			Button(IButtonListner *listner, const Frame frame = Frame(), int tag = -1);
 			~Button();
 			
 			/** Animatiion finish callback.

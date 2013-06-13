@@ -35,7 +35,7 @@ UITest::UITest(float w, float h)
 	atlas_.Load(new he::TextureAtlas(atlas_data_path, atlas_img_path, he::TextureAtlas::kStarling), true);
 	btn_listener_.Load(new he::ui::ButtonListner<UITest>(this, &UITest::ButtonHandler), true);
 	
-	he::ui::ImageViewFactory img_factory(shader_.Get());
+	he::ui::ImageViewFactory img_factory(shader_.Get(), atlas_.Get());
 	he::Frame frame;
 	view_ = new he::ui::View(frame);
 	view_->AddSubview(new he::ui::ImageView(&img_factory, vertex_.Get(), texture_.Get()));
@@ -43,21 +43,20 @@ UITest::UITest(float w, float h)
 	GLKVector2 pos = GLKVector2Make(0, 60);
 	for(int i = 0; i < sizeof(btn_titles)/sizeof(btn_titles[0]); ++i){
 		he_Trace("\ni = %d\n",i);
-		const he::TextureAtlasRegion *region = atlas_.Get()->GetTextureAtlasRegion(he::FlashFullName(btn_titles[i]));
+		std::string full_name(he::FlashFullName(btn_titles[i]));
+		const he::TextureAtlasRegion *region = atlas_.Get()->GetTextureAtlasRegion(full_name);
 		he::Transform trans(pos);
 		he_Trace("trans.pos = %@\n",trans.GetPosition());
 		he::Frame f(trans, region->sprite_size_);
 		he_Trace("f.rect = %@\n",f.GetRect());
-//		view_->AddSubview(new he::ui::ImageView(&img_factory,
-//												he::CreateTextureData(atlas_.Get(), he::FlashFullName(btn_titles[i])),
-//												atlas_.Get()->GetTexture(), frame));
-#warning memory leak!
-		he::TextureVertex *vertex = new he::TextureVertex(region);
-		he::ui::ImageView *img_vw = new he::ui::ImageView(&img_factory,
-														  vertex,
-														  atlas_.Get()->GetTexture(), f);
-
-		view_->AddSubview(new he::ui::Button(btn_listener_.Get(), img_vw, f, i));
+//		One way of creating imageviews
+//		he::TextureVertex *vertex = new he::TextureVertex(region); //memory leak here!!
+//		he::ui::ImageView *img_vw = new he::ui::ImageView(&img_factory,
+//														  vertex,
+//														  atlas_.Get()->GetTexture(), f);
+		he::ui::ImageView *img_vw = new he::ui::ImageView(&img_factory, full_name, f);
+		view_->AddSubview(img_vw);
+		view_->AddSubview(new he::ui::Button(btn_listener_.Get(), f, i));
 		pos.y -= 60;
 	}
 }
