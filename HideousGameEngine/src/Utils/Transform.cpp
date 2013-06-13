@@ -17,7 +17,7 @@ namespace he{
 	{}
 	
 	GLKMatrix4 Transform::GetMV() const{
-		GLKMatrix4 tMat = GLKMatrix4MakeTranslation(position_.x, position_.y, -0.1);
+		GLKMatrix4 tMat = GLKMatrix4MakeTranslation(position_.x, position_.y, g_Screen->z_);
 		GLKMatrix4 rMat = GLKMatrix4MakeRotation(rotation_, 0.0, 0.0, 1.0);
 		GLKMatrix4 sMat = GLKMatrix4MakeScale(scale_.x, scale_.y, 1.0);
 		return GLKMatrix4Multiply(GLKMatrix4Multiply(tMat, rMat), sMat);

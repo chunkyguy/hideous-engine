@@ -102,8 +102,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a0273278a392e3a0e3440b9da6db44e60"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_texture_atlas.html#a0273278a392e3a0e3440b9da6db44e60">AtlasFormat</a> { <a class="el" href="classhe_1_1_texture_atlas.html#a0273278a392e3a0e3440b9da6db44e60af1de46ef9a5516b8f5bf413e5bc060e1">Zwoptex</a>, 
-<a class="el" href="classhe_1_1_texture_atlas.html#a0273278a392e3a0e3440b9da6db44e60ac29d4f239eeec0cc0bb01c2b55997b4b">Starling</a>
+<tr class="memitem:a0273278a392e3a0e3440b9da6db44e60"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_texture_atlas.html#a0273278a392e3a0e3440b9da6db44e60">AtlasFormat</a> { <a class="el" href="classhe_1_1_texture_atlas.html#a0273278a392e3a0e3440b9da6db44e60a45c88b5a0573dc5a82f95b71e8787287">kZwoptex</a>, 
+<a class="el" href="classhe_1_1_texture_atlas.html#a0273278a392e3a0e3440b9da6db44e60a1755244cbb8066322a28a52a4975a92a">kStarling</a>
  }</td></tr>
 <tr class="separator:a0273278a392e3a0e3440b9da6db44e60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -118,7 +118,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab418514643a9041e79fdcb832cfd264f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classhe_1_1_texture.html">he::Texture</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_texture_atlas.html#ab418514643a9041e79fdcb832cfd264f">GetTexture</a> () const </td></tr>
 <tr class="separator:ab418514643a9041e79fdcb832cfd264f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="classhe_1_1_texture.html">Texture</a> Atlas to hold the texture and texture-coordinates Just a wrapper class around the <a class="el" href="classhe_1_1_texture_atlas_parser.html">TextureAtlasParser</a>. Just trying to hide the fact that the parsing is done in ObjC. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Owns the texture </dd></dl>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a class="anchor" id="a0273278a392e3a0e3440b9da6db44e60"></a>
 <div class="memitem">
 <div class="memproto">
@@ -128,10 +131,13 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Supported Atlas Formats </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a0273278a392e3a0e3440b9da6db44e60af1de46ef9a5516b8f5bf413e5bc060e1"></a>Zwoptex</em>&nbsp;</td><td class="fielddoc">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a0273278a392e3a0e3440b9da6db44e60a45c88b5a0573dc5a82f95b71e8787287"></a>kZwoptex</em>&nbsp;</td><td class="fielddoc">
+<p>Zwoptex format - Useful when importing from zwoptex.app </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a0273278a392e3a0e3440b9da6db44e60ac29d4f239eeec0cc0bb01c2b55997b4b"></a>Starling</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a0273278a392e3a0e3440b9da6db44e60a1755244cbb8066322a28a52a4975a92a"></a>kStarling</em>&nbsp;</td><td class="fielddoc">
+<p>Starling format - Useful when importing from Flash Pro </p>
 </td></tr>
 </table>
 
@@ -167,6 +173,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Create a texture Atlas </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data_path</td><td>Absolute path to the data file. </td></tr>
+    <tr><td class="paramname">texture_path</td><td>Absolute path to the image file. </td></tr>
+    <tr><td class="paramname">format</td><td>The format used. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -182,6 +197,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Dtor </p>
 
 </div>
 </div>
@@ -198,6 +214,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Get pointer to attached texture </p>
+<dl class="section warning"><dt>Warning</dt><dd>Don't delete the texture. It's owned by the <a class="el" href="classhe_1_1_texture_atlas.html">TextureAtlas</a>. </dd></dl>
 
 </div>
 </div>
@@ -214,6 +232,13 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Get texture region for image-name/symbol-name inside the sprite sheet </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">image_name</td><td>The symbol-name attached, that can be referred to get the texture region </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -223,7 +248,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jun 12 2013 10:44:28 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 13 2013 13:25:10 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

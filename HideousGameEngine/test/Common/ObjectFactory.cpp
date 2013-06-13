@@ -46,8 +46,9 @@ void ObjectFactory::load_assets(){
 	
 	// texture obj
 	texture_ = new he::Texture(he::ResourcePath() + "texture.png");
-	vert_ = new he::TextureVertex(200, 200);
-	atlas_ = new he::TextureAtlas( he::ResourcePath() + "tex_atlas.plist", he::ResourcePath() + "tex_atlas.png", he::TextureAtlas::Zwoptex);
+	GLKVector2 size = GLKVector2Make(200, 200);
+	vert_ = new he::TextureVertex(size);
+	atlas_ = new he::TextureAtlas( he::ResourcePath() + "tex_atlas.plist", he::ResourcePath() + "tex_atlas.png", he::TextureAtlas::kZwoptex);
 	tex_sh_ = new he::TextureShader;
 	
 	// text obj

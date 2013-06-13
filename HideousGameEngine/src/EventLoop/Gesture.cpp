@@ -9,7 +9,7 @@
 #include <he/EventLoop/Gesture.h>
 #include <he/Utils/Screen.h>
 #include <he/Utils/Utils.h>
-#include <he/Utils/DebugLog.h>
+#include <he/Utils/DebugHelper.h>
 
 namespace he{
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -26,6 +26,40 @@ namespace he{
 	
 	GLKVector2 Gesture::GetHitPoint() const{
 		return CGtoGL(touch_point_);
+	}
+	
+	std::ostream &operator<<(std::ostream &os, const Gesture &g){
+		std::string action = "";
+		switch (g.action_) {
+			case Gesture::kTap: action = "Tap"; break;
+			case Gesture::kZoomIn: action = "ZoomIn"; break;
+			case Gesture::kZoomOut: action = "ZoomOut"; break;
+			case Gesture::kDrag: action = "Drag"; break;
+			case Gesture::kNone:
+			default: action = "UNKNOWN"; break;
+		}
+		std::string state = "";
+		switch (g.state_) {
+			case Gesture::kBegin: state =  "Begin"; break;
+			case Gesture::kChange: state = "Change"; break;
+			case Gesture::kEnd: state = "End"; break;
+			case Gesture::kCancel: state = "Cancel"; break;
+			case Gesture::kFail: state = "Fail"; break;
+			case Gesture::kPossible: state = "Possible"; break;
+			default: state = "UNKNOWN"; break;
+		}
+
+		he_Trace("Action: %@\n"
+				 "Continous: %@\n"
+				 "Fingers: %@\n"
+				 "State: %@\n"
+				 "Taps: %@\n"
+				 "TouchPoint(UI coord space): %@\n"
+				 "HitPoint(GL coord space): %@\n"
+				 "Velocity: %@",
+				 action, (g.continious_?"Y":"N"), g.fingers_, state, g.taps_, g.touch_point_, g.GetHitPoint(), g.velocity_);
+
+		return os;
 	}
 	
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

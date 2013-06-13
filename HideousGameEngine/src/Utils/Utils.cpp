@@ -9,6 +9,7 @@
 #include <he/Utils/Utils.h>
 
 #include <fstream>
+#include <sstream>
 
 #include <he/Animation/AnimationLoop.h>
 #include <he/EventLoop/Gesture.h>
@@ -34,6 +35,13 @@ namespace he{
 			rval <<= 1;
 		return rval;
 	}
+	
+	std::string FlashFullName(const std::string &name, const int frame_number){
+		std::stringstream stream;
+		stream << name << " instance " << 10000 + frame_number; 		// head instance 10000
+		return stream.str();
+	}
+
 	
 	FileBuffer::FileBuffer(const std::string &path){
 		std::ifstream fin;

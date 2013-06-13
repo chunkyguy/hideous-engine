@@ -19,28 +19,28 @@ namespace he{
 	{}
 
 	
-	TextureVertex::TextureVertex(float width, float height, bool aspect_lock, GLKVector4 texture_coords) :
+	TextureVertex::TextureVertex(const GLKVector2 &size, const bool aspect_lock, const GLKVector4 texture_coords) :
 	IVertex(4),
 	position_data_(),
 	texture_data_()
 	{
-		GLKVector4 pos_coords = GLKVector4Make(-width/2.0f, -height/2.0f, width/2.0f, height/2.0f);
+		GLKVector4 pos_coords = GLKVector4Make(-size.x/2.0f, -size.y/2.0f, size.x/2.0f, size.y/2.0f);
 		set_data(pos_coords, texture_coords, aspect_lock);
 	}
 
-	TextureVertex::TextureVertex(const TextureAtlasRegion *region, float width, float height, const bool aspect_lock) :
+	TextureVertex::TextureVertex(const TextureAtlasRegion *region, const bool aspect_lock, GLKVector2 size) :
 	IVertex(4),
 	position_data_(),
 	texture_data_()
 	{
-		if(width < 0.0){
-			width = region->sprite_size_.x;
+		if(size.x < 0.0){
+			size.x = region->sprite_size_.x;
 		}
-		if(height < 0.0){
-			height = region->sprite_size_.y;
+		if(size.y < 0.0){
+			size.y = region->sprite_size_.y;
 		}
 
-		GLKVector4 pos_coords = GLKVector4Make(-width/2.0f, -height/2.0f, width/2.0f, height/2.0f);
+		GLKVector4 pos_coords = GLKVector4Make(-size.x/2.0f, -size.y/2.0f, size.x/2.0f, size.y/2.0f);
 		set_data(pos_coords, region->tex_coords_, aspect_lock);
 	}
 

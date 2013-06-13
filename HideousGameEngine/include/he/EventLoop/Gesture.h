@@ -8,6 +8,8 @@
 
 #ifndef __HideousGameEngine__Gesture__
 #define __HideousGameEngine__Gesture__
+#include <ostream>
+
 #include <he/Utils/GLKMath_Additions.h>
 
 namespace he{
@@ -36,7 +38,8 @@ namespace he{
 	private:
 		const float kDefaultMoveSpeed = 2.0; //units per second
 	};
-
+	std::ostream &operator<<(std::ostream &os, const Gesture &g);
+	
 	///////////////////////////////////////////////////////////////////////////////////////////////////
 	// MARK: GestureListenable
 	///////////////////////////////////////////////////////////////////////////////////////////////////

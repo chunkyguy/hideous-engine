@@ -76,7 +76,8 @@ void RectTextureTest::load_textures(){
 #endif
 	
 	he::Texture *r1t = new he::Texture(he::ResourcePath() + "texture.png");
-	v = new he::TextureVertex(200, 200);
+	GLKVector2 size = GLKVector2Make(200, 200);
+	v = new he::TextureVertex(size);
 	
 	pos = GLKVector2Make(-150.0, 0.0);
 	tMat = GLKMatrix4MakeTranslation(pos.x, pos.y, -0.1);
@@ -88,7 +89,8 @@ void RectTextureTest::load_textures(){
 	
 	//Draw a texture out of proportion
 	he::Texture *r2t = new he::Texture(he::ResourcePath() + "texture_alpha.png");
-	v = new he::TextureVertex(50, 25);
+	size = GLKVector2Make(50, 25);
+	v = new he::TextureVertex(size);
 	pos = GLKVector2Make(-50.0, 0.0);
 	tMat = GLKMatrix4MakeTranslation(pos.x, pos.y, -0.1);
 	mvpMat = GLKMatrix4Multiply(he::g_Screen->projection_, tMat);
@@ -98,11 +100,12 @@ void RectTextureTest::load_textures(){
 	vertex_datas_.push_back(v);
 	
 	//Draw a texture from atlas
-	atlas_ = new he::TextureAtlas( he::ResourcePath() + "tex_atlas.plist", he::ResourcePath() + "tex_atlas.png", he::TextureAtlas::Zwoptex);
+	atlas_ = new he::TextureAtlas( he::ResourcePath() + "tex_atlas.plist", he::ResourcePath() + "tex_atlas.png", he::TextureAtlas::kZwoptex);
 	
 	//fish
 	for(int i = 0; i < 2; ++i){
-		v = CreateTextureData(atlas_, "fish.png", 100, 100, i%2);
+		GLKVector2 size = GLKVector2Make(100, 100);
+		v = CreateTextureData(atlas_, "fish.png",  i%2, size);
 		GLKVector2 pos = GLKVector2Make(50.0, -100.0 + i*100.0);
 		GLKMatrix4 tMat = GLKMatrix4MakeTranslation(pos.x, pos.y, -0.1);
 		GLKMatrix4 mvpMat = GLKMatrix4Multiply(he::g_Screen->projection_, tMat);

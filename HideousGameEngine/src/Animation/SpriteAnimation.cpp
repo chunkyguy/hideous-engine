@@ -7,13 +7,13 @@
 //
 #include <he/Animation/SpriteAnimation.h>
 
-#include <sstream>
 
 #include <he/RenderObject/RenderObject.h>
 #include <he/Texture/TextureAtlas.h>
 #include <he/Texture/TextureAtlasRegion.h>
 #include <he/Vertex/TextureVertex.h>
 #include <he/Utils/DebugHelper.h>
+#include <he/Utils/Utils.h>
 
 namespace he{
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -46,10 +46,7 @@ namespace he{
 		
 	private:
 		void load_region(){
-			std::stringstream stream;
-			stream << name_ << " instance " << 10000+frames_; 		// head instance 10000
-			std::string full_name = stream.str();
-			region_ = atlas_->GetTextureAtlasRegion(full_name);
+			region_ = atlas_->GetTextureAtlasRegion(FlashFullName(name_, frames_));
 			if(!region_){
 				done_ = true;
 			}
@@ -79,7 +76,7 @@ namespace he{
 		int frame_count = 0;
 		for(FrameLoop loop_var(name, atlas); !loop_var.Done(); ++loop_var, ++frame_count){
 			const TextureAtlasRegion *region = loop_var.Get();
-			TextureVertex *v_data = new TextureVertex(region, region->sprite_size_.x, region->sprite_size_.y, false);
+			TextureVertex *v_data = new TextureVertex(region, false, region->sprite_size_);
 			GLKVector2 offset = region->sprite_offset_;
 			if(offset.x || offset.y){	// translate
 				Vertex::V2 pos_data = v_data->GetVertexPositionData();
@@ -97,7 +94,7 @@ namespace he{
 				tail_ = frame;
 			}
 			if(frame_count == final_frame_index && !final_vertex_data_){
-				final_vertex_data_ = new TextureVertex(region, region->sprite_size_.x, region->sprite_size_.y, false);
+				final_vertex_data_ = new TextureVertex(region, false, region->sprite_size_);
 			}
 			assert(final_vertex_data_);		// No data to load when the animation end, maybe the frame index provided is out of range.
 			he_Trace("SpriteAnimation: v-data:\n%@",tail_->vertex_->GetVertexPositionData());

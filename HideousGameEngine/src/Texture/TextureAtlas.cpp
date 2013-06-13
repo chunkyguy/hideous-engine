@@ -23,11 +23,11 @@ namespace he{
 	texture_(new he::Texture(texture_path))
 	{
 		switch(format){
-			case Zwoptex:
+			case kZwoptex:
 				parser_ = new ZwoptexDataParser(data_path);
 				break;
 				
-			case Starling:
+			case kStarling:
 				parser_ = new StarlingDataParser(data_path);
 				break;
 		}
@@ -54,13 +54,12 @@ namespace he{
 	}
 
 	TextureVertex *CreateTextureData(const TextureAtlas *atlas,
-								 const std::string &image_name,
-								 float width,
-								 float height,
-								 const bool aspect_correct ){
+									 const std::string &image_name,
+									 const bool aspect_correct,
+									 const GLKVector2 size){
 		const TextureAtlasRegion *tex_region = atlas->GetTextureAtlasRegion(image_name);
 		if(tex_region){
-			return new TextureVertex(tex_region, width, height, aspect_correct);
+			return new TextureVertex(tex_region, aspect_correct, size);
 		}
 		return nullptr;
 	}

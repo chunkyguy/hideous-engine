@@ -122,7 +122,8 @@ void TextureBigBangTest::HandleGesture(const he::Gesture &gesture){
 
 void TextureBigBangTest::load_assets(){
 	texture_ = new he::Texture(he::ResourcePath() + "clock.png");
-	vertex_data_ = new he::TextureVertex(50, 50);
+	GLKVector2 size = GLKVector2Make(50, 50);
+	vertex_data_ = new he::TextureVertex(size);
 	shader_ = new he::TextureShader;
 	sprite_ = new he::RenderObject(vertex_data_, shader_, texture_);
 }

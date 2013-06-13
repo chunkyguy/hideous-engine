@@ -147,24 +147,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">return</span> GLKVector2Make(cg_point.x - <a class="code" href="namespacehe.html#ae61f2278b263127bc4506a38ff5e3a8e">g_Screen</a>-&gt;<a class="code" href="classhe_1_1_screen.html#a89a6a166771fa4c5f89945ff88562d1c">width_</a>/2, <a class="code" href="namespacehe.html#ae61f2278b263127bc4506a38ff5e3a8e">g_Screen</a>-&gt;<a class="code" href="classhe_1_1_screen.html#a8eb087ce03e9142e722891f03355665a">height_</a>/2 - cg_point.y);</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="classhe_1_1_file_buffer.html">   57</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classhe_1_1_file_buffer.html">FileBuffer</a>{</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="classhe_1_1_file_buffer.html#a4b4c2d81f1055bbdb8b500019c686455">FileBuffer</a>(<span class="keyword">const</span> std::string &amp;path);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="classhe_1_1_file_buffer.html#a15ae4808d0f2b594f8640c2f859310e5">~FileBuffer</a>();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        std::string <a class="code" href="classhe_1_1_file_buffer.html#ad6c1eff4a82adfff10b7267d0b7ea74d">GetString</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="classhe_1_1_file_buffer.html#a5ec946e2ae11922242c92eed9d173a22">GetData</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classhe_1_1_file_buffer.html#a7ffd1a70cc28b3fda44b29ac95c22254">GetLength</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">char</span> *buffer_;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">int</span> length_;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    };</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* defined(__HideousGameEngine__Utils__) */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    std::string <a class="code" href="namespacehe.html#a415dc8c865a8594d3550483aa8f5c485">FlashFullName</a>(<span class="keyword">const</span> std::string &amp;name, <span class="keyword">const</span> <span class="keywordtype">int</span> frame_number);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="classhe_1_1_file_buffer.html">   64</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classhe_1_1_file_buffer.html">FileBuffer</a>{</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="classhe_1_1_file_buffer.html#a4b4c2d81f1055bbdb8b500019c686455">FileBuffer</a>(<span class="keyword">const</span> std::string &amp;path);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="classhe_1_1_file_buffer.html#a15ae4808d0f2b594f8640c2f859310e5">~FileBuffer</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        std::string <a class="code" href="classhe_1_1_file_buffer.html#ad6c1eff4a82adfff10b7267d0b7ea74d">GetString</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="classhe_1_1_file_buffer.html#a5ec946e2ae11922242c92eed9d173a22">GetData</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classhe_1_1_file_buffer.html#a7ffd1a70cc28b3fda44b29ac95c22254">GetLength</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordtype">char</span> *buffer_;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordtype">int</span> length_;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    };</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* defined(__HideousGameEngine__Utils__) */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jun 12 2013 10:44:28 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 13 2013 13:25:10 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

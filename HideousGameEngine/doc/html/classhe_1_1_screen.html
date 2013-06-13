@@ -132,6 +132,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a62f1941aad0a1afb48e02659a9178c8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8def97e119387245ad79c1a527820ba"><td class="memItemLeft" align="right" valign="top">const GLKMatrix4 &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_screen.html#ab8def97e119387245ad79c1a527820ba">GetProjection</a> () const </td></tr>
 <tr class="separator:ab8def97e119387245ad79c1a527820ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fbbd985ec31be7fa75d2d8cae89f085"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_screen.html#a9fbbd985ec31be7fa75d2d8cae89f085">GetHalfDepth</a> () const </td></tr>
+<tr class="separator:a9fbbd985ec31be7fa75d2d8cae89f085"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -219,6 +221,22 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a9fbbd985ec31be7fa75d2d8cae89f085"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float he::Screen::GetHalfDepth </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The halfway depth. Could be used for z-indexing. Always &gt; 0 ( = -z_) </p>
+
+</div>
+</div>
 <a class="anchor" id="ab8def97e119387245ad79c1a527820ba"></a>
 <div class="memitem">
 <div class="memproto">
@@ -327,6 +345,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>z is midpoint of the total depth possible. Always &lt; 0 </p>
 
 </div>
 </div>
@@ -336,7 +355,7 @@ Public Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jun 12 2013 10:44:28 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 13 2013 13:25:10 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

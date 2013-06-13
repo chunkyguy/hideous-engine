@@ -386,6 +386,17 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>operator&lt;&lt;</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe.html</Path>
+    <Anchor>a44a717dd63a24bbcae7c0158924b547d</Anchor>
+    <DeclaredIn>Gesture.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>g_EventLoop</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -714,6 +725,17 @@
     </TokenIdentifier>
     <Path>namespacehe.html</Path>
     <Anchor>a5c7b101255c7af87b5bf95896e461e20</Anchor>
+    <DeclaredIn>Utils.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>FlashFullName</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe.html</Path>
+    <Anchor>a415dc8c865a8594d3550483aa8f5c485</Anchor>
     <DeclaredIn>Utils.h</DeclaredIn>
   </Token>
   <Token>
@@ -1561,6 +1583,17 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>operator&lt;&lt;</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe.html</Path>
+    <Anchor>a44a717dd63a24bbcae7c0158924b547d</Anchor>
+    <DeclaredIn>Gesture.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>CreateTextureData</Name>
       <APILanguage>cpp</APILanguage>
       <Type>func</Type>
@@ -1667,6 +1700,17 @@
     </TokenIdentifier>
     <Path>namespacehe.html</Path>
     <Anchor>a5c7b101255c7af87b5bf95896e461e20</Anchor>
+    <DeclaredIn>Utils.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>FlashFullName</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe.html</Path>
+    <Anchor>a415dc8c865a8594d3550483aa8f5c485</Anchor>
     <DeclaredIn>Utils.h</DeclaredIn>
   </Token>
   <Token>
@@ -4248,23 +4292,23 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>Zwoptex</Name>
+      <Name>kZwoptex</Name>
       <APILanguage>cpp</APILanguage>
       <Type>econst</Type>
       <Scope>he::TextureAtlas</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_texture_atlas.html</Path>
-    <Anchor>a0273278a392e3a0e3440b9da6db44e60af1de46ef9a5516b8f5bf413e5bc060e1</Anchor>
+    <Anchor>a0273278a392e3a0e3440b9da6db44e60a45c88b5a0573dc5a82f95b71e8787287</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>Starling</Name>
+      <Name>kStarling</Name>
       <APILanguage>cpp</APILanguage>
       <Type>econst</Type>
       <Scope>he::TextureAtlas</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_texture_atlas.html</Path>
-    <Anchor>a0273278a392e3a0e3440b9da6db44e60ac29d4f239eeec0cc0bb01c2b55997b4b</Anchor>
+    <Anchor>a0273278a392e3a0e3440b9da6db44e60a1755244cbb8066322a28a52a4975a92a</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -4663,6 +4707,17 @@
     </TokenIdentifier>
     <Path>classhe_1_1_screen.html</Path>
     <Anchor>ab8def97e119387245ad79c1a527820ba</Anchor>
+    <DeclaredIn>Screen.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetHalfDepth</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Screen</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_screen.html</Path>
+    <Anchor>a9fbbd985ec31be7fa75d2d8cae89f085</Anchor>
     <DeclaredIn>Screen.h</DeclaredIn>
   </Token>
   <Token>

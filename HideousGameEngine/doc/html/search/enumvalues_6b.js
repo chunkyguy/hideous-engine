@@ -24,6 +24,7 @@ var searchData=
   ['kposition',['kPosition',['../classhe_1_1_i_vertex.html#ab6d3131e5b1346470cc257469be2645ca3320e7fc502923c1c3e1f856bf4d3134',1,'he::IVertex']]],
   ['kpossible',['kPossible',['../classhe_1_1_gesture.html#ae4664fad3d34df997858f873dba4f57aa5f3a025a83f3a1933e882f5a5a34ac0d',1,'he::Gesture']]],
   ['kright',['kRight',['../classhe_1_1_screen.html#a4b776110a8ca5a454d47c6a38a77f9c6ab8e1b2c4f5e89410aba0ede08c90fd7e',1,'he::Screen']]],
+  ['kstarling',['kStarling',['../classhe_1_1_texture_atlas.html#a0273278a392e3a0e3440b9da6db44e60a1755244cbb8066322a28a52a4975a92a',1,'he::TextureAtlas']]],
   ['ksuicide',['kSuicide',['../classhe_1_1_animation.html#a5888d347656cb507a56975a9d7edaae9a1a0ff48ee9afa90681e2eaa0c542657f',1,'he::Animation']]],
   ['ktap',['kTap',['../classhe_1_1_gesture.html#af12c544c2a15c8de44b281e4f2db31f6a58298d95facc8da69101003f7c4fd88b',1,'he::Gesture']]],
   ['ktexture',['kTexture',['../classhe_1_1_i_vertex.html#ab6d3131e5b1346470cc257469be2645ca0a7cf97b57333fdeabf36addaa034a28',1,'he::IVertex']]],
@@ -32,5 +33,6 @@ var searchData=
   ['ktopright',['kTopRight',['../classhe_1_1_screen.html#a4b776110a8ca5a454d47c6a38a77f9c6a109e6880284442b034d1b5636d74504b',1,'he::Screen']]],
   ['kunknown',['kUnknown',['../classhe_1_1_screen.html#a4b776110a8ca5a454d47c6a38a77f9c6a2035d514d2a86874958f058e77b9fba7',1,'he::Screen']]],
   ['kzoomin',['kZoomIn',['../classhe_1_1_gesture.html#af12c544c2a15c8de44b281e4f2db31f6a1c456efa7f64c4b7719ead84369b80c9',1,'he::Gesture']]],
-  ['kzoomout',['kZoomOut',['../classhe_1_1_gesture.html#af12c544c2a15c8de44b281e4f2db31f6af35462c92dcb452765383454b3f3c762',1,'he::Gesture']]]
+  ['kzoomout',['kZoomOut',['../classhe_1_1_gesture.html#af12c544c2a15c8de44b281e4f2db31f6af35462c92dcb452765383454b3f3c762',1,'he::Gesture']]],
+  ['kzwoptex',['kZwoptex',['../classhe_1_1_texture_atlas.html#a0273278a392e3a0e3440b9da6db44e60a45c88b5a0573dc5a82f95b71e8787287',1,'he::TextureAtlas']]]
 ];

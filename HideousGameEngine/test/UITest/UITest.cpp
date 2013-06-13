@@ -8,103 +8,46 @@
 
 #include "UITest.h"
 
-#include <he/Animation/Animation.h>
-#include <he/Font/Font.h>
-#include <he/RenderObject/RenderObject.h>
-#include <he/Shaders/ColorShader.h>
-#include <he/Utils/DebugLog.h>
+#include <he/Shaders/TextureShader.h>
+#include <he/Texture/Texture.h>
+#include <he/Texture/TextureAtlas.h>
+#include <he/UI/ImageView.h>
+#include <he/Utils/DebugHelper.h>
+#include <he/Utils/ResourcePath.hpp>
 #include <he/Utils/Utils.h>
-#include <he/Utils/Transform.h>
-#include <he/Vertex/ColorVertex.h>
-
-#include "Label.h"
-
-UITest::~UITest(){
-//	if(scale_animation_){
-//		delete scale_animation_; scale_animation_ = 0;
-//	}
-	delete render_object_;
-	delete vertex_data_;
-	delete shader_;
-	delete label_;
-	delete font_;
-	he::g_EventLoop->RemoveListener(gesture_listener_);
-	delete gesture_listener_;
-
-	he::GlobalsDestroy();
-}
+#include <he/Vertex/TextureVertex.h>
 
 UITest::UITest(float w, float h)
-//:scale_animation_(0)
 {
+	srand(time(NULL));
 	//setup globals
 	he::GlobalsInit(w, h);
 	
-	//debugger
-	const std::string loglevel("DEBUG1");
-	FILELog::ReportingLevel() = FILELog::FromString(loglevel);
-	FILE_LOG(logDEBUG) << "Logging Enabled: " << loglevel << std::endl;
-	FILE_LOG(logDEBUG) <<"{" <<w << "," << h << "}";
+	shader_.Load(new he::TextureShader, true);
+	texture_.Load(new he::Texture(he::ResourcePath() + "ship_144.png"), true);
+	vertex_.Load(new he::TextureVertex(texture_.Get()->GetSize()), true);
 
-	//random
-	srand(time(NULL));
-
-	gesture_listener_ = new he::GestureListener<UITest>(this, &UITest::HandleGesture);
-	he::g_EventLoop->AddListener(gesture_listener_);
-	
-	//start things here
-	font_ = new he::Font("Silom.ttf", 34);
-	label_ = new Label("Sid the best", font_);
-	label_->transform_.SetPosition(GLKVector2Make(10, 20));
-
-	shader_ = new he::ColorShader;
-	
-	vertex_data_ = new he::ColorVertex( label_->GetBox() );
-//	vertex_data_ = new he::ColorVertex(label_->GetBox(),0);
-//	vertex_data_->position_data_ = label_->GetBox().position_data_;
-	GLKMatrix4 tMat = GLKMatrix4MakeTranslation(0, 0, -0.5);
-	GLKMatrix4 mvpMat = GLKMatrix4Multiply(he::g_Screen->projection_, tMat);
-	render_object_ = new he::RenderObject(vertex_data_, shader_, 0, mvpMat, GLKVector4Make(0.6, 0.8, 0.0, 0.5));
+	he::ui::ImageViewFactory img_factory(shader_.Get());
+	he::Transform transform;
+	view_ = new he::ui::View(transform);
+	view_->AddSubview(new he::ui::ImageView(&img_factory, vertex_.Get(), texture_.Get()));
 }
+
+UITest::~UITest(){
+	delete view_;
+	he::GlobalsDestroy();
+}
+
 
 void UITest::Update(float dt){
-//	if(scale_animation_){
-//		if(!scale_animation_->NextFrame()){
-//			delete scale_animation_; scale_animation_ = 0;
-//			label_->SetColor(GLKVector4Make(he::Randf(), he::Randf(), he::Randf(), 1.0));
-//		}
-//	}
+	view_->Update(dt);
 }
+
 void UITest::Render(){
 	glClearColor(0.5, 0.5, 0.5, 1.0);
 	glClear(GL_COLOR_BUFFER_BIT);
-	
-	render_object_->Render();
-	label_->Render();
-}
 
-void UITest::HandleGesture(const he::Gesture &gesture){
-//	if(scale_animation_){	// block gestures while animating
-//		return;
-//	}
-	
-	if(gesture.action_ != he::Gesture::kTap){
-		return;
-	}
-
-	GLKVector2 pt = gesture.GetHitPoint();
-	if(he::Vertex::Contains(label_->GetBox().GetVertexData(), pt)){
-//		scale_animation_ = new he::AnimationChain;
-//
-//		GLKVector2 scaleUp = GLKVector2MultiplyScalar(label_->transform_.scale_, 1.25);
-//		GLKVector2 scale_up_points[2] = {label_->transform_.scale_, scaleUp};
-//		scale_animation_->Push(new he::Animation<GLKVector2>(&label_->transform_.scale_, he::MakeTweenFrames(3, he::kLinear, scale_up_points)));
-//		
-//		GLKVector2 scale_down_points[2] = {scaleUp, label_->transform_.scale_};
-//		scale_animation_->Push(new he::Animation<GLKVector2>(&label_->transform_.scale_, he::MakeTweenFrames(3, he::kLinear, scale_down_points)));
-	}else{
-		label_->transform_.position_ = pt;
-	}
+	view_->Render();
 }
 
 ///EOF

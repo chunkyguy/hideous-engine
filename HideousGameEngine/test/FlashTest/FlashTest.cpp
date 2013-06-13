@@ -24,7 +24,7 @@ FlashTest::FlashTest(float w, float h){
 	// load
 	std::string data_path(he::ResourcePath() + "fishmotion.xml");
 	std::string img_path(he::ResourcePath() + "fishmotion.png");
-	assets_ = new FlashMovieAssets(new he::TextureAtlas(data_path, img_path, he::TextureAtlas::Starling), new he::TextureShader);
+	assets_ = new FlashMovieAssets(new he::TextureAtlas(data_path, img_path, he::TextureAtlas::kStarling), new he::TextureShader);
 	
 	std::string name("fishmoving");
 	movie_ = new FlashMovie(name, assets_, GLKVector2Make(0, 0), 0, 24.0f);

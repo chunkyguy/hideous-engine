@@ -15,30 +15,54 @@
 
 namespace he{
 	class TextureAtlasRegion;
-	
+
+	/** VertexData for a texture.
+		Possible use is while generating vertex-data from an TextureAtlas, or directly by providing texture coordinates.
+	 */
 	class TextureVertex : public IVertex{
 	public:
 		
+		/** Returns raw data.
+		 Expected to be used in a shader.
+		 Impl the virtual method of IVertex
+		 */
 		const GLfloat *GetRawData(const IVertex::DataType dt) const;
 		
-		// Create vertex data. Aspect lock is applicable for disproportioned texCoords not posCoords
-		TextureVertex(float width, float height,
-				  bool aspect_lock = true, GLKVector4 texture_coords = GLKVector4Make(0, 0, 1, 1));
+		/** Create vertex data for explicitly provided values.
+		 @param width, height The height width of the texture
+		 @param aspect_lock Aspect lock is applicable for disproportioned texCoords not posCoords
+		 @param texture_coords The texture coordinates. By default {0,0,1,1}
+		 */
+		TextureVertex(const GLKVector2 &size, const bool aspect_lock = true, const GLKVector4 texture_coords = GLKVector4Make(0, 0, 1, 1));
 		
+		/** Create Vertex data from position and texture data 
+			@param position_data The position data.
+			@param texture_data	The texture data.
+		 */
 		TextureVertex(const Vertex::V2 &position_data, const Vertex::V2 &texture_data);
 		
-		// if width / height are not provided, pick the size from atlas data.
-		TextureVertex(const TextureAtlasRegion *region, float width = -1, float height = -1, const bool aspect_lock = true);
-		
+		/** Create Vertex data from a TextureAtlas.
+		@param region The region as calculated from a TextureAtlas.
+		 @param aspect_lock Turn on lock to explicitly provide the width and height.
+		 @param width, height If not provided, picked from the size from atlas data.
+		 */
+		TextureVertex(const TextureAtlasRegion *region, const bool aspect_lock = false, GLKVector2 size = GLKVector2Make(-1, -1));
+
+		/** Get Vertex data */
 		const Vertex::V2 &GetVertexPositionData() const;
+		
+		/** Get Texture data */
 		const Vertex::V2 &GetVertexTextureData() const;
 
 	private:
+		/** Common method to set create vertex datas from position and texture coords */
 		void set_data(const GLKVector4 &pos_coords, const GLKVector4 &tex_coords, const bool aspect_lock);
+		
+		/**  Apply aspect correctness width wise, if required */
 		void apply_aspect_correctnes(const GLKVector4 &texture_coords);
 		
-		Vertex::V2 position_data_;
-		Vertex::V2 texture_data_;
+		Vertex::V2 position_data_;	/**< The position data */
+		Vertex::V2 texture_data_;	/**< The texture data */
 	};
 }
 #endif /* defined(__HEAssets__TextureVertex__) */

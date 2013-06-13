@@ -1210,14 +1210,14 @@
                 <Anchor>a0273278a392e3a0e3440b9da6db44e60</Anchor>
                 <Subnodes>
                  <Node>
-                  <Name>Zwoptex</Name>
+                  <Name>kZwoptex</Name>
                   <Path>classhe_1_1_texture_atlas.html</Path>
-                  <Anchor>a0273278a392e3a0e3440b9da6db44e60af1de46ef9a5516b8f5bf413e5bc060e1</Anchor>
+                  <Anchor>a0273278a392e3a0e3440b9da6db44e60a45c88b5a0573dc5a82f95b71e8787287</Anchor>
                  </Node>
                  <Node>
-                  <Name>Starling</Name>
+                  <Name>kStarling</Name>
                   <Path>classhe_1_1_texture_atlas.html</Path>
-                  <Anchor>a0273278a392e3a0e3440b9da6db44e60ac29d4f239eeec0cc0bb01c2b55997b4b</Anchor>
+                  <Anchor>a0273278a392e3a0e3440b9da6db44e60a1755244cbb8066322a28a52a4975a92a</Anchor>
                  </Node>
                 </Subnodes>
                </Node>
@@ -1463,6 +1463,11 @@
                 <Name>Screen</Name>
                 <Path>classhe_1_1_screen.html</Path>
                 <Anchor>a6d8398aff0a187ce45ba4a292668ad03</Anchor>
+               </Node>
+               <Node>
+                <Name>GetHalfDepth</Name>
+                <Path>classhe_1_1_screen.html</Path>
+                <Anchor>a9fbbd985ec31be7fa75d2d8cae89f085</Anchor>
                </Node>
                <Node>
                 <Name>GetProjection</Name>
@@ -2889,6 +2894,11 @@
                       </Subnodes>
                      </Node>
                      <Node>
+                      <Name>operator&lt;&lt;</Name>
+                      <Path>_gesture_8h.html</Path>
+                      <Anchor>a44a717dd63a24bbcae7c0158924b547d</Anchor>
+                     </Node>
+                     <Node>
                       <Name>g_EventLoop</Name>
                       <Path>_gesture_8h.html</Path>
                       <Anchor>ab48a6ac2e4c3b2c580d5f4fc09d51849</Anchor>
@@ -3756,14 +3766,14 @@
                         <Anchor>a0273278a392e3a0e3440b9da6db44e60</Anchor>
                         <Subnodes>
                          <Node>
-                          <Name>Zwoptex</Name>
+                          <Name>kZwoptex</Name>
                           <Path>classhe_1_1_texture_atlas.html</Path>
-                          <Anchor>a0273278a392e3a0e3440b9da6db44e60af1de46ef9a5516b8f5bf413e5bc060e1</Anchor>
+                          <Anchor>a0273278a392e3a0e3440b9da6db44e60a45c88b5a0573dc5a82f95b71e8787287</Anchor>
                          </Node>
                          <Node>
-                          <Name>Starling</Name>
+                          <Name>kStarling</Name>
                           <Path>classhe_1_1_texture_atlas.html</Path>
-                          <Anchor>a0273278a392e3a0e3440b9da6db44e60ac29d4f239eeec0cc0bb01c2b55997b4b</Anchor>
+                          <Anchor>a0273278a392e3a0e3440b9da6db44e60a1755244cbb8066322a28a52a4975a92a</Anchor>
                          </Node>
                         </Subnodes>
                        </Node>
@@ -4202,6 +4212,11 @@
                         <Anchor>a6d8398aff0a187ce45ba4a292668ad03</Anchor>
                        </Node>
                        <Node>
+                        <Name>GetHalfDepth</Name>
+                        <Path>classhe_1_1_screen.html</Path>
+                        <Anchor>a9fbbd985ec31be7fa75d2d8cae89f085</Anchor>
+                       </Node>
+                       <Node>
                         <Name>GetProjection</Name>
                         <Path>classhe_1_1_screen.html</Path>
                         <Anchor>ab8def97e119387245ad79c1a527820ba</Anchor>
@@ -4381,6 +4396,11 @@
                       <Name>CGtoGL</Name>
                       <Path>_utils_8h.html</Path>
                       <Anchor>a5c7b101255c7af87b5bf95896e461e20</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>FlashFullName</Name>
+                      <Path>_utils_8h.html</Path>
+                      <Anchor>a415dc8c865a8594d3550483aa8f5c485</Anchor>
                      </Node>
                      <Node>
                       <Name>GlobalsDestroy</Name>

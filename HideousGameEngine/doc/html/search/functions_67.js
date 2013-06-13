@@ -9,6 +9,7 @@ var searchData=
   ['getcount',['GetCount',['../classhe_1_1_i_vertex.html#ae50d934ce47314194341515fb5aaf872',1,'he::IVertex']]],
   ['getdata',['GetData',['../classhe_1_1_file_buffer.html#a5ec946e2ae11922242c92eed9d173a22',1,'he::FileBuffer']]],
   ['getdescentid',['GetDescentID',['../classhe_1_1_animation.html#a1e6b6b23fd3beb8a0618b2a9b67e8e3e',1,'he::Animation']]],
+  ['gethalfdepth',['GetHalfDepth',['../classhe_1_1_screen.html#a9fbbd985ec31be7fa75d2d8cae89f085',1,'he::Screen']]],
   ['gethitpoint',['GetHitPoint',['../classhe_1_1_gesture.html#a16d71df91f80a29bcd77f980b3d0be46',1,'he::Gesture']]],
   ['getid',['GetID',['../classhe_1_1_animation.html#a9544828f102ace474ce4b332943d8bb9',1,'he::Animation']]],
   ['getlength',['GetLength',['../classhe_1_1_file_buffer.html#a7ffd1a70cc28b3fda44b29ac95c22254',1,'he::FileBuffer']]],
