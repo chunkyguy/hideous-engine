@@ -12,6 +12,8 @@
 #include "TestTemplate.h"
 
 #include <he/Utils/Asset.h>
+#include <he/UI/Button.h>
+
 namespace he{
 	class Texture;
 	class TextureShader;
@@ -29,12 +31,15 @@ public:
 	UITest(float width, float height);
 	void Update(float dt);
 	void Render();
+	void ButtonHandler(he::ui::Button *sender);
 	
 private:
 	he::ui::View *view_;
 	he::Asset<he::Texture> texture_;
 	he::Asset<he::TextureVertex> vertex_;
 	he::Asset<he::TextureShader> shader_;
+	he::Asset<he::TextureAtlas> atlas_;
+	he::Asset<he::ui::ButtonListner<UITest> > btn_listener_;
 };
 
 

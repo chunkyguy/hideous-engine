@@ -131,6 +131,9 @@
 		19A8EE211769E4A300FD25BF /* texture_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A8EDFF1769E4A300FD25BF /* texture_256.png */; };
 		19A8EE221769E4A300FD25BF /* texture_alpha.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A8EE001769E4A300FD25BF /* texture_alpha.png */; };
 		19A8EE241769E59C00FD25BF /* ship_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A8EE231769E59C00FD25BF /* ship_144.png */; };
+		19A8EE271769E78600FD25BF /* homescreen_ss.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A8EE251769E78600FD25BF /* homescreen_ss.png */; };
+		19A8EE281769E78600FD25BF /* homescreen_ss.xml in Resources */ = {isa = PBXBuildFile; fileRef = 19A8EE261769E78600FD25BF /* homescreen_ss.xml */; };
+		19A8EE2D1769FA0800FD25BF /* Frame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A8EE2B1769FA0800FD25BF /* Frame.cpp */; };
 		19B0EBCC1765AF0900CD3D79 /* TextureShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19B0EBC81765AF0900CD3D79 /* TextureShader.cpp */; };
 		19B0EBCD1765AF0900CD3D79 /* TextShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19B0EBC91765AF0900CD3D79 /* TextShader.cpp */; };
 		19B0EBCE1765AF0900CD3D79 /* ParticleShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19B0EBCA1765AF0900CD3D79 /* ParticleShader.cpp */; };
@@ -343,6 +346,10 @@
 		19A8EDFF1769E4A300FD25BF /* texture_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture_256.png; sourceTree = "<group>"; };
 		19A8EE001769E4A300FD25BF /* texture_alpha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture_alpha.png; sourceTree = "<group>"; };
 		19A8EE231769E59C00FD25BF /* ship_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ship_144.png; sourceTree = "<group>"; };
+		19A8EE251769E78600FD25BF /* homescreen_ss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homescreen_ss.png; sourceTree = "<group>"; };
+		19A8EE261769E78600FD25BF /* homescreen_ss.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = homescreen_ss.xml; sourceTree = "<group>"; };
+		19A8EE2A1769F9EC00FD25BF /* Frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Frame.h; path = HideousGameEngine/include/he/Utils/Frame.h; sourceTree = SOURCE_ROOT; };
+		19A8EE2B1769FA0800FD25BF /* Frame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Frame.cpp; sourceTree = "<group>"; };
 		19B0EBC41765ADC300CD3D79 /* TextureShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TextureShader.h; path = HideousGameEngine/include/he/Shaders/TextureShader.h; sourceTree = SOURCE_ROOT; };
 		19B0EBC51765ADC300CD3D79 /* TextShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TextShader.h; path = HideousGameEngine/include/he/Shaders/TextShader.h; sourceTree = SOURCE_ROOT; };
 		19B0EBC61765ADC300CD3D79 /* ParticleShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ParticleShader.h; path = HideousGameEngine/include/he/Shaders/ParticleShader.h; sourceTree = SOURCE_ROOT; };
@@ -582,6 +589,7 @@
 				199582761734575F0094714E /* Utils.h */,
 				19062FD8174C9E7D00E42681 /* GLKMath_Additions.h */,
 				19A8EDD51769C6E500FD25BF /* Asset.h */,
+				19A8EE2A1769F9EC00FD25BF /* Frame.h */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -797,6 +805,7 @@
 				19A6E607173278A1006ACD91 /* Utils.cpp */,
 				191B223D1760C644001F6F1C /* DebugHelper.cpp */,
 				194F4D401762EDEB002AD10E /* GLKMath_Additions.cpp */,
+				19A8EE2B1769FA0800FD25BF /* Frame.cpp */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -987,6 +996,8 @@
 		19A8EDDC1769E4A300FD25BF /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				19A8EE251769E78600FD25BF /* homescreen_ss.png */,
+				19A8EE261769E78600FD25BF /* homescreen_ss.xml */,
 				19A8EE231769E59C00FD25BF /* ship_144.png */,
 				19A8EDDD1769E4A300FD25BF /* clock.png */,
 				19A8EDDE1769E4A300FD25BF /* Courier New.ttf */,
@@ -1172,6 +1183,8 @@
 				19A8EE211769E4A300FD25BF /* texture_256.png in Resources */,
 				19A8EE221769E4A300FD25BF /* texture_alpha.png in Resources */,
 				19A8EE241769E59C00FD25BF /* ship_144.png in Resources */,
+				19A8EE271769E78600FD25BF /* homescreen_ss.png in Resources */,
+				19A8EE281769E78600FD25BF /* homescreen_ss.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1273,6 +1286,7 @@
 				19A8EDD01769C3FE00FD25BF /* View.cpp in Sources */,
 				19A8EDD41769C4F600FD25BF /* Button.cpp in Sources */,
 				19A8EDD91769CCD800FD25BF /* ImageView.cpp in Sources */,
+				19A8EE2D1769FA0800FD25BF /* Frame.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

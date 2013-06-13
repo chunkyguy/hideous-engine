@@ -8,13 +8,17 @@
 
 #include "UITest.h"
 
+#include <string>
+
 #include <he/Shaders/TextureShader.h>
 #include <he/Texture/Texture.h>
 #include <he/Texture/TextureAtlas.h>
+#include <he/Texture/TextureAtlasRegion.h>
 #include <he/UI/ImageView.h>
 #include <he/Utils/DebugHelper.h>
 #include <he/Utils/ResourcePath.hpp>
 #include <he/Utils/Utils.h>
+#include <he/Utils/Frame.h>
 #include <he/Vertex/TextureVertex.h>
 
 UITest::UITest(float w, float h)
@@ -26,11 +30,36 @@ UITest::UITest(float w, float h)
 	shader_.Load(new he::TextureShader, true);
 	texture_.Load(new he::Texture(he::ResourcePath() + "ship_144.png"), true);
 	vertex_.Load(new he::TextureVertex(texture_.Get()->GetSize()), true);
-
+	std::string atlas_data_path(he::ResourcePath() + "homescreen_ss.xml");
+	std::string atlas_img_path(he::ResourcePath() + "homescreen_ss.png");
+	atlas_.Load(new he::TextureAtlas(atlas_data_path, atlas_img_path, he::TextureAtlas::kStarling), true);
+	btn_listener_.Load(new he::ui::ButtonListner<UITest>(this, &UITest::ButtonHandler), true);
+	
 	he::ui::ImageViewFactory img_factory(shader_.Get());
-	he::Transform transform;
-	view_ = new he::ui::View(transform);
+	he::Frame frame;
+	view_ = new he::ui::View(frame);
 	view_->AddSubview(new he::ui::ImageView(&img_factory, vertex_.Get(), texture_.Get()));
+	std::string btn_titles[] = {	"mission", "tutorial", "credits"	};
+	GLKVector2 pos = GLKVector2Make(0, 60);
+	for(int i = 0; i < sizeof(btn_titles)/sizeof(btn_titles[0]); ++i){
+		he_Trace("\ni = %d\n",i);
+		const he::TextureAtlasRegion *region = atlas_.Get()->GetTextureAtlasRegion(he::FlashFullName(btn_titles[i]));
+		he::Transform trans(pos);
+		he_Trace("trans.pos = %@\n",trans.GetPosition());
+		he::Frame f(trans, region->sprite_size_);
+		he_Trace("f.rect = %@\n",f.GetRect());
+//		view_->AddSubview(new he::ui::ImageView(&img_factory,
+//												he::CreateTextureData(atlas_.Get(), he::FlashFullName(btn_titles[i])),
+//												atlas_.Get()->GetTexture(), frame));
+#warning memory leak!
+		he::TextureVertex *vertex = new he::TextureVertex(region);
+		he::ui::ImageView *img_vw = new he::ui::ImageView(&img_factory,
+														  vertex,
+														  atlas_.Get()->GetTexture(), f);
+
+		view_->AddSubview(new he::ui::Button(btn_listener_.Get(), img_vw, f, i));
+		pos.y -= 60;
+	}
 }
 
 UITest::~UITest(){
@@ -50,4 +79,7 @@ void UITest::Render(){
 	view_->Render();
 }
 
+void UITest::ButtonHandler(he::ui::Button *sender){
+	he_Trace("btn hit: %d\n",sender->GetTag());
+}
 ///EOF

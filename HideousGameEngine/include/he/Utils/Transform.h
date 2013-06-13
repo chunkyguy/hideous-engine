@@ -12,7 +12,7 @@
 namespace he{
 	class Transform{
 	public:
-		Transform(GLKVector2 position = GLKVector2Make(0,0), float r = 0, GLKVector2 s = GLKVector2Make(1.0,1.0));
+		explicit Transform(GLKVector2 position = GLKVector2Make(0,0), float r = 0, GLKVector2 s = GLKVector2Make(1.0,1.0));
 		Transform(const Transform &other);
 		void operator=(const Transform &other);
 		GLKMatrix4 GetMV() const;

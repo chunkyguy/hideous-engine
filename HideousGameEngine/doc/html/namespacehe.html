@@ -99,6 +99,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
+<tr class="memitem:namespacehe_1_1ui"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehe_1_1ui.html">ui</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacehe_1_1_vertex"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehe_1_1_vertex.html">Vertex</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -169,6 +171,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_texture_atlas_region.html">TextureAtlasRegion</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_texture_data.html">TextureData</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_asset.html">Asset</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_screen.html">Screen</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -258,8 +262,8 @@ Functions</h2></td></tr>
 <tr class="separator:a622c8faac5befdc04fbb36aeb283aea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44a717dd63a24bbcae7c0158924b547d"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehe.html#a44a717dd63a24bbcae7c0158924b547d">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classhe_1_1_gesture.html">Gesture</a> &amp;g)</td></tr>
 <tr class="separator:a44a717dd63a24bbcae7c0158924b547d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe440135d94074ae4c4c760a7bf8db89"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classhe_1_1_texture_vertex.html">TextureVertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehe.html#abe440135d94074ae4c4c760a7bf8db89">CreateTextureData</a> (const <a class="el" href="classhe_1_1_texture_atlas.html">TextureAtlas</a> *atlas, const std::string &amp;image_name, float width=-1.0, float height=-1.0, const bool aspect_correct=true)</td></tr>
-<tr class="separator:abe440135d94074ae4c4c760a7bf8db89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab040de786d83cfc454e00aca3b6c008e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classhe_1_1_texture_vertex.html">TextureVertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehe.html#ab040de786d83cfc454e00aca3b6c008e">CreateTextureData</a> (const <a class="el" href="classhe_1_1_texture_atlas.html">TextureAtlas</a> *atlas, const std::string &amp;image_name, const bool aspect_correct=true, const GLKVector2 size=GLKVector2Make(-1,-1))</td></tr>
+<tr class="separator:ab040de786d83cfc454e00aca3b6c008e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac045d85719d53c8968540eb9a9f36d99"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehe.html#ac045d85719d53c8968540eb9a9f36d99">SetDefaultState</a> ()</td></tr>
 <tr class="separator:ac045d85719d53c8968540eb9a9f36d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5a29ef8e0a46966530c44bb99ea952a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehe.html#aa5a29ef8e0a46966530c44bb99ea952a">ResourcePath</a> (void)</td></tr>
@@ -500,7 +504,7 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="abe440135d94074ae4c4c760a7bf8db89"></a>
+<a class="anchor" id="ab040de786d83cfc454e00aca3b6c008e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -519,20 +523,14 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>width</em> = <code>-1.0</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>height</em> = <code>-1.0</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">const bool&#160;</td>
-          <td class="paramname"><em>aspect_correct</em> = <code>true</code>&#160;</td>
+          <td class="paramname"><em>aspect_correct</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const GLKVector2&#160;</td>
+          <td class="paramname"><em>size</em> = <code>GLKVector2Make(-1,-1)</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -546,7 +544,7 @@ Variables</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">atlas</td><td>The atlas in use. </td></tr>
     <tr><td class="paramname">image_name</td><td>As stored in the atlas. </td></tr>
-    <tr><td class="paramname">width,height</td><td>If not provided, pick the size from atlas data. </td></tr>
+    <tr><td class="paramname">size</td><td>If not provided, pick the size from atlas data. </td></tr>
     <tr><td class="paramname">aspect_correct</td><td>If true adjusts the image width-wise. Only useful, if width, height changes the original aspect ratio. </td></tr>
   </table>
   </dd>
@@ -1197,7 +1195,7 @@ template&lt;typename T &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jun 13 2013 13:25:10 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 13 2013 17:16:56 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

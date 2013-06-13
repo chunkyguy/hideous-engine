@@ -10,10 +10,77 @@
 #define HideousGameEngine_Button_h
 #include <he/UI/View.h>
 
-#include <he/Animation/Animation.h>
+//#include <he/Animation/Animation.h>
 #include <he/EventLoop/Gesture.h>
-#include <he/Utils/Asset.h>
-#include <he/Utils/Transform.h>
+#include <he/Utils/Frame.h>
+
+namespace he {
+	namespace ui{
+		
+		/** Interface of the protocol */
+		class Button;
+		struct IButtonListner{
+			virtual ~IButtonListner(){}
+			virtual void Hit(Button *sender) = 0;
+		};
+		
+		/**	Anon delegate */
+		template<typename T>
+		class ButtonListner : public IButtonListner{
+		public:
+			typedef void(T::*callback)(Button *sender);
+			ButtonListner(T *object, callback callback) :
+			object_(object),
+			method_(callback)
+			{}
+			
+			void Hit(Button *sender){
+				(object_->*method_)(sender);
+			}
+		private:
+			T *object_;
+			callback method_;
+		};
+		
+		
+		class ImageView;
+		class Button : public View{
+		public:
+			Button(IButtonListner *listner, ImageView *img_vw, const Frame frame = Frame(), int tag = -1);
+			~Button();
+			
+			/** Animatiion finish callback.
+			 Called in case an animation is registered.
+			 @warning Don't call explicitly, expected to be called from AnimationLoop.
+			 */
+			//		void AnimationFinish(int animation_id);
+			
+			/** The Gesture event callback.
+			 @warning Don't call explicitly, expected to be called only from the EventLoop.
+			 */
+			void HandleGesture(const Gesture &g);
+			
+			int GetTag() const;
+			
+		private:
+			/** Implementation of the virtual UIComponent::update
+			 */
+			void self_update(float dt);
+			
+			/** Implementation of the virtual UIComponent::render
+			 */
+			void self_render();
+			
+			void self_set_needs_display();
+			
+			int tag_;	/**< tag to identify the object */
+			//unsigned long animation_handle_; /**< animation handle to kill the animation if required */
+			GestureListener<Button> *gesture_listener_; /**< Registered gesture listener */
+			IButtonListner *listner_;	/**< Registered button listener */
+			//		AnimationListener<Button> *animation_listener_; /**< Registered animation listener */
+		};
+	} /*namespace ui*/
+} /*namespace he*/
 
 //namespace he {
 //
@@ -23,8 +90,8 @@
 //	class TextureShader;
 //	class TextureAtlas;
 //	class TextureVertex;
-//	
-//	
+//
+//
 //	namespace ui{
 //
 //		/** Interface of the protocol */
@@ -33,7 +100,7 @@
 //			virtual ~IButtonListner(){}
 //			virtual void Hit(Button *sender) = 0;
 //		};
-//		
+//
 //		/**	Anon delegate */
 //		template<typename T>
 //		class ButtonListner : public IButtonListner{
@@ -43,7 +110,7 @@
 //			object_(object),
 //			method_(callback)
 //			{}
-//			
+//
 //			void Hit(Button *sender){
 //				(object_->*method_)(sender);
 //			}
@@ -52,18 +119,18 @@
 //			callback method_;
 //		};
 //
-//		
+//
 //		/** Create buttons.
 //		 Holds all assets necessary to create a button.
 //		 */
 //		struct ButtonFactory{
 //			ButtonFactory(TextureShader *shdr, TextureAtlas *atls = nullptr, Font *fnt = nullptr);
-//			
+//
 //			Asset<Font> font;
 //			Asset<TextureAtlas> atlas;
 //			Asset<TextureShader> shader;
 //		};
-//		
+//
 //		/** Button
 //		 Can register and event and a callback.
 //		 Can be created with a plain text/font or a image
@@ -85,21 +152,21 @@
 //			 @warning Don't call explicitly, expected to be called from AnimationLoop.
 //			 */
 //			void AnimationFinish(int animation_id);
-//			
+//
 //			/** The Gesture event callback.
 //			 @warning Don't call explicitly, expected to be called only from the EventLoop.
 //			 */
 //			void HandleGesture(const Gesture &g);
-//			
+//
 //		private:
 //			/** Implementation of the virtual UIComponent::update
 //			 */
 //			void update(float dt);
-//			
+//
 //			/** Implementation of the virtual UIComponent::render
 //			 */
 //			void render();
-//			
+//
 //			int tag_;	/**< tag to identify the object */
 //			unsigned long animation_handle_; /**< animation handle to kill the animation if required */
 //			RenderObject *background_; /**< background texture to be rendered, if any */
@@ -112,7 +179,7 @@
 //			Transform original_transform_;	/**< Used in case of animation to cache the original transform value */
 //		};
 //
-//	
+//
 //	} /*namespace ui*/
 //} /*namespace he*/
 

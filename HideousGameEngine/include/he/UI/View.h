@@ -8,7 +8,7 @@
 
 #ifndef HideousGameEngine_View_h
 #define HideousGameEngine_View_h
-#include <he/Utils/Transform.h>
+#include <he/Utils/Frame.h>
 
 namespace he {
 	namespace ui{
@@ -20,7 +20,7 @@ namespace he {
 		 */
 		class View{
 		public:
-			View(const Transform &transform);
+			View(const Frame &frame);
 			virtual ~View();
 			
 			/** Update self. Update all children in draw order */
@@ -31,31 +31,31 @@ namespace he {
 			/** Owns the passed component */
 			void AddSubview(View *view);
 			
-			/** Update transform */
-			void SetTransform(const Transform &transform);
+			/** Update frame */
+			void SetFrame(const Frame &frame);
 			
-			/** Get transform */
-			const Transform &GetTransform() const;
+			/** Get frame */
+			const Frame &GetFrame() const;
 			
 			/** Refresh the UI */
 			void SetNeedsDisplay();
 			
 		private:
 			/** Actual update */
-			virtual void update(float dt);
+			virtual void self_update(float dt);
 
 			/** Actual render */
-			virtual void render();
+			virtual void self_render();
 
 			/** Actual refresh.
 				Update the render_object
 			 */
-			virtual void refresh();
+			virtual void self_set_needs_display();
 			
 			View *add_to_;	/**< Next Submit adds to this node. */
 			View *head_;	/**< The head pointer to the first child UIComponent. Starts drawing from here */
 			View *next_;	/**< Points to the next sibling UIComponent */
-			Transform transform_; /**< The transform of the view */
+			Frame frame_; /**< The frame of the view */
 	};
 	
 } /*namespace ui*/

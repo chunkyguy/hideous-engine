@@ -22,6 +22,10 @@
             <Path>namespacehe.html</Path>
             <Subnodes>
              <Node>
+              <Name>ui</Name>
+              <Path>namespacehe_1_1ui.html</Path>
+             </Node>
+             <Node>
               <Name>Vertex</Name>
               <Path>namespacehe_1_1_vertex.html</Path>
              </Node>
@@ -65,6 +69,100 @@
             <Name>he</Name>
             <Path>namespacehe.html</Path>
             <Subnodes>
+             <Node>
+              <Name>ui</Name>
+              <Path>namespacehe_1_1ui.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>ImageViewFactory</Name>
+                <Path>structhe_1_1ui_1_1_image_view_factory.html</Path>
+                <Subnodes>
+                 <Node>
+                  <Name>ImageViewFactory</Name>
+                  <Path>structhe_1_1ui_1_1_image_view_factory.html</Path>
+                  <Anchor>a99e14454bd14ee9594b29a5e035e79b0</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>atlas</Name>
+                  <Path>structhe_1_1ui_1_1_image_view_factory.html</Path>
+                  <Anchor>a6c473873213c634e894e650f2fbe7aef</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>shader</Name>
+                  <Path>structhe_1_1ui_1_1_image_view_factory.html</Path>
+                  <Anchor>a0adc652d035a504fa158b746325e22ff</Anchor>
+                 </Node>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>ImageView</Name>
+                <Path>classhe_1_1ui_1_1_image_view.html</Path>
+                <Subnodes>
+                 <Node>
+                  <Name>ImageView</Name>
+                  <Path>classhe_1_1ui_1_1_image_view.html</Path>
+                  <Anchor>ab597ee6c050813aac9dc3d15b2056b79</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>ImageView</Name>
+                  <Path>classhe_1_1ui_1_1_image_view.html</Path>
+                  <Anchor>ae0dd8ad1f1f53f3918cb3662dd4dccb8</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>~ImageView</Name>
+                  <Path>classhe_1_1ui_1_1_image_view.html</Path>
+                  <Anchor>a3bd46e542a8e82083156620b90b4182f</Anchor>
+                 </Node>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>View</Name>
+                <Path>classhe_1_1ui_1_1_view.html</Path>
+                <Subnodes>
+                 <Node>
+                  <Name>View</Name>
+                  <Path>classhe_1_1ui_1_1_view.html</Path>
+                  <Anchor>a5042ea42c5457c6c6ae6ab5773f4ee06</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>~View</Name>
+                  <Path>classhe_1_1ui_1_1_view.html</Path>
+                  <Anchor>a197da67bfda9c5f63dbef7901baa04d7</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>AddSubview</Name>
+                  <Path>classhe_1_1ui_1_1_view.html</Path>
+                  <Anchor>ab2ca7a06961f5aa78444b323b964894f</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>GetTransform</Name>
+                  <Path>classhe_1_1ui_1_1_view.html</Path>
+                  <Anchor>a60c1cadf41cd3b23baedbe0625dc8747</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>Render</Name>
+                  <Path>classhe_1_1ui_1_1_view.html</Path>
+                  <Anchor>a80151896f7724464dfc9c9a574a8b95c</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>SetNeedsDisplay</Name>
+                  <Path>classhe_1_1ui_1_1_view.html</Path>
+                  <Anchor>ad77bc9fa9e8c1883e7e7e9e5688db311</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>SetTransform</Name>
+                  <Path>classhe_1_1ui_1_1_view.html</Path>
+                  <Anchor>a4820cce6c3c094afafa5ee82950d6d98</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>Update</Name>
+                  <Path>classhe_1_1ui_1_1_view.html</Path>
+                  <Anchor>a0e097a90cffad730f4e0b8cb251d5cea</Anchor>
+                 </Node>
+                </Subnodes>
+               </Node>
+              </Subnodes>
+             </Node>
              <Node>
               <Name>Vertex</Name>
               <Path>namespacehe_1_1_vertex.html</Path>
@@ -1399,6 +1497,37 @@
               </Subnodes>
              </Node>
              <Node>
+              <Name>Asset</Name>
+              <Path>classhe_1_1_asset.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>Asset</Name>
+                <Path>classhe_1_1_asset.html</Path>
+                <Anchor>a97c00f7fb051f5779c7bb6bd3bc75185</Anchor>
+               </Node>
+               <Node>
+                <Name>~Asset</Name>
+                <Path>classhe_1_1_asset.html</Path>
+                <Anchor>a1b8b0b74fe585c9cf61df431bedf0295</Anchor>
+               </Node>
+               <Node>
+                <Name>Get</Name>
+                <Path>classhe_1_1_asset.html</Path>
+                <Anchor>ae9fe0d7837681fe0ebae279c7276c453</Anchor>
+               </Node>
+               <Node>
+                <Name>Load</Name>
+                <Path>classhe_1_1_asset.html</Path>
+                <Anchor>a2b5451953674bea1d280c329526f1f5c</Anchor>
+               </Node>
+               <Node>
+                <Name>Reload</Name>
+                <Path>classhe_1_1_asset.html</Path>
+                <Anchor>a7898af4430d588ce4a44cee44bba5efb</Anchor>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
               <Name>Screen</Name>
               <Path>classhe_1_1_screen.html</Path>
               <Subnodes>
@@ -1761,7 +1890,7 @@
                <Node>
                 <Name>TextureVertex</Name>
                 <Path>classhe_1_1_texture_vertex.html</Path>
-                <Anchor>a80a67176e945e04b67e6558f336e470b</Anchor>
+                <Anchor>ab519398dbd766ffb0b459a843b334c08</Anchor>
                </Node>
                <Node>
                 <Name>TextureVertex</Name>
@@ -1771,7 +1900,7 @@
                <Node>
                 <Name>TextureVertex</Name>
                 <Path>classhe_1_1_texture_vertex.html</Path>
-                <Anchor>a9aad615e8d70ae13d3baa6b513a0bbd9</Anchor>
+                <Anchor>a8ac5bb2c7ce3ed88133a9b01bcc90dc5</Anchor>
                </Node>
                <Node>
                 <Name>GetRawData</Name>
@@ -1893,6 +2022,18 @@
             <Path>classhe_1_1_animation_loop.html</Path>
            </Node>
            <Node>
+            <Name>he::Asset&lt; T &gt;</Name>
+            <Path>classhe_1_1_asset.html</Path>
+           </Node>
+           <Node>
+            <Name>he::Asset&lt; he::TextureAtlas &gt;</Name>
+            <Path>classhe_1_1_asset.html</Path>
+           </Node>
+           <Node>
+            <Name>he::Asset&lt; he::TextureShader &gt;</Name>
+            <Path>classhe_1_1_asset.html</Path>
+           </Node>
+           <Node>
             <Name>he::BindAttrib</Name>
             <Path>classhe_1_1_bind_attrib.html</Path>
            </Node>
@@ -1951,6 +2092,10 @@
            <Node>
             <Name>he::Text::Glyph</Name>
             <Path>classhe_1_1_text_1_1_glyph.html</Path>
+           </Node>
+           <Node>
+            <Name>he::ui::ImageViewFactory</Name>
+            <Path>structhe_1_1ui_1_1_image_view_factory.html</Path>
            </Node>
            <Node>
             <Name>he::IShader</Name>
@@ -2083,6 +2228,16 @@
            <Node>
             <Name>he::Vertex::V4</Name>
             <Path>structhe_1_1_vertex_1_1_v4.html</Path>
+           </Node>
+           <Node>
+            <Name>he::ui::View</Name>
+            <Path>classhe_1_1ui_1_1_view.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>he::ui::ImageView</Name>
+              <Path>classhe_1_1ui_1_1_image_view.html</Path>
+             </Node>
+            </Subnodes>
            </Node>
           </Subnodes>
          </Node>
@@ -3802,7 +3957,7 @@
                      <Node>
                       <Name>CreateTextureData</Name>
                       <Path>_texture_atlas_8h.html</Path>
-                      <Anchor>abe440135d94074ae4c4c760a7bf8db89</Anchor>
+                      <Anchor>ab040de786d83cfc454e00aca3b6c008e</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>
@@ -3982,9 +4137,156 @@
                   </Subnodes>
                  </Node>
                  <Node>
+                  <Name>UI</Name>
+                  <Path>dir_1c04685fab622d9b7aab9620915b0b46.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>Button.h</Name>
+                    <Path>_button_8h.html</Path>
+                   </Node>
+                   <Node>
+                    <Name>ImageView.h</Name>
+                    <Path>_image_view_8h.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>ImageViewFactory</Name>
+                      <Path>structhe_1_1ui_1_1_image_view_factory.html</Path>
+                      <Subnodes>
+                       <Node>
+                        <Name>ImageViewFactory</Name>
+                        <Path>structhe_1_1ui_1_1_image_view_factory.html</Path>
+                        <Anchor>a99e14454bd14ee9594b29a5e035e79b0</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>atlas</Name>
+                        <Path>structhe_1_1ui_1_1_image_view_factory.html</Path>
+                        <Anchor>a6c473873213c634e894e650f2fbe7aef</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>shader</Name>
+                        <Path>structhe_1_1ui_1_1_image_view_factory.html</Path>
+                        <Anchor>a0adc652d035a504fa158b746325e22ff</Anchor>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>ImageView</Name>
+                      <Path>classhe_1_1ui_1_1_image_view.html</Path>
+                      <Subnodes>
+                       <Node>
+                        <Name>ImageView</Name>
+                        <Path>classhe_1_1ui_1_1_image_view.html</Path>
+                        <Anchor>ab597ee6c050813aac9dc3d15b2056b79</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>ImageView</Name>
+                        <Path>classhe_1_1ui_1_1_image_view.html</Path>
+                        <Anchor>ae0dd8ad1f1f53f3918cb3662dd4dccb8</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>~ImageView</Name>
+                        <Path>classhe_1_1ui_1_1_image_view.html</Path>
+                        <Anchor>a3bd46e542a8e82083156620b90b4182f</Anchor>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                   <Node>
+                    <Name>View.h</Name>
+                    <Path>_view_8h.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>View</Name>
+                      <Path>classhe_1_1ui_1_1_view.html</Path>
+                      <Subnodes>
+                       <Node>
+                        <Name>View</Name>
+                        <Path>classhe_1_1ui_1_1_view.html</Path>
+                        <Anchor>a5042ea42c5457c6c6ae6ab5773f4ee06</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>~View</Name>
+                        <Path>classhe_1_1ui_1_1_view.html</Path>
+                        <Anchor>a197da67bfda9c5f63dbef7901baa04d7</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>AddSubview</Name>
+                        <Path>classhe_1_1ui_1_1_view.html</Path>
+                        <Anchor>ab2ca7a06961f5aa78444b323b964894f</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>GetTransform</Name>
+                        <Path>classhe_1_1ui_1_1_view.html</Path>
+                        <Anchor>a60c1cadf41cd3b23baedbe0625dc8747</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>Render</Name>
+                        <Path>classhe_1_1ui_1_1_view.html</Path>
+                        <Anchor>a80151896f7724464dfc9c9a574a8b95c</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>SetNeedsDisplay</Name>
+                        <Path>classhe_1_1ui_1_1_view.html</Path>
+                        <Anchor>ad77bc9fa9e8c1883e7e7e9e5688db311</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>SetTransform</Name>
+                        <Path>classhe_1_1ui_1_1_view.html</Path>
+                        <Anchor>a4820cce6c3c094afafa5ee82950d6d98</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>Update</Name>
+                        <Path>classhe_1_1ui_1_1_view.html</Path>
+                        <Anchor>a0e097a90cffad730f4e0b8cb251d5cea</Anchor>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
                   <Name>Utils</Name>
                   <Path>dir_453d3e8078d99ef902e0ba0cfaeef30e.html</Path>
                   <Subnodes>
+                   <Node>
+                    <Name>Asset.h</Name>
+                    <Path>_asset_8h.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>Asset</Name>
+                      <Path>classhe_1_1_asset.html</Path>
+                      <Subnodes>
+                       <Node>
+                        <Name>Asset</Name>
+                        <Path>classhe_1_1_asset.html</Path>
+                        <Anchor>a97c00f7fb051f5779c7bb6bd3bc75185</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>~Asset</Name>
+                        <Path>classhe_1_1_asset.html</Path>
+                        <Anchor>a1b8b0b74fe585c9cf61df431bedf0295</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>Get</Name>
+                        <Path>classhe_1_1_asset.html</Path>
+                        <Anchor>ae9fe0d7837681fe0ebae279c7276c453</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>Load</Name>
+                        <Path>classhe_1_1_asset.html</Path>
+                        <Anchor>a2b5451953674bea1d280c329526f1f5c</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>Reload</Name>
+                        <Path>classhe_1_1_asset.html</Path>
+                        <Anchor>a7898af4430d588ce4a44cee44bba5efb</Anchor>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                    </Subnodes>
+                   </Node>
                    <Node>
                     <Name>DebugHelper.h</Name>
                     <Path>_debug_helper_8h.html</Path>
@@ -4616,7 +4918,7 @@
                        <Node>
                         <Name>TextureVertex</Name>
                         <Path>classhe_1_1_texture_vertex.html</Path>
-                        <Anchor>a80a67176e945e04b67e6558f336e470b</Anchor>
+                        <Anchor>ab519398dbd766ffb0b459a843b334c08</Anchor>
                        </Node>
                        <Node>
                         <Name>TextureVertex</Name>
@@ -4626,7 +4928,7 @@
                        <Node>
                         <Name>TextureVertex</Name>
                         <Path>classhe_1_1_texture_vertex.html</Path>
-                        <Anchor>a9aad615e8d70ae13d3baa6b513a0bbd9</Anchor>
+                        <Anchor>a8ac5bb2c7ce3ed88133a9b01bcc90dc5</Anchor>
                        </Node>
                        <Node>
                         <Name>GetRawData</Name>

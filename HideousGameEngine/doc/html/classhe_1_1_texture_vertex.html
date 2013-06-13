@@ -112,12 +112,12 @@ Inheritance diagram for he::TextureVertex:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a086f9b20fff0b45d0424c20a51b17aa2"><td class="memItemLeft" align="right" valign="top">const GLfloat *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_texture_vertex.html#a086f9b20fff0b45d0424c20a51b17aa2">GetRawData</a> (const <a class="el" href="classhe_1_1_i_vertex.html#ab6d3131e5b1346470cc257469be2645c">IVertex::DataType</a> dt) const </td></tr>
 <tr class="separator:a086f9b20fff0b45d0424c20a51b17aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80a67176e945e04b67e6558f336e470b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_texture_vertex.html#a80a67176e945e04b67e6558f336e470b">TextureVertex</a> (float width, float height, bool aspect_lock=true, GLKVector4 texture_coords=GLKVector4Make(0, 0, 1, 1))</td></tr>
-<tr class="separator:a80a67176e945e04b67e6558f336e470b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab519398dbd766ffb0b459a843b334c08"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_texture_vertex.html#ab519398dbd766ffb0b459a843b334c08">TextureVertex</a> (const GLKVector2 &amp;size, const bool aspect_lock=true, const GLKVector4 texture_coords=GLKVector4Make(0, 0, 1, 1))</td></tr>
+<tr class="separator:ab519398dbd766ffb0b459a843b334c08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a473b03796084a1369c7f86a55c0a27ee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_texture_vertex.html#a473b03796084a1369c7f86a55c0a27ee">TextureVertex</a> (const <a class="el" href="structhe_1_1_vertex_1_1_v2.html">Vertex::V2</a> &amp;position_data, const <a class="el" href="structhe_1_1_vertex_1_1_v2.html">Vertex::V2</a> &amp;texture_data)</td></tr>
 <tr class="separator:a473b03796084a1369c7f86a55c0a27ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9aad615e8d70ae13d3baa6b513a0bbd9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_texture_vertex.html#a9aad615e8d70ae13d3baa6b513a0bbd9">TextureVertex</a> (const <a class="el" href="classhe_1_1_texture_atlas_region.html">TextureAtlasRegion</a> *region, float width=-1, float height=-1, const bool aspect_lock=true)</td></tr>
-<tr class="separator:a9aad615e8d70ae13d3baa6b513a0bbd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ac5bb2c7ce3ed88133a9b01bcc90dc5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_texture_vertex.html#a8ac5bb2c7ce3ed88133a9b01bcc90dc5">TextureVertex</a> (const <a class="el" href="classhe_1_1_texture_atlas_region.html">TextureAtlasRegion</a> *region, const bool aspect_lock=false, GLKVector2 size=GLKVector2Make(-1,-1))</td></tr>
+<tr class="separator:a8ac5bb2c7ce3ed88133a9b01bcc90dc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a194d0ae9afec67b530d1a72ca2e1f408"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structhe_1_1_vertex_1_1_v2.html">Vertex::V2</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_texture_vertex.html#a194d0ae9afec67b530d1a72ca2e1f408">GetVertexPositionData</a> () const </td></tr>
 <tr class="separator:a194d0ae9afec67b530d1a72ca2e1f408"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b10d95c557e76921b43646e6041a28c"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structhe_1_1_vertex_1_1_v2.html">Vertex::V2</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_texture_vertex.html#a9b10d95c557e76921b43646e6041a28c">GetVertexTextureData</a> () const </td></tr>
@@ -141,33 +141,29 @@ Additional Inherited Members</h2></td></tr>
  }</td></tr>
 <tr class="separator:ab6d3131e5b1346470cc257469be2645c inherit pub_types_classhe_1_1_i_vertex"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a80a67176e945e04b67e6558f336e470b"></a>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>VertexData for a texture. Possible use is while generating vertex-data from an <a class="el" href="classhe_1_1_texture_atlas.html">TextureAtlas</a>, or directly by providing texture coordinates. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ab519398dbd766ffb0b459a843b334c08"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">he::TextureVertex::TextureVertex </td>
           <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>width</em>, </td>
+          <td class="paramtype">const GLKVector2 &amp;&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>height</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
+          <td class="paramtype">const bool&#160;</td>
           <td class="paramname"><em>aspect_lock</em> = <code>true</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">GLKVector4&#160;</td>
+          <td class="paramtype">const GLKVector4&#160;</td>
           <td class="paramname"><em>texture_coords</em> = <code>GLKVector4Make(0,&#160;0,&#160;1,&#160;1)</code>&#160;</td>
         </tr>
         <tr>
@@ -177,6 +173,15 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Create vertex data for explicitly provided values. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>The height width of the texture </td></tr>
+    <tr><td class="paramname">aspect_lock</td><td>Aspect lock is applicable for disproportioned texCoords not posCoords </td></tr>
+    <tr><td class="paramname">texture_coords</td><td>The texture coordinates. By default {0,0,1,1} </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -203,10 +208,18 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Create <a class="el" href="namespacehe_1_1_vertex.html">Vertex</a> data from position and texture data </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position_data</td><td>The position data. </td></tr>
+    <tr><td class="paramname">texture_data</td><td>The texture data. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a class="anchor" id="a9aad615e8d70ae13d3baa6b513a0bbd9"></a>
+<a class="anchor" id="a8ac5bb2c7ce3ed88133a9b01bcc90dc5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -219,20 +232,14 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>width</em> = <code>-1</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>height</em> = <code>-1</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">const bool&#160;</td>
-          <td class="paramname"><em>aspect_lock</em> = <code>true</code>&#160;</td>
+          <td class="paramname"><em>aspect_lock</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLKVector2&#160;</td>
+          <td class="paramname"><em>size</em> = <code>GLKVector2Make(-1,-1)</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -241,6 +248,15 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<pre class="fragment">Create Vertex data from a TextureAtlas.
+</pre> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">region</td><td>The region as calculated from a <a class="el" href="classhe_1_1_texture_atlas.html">TextureAtlas</a>. </td></tr>
+    <tr><td class="paramname">aspect_lock</td><td>Turn on lock to explicitly provide the width and height. </td></tr>
+    <tr><td class="paramname">size</td><td>If not provided, picked from the size from atlas data. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -266,6 +282,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Returns raw data. Expected to be used in a shader. Impl the virtual method of <a class="el" href="classhe_1_1_i_vertex.html">IVertex</a> </p>
 
 <p>Reimplemented from <a class="el" href="classhe_1_1_i_vertex.html#a2001617f3ae58c3ac5ea6173f5ce584f">he::IVertex</a>.</p>
 
@@ -283,6 +300,7 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Get <a class="el" href="namespacehe_1_1_vertex.html">Vertex</a> data </p>
 
 </div>
 </div>
@@ -298,6 +316,7 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Get <a class="el" href="classhe_1_1_texture.html">Texture</a> data </p>
 
 </div>
 </div>
@@ -307,7 +326,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jun 13 2013 13:25:10 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 13 2013 17:16:56 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

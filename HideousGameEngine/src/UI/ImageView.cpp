@@ -20,19 +20,19 @@ namespace he {
 		///////////////////////////////////////////////////////////////////////////////////////////////////
 		// MARK: ImageView
 		///////////////////////////////////////////////////////////////////////////////////////////////////
-		ImageView::ImageView(const ImageViewFactory *factory, const TextureVertex *vertex, const Texture *texture, const Transform transform) :
-		View(transform),
+		ImageView::ImageView(const ImageViewFactory *factory, const TextureVertex *vertex, const Texture *texture, const Frame frame) :
+		View(frame),
 		vertex_(nullptr)
 		{
-			render_object_ = new RenderObject(const_cast<TextureVertex *>(vertex), factory->shader.Get(), const_cast<Texture *>(texture), transform.GetMVP());
+			render_object_ = new RenderObject(const_cast<TextureVertex *>(vertex), factory->shader.Get(), const_cast<Texture *>(texture), GetFrame().GetTransform().GetMVP());
 		}
 
-		ImageView::ImageView(const ImageViewFactory *factory, const std::string &image_name, const Transform transform) :
-		View(transform)
+		ImageView::ImageView(const ImageViewFactory *factory, const std::string &image_name, const Frame frame) :
+		View(frame)
 		{
 			const TextureAtlasRegion *region = factory->atlas.Get()->GetTextureAtlasRegion(image_name);
 			vertex_ = new TextureVertex(region);
-			render_object_ = new RenderObject(vertex_, factory->shader.Get(), factory->atlas.Get()->GetTexture(), transform.GetMVP());
+			render_object_ = new RenderObject(vertex_, factory->shader.Get(), factory->atlas.Get()->GetTexture(), frame.GetTransform().GetMVP());
 		}
 		
 		ImageView::~ImageView(){
@@ -42,15 +42,15 @@ namespace he {
 			delete render_object_;
 		}
 		
-		void ImageView::update(float dt){			
+		void ImageView::self_update(float dt){
 		}
 		
-		void ImageView::render(){
+		void ImageView::self_render(){
 			render_object_->Render();
 		}
 		
-		void ImageView::refresh(){
-			render_object_->SetMVP(GetTransform().GetMVP());
+		void ImageView::self_set_needs_display(){
+			render_object_->SetMVP(GetFrame().GetTransform().GetMVP());
 		}
 		
 		///////////////////////////////////////////////////////////////////////////////////////////////////

@@ -10,11 +10,11 @@
 
 namespace he {
 	namespace ui{
-		View::View(const Transform &transform) :
+		View::View(const Frame &frame) :
 		add_to_(nullptr),
 		head_(nullptr),
 		next_(nullptr),
-		transform_(transform)
+		frame_(frame)
 		{}
 		
 		View::~View(){
@@ -33,20 +33,20 @@ namespace he {
 		}
 		
 		void View::Update(float dt){
-			update(dt);
+			self_update(dt);
 			for(View *p = head_; p; p = p->next_){
 				p->Update(dt);
 			}
 		}
-		void View::update(float dt){}
+		void View::self_update(float dt){}
 		
 		void View::Render(){
-			render();
+			self_render();
 			for(View *p = head_; p; p = p->next_){
 				p->Render();
 			}
 		}
-		void View::render(){}
+		void View::self_render(){}
 		
 		/** Owns the passed component */
 		void View::AddSubview(View *view){
@@ -58,21 +58,21 @@ namespace he {
 			}
 		}
 		
-		void View::SetTransform(const he::Transform &transform){
-			transform_ = transform;
+		void View::SetFrame(const he::Frame &frame){
+			frame_ = frame;
 		}
 		
-		const Transform &View::GetTransform() const{
-			return transform_;
+		const Frame &View::GetFrame() const{
+			return frame_;
 		}
 		
 		void View::SetNeedsDisplay(){
-			refresh();
+			self_set_needs_display();
 			for(View *p = head_; p; p = p->next_){
-				p->refresh();
+				p->SetNeedsDisplay();
 			}
 		}
-		void View::refresh(){}
+		void View::self_set_needs_display(){}
 		
 	} /*namespace ui*/
 } /*namespace he*/

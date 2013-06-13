@@ -50,10 +50,12 @@ TextureBigBangTest::TextureBigBangTest(float w, float h){
 
 void TextureBigBangTest::load(GLKVector2 at){
 	FILE_LOG(logDEBUG) << "load";
+	he::Transform trans;
+	trans.SetPosition(at);
 	squares_ = new TexturedSprite *[kTotal_tex_sprites];
 	for(int i = 0; i < kTotal_tex_sprites; i++){
 		squares_[i] = new TexturedSprite;
-		squares_[i]->Init(i, sprite_, at);
+		squares_[i]->Init(i, sprite_, trans);
 	}
 	state_ = kRunning;
 	delay_ = 0.0;

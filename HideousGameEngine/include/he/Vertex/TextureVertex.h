@@ -29,7 +29,7 @@ namespace he{
 		const GLfloat *GetRawData(const IVertex::DataType dt) const;
 		
 		/** Create vertex data for explicitly provided values.
-		 @param width, height The height width of the texture
+		 @param size The height width of the texture
 		 @param aspect_lock Aspect lock is applicable for disproportioned texCoords not posCoords
 		 @param texture_coords The texture coordinates. By default {0,0,1,1}
 		 */
@@ -44,7 +44,7 @@ namespace he{
 		/** Create Vertex data from a TextureAtlas.
 		@param region The region as calculated from a TextureAtlas.
 		 @param aspect_lock Turn on lock to explicitly provide the width and height.
-		 @param width, height If not provided, picked from the size from atlas data.
+		 @param size If not provided, picked from the size from atlas data.
 		 */
 		TextureVertex(const TextureAtlasRegion *region, const bool aspect_lock = false, GLKVector2 size = GLKVector2Make(-1, -1));
 

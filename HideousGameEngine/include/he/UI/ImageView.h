@@ -12,7 +12,7 @@
 
 #include <he/UI/View.h>
 
-#include <he/Utils/Transform.h>
+#include <he/Utils/Frame.h>
 #include <he/Utils/Asset.h>
 
 namespace he {
@@ -37,17 +37,17 @@ namespace he {
 		class ImageView : public View{
 		public:
 			/** ImageView from texture */
-			ImageView(const ImageViewFactory *factory, const he::TextureVertex *vertex, const he::Texture *texture, const Transform transform = Transform());
+			ImageView(const ImageViewFactory *factory, const he::TextureVertex *vertex, const he::Texture *texture, const Frame frame = Frame());
 
 			/** ImageView from atlas */
-			ImageView(const ImageViewFactory *factory, const std::string &image_name, const Transform transform = Transform());
+			ImageView(const ImageViewFactory *factory, const std::string &image_name, const Frame frane = Frame());
 			
 			~ImageView();
 			
 		private:
-			void update(float dt);
-			void render();
-			void refresh();
+			void self_update(float dt);
+			void self_render();
+			void self_set_needs_display();
 			
 			RenderObject *render_object_;
 			TextureVertex *vertex_;

@@ -11,6 +11,7 @@
 #include <he/Font/Font.h>
 #include <he/RenderObject/RenderObject.h>
 #include <he/Utils/DebugLog.h>
+#include <he/Utils/Transform.h>
 #include <he/Utils/Utils.h>
 
 MultiFontTest::~MultiFontTest(){
@@ -71,10 +72,12 @@ void MultiFontTest::load_text(){
 	courier_ = new he::Font("Courier New.ttf", 32);
 	simsun_ = new he::Font("SimSun.ttf", 32);
 	
-	whacky_ = new he::Text("Whacky", GLKVector2Make(-100, 100),  GLKVector4Make(0.0, 0.0, 0.0, 1.0));
+	he::Transform trans;
+	trans.SetPosition(GLKVector2Make(-100, 100));
+	whacky_ = new he::Text("Whacky", trans,  GLKVector4Make(0.0, 0.0, 0.0, 1.0));
 	courier_->LoadText(whacky_);
 	
-	labs_ = new he::Text("Labs", GLKVector2Make(-100, -100), GLKVector4Make(0.0,0.0,0.0,1.0));
+	labs_ = new he::Text("Labs", trans, GLKVector4Make(0.0,0.0,0.0,1.0));
 	simsun_->LoadText(labs_);
 }
 

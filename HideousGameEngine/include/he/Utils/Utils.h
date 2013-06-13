@@ -59,7 +59,7 @@ namespace he{
 	 @param name The symbol name.
 	 @param frame_number The frame-number added at the end.
 	 */
-	std::string FlashFullName(const std::string &name, const int frame_number);
+	std::string FlashFullName(const std::string &name, const int frame_number = 0);
 	
 	class FileBuffer{
 	public:

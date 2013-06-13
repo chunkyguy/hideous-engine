@@ -67,7 +67,7 @@ namespace he{
 	 */
 	TextureVertex *CreateTextureData(const TextureAtlas *atlas,
 									 const std::string &image_name,
-									 const bool aspect_correct = true,
+									 const bool aspect_correct = false,
 									 const GLKVector2 size = GLKVector2Make(-1, -1));
 
 } /*namespace he*/
