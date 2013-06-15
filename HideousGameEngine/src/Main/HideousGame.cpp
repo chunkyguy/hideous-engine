@@ -17,12 +17,14 @@
 
 namespace he {
 	
-	Game::Game(GLKVector3 clear_color) :
-	clear_color_(clear_color)
-	{
+	void Game::Init(const GLKVector3 &clear_color, const GLKVector2 &window_size)	{
+		clear_color_ = clear_color;
+
+		g_Screen = new Screen(window_size.x, window_size.y);
 		g_EventLoop = new EventLoop;
 		g_AnimationLoop = new AnimationLoop;
 		
+		init();
 		he_Trace("he::Game: loaded");
 	}
 	
@@ -30,13 +32,9 @@ namespace he {
 		delete g_Screen;
 		delete g_EventLoop;
 		delete g_AnimationLoop;
-		he_Trace("he::Game: unloaded");
+		he_Trace("he::Game: unloaded\n");
 	}
-	
-	void Game::Init(const GLKVector2 &window_size){
-		g_Screen = new Screen(window_size.x, window_size.y);
-	}
-	
+		
 	void Game::Update(float dt){
 		// power the animation loop
 		he::g_AnimationLoop->Update(dt);
@@ -55,20 +53,20 @@ namespace he {
 	}
 	
 	
-	GameAllocator::GameAllocator(GLKVector3 clear_color) :
+	GameConfig::GameConfig(GLKVector3 clear_color) :
 	clear_color_(clear_color),
 	game_(nullptr)
 	{}
 	
-	GameAllocator::~GameAllocator(){
+	GameConfig::~GameConfig(){
 		if(game_){
 			delete game_;
 		}
 	}
 	
-	Game* GameAllocator::Allocate(const GLKVector2 &window_size){
-		game_ = allocate(clear_color_);
-		game_->Init(window_size);
+	Game* GameConfig::CreateGame(const GLKVector2 &window_size){
+		game_ = alloc_game();
+		game_->Init(clear_color_, window_size);
 		return game_;
 	}
 }

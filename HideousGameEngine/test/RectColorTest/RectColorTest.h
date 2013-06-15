@@ -23,13 +23,14 @@ namespace he{
 class RectColorTest : public he::Game{
 public:
 	~RectColorTest();
-	RectColorTest(GLKVector3 cc);
+	RectColorTest();
 	void HandleGesture(const he::Gesture &gesture);
 	
 private:
-	void update(float dt);
-	void render();
-
+	virtual void init();
+	virtual void update(float dt);
+	virtual void render();
+	
 	const int kTotal_squares = 3;
 	
 	void load_squares();

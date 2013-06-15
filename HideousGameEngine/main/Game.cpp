@@ -35,48 +35,48 @@
 //#define TEST_TEXTURE_BIG_BANG
 //#define TEST_GESTURE
 //#define TEST_PARTICLES
-#define TEST_UI
+//#define TEST_UI
 //#define TEST_SPINE
-//#define TEST_FLASH
+#define TEST_FLASH
 
 template <typename T>
-T* CreateGameInstance(GLKVector3 clear_color){
-	return new T(clear_color);
+T* AllocGameInstance(){
+	return new T();
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 // MARK: GameAllocator
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-GameAllocator::GameAllocator(GLKVector3 clear_color) :
-he::GameAllocator(clear_color)
+GameConfig::GameConfig(GLKVector3 config) :
+he::GameConfig(config)
 {}
 
-he::Game* GameAllocator::allocate(const GLKVector3 &clear_color){
+he::Game* GameConfig::alloc_game(){
 	
 #if defined(TEST_RECT_COLOR)
-	return CreateGameInstance<RectColorTest>(clear_color);
+	return AllocGameInstance<RectColorTest>();
 #elif defined(TEST_RECT_TEXTURE)
-	return CreateGameInstance<RectTextureTest>(clear_color);
+	return AllocGameInstance<RectTextureTest>();
 #elif defined(TEST_RECT_TEXT)
-	return CreateGameInstance<RectTextTest>(clear_color);
+	return AllocGameInstance<RectTextTest>();
 #elif defined(TEST_MULTI_SHADERS)
-	return CreateGameInstance<MultiShadersTest>(clear_color);
+	return AllocGameInstance<MultiShadersTest>();
 #elif defined(TEST_MULTI_FONT)
-	return MakeTest<MultiFontTest>(clear_color);
+	return AllocGameInstance<MultiFontTest>();
 #elif defined(TEST_ANIMATION)
-	return CreateGameInstance<AnimationTest>(clear_color);
+	return AllocGameInstance<AnimationTest>();
 #elif defined(TEST_TEXTURE_BIG_BANG)
-	return CreateGameInstance<TextureBigBangTest>(clear_color);
+	return AllocGameInstance<TextureBigBangTest>();
 #elif defined(TEST_GESTURE)
-	return CreateGameInstance<GestureTest>(clear_color);
+	return AllocGameInstance<GestureTest>();
 #elif defined(TEST_UI)
-	return CreateGameInstance<UITest>(clear_color);
+	return AllocGameInstance<UITest>();
 #elif defined(TEST_PARTICLES)
-	return CreateGameInstance<ParticleTest>(clear_color);
+	return AllocGameInstance<ParticleTest>();
 #elif defined(TEST_SPINE)
-	return CreateGameInstance<SpineTest>(clear_color);
+	return AllocGameInstance<SpineTest>();
 #elif defined(TEST_FLASH)
-	return CreateGameInstance<FlashTest>(clear_color);
+	return AllocGameInstance<FlashTest>();
 #endif
 	
 }

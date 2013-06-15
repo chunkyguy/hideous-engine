@@ -26,12 +26,14 @@ const int kShaders = 4;
 class MultiShadersTest : public he::Game{
 public:
 	~MultiShadersTest();
-	MultiShadersTest(GLKVector3 cc);
+	MultiShadersTest();
 	void HandleGesture(const he::Gesture &gesture);
 	
 private:
-	void update(float dt);
-	void render();
+	virtual void init();
+	virtual void update(float dt);
+	virtual void render();
+	
 	void load_objects();
 	void unload_objects();
 

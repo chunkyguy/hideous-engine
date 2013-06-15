@@ -20,12 +20,14 @@ namespace he{
 class RectTextTest : public he::Game{
 public:
 	~RectTextTest();
-	RectTextTest(GLKVector3 cc);
+	RectTextTest();
 	void HandleGesture(const he::Gesture &gesture);
 	
 private:
-	void update(float dt);
-	void render();
+	virtual void init();
+	virtual void update(float dt);
+	virtual void render();
+	
 	void load_text();
 	void unload_text();
 

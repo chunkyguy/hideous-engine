@@ -51,10 +51,11 @@ namespace {
 	}
 }
 
-GestureTest::GestureTest(GLKVector3 cc) :
-he::Game(cc),
+GestureTest::GestureTest() :
 gesture_listner_(nullptr)
-{
+{}
+
+void GestureTest::init(){
 	//random
 	srand(time(NULL));
 	

@@ -31,7 +31,7 @@
 
 
 GTEST_API_ int GTests(int argc, char **argv) {
-  he_Trace("Running main() from gtest_main.cc\n");
+  he_Trace("Running unit tests\n");
   testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();
 }

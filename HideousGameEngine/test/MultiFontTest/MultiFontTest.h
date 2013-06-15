@@ -20,12 +20,13 @@ namespace he{
 class MultiFontTest : public he::Game{
 public:
 	~MultiFontTest();
-	MultiFontTest(GLKVector3 cc);
+	MultiFontTest();
 	void HandleGesture(const he::Gesture &gesture);
 	
 private:
-	void update(float dt);
-	void render();
+	virtual void init();
+	virtual void update(float dt);
+	virtual void render();
 
 	he::Font *courier_;
 	he::Font *simsun_;

@@ -31,8 +31,7 @@ MultiShadersTest::~MultiShadersTest(){
 	delete gesture_listner_;
 }
 
-MultiShadersTest::MultiShadersTest(GLKVector3 cc) :
-he::Game(cc),
+MultiShadersTest::MultiShadersTest() :
 color_object_(nullptr),
 factory_(nullptr),
 gesture_listner_(nullptr),
@@ -43,7 +42,9 @@ particle_shader_(nullptr),
 particle_texture_(nullptr),
 particles_(nullptr),
 environment_(nullptr)
-{
+{}
+
+void MultiShadersTest::init(){
 
 	//debugger
 	const std::string loglevel("DEBUG1");

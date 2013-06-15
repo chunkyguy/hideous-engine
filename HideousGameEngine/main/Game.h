@@ -10,12 +10,11 @@
 #define __HideousGameEngine__Game__
 #include <he/Main/HideousGame.h>
 
-class GameAllocator : public he::GameAllocator{
+class GameConfig : public he::GameConfig{	
 public:
-	explicit GameAllocator(GLKVector3 clear_color);
-	
+	explicit GameConfig(GLKVector3 config);
 private:
-	he::Game* allocate(const GLKVector3 &clear_color);
+	virtual he::Game* alloc_game();
 };
 
 #endif /* defined(__HideousGameEngine__Game__) */

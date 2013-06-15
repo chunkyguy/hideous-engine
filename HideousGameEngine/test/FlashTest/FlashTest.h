@@ -18,13 +18,14 @@ class FlashMovieAssets;
 
 class FlashTest : public he::Game {
 public:
-	FlashTest(GLKVector3 clear_color = GLKVector3Make(0.5f, 0.5f, 0.5f));
+	FlashTest();
 	~FlashTest();
 	void HandleGesture(const he::Gesture &gesture);
 	
 private:
-	void update(float dt);
-	void render();
+	virtual void init();
+	virtual void update(float dt);
+	virtual void render();
 	
 	FlashMovie *movie_;
 	FlashMovieAssets *assets_;

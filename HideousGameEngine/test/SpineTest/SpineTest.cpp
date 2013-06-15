@@ -39,14 +39,15 @@ SpineTest::~SpineTest(){
 	delete gesture_listener_;
 }
 
-SpineTest::SpineTest(GLKVector3 cc) :
-he::Game(cc),
+SpineTest::SpineTest() :
 animation_index_(0),
 atlas_(nullptr),
 drawable_(nullptr),
 gesture_listener_(nullptr),
 skeletonData_(nullptr)
-{
+{}
+
+void SpineTest::init(){
 	const std::string loglevel("DEBUG1");
 	FILELog::ReportingLevel() = FILELog::FromString(loglevel);
 	FILE_LOG(logDEBUG) << "Logging Enabled: SpineTest: " << loglevel << std::endl;

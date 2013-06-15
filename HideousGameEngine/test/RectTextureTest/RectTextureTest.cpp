@@ -23,10 +23,11 @@ RectTextureTest::~RectTextureTest(){
 	delete gesture_listener_;
 }
 
-RectTextureTest::RectTextureTest(GLKVector3 cc):
-he::Game(cc),
+RectTextureTest::RectTextureTest():
 atlas_(0)
-{
+{}
+
+void RectTextureTest::init(){
 	//debugger
 	const std::string loglevel("DEBUG1");
 	FILELog::ReportingLevel() = FILELog::FromString(loglevel);

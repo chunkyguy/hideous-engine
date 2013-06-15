@@ -34,14 +34,15 @@ ParticleTest::~ParticleTest(){
 	delete gesture_listner_;
 }
 
-ParticleTest::ParticleTest(GLKVector3 cc) :
-he::Game(cc),
-shader_(new he::ParticleShader),
-texture_(new he::Texture(he::ResourcePath() + "snow_particle.png")),
+ParticleTest::ParticleTest() :
+shader_(nullptr),
+texture_(nullptr),
 environment_(nullptr),
 particles_(nullptr),
 gesture_listner_(nullptr)
-{
+{}
+
+void ParticleTest::init(){
 	//debugger
 	const std::string loglevel("DEBUG1");
 	FILELog::ReportingLevel() = FILELog::FromString(loglevel);
@@ -50,6 +51,8 @@ gesture_listner_(nullptr)
 	//random
 	srand(time(NULL));
 	
+	shader_ = new he::ParticleShader;
+	texture_ = new he::Texture(he::ResourcePath() + "snow_particle.png");
 	gesture_listner_ = new he::GestureListener<ParticleTest>(this, &ParticleTest::HandleGesture);
 	he::g_EventLoop->AddListener(gesture_listner_);
 	

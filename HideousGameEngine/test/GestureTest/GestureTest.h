@@ -17,13 +17,14 @@
 
 class GestureTest : public he::Game{
 public:
-	GestureTest(GLKVector3 cc);
+	GestureTest();
 	~GestureTest();
 	void HandleGesture(const he::Gesture &gesture);
 	
 private:	
-	void update(float dt);
-	void render();
+	virtual void init();
+	virtual void update(float dt);
+	virtual void render();
 
 	GObj *obj_;
 	he::GestureListener<GestureTest> *gesture_listner_;

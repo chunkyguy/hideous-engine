@@ -23,14 +23,14 @@ AnimationTest::~AnimationTest(){
 	delete gesture_listner_;
 }
 
-AnimationTest::AnimationTest(GLKVector3 cc) :
-he::Game(cc),
+AnimationTest::AnimationTest() :
 kObjects_(2),
 objects_(nullptr),
 active_object_(-1),
 gesture_listner_(nullptr)
-{
-	
+{}
+
+void AnimationTest::init(){
 	//debugger
 	const std::string loglevel("DEBUG1");
 	FILELog::ReportingLevel() = FILELog::FromString(loglevel);

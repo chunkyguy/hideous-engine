@@ -31,12 +31,14 @@ namespace he{
 class RectTextureTest : public he::Game{
 public:
 	~RectTextureTest();
-	RectTextureTest(GLKVector3 cc);
+	RectTextureTest();
 	void HandleGesture(const he::Gesture &gesture);
 	
 private:
-	void update(float dt);
-	void render();
+	virtual void init();
+	virtual void update(float dt);
+	virtual void render();
+
 	void load_textures();
 	void unload_textures();
 	

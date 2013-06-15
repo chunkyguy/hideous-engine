@@ -18,8 +18,9 @@
 
 #include "FlashMovie.h"
 
-FlashTest::FlashTest(GLKVector3 clear_color) :
-he::Game(clear_color){
+FlashTest::FlashTest() {}
+
+void FlashTest::init(){
 	// load
 	std::string data_path(he::ResourcePath() + "fishmotion.xml");
 	std::string img_path(he::ResourcePath() + "fishmotion.png");

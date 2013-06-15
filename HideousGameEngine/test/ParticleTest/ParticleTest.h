@@ -23,12 +23,14 @@ namespace he{
 class ParticleTest : public he::Game{
 public:
 	~ParticleTest();
-	ParticleTest(GLKVector3 cc);
+	ParticleTest();
 	void HandleGesture(const he::Gesture &gesture);
 	
 private:
-	void update(float dt);
-	void render();
+	virtual void init();
+	virtual void update(float dt);
+	virtual void render();
+	
 
 	he::ParticleShader *shader_;
 	he::Texture *texture_;

@@ -10,6 +10,6 @@
 #import "Game.h"
 
 int main(int argc, char *argv[]){
-	GameAllocator ga(GLKVector3Make(0.5, 0.5, 0.5));
-	return HideousEngineInit(argc, argv, ga);
+	GameConfig config(GLKVector3Make(0.5, 0.5, 0.5));
+	return HideousEngineInit(argc, argv, config);
 }

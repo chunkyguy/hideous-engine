@@ -52,12 +52,14 @@ public:
 class SpineTest : public he::Game{
 public:
 	~SpineTest();
-	SpineTest(GLKVector3 cc);
+	SpineTest();
 	void HandleGesture(const he::Gesture &gesture);
 	
 private:
-	void update(float dt);
-	void render();
+	virtual void init();
+	virtual void update(float dt);
+	virtual void render();
+
 	void load(std::string animation_name);
 	void unload();
 	

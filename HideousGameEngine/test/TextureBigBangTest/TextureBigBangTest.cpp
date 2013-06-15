@@ -17,15 +17,9 @@
 #include <he/Utils/Utils.h>
 #include <he/Vertex/TextureVertex.h>
 
-TextureBigBangTest::~TextureBigBangTest(){
-	unload_assets();
-	
-	he::g_EventLoop->RemoveListener(gesture_listener_);
-	delete gesture_listener_;
-}
+TextureBigBangTest::TextureBigBangTest(){}
 
-TextureBigBangTest::TextureBigBangTest(GLKVector3 cc) :
-he::Game(cc){
+void TextureBigBangTest::init(){
 	//debugger
 	const std::string loglevel("DEBUG1");
 	FILELog::ReportingLevel() = FILELog::FromString(loglevel);
@@ -42,6 +36,12 @@ he::Game(cc){
 	state_ = kDead;
 }
 
+TextureBigBangTest::~TextureBigBangTest(){
+	unload_assets();
+	
+	he::g_EventLoop->RemoveListener(gesture_listener_);
+	delete gesture_listener_;
+}
 
 void TextureBigBangTest::load(GLKVector2 at){
 	FILE_LOG(logDEBUG) << "load";
@@ -54,9 +54,6 @@ void TextureBigBangTest::load(GLKVector2 at){
 	}
 	state_ = kRunning;
 	delay_ = 0.0;
-	
-	glClearColor(0.0, 0.0, 0.0, 1.0);
-	glClear(GL_COLOR_BUFFER_BIT);
 }
 void TextureBigBangTest::unload(){
 	FILE_LOG(logDEBUG) << "unload";
@@ -68,8 +65,6 @@ void TextureBigBangTest::unload(){
 	}
 	delete [] squares_;
 	state_ = kDead;
-	glClearColor(1.0, 0.0, 0.0, 1.0);
-	glClear(GL_COLOR_BUFFER_BIT);
 }
 
 void TextureBigBangTest::update(float dt){
@@ -77,29 +72,25 @@ void TextureBigBangTest::update(float dt){
 	if(state_ != kRunning){
 		return;
 	}
-	
-	
-	glClearColor(1.0, 1.0, 1.0, 1.0);
-	glClear(GL_COLOR_BUFFER_BIT);
 
-	for(int i = 0; i < kTotal_tex_sprites; ++i){
-		if(squares_[i]){
-			switch(squares_[i]->GetLifeState()){
-				case TexturedSprite::kZombie:	squares_[i]->SetDead();			break;
-				case TexturedSprite::kLiving:	squares_[i]->Update(dt);			break;
-				case TexturedSprite::kDead:		delete squares_[i]; squares_[i] = 0;		break;
-			}
-			sprite_->Render();
-		}
-	}
-	
 	//delay = 0.0125;
 }
 void TextureBigBangTest::render(){
 	if(state_ != kRunning){
 		return;
 	}
-	
+
+	for(int i = 0; i < kTotal_tex_sprites; ++i){
+		if(squares_[i]){
+			switch(squares_[i]->GetLifeState()){
+				case TexturedSprite::kZombie:	squares_[i]->SetDead();			break;
+				case TexturedSprite::kLiving:	squares_[i]->Update();			break;
+				case TexturedSprite::kDead:		delete squares_[i]; squares_[i] = 0;		break;
+			}
+			sprite_->Render();
+		}
+	}
+
 	//	k.Render();
 }
 

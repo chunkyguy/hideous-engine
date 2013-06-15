@@ -21,9 +21,15 @@
 #include <he/Utils/Frame.h>
 #include <he/Vertex/TextureVertex.h>
 
-UITest::UITest(GLKVector3 cc) :
-he::Game(cc)
-{
+UITest::UITest() :
+view_(nullptr)
+{}
+
+UITest::~UITest(){
+	delete view_;
+}
+
+void UITest::init(){
 	srand(time(NULL));
 	
 	shader_.Load(new he::TextureShader, true);
@@ -59,11 +65,6 @@ he::Game(cc)
 		pos.y -= 60;
 	}
 }
-
-UITest::~UITest(){
-	delete view_;
-}
-
 
 void UITest::update(float dt){
 	view_->Update(dt);

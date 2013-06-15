@@ -20,14 +20,15 @@ MultiFontTest::~MultiFontTest(){
 	delete gesture_listner_;
 }
 
-MultiFontTest::MultiFontTest(GLKVector3 cc) :
-he::Game(cc),
+MultiFontTest::MultiFontTest() :
 courier_(nullptr),
 simsun_(nullptr),
 whacky_(nullptr),
 labs_(nullptr),
 gesture_listner_(nullptr)
-{
+{}
+
+void MultiFontTest::init(){
 
 	//random
 	srand(time(NULL));
@@ -65,7 +66,8 @@ void MultiFontTest::load_text(){
 	trans.SetPosition(GLKVector2Make(-100, 100));
 	whacky_ = new he::Text("Whacky", trans,  GLKVector4Make(0.0, 0.0, 0.0, 1.0));
 	courier_->LoadText(whacky_);
-	
+
+	trans.SetPosition(GLKVector2Make(-100, -100));
 	labs_ = new he::Text("Labs", trans, GLKVector4Make(0.0,0.0,0.0,1.0));
 	simsun_->LoadText(labs_);
 }

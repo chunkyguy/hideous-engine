@@ -25,15 +25,17 @@ namespace he{
 class TextureBigBangTest : public he::Game{
 public:
 	~TextureBigBangTest();
-	TextureBigBangTest(GLKVector3 cc);
+	TextureBigBangTest();
 	void HandleGesture(const he::Gesture &gesture);
 	
 private:
 	const int kTotal_tex_sprites = 1000;
 	typedef enum{kRunning, kDead} State;
 
-	void update(float dt);
-	void render();
+	virtual void init();
+	virtual void update(float dt);
+	virtual void render();
+
 	void load(GLKVector2 at);
 	void unload();
 	void load_assets();

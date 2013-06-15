@@ -11,7 +11,7 @@
 #import <he/Utils/GLState.h>
 #import <he/Utils/DebugHelper.h>
 
-he::GameAllocator *g_hga = nullptr;
+he::GameConfig *g_config = nullptr;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 // MARK: HELoop
@@ -33,7 +33,7 @@ he::GameAllocator *g_hga = nullptr;
 		NSLog(@"HELoop: starting...");
 		he::SetDefaultState();
 		GLKVector2 sz = GLKVector2Make(size.width, size.height);
-		game = g_hga->Allocate(sz);
+		game = g_config->CreateGame(sz);
 	}
 	return self;
 }
@@ -188,11 +188,16 @@ he::GameAllocator *g_hga = nullptr;
 #import "../../utests/GTests.h"
 #endif
 
-int HideousEngineInit(int argc, char **argv, he::GameAllocator &hga){
-	g_hga = &hga;
+int HideousEngineInit(int argc, char **argv, he::GameConfig &config){
+	g_config = &config;
+	
 #ifdef __HideousGameEngine__DEBUG_MODE__
-	GTests(argc, argv);
+	int utest_res = GTests(argc, argv);	// If unit tests fails return, else launch the app.
+	if(utest_res != 0){
+		return utest_res;
+	}
 #endif
+	
 	@autoreleasepool {
 	    return UIApplicationMain(argc, argv, nil, NSStringFromClass([HEAppDelegate class]));
 	}

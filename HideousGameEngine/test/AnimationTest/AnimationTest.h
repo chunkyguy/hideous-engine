@@ -23,12 +23,13 @@ namespace he{
 class AnimationTest : public he::Game{
 public:
 	~AnimationTest();
-	AnimationTest(GLKVector3 cc);
+	AnimationTest();
 	void HandleGesture(const he::Gesture &gesture);
 	
 private:
-	void update(float dt);
-	void render();
+	virtual void init();
+	virtual void update(float dt);
+	virtual void render();
 
 	const int kObjects_;
 	

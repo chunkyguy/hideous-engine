@@ -28,12 +28,13 @@ namespace he{
 class UITest : public he::Game{
 public:
 	~UITest();
-	UITest(GLKVector3 cc);
+	UITest();
 	void ButtonHandler(he::ui::Button *sender);
 	
 private:
-	void update(float dt);
-	void render();
+	virtual void init();
+	virtual void update(float dt);
+	virtual void render();
 
 	he::ui::View *view_;
 	he::Asset<he::Texture> texture_;

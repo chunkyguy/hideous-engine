@@ -12,14 +12,17 @@
 #include <he/Utils/DebugHelper.h>
 #include <he/Utils/Utils.h>
 
-RectColorTest::RectColorTest(GLKVector3 cc) :
-he::Game(cc),
+RectColorTest::RectColorTest() :
 squares_(0),
-shader_(new he::ColorShader)
-{
+shader_(nullptr)
+{}
+
+void RectColorTest::init(){
 	he_Trace("RectColorTest\n");
 	//random
 	srand(time(NULL));
+
+	shader_ = new he::ColorShader;
 
 	gesture_listner_ = new he::GestureListener<RectColorTest>(this, &RectColorTest::HandleGesture);
 	he::g_EventLoop->AddListener(gesture_listner_);

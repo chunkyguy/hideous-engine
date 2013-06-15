@@ -25,6 +25,44 @@
 		19041EB4176C582B007119B1 /* libgoogle_test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19041EB3176C5816007119B1 /* libgoogle_test.a */; };
 		19041EBB176C5A3C007119B1 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EB6176C5A3C007119B1 /* Game.cpp */; };
 		19041EBD176C5A3C007119B1 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 19041EBA176C5A3C007119B1 /* main.mm */; };
+		19041EF0176CCD87007119B1 /* ProgramTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EBF176CCD87007119B1 /* ProgramTests.cpp */; };
+		19041EF1176CCD87007119B1 /* ParticleEnvTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EC1176CCD87007119B1 /* ParticleEnvTests.cpp */; };
+		19041EF2176CCD87007119B1 /* ParticleTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EC2176CCD87007119B1 /* ParticleTests.cpp */; };
+		19041EF3176CCD87007119B1 /* FontTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EC4176CCD87007119B1 /* FontTests.cpp */; };
+		19041EF4176CCD87007119B1 /* ColorShaderTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EC6176CCD87007119B1 /* ColorShaderTests.cpp */; };
+		19041EF5176CCD87007119B1 /* ParticleShaderTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EC7176CCD87007119B1 /* ParticleShaderTests.cpp */; };
+		19041EF6176CCD87007119B1 /* TextShaderTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EC8176CCD87007119B1 /* TextShaderTests.cpp */; };
+		19041EF7176CCD87007119B1 /* TextureShaderTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EC9176CCD87007119B1 /* TextureShaderTests.cpp */; };
+		19041EF8176CCD87007119B1 /* GestureCollectorTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 19041ECB176CCD87007119B1 /* GestureCollectorTests.mm */; };
+		19041EF9176CCD87007119B1 /* GestureTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041ECC176CCD87007119B1 /* GestureTests.cpp */; };
+		19041EFA176CCD87007119B1 /* RenderObjectTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041ECE176CCD87007119B1 /* RenderObjectTests.cpp */; };
+		19041EFB176CCD87007119B1 /* TextureAtlasParserTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 19041ED0176CCD87007119B1 /* TextureAtlasParserTests.mm */; };
+		19041EFC176CCD87007119B1 /* TextureAtlasRegionTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041ED1176CCD87007119B1 /* TextureAtlasRegionTests.cpp */; };
+		19041EFD176CCD87007119B1 /* TextureAtlasTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041ED2176CCD87007119B1 /* TextureAtlasTests.cpp */; };
+		19041EFE176CCD87007119B1 /* TextureDataTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 19041ED3176CCD87007119B1 /* TextureDataTests.mm */; };
+		19041EFF176CCD87007119B1 /* TextureTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041ED4176CCD87007119B1 /* TextureTests.cpp */; };
+		19041F00176CCD87007119B1 /* AnimationLoopTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041ED6176CCD87007119B1 /* AnimationLoopTests.cpp */; };
+		19041F01176CCD87007119B1 /* AnimationTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041ED7176CCD87007119B1 /* AnimationTests.cpp */; };
+		19041F02176CCD87007119B1 /* AnimationUtilsTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041ED8176CCD87007119B1 /* AnimationUtilsTests.cpp */; };
+		19041F03176CCD87007119B1 /* easingTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041ED9176CCD87007119B1 /* easingTests.cpp */; };
+		19041F04176CCD87007119B1 /* SpriteAnimationTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EDA176CCD87007119B1 /* SpriteAnimationTests.cpp */; };
+		19041F05176CCD87007119B1 /* ColorVertexTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EDC176CCD87007119B1 /* ColorVertexTests.cpp */; };
+		19041F06176CCD87007119B1 /* ParticleVertexTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EDD176CCD87007119B1 /* ParticleVertexTests.cpp */; };
+		19041F07176CCD87007119B1 /* TextureVertexTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EDE176CCD87007119B1 /* TextureVertexTests.cpp */; };
+		19041F08176CCD87007119B1 /* VertexDataTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EDF176CCD87007119B1 /* VertexDataTests.cpp */; };
+		19041F09176CCD87007119B1 /* ButtonTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EE1176CCD87007119B1 /* ButtonTests.cpp */; };
+		19041F0A176CCD87007119B1 /* ImageViewTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EE2176CCD87007119B1 /* ImageViewTests.cpp */; };
+		19041F0B176CCD87007119B1 /* ViewTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EE3176CCD87007119B1 /* ViewTests.cpp */; };
+		19041F0C176CCD87007119B1 /* DebugHelperTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EE5176CCD87007119B1 /* DebugHelperTests.cpp */; };
+		19041F0D176CCD87007119B1 /* FrameTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EE6176CCD87007119B1 /* FrameTests.cpp */; };
+		19041F0E176CCD87007119B1 /* GLKMath_AdditionsTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EE7176CCD87007119B1 /* GLKMath_AdditionsTests.cpp */; };
+		19041F0F176CCD87007119B1 /* GLStateTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EE8176CCD87007119B1 /* GLStateTests.cpp */; };
+		19041F10176CCD87007119B1 /* ResourcePathTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 19041EE9176CCD87007119B1 /* ResourcePathTests.mm */; };
+		19041F11176CCD87007119B1 /* ScreenTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EEA176CCD87007119B1 /* ScreenTests.cpp */; };
+		19041F12176CCD87007119B1 /* TransformTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EEB176CCD87007119B1 /* TransformTests.cpp */; };
+		19041F13176CCD87007119B1 /* UtilsTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EEC176CCD87007119B1 /* UtilsTests.cpp */; };
+		19041F14176CCD87007119B1 /* HideousEngineTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 19041EEE176CCD87007119B1 /* HideousEngineTests.mm */; };
+		19041F15176CCD87007119B1 /* HideousGameTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EEF176CCD87007119B1 /* HideousGameTests.cpp */; };
 		191B223B176072B1001F6F1C /* FlashTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 191B2239176072B1001F6F1C /* FlashTest.cpp */; };
 		191B223F1760C644001F6F1C /* DebugHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 191B223D1760C644001F6F1C /* DebugHelper.cpp */; };
 		193A5EC61743F2DB00CB945B /* AnimationState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 193A5EA21743F2DB00CB945B /* AnimationState.cpp */; };
@@ -165,6 +203,44 @@
 		19041EB6176C5A3C007119B1 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		19041EB7176C5A3C007119B1 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		19041EBA176C5A3C007119B1 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		19041EBF176CCD87007119B1 /* ProgramTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProgramTests.cpp; sourceTree = "<group>"; };
+		19041EC1176CCD87007119B1 /* ParticleEnvTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParticleEnvTests.cpp; sourceTree = "<group>"; };
+		19041EC2176CCD87007119B1 /* ParticleTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParticleTests.cpp; sourceTree = "<group>"; };
+		19041EC4176CCD87007119B1 /* FontTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FontTests.cpp; sourceTree = "<group>"; };
+		19041EC6176CCD87007119B1 /* ColorShaderTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColorShaderTests.cpp; sourceTree = "<group>"; };
+		19041EC7176CCD87007119B1 /* ParticleShaderTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParticleShaderTests.cpp; sourceTree = "<group>"; };
+		19041EC8176CCD87007119B1 /* TextShaderTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextShaderTests.cpp; sourceTree = "<group>"; };
+		19041EC9176CCD87007119B1 /* TextureShaderTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextureShaderTests.cpp; sourceTree = "<group>"; };
+		19041ECB176CCD87007119B1 /* GestureCollectorTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GestureCollectorTests.mm; sourceTree = "<group>"; };
+		19041ECC176CCD87007119B1 /* GestureTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GestureTests.cpp; sourceTree = "<group>"; };
+		19041ECE176CCD87007119B1 /* RenderObjectTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RenderObjectTests.cpp; sourceTree = "<group>"; };
+		19041ED0176CCD87007119B1 /* TextureAtlasParserTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TextureAtlasParserTests.mm; sourceTree = "<group>"; };
+		19041ED1176CCD87007119B1 /* TextureAtlasRegionTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextureAtlasRegionTests.cpp; sourceTree = "<group>"; };
+		19041ED2176CCD87007119B1 /* TextureAtlasTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextureAtlasTests.cpp; sourceTree = "<group>"; };
+		19041ED3176CCD87007119B1 /* TextureDataTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TextureDataTests.mm; sourceTree = "<group>"; };
+		19041ED4176CCD87007119B1 /* TextureTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextureTests.cpp; sourceTree = "<group>"; };
+		19041ED6176CCD87007119B1 /* AnimationLoopTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AnimationLoopTests.cpp; sourceTree = "<group>"; };
+		19041ED7176CCD87007119B1 /* AnimationTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AnimationTests.cpp; sourceTree = "<group>"; };
+		19041ED8176CCD87007119B1 /* AnimationUtilsTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AnimationUtilsTests.cpp; sourceTree = "<group>"; };
+		19041ED9176CCD87007119B1 /* easingTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = easingTests.cpp; sourceTree = "<group>"; };
+		19041EDA176CCD87007119B1 /* SpriteAnimationTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpriteAnimationTests.cpp; sourceTree = "<group>"; };
+		19041EDC176CCD87007119B1 /* ColorVertexTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColorVertexTests.cpp; sourceTree = "<group>"; };
+		19041EDD176CCD87007119B1 /* ParticleVertexTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParticleVertexTests.cpp; sourceTree = "<group>"; };
+		19041EDE176CCD87007119B1 /* TextureVertexTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextureVertexTests.cpp; sourceTree = "<group>"; };
+		19041EDF176CCD87007119B1 /* VertexDataTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VertexDataTests.cpp; sourceTree = "<group>"; };
+		19041EE1176CCD87007119B1 /* ButtonTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ButtonTests.cpp; sourceTree = "<group>"; };
+		19041EE2176CCD87007119B1 /* ImageViewTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageViewTests.cpp; sourceTree = "<group>"; };
+		19041EE3176CCD87007119B1 /* ViewTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ViewTests.cpp; sourceTree = "<group>"; };
+		19041EE5176CCD87007119B1 /* DebugHelperTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DebugHelperTests.cpp; sourceTree = "<group>"; };
+		19041EE6176CCD87007119B1 /* FrameTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FrameTests.cpp; sourceTree = "<group>"; };
+		19041EE7176CCD87007119B1 /* GLKMath_AdditionsTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLKMath_AdditionsTests.cpp; sourceTree = "<group>"; };
+		19041EE8176CCD87007119B1 /* GLStateTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLStateTests.cpp; sourceTree = "<group>"; };
+		19041EE9176CCD87007119B1 /* ResourcePathTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePathTests.mm; sourceTree = "<group>"; };
+		19041EEA176CCD87007119B1 /* ScreenTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScreenTests.cpp; sourceTree = "<group>"; };
+		19041EEB176CCD87007119B1 /* TransformTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TransformTests.cpp; sourceTree = "<group>"; };
+		19041EEC176CCD87007119B1 /* UtilsTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UtilsTests.cpp; sourceTree = "<group>"; };
+		19041EEE176CCD87007119B1 /* HideousEngineTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HideousEngineTests.mm; sourceTree = "<group>"; };
+		19041EEF176CCD87007119B1 /* HideousGameTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HideousGameTests.cpp; sourceTree = "<group>"; };
 		19062FD8174C9E7D00E42681 /* GLKMath_Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLKMath_Additions.h; sourceTree = "<group>"; };
 		19062FD9174C9F1D00E42681 /* HideousGameEngine-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HideousGameEngine-Prefix.pch"; sourceTree = "<group>"; };
 		191B2239176072B1001F6F1C /* FlashTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FlashTest.cpp; sourceTree = "<group>"; };
@@ -408,6 +484,18 @@
 			children = (
 				19041EAE176C5735007119B1 /* GTests.cpp */,
 				19041EAF176C5735007119B1 /* GTests.h */,
+				19041EBE176CCD87007119B1 /* Program */,
+				19041EC0176CCD87007119B1 /* ParticleSystem */,
+				19041EC3176CCD87007119B1 /* Font */,
+				19041EC5176CCD87007119B1 /* Shaders */,
+				19041ECA176CCD87007119B1 /* EventLoop */,
+				19041ECD176CCD87007119B1 /* RenderObject */,
+				19041ECF176CCD87007119B1 /* Texture */,
+				19041ED5176CCD87007119B1 /* Animation */,
+				19041EDB176CCD87007119B1 /* Vertex */,
+				19041EE0176CCD87007119B1 /* UI */,
+				19041EE4176CCD87007119B1 /* Utils */,
+				19041EED176CCD87007119B1 /* Main */,
 			);
 			path = utests;
 			sourceTree = "<group>";
@@ -430,6 +518,128 @@
 				19041EBA176C5A3C007119B1 /* main.mm */,
 			);
 			path = main;
+			sourceTree = "<group>";
+		};
+		19041EBE176CCD87007119B1 /* Program */ = {
+			isa = PBXGroup;
+			children = (
+				19041EBF176CCD87007119B1 /* ProgramTests.cpp */,
+			);
+			path = Program;
+			sourceTree = "<group>";
+		};
+		19041EC0176CCD87007119B1 /* ParticleSystem */ = {
+			isa = PBXGroup;
+			children = (
+				19041EC1176CCD87007119B1 /* ParticleEnvTests.cpp */,
+				19041EC2176CCD87007119B1 /* ParticleTests.cpp */,
+			);
+			path = ParticleSystem;
+			sourceTree = "<group>";
+		};
+		19041EC3176CCD87007119B1 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				19041EC4176CCD87007119B1 /* FontTests.cpp */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		19041EC5176CCD87007119B1 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				19041EC6176CCD87007119B1 /* ColorShaderTests.cpp */,
+				19041EC7176CCD87007119B1 /* ParticleShaderTests.cpp */,
+				19041EC8176CCD87007119B1 /* TextShaderTests.cpp */,
+				19041EC9176CCD87007119B1 /* TextureShaderTests.cpp */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		19041ECA176CCD87007119B1 /* EventLoop */ = {
+			isa = PBXGroup;
+			children = (
+				19041ECB176CCD87007119B1 /* GestureCollectorTests.mm */,
+				19041ECC176CCD87007119B1 /* GestureTests.cpp */,
+			);
+			path = EventLoop;
+			sourceTree = "<group>";
+		};
+		19041ECD176CCD87007119B1 /* RenderObject */ = {
+			isa = PBXGroup;
+			children = (
+				19041ECE176CCD87007119B1 /* RenderObjectTests.cpp */,
+			);
+			path = RenderObject;
+			sourceTree = "<group>";
+		};
+		19041ECF176CCD87007119B1 /* Texture */ = {
+			isa = PBXGroup;
+			children = (
+				19041ED0176CCD87007119B1 /* TextureAtlasParserTests.mm */,
+				19041ED1176CCD87007119B1 /* TextureAtlasRegionTests.cpp */,
+				19041ED2176CCD87007119B1 /* TextureAtlasTests.cpp */,
+				19041ED3176CCD87007119B1 /* TextureDataTests.mm */,
+				19041ED4176CCD87007119B1 /* TextureTests.cpp */,
+			);
+			path = Texture;
+			sourceTree = "<group>";
+		};
+		19041ED5176CCD87007119B1 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				19041ED6176CCD87007119B1 /* AnimationLoopTests.cpp */,
+				19041ED7176CCD87007119B1 /* AnimationTests.cpp */,
+				19041ED8176CCD87007119B1 /* AnimationUtilsTests.cpp */,
+				19041ED9176CCD87007119B1 /* easingTests.cpp */,
+				19041EDA176CCD87007119B1 /* SpriteAnimationTests.cpp */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		19041EDB176CCD87007119B1 /* Vertex */ = {
+			isa = PBXGroup;
+			children = (
+				19041EDC176CCD87007119B1 /* ColorVertexTests.cpp */,
+				19041EDD176CCD87007119B1 /* ParticleVertexTests.cpp */,
+				19041EDE176CCD87007119B1 /* TextureVertexTests.cpp */,
+				19041EDF176CCD87007119B1 /* VertexDataTests.cpp */,
+			);
+			path = Vertex;
+			sourceTree = "<group>";
+		};
+		19041EE0176CCD87007119B1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				19041EE1176CCD87007119B1 /* ButtonTests.cpp */,
+				19041EE2176CCD87007119B1 /* ImageViewTests.cpp */,
+				19041EE3176CCD87007119B1 /* ViewTests.cpp */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		19041EE4176CCD87007119B1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				19041EE5176CCD87007119B1 /* DebugHelperTests.cpp */,
+				19041EE6176CCD87007119B1 /* FrameTests.cpp */,
+				19041EE7176CCD87007119B1 /* GLKMath_AdditionsTests.cpp */,
+				19041EE8176CCD87007119B1 /* GLStateTests.cpp */,
+				19041EE9176CCD87007119B1 /* ResourcePathTests.mm */,
+				19041EEA176CCD87007119B1 /* ScreenTests.cpp */,
+				19041EEB176CCD87007119B1 /* TransformTests.cpp */,
+				19041EEC176CCD87007119B1 /* UtilsTests.cpp */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		19041EED176CCD87007119B1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				19041EEE176CCD87007119B1 /* HideousEngineTests.mm */,
+				19041EEF176CCD87007119B1 /* HideousGameTests.cpp */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		191B22381760728C001F6F1C /* FlashTest */ = {
@@ -1331,6 +1541,44 @@
 				19041EB0176C5735007119B1 /* GTests.cpp in Sources */,
 				19041EBB176C5A3C007119B1 /* Game.cpp in Sources */,
 				19041EBD176C5A3C007119B1 /* main.mm in Sources */,
+				19041EF0176CCD87007119B1 /* ProgramTests.cpp in Sources */,
+				19041EF1176CCD87007119B1 /* ParticleEnvTests.cpp in Sources */,
+				19041EF2176CCD87007119B1 /* ParticleTests.cpp in Sources */,
+				19041EF3176CCD87007119B1 /* FontTests.cpp in Sources */,
+				19041EF4176CCD87007119B1 /* ColorShaderTests.cpp in Sources */,
+				19041EF5176CCD87007119B1 /* ParticleShaderTests.cpp in Sources */,
+				19041EF6176CCD87007119B1 /* TextShaderTests.cpp in Sources */,
+				19041EF7176CCD87007119B1 /* TextureShaderTests.cpp in Sources */,
+				19041EF8176CCD87007119B1 /* GestureCollectorTests.mm in Sources */,
+				19041EF9176CCD87007119B1 /* GestureTests.cpp in Sources */,
+				19041EFA176CCD87007119B1 /* RenderObjectTests.cpp in Sources */,
+				19041EFB176CCD87007119B1 /* TextureAtlasParserTests.mm in Sources */,
+				19041EFC176CCD87007119B1 /* TextureAtlasRegionTests.cpp in Sources */,
+				19041EFD176CCD87007119B1 /* TextureAtlasTests.cpp in Sources */,
+				19041EFE176CCD87007119B1 /* TextureDataTests.mm in Sources */,
+				19041EFF176CCD87007119B1 /* TextureTests.cpp in Sources */,
+				19041F00176CCD87007119B1 /* AnimationLoopTests.cpp in Sources */,
+				19041F01176CCD87007119B1 /* AnimationTests.cpp in Sources */,
+				19041F02176CCD87007119B1 /* AnimationUtilsTests.cpp in Sources */,
+				19041F03176CCD87007119B1 /* easingTests.cpp in Sources */,
+				19041F04176CCD87007119B1 /* SpriteAnimationTests.cpp in Sources */,
+				19041F05176CCD87007119B1 /* ColorVertexTests.cpp in Sources */,
+				19041F06176CCD87007119B1 /* ParticleVertexTests.cpp in Sources */,
+				19041F07176CCD87007119B1 /* TextureVertexTests.cpp in Sources */,
+				19041F08176CCD87007119B1 /* VertexDataTests.cpp in Sources */,
+				19041F09176CCD87007119B1 /* ButtonTests.cpp in Sources */,
+				19041F0A176CCD87007119B1 /* ImageViewTests.cpp in Sources */,
+				19041F0B176CCD87007119B1 /* ViewTests.cpp in Sources */,
+				19041F0C176CCD87007119B1 /* DebugHelperTests.cpp in Sources */,
+				19041F0D176CCD87007119B1 /* FrameTests.cpp in Sources */,
+				19041F0E176CCD87007119B1 /* GLKMath_AdditionsTests.cpp in Sources */,
+				19041F0F176CCD87007119B1 /* GLStateTests.cpp in Sources */,
+				19041F10176CCD87007119B1 /* ResourcePathTests.mm in Sources */,
+				19041F11176CCD87007119B1 /* ScreenTests.cpp in Sources */,
+				19041F12176CCD87007119B1 /* TransformTests.cpp in Sources */,
+				19041F13176CCD87007119B1 /* UtilsTests.cpp in Sources */,
+				19041F14176CCD87007119B1 /* HideousEngineTests.mm in Sources */,
+				19041F15176CCD87007119B1 /* HideousGameTests.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

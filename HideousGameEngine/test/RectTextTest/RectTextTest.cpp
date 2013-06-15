@@ -20,12 +20,13 @@ RectTextTest::~RectTextTest(){
 	delete gesture_listener_;
 }
 
-RectTextTest::RectTextTest(GLKVector3 cc) :
-he::Game(cc),
+RectTextTest::RectTextTest() :
 font_(nullptr),
 text_(nullptr),
 gesture_listener_(nullptr)
-{
+{}
+
+void RectTextTest::init(){
 		//debugger
 		const std::string loglevel("DEBUG1");
 		FILELog::ReportingLevel() = FILELog::FromString(loglevel);
