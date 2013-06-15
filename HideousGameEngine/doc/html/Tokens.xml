@@ -448,6 +448,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>HideousEngineInit</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>_hideous_engine_8h.html</Path>
+    <Anchor>aae48837376121d1c87fdc3be04d638b2</Anchor>
+    <DeclaredIn>HideousEngine.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>CreateTextureData</Name>
       <APILanguage>cpp</APILanguage>
       <Type>func</Type>
@@ -648,28 +658,6 @@
     </TokenIdentifier>
     <Path>_utils_8h.html</Path>
     <Anchor>af8df3547bfde53a5acb93e2607b0034a</Anchor>
-    <DeclaredIn>Utils.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>GlobalsInit</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
-      <Scope>he</Scope>
-    </TokenIdentifier>
-    <Path>namespacehe.html</Path>
-    <Anchor>a7e7dc83f8cef260c6928fca09aded489</Anchor>
-    <DeclaredIn>Utils.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>GlobalsDestroy</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
-      <Scope>he</Scope>
-    </TokenIdentifier>
-    <Path>namespacehe.html</Path>
-    <Anchor>a2ef34dca61092ab4cdfcf24d11b9ef83</Anchor>
     <DeclaredIn>Utils.h</DeclaredIn>
   </Token>
   <Token>
@@ -1178,6 +1166,36 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>HEAppDelegate</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>HEAppDelegate</Scope>
+    </TokenIdentifier>
+    <Path>interface_h_e_app_delegate.html</Path>
+    <DeclaredIn>HideousEngine.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>window</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>HEAppDelegate</Scope>
+    </TokenIdentifier>
+    <Path>interface_h_e_app_delegate.html</Path>
+    <Anchor>a97c69717781e257d00b9bb061b842159</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HEController</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>HEController</Scope>
+    </TokenIdentifier>
+    <Path>interface_h_e_controller.html</Path>
+    <DeclaredIn>HideousEngine.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>Output2FILE</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -1624,28 +1642,6 @@
     <Path>namespacehe.html</Path>
     <Anchor>aa5a29ef8e0a46966530c44bb99ea952a</Anchor>
     <DeclaredIn>ResourcePath.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>GlobalsInit</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
-      <Scope>he</Scope>
-    </TokenIdentifier>
-    <Path>namespacehe.html</Path>
-    <Anchor>a7e7dc83f8cef260c6928fca09aded489</Anchor>
-    <DeclaredIn>Utils.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>GlobalsDestroy</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
-      <Scope>he</Scope>
-    </TokenIdentifier>
-    <Path>namespacehe.html</Path>
-    <Anchor>a2ef34dca61092ab4cdfcf24d11b9ef83</Anchor>
-    <DeclaredIn>Utils.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -3084,6 +3080,114 @@
     <Path>classhe_1_1_font.html</Path>
     <Anchor>a7815d568db6df5b5eed3255b79583035</Anchor>
     <DeclaredIn>Font.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>he::Game</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>he::Game</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_game.html</Path>
+    <DeclaredIn>HideousGame.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Init</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Game</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_game.html</Path>
+    <Anchor>a2a4d08c1603eb9a16cab2e3ec1ae0bee</Anchor>
+    <DeclaredIn>HideousGame.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~Game</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Game</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_game.html</Path>
+    <Anchor>a6d883ef161098b808247e0647a06ad17</Anchor>
+    <DeclaredIn>HideousGame.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Update</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Game</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_game.html</Path>
+    <Anchor>a1ec72ac175e8148d97f51e46618bfe4b</Anchor>
+    <DeclaredIn>HideousGame.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Render</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Game</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_game.html</Path>
+    <Anchor>a5a252d60b2203e0cab7c2da9200c6677</Anchor>
+    <DeclaredIn>HideousGame.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Pause</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Game</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_game.html</Path>
+    <Anchor>a1c70da4baaf3a4115fd1760ee85cb87d</Anchor>
+    <DeclaredIn>HideousGame.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>he::GameConfig</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>he::GameConfig</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_game_config.html</Path>
+    <DeclaredIn>HideousGame.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GameConfig</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::GameConfig</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_game_config.html</Path>
+    <Anchor>a46267111dd28092ac523ac0c7a8c2321</Anchor>
+    <DeclaredIn>HideousGame.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~GameConfig</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::GameConfig</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_game_config.html</Path>
+    <Anchor>af7dc202f232e39b33c22445b268f6ad6</Anchor>
+    <DeclaredIn>HideousGame.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CreateGame</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::GameConfig</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_game_config.html</Path>
+    <Anchor>a5278d1d1d8cb035297846733b15612bc</Anchor>
+    <DeclaredIn>HideousGame.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>

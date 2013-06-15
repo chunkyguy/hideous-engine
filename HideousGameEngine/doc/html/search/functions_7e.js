@@ -9,6 +9,8 @@ var searchData=
   ['_7edebuglog',['~DebugLog',['../class_debug_log.html#a4ee07e2f00913db59ad845e1ba452c64',1,'DebugLog']]],
   ['_7efilebuffer',['~FileBuffer',['../classhe_1_1_file_buffer.html#a15ae4808d0f2b594f8640c2f859310e5',1,'he::FileBuffer']]],
   ['_7efont',['~Font',['../classhe_1_1_font.html#ae4b57ced7395159f073afd2b94dd0a56',1,'he::Font']]],
+  ['_7egame',['~Game',['../classhe_1_1_game.html#a6d883ef161098b808247e0647a06ad17',1,'he::Game']]],
+  ['_7egameconfig',['~GameConfig',['../classhe_1_1_game_config.html#af7dc202f232e39b33c22445b268f6ad6',1,'he::GameConfig']]],
   ['_7egesturelistenable',['~GestureListenable',['../classhe_1_1_gesture_listenable.html#a79caa6458f241be78cc8b77244d688ac',1,'he::GestureListenable']]],
   ['_7eglyph',['~Glyph',['../classhe_1_1_text_1_1_glyph.html#a5a4073598375101d6b3ac29526a784c9',1,'he::Text::Glyph']]],
   ['_7eibuttonlistner',['~IButtonListner',['../structhe_1_1ui_1_1_i_button_listner.html#acc2e4e13129f7324bb103e70dd7746c3',1,'he::ui::IButtonListner']]],

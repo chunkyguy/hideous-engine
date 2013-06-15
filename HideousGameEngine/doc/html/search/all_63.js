@@ -16,6 +16,7 @@ var searchData=
   ['colorvertex_2eh',['ColorVertex.h',['../_color_vertex_8h.html',1,'']]],
   ['contains',['Contains',['../namespacehe_1_1_vertex.html#a2a2383b946c741397b8a0655673b93e6',1,'he::Vertex::Contains(const V2 &amp;v, const GLKVector2 &amp;point)'],['../namespacehe_1_1_vertex.html#a67abed613f1301d2bdcb14c18a1d5c6f',1,'he::Vertex::Contains(const V2 &amp;slf, const V2 &amp;other)']]],
   ['continious_5f',['continious_',['../classhe_1_1_gesture.html#a5e5f838b45c74279e3c63bc77b5d74a8',1,'he::Gesture']]],
+  ['creategame',['CreateGame',['../classhe_1_1_game_config.html#a5278d1d1d8cb035297846733b15612bc',1,'he::GameConfig']]],
   ['createtexturedata',['CreateTextureData',['../namespacehe.html#aeb4bf8c0bd33277ad582045ca1ea48b9',1,'he']]],
   ['cubiceasein',['CubicEaseIn',['../namespacehe.html#a4f26de4e81f76720b83ef687287666fb',1,'he']]],
   ['cubiceaseinout',['CubicEaseInOut',['../namespacehe.html#aed1492cc201c87416eac4d8a08d6107d',1,'he']]],

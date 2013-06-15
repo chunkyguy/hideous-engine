@@ -185,7 +185,7 @@ he::GameConfig *g_config = nullptr;
 // MARK: main
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 #ifdef __HideousGameEngine__DEBUG_MODE__
-#import "../../utests/GTests.h"
+#import <he/Utils/GTests.h>
 #endif
 
 int HideousEngineInit(int argc, char **argv, he::GameConfig &config){

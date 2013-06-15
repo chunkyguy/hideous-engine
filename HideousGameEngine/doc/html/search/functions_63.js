@@ -7,6 +7,7 @@ var searchData=
   ['colorshader',['ColorShader',['../classhe_1_1_color_shader.html#ac3f33f48726dfa224cde62a065fc56c4',1,'he::ColorShader']]],
   ['colorvertex',['ColorVertex',['../classhe_1_1_color_vertex.html#a9b26c66854b8cb5f4dcaf6270d52782f',1,'he::ColorVertex::ColorVertex(const Data &amp;a, const Data &amp;d)'],['../classhe_1_1_color_vertex.html#ad9b591903648cbc50c7ddfe63cd915fe',1,'he::ColorVertex::ColorVertex(const Data &amp;a, const Data &amp;b, const Data &amp;c, const Data &amp;d)']]],
   ['contains',['Contains',['../namespacehe_1_1_vertex.html#a2a2383b946c741397b8a0655673b93e6',1,'he::Vertex::Contains(const V2 &amp;v, const GLKVector2 &amp;point)'],['../namespacehe_1_1_vertex.html#a67abed613f1301d2bdcb14c18a1d5c6f',1,'he::Vertex::Contains(const V2 &amp;slf, const V2 &amp;other)']]],
+  ['creategame',['CreateGame',['../classhe_1_1_game_config.html#a5278d1d1d8cb035297846733b15612bc',1,'he::GameConfig']]],
   ['createtexturedata',['CreateTextureData',['../namespacehe.html#aeb4bf8c0bd33277ad582045ca1ea48b9',1,'he']]],
   ['cubiceasein',['CubicEaseIn',['../namespacehe.html#a4f26de4e81f76720b83ef687287666fb',1,'he']]],
   ['cubiceaseinout',['CubicEaseInOut',['../namespacehe.html#aed1492cc201c87416eac4d8a08d6107d',1,'he']]],

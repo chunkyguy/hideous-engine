@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['gameconfig',['GameConfig',['../classhe_1_1_game_config.html#a46267111dd28092ac523ac0c7a8c2321',1,'he::GameConfig']]],
   ['gesture',['Gesture',['../classhe_1_1_gesture.html#ad8186c5baee7050cc15a3486b6138181',1,'he::Gesture']]],
   ['gesturelistenable',['GestureListenable',['../classhe_1_1_gesture_listenable.html#a7175010c1ead315cd7c7e7f9baf941dd',1,'he::GestureListenable']]],
   ['gesturelistener',['GestureListener',['../classhe_1_1_gesture_listener.html#ab8d581ea9389f246bb36a21b6c434630',1,'he::GestureListener']]],
@@ -36,7 +37,5 @@ var searchData=
   ['getvertexdata',['GetVertexData',['../classhe_1_1_render_object.html#a620529099696d4c848a7161eac2c2c61',1,'he::RenderObject::GetVertexData()'],['../classhe_1_1_color_vertex.html#ac1db03ab8c3ade5d65ee5e8b44035c6e',1,'he::ColorVertex::GetVertexData()']]],
   ['getvertexpositiondata',['GetVertexPositionData',['../classhe_1_1_texture_vertex.html#a194d0ae9afec67b530d1a72ca2e1f408',1,'he::TextureVertex']]],
   ['getvertextexturedata',['GetVertexTextureData',['../classhe_1_1_texture_vertex.html#a9b10d95c557e76921b43646e6041a28c',1,'he::TextureVertex']]],
-  ['globalsdestroy',['GlobalsDestroy',['../namespacehe.html#a2ef34dca61092ab4cdfcf24d11b9ef83',1,'he']]],
-  ['globalsinit',['GlobalsInit',['../namespacehe.html#a7e7dc83f8cef260c6928fca09aded489',1,'he']]],
   ['glyph',['Glyph',['../classhe_1_1_text_1_1_glyph.html#a56760b504bcdd51933e1dc482ae87b12',1,'he::Text::Glyph']]]
 ];

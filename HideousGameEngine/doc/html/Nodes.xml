@@ -819,6 +819,58 @@
               </Subnodes>
              </Node>
              <Node>
+              <Name>Game</Name>
+              <Path>classhe_1_1_game.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>~Game</Name>
+                <Path>classhe_1_1_game.html</Path>
+                <Anchor>a6d883ef161098b808247e0647a06ad17</Anchor>
+               </Node>
+               <Node>
+                <Name>Init</Name>
+                <Path>classhe_1_1_game.html</Path>
+                <Anchor>a2a4d08c1603eb9a16cab2e3ec1ae0bee</Anchor>
+               </Node>
+               <Node>
+                <Name>Pause</Name>
+                <Path>classhe_1_1_game.html</Path>
+                <Anchor>a1c70da4baaf3a4115fd1760ee85cb87d</Anchor>
+               </Node>
+               <Node>
+                <Name>Render</Name>
+                <Path>classhe_1_1_game.html</Path>
+                <Anchor>a5a252d60b2203e0cab7c2da9200c6677</Anchor>
+               </Node>
+               <Node>
+                <Name>Update</Name>
+                <Path>classhe_1_1_game.html</Path>
+                <Anchor>a1ec72ac175e8148d97f51e46618bfe4b</Anchor>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>GameConfig</Name>
+              <Path>classhe_1_1_game_config.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>GameConfig</Name>
+                <Path>classhe_1_1_game_config.html</Path>
+                <Anchor>a46267111dd28092ac523ac0c7a8c2321</Anchor>
+               </Node>
+               <Node>
+                <Name>~GameConfig</Name>
+                <Path>classhe_1_1_game_config.html</Path>
+                <Anchor>af7dc202f232e39b33c22445b268f6ad6</Anchor>
+               </Node>
+               <Node>
+                <Name>CreateGame</Name>
+                <Path>classhe_1_1_game_config.html</Path>
+                <Anchor>a5278d1d1d8cb035297846733b15612bc</Anchor>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
               <Name>Particle</Name>
               <Path>classhe_1_1_particle.html</Path>
               <Subnodes>
@@ -2092,6 +2144,21 @@
             </Subnodes>
            </Node>
            <Node>
+            <Name>HEAppDelegate</Name>
+            <Path>interface_h_e_app_delegate.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>window</Name>
+              <Path>interface_h_e_app_delegate.html</Path>
+              <Anchor>a97c69717781e257d00b9bb061b842159</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>HEController</Name>
+            <Path>interface_h_e_controller.html</Path>
+           </Node>
+           <Node>
             <Name>Output2FILE</Name>
             <Path>class_output2_f_i_l_e.html</Path>
             <Subnodes>
@@ -2194,6 +2261,14 @@
             <Path>classhe_1_1_frame.html</Path>
            </Node>
            <Node>
+            <Name>he::Game</Name>
+            <Path>classhe_1_1_game.html</Path>
+           </Node>
+           <Node>
+            <Name>he::GameConfig</Name>
+            <Path>classhe_1_1_game_config.html</Path>
+           </Node>
+           <Node>
             <Name>he::Gesture</Name>
             <Path>classhe_1_1_gesture.html</Path>
            </Node>
@@ -2208,6 +2283,16 @@
              <Node>
               <Name>he::GestureListener&lt; T &gt;</Name>
               <Path>classhe_1_1_gesture_listener.html</Path>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>GLKViewController</Name>
+            <Path></Path>
+            <Subnodes>
+             <Node>
+              <Name>HEController</Name>
+              <Path>interface_h_e_controller.html</Path>
              </Node>
             </Subnodes>
            </Node>
@@ -2348,6 +2433,26 @@
            <Node>
             <Name>he::Tweener&lt; T &gt;</Name>
             <Path>classhe_1_1_tweener.html</Path>
+           </Node>
+           <Node>
+            <Name>&lt;UIApplicationDelegate&gt;</Name>
+            <Path></Path>
+            <Subnodes>
+             <Node>
+              <Name>HEAppDelegate</Name>
+              <Path>interface_h_e_app_delegate.html</Path>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>UIResponder</Name>
+            <Path></Path>
+            <Subnodes>
+             <Node>
+              <Name>HEAppDelegate</Name>
+              <Path>interface_h_e_app_delegate.html</Path>
+             </Node>
+            </Subnodes>
            </Node>
            <Node>
             <Name>he::Vertex::V2</Name>
@@ -2580,6 +2685,10 @@
            <Node>
             <Name>Enumerator</Name>
             <Path>functions_eval.html</Path>
+           </Node>
+           <Node>
+            <Name>Properties</Name>
+            <Path>functions_prop.html</Path>
            </Node>
           </Subnodes>
          </Node>
@@ -3491,6 +3600,96 @@
                    <Node>
                     <Name>ft2build.h</Name>
                     <Path>ft2build_8h.html</Path>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>Main</Name>
+                  <Path>dir_932d4a5b2b266403cec12913e3fcce6c.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>HideousEngine.h</Name>
+                    <Path>_hideous_engine_8h.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>HEController</Name>
+                      <Path>interface_h_e_controller.html</Path>
+                     </Node>
+                     <Node>
+                      <Name>HEAppDelegate</Name>
+                      <Path>interface_h_e_app_delegate.html</Path>
+                      <Subnodes>
+                       <Node>
+                        <Name>window</Name>
+                        <Path>interface_h_e_app_delegate.html</Path>
+                        <Anchor>a97c69717781e257d00b9bb061b842159</Anchor>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>HideousEngineInit</Name>
+                      <Path>_hideous_engine_8h.html</Path>
+                      <Anchor>aae48837376121d1c87fdc3be04d638b2</Anchor>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                   <Node>
+                    <Name>HideousGame.h</Name>
+                    <Path>_hideous_game_8h.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>Game</Name>
+                      <Path>classhe_1_1_game.html</Path>
+                      <Subnodes>
+                       <Node>
+                        <Name>~Game</Name>
+                        <Path>classhe_1_1_game.html</Path>
+                        <Anchor>a6d883ef161098b808247e0647a06ad17</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>Init</Name>
+                        <Path>classhe_1_1_game.html</Path>
+                        <Anchor>a2a4d08c1603eb9a16cab2e3ec1ae0bee</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>Pause</Name>
+                        <Path>classhe_1_1_game.html</Path>
+                        <Anchor>a1c70da4baaf3a4115fd1760ee85cb87d</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>Render</Name>
+                        <Path>classhe_1_1_game.html</Path>
+                        <Anchor>a5a252d60b2203e0cab7c2da9200c6677</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>Update</Name>
+                        <Path>classhe_1_1_game.html</Path>
+                        <Anchor>a1ec72ac175e8148d97f51e46618bfe4b</Anchor>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>GameConfig</Name>
+                      <Path>classhe_1_1_game_config.html</Path>
+                      <Subnodes>
+                       <Node>
+                        <Name>GameConfig</Name>
+                        <Path>classhe_1_1_game_config.html</Path>
+                        <Anchor>a46267111dd28092ac523ac0c7a8c2321</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>~GameConfig</Name>
+                        <Path>classhe_1_1_game_config.html</Path>
+                        <Anchor>af7dc202f232e39b33c22445b268f6ad6</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>CreateGame</Name>
+                        <Path>classhe_1_1_game_config.html</Path>
+                        <Anchor>a5278d1d1d8cb035297846733b15612bc</Anchor>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                    </Subnodes>
                    </Node>
                   </Subnodes>
                  </Node>
@@ -5043,16 +5242,6 @@
                       <Name>FlashFullName</Name>
                       <Path>_utils_8h.html</Path>
                       <Anchor>a34669a268466d23676ac75154cb28aee</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>GlobalsDestroy</Name>
-                      <Path>_utils_8h.html</Path>
-                      <Anchor>a2ef34dca61092ab4cdfcf24d11b9ef83</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>GlobalsInit</Name>
-                      <Path>_utils_8h.html</Path>
-                      <Anchor>a7e7dc83f8cef260c6928fca09aded489</Anchor>
                      </Node>
                      <Node>
                       <Name>NextPOT</Name>

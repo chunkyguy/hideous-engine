@@ -21,7 +21,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		19041EB0176C5735007119B1 /* GTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EAE176C5735007119B1 /* GTests.cpp */; };
 		19041EB4176C582B007119B1 /* libgoogle_test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19041EB3176C5816007119B1 /* libgoogle_test.a */; };
 		19041EBB176C5A3C007119B1 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EB6176C5A3C007119B1 /* Game.cpp */; };
 		19041EBD176C5A3C007119B1 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 19041EBA176C5A3C007119B1 /* main.mm */; };
@@ -190,14 +189,13 @@
 		19B0EBEC1765B6E200CD3D79 /* TextureVertex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19B0EBE91765B6E200CD3D79 /* TextureVertex.cpp */; };
 		19B5A588175B81DE0031834C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 19B5A587175B81DE0031834C /* Icon.png */; };
 		19B5A58A175B81E20031834C /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19B5A589175B81E20031834C /* Icon@2x.png */; };
+		19C54C48176D09FD00377317 /* GTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19C54C47176D09FD00377317 /* GTests.cpp */; };
 		19CE12CD174C8F8200F3BE52 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CE12CC174C8F8200F3BE52 /* GLKit.framework */; };
 		19CF4205176BEB9D006B8B99 /* HideousGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19CF4203176BEB9D006B8B99 /* HideousGame.cpp */; };
 		19EB949F1738C8F200FAF69C /* easing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19EB949E1738C8F200FAF69C /* easing.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		19041EAE176C5735007119B1 /* GTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GTests.cpp; sourceTree = "<group>"; };
-		19041EAF176C5735007119B1 /* GTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTests.h; sourceTree = "<group>"; };
 		19041EB2176C5816007119B1 /* libFreetype2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFreetype2.a; sourceTree = "<group>"; };
 		19041EB3176C5816007119B1 /* libgoogle_test.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgoogle_test.a; sourceTree = "<group>"; };
 		19041EB6176C5A3C007119B1 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
@@ -453,6 +451,8 @@
 		19B0EBE91765B6E200CD3D79 /* TextureVertex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextureVertex.cpp; sourceTree = "<group>"; };
 		19B5A587175B81DE0031834C /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../../Icon.png; sourceTree = "<group>"; };
 		19B5A589175B81E20031834C /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../../Icon@2x.png"; sourceTree = "<group>"; };
+		19C54C46176D09E200377317 /* GTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTests.h; path = HideousGameEngine/include/he/Utils/GTests.h; sourceTree = SOURCE_ROOT; };
+		19C54C47176D09FD00377317 /* GTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GTests.cpp; sourceTree = "<group>"; };
 		19CE12CC174C8F8200F3BE52 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		19CF4203176BEB9D006B8B99 /* HideousGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HideousGame.cpp; sourceTree = "<group>"; };
 		19CF4206176BEBB8006B8B99 /* HideousGame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HideousGame.h; sourceTree = "<group>"; };
@@ -482,8 +482,6 @@
 		19041EAD176C55CB007119B1 /* utests */ = {
 			isa = PBXGroup;
 			children = (
-				19041EAE176C5735007119B1 /* GTests.cpp */,
-				19041EAF176C5735007119B1 /* GTests.h */,
 				19041EBE176CCD87007119B1 /* Program */,
 				19041EC0176CCD87007119B1 /* ParticleSystem */,
 				19041EC3176CCD87007119B1 /* Font */,
@@ -836,6 +834,7 @@
 				19062FD8174C9E7D00E42681 /* GLKMath_Additions.h */,
 				19A8EDD51769C6E500FD25BF /* Asset.h */,
 				19A8EE2A1769F9EC00FD25BF /* Frame.h */,
+				19C54C46176D09E200377317 /* GTests.h */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1054,6 +1053,7 @@
 		19A6E601173278A1006ACD91 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				19C54C47176D09FD00377317 /* GTests.cpp */,
 				19A6E602173278A1006ACD91 /* GLState.cpp */,
 				19A6E604173278A1006ACD91 /* ResourcePath.mm */,
 				19A6E605173278A1006ACD91 /* Screen.cpp */,
@@ -1538,7 +1538,6 @@
 				19A8EE2D1769FA0800FD25BF /* Frame.cpp in Sources */,
 				19A1C4B8176BD6A500C36FEF /* HideousEngine.mm in Sources */,
 				19CF4205176BEB9D006B8B99 /* HideousGame.cpp in Sources */,
-				19041EB0176C5735007119B1 /* GTests.cpp in Sources */,
 				19041EBB176C5A3C007119B1 /* Game.cpp in Sources */,
 				19041EBD176C5A3C007119B1 /* main.mm in Sources */,
 				19041EF0176CCD87007119B1 /* ProgramTests.cpp in Sources */,
@@ -1579,6 +1578,7 @@
 				19041F13176CCD87007119B1 /* UtilsTests.cpp in Sources */,
 				19041F14176CCD87007119B1 /* HideousEngineTests.mm in Sources */,
 				19041F15176CCD87007119B1 /* HideousGameTests.cpp in Sources */,
+				19C54C48176D09FD00377317 /* GTests.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
