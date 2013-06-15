@@ -21,11 +21,10 @@
 #include <he/Utils/Frame.h>
 #include <he/Vertex/TextureVertex.h>
 
-UITest::UITest(float w, float h)
+UITest::UITest(GLKVector3 cc) :
+he::Game(cc)
 {
 	srand(time(NULL));
-	//setup globals
-	he::GlobalsInit(w, h);
 	
 	shader_.Load(new he::TextureShader, true);
 	texture_.Load(new he::Texture(he::ResourcePath() + "ship_144.png"), true);
@@ -63,18 +62,14 @@ UITest::UITest(float w, float h)
 
 UITest::~UITest(){
 	delete view_;
-	he::GlobalsDestroy();
 }
 
 
-void UITest::Update(float dt){
+void UITest::update(float dt){
 	view_->Update(dt);
 }
 
-void UITest::Render(){
-	glClearColor(0.5, 0.5, 0.5, 1.0);
-	glClear(GL_COLOR_BUFFER_BIT);
-
+void UITest::render(){
 	view_->Render();
 }
 

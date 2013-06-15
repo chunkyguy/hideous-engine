@@ -8,7 +8,7 @@
 
 #ifndef __HideousGameEngine__TextureBigBangTest__
 #define __HideousGameEngine__TextureBigBangTest__
-#include "TestTemplate.h"
+#include <he/Main/HideousGame.h>
 
 #include <he/EventLoop/Gesture.h>
 
@@ -22,18 +22,18 @@ namespace he{
 	class TextureVertex;
 }
 
-class TextureBigBangTest : public ITest{
+class TextureBigBangTest : public he::Game{
 public:
 	~TextureBigBangTest();
-	TextureBigBangTest(float width, float height);
-	void Update(float dt);
-	void Render();
+	TextureBigBangTest(GLKVector3 cc);
 	void HandleGesture(const he::Gesture &gesture);
 	
 private:
 	const int kTotal_tex_sprites = 1000;
 	typedef enum{kRunning, kDead} State;
 
+	void update(float dt);
+	void render();
 	void load(GLKVector2 at);
 	void unload();
 	void load_assets();

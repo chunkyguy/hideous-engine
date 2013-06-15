@@ -9,7 +9,7 @@
 #ifndef __HideousGameEngine__AnimationTest__
 #define __HideousGameEngine__AnimationTest__
 
-#include "TestTemplate.h"
+#include <he/Main/HideousGame.h>
 
 #include <he/EventLoop/Gesture.h>
 
@@ -20,15 +20,16 @@ namespace he{
 }
 
 
-class AnimationTest : public ITest{
+class AnimationTest : public he::Game{
 public:
 	~AnimationTest();
-	AnimationTest(float width, float height);
-	void Update(float dt);
-	void Render();
+	AnimationTest(GLKVector3 cc);
 	void HandleGesture(const he::Gesture &gesture);
 	
 private:
+	void update(float dt);
+	void render();
+
 	const int kObjects_;
 	
 	void load();

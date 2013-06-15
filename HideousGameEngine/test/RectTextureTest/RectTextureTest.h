@@ -8,7 +8,7 @@
 
 #ifndef __HideousGameEngine__RectTextureTest__
 #define __HideousGameEngine__RectTextureTest__
-#include "TestTemplate.h"
+#include <he/Main/HideousGame.h>
 
 #include <list>
 #include <he/EventLoop/Gesture.h>
@@ -28,15 +28,15 @@ namespace he{
 	class TextureVertex;
 }
 
-class RectTextureTest : public ITest{
+class RectTextureTest : public he::Game{
 public:
 	~RectTextureTest();
-	RectTextureTest(float w, float h);
-	void Update(float dt);
-	void Render();
+	RectTextureTest(GLKVector3 cc);
 	void HandleGesture(const he::Gesture &gesture);
 	
 private:
+	void update(float dt);
+	void render();
 	void load_textures();
 	void unload_textures();
 	

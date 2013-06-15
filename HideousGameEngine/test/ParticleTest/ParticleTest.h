@@ -9,7 +9,7 @@
 #ifndef __HideousGameEngine__ParticleTest__
 #define __HideousGameEngine__ParticleTest__
 
-#include "TestTemplate.h"
+#include <he/Main/HideousGame.h>
 
 #include <he/EventLoop/Gesture.h>
 
@@ -20,15 +20,16 @@ namespace he{
 	class ParticleShader;
 }
 
-class ParticleTest : public ITest{
+class ParticleTest : public he::Game{
 public:
 	~ParticleTest();
-	ParticleTest(float w, float h);
-	void Update(float dt);
-	void Render();
+	ParticleTest(GLKVector3 cc);
 	void HandleGesture(const he::Gesture &gesture);
 	
 private:
+	void update(float dt);
+	void render();
+
 	he::ParticleShader *shader_;
 	he::Texture *texture_;
 	he::ParticleEnv *environment_;

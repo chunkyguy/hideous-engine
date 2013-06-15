@@ -29,11 +29,10 @@ MultiShadersTest::~MultiShadersTest(){
 	unload_objects();
 	he::g_EventLoop->RemoveListener(gesture_listner_);
 	delete gesture_listner_;
-	
-	he::GlobalsDestroy();
 }
 
-MultiShadersTest::MultiShadersTest(float w, float h) :
+MultiShadersTest::MultiShadersTest(GLKVector3 cc) :
+he::Game(cc),
 color_object_(nullptr),
 factory_(nullptr),
 gesture_listner_(nullptr),
@@ -45,8 +44,6 @@ particle_texture_(nullptr),
 particles_(nullptr),
 environment_(nullptr)
 {
-	//setup globals
-	he::GlobalsInit(w, h);
 
 	//debugger
 	const std::string loglevel("DEBUG1");
@@ -64,9 +61,7 @@ environment_(nullptr)
 
 	//waiting for input
 }
-void MultiShadersTest::Render(){
-	glClearColor(0.5, 0.5, 0.5, 1.0);
-	glClear(GL_COLOR_BUFFER_BIT);
+void MultiShadersTest::render(){
 
 	if(factory_){
 		for(int i = 0; i < kShaders; ++i){
@@ -85,7 +80,7 @@ void MultiShadersTest::Render(){
 }
 
 
-void MultiShadersTest::Update(float dt){
+void MultiShadersTest::update(float dt){
 	if(particles_){
 		particles_->Update(dt);
 	}

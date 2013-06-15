@@ -10,7 +10,7 @@
 
 #ifndef __HideousGameEngine__RectColorTest__
 #define __HideousGameEngine__RectColorTest__
-#include "TestTemplate.h"
+#include <he/Main/HideousGame.h>
 
 #include <he/EventLoop/Gesture.h>
 
@@ -20,15 +20,16 @@ namespace he{
 	class ColorShader;
 }
 
-class RectColorTest : public ITest{
+class RectColorTest : public he::Game{
 public:
 	~RectColorTest();
-	RectColorTest(float w, float h);
-	void Update(float dt);
-	void Render();
+	RectColorTest(GLKVector3 cc);
 	void HandleGesture(const he::Gesture &gesture);
 	
 private:
+	void update(float dt);
+	void render();
+
 	const int kTotal_squares = 3;
 	
 	void load_squares();

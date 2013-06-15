@@ -18,9 +18,8 @@
 
 #include "FlashMovie.h"
 
-FlashTest::FlashTest(float w, float h){
-	he::GlobalsInit(w, h);
-	
+FlashTest::FlashTest(GLKVector3 clear_color) :
+he::Game(clear_color){
 	// load
 	std::string data_path(he::ResourcePath() + "fishmotion.xml");
 	std::string img_path(he::ResourcePath() + "fishmotion.png");
@@ -38,20 +37,13 @@ FlashTest::~FlashTest(){
 	delete assets_;
 	he::g_EventLoop->RemoveListener(gesture_listener_);
 	delete gesture_listener_;
-	he::GlobalsDestroy();
 }
 
-void FlashTest::Update(float dt){
-	// power the animation loop
-	he::g_AnimationLoop->Update(dt);
-	
+void FlashTest::update(float dt){
 	movie_->Update(dt);
 }
 
-void FlashTest::Render(){
-	glClearColor(0.55f, 0.81f, 0.84f, 1.0f);
-	glClear(GL_COLOR_BUFFER_BIT);
-	
+void FlashTest::render(){
 	movie_->Render();
 }
 

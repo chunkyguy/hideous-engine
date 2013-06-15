@@ -32,25 +32,20 @@ ParticleTest::~ParticleTest(){
 	
 	he::g_EventLoop->RemoveListener(gesture_listner_);
 	delete gesture_listner_;
-	
-	he::GlobalsDestroy();
 }
 
-ParticleTest::ParticleTest(float w, float h) :
+ParticleTest::ParticleTest(GLKVector3 cc) :
+he::Game(cc),
 shader_(new he::ParticleShader),
 texture_(new he::Texture(he::ResourcePath() + "snow_particle.png")),
 environment_(nullptr),
 particles_(nullptr),
 gesture_listner_(nullptr)
 {
-	//globals
-	he::GlobalsInit(w, h);
-
 	//debugger
 	const std::string loglevel("DEBUG1");
 	FILELog::ReportingLevel() = FILELog::FromString(loglevel);
 	FILE_LOG(logDEBUG) << "Logging Enabled: " << loglevel << std::endl;
-	FILE_LOG(logDEBUG) <<"{" <<w << "," << h << "}";
 	
 	//random
 	srand(time(NULL));
@@ -61,14 +56,12 @@ gesture_listner_(nullptr)
 	//start things here
 }
 
-void ParticleTest::Update(float dt){
+void ParticleTest::update(float dt){
 	if(particles_){
 		particles_->Update(dt);
 	}
 }
-void ParticleTest::Render(){
-	glClearColor(0.5, 0.5, 0.5, 1.0);
-	glClear(GL_COLOR_BUFFER_BIT);
+void ParticleTest::render(){
 
 	if(particles_){
 		particles_->Render();

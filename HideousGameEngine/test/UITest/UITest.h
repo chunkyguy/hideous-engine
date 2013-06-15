@@ -9,7 +9,7 @@
 // TODO: UISlider
 #ifndef __HideousGameEngine__UITest__
 #define __HideousGameEngine__UITest__
-#include "TestTemplate.h"
+#include <he/Main/HideousGame.h>
 
 #include <he/Utils/Asset.h>
 #include <he/UI/Button.h>
@@ -25,15 +25,16 @@ namespace he{
 	}
 }
 
-class UITest : public ITest{
+class UITest : public he::Game{
 public:
 	~UITest();
-	UITest(float width, float height);
-	void Update(float dt);
-	void Render();
+	UITest(GLKVector3 cc);
 	void ButtonHandler(he::ui::Button *sender);
 	
 private:
+	void update(float dt);
+	void render();
+
 	he::ui::View *view_;
 	he::Asset<he::Texture> texture_;
 	he::Asset<he::TextureVertex> vertex_;

@@ -23,7 +23,7 @@
 #include "FlashTest/FlashTest.h"
 
 template <typename T>
-T* MakeTest(float w, float h){
-	return new T(w, h);
+T* MakeTest(GLKVector3 clear_color){
+	return new T(clear_color);
 }
 #endif

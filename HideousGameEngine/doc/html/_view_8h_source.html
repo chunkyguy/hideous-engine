@@ -101,14 +101,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef HideousGameEngine_View_h</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define HideousGameEngine_View_h</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;<a class="code" href="_transform_8h.html">he/Utils/Transform.h</a>&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;<a class="code" href="_frame_8h.html">he/Utils/Frame.h</a>&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span>he {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">namespace </span>ui{</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        </div>
 <div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="classhe_1_1ui_1_1_view.html">   21</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classhe_1_1ui_1_1_view.html">View</a>{</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <a class="code" href="classhe_1_1ui_1_1_view.html#a5042ea42c5457c6c6ae6ab5773f4ee06">View</a>(<span class="keyword">const</span> <a class="code" href="classhe_1_1_transform.html">Transform</a> &amp;transform);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <a class="code" href="classhe_1_1ui_1_1_view.html#ad03edac72b903e710749b0288c73c4f9">View</a>(<span class="keyword">const</span> <a class="code" href="classhe_1_1_frame.html">Frame</a> &amp;frame);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keyword">virtual</span> <a class="code" href="classhe_1_1ui_1_1_view.html#a197da67bfda9c5f63dbef7901baa04d7">~View</a>();</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classhe_1_1ui_1_1_view.html#a0e097a90cffad730f4e0b8cb251d5cea">Update</a>(<span class="keywordtype">float</span> dt);</div>
@@ -116,23 +116,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classhe_1_1ui_1_1_view.html#ab2ca7a06961f5aa78444b323b964894f">AddSubview</a>(<a class="code" href="classhe_1_1ui_1_1_view.html">View</a> *view);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classhe_1_1ui_1_1_view.html#a4820cce6c3c094afafa5ee82950d6d98">SetTransform</a>(<span class="keyword">const</span> <a class="code" href="classhe_1_1_transform.html">Transform</a> &amp;transform);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classhe_1_1ui_1_1_view.html#afefa7f45846ac6e1006ba3a12a14769e">SetFrame</a>(<span class="keyword">const</span> <a class="code" href="classhe_1_1_frame.html">Frame</a> &amp;frame);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keyword">const</span> <a class="code" href="classhe_1_1_transform.html">Transform</a> &amp;<a class="code" href="classhe_1_1ui_1_1_view.html#a60c1cadf41cd3b23baedbe0625dc8747">GetTransform</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keyword">const</span> <a class="code" href="classhe_1_1_frame.html">Frame</a> &amp;<a class="code" href="classhe_1_1ui_1_1_view.html#a95b34142aee0bdfd168ab29939f173c9">GetFrame</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classhe_1_1ui_1_1_view.html#ad77bc9fa9e8c1883e7e7e9e5688db311">SetNeedsDisplay</a>();</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> update(<span class="keywordtype">float</span> dt);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> self_update(<span class="keywordtype">float</span> dt);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> render();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> self_render();</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> refresh();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> self_set_needs_display();</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <a class="code" href="classhe_1_1ui_1_1_view.html">View</a> *add_to_;  </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <a class="code" href="classhe_1_1ui_1_1_view.html">View</a> *head_;    </div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <a class="code" href="classhe_1_1ui_1_1_view.html">View</a> *next_;    </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <a class="code" href="classhe_1_1_transform.html">Transform</a> transform_; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <a class="code" href="classhe_1_1_frame.html">Frame</a> frame_; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    };</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;} <span class="comment">/*namespace ui*/</span></div>
@@ -142,7 +142,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jun 13 2013 17:16:56 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 14 2013 14:38:17 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

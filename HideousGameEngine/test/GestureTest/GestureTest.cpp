@@ -51,18 +51,10 @@ namespace {
 	}
 }
 
-GestureTest::GestureTest(float width, float height) :
+GestureTest::GestureTest(GLKVector3 cc) :
+he::Game(cc),
 gesture_listner_(nullptr)
 {
-	//setup globals
-	he::GlobalsInit(width, height);
-
-	//debugger
-	const std::string loglevel("DEBUG1");
-	FILELog::ReportingLevel() = FILELog::FromString(loglevel);
-	FILE_LOG(logDEBUG) << "Logging Enabled: " << loglevel;
-	FILE_LOG(logDEBUG) <<"{" << width << "," << height << "}";
-
 	//random
 	srand(time(NULL));
 	
@@ -76,18 +68,13 @@ GestureTest::~GestureTest(){
 	delete obj_;
 	he::g_EventLoop->RemoveListener(gesture_listner_);
 	delete gesture_listner_;
-	
-	he::GlobalsDestroy();
 }
 
-void GestureTest::Update(float dt){
+void GestureTest::update(float dt){
 	obj_->Update(dt);
 }
 
-void GestureTest::Render(){
-	glClearColor(0.5, 0.5, 0.5, 1.0);
-	glClear(GL_COLOR_BUFFER_BIT);
-		
+void GestureTest::render(){
 	obj_->Render();
 }
 

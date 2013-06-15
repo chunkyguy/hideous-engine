@@ -21,21 +21,16 @@ RectTextureTest::~RectTextureTest(){
 	unload_textures();
 	he::g_EventLoop->RemoveListener(gesture_listener_);
 	delete gesture_listener_;
-
-	he::GlobalsDestroy();
 }
 
-RectTextureTest::RectTextureTest(float w, float h):
+RectTextureTest::RectTextureTest(GLKVector3 cc):
+he::Game(cc),
 atlas_(0)
 {
-	//setup globals
-	he::GlobalsInit(w, h);
-	
 	//debugger
 	const std::string loglevel("DEBUG1");
 	FILELog::ReportingLevel() = FILELog::FromString(loglevel);
 	FILE_LOG(logDEBUG) << "Logging Enabled: " << loglevel << std::endl;
-	FILE_LOG(logDEBUG) <<"{" <<w << "," << h << "}";
 
 	//random
 	srand(time(NULL));
@@ -45,13 +40,10 @@ atlas_(0)
 	// waiting for input
 }
 
-void RectTextureTest::Update(float dt){
+void RectTextureTest::update(float dt){
 }
 
-void RectTextureTest::Render(){
-	glClearColor(0.5, 0.5, 0.5, 1.0);
-	glClear(GL_COLOR_BUFFER_BIT);
-	
+void RectTextureTest::render(){
 	for(std::list<he::RenderObject *>::iterator it = render_objects_.begin(); it != render_objects_.end(); ++it){
 		(*it)->Render();
 	}

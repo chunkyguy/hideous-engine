@@ -38,9 +38,6 @@ namespace he {
 		Button::~Button(){
 			he::g_EventLoop->RemoveListener(gesture_listener_);
 			delete gesture_listener_;
-			if(listner_){
-				delete listner_; listner_ = nullptr;
-			}
 //			if(animation_listener_){
 //				delete animation_listener_;
 //			}

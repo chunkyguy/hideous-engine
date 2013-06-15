@@ -8,7 +8,7 @@
 
 #ifndef __HideousGameEngine__SpineTest__
 #define __HideousGameEngine__SpineTest__
-#include "TestTemplate.h"
+#include <he/Main/HideousGame.h>
 
 #include <he/EventLoop/Gesture.h>
 
@@ -49,15 +49,15 @@ public:
 };
 
 
-class SpineTest : public ITest{
+class SpineTest : public he::Game{
 public:
 	~SpineTest();
-	SpineTest(float width, float height);
-	void Update(float dt);
-	void Render();
+	SpineTest(GLKVector3 cc);
 	void HandleGesture(const he::Gesture &gesture);
 	
 private:
+	void update(float dt);
+	void render();
 	void load(std::string animation_name);
 	void unload();
 	

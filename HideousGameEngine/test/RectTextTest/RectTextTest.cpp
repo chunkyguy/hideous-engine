@@ -18,23 +18,18 @@ RectTextTest::~RectTextTest(){
 	
 	he::g_EventLoop->RemoveListener(gesture_listener_);
 	delete gesture_listener_;
-
-	he::GlobalsDestroy();
 }
 
-RectTextTest::RectTextTest(float w, float h) :
+RectTextTest::RectTextTest(GLKVector3 cc) :
+he::Game(cc),
 font_(nullptr),
 text_(nullptr),
 gesture_listener_(nullptr)
 {
-		//setup globals
-		he::GlobalsInit(w, h);
-	
 		//debugger
 		const std::string loglevel("DEBUG1");
 		FILELog::ReportingLevel() = FILELog::FromString(loglevel);
 		FILE_LOG(logDEBUG) << "Logging Enabled: RectTextTest" << loglevel << std::endl;
-		FILE_LOG(logDEBUG) <<"{" <<w << "," << h << "}";
 
 		//random
 		srand(time(NULL));
@@ -45,11 +40,9 @@ gesture_listener_(nullptr)
 		//waiting for input
 }
 
-void RectTextTest::Update(float dt){
+void RectTextTest::update(float dt){
 }
-void RectTextTest::Render(){	
-	glClearColor(0.5, 0.5, 0.5, 1.0);
-	glClear(GL_COLOR_BUFFER_BIT);
+void RectTextTest::render(){
 
 	if(text_){
 		text_->Render();

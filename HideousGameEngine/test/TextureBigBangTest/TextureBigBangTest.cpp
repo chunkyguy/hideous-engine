@@ -22,19 +22,14 @@ TextureBigBangTest::~TextureBigBangTest(){
 	
 	he::g_EventLoop->RemoveListener(gesture_listener_);
 	delete gesture_listener_;
-
-	he::GlobalsDestroy();
 }
 
-TextureBigBangTest::TextureBigBangTest(float w, float h){
-	//setup globals
-	he::GlobalsInit(w, h);
-	
+TextureBigBangTest::TextureBigBangTest(GLKVector3 cc) :
+he::Game(cc){
 	//debugger
 	const std::string loglevel("DEBUG1");
 	FILELog::ReportingLevel() = FILELog::FromString(loglevel);
 	FILE_LOG(logDEBUG) << "Logging Enabled: " << loglevel << std::endl;
-	FILE_LOG(logDEBUG) <<"{" <<w << "," << h << "}";
 
 	//random
 	srand(time(NULL));
@@ -77,7 +72,7 @@ void TextureBigBangTest::unload(){
 	glClear(GL_COLOR_BUFFER_BIT);
 }
 
-void TextureBigBangTest::Update(float dt){
+void TextureBigBangTest::update(float dt){
 	
 	if(state_ != kRunning){
 		return;
@@ -100,7 +95,7 @@ void TextureBigBangTest::Update(float dt){
 	
 	//delay = 0.0125;
 }
-void TextureBigBangTest::Render(){
+void TextureBigBangTest::render(){
 	if(state_ != kRunning){
 		return;
 	}

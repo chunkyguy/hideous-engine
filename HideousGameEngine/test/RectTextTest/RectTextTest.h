@@ -8,7 +8,7 @@
 
 #ifndef __HideousGameEngine__RectTextTest__
 #define __HideousGameEngine__RectTextTest__
-#include "TestTemplate.h"
+#include <he/Main/HideousGame.h>
 
 #include <he/EventLoop/Gesture.h>
 
@@ -17,15 +17,15 @@ namespace he{
 	class Text;
 }
 
-class RectTextTest : public ITest{
+class RectTextTest : public he::Game{
 public:
 	~RectTextTest();
-	RectTextTest(float width, float height);
-	void Update(float dt);
-	void Render();
+	RectTextTest(GLKVector3 cc);
 	void HandleGesture(const he::Gesture &gesture);
 	
 private:
+	void update(float dt);
+	void render();
 	void load_text();
 	void unload_text();
 

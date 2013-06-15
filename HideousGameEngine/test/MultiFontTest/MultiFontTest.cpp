@@ -18,25 +18,16 @@ MultiFontTest::~MultiFontTest(){
 	unload_text();
 	he::g_EventLoop->RemoveListener(gesture_listner_);
 	delete gesture_listner_;
-
-	he::GlobalsDestroy();
 }
 
-MultiFontTest::MultiFontTest(float w, float h) :
+MultiFontTest::MultiFontTest(GLKVector3 cc) :
+he::Game(cc),
 courier_(nullptr),
 simsun_(nullptr),
 whacky_(nullptr),
 labs_(nullptr),
 gesture_listner_(nullptr)
 {
-	//setup globals
-	he::GlobalsInit(w, h);
-
-	//debugger
-	const std::string loglevel("DEBUG1");
-	FILELog::ReportingLevel() = FILELog::FromString(loglevel);
-	FILE_LOG(logDEBUG) << "Logging Enabled: MultiFontTest" << loglevel << std::endl;
-	FILE_LOG(logDEBUG) <<"{" <<w << "," << h << "}";
 
 	//random
 	srand(time(NULL));
@@ -48,11 +39,9 @@ gesture_listner_(nullptr)
 	//waiting for input
 }
 
-void MultiFontTest::Update(float dt){
+void MultiFontTest::update(float dt){
 }
-void MultiFontTest::Render(){
-	glClearColor(0.5, 0.5, 0.5, 1.0);
-	glClear(GL_COLOR_BUFFER_BIT);
+void MultiFontTest::render(){
 	
 	if(whacky_){
 		whacky_->Render();

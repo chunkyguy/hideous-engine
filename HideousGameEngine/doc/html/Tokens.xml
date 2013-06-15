@@ -454,7 +454,7 @@
       <Scope>he</Scope>
     </TokenIdentifier>
     <Path>namespacehe.html</Path>
-    <Anchor>ab040de786d83cfc454e00aca3b6c008e</Anchor>
+    <Anchor>aeb4bf8c0bd33277ad582045ca1ea48b9</Anchor>
     <DeclaredIn>TextureAtlas.h</DeclaredIn>
   </Token>
   <Token>
@@ -735,7 +735,7 @@
       <Scope>he</Scope>
     </TokenIdentifier>
     <Path>namespacehe.html</Path>
-    <Anchor>a415dc8c865a8594d3550483aa8f5c485</Anchor>
+    <Anchor>a34669a268466d23676ac75154cb28aee</Anchor>
     <DeclaredIn>Utils.h</DeclaredIn>
   </Token>
   <Token>
@@ -1600,7 +1600,7 @@
       <Scope>he</Scope>
     </TokenIdentifier>
     <Path>namespacehe.html</Path>
-    <Anchor>ab040de786d83cfc454e00aca3b6c008e</Anchor>
+    <Anchor>aeb4bf8c0bd33277ad582045ca1ea48b9</Anchor>
     <DeclaredIn>TextureAtlas.h</DeclaredIn>
   </Token>
   <Token>
@@ -1710,7 +1710,7 @@
       <Scope>he</Scope>
     </TokenIdentifier>
     <Path>namespacehe.html</Path>
-    <Anchor>a415dc8c865a8594d3550483aa8f5c485</Anchor>
+    <Anchor>a34669a268466d23676ac75154cb28aee</Anchor>
     <DeclaredIn>Utils.h</DeclaredIn>
   </Token>
   <Token>
@@ -4711,6 +4711,115 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>he::Frame</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>he::Frame</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_frame.html</Path>
+    <DeclaredIn>Frame.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Frame</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Frame</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_frame.html</Path>
+    <Anchor>ae4b0576bdb8b38a2d2133e14167886ba</Anchor>
+    <DeclaredIn>Frame.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetOrigin</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Frame</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_frame.html</Path>
+    <Anchor>a806a76520976bd5439218d7ac7b9b150</Anchor>
+    <DeclaredIn>Frame.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SetOrigin</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Frame</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_frame.html</Path>
+    <Anchor>ac10279ebf90431485c47d99e1e5894c3</Anchor>
+    <DeclaredIn>Frame.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetSize</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Frame</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_frame.html</Path>
+    <Anchor>a78437bb70077d88b19dd0760f3bf0998</Anchor>
+    <DeclaredIn>Frame.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SetSize</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Frame</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_frame.html</Path>
+    <Anchor>a9a2ec9d911a359338aab9190507ca2b5</Anchor>
+    <DeclaredIn>Frame.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetTransform</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Frame</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_frame.html</Path>
+    <Anchor>abc3421c524dfa1e0b2682242178fd4a8</Anchor>
+    <DeclaredIn>Frame.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SetTransform</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Frame</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_frame.html</Path>
+    <Anchor>a6d2af0c26cc861e37638756337c171ce</Anchor>
+    <DeclaredIn>Frame.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetRect</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Frame</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_frame.html</Path>
+    <Anchor>aa6569fb3bbec82fc82d08a86f5426662</Anchor>
+    <DeclaredIn>Frame.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SetRect</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Frame</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_frame.html</Path>
+    <Anchor>a502eee7105f90cc62a23d7a1614c2eb8</Anchor>
+    <DeclaredIn>Frame.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>he::Screen</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -5636,6 +5745,233 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>he::ui::IButtonListner</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>he::ui::IButtonListner</Scope>
+    </TokenIdentifier>
+    <Path>structhe_1_1ui_1_1_i_button_listner.html</Path>
+    <DeclaredIn>Button.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~IButtonListner</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he::ui::IButtonListner</Scope>
+    </TokenIdentifier>
+    <Path>structhe_1_1ui_1_1_i_button_listner.html</Path>
+    <Anchor>acc2e4e13129f7324bb103e70dd7746c3</Anchor>
+    <DeclaredIn>Button.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Hit</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he::ui::IButtonListner</Scope>
+    </TokenIdentifier>
+    <Path>structhe_1_1ui_1_1_i_button_listner.html</Path>
+    <Anchor>a3f6cf94bbaea053832b8675d31dc6f5d</Anchor>
+    <DeclaredIn>Button.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>he::ui::ButtonListner</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tmplt</Type>
+      <Scope>he::ui::ButtonListner</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1ui_1_1_button_listner.html</Path>
+    <DeclaredIn>Button.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>callback</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>tdef</Type>
+      <Scope>he::ui::ButtonListner</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1ui_1_1_button_listner.html</Path>
+    <Anchor>ae633293ded4a4a5ab84e28841ecf5fe2</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ButtonListner</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::ui::ButtonListner</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1ui_1_1_button_listner.html</Path>
+    <Anchor>a1fb1635638829e956fcf591c99bcabf1</Anchor>
+    <DeclaredIn>Button.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Hit</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::ui::ButtonListner</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1ui_1_1_button_listner.html</Path>
+    <Anchor>ac566c0936b8abdf43ea95b9084b41019</Anchor>
+    <DeclaredIn>Button.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~IButtonListner</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he::ui::IButtonListner</Scope>
+    </TokenIdentifier>
+    <Path>structhe_1_1ui_1_1_i_button_listner.html</Path>
+    <Anchor>acc2e4e13129f7324bb103e70dd7746c3</Anchor>
+    <DeclaredIn>Button.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>he::ui::Button</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>he::ui::Button</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1ui_1_1_button.html</Path>
+    <DeclaredIn>Button.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Button</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::ui::Button</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1ui_1_1_button.html</Path>
+    <Anchor>ad4900345bb48f186463b37657bb000df</Anchor>
+    <DeclaredIn>Button.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~Button</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::ui::Button</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1ui_1_1_button.html</Path>
+    <Anchor>af9645ddcba25a7eec5e0e60e2f755ec4</Anchor>
+    <DeclaredIn>Button.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HandleGesture</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::ui::Button</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1ui_1_1_button.html</Path>
+    <Anchor>a3d25914ffd52e2ba322650ce0efa9095</Anchor>
+    <DeclaredIn>Button.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetTag</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::ui::Button</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1ui_1_1_button.html</Path>
+    <Anchor>a2ce8e6dead737a5e7073ba06e2ed3c7b</Anchor>
+    <DeclaredIn>Button.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>View</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::ui::View</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1ui_1_1_view.html</Path>
+    <Anchor>ad03edac72b903e710749b0288c73c4f9</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~View</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::ui::View</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1ui_1_1_view.html</Path>
+    <Anchor>a197da67bfda9c5f63dbef7901baa04d7</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Update</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::ui::View</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1ui_1_1_view.html</Path>
+    <Anchor>a0e097a90cffad730f4e0b8cb251d5cea</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Render</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::ui::View</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1ui_1_1_view.html</Path>
+    <Anchor>a80151896f7724464dfc9c9a574a8b95c</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>AddSubview</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::ui::View</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1ui_1_1_view.html</Path>
+    <Anchor>ab2ca7a06961f5aa78444b323b964894f</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SetFrame</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::ui::View</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1ui_1_1_view.html</Path>
+    <Anchor>afefa7f45846ac6e1006ba3a12a14769e</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetFrame</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::ui::View</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1ui_1_1_view.html</Path>
+    <Anchor>a95b34142aee0bdfd168ab29939f173c9</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SetNeedsDisplay</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::ui::View</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1ui_1_1_view.html</Path>
+    <Anchor>ad77bc9fa9e8c1883e7e7e9e5688db311</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>he::ui::ImageViewFactory</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -5693,7 +6029,7 @@
       <Scope>he::ui::ImageView</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1ui_1_1_image_view.html</Path>
-    <Anchor>ab597ee6c050813aac9dc3d15b2056b79</Anchor>
+    <Anchor>a5ed5682573efe76bbbc97d72d521764b</Anchor>
     <DeclaredIn>ImageView.h</DeclaredIn>
   </Token>
   <Token>
@@ -5704,7 +6040,7 @@
       <Scope>he::ui::ImageView</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1ui_1_1_image_view.html</Path>
-    <Anchor>ae0dd8ad1f1f53f3918cb3662dd4dccb8</Anchor>
+    <Anchor>a2154674a7162ddd4d915373f10f0f7bb</Anchor>
     <DeclaredIn>ImageView.h</DeclaredIn>
   </Token>
   <Token>
@@ -5726,7 +6062,7 @@
       <Scope>he::ui::View</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1ui_1_1_view.html</Path>
-    <Anchor>a5042ea42c5457c6c6ae6ab5773f4ee06</Anchor>
+    <Anchor>ad03edac72b903e710749b0288c73c4f9</Anchor>
     <DeclaredIn>View.h</DeclaredIn>
   </Token>
   <Token>
@@ -5775,24 +6111,24 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>SetTransform</Name>
+      <Name>SetFrame</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>he::ui::View</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1ui_1_1_view.html</Path>
-    <Anchor>a4820cce6c3c094afafa5ee82950d6d98</Anchor>
+    <Anchor>afefa7f45846ac6e1006ba3a12a14769e</Anchor>
     <DeclaredIn>View.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>GetTransform</Name>
+      <Name>GetFrame</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>he::ui::View</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1ui_1_1_view.html</Path>
-    <Anchor>a60c1cadf41cd3b23baedbe0625dc8747</Anchor>
+    <Anchor>a95b34142aee0bdfd168ab29939f173c9</Anchor>
     <DeclaredIn>View.h</DeclaredIn>
   </Token>
   <Token>
@@ -5824,7 +6160,7 @@
       <Scope>he::ui::View</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1ui_1_1_view.html</Path>
-    <Anchor>a5042ea42c5457c6c6ae6ab5773f4ee06</Anchor>
+    <Anchor>ad03edac72b903e710749b0288c73c4f9</Anchor>
     <DeclaredIn>View.h</DeclaredIn>
   </Token>
   <Token>
@@ -5873,24 +6209,24 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>SetTransform</Name>
+      <Name>SetFrame</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>he::ui::View</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1ui_1_1_view.html</Path>
-    <Anchor>a4820cce6c3c094afafa5ee82950d6d98</Anchor>
+    <Anchor>afefa7f45846ac6e1006ba3a12a14769e</Anchor>
     <DeclaredIn>View.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>GetTransform</Name>
+      <Name>GetFrame</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>he::ui::View</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1ui_1_1_view.html</Path>
-    <Anchor>a60c1cadf41cd3b23baedbe0625dc8747</Anchor>
+    <Anchor>a95b34142aee0bdfd168ab29939f173c9</Anchor>
     <DeclaredIn>View.h</DeclaredIn>
   </Token>
   <Token>

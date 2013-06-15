@@ -21,17 +21,15 @@ AnimationTest::~AnimationTest(){
 	}
 	he::g_EventLoop->RemoveListener(gesture_listner_);
 	delete gesture_listner_;
-
-	he::GlobalsDestroy();
 }
 
-AnimationTest::AnimationTest(float width, float height) :
+AnimationTest::AnimationTest(GLKVector3 cc) :
+he::Game(cc),
 kObjects_(2),
 objects_(nullptr),
 active_object_(-1),
 gesture_listner_(nullptr)
 {
-	he::GlobalsInit(width, height);
 	
 	//debugger
 	const std::string loglevel("DEBUG1");
@@ -44,19 +42,14 @@ gesture_listner_(nullptr)
 	
 }
 
-void AnimationTest::Update(float dt){
-	he::g_AnimationLoop->Update(dt);
-
+void AnimationTest::update(float dt){
 	if(objects_){
 		for (int i = 0; i < kObjects_; ++i) {
 			objects_[i]->Update(dt);
 		}
 	}
 }
-void AnimationTest::Render(){
-	glClearColor(0.5, 0.5, 0.5, 1.0);
-	glClear(GL_COLOR_BUFFER_BIT);
-
+void AnimationTest::render(){
 	if(objects_){
 		for (int i = 0; i < kObjects_; ++i) {
 			objects_[i]->Render();

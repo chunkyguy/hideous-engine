@@ -25,10 +25,6 @@ void operator=(const TypeName&)
 
 namespace he{
 	
-	void GlobalsInit(float w, float h);
-	
-	void GlobalsDestroy();
-	
 	// buffer offset calc for VBO data stride
 	inline const GLvoid *BufferOffset(int off){
 		return static_cast<char *>(0) + off;

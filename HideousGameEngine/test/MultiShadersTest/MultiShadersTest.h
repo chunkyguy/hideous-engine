@@ -8,7 +8,7 @@
 
 #ifndef __HideousGameEngine__MultiShadersTest__
 #define __HideousGameEngine__MultiShadersTest__
-#include "TestTemplate.h"
+#include <he/Main/HideousGame.h>
 
 #include <he/EventLoop/Gesture.h>
 
@@ -23,15 +23,15 @@ namespace he {
 
 const int kShaders = 4;
 
-class MultiShadersTest : public ITest{
+class MultiShadersTest : public he::Game{
 public:
 	~MultiShadersTest();
-	MultiShadersTest(float w, float h);
-	void Update(float dt);
-	void Render();
+	MultiShadersTest(GLKVector3 cc);
 	void HandleGesture(const he::Gesture &gesture);
 	
 private:
+	void update(float dt);
+	void render();
 	void load_objects();
 	void unload_objects();
 

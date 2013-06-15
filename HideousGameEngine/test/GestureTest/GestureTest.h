@@ -9,21 +9,22 @@
 #ifndef __HideousGameEngine__GestureTest__
 #define __HideousGameEngine__GestureTest__
 
-#include "TestTemplate.h"
+#include <he/Main/HideousGame.h>
 
 #include <he/EventLoop/Gesture.h>
 
 #include "GObj.h"
 
-class GestureTest : public ITest{
+class GestureTest : public he::Game{
 public:
-	GestureTest(float width, float height);
+	GestureTest(GLKVector3 cc);
 	~GestureTest();
-	void Update(float dt);
-	void Render();
 	void HandleGesture(const he::Gesture &gesture);
 	
 private:	
+	void update(float dt);
+	void render();
+
 	GObj *obj_;
 	he::GestureListener<GestureTest> *gesture_listner_;
 };

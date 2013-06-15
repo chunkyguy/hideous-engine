@@ -37,19 +37,16 @@
 SpineTest::~SpineTest(){
 	he::g_EventLoop->RemoveListener(gesture_listener_);
 	delete gesture_listener_;
-
-	he::GlobalsDestroy();
 }
 
-SpineTest::SpineTest(float width, float height) :
+SpineTest::SpineTest(GLKVector3 cc) :
+he::Game(cc),
 animation_index_(0),
 atlas_(nullptr),
 drawable_(nullptr),
 gesture_listener_(nullptr),
 skeletonData_(nullptr)
 {
-	he::GlobalsInit(width, height);
-	
 	const std::string loglevel("DEBUG1");
 	FILELog::ReportingLevel() = FILELog::FromString(loglevel);
 	FILE_LOG(logDEBUG) << "Logging Enabled: SpineTest: " << loglevel << std::endl;
@@ -139,13 +136,13 @@ void SpineTest::HandleGesture(const he::Gesture &gesture){
 	load(animations[animation_index_]);
 }
 
-void SpineTest::Update(float dt){
+void SpineTest::update(float dt){
 	if(drawable_){
 		drawable_->Update(dt);
 	}
 }
 
-void SpineTest::Render(){
+void SpineTest::render(){
 	if(drawable_){
 		drawable_->Render();
 	}
@@ -181,8 +178,6 @@ void SkeletonDrawable::Update (float deltaTime) {
 }
 
 void SkeletonDrawable::Render() {
-	glClearColor(0.5, 0.5, 0.5, 1.0);
-	glClear(GL_COLOR_BUFFER_BIT);
 
 	he::Vertex::V2 vertexPositions;
 	for (int i = 0; i < skeleton_->GetSlotCount(); ++i) {

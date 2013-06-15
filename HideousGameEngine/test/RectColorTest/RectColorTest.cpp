@@ -12,21 +12,12 @@
 #include <he/Utils/DebugHelper.h>
 #include <he/Utils/Utils.h>
 
-RectColorTest::~RectColorTest(){
-	delete shader_;
-	he::g_EventLoop->RemoveListener(gesture_listner_);
-	delete gesture_listner_;
-	
-	he::GlobalsDestroy();
-}
-RectColorTest::RectColorTest(float w, float h) :
+RectColorTest::RectColorTest(GLKVector3 cc) :
+he::Game(cc),
 squares_(0),
 shader_(new he::ColorShader)
 {
 	he_Trace("RectColorTest\n");
-	// Init globals
-	he::GlobalsInit(w, h);
-
 	//random
 	srand(time(NULL));
 
@@ -36,8 +27,14 @@ shader_(new he::ColorShader)
 	// waiting for gesture
 }
 
+RectColorTest::~RectColorTest(){
+	delete shader_;
+	he::g_EventLoop->RemoveListener(gesture_listner_);
+	delete gesture_listner_;
+}
 
-void RectColorTest::Update(float dt){
+
+void RectColorTest::update(float dt){
 
 	if(!squares_){
 		return;
@@ -55,10 +52,7 @@ void RectColorTest::Update(float dt){
 		unload_squares();
 	}
 }
-void RectColorTest::Render(){
-	glClearColor(0.5, 0.5, 0.5, 1.0);
-	glClear(GL_COLOR_BUFFER_BIT);
-	
+void RectColorTest::render(){
 	if(!squares_){
 		return;
 	}
