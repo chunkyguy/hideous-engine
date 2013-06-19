@@ -45,9 +45,8 @@ namespace he {
 			~ImageView();
 			
 		private:
-			void self_update(float dt);
-			void self_render();
-			void self_set_needs_display();
+			virtual void self_update(float dt);
+			virtual void self_render();
 			
 			RenderObject *render_object_;
 			TextureVertex *vertex_;

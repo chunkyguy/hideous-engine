@@ -91,6 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classhe_1_1ui_1_1_view-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">he::ui::View Class Reference</div>  </div>
@@ -125,8 +126,11 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:afefa7f45846ac6e1006ba3a12a14769e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95b34142aee0bdfd168ab29939f173c9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classhe_1_1_frame.html">Frame</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1ui_1_1_view.html#a95b34142aee0bdfd168ab29939f173c9">GetFrame</a> () const </td></tr>
 <tr class="separator:a95b34142aee0bdfd168ab29939f173c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad77bc9fa9e8c1883e7e7e9e5688db311"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1ui_1_1_view.html#ad77bc9fa9e8c1883e7e7e9e5688db311">SetNeedsDisplay</a> ()</td></tr>
-<tr class="separator:ad77bc9fa9e8c1883e7e7e9e5688db311"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:ab594641f53c8474dc1c1169b98393fc0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classhe_1_1_frame.html">Frame</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1ui_1_1_view.html#ab594641f53c8474dc1c1169b98393fc0">frame_</a></td></tr>
+<tr class="separator:ab594641f53c8474dc1c1169b98393fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Container of all kind of Views. Adds child component in stack order. If AddSubview-order is like [btn_01, btn_01, bg, icon_01] Draw order will be [btn_01, btn_01, bg, icon_01] </p>
@@ -237,22 +241,6 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad77bc9fa9e8c1883e7e7e9e5688db311"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void he::ui::View::SetNeedsDisplay </td>
-          <td>(</td>
-          <td class="paramname">)</td><td></td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Refresh the UI </p>
-
-</div>
-</div>
 <a class="anchor" id="a0e097a90cffad730f4e0b8cb251d5cea"></a>
 <div class="memitem">
 <div class="memproto">
@@ -270,13 +258,27 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="ab594641f53c8474dc1c1169b98393fc0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classhe_1_1_frame.html">Frame</a> he::ui::View::frame_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The frame of the view </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>HideousGameEngine/include/he/UI/<a class="el" href="_view_8h_source.html">View.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 16 2013 01:41:48 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 17 2013 17:14:29 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

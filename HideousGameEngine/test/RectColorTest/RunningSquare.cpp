@@ -36,7 +36,7 @@ color_(GLKVector4Make(he::Randf(), he::Randf(), he::Randf(),he::Randf()))
 	vertex_data_ = new he::ColorVertex(min, max);
 
 	sprite_ = new he::RenderObject(vertex_data_, shader, 0, he::g_Screen->projection_, color_);
-	transform_.position_ = GLKVector2Make(-he::g_Screen->width_/2+he::Randf()*he::g_Screen->width_, -he::g_Screen->height_/2+he::Randf()*he::g_Screen->height_);
+	transform_.SetPosition( GLKVector2Make(-he::g_Screen->width_/2+he::Randf()*he::g_Screen->width_, -he::g_Screen->height_/2+he::Randf()*he::g_Screen->height_) );
 }
 
 RunningSquare::Life RunningSquare::GetLifeState(){
@@ -52,7 +52,8 @@ void RunningSquare::Update(float dt){
 	if(life_state_ != kLiving)
 		return;
 	
-	GLKVector2 newPos = GLKVector2Add(transform_.GetPosition(), GLKVector2Multiply(direction_, speed_));
+	GLKVector2 pos_incr = direction_ * speed_;
+	GLKVector3 newPos = transform_.GetPosition() + GLKVector3Make(pos_incr.x, pos_incr.y, 0.0f);
 	if(newPos.x < -he::g_Screen->width_/2 || newPos.x > he::g_Screen->width_/2 || newPos.y < -he::g_Screen->height_/2 || newPos.y > he::g_Screen->height_/2){
 		life_state_ = kZombie;
 	}else{

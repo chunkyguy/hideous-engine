@@ -39,7 +39,7 @@ namespace he {
 			}
 		}
 		void View::self_update(float dt){}
-		
+				
 		void View::Render(){
 			self_render();
 			for(View *p = head_; p; p = p->next_){
@@ -56,6 +56,7 @@ namespace he {
 				add_to_->next_ = view;
 				add_to_ = view;
 			}
+			view->frame_.GetTransformPtr()->SetParent(frame_.GetTransformPtr());
 		}
 		
 		void View::SetFrame(const he::Frame &frame){
@@ -65,15 +66,7 @@ namespace he {
 		const Frame &View::GetFrame() const{
 			return frame_;
 		}
-		
-		void View::SetNeedsDisplay(){
-			self_set_needs_display();
-			for(View *p = head_; p; p = p->next_){
-				p->SetNeedsDisplay();
-			}
-		}
-		void View::self_set_needs_display(){}
-		
+				
 	} /*namespace ui*/
 } /*namespace he*/
 

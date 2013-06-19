@@ -35,6 +35,10 @@ namespace he{
 	}
 
 	void ParticleShader::Render(RenderObject *render_object){
+		assert(program_->object_);	// program prepared
+		assert(render_object->texture_->object_);	//texture prepared
+		assert(render_object->GetVertexData()->GetRawData(IVertex::kPosition)); // should have position data
+
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE);
 
 		glUseProgram(program_->object_);

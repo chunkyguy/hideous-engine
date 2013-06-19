@@ -11,9 +11,10 @@ var searchData=
   ['font',['Font',['../classhe_1_1_font.html#a94081678eefd22242277f350ceefffa6',1,'he::Font']]],
   ['font',['Font',['../classhe_1_1_font.html',1,'he']]],
   ['font_2eh',['Font.h',['../_font_8h.html',1,'']]],
-  ['frame',['Frame',['../classhe_1_1_frame.html#ae4b0576bdb8b38a2d2133e14167886ba',1,'he::Frame']]],
   ['frame',['Frame',['../classhe_1_1_frame.html',1,'he']]],
+  ['frame',['Frame',['../classhe_1_1_frame.html#ae4b0576bdb8b38a2d2133e14167886ba',1,'he::Frame']]],
   ['frame_2eh',['Frame.h',['../_frame_8h.html',1,'']]],
+  ['frame_5f',['frame_',['../classhe_1_1ui_1_1_view.html#ab594641f53c8474dc1c1169b98393fc0',1,'he::ui::View']]],
   ['fromstring',['FromString',['../class_debug_log.html#a39f15be4cff94663a31cd832680030a0',1,'DebugLog']]],
   ['ft2build_2eh',['ft2build.h',['../ft2build_8h.html',1,'']]]
 ];

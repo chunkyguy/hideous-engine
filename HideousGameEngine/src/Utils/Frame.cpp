@@ -15,9 +15,8 @@ namespace he{
 	transform_(transform),
 	size_(size)
 	{
-		Vertex::Set(rect_, transform_.GetPosition()-size_/2.0f, transform_.GetPosition()+size_/2.0f);
-		he_Trace("Frame: pos = %@\n size = %@\nrect = %@\n",transform.GetPosition(),size,rect_);
-
+		GLKVector2 trans_pos = GLKVector2Make(transform_.GetPosition().x, transform_.GetPosition().y);
+		Vertex::Set(rect_, trans_pos-size_/2.0f, trans_pos+size_/2.0f);
 		assert(size_ == (Vertex::GetVertex(rect_, Vertex::kD) - Vertex::GetVertex(rect_, Vertex::kA)));
 	}
 	
@@ -27,7 +26,8 @@ namespace he{
 	
 	void Frame::SetOrigin(const GLKVector2 &origin){
 		Vertex::Translate(rect_, origin);
-		transform_.SetPosition(origin - transform_.GetPosition());
+		GLKVector3 org = GLKVector3Make(origin.x, origin.y, 0.0f );
+		transform_.SetPosition(org - transform_.GetPosition());
 	}
 	
 	GLKVector2 Frame::GetSize() const{
@@ -42,6 +42,9 @@ namespace he{
 	const Transform &Frame::GetTransform() const{
 		return transform_;
 	}
+	Transform *Frame::GetTransformPtr(){
+		return &transform_;
+	}
 	
 	void Frame::SetTransform(const he::Transform &transform){
 		Vertex::Translate(rect_, transform.GetPosition() - transform_.GetPosition());
@@ -51,7 +54,12 @@ namespace he{
 	Vertex::V2 Frame::GetRect() const{
 		return rect_;
 	}
-	
+	Vertex::V2 Frame::GetGlobalRect() const{
+		Vertex::V2 world_frame(rect_);
+		he::Vertex::ApplyTransform(world_frame, transform_);
+		return world_frame;
+		
+	}
 	void Frame::SetRect(const Vertex::V2 &rect){
 		rect_ = rect;
 		size_ = Vertex::GetVertex(rect_, Vertex::kD) - Vertex::GetVertex(rect_, Vertex::kA);

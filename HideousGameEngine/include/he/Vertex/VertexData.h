@@ -12,8 +12,11 @@
 #include<ostream>
 
 #include <OpenGLES/ES2/gl.h>
+
+#include <he/Utils/Transform.h>
 #include <he/Utils/GLKMath_Additions.h>
 #include <he/Utils/DebugHelper.h>
+#include <he/Utils/Types.h>
 
 namespace he{
 	
@@ -72,7 +75,6 @@ namespace he{
 		// Create with raw data. Requires a pointer to array vertex_count floats
 		template<typename V>
 		void Set(V &slf, const GLfloat *data, int start = 0, int end = V::vertex_count * 4){
-			he_Trace("Set(slf,data,start[%d],end[%d])\n",start,end);
 			assert(start >= 0);
 			assert(end <= V::vertex_count * 4);
 			memcpy(static_cast<GLfloat *>(&slf.data[start]), data, sizeof(GLfloat)*(end-start));
@@ -86,10 +88,8 @@ namespace he{
 		// Create with raw data at a given index
 		template<typename V>
 		void Set(V &slf, const GLfloat *data, Index vi){
-			he_Trace("Set(slf,data,vi)\n");
 			int start = vi * V::vertex_count;
 			int end = start + V::vertex_count;
-			he_Trace("Set between{%d - %d}\n",start,end);
 			Set(slf, data, start, end);
 		}
 		
@@ -104,10 +104,9 @@ namespace he{
 		// Create with 4 endpoints. Use for cases like skewed / rotated rectangles
 		template <typename V, typename GLKVector>
 		void Set(V &slf, const GLKVector &a, const GLKVector &b, const GLKVector &c, const GLKVector &d){
-			he_Trace("Set(slf,a,b,c,d)\n");
 			Set(slf, a.v, kA);
 			Set(slf, b.v, kB);
-			Set(slf, d.v, kC);
+			Set(slf, c.v, kC);
 			Set(slf, d.v, kD);
 		}
 
@@ -128,6 +127,15 @@ namespace he{
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		// MARK: Modify
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		// Transform
+		template <typename V>
+		void ApplyTransform(V &slf, const Transform &transform){
+			Set(slf, (transform.GetMV() * GetVertex(slf, kA)).v, kA);
+			Set(slf, (transform.GetMV() * GetVertex(slf, kB)).v, kB);
+			Set(slf, (transform.GetMV() * GetVertex(slf, kC)).v, kC);
+			Set(slf, (transform.GetMV() * GetVertex(slf, kD)).v, kD);
+		}
+		
 		// Translate each point
 		template <typename V, typename GLKVector>
 		void Translate(V &slf, const GLKVector &point){
@@ -149,8 +157,22 @@ namespace he{
 				}
 			}
 		}
-		
-		
+
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		// MARK: Operations
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		template<typename V>
+		bool Equal(const V &one, const V &two){
+			int i = 0;
+			for(; i < V::vertex_count && F32Eq(one.data[i], two.data[i]); ++i){
+				he_Trace("%f == %f\n",one.data[i],two.data[i]);
+			}
+			if(i < V::vertex_count){
+				he_Trace("%f != %f\n",one.data[i],two.data[i]);
+			}
+			return !(i < V::vertex_count);
+		}
+
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		// MARK: Utility
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -165,6 +187,8 @@ namespace he{
 		// Create with a perfectly aligned rectangles, using endpoints A and D
 		void Set(V2 &slf, const GLKVector2 &a, const GLKVector2 &d);
 		
+		void ApplyTransform(V2 &slf, const Transform &transform);
+
 		// Test whether the point is inside the rectangle
 		bool Contains(const V2 &v, const GLKVector2 &point);
 		

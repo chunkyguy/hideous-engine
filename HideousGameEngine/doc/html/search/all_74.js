@@ -36,7 +36,7 @@ var searchData=
   ['touch_5fpoint_5f',['touch_point_',['../classhe_1_1_gesture.html#ac2b583a4153b5c575c6f89b24ebd183d',1,'he::Gesture']]],
   ['touches_3aaction_3awithevent_3a',['touches:action:withEvent:',['../interface_gesture_collector.html#a2d67bab9872e5ce0799d7fc833ae7ddb',1,'GestureCollector']]],
   ['touchesaction',['TouchesAction',['../_gesture_collector_8h.html#aac1054df55e47a5f542c39553b0ae48c',1,'GestureCollector.h']]],
-  ['transform',['Transform',['../classhe_1_1_transform.html#a702f5ef4f18836a6a452d831791420c3',1,'he::Transform::Transform(GLKVector2 position=GLKVector2Make(0, 0), float r=0, GLKVector2 s=GLKVector2Make(1.0, 1.0))'],['../classhe_1_1_transform.html#a861470d2d2a780ca80170aa688b261a4',1,'he::Transform::Transform(const Transform &amp;other)']]],
+  ['transform',['Transform',['../classhe_1_1_transform.html#a12862bd8caeef51d885045b97cd8ad34',1,'he::Transform']]],
   ['transform',['Transform',['../classhe_1_1_transform.html',1,'he']]],
   ['transform_2eh',['Transform.h',['../_transform_8h.html',1,'']]],
   ['transform_5f',['transform_',['../classhe_1_1_text_1_1_glyph.html#aa08fd3164601c9bfaeb101358d5de31a',1,'he::Text::Glyph::transform_()'],['../classhe_1_1_text.html#a08265dfd9e76e185996ebfe595ff74e1',1,'he::Text::transform_()']]],

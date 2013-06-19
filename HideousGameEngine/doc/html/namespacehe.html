@@ -299,7 +299,9 @@ Variables</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Return the path to the resource folder. </p>
-<dl class="section return"><dt>Returns</dt><dd>The path to the resource folder associate with the main bundle or an empty string is there is no bundle. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The path to the resource folder associate with the main bundle or an empty string is there is no bundle.</dd></dl>
+<p>Handle transformations of a coordinate system Every object has its own coordinate system in reference to some parent coordinate system. At the root level there is the Device's coordinate system (the world space) which is located at {0, 0, Screen::z}</p>
+<p>Use GetMVP() to get the matrix that will help coordinates to world-space. </p>
 </div><h2 class="groupheader">Typedef Documentation</h2>
 <a class="anchor" id="ab6a64419af94817710aa030e3cee4803"></a>
 <div class="memitem">
@@ -1156,7 +1158,7 @@ template&lt;typename T &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 16 2013 01:41:48 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 17 2013 17:14:29 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

@@ -5156,29 +5156,7 @@
       <Scope>he::Transform</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_transform.html</Path>
-    <Anchor>a702f5ef4f18836a6a452d831791420c3</Anchor>
-    <DeclaredIn>Transform.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>Transform</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>he::Transform</Scope>
-    </TokenIdentifier>
-    <Path>classhe_1_1_transform.html</Path>
-    <Anchor>a861470d2d2a780ca80170aa688b261a4</Anchor>
-    <DeclaredIn>Transform.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>operator=</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>he::Transform</Scope>
-    </TokenIdentifier>
-    <Path>classhe_1_1_transform.html</Path>
-    <Anchor>a3c45718ee1b7bda6e57da2399e77a0da</Anchor>
+    <Anchor>a12862bd8caeef51d885045b97cd8ad34</Anchor>
     <DeclaredIn>Transform.h</DeclaredIn>
   </Token>
   <Token>
@@ -5211,7 +5189,18 @@
       <Scope>he::Transform</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_transform.html</Path>
-    <Anchor>a4087ecc747c59b0a64672fd4cf738036</Anchor>
+    <Anchor>a56ba51d5801d2cd7119b69ed1fe0c98e</Anchor>
+    <DeclaredIn>Transform.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SetPosition</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Transform</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_transform.html</Path>
+    <Anchor>affcd73cb4067cffe8bfa930929107465</Anchor>
     <DeclaredIn>Transform.h</DeclaredIn>
   </Token>
   <Token>
@@ -5233,7 +5222,7 @@
       <Scope>he::Transform</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_transform.html</Path>
-    <Anchor>af3b56eb578907aa5aa9f38d44edd4d9e</Anchor>
+    <Anchor>a2da4307b925d318c777106dd976cdbd8</Anchor>
     <DeclaredIn>Transform.h</DeclaredIn>
   </Token>
   <Token>
@@ -5244,7 +5233,29 @@
       <Scope>he::Transform</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_transform.html</Path>
-    <Anchor>a6c002a28201bee4375891e8d772e6034</Anchor>
+    <Anchor>abd608c43e0dc23daa26105ac14fb4f47</Anchor>
+    <DeclaredIn>Transform.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetRotationAngle</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Transform</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_transform.html</Path>
+    <Anchor>a07807a637547da03d00091b28f4aa845</Anchor>
+    <DeclaredIn>Transform.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SetRotationAngle</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Transform</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_transform.html</Path>
+    <Anchor>ab5ab78ead530d89df4e8b0877ba3d3e8</Anchor>
     <DeclaredIn>Transform.h</DeclaredIn>
   </Token>
   <Token>
@@ -5255,7 +5266,7 @@
       <Scope>he::Transform</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_transform.html</Path>
-    <Anchor>a65436b335709ae5d7c096e4a2098a43c</Anchor>
+    <Anchor>a76de21c56bb1e59891769897653a6a03</Anchor>
     <DeclaredIn>Transform.h</DeclaredIn>
   </Token>
   <Token>
@@ -5266,38 +5277,74 @@
       <Scope>he::Transform</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_transform.html</Path>
-    <Anchor>a11ae6e6b7b02dc5ad06fe5bc797dc9f8</Anchor>
+    <Anchor>a237432c88437f339fd157a1bcee9f947</Anchor>
     <DeclaredIn>Transform.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>position_</Name>
+      <Name>GetParent</Name>
       <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
+      <Type>instm</Type>
       <Scope>he::Transform</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_transform.html</Path>
-    <Anchor>a51fb0a6409914b6f719b29c9fa59c9e7</Anchor>
+    <Anchor>abdc92469da7dfb35deceb605066c24f0</Anchor>
+    <DeclaredIn>Transform.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>rotation_</Name>
+      <Name>SetParent</Name>
       <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
+      <Type>instm</Type>
       <Scope>he::Transform</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_transform.html</Path>
-    <Anchor>ab184af309fb604bb6eb1637506d8248f</Anchor>
+    <Anchor>ac2b8819f09c32de78bd9eb76333e1830</Anchor>
+    <DeclaredIn>Transform.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>scale_</Name>
+      <Name>GetPositionPtr</Name>
       <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
+      <Type>instm</Type>
       <Scope>he::Transform</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_transform.html</Path>
-    <Anchor>a823d70cedf0d85147982351a540e71f1</Anchor>
+    <Anchor>a02fcd5d8f454f6f4177eee4ef1a36cd4</Anchor>
+    <DeclaredIn>Transform.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetRotationPtr</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Transform</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_transform.html</Path>
+    <Anchor>a747e867dc33497e8ad5ef59934f55469</Anchor>
+    <DeclaredIn>Transform.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetRotationAnglePtr</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Transform</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_transform.html</Path>
+    <Anchor>a374a4d7e954be8c7ee972f9497609e20</Anchor>
+    <DeclaredIn>Transform.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetScalePtr</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Transform</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_transform.html</Path>
+    <Anchor>ac0ec1baec1268f94452eb1cfadf75e80</Anchor>
+    <DeclaredIn>Transform.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -6065,14 +6112,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>SetNeedsDisplay</Name>
+      <Name>frame_</Name>
       <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
+      <Type>data</Type>
       <Scope>he::ui::View</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1ui_1_1_view.html</Path>
-    <Anchor>ad77bc9fa9e8c1883e7e7e9e5688db311</Anchor>
-    <DeclaredIn>View.h</DeclaredIn>
+    <Anchor>ab594641f53c8474dc1c1169b98393fc0</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -6237,14 +6283,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>SetNeedsDisplay</Name>
+      <Name>frame_</Name>
       <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
+      <Type>data</Type>
       <Scope>he::ui::View</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1ui_1_1_view.html</Path>
-    <Anchor>ad77bc9fa9e8c1883e7e7e9e5688db311</Anchor>
-    <DeclaredIn>View.h</DeclaredIn>
+    <Anchor>ab594641f53c8474dc1c1169b98393fc0</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -6335,14 +6380,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>SetNeedsDisplay</Name>
+      <Name>frame_</Name>
       <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
+      <Type>data</Type>
       <Scope>he::ui::View</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1ui_1_1_view.html</Path>
-    <Anchor>ad77bc9fa9e8c1883e7e7e9e5688db311</Anchor>
-    <DeclaredIn>View.h</DeclaredIn>
+    <Anchor>ab594641f53c8474dc1c1169b98393fc0</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>

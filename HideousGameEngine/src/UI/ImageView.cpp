@@ -43,16 +43,13 @@ namespace he {
 		}
 		
 		void ImageView::self_update(float dt){
+			render_object_->SetMVP(GetFrame().GetTransform().GetMVP());
 		}
 		
 		void ImageView::self_render(){
 			render_object_->Render();
 		}
-		
-		void ImageView::self_set_needs_display(){
-			render_object_->SetMVP(GetFrame().GetTransform().GetMVP());
-		}
-		
+				
 		///////////////////////////////////////////////////////////////////////////////////////////////////
 		// MARK: ImageViewFactory
 		///////////////////////////////////////////////////////////////////////////////////////////////////

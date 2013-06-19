@@ -52,9 +52,6 @@ namespace he {
 		
 		void Button::self_render(){
 		}
-		void Button::self_set_needs_display(){
-			
-		}
 		
 		void Button::HandleGesture(const he::Gesture &gesture){
 			
@@ -62,9 +59,9 @@ namespace he {
 				
 				//				if(gesture.state_ == he::Gesture::kBegin){
 					GLKVector2 pt = gesture.GetHitPoint();
-					he_Trace("\nButton[%d]\n:HandleGesture: \n%@\nFrame:%@\nPoint:%@\n",tag_,gesture,GetFrame().GetRect(),pt);
+					he_Trace("\nButton[%d]::HandleGesture:\n%@\nFrame:\n%@\nMV: \n%@\nPoint:%@\n",tag_,gesture,GetFrame().GetRect(),GetFrame().GetTransform().GetMV(),pt);
 
-					bool hit = he::Vertex::Contains(GetFrame().GetRect(), pt);
+					bool hit = he::Vertex::Contains(GetFrame().GetGlobalRect(), pt);
 					if(hit){
 									listner_->Hit(this);
 //						GLKVector2 scale_points[2] = {original_transform_.scale_, GLKVector2Multiply(original_transform_.scale_, GLKVector2Make(1.05, 1.05))};

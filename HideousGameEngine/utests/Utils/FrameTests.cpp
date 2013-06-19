@@ -7,3 +7,10 @@
 //
 
 #include <he/Utils/Frame.h>
+
+#include <gtest.h>
+
+TEST(Frame, Equality){
+	he::Frame fr;
+	EXPECT_TRUE(he::Vertex::Equal(fr.GetRect(), fr.GetRect()));
+}

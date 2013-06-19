@@ -37,7 +37,7 @@ color_( GLKVector4Make(1.0, 1.0, 1.0, 1.0))
 }
 
 void GObj::Update(float dt){
-	transform_.SetPosition(GLKVector2Add(transform_.GetPosition(), GLKVector2MultiplyScalar(direction_, kSpeed)));
+	transform_.SetPosition(transform_.GetPosition() + (GLKVector3Make(direction_.x, direction_.y, 0.0f) * kSpeed));
 	render_object_->mvp_ = transform_.GetMVP();
 	render_object_->color_ = GLKVector4Make(color_.r, color_.g, color_.b, color_.a);
 }

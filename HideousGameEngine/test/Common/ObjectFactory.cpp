@@ -81,7 +81,7 @@ ColObj::ColObj(he::ColorShader *shader){
 	vert_ = new he::ColorVertex(min, max);
 	GLKVector4 color = GLKVector4Make(he::Randf(), he::Randf(), he::Randf(), 0.8);
 	object_ = new he::RenderObject(vert_, shader, 0, he::g_Screen->projection_, color);
-	transform_.SetPosition( GLKVector2Make(he::Randf()*he::g_Screen->width_ - he::g_Screen->width_/2, he::Randf()*he::g_Screen->height_ - he::g_Screen->height_/2));
+	transform_.SetPosition( GLKVector3Make(he::Randf()*he::g_Screen->width_ - he::g_Screen->width_/2, he::Randf()*he::g_Screen->height_ - he::g_Screen->height_/2, 0.0f));
 }
 
 void ColObj::Render(){
@@ -113,7 +113,7 @@ TextObj::~TextObj(){
 TextObj::TextObj(he::Font *font){
 	text_ = new he::Text("Whacky");
 	font->LoadText(text_);
-	transform_.SetPosition(GLKVector2Make(he::Randf()*he::g_Screen->width_ - he::g_Screen->width_/2, he::Randf()*he::g_Screen->height_ - he::g_Screen->height_/2));
+	transform_.SetPosition(GLKVector3Make(he::Randf()*he::g_Screen->width_ - he::g_Screen->width_/2, he::Randf()*he::g_Screen->height_ - he::g_Screen->height_/2, 0.0f));
 }
 void TextObj::Render(){
 	text_->Render();

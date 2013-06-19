@@ -64,13 +64,12 @@ namespace he {
 		private:
 			/** Implementation of the virtual UIComponent::update
 			 */
-			void self_update(float dt);
+			virtual void self_update(float dt);
 			
 			/** Implementation of the virtual UIComponent::render
 			 */
-			void self_render();
+			virtual void self_render();
 			
-			void self_set_needs_display();
 			
 			int tag_;	/**< tag to identify the object */
 			//unsigned long animation_handle_; /**< animation handle to kill the animation if required */

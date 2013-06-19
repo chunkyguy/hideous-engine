@@ -36,8 +36,8 @@ void Label::SetText(std::string string){
 he::ColorVertex Label::GetBox(){
 	GLKVector2 size = text_->GetSize();
 	
-	he::ColorVertex::Data min = {GLKVector2Make(text_->transform_.position_.x, text_->transform_.position_.y), GLKVector4Make(1.0, 0.0, 0.0, 1.0)};
-	he::ColorVertex::Data max = {GLKVector2Make(text_->transform_.position_.x + size.x, text_->transform_.position_.y + size.y), GLKVector4Make(0.0, 1.0, 0.0, 1.0)};
+	he::ColorVertex::Data min = {GLKVector2Make(text_->transform_.GetPosition().x, text_->transform_.GetPosition().y), GLKVector4Make(1.0, 0.0, 0.0, 1.0)};
+	he::ColorVertex::Data max = {GLKVector2Make(text_->transform_.GetPosition().x + size.x, text_->transform_.GetPosition().y + size.y), GLKVector4Make(0.0, 1.0, 0.0, 1.0)};
 	
 	return he::ColorVertex(min, max);
 }

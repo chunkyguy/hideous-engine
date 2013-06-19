@@ -10,6 +10,7 @@
 #include <he/Program/Program.h>
 #include <he/RenderObject/RenderObject.h>
 #include <he/Vertex/ColorVertex.h>
+#include <he/Utils/DebugHelper.h>
 
 namespace he{
 	ColorShader::ColorShader(){
@@ -30,6 +31,11 @@ namespace he{
 	}
 
 	void ColorShader::Render(RenderObject *render_object){
+		assert(program_->object_);	// program prepared
+		assert(render_object->GetVertexData()->GetRawData(IVertex::kPosition)); // should have position data
+		assert(render_object->GetVertexData()->GetRawData(IVertex::kColor));	// should have color data
+		assert(render_object->GetVertexData()->GetCount() > 3);	//atleast 4 vertices needed to render a quad
+
 		glUseProgram(program_->object_);
 		
 		glVertexAttribPointer(a_position, 2, GL_FLOAT, GL_FALSE, 0, render_object->GetVertexData()->GetRawData(IVertex::kPosition));

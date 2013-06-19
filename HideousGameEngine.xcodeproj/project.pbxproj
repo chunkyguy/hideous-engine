@@ -21,7 +21,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		19041EB4176C582B007119B1 /* libgoogle_test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19041EB3176C5816007119B1 /* libgoogle_test.a */; };
 		19041EBB176C5A3C007119B1 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EB6176C5A3C007119B1 /* Game.cpp */; };
 		19041EBD176C5A3C007119B1 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 19041EBA176C5A3C007119B1 /* main.mm */; };
 		19041EF0176CCD87007119B1 /* ProgramTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EBF176CCD87007119B1 /* ProgramTests.cpp */; };
@@ -80,6 +79,7 @@
 		193A5ED61743F2DB00CB945B /* SlotData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 193A5EC21743F2DB00CB945B /* SlotData.cpp */; };
 		193A5ED81743F4FB00CB945B /* RegionAttachment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 193A5ED71743F4FA00CB945B /* RegionAttachment.cpp */; };
 		193A5EDB1743F8AA00CB945B /* SpineAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 193A5ED91743F8A200CB945B /* SpineAnimation.cpp */; };
+		194B7AE21770C4BE007919BB /* TypesTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 194B7AE01770C4BE007919BB /* TypesTests.cpp */; };
 		194F4D421762EDEB002AD10E /* GLKMath_Additions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 194F4D401762EDEB002AD10E /* GLKMath_Additions.cpp */; };
 		1962B846173B7070004E9A1C /* SpineTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1962B844173B7068004E9A1C /* SpineTest.cpp */; };
 		198403AC1761B86B00D0B7EA /* TextureAtlasRegion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 198403AA1761B86A00D0B7EA /* TextureAtlasRegion.cpp */; };
@@ -94,7 +94,6 @@
 		19A6E57D1732781F006ACD91 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A6E57C1732781F006ACD91 /* CoreGraphics.framework */; };
 		19A6E5811732781F006ACD91 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A6E5801732781F006ACD91 /* OpenGLES.framework */; };
 		19A6E5871732781F006ACD91 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19A6E5851732781F006ACD91 /* InfoPlist.strings */; };
-		19A6E655173278A1006ACD91 /* libFreetype2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A6E5D6173278A1006ACD91 /* libFreetype2.a */; };
 		19A6E65E173278A1006ACD91 /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E5E6173278A1006ACD91 /* Animation.cpp */; };
 		19A6E65F173278A1006ACD91 /* Gesture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E5E8173278A1006ACD91 /* Gesture.cpp */; };
 		19A6E660173278A1006ACD91 /* GestureCollector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E5E9173278A1006ACD91 /* GestureCollector.mm */; };
@@ -192,12 +191,12 @@
 		19C54C48176D09FD00377317 /* GTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19C54C47176D09FD00377317 /* GTests.cpp */; };
 		19CE12CD174C8F8200F3BE52 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CE12CC174C8F8200F3BE52 /* GLKit.framework */; };
 		19CF4205176BEB9D006B8B99 /* HideousGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19CF4203176BEB9D006B8B99 /* HideousGame.cpp */; };
+		19E26504176E514400874D58 /* libgoogle_test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19E26503176E514400874D58 /* libgoogle_test.a */; };
+		19E26506176E515400874D58 /* libFreetype2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19E26505176E515400874D58 /* libFreetype2.a */; };
 		19EB949F1738C8F200FAF69C /* easing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19EB949E1738C8F200FAF69C /* easing.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		19041EB2176C5816007119B1 /* libFreetype2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFreetype2.a; sourceTree = "<group>"; };
-		19041EB3176C5816007119B1 /* libgoogle_test.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgoogle_test.a; sourceTree = "<group>"; };
 		19041EB6176C5A3C007119B1 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		19041EB7176C5A3C007119B1 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		19041EBA176C5A3C007119B1 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
@@ -279,6 +278,8 @@
 		193A5ED91743F8A200CB945B /* SpineAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpineAnimation.cpp; sourceTree = "<group>"; };
 		193A5EDA1743F8A500CB945B /* SpineAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpineAnimation.h; sourceTree = "<group>"; };
 		193A5EDD174430BA00CB945B /* GLKMathsAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLKMathsAdditions.h; sourceTree = "<group>"; };
+		194B7ADF1770C320007919BB /* Types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Types.h; path = HideousGameEngine/include/he/Utils/Types.h; sourceTree = SOURCE_ROOT; };
+		194B7AE01770C4BE007919BB /* TypesTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TypesTests.cpp; sourceTree = "<group>"; };
 		194F4D401762EDEB002AD10E /* GLKMath_Additions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLKMath_Additions.cpp; sourceTree = "<group>"; };
 		1962B844173B7068004E9A1C /* SpineTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpineTest.cpp; sourceTree = "<group>"; };
 		1962B845173B706C004E9A1C /* SpineTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpineTest.h; sourceTree = "<group>"; };
@@ -327,7 +328,6 @@
 		19A6E5801732781F006ACD91 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		19A6E5841732781F006ACD91 /* HideousGameEngine-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HideousGameEngine-Info.plist"; sourceTree = "<group>"; };
 		19A6E5861732781F006ACD91 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		19A6E5D6173278A1006ACD91 /* libFreetype2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFreetype2.a; sourceTree = "<group>"; };
 		19A6E5E6173278A1006ACD91 /* Animation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Animation.cpp; sourceTree = "<group>"; };
 		19A6E5E8173278A1006ACD91 /* Gesture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gesture.cpp; sourceTree = "<group>"; };
 		19A6E5E9173278A1006ACD91 /* GestureCollector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GestureCollector.mm; sourceTree = "<group>"; };
@@ -456,6 +456,8 @@
 		19CE12CC174C8F8200F3BE52 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		19CF4203176BEB9D006B8B99 /* HideousGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HideousGame.cpp; sourceTree = "<group>"; };
 		19CF4206176BEBB8006B8B99 /* HideousGame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HideousGame.h; sourceTree = "<group>"; };
+		19E26503176E514400874D58 /* libgoogle_test.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgoogle_test.a; path = "../../../../../std_lib/gtest/Debug-universal/libgoogle_test.a"; sourceTree = "<group>"; };
+		19E26505176E515400874D58 /* libFreetype2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFreetype2.a; path = ../../../../../std_lib/freetype_2_ios/libFreetype2.a; sourceTree = "<group>"; };
 		19EB949E1738C8F200FAF69C /* easing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = easing.cpp; sourceTree = "<group>"; };
 		19EB94A01738C92D00FAF69C /* easing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = easing.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -471,8 +473,8 @@
 				19A6E57B1732781F006ACD91 /* Foundation.framework in Frameworks */,
 				19A6E57D1732781F006ACD91 /* CoreGraphics.framework in Frameworks */,
 				19A6E5811732781F006ACD91 /* OpenGLES.framework in Frameworks */,
-				19A6E655173278A1006ACD91 /* libFreetype2.a in Frameworks */,
-				19041EB4176C582B007119B1 /* libgoogle_test.a in Frameworks */,
+				19E26504176E514400874D58 /* libgoogle_test.a in Frameworks */,
+				19E26506176E515400874D58 /* libFreetype2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,16 +498,6 @@
 				19041EED176CCD87007119B1 /* Main */,
 			);
 			path = utests;
-			sourceTree = "<group>";
-		};
-		19041EB1176C5816007119B1 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				19041EB2176C5816007119B1 /* libFreetype2.a */,
-				19041EB3176C5816007119B1 /* libgoogle_test.a */,
-			);
-			name = lib;
-			path = HideousGameEngine/resources/lib;
 			sourceTree = "<group>";
 		};
 		19041EB5176C5A3C007119B1 /* main */ = {
@@ -627,6 +619,7 @@
 				19041EEA176CCD87007119B1 /* ScreenTests.cpp */,
 				19041EEB176CCD87007119B1 /* TransformTests.cpp */,
 				19041EEC176CCD87007119B1 /* UtilsTests.cpp */,
+				194B7AE01770C4BE007919BB /* TypesTests.cpp */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -835,6 +828,7 @@
 				19A8EDD51769C6E500FD25BF /* Asset.h */,
 				19A8EE2A1769F9EC00FD25BF /* Frame.h */,
 				19C54C46176D09E200377317 /* GTests.h */,
+				194B7ADF1770C320007919BB /* Types.h */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -873,7 +867,6 @@
 		19A6E56C1732781E006ACD91 = {
 			isa = PBXGroup;
 			children = (
-				19041EB1176C5816007119B1 /* lib */,
 				19A6E5821732781F006ACD91 /* HideousGameEngine */,
 				19A6E5771732781F006ACD91 /* Frameworks */,
 				19A6E5761732781F006ACD91 /* Products */,
@@ -929,18 +922,10 @@
 		19A6E5D4173278A1006ACD91 /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				19A6E5D5173278A1006ACD91 /* lib */,
+				19E26502176E512900874D58 /* lib */,
 				19A6E5D7173278A1006ACD91 /* Shaders */,
 			);
 			path = resources;
-			sourceTree = "<group>";
-		};
-		19A6E5D5173278A1006ACD91 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				19A6E5D6173278A1006ACD91 /* libFreetype2.a */,
-			);
-			path = lib;
 			sourceTree = "<group>";
 		};
 		19A6E5D7173278A1006ACD91 /* Shaders */ = {
@@ -1336,6 +1321,15 @@
 			path = ParticleShader;
 			sourceTree = "<group>";
 		};
+		19E26502176E512900874D58 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				19E26505176E515400874D58 /* libFreetype2.a */,
+				19E26503176E514400874D58 /* libgoogle_test.a */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1579,6 +1573,7 @@
 				19041F14176CCD87007119B1 /* HideousEngineTests.mm in Sources */,
 				19041F15176CCD87007119B1 /* HideousGameTests.cpp in Sources */,
 				19C54C48176D09FD00377317 /* GTests.cpp in Sources */,
+				194B7AE21770C4BE007919BB /* TypesTests.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1673,7 +1668,8 @@
 				INFOPLIST_FILE = "HideousGameEngine/HideousGameEngine-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/HideousGameEngine/resources/lib\"",
+					"\"$(SRCROOT)/../../../std_lib/freetype_2_ios\"",
+					"\"$(SRCROOT)/../../../std_lib/gtest/Debug-universal\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "/Volumes/DrivePlusPlus/Languages/std_lib/he/include/**";
@@ -1690,7 +1686,8 @@
 				INFOPLIST_FILE = "HideousGameEngine/HideousGameEngine-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/HideousGameEngine/resources/lib\"",
+					"\"$(SRCROOT)/../../../std_lib/freetype_2_ios\"",
+					"\"$(SRCROOT)/../../../std_lib/gtest/Debug-universal\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "/Volumes/DrivePlusPlus/Languages/std_lib/he/include/**";

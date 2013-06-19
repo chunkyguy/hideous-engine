@@ -7,22 +7,42 @@
 //
 
 #include <he/UI/View.h>
+#include <he/Utils/Screen.h>
 
 #include <gtest.h>
 
-//TEST(View, Destructor){
-//	std::string atlas_data_path(he::ResourcePath() + "homescreen_ss.xml");
-//	std::string atlas_img_path(he::ResourcePath() + "homescreen_ss.png");
-//	atlas_.Load(new he::TextureAtlas(atlas_data_path, atlas_img_path, he::TextureAtlas::kStarling), true);
-//	he::ui::ImageViewFactory img_factory(g_Assets->textureShader.Get(), atlas_.Get());
-//	
-//	// load view
-//	he::Frame view_frame;
-//	view_ = std::unique_ptr<he::ui::View>( new he::ui::View(view_frame) );
-//	
-//	// bg
-//	std::string bg_img_name("town.png instance 1");
-//	he::Frame bg_img_frame(he::Transform(GLKVector2Make(-2, 2)), atlas_.Get()->GetTextureAtlasRegion(bg_img_name)->sprite_size_);
-//	view_->AddSubview( new he::ui::ImageView(&img_factory, bg_img_name, bg_img_frame));
-//
-//}
+/** Test if the destructor cleans up the memory well
+ */
+TEST(View, Destructor){
+	he::g_Screen = new he::Screen();
+
+	// load view
+	he::Frame view_frame;
+	he::ui::View *view =  new he::ui::View(view_frame);
+	view->AddSubview(new he::ui::View(view_frame));
+	delete view;
+	ASSERT_TRUE(1);
+	delete he::g_Screen;
+}
+
+
+/** Test if updating a view's transfrom updates its child as well
+ */
+TEST(View, SubviewUpdate){
+	he::g_Screen = new he::Screen();
+	
+	he::Frame view_frame;
+	he::ui::View *view =  new he::ui::View(view_frame);
+
+	he::Frame subvw_frame(he::Transform(GLKVector3Make(0.0f, 0.0f, 0.0f)));
+	he::ui::View *subview = new he::ui::View(subvw_frame);
+	view->AddSubview(subview);
+	
+	GLKVector2 new_pos = GLKVector2Make(100, 100);
+	view->frame_.GetTransformPtr()->SetPosition(new_pos);
+	
+	view->Update(0.0);
+	ASSERT_TRUE(view->frame_.GetTransform().GetMV() == subview->frame_.GetTransform().GetMV());
+	delete view;
+	delete he::g_Screen;
+}

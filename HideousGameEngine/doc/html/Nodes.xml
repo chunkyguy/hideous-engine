@@ -213,14 +213,14 @@
                   <Anchor>afefa7f45846ac6e1006ba3a12a14769e</Anchor>
                  </Node>
                  <Node>
-                  <Name>SetNeedsDisplay</Name>
-                  <Path>classhe_1_1ui_1_1_view.html</Path>
-                  <Anchor>ad77bc9fa9e8c1883e7e7e9e5688db311</Anchor>
-                 </Node>
-                 <Node>
                   <Name>Update</Name>
                   <Path>classhe_1_1ui_1_1_view.html</Path>
                   <Anchor>a0e097a90cffad730f4e0b8cb251d5cea</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>frame_</Name>
+                  <Path>classhe_1_1ui_1_1_view.html</Path>
+                  <Anchor>ab594641f53c8474dc1c1169b98393fc0</Anchor>
                  </Node>
                 </Subnodes>
                </Node>
@@ -1813,12 +1813,7 @@
                <Node>
                 <Name>Transform</Name>
                 <Path>classhe_1_1_transform.html</Path>
-                <Anchor>a702f5ef4f18836a6a452d831791420c3</Anchor>
-               </Node>
-               <Node>
-                <Name>Transform</Name>
-                <Path>classhe_1_1_transform.html</Path>
-                <Anchor>a861470d2d2a780ca80170aa688b261a4</Anchor>
+                <Anchor>a12862bd8caeef51d885045b97cd8ad34</Anchor>
                </Node>
                <Node>
                 <Name>GetMV</Name>
@@ -1831,24 +1826,59 @@
                 <Anchor>a9e053d3b772061690e09d95f7d2627da</Anchor>
                </Node>
                <Node>
+                <Name>GetParent</Name>
+                <Path>classhe_1_1_transform.html</Path>
+                <Anchor>abdc92469da7dfb35deceb605066c24f0</Anchor>
+               </Node>
+               <Node>
                 <Name>GetPosition</Name>
                 <Path>classhe_1_1_transform.html</Path>
-                <Anchor>a4087ecc747c59b0a64672fd4cf738036</Anchor>
+                <Anchor>a56ba51d5801d2cd7119b69ed1fe0c98e</Anchor>
+               </Node>
+               <Node>
+                <Name>GetPositionPtr</Name>
+                <Path>classhe_1_1_transform.html</Path>
+                <Anchor>a02fcd5d8f454f6f4177eee4ef1a36cd4</Anchor>
                </Node>
                <Node>
                 <Name>GetRotation</Name>
                 <Path>classhe_1_1_transform.html</Path>
-                <Anchor>af3b56eb578907aa5aa9f38d44edd4d9e</Anchor>
+                <Anchor>a2da4307b925d318c777106dd976cdbd8</Anchor>
+               </Node>
+               <Node>
+                <Name>GetRotationAngle</Name>
+                <Path>classhe_1_1_transform.html</Path>
+                <Anchor>a07807a637547da03d00091b28f4aa845</Anchor>
+               </Node>
+               <Node>
+                <Name>GetRotationAnglePtr</Name>
+                <Path>classhe_1_1_transform.html</Path>
+                <Anchor>a374a4d7e954be8c7ee972f9497609e20</Anchor>
+               </Node>
+               <Node>
+                <Name>GetRotationPtr</Name>
+                <Path>classhe_1_1_transform.html</Path>
+                <Anchor>a747e867dc33497e8ad5ef59934f55469</Anchor>
                </Node>
                <Node>
                 <Name>GetScale</Name>
                 <Path>classhe_1_1_transform.html</Path>
-                <Anchor>a65436b335709ae5d7c096e4a2098a43c</Anchor>
+                <Anchor>a76de21c56bb1e59891769897653a6a03</Anchor>
                </Node>
                <Node>
-                <Name>operator=</Name>
+                <Name>GetScalePtr</Name>
                 <Path>classhe_1_1_transform.html</Path>
-                <Anchor>a3c45718ee1b7bda6e57da2399e77a0da</Anchor>
+                <Anchor>ac0ec1baec1268f94452eb1cfadf75e80</Anchor>
+               </Node>
+               <Node>
+                <Name>SetParent</Name>
+                <Path>classhe_1_1_transform.html</Path>
+                <Anchor>ac2b8819f09c32de78bd9eb76333e1830</Anchor>
+               </Node>
+               <Node>
+                <Name>SetPosition</Name>
+                <Path>classhe_1_1_transform.html</Path>
+                <Anchor>affcd73cb4067cffe8bfa930929107465</Anchor>
                </Node>
                <Node>
                 <Name>SetPosition</Name>
@@ -1858,27 +1888,17 @@
                <Node>
                 <Name>SetRotation</Name>
                 <Path>classhe_1_1_transform.html</Path>
-                <Anchor>a6c002a28201bee4375891e8d772e6034</Anchor>
+                <Anchor>abd608c43e0dc23daa26105ac14fb4f47</Anchor>
+               </Node>
+               <Node>
+                <Name>SetRotationAngle</Name>
+                <Path>classhe_1_1_transform.html</Path>
+                <Anchor>ab5ab78ead530d89df4e8b0877ba3d3e8</Anchor>
                </Node>
                <Node>
                 <Name>SetScale</Name>
                 <Path>classhe_1_1_transform.html</Path>
-                <Anchor>a11ae6e6b7b02dc5ad06fe5bc797dc9f8</Anchor>
-               </Node>
-               <Node>
-                <Name>position_</Name>
-                <Path>classhe_1_1_transform.html</Path>
-                <Anchor>a51fb0a6409914b6f719b29c9fa59c9e7</Anchor>
-               </Node>
-               <Node>
-                <Name>rotation_</Name>
-                <Path>classhe_1_1_transform.html</Path>
-                <Anchor>ab184af309fb604bb6eb1637506d8248f</Anchor>
-               </Node>
-               <Node>
-                <Name>scale_</Name>
-                <Path>classhe_1_1_transform.html</Path>
-                <Anchor>a823d70cedf0d85147982351a540e71f1</Anchor>
+                <Anchor>a237432c88437f339fd157a1bcee9f947</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -4713,14 +4733,14 @@
                         <Anchor>afefa7f45846ac6e1006ba3a12a14769e</Anchor>
                        </Node>
                        <Node>
-                        <Name>SetNeedsDisplay</Name>
-                        <Path>classhe_1_1ui_1_1_view.html</Path>
-                        <Anchor>ad77bc9fa9e8c1883e7e7e9e5688db311</Anchor>
-                       </Node>
-                       <Node>
                         <Name>Update</Name>
                         <Path>classhe_1_1ui_1_1_view.html</Path>
                         <Anchor>a0e097a90cffad730f4e0b8cb251d5cea</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>frame_</Name>
+                        <Path>classhe_1_1ui_1_1_view.html</Path>
+                        <Anchor>ab594641f53c8474dc1c1169b98393fc0</Anchor>
                        </Node>
                       </Subnodes>
                      </Node>
@@ -4972,6 +4992,10 @@
                     </Subnodes>
                    </Node>
                    <Node>
+                    <Name>GTests.h</Name>
+                    <Path>_g_tests_8h.html</Path>
+                   </Node>
+                   <Node>
                     <Name>ResourcePath.hpp</Name>
                     <Path>_resource_path_8hpp.html</Path>
                     <Subnodes>
@@ -5117,12 +5141,7 @@
                        <Node>
                         <Name>Transform</Name>
                         <Path>classhe_1_1_transform.html</Path>
-                        <Anchor>a702f5ef4f18836a6a452d831791420c3</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>Transform</Name>
-                        <Path>classhe_1_1_transform.html</Path>
-                        <Anchor>a861470d2d2a780ca80170aa688b261a4</Anchor>
+                        <Anchor>a12862bd8caeef51d885045b97cd8ad34</Anchor>
                        </Node>
                        <Node>
                         <Name>GetMV</Name>
@@ -5135,24 +5154,59 @@
                         <Anchor>a9e053d3b772061690e09d95f7d2627da</Anchor>
                        </Node>
                        <Node>
+                        <Name>GetParent</Name>
+                        <Path>classhe_1_1_transform.html</Path>
+                        <Anchor>abdc92469da7dfb35deceb605066c24f0</Anchor>
+                       </Node>
+                       <Node>
                         <Name>GetPosition</Name>
                         <Path>classhe_1_1_transform.html</Path>
-                        <Anchor>a4087ecc747c59b0a64672fd4cf738036</Anchor>
+                        <Anchor>a56ba51d5801d2cd7119b69ed1fe0c98e</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>GetPositionPtr</Name>
+                        <Path>classhe_1_1_transform.html</Path>
+                        <Anchor>a02fcd5d8f454f6f4177eee4ef1a36cd4</Anchor>
                        </Node>
                        <Node>
                         <Name>GetRotation</Name>
                         <Path>classhe_1_1_transform.html</Path>
-                        <Anchor>af3b56eb578907aa5aa9f38d44edd4d9e</Anchor>
+                        <Anchor>a2da4307b925d318c777106dd976cdbd8</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>GetRotationAngle</Name>
+                        <Path>classhe_1_1_transform.html</Path>
+                        <Anchor>a07807a637547da03d00091b28f4aa845</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>GetRotationAnglePtr</Name>
+                        <Path>classhe_1_1_transform.html</Path>
+                        <Anchor>a374a4d7e954be8c7ee972f9497609e20</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>GetRotationPtr</Name>
+                        <Path>classhe_1_1_transform.html</Path>
+                        <Anchor>a747e867dc33497e8ad5ef59934f55469</Anchor>
                        </Node>
                        <Node>
                         <Name>GetScale</Name>
                         <Path>classhe_1_1_transform.html</Path>
-                        <Anchor>a65436b335709ae5d7c096e4a2098a43c</Anchor>
+                        <Anchor>a76de21c56bb1e59891769897653a6a03</Anchor>
                        </Node>
                        <Node>
-                        <Name>operator=</Name>
+                        <Name>GetScalePtr</Name>
                         <Path>classhe_1_1_transform.html</Path>
-                        <Anchor>a3c45718ee1b7bda6e57da2399e77a0da</Anchor>
+                        <Anchor>ac0ec1baec1268f94452eb1cfadf75e80</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>SetParent</Name>
+                        <Path>classhe_1_1_transform.html</Path>
+                        <Anchor>ac2b8819f09c32de78bd9eb76333e1830</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>SetPosition</Name>
+                        <Path>classhe_1_1_transform.html</Path>
+                        <Anchor>affcd73cb4067cffe8bfa930929107465</Anchor>
                        </Node>
                        <Node>
                         <Name>SetPosition</Name>
@@ -5162,27 +5216,17 @@
                        <Node>
                         <Name>SetRotation</Name>
                         <Path>classhe_1_1_transform.html</Path>
-                        <Anchor>a6c002a28201bee4375891e8d772e6034</Anchor>
+                        <Anchor>abd608c43e0dc23daa26105ac14fb4f47</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>SetRotationAngle</Name>
+                        <Path>classhe_1_1_transform.html</Path>
+                        <Anchor>ab5ab78ead530d89df4e8b0877ba3d3e8</Anchor>
                        </Node>
                        <Node>
                         <Name>SetScale</Name>
                         <Path>classhe_1_1_transform.html</Path>
-                        <Anchor>a11ae6e6b7b02dc5ad06fe5bc797dc9f8</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>position_</Name>
-                        <Path>classhe_1_1_transform.html</Path>
-                        <Anchor>a51fb0a6409914b6f719b29c9fa59c9e7</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>rotation_</Name>
-                        <Path>classhe_1_1_transform.html</Path>
-                        <Anchor>ab184af309fb604bb6eb1637506d8248f</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>scale_</Name>
-                        <Path>classhe_1_1_transform.html</Path>
-                        <Anchor>a823d70cedf0d85147982351a540e71f1</Anchor>
+                        <Anchor>a237432c88437f339fd157a1bcee9f947</Anchor>
                        </Node>
                       </Subnodes>
                      </Node>

@@ -41,29 +41,54 @@ void UITest::init(){
 	btn_listener_.Load(new he::ui::ButtonListner<UITest>(this, &UITest::ButtonHandler), true);
 	
 	he::ui::ImageViewFactory img_factory(shader_.Get(), atlas_.Get());
+	
+	//main view
 	he::Frame frame;
 	view_ = new he::ui::View(frame);
-	view_->AddSubview(new he::ui::ImageView(&img_factory, vertex_.Get(), texture_.Get()));
-	std::string btn_titles[] = {	"mission", "tutorial", "credits"	};
-	GLKVector2 pos = GLKVector2Make(0, 60);
-	for(int i = 0; i < sizeof(btn_titles)/sizeof(btn_titles[0]); ++i){
-		he_Trace("\ni = %d\n",i);
-		std::string full_name(he::FlashFullName(btn_titles[i]));
-		const he::TextureAtlasRegion *region = atlas_.Get()->GetTextureAtlasRegion(full_name);
-		he::Transform trans(pos);
-		he_Trace("trans.pos = %@\n",trans.GetPosition());
-		he::Frame f(trans, region->sprite_size_);
-		he_Trace("f.rect = %@\n",f.GetRect());
-//		One way of creating imageviews
-//		he::TextureVertex *vertex = new he::TextureVertex(region); //memory leak here!!
-//		he::ui::ImageView *img_vw = new he::ui::ImageView(&img_factory,
-//														  vertex,
-//														  atlas_.Get()->GetTexture(), f);
-		he::ui::ImageView *img_vw = new he::ui::ImageView(&img_factory, full_name, f);
-		view_->AddSubview(img_vw);
-		view_->AddSubview(new he::ui::Button(btn_listener_.Get(), f, i));
-		pos.y -= 60;
-	}
+	
+	//bg view
+	he::Frame bg_vw_frame(he::Transform(GLKVector3Make(0, 50, 0)));
+	he::ui::ImageView *bg_vw = new he::ui::ImageView(&img_factory, vertex_.Get(), texture_.Get(), bg_vw_frame);
+	view_->AddSubview(bg_vw);
+	
+	//mission image view
+	std::string mission_full_name(he::FlashFullName("mission"));
+	const he::TextureAtlasRegion *mission_region = atlas_.Get()->GetTextureAtlasRegion(mission_full_name);
+	GLKVector3 mission_pos = GLKVector3Make(100, 0, 0.0f);
+	he::Transform mission_trans(mission_pos);
+	he::Frame mission_frame(mission_trans, mission_region->sprite_size_);
+	he::ui::ImageView *mission_img_vw = new he::ui::ImageView(&img_factory, mission_full_name, mission_frame);
+	bg_vw->AddSubview(mission_img_vw);
+
+	//button
+	he::Frame btn_frame(he::Transform(GLKVector3Make(0, 0, 0)), mission_region->sprite_size_);
+	he::ui::Button *btn = new he::ui::Button(btn_listener_.Get(), btn_frame, 99);
+	mission_img_vw->AddSubview(btn);
+
+	//tutorial image view
+	std::string tutorial_full_name(he::FlashFullName("tutorial"));
+	const he::TextureAtlasRegion *tutorial_region = atlas_.Get()->GetTextureAtlasRegion(tutorial_full_name);
+	GLKVector3 tutorial_pos = GLKVector3Make(-50, 50, 0.0f);
+	he::Transform tutorial_trans(tutorial_pos);
+	he::Frame tutorial_frame(tutorial_trans, tutorial_region->sprite_size_);
+	he::ui::ImageView *tutorial_img_vw = new he::ui::ImageView(&img_factory, tutorial_full_name, tutorial_frame);
+	mission_img_vw->AddSubview(tutorial_img_vw);
+
+	
+//	std::string btn_titles[] = {	"mission", "tutorial", "credits"	};
+//	GLKVector3 pos = GLKVector3Make(0, 60, 0.0f);
+//	he_Trace("\ni = %d\n",i);
+//	std::string full_name(he::FlashFullName(btn_titles[i]));
+//	const he::TextureAtlasRegion *region = atlas_.Get()->GetTextureAtlasRegion(full_name);
+//	he::Transform trans(pos);
+//	he_Trace("trans.pos = %@\n",trans.GetPosition());
+//	he::Frame f(trans, region->sprite_size_);
+//	he_Trace("f.rect = %@\n",f.GetRect());
+//	he::ui::Button *btn = new he::ui::Button(btn_listener_.Get(), f, i);
+//	he::ui::ImageView *img_vw = new he::ui::ImageView(&img_factory, full_name, f);
+//	btn->AddSubview(img_vw);
+//	view_->AddSubview(btn);
+//	pos.y -= 60;
 }
 
 void UITest::update(float dt){
@@ -75,6 +100,6 @@ void UITest::render(){
 }
 
 void UITest::ButtonHandler(he::ui::Button *sender){
-	he_Trace("btn hit: %d\n",sender->GetTag());
+	he_Trace("UITest::ButtonHandler: %d\n",sender->GetTag());
 }
 ///EOF

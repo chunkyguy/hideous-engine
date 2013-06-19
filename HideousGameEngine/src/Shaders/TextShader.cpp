@@ -36,7 +36,11 @@ namespace he{
 	}
 
 	void TextShader::Render(RenderObject *render_object){
-		
+		assert(program_->object_);	// program prepared
+		assert(render_object->texture_->object_);	//texture prepared
+		assert(render_object->GetVertexData()->GetRawData(IVertex::kPosition)); // should have position data
+		assert(render_object->GetVertexData()->GetRawData(IVertex::kTexture));	// should have texture data
+
 		glUseProgram(program_->object_);
 		
 		glActiveTexture(GL_TEXTURE2);

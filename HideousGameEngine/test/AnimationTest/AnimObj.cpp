@@ -27,7 +27,7 @@ AnimObj::~AnimObj(){
 
 AnimObj::AnimObj( int ID, he::ColorShader *shader ) :
 id_(ID),
-transform_(GLKVector2Make(0.0, 0.0), 0.0, GLKVector2Make(1.0, 1.0)),
+transform_(),
 //tmp_transform_(0),
 //anim_chain_(0)
 shader_(shader),
@@ -74,12 +74,12 @@ void AnimObj::TouchEnd(GLKVector2 pt){
 	FILE_LOG(logDEBUG) << "TouchEnd (" << id_ << ")";
 	end_animations();
 	
-	GLKVector2 scale_points[2] = {transform_.scale_, GLKVector2MultiplyScalar(transform_.scale_, 2.0)};
-	he::RawAnimation<GLKVector2> *scale_animation = new he::RawAnimation<GLKVector2>(&transform_.scale_,
-																			   he::Tweener<GLKVector2>(he::BackEaseIn, scale_points[0], scale_points[1]),
+	GLKVector3 scale_points[2] = {transform_.GetScale(), transform_.GetScale() * 2.0f};
+	he::RawAnimation<GLKVector3> *scale_animation = new he::RawAnimation<GLKVector3>(transform_.GetScalePtr(),
+																			   he::Tweener<GLKVector3>(he::BackEaseIn, scale_points[0], scale_points[1]),
 																			   100);
-	he::RawAnimation<GLKVector2> *scale_down_anim = new he::RawAnimation<GLKVector2>(&transform_.scale_,
-																			   he::Tweener<GLKVector2>(he::BounceEaseOut, scale_points[1], scale_points[0]),
+	he::RawAnimation<GLKVector3> *scale_down_anim = new he::RawAnimation<GLKVector3>(transform_.GetScalePtr(),
+																			   he::Tweener<GLKVector3>(he::BounceEaseOut, scale_points[1], scale_points[0]),
 																			   50);
 	GLKVector4 rand_color = GLKVector4Make(he::Randf(),he::Randf(),he::Randf(),1.0);
 	he::RawAnimation<GLKVector4> *color_switch = new he::RawAnimation<GLKVector4>(&render_object_->color_,
@@ -91,11 +91,11 @@ void AnimObj::TouchEnd(GLKVector2 pt){
 	he::g_AnimationLoop->AddAnimation(scale_animation);
 	scale_anim_descent_id_ = scale_animation->GetDescentID();
 	
-	he::RawAnimation<GLKVector2> *trans_animation = new he::RawAnimation<GLKVector2>(&transform_.position_,
-																			   he::Tweener<GLKVector2>(he::Linear, transform_.position_, pt),
+	he::RawAnimation<GLKVector3> *trans_animation = new he::RawAnimation<GLKVector3>(transform_.GetPositionPtr(),
+																			   he::Tweener<GLKVector3>(he::Linear, transform_.GetPosition(), GLKVector3Make(pt.x, pt.y, 0.0f)),
 																			   100);
-	trans_animation->AddChild(new he::RawAnimation<float>(&transform_.rotation_,
-														he::Tweener<float>(he::Linear, transform_.rotation_, atan2(pt.y, pt.x)),
+	trans_animation->AddChild(new he::RawAnimation<float>(transform_.GetRotationAnglePtr(),
+														he::Tweener<float>(he::Linear, transform_.GetRotationAngle(), atan2(pt.y, pt.x)),
 														80));
 	he::g_AnimationLoop->AddAnimation(trans_animation);
 	trans_anim_descent_id_ = trans_animation->GetDescentID();
@@ -145,7 +145,7 @@ void AnimObj::Render(){
 }
 
 void AnimObj::AnimationCallback(int animation_id){
-	transform_ = he::Transform(GLKVector2Make(0.0, 0.0), 0.0, GLKVector2Make(1.0, 1.0));
+	transform_ = he::Transform();
 	render_object_->SetColor( GLKVector4Make(0.0, 0.0, 0.0, 1.0) );
 }
 ///EOF

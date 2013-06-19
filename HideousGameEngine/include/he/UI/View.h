@@ -25,6 +25,7 @@ namespace he {
 			
 			/** Update self. Update all children in draw order */
 			void Update(float dt);
+						
 			/** Render self. Render all children in draw order */
 			void Render();
 			
@@ -36,26 +37,20 @@ namespace he {
 			
 			/** Get frame */
 			const Frame &GetFrame() const;
+						
+			Frame frame_; /**< The frame of the view */
 			
-			/** Refresh the UI */
-			void SetNeedsDisplay();
-			
+
 		private:
 			/** Actual update */
 			virtual void self_update(float dt);
 
 			/** Actual render */
 			virtual void self_render();
-
-			/** Actual refresh.
-				Update the render_object
-			 */
-			virtual void self_set_needs_display();
-			
+		
 			View *add_to_;	/**< Next Submit adds to this node. */
 			View *head_;	/**< The head pointer to the first child UIComponent. Starts drawing from here */
 			View *next_;	/**< Points to the next sibling UIComponent */
-			Frame frame_; /**< The frame of the view */
 	};
 	
 } /*namespace ui*/

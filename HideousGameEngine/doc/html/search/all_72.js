@@ -15,6 +15,5 @@ var searchData=
   ['renderobject_2eh',['RenderObject.h',['../_render_object_8h.html',1,'']]],
   ['reportinglevel',['ReportingLevel',['../class_debug_log.html#ad548ee14a4828bdd5a53a73cdc503d99',1,'DebugLog']]],
   ['resourcepath',['ResourcePath',['../namespacehe.html#aa5a29ef8e0a46966530c44bb99ea952a',1,'he']]],
-  ['resourcepath_2ehpp',['ResourcePath.hpp',['../_resource_path_8hpp.html',1,'']]],
-  ['rotation_5f',['rotation_',['../classhe_1_1_transform.html#ab184af309fb604bb6eb1637506d8248f',1,'he::Transform']]]
+  ['resourcepath_2ehpp',['ResourcePath.hpp',['../_resource_path_8hpp.html',1,'']]]
 ];

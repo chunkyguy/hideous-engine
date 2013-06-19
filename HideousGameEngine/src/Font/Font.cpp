@@ -159,12 +159,13 @@ namespace he{
 			}
 		}
 		
-		transform_.position_ = GLKVector2Make(penPos.x + glyph->bitmap_left, -penPos.y - glyph->bitmap_top);
+		GLKVector3 pos = GLKVector3Make(penPos.x + glyph->bitmap_left, -penPos.y - glyph->bitmap_top, 0.0f);
+		transform_.SetPosition(pos);
 		GLfloat p_data[] = {
-			transform_.position_.x,		-transform_.position_.y,
-			transform_.position_.x+w,	-transform_.position_.y,
-			transform_.position_.x,		-transform_.position_.y-h,
-			transform_.position_.x+w,	-transform_.position_.y-h
+			transform_.GetPosition().x,		-transform_.GetPosition().y,
+			transform_.GetPosition().x+w,	-transform_.GetPosition().y,
+			transform_.GetPosition().x,		-transform_.GetPosition().y-h,
+			transform_.GetPosition().x+w,	-transform_.GetPosition().y-h
 		};
 		GLfloat t_data[] = {
 			0, 0,

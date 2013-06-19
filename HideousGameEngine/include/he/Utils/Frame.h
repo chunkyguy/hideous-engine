@@ -24,17 +24,24 @@ namespace he {
 		void SetSize(const GLKVector2 &size);
 
 		const Transform &GetTransform() const;
+		Transform *GetTransformPtr();
 		void SetTransform(const Transform &transform);
 		
 		Vertex::V2 GetRect() const;
+		
+		/** The frame in world space.
+		 Basically just GetFrame() * GetMV() 
+		 */
+		Vertex::V2 GetGlobalRect() const;
+		
 		void SetRect(const Vertex::V2 &rect);
 		
 	private:
 		void update_values();
 		
 		GLKVector2 size_;
-		Transform transform_;
 		Vertex::V2 rect_;
+		Transform transform_;
 	};
 	
 }//ns he

@@ -533,7 +533,12 @@ inline GLKVector3 operator * (const GLKMatrix4& left, const GLKVector3& right) {
 //		return GLKMatrix4MultiplyVector3(left, (GLKVector3){right.x, right.y, 0.0f});
 //		//return GLKMatrix4MultiplyVector3WithTranslation(left, right);
 //	}
-
+inline bool operator == (const GLKMatrix4 &left, const GLKMatrix4 &right){
+	int i = 0;
+	for(; i < 16 && (left.m[i] == right.m[i]); ++i){
+	}
+	return !(i < 16);
+}
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // MARK: GLKQuaternion
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -578,6 +583,6 @@ inline GLKQuaternion operator *= (GLKQuaternion& left, const GLKQuaternion& righ
 std::ostream &operator<<(std::ostream &os, GLKVector2);
 std::ostream &operator<<(std::ostream &os, GLKVector3);
 std::ostream &operator<<(std::ostream &os, GLKVector4);
-
+std::ostream &operator<<(std::ostream &os, GLKMatrix4);
 #endif
 #endif

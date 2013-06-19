@@ -19,7 +19,7 @@ var searchData=
   ['performaction',['PerformAction',['../structhe_1_1_animation_listenable.html#a7748386ddcf646ef7ba33684e72d260e',1,'he::AnimationListenable::PerformAction()'],['../classhe_1_1_animation_listener.html#a802696cf7a8d4bb99429ea0bbdab03ed',1,'he::AnimationListener::PerformAction()'],['../classhe_1_1_gesture_listenable.html#a637dd102002f7b8d03b71bc7b56450e5',1,'he::GestureListenable::PerformAction()'],['../classhe_1_1_gesture_listener.html#a69efe7e624e7aabed73bc8eb185569cb',1,'he::GestureListener::PerformAction()']]],
   ['point_5fsize_5f',['point_size_',['../classhe_1_1_particle_env.html#a2e919d36bbc9c65db99e05633b329186',1,'he::ParticleEnv']]],
   ['position',['position',['../structhe_1_1_color_vertex_1_1_data.html#a0b698c5a83b5541c8049c79040e76c56',1,'he::ColorVertex::Data']]],
-  ['position_5f',['position_',['../classhe_1_1_particle.html#a977a4d2b66907123259e762dd63148b0',1,'he::Particle::position_()'],['../classhe_1_1_transform.html#a51fb0a6409914b6f719b29c9fa59c9e7',1,'he::Transform::position_()']]],
+  ['position_5f',['position_',['../classhe_1_1_particle.html#a977a4d2b66907123259e762dd63148b0',1,'he::Particle']]],
   ['program',['Program',['../classhe_1_1_program.html#a51db4e3099f876bc2a5cec439dee77a6',1,'he::Program']]],
   ['program',['Program',['../classhe_1_1_program.html',1,'he']]],
   ['program_2eh',['Program.h',['../_program_8h.html',1,'']]],
