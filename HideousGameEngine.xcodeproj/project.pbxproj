@@ -63,6 +63,7 @@
 		19041F15176CCD87007119B1 /* HideousGameTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EEF176CCD87007119B1 /* HideousGameTests.cpp */; };
 		191B223B176072B1001F6F1C /* FlashTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 191B2239176072B1001F6F1C /* FlashTest.cpp */; };
 		191B223F1760C644001F6F1C /* DebugHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 191B223D1760C644001F6F1C /* DebugHelper.cpp */; };
+		191E692317735E0E008E7510 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 191E692117735E0E008E7510 /* Sprite.cpp */; };
 		193A5EC61743F2DB00CB945B /* AnimationState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 193A5EA21743F2DB00CB945B /* AnimationState.cpp */; };
 		193A5EC71743F2DB00CB945B /* AnimationStateData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 193A5EA41743F2DB00CB945B /* AnimationStateData.cpp */; };
 		193A5EC91743F2DB00CB945B /* AtlasAttachmentLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 193A5EA81743F2DB00CB945B /* AtlasAttachmentLoader.cpp */; };
@@ -244,6 +245,8 @@
 		191B223A176072B1001F6F1C /* FlashTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashTest.h; sourceTree = "<group>"; };
 		191B223D1760C644001F6F1C /* DebugHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DebugHelper.cpp; sourceTree = "<group>"; };
 		191B22401760C6C6001F6F1C /* DebugHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DebugHelper.h; sourceTree = "<group>"; };
+		191E69201773421E008E7510 /* Sprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sprite.h; sourceTree = "<group>"; };
+		191E692117735E0E008E7510 /* Sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sprite.cpp; sourceTree = "<group>"; };
 		193A5EA21743F2DB00CB945B /* AnimationState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AnimationState.cpp; sourceTree = "<group>"; };
 		193A5EA31743F2DB00CB945B /* AnimationState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationState.h; sourceTree = "<group>"; };
 		193A5EA41743F2DB00CB945B /* AnimationStateData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AnimationStateData.cpp; sourceTree = "<group>"; };
@@ -1216,6 +1219,7 @@
 				19A8EDCD1769C34100FD25BF /* View.h */,
 				19A8EDD61769CB9100FD25BF /* ImageView.h */,
 				19A8EDD11769C47D00FD25BF /* Button.h */,
+				191E69201773421E008E7510 /* Sprite.h */,
 			);
 			name = UI;
 			path = HideousGameEngine/include/he/UI;
@@ -1227,6 +1231,7 @@
 				19A8EDCE1769C3FE00FD25BF /* View.cpp */,
 				19A8EDD21769C4F600FD25BF /* Button.cpp */,
 				19A8EDD71769CCD700FD25BF /* ImageView.cpp */,
+				191E692117735E0E008E7510 /* Sprite.cpp */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1574,6 +1579,7 @@
 				19041F15176CCD87007119B1 /* HideousGameTests.cpp in Sources */,
 				19C54C48176D09FD00377317 /* GTests.cpp in Sources */,
 				194B7AE21770C4BE007919BB /* TypesTests.cpp in Sources */,
+				191E692317735E0E008E7510 /* Sprite.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

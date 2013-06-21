@@ -41,11 +41,16 @@ namespace he{
 
 		/** Dtor */
 		~TextureAtlas();
-				
+		
+		/** Test if the region is available in the atlas */
+		bool IsTextureRegionAvailable(const std::string &image_name) const;
+		
 		/** Get texture region for image-name/symbol-name inside the sprite sheet
 		 @param image_name The symbol-name attached, that can be referred to get the texture region
+		 @return The textureAtlasRegion.
+		 @warning Call IsTextureRegionAvailabe before calling this method.
 		 */
-		const TextureAtlasRegion *GetTextureAtlasRegion(const std::string &image_name) const;
+		const TextureAtlasRegion GetTextureAtlasRegion(const std::string &image_name) const;
 
 		/** Get pointer to attached texture 
 		 @warning Don't delete the texture. It's owned by the TextureAtlas.

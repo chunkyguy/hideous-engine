@@ -57,6 +57,7 @@ void he_Trace(const char* s);
 template<typename T, typename... Args>
 void he_Trace(const char* s, const T& value, const Args&... args) {
 	std::cout << std::setprecision(10);
+	std::cout << std::boolalpha;
 	while (*s) {
 		if (*s == '%' && *++s != '%') {
 			std::cout << value;

@@ -46,7 +46,7 @@ namespace he {
 		class Button : public View{
 		public:
 			Button(IButtonListner *listner, const Frame frame = Frame(), int tag = -1);
-			~Button();
+			virtual ~Button();
 			
 			/** Animatiion finish callback.
 			 Called in case an animation is registered.
@@ -64,11 +64,11 @@ namespace he {
 		private:
 			/** Implementation of the virtual UIComponent::update
 			 */
-			virtual void self_update(float dt);
+			virtual void update(float dt);
 			
 			/** Implementation of the virtual UIComponent::render
 			 */
-			virtual void self_render();
+			virtual void render();
 			
 			
 			int tag_;	/**< tag to identify the object */

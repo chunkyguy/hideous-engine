@@ -47,10 +47,12 @@ namespace he {
 //			}
 		}
 
-		void Button::self_update(float dt){
+		void Button::update(float dt){
+			View::update(dt);
 		}
 		
-		void Button::self_render(){
+		void Button::render(){
+			View::render();
 		}
 		
 		void Button::HandleGesture(const he::Gesture &gesture){
@@ -59,10 +61,8 @@ namespace he {
 				
 				//				if(gesture.state_ == he::Gesture::kBegin){
 					GLKVector2 pt = gesture.GetHitPoint();
-					he_Trace("\nButton[%d]::HandleGesture:\n%@\nFrame:\n%@\nMV: \n%@\nPoint:%@\n",tag_,gesture,GetFrame().GetRect(),GetFrame().GetTransform().GetMV(),pt);
-
-					bool hit = he::Vertex::Contains(GetFrame().GetGlobalRect(), pt);
-					if(hit){
+				he_Trace("\nButton[%d]::HandleGesture:\n%@\nFrame:\n%@\nMV: \n%@\nPoint:%@\n",tag_,gesture,GetFrame().GetRect(),GetFrame().GetTransform().GetMV(),pt);
+				if(he::Vertex::Contains(GetFrame().GetGlobalRect(), pt)){
 									listner_->Hit(this);
 //						GLKVector2 scale_points[2] = {original_transform_.scale_, GLKVector2Multiply(original_transform_.scale_, GLKVector2Make(1.05, 1.05))};
 //						he::RawAnimation<GLKVector2> *scale_up_anim = new he::RawAnimation<GLKVector2>(&transform_.scale_,

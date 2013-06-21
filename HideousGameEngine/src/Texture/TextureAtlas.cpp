@@ -40,13 +40,19 @@ namespace he{
 		delete texture_;
 	}
 	
-	const TextureAtlasRegion *TextureAtlas::GetTextureAtlasRegion(const std::string &image_name) const{
-		he_Trace("TextureAtlas: fullname '%@'\n",image_name);
-		std::map<const std::string, TextureAtlasRegion>::const_iterator itr = parser_->GetTable().find(image_name);
-		if(itr != parser_->GetTable().end()){
-			return &(itr->second);
-		}
-		return nullptr;
+	bool TextureAtlas::IsTextureRegionAvailable(const std::string &image_name) const{
+		const std::map<const std::string, TextureAtlasRegion> map = parser_->GetTable();
+		std::map<const std::string, TextureAtlasRegion>::const_iterator itr = map.find(image_name);
+		return (itr != map.end());
+	}
+
+	const TextureAtlasRegion TextureAtlas::GetTextureAtlasRegion(const std::string &image_name) const{
+		const std::map<const std::string, TextureAtlasRegion> map = parser_->GetTable();
+		std::map<const std::string, TextureAtlasRegion>::const_iterator itr = map.find(image_name);
+		he_Trace("TextureAtlas: fullname '%@' = %@\n",image_name,(itr != map.end())?"Y":"N");
+		assert(itr != map.end());
+		he_Trace("TextureAtlas: GetTextureAtlasRegion:\n%@\n",itr->second);
+		return itr->second;
 	}
 	
 	he::Texture *TextureAtlas::GetTexture() const{
@@ -57,8 +63,9 @@ namespace he{
 									 const std::string &image_name,
 									 const bool aspect_correct,
 									 const GLKVector2 size){
-		const TextureAtlasRegion *tex_region = atlas->GetTextureAtlasRegion(image_name);
-		if(tex_region){
+		
+		if(atlas->IsTextureRegionAvailable(image_name)){
+			const TextureAtlasRegion tex_region = atlas->GetTextureAtlasRegion(image_name);
 			return new TextureVertex(tex_region, aspect_correct, size);
 		}
 		return nullptr;

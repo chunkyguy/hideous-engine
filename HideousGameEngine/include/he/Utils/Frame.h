@@ -35,7 +35,7 @@ namespace he {
 		Vertex::V2 GetGlobalRect() const;
 		
 		void SetRect(const Vertex::V2 &rect);
-		
+
 	private:
 		void update_values();
 		
@@ -43,7 +43,9 @@ namespace he {
 		Vertex::V2 rect_;
 		Transform transform_;
 	};
-	
+
+	std::ostream &operator<<(std::ostream &os, const Frame &frame);
+
 }//ns he
 
 

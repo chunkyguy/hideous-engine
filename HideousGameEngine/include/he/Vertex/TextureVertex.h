@@ -46,7 +46,7 @@ namespace he{
 		 @param aspect_lock Turn on lock to explicitly provide the width and height.
 		 @param size If not provided, picked from the size from atlas data.
 		 */
-		TextureVertex(const TextureAtlasRegion *region, const bool aspect_lock = false, GLKVector2 size = GLKVector2Make(-1, -1));
+		TextureVertex(const TextureAtlasRegion &region, const bool aspect_lock = false, GLKVector2 size = GLKVector2Make(-1, -1));
 
 		/** Get Vertex data */
 		const Vertex::V2 &GetVertexPositionData() const;

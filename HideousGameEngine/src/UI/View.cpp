@@ -33,20 +33,22 @@ namespace he {
 		}
 		
 		void View::Update(float dt){
-			self_update(dt);
+			update(dt);
+		}
+		void View::update(float dt){
 			for(View *p = head_; p; p = p->next_){
 				p->Update(dt);
 			}
 		}
-		void View::self_update(float dt){}
 				
 		void View::Render(){
-			self_render();
+			render();
+		}
+		void View::render(){
 			for(View *p = head_; p; p = p->next_){
 				p->Render();
 			}
 		}
-		void View::self_render(){}
 		
 		/** Owns the passed component */
 		void View::AddSubview(View *view){
@@ -66,6 +68,18 @@ namespace he {
 		const Frame &View::GetFrame() const{
 			return frame_;
 		}
+
+		Frame *View::GetFramePtr(){
+			return &frame_;
+		}
+
+//		const GLKMatrix4 View::GetMVP() const{
+//			return frame_.GetTransform().GetMVP();
+//		}
+//		
+//		bool View::Contains(const GLKVector2 &point){
+//			return he::Vertex::Contains(frame_.GetRect(), point);
+//		}
 				
 	} /*namespace ui*/
 } /*namespace he*/

@@ -11,6 +11,8 @@
 #include <gtest.h>
 
 TEST(Frame, Equality){
+	he::g_Screen = new he::Screen(480, 320);
 	he::Frame fr;
 	EXPECT_TRUE(he::Vertex::Equal(fr.GetRect(), fr.GetRect()));
+	delete he::g_Screen;
 }

@@ -35,9 +35,9 @@
 //#define TEST_TEXTURE_BIG_BANG
 //#define TEST_GESTURE
 //#define TEST_PARTICLES
-//#define TEST_UI
+#define TEST_UI
 //#define TEST_SPINE
-#define TEST_FLASH
+//#define TEST_FLASH
 
 template <typename T>
 T* AllocGameInstance(){

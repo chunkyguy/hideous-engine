@@ -17,49 +17,6 @@
 
 namespace he{
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// MARK: FrameLoop
-	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	class FrameLoop{
-	public:
-		FrameLoop(const std::string &name, const TextureAtlas *atlas) :
-		frames_(0),
-		atlas_(atlas),
-		name_(name),
-		done_(false),
-		region_(nullptr)
-		{
-			load_region();
-		}
-		
-		bool Done() const{
-			return done_;
-		}
-		
-		const TextureAtlasRegion *Get(){
-			return region_;
-		}
-		
-		void operator++(){
-			++frames_;
-			load_region();
-		}
-		
-	private:
-		void load_region(){
-			region_ = atlas_->GetTextureAtlasRegion(FlashFullName(name_, frames_));
-			if(!region_){
-				done_ = true;
-			}
-		}
-		
-		int frames_;
-		const TextureAtlas *atlas_;
-		std::string name_;
-		bool done_;
-		const TextureAtlasRegion *region_;
-	};
-
-	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// MARK: SpriteAnimation
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	SpriteAnimation::SpriteAnimation(TextureVertex **vertex_data, const TextureAtlas *atlas, const std::string &name,
@@ -73,11 +30,10 @@ namespace he{
 	delay_(1.0f/fps),
 	repeat_count_(repeat_count)
 	{
-		int frame_count = 0;
-		for(FrameLoop loop_var(name, atlas); !loop_var.Done(); ++loop_var, ++frame_count){
-			const TextureAtlasRegion *region = loop_var.Get();
-			TextureVertex *v_data = new TextureVertex(region, false, region->sprite_size_);
-			GLKVector2 offset = region->sprite_offset_;
+		for(int frame_count = 0; atlas->IsTextureRegionAvailable(FlashFullName(name, frame_count)); frame_count++){
+			const TextureAtlasRegion region = atlas->GetTextureAtlasRegion(FlashFullName(name, frame_count));
+			TextureVertex *v_data = new TextureVertex(region, false, region.sprite_size_);
+			GLKVector2 offset = region.sprite_offset_;
 			if(offset.x || offset.y){	// translate
 				Vertex::V2 pos_data = v_data->GetVertexPositionData();
 				Vertex::Translate(pos_data, offset);
@@ -93,13 +49,14 @@ namespace he{
 				tail_->next_ = frame;
 				tail_ = frame;
 			}
-			if(frame_count == final_frame_index && !final_vertex_data_){
-				final_vertex_data_ = new TextureVertex(region, false, region->sprite_size_);
+			if(frame_count == final_frame_index){
+				assert(!final_vertex_data_);		//Should not be loaded already. If allowed, might be a memory leak.
+				final_vertex_data_ = new TextureVertex(region, false, region.sprite_size_);
 			}
-			assert(final_vertex_data_);		// No data to load when the animation end, maybe the frame index provided is out of range.
 			he_Trace("SpriteAnimation: v-data:\n%@",tail_->vertex_->GetVertexPositionData());
 			he_Trace("SpriteAnimation: t-data:\n%@",tail_->vertex_->GetVertexTextureData());
 		}
+		assert(final_vertex_data_);		// No data to load when the animation end, maybe the frame index provided is out of range.
 	}
 
 	SpriteAnimation::~SpriteAnimation(){

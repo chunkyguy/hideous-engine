@@ -60,6 +60,8 @@ namespace he {
 	private:
 		void calc_tex_coords();
 	};
+	
+	std::ostream &operator<<(std::ostream &os, const TextureAtlasRegion &region);
 }
 
 #endif

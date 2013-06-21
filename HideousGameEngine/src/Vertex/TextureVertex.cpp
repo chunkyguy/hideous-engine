@@ -28,20 +28,20 @@ namespace he{
 		set_data(pos_coords, texture_coords, aspect_lock);
 	}
 
-	TextureVertex::TextureVertex(const TextureAtlasRegion *region, const bool aspect_lock, GLKVector2 size) :
+	TextureVertex::TextureVertex(const TextureAtlasRegion &region, const bool aspect_lock, GLKVector2 size) :
 	IVertex(4),
 	position_data_(),
 	texture_data_()
 	{
 		if(size.x < 0.0){
-			size.x = region->sprite_size_.x;
+			size.x = region.sprite_size_.x;
 		}
 		if(size.y < 0.0){
-			size.y = region->sprite_size_.y;
+			size.y = region.sprite_size_.y;
 		}
 
 		GLKVector4 pos_coords = GLKVector4Make(-size.x/2.0f, -size.y/2.0f, size.x/2.0f, size.y/2.0f);
-		set_data(pos_coords, region->tex_coords_, aspect_lock);
+		set_data(pos_coords, region.tex_coords_, aspect_lock);
 	}
 
 	void TextureVertex::set_data(const GLKVector4 &pos_coords, const GLKVector4 &tex_coords, const bool aspect_lock){

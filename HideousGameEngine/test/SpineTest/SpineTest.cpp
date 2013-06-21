@@ -215,26 +215,8 @@ printf("Attachment is not region!\n");
 		he::Texture *texture = 0;
 #else
 		he::TextureAtlas *atlas = regionAttachment->GetRendererObject();;
-		const he::TextureAtlasRegion *region = atlas->GetTextureAtlasRegion(regionAttachment->GetName());
+		const he::TextureAtlasRegion region = atlas->GetTextureAtlasRegion(regionAttachment->GetName());
 
-#if defined(PRINT_LOG)
-		printf("name:\t\t\t\t\t\t\t%s\n"
-			   "{{x, y}, {width, height}}:\t\t{{%.2f, %.2f}, {%.2f, %.2f}}\n"
-			   "{{u,v},{u2,v2}}:\t\t\t\t{{%.2f, %.2f}, {%.2f, %.2f}}\n"
-			   "{offsetX, offsetY}:\t\t\t\t{%.2f, %.2f}\n"
-			   "{originalWidth, originalHeight}:\t{%.2f, %.2f}\n"
-			   "rotate:\t\t\t\t\t\t\t%s\n"
-			   "trimmed:\t\t\t\t\t\t\t%s\n"
-			   ,
-			   region->name_.c_str(),
-			   region->sprite_color_rect_.x, region->sprite_color_rect_.y, region->sprite_color_rect_.z, region->sprite_color_rect_.w,
-			   region->tex_coords_.x, region->tex_coords_.y, region->tex_coords_.z, region->tex_coords_.w,
-			   region->sprite_offset_.x, region->sprite_offset_.y,
-			   region->sprite_source_size_.x, region->sprite_source_size_.y,
-			   region->texture_rotated_?"y":"n",
-			   region->sprite_trimmed_?"y":"n"
-			   );
-#endif
 		
 		he::Texture *texture = atlas->GetTexture();
 		
@@ -251,9 +233,9 @@ printf("Attachment is not region!\n");
 		printf("};\n");
 #endif
 		
-		GLKVector4 eff_frame = region->sprite_color_rect_;
+		GLKVector4 eff_frame = region.sprite_color_rect_;
 		//rotate if image is roated
-		if(region->texture_rotated_){
+		if(region.texture_rotated_){
 			float tmp;
 			tmp = eff_frame.z; eff_frame.z = eff_frame.w; eff_frame.w = tmp;
 
@@ -263,7 +245,7 @@ printf("Attachment is not region!\n");
 
 		}
 
-		GLKVector4 tex_coords = region->tex_coords_;
+		GLKVector4 tex_coords = region.tex_coords_;
 
 #if defined(PRINT_LOG)
 		printf("tex_coords:\t\t\t\t\t{{%.2f, %.2f}, {%.2f, %.2f}}\n", tex_coords.x, tex_coords.y, tex_coords.z, tex_coords.w);

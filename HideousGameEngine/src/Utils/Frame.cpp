@@ -65,6 +65,12 @@ namespace he{
 		size_ = Vertex::GetVertex(rect_, Vertex::kD) - Vertex::GetVertex(rect_, Vertex::kA);
 		transform_.SetPosition(size_/2.0f);
 	}
+	
+	std::ostream &operator<<(std::ostream &os, const Frame &frame){
+		os << frame.GetRect();
+		return os;
+	}
+
 }
 
 ///EOF

@@ -83,4 +83,20 @@ namespace he {
 		assert(tex_coords_.w >= 0.0 && tex_coords_.w <= 1.0);
 
 	}
+	
+	std::ostream &operator<<(std::ostream &os, const TextureAtlasRegion &region)
+	{
+		os << "region.name: " << region.name_ << "\n"
+		<< "region.texture_rect: " << region.texture_rect_ << "\n"
+		<< "region.total_texture_size: " << region.total_texture_size_ << "\n"
+		<< "region.sprite_offset: " << region.sprite_offset_ << "\n"
+		<< "region.sprite_size: " << region.sprite_size_ << "\n"
+		<< "region.sprite_trimmed: " << region.sprite_trimmed_ << "\n"
+		<< "region.texture_rotated: " << region.texture_rotated_ << "\n"
+		<< "region.sprite_color_rect: " << region.sprite_color_rect_ << "\n"
+		<< "region.sprite_source_size: " << region.sprite_source_size_ << "\n"
+		<< "region.tex_coords: " << region.tex_coords_;
+		return os;
+	}
+
 }

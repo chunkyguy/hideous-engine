@@ -35,8 +35,20 @@ namespace he {
 		void Pause(bool pause);
 		
 	private:
+		/** Start the game
+		 At this point all the underground tasks are assumed to be over.
+		 All the global vars are created and initialized.
+		 */
 		virtual void init() = 0;
+		
+		/** Supply the power to your game.
+		 The animation engine and all the other (future) necessary elements of the engine
+		 will be powered up
+		 */
 		virtual void update(float dt) = 0;
+		
+		/** Render all the entites
+		 */
 		virtual void render() = 0;
 		
 		GLKVector3 clear_color_;

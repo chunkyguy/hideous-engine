@@ -42,12 +42,12 @@ namespace he {
 			/** ImageView from atlas */
 			ImageView(const ImageViewFactory *factory, const std::string &image_name, const Frame frane = Frame());
 			
-			~ImageView();
+			virtual ~ImageView();
 			
-		private:
-			virtual void self_update(float dt);
-			virtual void self_render();
-			
+		protected:
+			virtual void update(float dt);
+			virtual void render();
+
 			RenderObject *render_object_;
 			TextureVertex *vertex_;
 		};

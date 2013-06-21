@@ -20,6 +20,7 @@
 #include <he/Utils/Utils.h>
 #include <he/Utils/Frame.h>
 #include <he/Vertex/TextureVertex.h>
+#include <he/UI/Sprite.h>
 
 UITest::UITest() :
 view_(nullptr)
@@ -53,26 +54,43 @@ void UITest::init(){
 	
 	//mission image view
 	std::string mission_full_name(he::FlashFullName("mission"));
-	const he::TextureAtlasRegion *mission_region = atlas_.Get()->GetTextureAtlasRegion(mission_full_name);
+	const he::TextureAtlasRegion mission_region = atlas_.Get()->GetTextureAtlasRegion(mission_full_name);
 	GLKVector3 mission_pos = GLKVector3Make(100, 0, 0.0f);
 	he::Transform mission_trans(mission_pos);
-	he::Frame mission_frame(mission_trans, mission_region->sprite_size_);
+	he_Trace("UITest:init: %@\n",mission_region.sprite_size_);
+	he::Frame mission_frame(mission_trans, mission_region.sprite_size_);
 	he::ui::ImageView *mission_img_vw = new he::ui::ImageView(&img_factory, mission_full_name, mission_frame);
 	bg_vw->AddSubview(mission_img_vw);
 
 	//button
-	he::Frame btn_frame(he::Transform(GLKVector3Make(0, 0, 0)), mission_region->sprite_size_);
+	he::Frame btn_frame(he::Transform(GLKVector3Make(0, 0, 0)), mission_region.sprite_size_);
 	he::ui::Button *btn = new he::ui::Button(btn_listener_.Get(), btn_frame, 99);
 	mission_img_vw->AddSubview(btn);
 
 	//tutorial image view
 	std::string tutorial_full_name(he::FlashFullName("tutorial"));
-	const he::TextureAtlasRegion *tutorial_region = atlas_.Get()->GetTextureAtlasRegion(tutorial_full_name);
+	const he::TextureAtlasRegion tutorial_region = atlas_.Get()->GetTextureAtlasRegion(tutorial_full_name);
 	GLKVector3 tutorial_pos = GLKVector3Make(-50, 50, 0.0f);
 	he::Transform tutorial_trans(tutorial_pos);
-	he::Frame tutorial_frame(tutorial_trans, tutorial_region->sprite_size_);
+	he::Frame tutorial_frame(tutorial_trans, tutorial_region.sprite_size_);
 	he::ui::ImageView *tutorial_img_vw = new he::ui::ImageView(&img_factory, tutorial_full_name, tutorial_frame);
 	mission_img_vw->AddSubview(tutorial_img_vw);
+
+	//another factory
+	std::string atlas_data_path2(he::ResourcePath() + "fishmotion.xml");
+	std::string atlas_img_path2(he::ResourcePath() + "fishmotion.png");
+	he::TextureAtlas *leakyatlas = new he::TextureAtlas(atlas_data_path2, atlas_img_path2, he::TextureAtlas::kStarling);
+	
+	he::ui::ImageViewFactory img_factory2(shader_.Get(), leakyatlas);
+
+	//sprite
+	std::string sprite_name("fishmoving");
+	//const he::TextureAtlasRegion *sprite_region = leakyatlas->GetTextureAtlasRegion(mission_full_name);
+	GLKVector3 sprite_pos = GLKVector3Make(0, -100, 0.0f);
+	he::Transform sprite_trans(sprite_pos);
+	he::Frame sprite_frame(sprite_trans, GLKVector2Make(0, 0));
+	he::ui::Sprite *sprite = new he::ui::Sprite(&img_factory2, sprite_name, sprite_frame, -1, 24);
+	view_->AddSubview(sprite);
 
 	
 //	std::string btn_titles[] = {	"mission", "tutorial", "credits"	};

@@ -30,7 +30,7 @@ namespace he {
 		ImageView::ImageView(const ImageViewFactory *factory, const std::string &image_name, const Frame frame) :
 		View(frame)
 		{
-			const TextureAtlasRegion *region = factory->atlas.Get()->GetTextureAtlasRegion(image_name);
+			const TextureAtlasRegion region = factory->atlas.Get()->GetTextureAtlasRegion(image_name);
 			vertex_ = new TextureVertex(region);
 			render_object_ = new RenderObject(vertex_, factory->shader.Get(), factory->atlas.Get()->GetTexture(), frame.GetTransform().GetMVP());
 		}
@@ -42,12 +42,14 @@ namespace he {
 			delete render_object_;
 		}
 		
-		void ImageView::self_update(float dt){
+		void ImageView::update(float dt){
 			render_object_->SetMVP(GetFrame().GetTransform().GetMVP());
+			View::update(dt);
 		}
 		
-		void ImageView::self_render(){
+		void ImageView::render(){
 			render_object_->Render();
+			View::render();
 		}
 				
 		///////////////////////////////////////////////////////////////////////////////////////////////////
