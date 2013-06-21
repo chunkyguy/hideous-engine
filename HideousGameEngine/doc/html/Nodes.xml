@@ -122,7 +122,7 @@
                  <Node>
                   <Name>~Button</Name>
                   <Path>classhe_1_1ui_1_1_button.html</Path>
-                  <Anchor>af9645ddcba25a7eec5e0e60e2f755ec4</Anchor>
+                  <Anchor>ad87164a0b3acfd3a4f90676811a226a0</Anchor>
                  </Node>
                  <Node>
                   <Name>GetTag</Name>
@@ -174,7 +174,53 @@
                  <Node>
                   <Name>~ImageView</Name>
                   <Path>classhe_1_1ui_1_1_image_view.html</Path>
-                  <Anchor>a3bd46e542a8e82083156620b90b4182f</Anchor>
+                  <Anchor>a5989c23ea1fb0abec4d6c8f9579bb392</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>render</Name>
+                  <Path>classhe_1_1ui_1_1_image_view.html</Path>
+                  <Anchor>a4a409469ea7fb78eb841b356320a78a0</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>update</Name>
+                  <Path>classhe_1_1ui_1_1_image_view.html</Path>
+                  <Anchor>add8fedf55634f9589cdc0d4af2995617</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>render_object_</Name>
+                  <Path>classhe_1_1ui_1_1_image_view.html</Path>
+                  <Anchor>a9a65d88d8b5de7a1299558401c1a3d7a</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>vertex_</Name>
+                  <Path>classhe_1_1ui_1_1_image_view.html</Path>
+                  <Anchor>a0fc2634f15e9d899160e4e97cdc3d266</Anchor>
+                 </Node>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Sprite</Name>
+                <Path>classhe_1_1ui_1_1_sprite.html</Path>
+                <Subnodes>
+                 <Node>
+                  <Name>Sprite</Name>
+                  <Path>classhe_1_1ui_1_1_sprite.html</Path>
+                  <Anchor>a572579a31a7f80a4982ab57db58554fe</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>~Sprite</Name>
+                  <Path>classhe_1_1ui_1_1_sprite.html</Path>
+                  <Anchor>ac8858d530efe8239009c7b03a3a4805c</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>render</Name>
+                  <Path>classhe_1_1ui_1_1_sprite.html</Path>
+                  <Anchor>adcb2d4c10c3945c2de1d94b6202a121d</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>update</Name>
+                  <Path>classhe_1_1ui_1_1_sprite.html</Path>
+                  <Anchor>a12cf77c723eaf5096de12fc3dfdf5bda</Anchor>
                  </Node>
                 </Subnodes>
                </Node>
@@ -203,9 +249,19 @@
                   <Anchor>a95b34142aee0bdfd168ab29939f173c9</Anchor>
                  </Node>
                  <Node>
+                  <Name>GetFramePtr</Name>
+                  <Path>classhe_1_1ui_1_1_view.html</Path>
+                  <Anchor>ad794f1b44db414ba532a1f18e87904ca</Anchor>
+                 </Node>
+                 <Node>
                   <Name>Render</Name>
                   <Path>classhe_1_1ui_1_1_view.html</Path>
                   <Anchor>a80151896f7724464dfc9c9a574a8b95c</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>render</Name>
+                  <Path>classhe_1_1ui_1_1_view.html</Path>
+                  <Anchor>af8cc7ad370fb2e6e7352f7dd5ef33c0d</Anchor>
                  </Node>
                  <Node>
                   <Name>SetFrame</Name>
@@ -218,9 +274,9 @@
                   <Anchor>a0e097a90cffad730f4e0b8cb251d5cea</Anchor>
                  </Node>
                  <Node>
-                  <Name>frame_</Name>
+                  <Name>update</Name>
                   <Path>classhe_1_1ui_1_1_view.html</Path>
-                  <Anchor>ab594641f53c8474dc1c1169b98393fc0</Anchor>
+                  <Anchor>aa7c113bcc40b42992510af20b134c583</Anchor>
                  </Node>
                 </Subnodes>
                </Node>
@@ -1452,7 +1508,12 @@
                <Node>
                 <Name>GetTextureAtlasRegion</Name>
                 <Path>classhe_1_1_texture_atlas.html</Path>
-                <Anchor>a4dd4d85efba2c3724cf23f4134642a08</Anchor>
+                <Anchor>a412588c0865556ed535247affdd9b2ca</Anchor>
+               </Node>
+               <Node>
+                <Name>IsTextureRegionAvailable</Name>
+                <Path>classhe_1_1_texture_atlas.html</Path>
+                <Anchor>aa10a0a3b0a4913ea8fcb6e64b2cb0daa</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -1652,6 +1713,11 @@
                 <Anchor>ae4b0576bdb8b38a2d2133e14167886ba</Anchor>
                </Node>
                <Node>
+                <Name>GetGlobalRect</Name>
+                <Path>classhe_1_1_frame.html</Path>
+                <Anchor>ab30b7377db7fa46ba69b057de96b4002</Anchor>
+               </Node>
+               <Node>
                 <Name>GetOrigin</Name>
                 <Path>classhe_1_1_frame.html</Path>
                 <Anchor>a806a76520976bd5439218d7ac7b9b150</Anchor>
@@ -1670,6 +1736,11 @@
                 <Name>GetTransform</Name>
                 <Path>classhe_1_1_frame.html</Path>
                 <Anchor>abc3421c524dfa1e0b2682242178fd4a8</Anchor>
+               </Node>
+               <Node>
+                <Name>GetTransformPtr</Name>
+                <Path>classhe_1_1_frame.html</Path>
+                <Anchor>a9b0b6a29a3853de1949ae3c5732a340f</Anchor>
                </Node>
                <Node>
                 <Name>SetOrigin</Name>
@@ -1757,7 +1828,7 @@
                <Node>
                 <Name>Screen</Name>
                 <Path>classhe_1_1_screen.html</Path>
-                <Anchor>a6d8398aff0a187ce45ba4a292668ad03</Anchor>
+                <Anchor>ae35644a1e8287a09fd37a3bbc0bd920f</Anchor>
                </Node>
                <Node>
                 <Name>GetHalfDepth</Name>
@@ -2086,7 +2157,7 @@
                <Node>
                 <Name>TextureVertex</Name>
                 <Path>classhe_1_1_texture_vertex.html</Path>
-                <Anchor>a8ac5bb2c7ce3ed88133a9b01bcc90dc5</Anchor>
+                <Anchor>a6d04dc17c1c0d705a2ad681c2f4dd26b</Anchor>
                </Node>
                <Node>
                 <Name>GetRawData</Name>
@@ -2497,6 +2568,12 @@
              <Node>
               <Name>he::ui::ImageView</Name>
               <Path>classhe_1_1ui_1_1_image_view.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>he::ui::Sprite</Name>
+                <Path>classhe_1_1ui_1_1_sprite.html</Path>
+               </Node>
+              </Subnodes>
              </Node>
             </Subnodes>
            </Node>
@@ -4387,7 +4464,12 @@
                        <Node>
                         <Name>GetTextureAtlasRegion</Name>
                         <Path>classhe_1_1_texture_atlas.html</Path>
-                        <Anchor>a4dd4d85efba2c3724cf23f4134642a08</Anchor>
+                        <Anchor>a412588c0865556ed535247affdd9b2ca</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>IsTextureRegionAvailable</Name>
+                        <Path>classhe_1_1_texture_atlas.html</Path>
+                        <Anchor>aa10a0a3b0a4913ea8fcb6e64b2cb0daa</Anchor>
                        </Node>
                       </Subnodes>
                      </Node>
@@ -4532,6 +4614,11 @@
                        </Node>
                       </Subnodes>
                      </Node>
+                     <Node>
+                      <Name>operator&lt;&lt;</Name>
+                      <Path>_texture_atlas_region_8h.html</Path>
+                      <Anchor>a20919da1caca24a1638ec57e4bbd58dd</Anchor>
+                     </Node>
                     </Subnodes>
                    </Node>
                    <Node>
@@ -4630,7 +4717,7 @@
                        <Node>
                         <Name>~Button</Name>
                         <Path>classhe_1_1ui_1_1_button.html</Path>
-                        <Anchor>af9645ddcba25a7eec5e0e60e2f755ec4</Anchor>
+                        <Anchor>ad87164a0b3acfd3a4f90676811a226a0</Anchor>
                        </Node>
                        <Node>
                         <Name>GetTag</Name>
@@ -4688,7 +4775,59 @@
                        <Node>
                         <Name>~ImageView</Name>
                         <Path>classhe_1_1ui_1_1_image_view.html</Path>
-                        <Anchor>a3bd46e542a8e82083156620b90b4182f</Anchor>
+                        <Anchor>a5989c23ea1fb0abec4d6c8f9579bb392</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>render</Name>
+                        <Path>classhe_1_1ui_1_1_image_view.html</Path>
+                        <Anchor>a4a409469ea7fb78eb841b356320a78a0</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>update</Name>
+                        <Path>classhe_1_1ui_1_1_image_view.html</Path>
+                        <Anchor>add8fedf55634f9589cdc0d4af2995617</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>render_object_</Name>
+                        <Path>classhe_1_1ui_1_1_image_view.html</Path>
+                        <Anchor>a9a65d88d8b5de7a1299558401c1a3d7a</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>vertex_</Name>
+                        <Path>classhe_1_1ui_1_1_image_view.html</Path>
+                        <Anchor>a0fc2634f15e9d899160e4e97cdc3d266</Anchor>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                   <Node>
+                    <Name>Sprite.h</Name>
+                    <Path>_sprite_8h.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>Sprite</Name>
+                      <Path>classhe_1_1ui_1_1_sprite.html</Path>
+                      <Subnodes>
+                       <Node>
+                        <Name>Sprite</Name>
+                        <Path>classhe_1_1ui_1_1_sprite.html</Path>
+                        <Anchor>a572579a31a7f80a4982ab57db58554fe</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>~Sprite</Name>
+                        <Path>classhe_1_1ui_1_1_sprite.html</Path>
+                        <Anchor>ac8858d530efe8239009c7b03a3a4805c</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>render</Name>
+                        <Path>classhe_1_1ui_1_1_sprite.html</Path>
+                        <Anchor>adcb2d4c10c3945c2de1d94b6202a121d</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>update</Name>
+                        <Path>classhe_1_1ui_1_1_sprite.html</Path>
+                        <Anchor>a12cf77c723eaf5096de12fc3dfdf5bda</Anchor>
                        </Node>
                       </Subnodes>
                      </Node>
@@ -4723,9 +4862,19 @@
                         <Anchor>a95b34142aee0bdfd168ab29939f173c9</Anchor>
                        </Node>
                        <Node>
+                        <Name>GetFramePtr</Name>
+                        <Path>classhe_1_1ui_1_1_view.html</Path>
+                        <Anchor>ad794f1b44db414ba532a1f18e87904ca</Anchor>
+                       </Node>
+                       <Node>
                         <Name>Render</Name>
                         <Path>classhe_1_1ui_1_1_view.html</Path>
                         <Anchor>a80151896f7724464dfc9c9a574a8b95c</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>render</Name>
+                        <Path>classhe_1_1ui_1_1_view.html</Path>
+                        <Anchor>af8cc7ad370fb2e6e7352f7dd5ef33c0d</Anchor>
                        </Node>
                        <Node>
                         <Name>SetFrame</Name>
@@ -4738,9 +4887,9 @@
                         <Anchor>a0e097a90cffad730f4e0b8cb251d5cea</Anchor>
                        </Node>
                        <Node>
-                        <Name>frame_</Name>
+                        <Name>update</Name>
                         <Path>classhe_1_1ui_1_1_view.html</Path>
-                        <Anchor>ab594641f53c8474dc1c1169b98393fc0</Anchor>
+                        <Anchor>aa7c113bcc40b42992510af20b134c583</Anchor>
                        </Node>
                       </Subnodes>
                      </Node>
@@ -4933,6 +5082,11 @@
                         <Anchor>ae4b0576bdb8b38a2d2133e14167886ba</Anchor>
                        </Node>
                        <Node>
+                        <Name>GetGlobalRect</Name>
+                        <Path>classhe_1_1_frame.html</Path>
+                        <Anchor>ab30b7377db7fa46ba69b057de96b4002</Anchor>
+                       </Node>
+                       <Node>
                         <Name>GetOrigin</Name>
                         <Path>classhe_1_1_frame.html</Path>
                         <Anchor>a806a76520976bd5439218d7ac7b9b150</Anchor>
@@ -4951,6 +5105,11 @@
                         <Name>GetTransform</Name>
                         <Path>classhe_1_1_frame.html</Path>
                         <Anchor>abc3421c524dfa1e0b2682242178fd4a8</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>GetTransformPtr</Name>
+                        <Path>classhe_1_1_frame.html</Path>
+                        <Anchor>a9b0b6a29a3853de1949ae3c5732a340f</Anchor>
                        </Node>
                        <Node>
                         <Name>SetOrigin</Name>
@@ -4973,6 +5132,11 @@
                         <Anchor>a6d2af0c26cc861e37638756337c171ce</Anchor>
                        </Node>
                       </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>operator&lt;&lt;</Name>
+                      <Path>_frame_8h.html</Path>
+                      <Anchor>a32e9c653f14577b5394c589f514557cf</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>
@@ -5074,7 +5238,7 @@
                        <Node>
                         <Name>Screen</Name>
                         <Path>classhe_1_1_screen.html</Path>
-                        <Anchor>a6d8398aff0a187ce45ba4a292668ad03</Anchor>
+                        <Anchor>ae35644a1e8287a09fd37a3bbc0bd920f</Anchor>
                        </Node>
                        <Node>
                         <Name>GetHalfDepth</Name>
@@ -5229,6 +5393,22 @@
                         <Anchor>a237432c88437f339fd157a1bcee9f947</Anchor>
                        </Node>
                       </Subnodes>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                   <Node>
+                    <Name>Types.h</Name>
+                    <Path>_types_8h.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>F32</Name>
+                      <Path>_types_8h.html</Path>
+                      <Anchor>aa02d635220d907caed7fbb667ce4164f</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>F32Eq</Name>
+                      <Path>_types_8h.html</Path>
+                      <Anchor>a3803b86bd644f10ef78684a9f9b6d62b</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>
@@ -5501,7 +5681,7 @@
                        <Node>
                         <Name>TextureVertex</Name>
                         <Path>classhe_1_1_texture_vertex.html</Path>
-                        <Anchor>a8ac5bb2c7ce3ed88133a9b01bcc90dc5</Anchor>
+                        <Anchor>a6d04dc17c1c0d705a2ad681c2f4dd26b</Anchor>
                        </Node>
                        <Node>
                         <Name>GetRawData</Name>
@@ -5580,6 +5760,16 @@
                       <Anchor>ae63fdcfb835ac34485dafa33c1832726</Anchor>
                      </Node>
                      <Node>
+                      <Name>ApplyTransform</Name>
+                      <Path>_vertex_data_8h.html</Path>
+                      <Anchor>ac9d4fbcb54fb74b35f769b80c4f6caf7</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>ApplyTransform</Name>
+                      <Path>_vertex_data_8h.html</Path>
+                      <Anchor>ac5a6ce75bf5035fc5a47050435fb140f</Anchor>
+                     </Node>
+                     <Node>
                       <Name>Contains</Name>
                       <Path>_vertex_data_8h.html</Path>
                       <Anchor>a2a2383b946c741397b8a0655673b93e6</Anchor>
@@ -5588,6 +5778,11 @@
                       <Name>Contains</Name>
                       <Path>_vertex_data_8h.html</Path>
                       <Anchor>a67abed613f1301d2bdcb14c18a1d5c6f</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>Equal</Name>
+                      <Path>_vertex_data_8h.html</Path>
+                      <Anchor>a9d3b34dd9453794f708deaf3d5cf0575</Anchor>
                      </Node>
                      <Node>
                       <Name>GetSize</Name>

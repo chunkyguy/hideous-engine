@@ -113,10 +113,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9a2ec9d911a359338aab9190507ca2b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc3421c524dfa1e0b2682242178fd4a8"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classhe_1_1_transform.html">Transform</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_frame.html#abc3421c524dfa1e0b2682242178fd4a8">GetTransform</a> () const </td></tr>
 <tr class="separator:abc3421c524dfa1e0b2682242178fd4a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b0b6a29a3853de1949ae3c5732a340f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classhe_1_1_transform.html">Transform</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_frame.html#a9b0b6a29a3853de1949ae3c5732a340f">GetTransformPtr</a> ()</td></tr>
+<tr class="separator:a9b0b6a29a3853de1949ae3c5732a340f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d2af0c26cc861e37638756337c171ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_frame.html#a6d2af0c26cc861e37638756337c171ce">SetTransform</a> (const <a class="el" href="classhe_1_1_transform.html">Transform</a> &amp;transform)</td></tr>
 <tr class="separator:a6d2af0c26cc861e37638756337c171ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6569fb3bbec82fc82d08a86f5426662"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structhe_1_1_vertex_1_1_v2.html">Vertex::V2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_frame.html#aa6569fb3bbec82fc82d08a86f5426662">GetRect</a> () const </td></tr>
 <tr class="separator:aa6569fb3bbec82fc82d08a86f5426662"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab30b7377db7fa46ba69b057de96b4002"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structhe_1_1_vertex_1_1_v2.html">Vertex::V2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_frame.html#ab30b7377db7fa46ba69b057de96b4002">GetGlobalRect</a> () const </td></tr>
+<tr class="separator:ab30b7377db7fa46ba69b057de96b4002"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a502eee7105f90cc62a23d7a1614c2eb8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_frame.html#a502eee7105f90cc62a23d7a1614c2eb8">SetRect</a> (const <a class="el" href="structhe_1_1_vertex_1_1_v2.html">Vertex::V2</a> &amp;rect)</td></tr>
 <tr class="separator:a502eee7105f90cc62a23d7a1614c2eb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -148,6 +152,22 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ab30b7377db7fa46ba69b057de96b4002"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structhe_1_1_vertex_1_1_v2.html">Vertex::V2</a> he::Frame::GetGlobalRect </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The frame in world space. Basically just GetFrame() * GetMV() </p>
+
+</div>
+</div>
 <a class="anchor" id="a806a76520976bd5439218d7ac7b9b150"></a>
 <div class="memitem">
 <div class="memproto">
@@ -202,6 +222,21 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramname">)</td><td></td>
           <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9b0b6a29a3853de1949ae3c5732a340f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classhe_1_1_transform.html">Transform</a>* he::Frame::GetTransformPtr </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -278,7 +313,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 17 2013 17:14:29 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 21 2013 14:17:33 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

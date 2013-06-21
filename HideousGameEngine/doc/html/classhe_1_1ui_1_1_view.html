@@ -91,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classhe_1_1ui_1_1_view-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">he::ui::View Class Reference</div>  </div>
@@ -107,6 +107,7 @@ Inheritance diagram for he::ui::View:</div>
   <map id="he::ui::View_map" name="he::ui::View_map">
 <area href="classhe_1_1ui_1_1_button.html" alt="he::ui::Button" shape="rect" coords="0,56,109,80"/>
 <area href="classhe_1_1ui_1_1_image_view.html" alt="he::ui::ImageView" shape="rect" coords="119,56,228,80"/>
+<area href="classhe_1_1ui_1_1_sprite.html" alt="he::ui::Sprite" shape="rect" coords="119,112,228,136"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -126,11 +127,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:afefa7f45846ac6e1006ba3a12a14769e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95b34142aee0bdfd168ab29939f173c9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classhe_1_1_frame.html">Frame</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1ui_1_1_view.html#a95b34142aee0bdfd168ab29939f173c9">GetFrame</a> () const </td></tr>
 <tr class="separator:a95b34142aee0bdfd168ab29939f173c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad794f1b44db414ba532a1f18e87904ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classhe_1_1_frame.html">Frame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1ui_1_1_view.html#ad794f1b44db414ba532a1f18e87904ca">GetFramePtr</a> ()</td></tr>
+<tr class="separator:ad794f1b44db414ba532a1f18e87904ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:ab594641f53c8474dc1c1169b98393fc0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classhe_1_1_frame.html">Frame</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1ui_1_1_view.html#ab594641f53c8474dc1c1169b98393fc0">frame_</a></td></tr>
-<tr class="separator:ab594641f53c8474dc1c1169b98393fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:aa7c113bcc40b42992510af20b134c583"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1ui_1_1_view.html#aa7c113bcc40b42992510af20b134c583">update</a> (float dt)</td></tr>
+<tr class="separator:aa7c113bcc40b42992510af20b134c583"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8cc7ad370fb2e6e7352f7dd5ef33c0d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1ui_1_1_view.html#af8cc7ad370fb2e6e7352f7dd5ef33c0d">render</a> ()</td></tr>
+<tr class="separator:af8cc7ad370fb2e6e7352f7dd5ef33c0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Container of all kind of Views. Adds child component in stack order. If AddSubview-order is like [btn_01, btn_01, bg, icon_01] Draw order will be [btn_01, btn_01, bg, icon_01] </p>
@@ -204,7 +209,24 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get frame </p>
+<p>Get the current frame </p>
+
+</div>
+</div>
+<a class="anchor" id="ad794f1b44db414ba532a1f18e87904ca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classhe_1_1_frame.html">Frame</a>* he::ui::View::GetFramePtr </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Returns pointer to frame
+</pre> <dl class="section warning"><dt>Warning</dt><dd>This is more like a design bug, can get modified in future. Use minimum. </dd></dl>
 
 </div>
 </div>
@@ -221,6 +243,33 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Render self. Render all children in draw order </p>
+
+</div>
+</div>
+<a class="anchor" id="af8cc7ad370fb2e6e7352f7dd5ef33c0d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void he::ui::View::render </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Actual render </p>
+<dl class="section note"><dt>Note</dt><dd>Needs to call superclass <a class="el" href="classhe_1_1ui_1_1_view.html#a80151896f7724464dfc9c9a574a8b95c">Render()</a>, after doing all the self rendinring. </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classhe_1_1ui_1_1_image_view.html#a4a409469ea7fb78eb841b356320a78a0">he::ui::ImageView</a>, and <a class="el" href="classhe_1_1ui_1_1_sprite.html#adcb2d4c10c3945c2de1d94b6202a121d">he::ui::Sprite</a>.</p>
 
 </div>
 </div>
@@ -258,17 +307,31 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="ab594641f53c8474dc1c1169b98393fc0"></a>
+<a class="anchor" id="aa7c113bcc40b42992510af20b134c583"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classhe_1_1_frame.html">Frame</a> he::ui::View::frame_</td>
+          <td class="memname">virtual void he::ui::View::update </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>dt</em>)</td><td></td>
+          <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<p>The frame of the view </p>
+<p>Actual update </p>
+<dl class="section note"><dt>Note</dt><dd>Needs to call superclass <a class="el" href="classhe_1_1ui_1_1_view.html#a0e097a90cffad730f4e0b8cb251d5cea">Update()</a> after doing all the self updating. </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classhe_1_1ui_1_1_image_view.html#add8fedf55634f9589cdc0d4af2995617">he::ui::ImageView</a>, and <a class="el" href="classhe_1_1ui_1_1_sprite.html#a12cf77c723eaf5096de12fc3dfdf5bda">he::ui::Sprite</a>.</p>
 
 </div>
 </div>
@@ -278,7 +341,7 @@ Public Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 17 2013 17:14:29 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 21 2013 14:17:34 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

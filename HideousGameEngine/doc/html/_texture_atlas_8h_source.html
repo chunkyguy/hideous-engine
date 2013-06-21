@@ -122,28 +122,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="classhe_1_1_texture_atlas.html#a3f6e0e4d631d52185b214ef48697d601">TextureAtlas</a>(<span class="keyword">const</span> std::string &amp;data_path, <span class="keyword">const</span> std::string &amp;texture_path, <span class="keyword">const</span> <a class="code" href="classhe_1_1_texture_atlas.html#a0273278a392e3a0e3440b9da6db44e60">AtlasFormat</a> format);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="classhe_1_1_texture_atlas.html#a6d86705aca952dae1e1c50448c887e5b">~TextureAtlas</a>();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">const</span> <a class="code" href="classhe_1_1_texture_atlas_region.html">TextureAtlasRegion</a> *<a class="code" href="classhe_1_1_texture_atlas.html#a4dd4d85efba2c3724cf23f4134642a08">GetTextureAtlasRegion</a>(<span class="keyword">const</span> std::string &amp;image_name) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="classhe_1_1_texture.html">he::Texture</a> *<a class="code" href="classhe_1_1_texture_atlas.html#ab418514643a9041e79fdcb832cfd264f">GetTexture</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classhe_1_1_texture_atlas.html#aa10a0a3b0a4913ea8fcb6e64b2cb0daa">IsTextureRegionAvailable</a>(<span class="keyword">const</span> std::string &amp;image_name) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">const</span> <a class="code" href="classhe_1_1_texture_atlas_region.html">TextureAtlasRegion</a> <a class="code" href="classhe_1_1_texture_atlas.html#a412588c0865556ed535247affdd9b2ca">GetTextureAtlasRegion</a>(<span class="keyword">const</span> std::string &amp;image_name) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="classhe_1_1_texture.html">he::Texture</a> *texture_;      </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="classhe_1_1_texture_atlas_parser.html">TextureAtlasParser</a> *parser_;    </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    };</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    TextureVertex *<a class="code" href="namespacehe.html#aeb4bf8c0bd33277ad582045ca1ea48b9">CreateTextureData</a>(<span class="keyword">const</span> TextureAtlas *atlas,</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                     <span class="keyword">const</span> std::string &amp;image_name,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                     <span class="keyword">const</span> <span class="keywordtype">bool</span> aspect_correct = <span class="keyword">false</span>,</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                     <span class="keyword">const</span> GLKVector2 size = GLKVector2Make(-1, -1));</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;} <span class="comment">/*namespace he*/</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* defined(__HideousGameEngine__TextureAtlas__) */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="classhe_1_1_texture.html">he::Texture</a> *<a class="code" href="classhe_1_1_texture_atlas.html#ab418514643a9041e79fdcb832cfd264f">GetTexture</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="classhe_1_1_texture.html">he::Texture</a> *texture_;      </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="classhe_1_1_texture_atlas_parser.html">TextureAtlasParser</a> *parser_;    </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    };</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    TextureVertex *<a class="code" href="namespacehe.html#aeb4bf8c0bd33277ad582045ca1ea48b9">CreateTextureData</a>(<span class="keyword">const</span> TextureAtlas *atlas,</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                     <span class="keyword">const</span> std::string &amp;image_name,</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                     <span class="keyword">const</span> <span class="keywordtype">bool</span> aspect_correct = <span class="keyword">false</span>,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                     <span class="keyword">const</span> GLKVector2 size = GLKVector2Make(-1, -1));</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;} <span class="comment">/*namespace he*/</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* defined(__HideousGameEngine__TextureAtlas__) */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 17 2013 17:14:28 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 21 2013 14:17:33 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

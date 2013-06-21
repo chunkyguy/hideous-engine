@@ -199,6 +199,10 @@ Classes</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr class="memitem:ab6a64419af94817710aa030e3cee4803"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="easing_8h.html#ab9fe3616046a8cb15706399d4de4dbb9">AHFloat</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehe.html#ab6a64419af94817710aa030e3cee4803">EasingFunction</a> )(<a class="el" href="easing_8h.html#ab9fe3616046a8cb15706399d4de4dbb9">AHFloat</a>)</td></tr>
 <tr class="separator:ab6a64419af94817710aa030e3cee4803"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa02d635220d907caed7fbb667ce4164f"><td class="memItemLeft" align="right" valign="top">typedef <br class="typebreak"/>
+testing::internal::FloatingPoint<br class="typebreak"/>
+&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehe.html#aa02d635220d907caed7fbb667ce4164f">F32</a></td></tr>
+<tr class="separator:aa02d635220d907caed7fbb667ce4164f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -270,10 +274,16 @@ Functions</h2></td></tr>
 <tr class="separator:a44a717dd63a24bbcae7c0158924b547d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb4bf8c0bd33277ad582045ca1ea48b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classhe_1_1_texture_vertex.html">TextureVertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehe.html#aeb4bf8c0bd33277ad582045ca1ea48b9">CreateTextureData</a> (const <a class="el" href="classhe_1_1_texture_atlas.html">TextureAtlas</a> *atlas, const std::string &amp;image_name, const bool aspect_correct=false, const GLKVector2 size=GLKVector2Make(-1,-1))</td></tr>
 <tr class="separator:aeb4bf8c0bd33277ad582045ca1ea48b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20919da1caca24a1638ec57e4bbd58dd"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehe.html#a20919da1caca24a1638ec57e4bbd58dd">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classhe_1_1_texture_atlas_region.html">TextureAtlasRegion</a> &amp;region)</td></tr>
+<tr class="separator:a20919da1caca24a1638ec57e4bbd58dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32e9c653f14577b5394c589f514557cf"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehe.html#a32e9c653f14577b5394c589f514557cf">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classhe_1_1_frame.html">Frame</a> &amp;frame)</td></tr>
+<tr class="separator:a32e9c653f14577b5394c589f514557cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac045d85719d53c8968540eb9a9f36d99"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehe.html#ac045d85719d53c8968540eb9a9f36d99">SetDefaultState</a> ()</td></tr>
 <tr class="separator:ac045d85719d53c8968540eb9a9f36d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5a29ef8e0a46966530c44bb99ea952a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehe.html#aa5a29ef8e0a46966530c44bb99ea952a">ResourcePath</a> (void)</td></tr>
 <tr class="separator:aa5a29ef8e0a46966530c44bb99ea952a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3803b86bd644f10ef78684a9f9b6d62b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehe.html#a3803b86bd644f10ef78684a9f9b6d62b">F32Eq</a> (float a, float b)</td></tr>
+<tr class="separator:a3803b86bd644f10ef78684a9f9b6d62b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afdd9e80e399a9667cea8fa371592dfa1"><td class="memItemLeft" align="right" valign="top">const GLvoid *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehe.html#afdd9e80e399a9667cea8fa371592dfa1">BufferOffset</a> (int off)</td></tr>
 <tr class="separator:afdd9e80e399a9667cea8fa371592dfa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aead9854ae51dcd9e6541773e68bbf95b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehe.html#aead9854ae51dcd9e6541773e68bbf95b">NextPOT</a> (int a)</td></tr>
@@ -312,6 +322,19 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa02d635220d907caed7fbb667ce4164f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef testing::internal::FloatingPoint&lt;float&gt; <a class="el" href="namespacehe.html#aa02d635220d907caed7fbb667ce4164f">he::F32</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>A 32 bit floating-point num used for operations like cmp </p>
 
 </div>
 </div>
@@ -726,6 +749,41 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a3803b86bd644f10ef78684a9f9b6d62b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool he::F32Eq </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Compare two floating point numbers </p>
+
+</div>
+</div>
 <a class="anchor" id="a34669a268466d23676ac75154cb28aee"></a>
 <div class="memitem">
 <div class="memproto">
@@ -808,6 +866,58 @@ Variables</h2></td></tr>
           <td></td>
           <td class="paramtype">const Gesture &amp;&#160;</td>
           <td class="paramname"><em>g</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a32e9c653f14577b5394c589f514557cf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; he::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Frame &amp;&#160;</td>
+          <td class="paramname"><em>frame</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a20919da1caca24a1638ec57e4bbd58dd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; he::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const TextureAtlasRegion &amp;&#160;</td>
+          <td class="paramname"><em>region</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1158,7 +1268,7 @@ template&lt;typename T &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 17 2013 17:14:29 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 21 2013 14:17:33 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

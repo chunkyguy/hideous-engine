@@ -1,7 +1,7 @@
 var searchData=
 [
   ['scale',['Scale',['../namespacehe_1_1_vertex.html#a9914680fdc885e8e9b482dd3a76ed0f3',1,'he::Vertex']]],
-  ['screen',['Screen',['../classhe_1_1_screen.html#a6d8398aff0a187ce45ba4a292668ad03',1,'he::Screen']]],
+  ['screen',['Screen',['../classhe_1_1_screen.html#ae35644a1e8287a09fd37a3bbc0bd920f',1,'he::Screen']]],
   ['set',['Set',['../namespacehe_1_1_vertex.html#af89442c35d2cdb0e133ffbf02b514c56',1,'he::Vertex::Set(V &amp;slf, const GLfloat *data, int start=0, int end=V::vertex_count *4)'],['../namespacehe_1_1_vertex.html#a7cefdb8eb1f81143d3ac836a676a8bec',1,'he::Vertex::Set(V &amp;slf, const GLfloat *data, Index vi)'],['../namespacehe_1_1_vertex.html#a169d30a1bf31b061e8460718fc7a099c',1,'he::Vertex::Set(V &amp;slf, const GLKVector &amp;a, const GLKVector &amp;b, const GLKVector &amp;c, const GLKVector &amp;d)'],['../namespacehe_1_1_vertex.html#a33b6964f79ab6d837d930ffeaecf6231',1,'he::Vertex::Set(V2 &amp;slf, const GLKVector2 &amp;a, const GLKVector2 &amp;d)']]],
   ['setcolor',['SetColor',['../classhe_1_1_render_object.html#ad1ebe0e431048157516708d52926cc99',1,'he::RenderObject']]],
   ['setcount',['SetCount',['../classhe_1_1_i_vertex.html#a6efd88c92997806cf5a561ea174f3763',1,'he::IVertex']]],
@@ -27,6 +27,7 @@ var searchData=
   ['sineeasein',['SineEaseIn',['../namespacehe.html#a624f73fd271ca4d420b8a1af584c2ef2',1,'he']]],
   ['sineeaseinout',['SineEaseInOut',['../namespacehe.html#a3a7381338a8a5330eae7772b3ab98543',1,'he']]],
   ['sineeaseout',['SineEaseOut',['../namespacehe.html#a9008ce73b55240fb14283b6d90660781',1,'he']]],
+  ['sprite',['Sprite',['../classhe_1_1ui_1_1_sprite.html#a572579a31a7f80a4982ab57db58554fe',1,'he::ui::Sprite']]],
   ['spriteanimation',['SpriteAnimation',['../classhe_1_1_sprite_animation.html#a84fc46549380c60d7d480643b7f9cace',1,'he::SpriteAnimation']]],
   ['starlingdataparser',['StarlingDataParser',['../classhe_1_1_starling_data_parser.html#aca0db266b258321d7a1f53a209195086',1,'he::StarlingDataParser']]],
   ['stream',['Stream',['../class_output2_f_i_l_e.html#a10f20b32157af0d88e5ad9710f2dbd6e',1,'Output2FILE']]]

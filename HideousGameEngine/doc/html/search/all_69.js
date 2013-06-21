@@ -13,6 +13,7 @@ var searchData=
   ['is_5fdead_5f',['is_dead_',['../classhe_1_1_particle.html#a7da30b56915586bce2378e0f7c98b550',1,'he::Particle']]],
   ['ishader',['IShader',['../classhe_1_1_i_shader.html',1,'he']]],
   ['ishader_2eh',['IShader.h',['../_i_shader_8h.html',1,'']]],
+  ['istextureregionavailable',['IsTextureRegionAvailable',['../classhe_1_1_texture_atlas.html#aa10a0a3b0a4913ea8fcb6e64b2cb0daa',1,'he::TextureAtlas']]],
   ['ivertex',['IVertex',['../classhe_1_1_i_vertex.html#a9e7337a023d41d353a475854684be8c8',1,'he::IVertex']]],
   ['ivertex',['IVertex',['../classhe_1_1_i_vertex.html',1,'he']]],
   ['ivertex_2eh',['IVertex.h',['../_i_vertex_8h.html',1,'']]]

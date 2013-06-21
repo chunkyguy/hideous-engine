@@ -9,5 +9,6 @@ var searchData=
   ['textureshader_2eh',['TextureShader.h',['../_texture_shader_8h.html',1,'']]],
   ['texturevertex_2eh',['TextureVertex.h',['../_texture_vertex_8h.html',1,'']]],
   ['transform_2eh',['Transform.h',['../_transform_8h.html',1,'']]],
-  ['tweener_2eh',['Tweener.h',['../_tweener_8h.html',1,'']]]
+  ['tweener_2eh',['Tweener.h',['../_tweener_8h.html',1,'']]],
+  ['types_2eh',['Types.h',['../_types_8h.html',1,'']]]
 ];

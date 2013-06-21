@@ -131,14 +131,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <a class="code" href="classhe_1_1ui_1_1_image_view.html#a5ed5682573efe76bbbc97d72d521764b">ImageView</a>(<span class="keyword">const</span> <a class="code" href="structhe_1_1ui_1_1_image_view_factory.html">ImageViewFactory</a> *factory, <span class="keyword">const</span> std::string &amp;image_name, <span class="keyword">const</span> <a class="code" href="classhe_1_1_frame.html">Frame</a> frane = <a class="code" href="classhe_1_1_frame.html">Frame</a>());</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="classhe_1_1ui_1_1_image_view.html#a3bd46e542a8e82083156620b90b4182f">~ImageView</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keyword">virtual</span> <a class="code" href="classhe_1_1ui_1_1_image_view.html#a5989c23ea1fb0abec4d6c8f9579bb392">~ImageView</a>();</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> self_update(<span class="keywordtype">float</span> dt);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> self_render();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="classhe_1_1_render_object.html">RenderObject</a> *render_object_;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <a class="code" href="classhe_1_1_texture_vertex.html">TextureVertex</a> *vertex_;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classhe_1_1ui_1_1_image_view.html#add8fedf55634f9589cdc0d4af2995617">update</a>(<span class="keywordtype">float</span> dt);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classhe_1_1ui_1_1_image_view.html#a4a409469ea7fb78eb841b356320a78a0">render</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="classhe_1_1ui_1_1_image_view.html#a9a65d88d8b5de7a1299558401c1a3d7a">   51</a></span>&#160;            <a class="code" href="classhe_1_1_render_object.html">RenderObject</a> *<a class="code" href="classhe_1_1ui_1_1_image_view.html#a9a65d88d8b5de7a1299558401c1a3d7a">render_object_</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="classhe_1_1ui_1_1_image_view.html#a0fc2634f15e9d899160e4e97cdc3d266">   52</a></span>&#160;            <a class="code" href="classhe_1_1_texture_vertex.html">TextureVertex</a> *<a class="code" href="classhe_1_1ui_1_1_image_view.html#a0fc2634f15e9d899160e4e97cdc3d266">vertex_</a>;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        };</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
@@ -147,7 +147,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 17 2013 17:14:28 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 21 2013 14:17:33 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

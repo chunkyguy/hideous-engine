@@ -143,40 +143,43 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_debug_helper_8h.html#a76249a55c335bb9d1ea7c6ffd1215b42">he_Trace</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* s);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="_debug_helper_8h.html#a727a0beeb767b969588169fbe5f46c2d">   57</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_debug_helper_8h.html#a76249a55c335bb9d1ea7c6ffd1215b42">he_Trace</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* s, <span class="keyword">const</span> T&amp; value, <span class="keyword">const</span> Args&amp;... args) {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">while</span> (*s) {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">if</span> (*s == <span class="charliteral">&#39;%&#39;</span> &amp;&amp; *++s != <span class="charliteral">&#39;%&#39;</span>) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            std::cout &lt;&lt; value;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="_debug_helper_8h.html#a76249a55c335bb9d1ea7c6ffd1215b42">he_Trace</a>(++s, args...);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }<span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            std::cout &lt;&lt; *s++;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;extra arguments provided to he_Trace&quot;</span>);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor"></span><span class="comment">/****************************************************************************************************</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"> *  RELEASE MODE</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment"> ****************************************************************************************************/</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#define he_Trace(...)   // Comment trace statements</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define NDEBUG          // Comment asserts</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif      </span><span class="comment">/*__HideousGameEngine__DEBUG_MODE__*/</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#include &lt;cassert&gt;</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* defined(__HideousGameEngine__DebugHelper__) */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#include &lt;iomanip&gt;</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_debug_helper_8h.html#a76249a55c335bb9d1ea7c6ffd1215b42">he_Trace</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* s);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="code" href="_debug_helper_8h.html#a727a0beeb767b969588169fbe5f46c2d">   58</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_debug_helper_8h.html#a76249a55c335bb9d1ea7c6ffd1215b42">he_Trace</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* s, <span class="keyword">const</span> T&amp; value, <span class="keyword">const</span> Args&amp;... args) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    std::cout &lt;&lt; std::setprecision(10);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    std::cout &lt;&lt; std::boolalpha;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">while</span> (*s) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">if</span> (*s == <span class="charliteral">&#39;%&#39;</span> &amp;&amp; *++s != <span class="charliteral">&#39;%&#39;</span>) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            std::cout &lt;&lt; value;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="_debug_helper_8h.html#a76249a55c335bb9d1ea7c6ffd1215b42">he_Trace</a>(++s, args...);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            std::cout &lt;&lt; *s++;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;extra arguments provided to he_Trace&quot;</span>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor"></span><span class="comment">/****************************************************************************************************</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment"> *  RELEASE MODE</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment"> ****************************************************************************************************/</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#define he_Trace(...)   // Comment trace statements</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define NDEBUG          // Comment asserts</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif      </span><span class="comment">/*__HideousGameEngine__DEBUG_MODE__*/</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#include &lt;cassert&gt;</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* defined(__HideousGameEngine__DebugHelper__) */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 17 2013 17:14:28 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 21 2013 14:17:33 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

@@ -113,8 +113,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3f6e0e4d631d52185b214ef48697d601"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d86705aca952dae1e1c50448c887e5b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_texture_atlas.html#a6d86705aca952dae1e1c50448c887e5b">~TextureAtlas</a> ()</td></tr>
 <tr class="separator:a6d86705aca952dae1e1c50448c887e5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4dd4d85efba2c3724cf23f4134642a08"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classhe_1_1_texture_atlas_region.html">TextureAtlasRegion</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_texture_atlas.html#a4dd4d85efba2c3724cf23f4134642a08">GetTextureAtlasRegion</a> (const std::string &amp;image_name) const </td></tr>
-<tr class="separator:a4dd4d85efba2c3724cf23f4134642a08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa10a0a3b0a4913ea8fcb6e64b2cb0daa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_texture_atlas.html#aa10a0a3b0a4913ea8fcb6e64b2cb0daa">IsTextureRegionAvailable</a> (const std::string &amp;image_name) const </td></tr>
+<tr class="separator:aa10a0a3b0a4913ea8fcb6e64b2cb0daa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a412588c0865556ed535247affdd9b2ca"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classhe_1_1_texture_atlas_region.html">TextureAtlasRegion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_texture_atlas.html#a412588c0865556ed535247affdd9b2ca">GetTextureAtlasRegion</a> (const std::string &amp;image_name) const </td></tr>
+<tr class="separator:a412588c0865556ed535247affdd9b2ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab418514643a9041e79fdcb832cfd264f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classhe_1_1_texture.html">he::Texture</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_texture_atlas.html#ab418514643a9041e79fdcb832cfd264f">GetTexture</a> () const </td></tr>
 <tr class="separator:ab418514643a9041e79fdcb832cfd264f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -219,12 +221,12 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a4dd4d85efba2c3724cf23f4134642a08"></a>
+<a class="anchor" id="a412588c0865556ed535247affdd9b2ca"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classhe_1_1_texture_atlas_region.html">TextureAtlasRegion</a>* he::TextureAtlas::GetTextureAtlasRegion </td>
+          <td class="memname">const <a class="el" href="classhe_1_1_texture_atlas_region.html">TextureAtlasRegion</a> he::TextureAtlas::GetTextureAtlasRegion </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>image_name</em>)</td><td></td>
@@ -239,6 +241,25 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>The textureAtlasRegion. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Call IsTextureRegionAvailabe before calling this method. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa10a0a3b0a4913ea8fcb6e64b2cb0daa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool he::TextureAtlas::IsTextureRegionAvailable </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>image_name</em>)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Test if the region is available in the atlas </p>
 
 </div>
 </div>
@@ -248,7 +269,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 17 2013 17:14:29 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 21 2013 14:17:33 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

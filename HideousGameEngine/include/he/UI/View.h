@@ -43,10 +43,14 @@ namespace he {
 			Frame *GetFramePtr();
 		
 		protected:
-			/** Actual update */
+			/** Actual update 
+			 @note Needs to call superclass Update() after doing all the self updating.
+			 */
 			virtual void update(float dt);
 
-			/** Actual render */
+			/** Actual render 
+			 @note Needs to call superclass Render(), after doing all the self rendinring.
+			 */
 			virtual void render();
 
 		private:

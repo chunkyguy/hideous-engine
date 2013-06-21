@@ -100,8 +100,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><code>#include &lt;ostream&gt;</code><br/>
 <code>#include &lt;OpenGLES/ES2/gl.h&gt;</code><br/>
+<code>#include &lt;<a class="el" href="_transform_8h_source.html">he/Utils/Transform.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="_g_l_k_math___additions_8h_source.html">he/Utils/GLKMath_Additions.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="_debug_helper_8h_source.html">he/Utils/DebugHelper.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="_types_8h_source.html">he/Utils/Types.h</a>&gt;</code><br/>
 </div>
 <p><a href="_vertex_data_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -155,12 +157,18 @@ Functions</h2></td></tr>
 <tr class="memitem:aaba7172a45fc29c71428bc1627de475b"><td class="memTemplParams" colspan="2">template&lt;typename V &gt; </td></tr>
 <tr class="memitem:aaba7172a45fc29c71428bc1627de475b"><td class="memTemplItemLeft" align="right" valign="top">const GLsizei&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacehe_1_1_vertex.html#aaba7172a45fc29c71428bc1627de475b">he::Vertex::GetSize</a> (const V &amp;slf)</td></tr>
 <tr class="separator:aaba7172a45fc29c71428bc1627de475b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9d4fbcb54fb74b35f769b80c4f6caf7"><td class="memTemplParams" colspan="2">template&lt;typename V &gt; </td></tr>
+<tr class="memitem:ac9d4fbcb54fb74b35f769b80c4f6caf7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacehe_1_1_vertex.html#ac9d4fbcb54fb74b35f769b80c4f6caf7">he::Vertex::ApplyTransform</a> (V &amp;slf, const Transform &amp;transform)</td></tr>
+<tr class="separator:ac9d4fbcb54fb74b35f769b80c4f6caf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3126ad77e4c739555e6329390003fdff"><td class="memTemplParams" colspan="2">template&lt;typename V , typename GLKVector &gt; </td></tr>
 <tr class="memitem:a3126ad77e4c739555e6329390003fdff"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacehe_1_1_vertex.html#a3126ad77e4c739555e6329390003fdff">he::Vertex::Translate</a> (V &amp;slf, const GLKVector &amp;point)</td></tr>
 <tr class="separator:a3126ad77e4c739555e6329390003fdff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9914680fdc885e8e9b482dd3a76ed0f3"><td class="memTemplParams" colspan="2">template&lt;typename V , typename GLKVector &gt; </td></tr>
 <tr class="memitem:a9914680fdc885e8e9b482dd3a76ed0f3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacehe_1_1_vertex.html#a9914680fdc885e8e9b482dd3a76ed0f3">he::Vertex::Scale</a> (V &amp;slf, const GLKVector &amp;value)</td></tr>
 <tr class="separator:a9914680fdc885e8e9b482dd3a76ed0f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d3b34dd9453794f708deaf3d5cf0575"><td class="memTemplParams" colspan="2">template&lt;typename V &gt; </td></tr>
+<tr class="memitem:a9d3b34dd9453794f708deaf3d5cf0575"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacehe_1_1_vertex.html#a9d3b34dd9453794f708deaf3d5cf0575">he::Vertex::Equal</a> (const V &amp;one, const V &amp;two)</td></tr>
+<tr class="separator:a9d3b34dd9453794f708deaf3d5cf0575"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6c3e55f3e3a38fc51932410c298b1de"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehe_1_1_vertex.html#ac6c3e55f3e3a38fc51932410c298b1de">he::Vertex::operator&lt;&lt;</a> (std::ostream &amp;os, const V2 &amp;slf)</td></tr>
 <tr class="separator:ac6c3e55f3e3a38fc51932410c298b1de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f102e4eb4ac25a903d832981334eec8"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehe_1_1_vertex.html#a1f102e4eb4ac25a903d832981334eec8">he::Vertex::operator&lt;&lt;</a> (std::ostream &amp;os, const V3 &amp;slf)</td></tr>
@@ -169,6 +177,8 @@ Functions</h2></td></tr>
 <tr class="separator:a0d00842ac6dea54eb3d9deacc8422ff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33b6964f79ab6d837d930ffeaecf6231"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehe_1_1_vertex.html#a33b6964f79ab6d837d930ffeaecf6231">he::Vertex::Set</a> (V2 &amp;slf, const GLKVector2 &amp;a, const GLKVector2 &amp;d)</td></tr>
 <tr class="separator:a33b6964f79ab6d837d930ffeaecf6231"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5a6ce75bf5035fc5a47050435fb140f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehe_1_1_vertex.html#ac5a6ce75bf5035fc5a47050435fb140f">he::Vertex::ApplyTransform</a> (V2 &amp;slf, const Transform &amp;transform)</td></tr>
+<tr class="separator:ac5a6ce75bf5035fc5a47050435fb140f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a2383b946c741397b8a0655673b93e6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehe_1_1_vertex.html#a2a2383b946c741397b8a0655673b93e6">he::Vertex::Contains</a> (const V2 &amp;v, const GLKVector2 &amp;point)</td></tr>
 <tr class="separator:a2a2383b946c741397b8a0655673b93e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67abed613f1301d2bdcb14c18a1d5c6f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehe_1_1_vertex.html#a67abed613f1301d2bdcb14c18a1d5c6f">he::Vertex::Contains</a> (const V2 &amp;slf, const V2 &amp;other)</td></tr>
@@ -188,7 +198,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 17 2013 17:14:28 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 21 2013 14:17:33 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>
