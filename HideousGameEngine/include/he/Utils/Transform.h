@@ -10,7 +10,6 @@
 #define __HideousGameEngine__Transform__
 
 #include <he/Utils/GLKMath_Additions.h>
-#include <he/Utils/Screen.h>
 
 /**	Handle transformations of a coordinate system
 	Every object has its own coordinate system in reference to some parent coordinate system.
@@ -28,7 +27,7 @@ namespace he{
 			@param scale The scale vector.
 			@param parent transform system.
 		 */
-		explicit Transform(const GLKVector3 position = GLKVector3Make( 0.0f, 0.0f, g_Screen->z_),
+		explicit Transform(const GLKVector3 position,
 						   const float rotation_angle = 0.0f,
 						   const GLKVector3 rotation = GLKVector3Make( 1.0f, 1.0f, 1.0f),
 						   const GLKVector3 scale = GLKVector3Make( 1.0f, 1.0f, 1.0f),

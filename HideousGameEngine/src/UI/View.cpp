@@ -9,7 +9,6 @@
 #include <he/UI/View.h>
 
 namespace he {
-	namespace ui{
 		View::View(const Frame &frame) :
 		add_to_(nullptr),
 		head_(nullptr),
@@ -81,7 +80,6 @@ namespace he {
 //			return he::Vertex::Contains(frame_.GetRect(), point);
 //		}
 				
-	} /*namespace ui*/
 } /*namespace he*/
 
 ///EOF

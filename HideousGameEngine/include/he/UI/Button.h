@@ -15,7 +15,6 @@
 #include <he/Utils/Frame.h>
 
 namespace he {
-	namespace ui{
 		
 		/** Interface of the protocol */
 		class Button;
@@ -45,7 +44,7 @@ namespace he {
 		
 		class Button : public View{
 		public:
-			Button(IButtonListner *listner, const Frame frame = Frame(), int tag = -1);
+			Button(const Frame frame, IButtonListner *listner, int tag = -1);
 			virtual ~Button();
 			
 			/** Animatiion finish callback.
@@ -77,7 +76,6 @@ namespace he {
 			IButtonListner *listner_;	/**< Registered button listener */
 			//		AnimationListener<Button> *animation_listener_; /**< Registered animation listener */
 		};
-	} /*namespace ui*/
 } /*namespace he*/
 
 //namespace he {

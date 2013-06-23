@@ -45,7 +45,7 @@ TextureBigBangTest::~TextureBigBangTest(){
 
 void TextureBigBangTest::load(GLKVector2 at){
 	FILE_LOG(logDEBUG) << "load";
-	he::Transform trans;
+	he::Transform trans(GLKVector3Make(0.0f, 0.0f, 0.0f));
 	trans.SetPosition(at);
 	squares_ = new TexturedSprite *[kTotal_tex_sprites];
 	for(int i = 0; i < kTotal_tex_sprites; i++){

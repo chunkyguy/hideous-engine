@@ -19,6 +19,7 @@ namespace he{
 	class TextureShader;
 	class TextureVertex;
 	class TextureAtlas;
+	class Font;
 	
 	namespace ui{
 		class View;
@@ -29,19 +30,21 @@ class UITest : public he::Game{
 public:
 	~UITest();
 	UITest();
-	void ButtonHandler(he::ui::Button *sender);
+	void ButtonHandler(he::Button *sender);
 	
 private:
 	virtual void init();
 	virtual void update(float dt);
 	virtual void render();
 
-	he::ui::View *view_;
+	he::View *view_;
 	he::Asset<he::Texture> texture_;
 	he::Asset<he::TextureVertex> vertex_;
 	he::Asset<he::TextureShader> shader_;
 	he::Asset<he::TextureAtlas> atlas_;
-	he::Asset<he::ui::ButtonListner<UITest> > btn_listener_;
+	he::Asset<he::TextureAtlas> atlas2_;
+	he::Asset<he::ButtonListner<UITest> > btn_listener_;
+	he::Asset<he::Font> font;
 };
 
 

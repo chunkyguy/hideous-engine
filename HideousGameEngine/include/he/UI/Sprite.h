@@ -13,11 +13,10 @@
 #include <he/Utils/Asset.h>
 
 namespace he {
-	namespace ui{
 		class Sprite : public ImageView{
 		public:
 			/**	Sprite from factory */
-			Sprite(const ImageViewFactory *factory, const std::string &image_name, const Frame frame = Frame(),
+			Sprite(const Frame frame, const ImageViewFactory *factory, const std::string &image_name,
 				   const int repeat_count = -1, const int final_frame = 0, const float fps = 24.0f);
 			virtual ~Sprite();
 			
@@ -26,7 +25,6 @@ namespace he {
 			virtual void render();
 
 		};
-	}
 }
 
 #endif

@@ -17,9 +17,9 @@ TEST(View, Destructor){
 	he::g_Screen = new he::Screen(480, 320);
 
 	// load view
-	he::Frame view_frame;
-	he::ui::View *view =  new he::ui::View(view_frame);
-	view->AddSubview(new he::ui::View(view_frame));
+	he::Frame view_frame(he::Transform(GLKVector3Make(0.0f, 0.0f, 0.0f)));
+	he::View *view =  new he::View(view_frame);
+	view->AddSubview(new he::View(view_frame));
 	delete view;
 	ASSERT_TRUE(1);
 	delete he::g_Screen;
@@ -31,11 +31,11 @@ TEST(View, Destructor){
 TEST(View, SubviewUpdate){
 	he::g_Screen = new he::Screen(480, 320);
 	
-	he::Frame view_frame;
-	he::ui::View *view =  new he::ui::View(view_frame);
+	he::Frame view_frame(he::Transform(GLKVector3Make(0.0f, 0.0f, 0.0f)));
+	he::View *view =  new he::View(view_frame);
 
 	he::Frame subvw_frame(he::Transform(GLKVector3Make(0.0f, 0.0f, 0.0f)));
-	he::ui::View *subview = new he::ui::View(subvw_frame);
+	he::View *subview = new he::View(subvw_frame);
 	view->AddSubview(subview);
 
 	he_Trace("1 One:\n%@\nTwo:\n%@\n",view->GetFrame().GetTransform().GetMVP(), subview->GetFrame().GetTransform().GetMVP());

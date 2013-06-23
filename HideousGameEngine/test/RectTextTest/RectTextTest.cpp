@@ -56,7 +56,7 @@ void RectTextTest::load_text(){
 	}
 	//Draw a text
 	font_ = new he::Font("Silom.ttf", 48);
-	he::Transform trans;
+	he::Transform trans(GLKVector3Make(0.0f, 0.0f, 0.0f));
 	trans.SetPosition(GLKVector2Make(-100,0));
 	text_ = new he::Text("Whacky ?!", trans, GLKVector4Make(0.0, 0.0, 0.0, 1.0));
 	font_->LoadText(text_);

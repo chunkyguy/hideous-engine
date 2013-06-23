@@ -7,6 +7,7 @@
 //
 
 #include <he/Vertex/VertexData.h>
+#include <he/Utils/Screen.h>
 
 #include <gtest.h>
 TEST(VertexData, Equality){

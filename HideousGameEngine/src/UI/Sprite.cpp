@@ -13,10 +13,10 @@
 #include <he/Vertex/TextureVertex.h>
 #include <he/Utils/Utils.h>
 
-namespace he{ namespace ui{
-	Sprite::Sprite(const ImageViewFactory *factory, const std::string &image_name, const Frame frame,
+namespace he{
+	Sprite::Sprite(const Frame frame, const ImageViewFactory *factory, const std::string &image_name,
 				   const int repeat_count, const int final_frame, const float fps) :
-	ImageView(factory, FlashFullName(image_name), frame)
+	ImageView(frame, factory, FlashFullName(image_name))
 	{
 		he::SpriteAnimation *animation = new he::SpriteAnimation(&vertex_, factory->atlas.Get(), image_name, repeat_count, final_frame, fps);
 		assert(animation);
@@ -37,5 +37,5 @@ namespace he{ namespace ui{
 	void Sprite::render(){
 		ImageView::render();
 	}
-} }
+} 
 ///EOF

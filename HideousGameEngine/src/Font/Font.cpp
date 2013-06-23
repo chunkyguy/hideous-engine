@@ -20,7 +20,6 @@ namespace he{
 	// MARK: Font
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
 	Font::~Font(){
-		delete shader_;
 		FT_Done_Face(face_);
 	}
 	Font::Font(std::string name, unsigned int size) :
@@ -29,12 +28,10 @@ namespace he{
 		FILE_LOG(logDEBUG) << "loading font: " << name;
 		
 		std::string fontPath = ResourcePath() + name;
-		FT_Error error = FT_New_Face(GetLibrary()->object_, fontPath.c_str(), 0, &face_);
+		FT_Error error = FT_New_Face(GetResources()->library_, fontPath.c_str(), 0, &face_);
 		assert(error != FT_Err_Unknown_File_Format);		//"Font format not supported"
 		assert(!error); // "Unable to open font"
 		FT_Set_Pixel_Sizes(face_, 0, size);
-		
-		shader_ = new TextShader;
 	}
 	
 	void Font::LoadText(Text *text){
@@ -48,7 +45,7 @@ namespace he{
 			}
 			FT_GlyphSlot glyph_slot = (face_)->glyph;
 		
-			Text::Glyph *g = new Text::Glyph(name_, std::string(1, ch), glyph_slot, pen_position, shader_, text->color_);
+			Text::Glyph *g = new Text::Glyph(name_, std::string(1, ch), glyph_slot, pen_position, GetResources()->shader_, text->color_);
 			
 			// For Some Twisted Reason, FreeType Measures Font Size
 			// In Terms Of 1/64ths Of Pixels.  Thus, To Make A Font
@@ -61,27 +58,29 @@ namespace he{
 	}
 
 	
-	Font::Library *Font::library_ = 0;
-	Font::Library *Font::GetLibrary(){
-		if(!library_){
-			library_ = new Library;
-			atexit(&CleanLibrary);
+	Font::Resources *Font::resources_ = 0;
+	Font::Resources *Font::GetResources(){
+		if(!resources_){
+			resources_ = new Resources;
+			atexit(&CleanResources);
 		}
-		return library_;
+		return resources_;
 	}
-	void Font::CleanLibrary(){
-		delete library_; library_ = 0;
+	void Font::CleanResources(){
+		delete resources_; resources_ = 0;
 	}
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
-	// MARK: FontLib
+	// MARK: Font::Resources
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
-	Font::Library::~Library(){
-		FT_Done_FreeType(object_);
-	}
-	Font::Library::Library(){
-		FT_Error error = FT_Init_FreeType(&object_);
+	Font::Resources::Resources(){
+		shader_ = new TextShader;
+		FT_Error error = FT_Init_FreeType(&library_);
 		assert(!error);
+	}
+	Font::Resources::~Resources(){
+		delete shader_;
+		FT_Done_FreeType(library_);
 	}
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -139,7 +138,8 @@ namespace he{
 		delete vertex_data_;
 	}
 	
-	Text::Glyph::Glyph(std::string font_name, std::string char_name, FT_GlyphSlot &glyph, GLKVector2 penPos, TextShader *shader, GLKVector4 color)
+	Text::Glyph::Glyph(std::string font_name, std::string char_name, FT_GlyphSlot &glyph, GLKVector2 penPos, TextShader *shader, GLKVector4 color) :
+	transform_(Transform(GLKVector3Make(0.0f, 0.0f, 0.0f)))
 	{
 		//FILE_LOG(logDEBUG) << "GlyphData" << std::endl;
 		int w = NextPOT(glyph->bitmap.width);

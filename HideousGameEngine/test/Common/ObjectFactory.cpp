@@ -73,7 +73,9 @@ ColObj::~ColObj(){
 	delete vert_;
 	delete object_;
 }
-ColObj::ColObj(he::ColorShader *shader){
+ColObj::ColObj(he::ColorShader *shader) :
+transform_(he::Transform(GLKVector3Make(0.0f, 0.0f, 0.0f)))
+{
 	float dimension = he::Randf() * he::g_Screen->width_/2 + 10.0;
 	he::ColorVertex::Data min = {GLKVector2Make(-dimension/2.0f, -dimension/2.0f), GLKVector4Make(1.0, 0.0, 0.0, 1.0)};
 	he::ColorVertex::Data max = {GLKVector2Make(dimension/2.0f, dimension/2.0f), GLKVector4Make(0.0, 1.0, 0.0, 1.0)};
@@ -95,8 +97,9 @@ void ColObj::Render(){
 TextureObj::~TextureObj(){
 	delete object_;
 }
-TextureObj::TextureObj(he::TextureShader *shader, he::Texture *texture, 	he::TextureVertex *vert){
-	object_ = new he::RenderObject(vert, shader, texture, he::g_Screen->projection_);
+TextureObj::TextureObj(he::TextureShader *shader, he::Texture *texture, 	he::TextureVertex *vert) :
+transform_(he::Transform(GLKVector3Make(0.0f, 0.0f, 0.0f)))
+{	object_ = new he::RenderObject(vert, shader, texture, he::g_Screen->projection_);
 	transform_.SetPosition( GLKVector2Make(he::Randf()*he::g_Screen->width_ - he::g_Screen->width_/2, he::Randf()*he::g_Screen->height_ - he::g_Screen->height_/2) );
 }
 void TextureObj::Render(){
@@ -110,8 +113,11 @@ void TextureObj::Render(){
 TextObj::~TextObj(){
 	delete text_;
 }
-TextObj::TextObj(he::Font *font){
-	text_ = new he::Text("Whacky");
+
+TextObj::TextObj(he::Font *font) :
+transform_(he::Transform(GLKVector3Make(0.0f, 0.0f, 0.0f)))
+{
+	text_ = new he::Text("Whacky", he::Transform(GLKVector3Make(0.0f, 0.0f, 0.0f)));
 	font->LoadText(text_);
 	transform_.SetPosition(GLKVector3Make(he::Randf()*he::g_Screen->width_ - he::g_Screen->width_/2, he::Randf()*he::g_Screen->height_ - he::g_Screen->height_/2, 0.0f));
 }

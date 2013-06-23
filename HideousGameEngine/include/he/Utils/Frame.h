@@ -15,7 +15,7 @@ namespace he {
 	
 	class Frame{
 	public:
-		Frame(const Transform transform = Transform(), const GLKVector2 size = GLKVector2Make(0,0));
+		Frame(const Transform transform, const GLKVector2 size = GLKVector2Make(0,0));
 
 		GLKVector2 GetOrigin() const;
 		void SetOrigin(const GLKVector2 &origin);

@@ -22,8 +22,9 @@ speed_(GLKVector2Make(0.1 + he::Randf()*5.0, 0.1 + he::Randf()*5.0)),
 direction_(GLKVector2Make(rand()%2?-1:1, rand()%2?-1:1)),
 //position_(GLKVector2Make(-he::g_Screen.width/2+he::Randf()*he::g_Screen.width, -he::g_Screen.height/2+he::Randf()*he::g_Screen.height)),
 sprite_(0),
-life_state_(kLiving){
-}
+life_state_(kLiving),
+transform_(GLKVector3Make(0.0f, 0.0f, 0.0f))
+{}
 
 bool TexturedSprite::Init(int iD, he::RenderObject *sp, he::Transform transform){
 	ID_ = iD;

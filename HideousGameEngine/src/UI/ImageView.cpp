@@ -16,18 +16,17 @@
 #include <he/Vertex/TextureVertex.h>
 
 namespace he {
-	namespace ui{
 		///////////////////////////////////////////////////////////////////////////////////////////////////
 		// MARK: ImageView
 		///////////////////////////////////////////////////////////////////////////////////////////////////
-		ImageView::ImageView(const ImageViewFactory *factory, const TextureVertex *vertex, const Texture *texture, const Frame frame) :
+		ImageView::ImageView(const Frame frame, const ImageViewFactory *factory, const TextureVertex *vertex, const Texture *texture) :
 		View(frame),
 		vertex_(nullptr)
 		{
 			render_object_ = new RenderObject(const_cast<TextureVertex *>(vertex), factory->shader.Get(), const_cast<Texture *>(texture), GetFrame().GetTransform().GetMVP());
 		}
 
-		ImageView::ImageView(const ImageViewFactory *factory, const std::string &image_name, const Frame frame) :
+		ImageView::ImageView(const Frame frame, const ImageViewFactory *factory, const std::string &image_name) :
 		View(frame)
 		{
 			const TextureAtlasRegion region = factory->atlas.Get()->GetTextureAtlasRegion(image_name);
@@ -62,7 +61,6 @@ namespace he {
 			}
 		}
 
-	} /*namespace ui*/
 }/*namespace he*/
 
 ///EOF

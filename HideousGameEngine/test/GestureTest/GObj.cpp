@@ -25,7 +25,8 @@ GObj::GObj() :
 direction_(GLKVector2Make(0,0)),
 vert_(),
 shader_(new he::ColorShader),
-color_( GLKVector4Make(1.0, 1.0, 1.0, 1.0))
+color_( GLKVector4Make(1.0, 1.0, 1.0, 1.0)),
+transform_(he::Transform(GLKVector3Make(0.0f, 0.0f, 0.0f)))
 {
 	float dimension = 20.0f;
 	he::ColorVertex::Data min = {GLKVector2Make(-dimension/2.0f, -dimension/2.0f), GLKVector4Make(1.0, 0.0, 0.0, 1.0)};

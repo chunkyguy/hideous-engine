@@ -11,8 +11,6 @@
 #include <he/Utils/Frame.h>
 
 namespace he {
-	namespace ui{
-		
 		/** Container of all kind of Views.
 		 Adds child component in stack order.
 		 If AddSubview-order is like [btn_01, btn_01, bg, icon_01]
@@ -61,7 +59,6 @@ namespace he {
 			View *next_;	/**< Points to the next sibling UIComponent */
 	};
 	
-} /*namespace ui*/
 } /*namespace he*/
 
 #endif

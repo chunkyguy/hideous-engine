@@ -21,6 +21,8 @@
 #include <he/Utils/Frame.h>
 #include <he/Vertex/TextureVertex.h>
 #include <he/UI/Sprite.h>
+#include <he/UI/Label.h>
+#include <he/Font/Font.h>
 
 UITest::UITest() :
 view_(nullptr)
@@ -39,17 +41,17 @@ void UITest::init(){
 	std::string atlas_data_path(he::ResourcePath() + "homescreen_ss.xml");
 	std::string atlas_img_path(he::ResourcePath() + "homescreen_ss.png");
 	atlas_.Load(new he::TextureAtlas(atlas_data_path, atlas_img_path, he::TextureAtlas::kStarling), true);
-	btn_listener_.Load(new he::ui::ButtonListner<UITest>(this, &UITest::ButtonHandler), true);
+	btn_listener_.Load(new he::ButtonListner<UITest>(this, &UITest::ButtonHandler), true);
 	
-	he::ui::ImageViewFactory img_factory(shader_.Get(), atlas_.Get());
+	he::ImageViewFactory img_factory(shader_.Get(), atlas_.Get());
 	
 	//main view
-	he::Frame frame;
-	view_ = new he::ui::View(frame);
+	he::Frame frame(he::Transform(GLKVector3Make(0, 0, he::g_Screen->z_)));
+	view_ = new he::View(frame);
 	
 	//bg view
 	he::Frame bg_vw_frame(he::Transform(GLKVector3Make(0, 50, 0)));
-	he::ui::ImageView *bg_vw = new he::ui::ImageView(&img_factory, vertex_.Get(), texture_.Get(), bg_vw_frame);
+	he::ImageView *bg_vw = new he::ImageView(bg_vw_frame, &img_factory, vertex_.Get(), texture_.Get());
 	view_->AddSubview(bg_vw);
 	
 	//mission image view
@@ -59,12 +61,12 @@ void UITest::init(){
 	he::Transform mission_trans(mission_pos);
 	he_Trace("UITest:init: %@\n",mission_region.sprite_size_);
 	he::Frame mission_frame(mission_trans, mission_region.sprite_size_);
-	he::ui::ImageView *mission_img_vw = new he::ui::ImageView(&img_factory, mission_full_name, mission_frame);
+	he::ImageView *mission_img_vw = new he::ImageView(mission_frame, &img_factory, mission_full_name);
 	bg_vw->AddSubview(mission_img_vw);
 
 	//button
 	he::Frame btn_frame(he::Transform(GLKVector3Make(0, 0, 0)), mission_region.sprite_size_);
-	he::ui::Button *btn = new he::ui::Button(btn_listener_.Get(), btn_frame, 99);
+	he::Button *btn = new he::Button(btn_frame, btn_listener_.Get(), 99);
 	mission_img_vw->AddSubview(btn);
 
 	//tutorial image view
@@ -73,15 +75,15 @@ void UITest::init(){
 	GLKVector3 tutorial_pos = GLKVector3Make(-50, 50, 0.0f);
 	he::Transform tutorial_trans(tutorial_pos);
 	he::Frame tutorial_frame(tutorial_trans, tutorial_region.sprite_size_);
-	he::ui::ImageView *tutorial_img_vw = new he::ui::ImageView(&img_factory, tutorial_full_name, tutorial_frame);
+	he::ImageView *tutorial_img_vw = new he::ImageView(tutorial_frame, &img_factory, tutorial_full_name);
 	mission_img_vw->AddSubview(tutorial_img_vw);
 
 	//another factory
 	std::string atlas_data_path2(he::ResourcePath() + "fishmotion.xml");
 	std::string atlas_img_path2(he::ResourcePath() + "fishmotion.png");
-	he::TextureAtlas *leakyatlas = new he::TextureAtlas(atlas_data_path2, atlas_img_path2, he::TextureAtlas::kStarling);
+	atlas2_.Load( new he::TextureAtlas(atlas_data_path2, atlas_img_path2, he::TextureAtlas::kStarling), true);
 	
-	he::ui::ImageViewFactory img_factory2(shader_.Get(), leakyatlas);
+	he::ImageViewFactory img_factory2(shader_.Get(), atlas2_.Get());
 
 	//sprite
 	std::string sprite_name("fishmoving");
@@ -89,9 +91,16 @@ void UITest::init(){
 	GLKVector3 sprite_pos = GLKVector3Make(0, -100, 0.0f);
 	he::Transform sprite_trans(sprite_pos);
 	he::Frame sprite_frame(sprite_trans, GLKVector2Make(0, 0));
-	he::ui::Sprite *sprite = new he::ui::Sprite(&img_factory2, sprite_name, sprite_frame, -1, 24);
+	he::Sprite *sprite = new he::Sprite(sprite_frame, &img_factory2, sprite_name, -1, 24);
 	view_->AddSubview(sprite);
 
+	//text
+	font.Load( new he::Font("Silom.ttf", 48), true );
+	he::LabelFactory *lbl_factory = new he::LabelFactory(font.Get());
+	he::Frame txt_frame(he::Transform(GLKVector3Make(0, 0, he::g_Screen->z_)));
+	std::string str("hello");
+	he::Label *lbl = new he::Label(txt_frame, lbl_factory, str, GLKVector4Make(0.1, 1.0, 0.4, 1.0));
+	view_->AddSubview(lbl);
 	
 //	std::string btn_titles[] = {	"mission", "tutorial", "credits"	};
 //	GLKVector3 pos = GLKVector3Make(0, 60, 0.0f);
@@ -102,8 +111,8 @@ void UITest::init(){
 //	he_Trace("trans.pos = %@\n",trans.GetPosition());
 //	he::Frame f(trans, region->sprite_size_);
 //	he_Trace("f.rect = %@\n",f.GetRect());
-//	he::ui::Button *btn = new he::ui::Button(btn_listener_.Get(), f, i);
-//	he::ui::ImageView *img_vw = new he::ui::ImageView(&img_factory, full_name, f);
+//	he::Button *btn = new he::Button(btn_listener_.Get(), f, i);
+//	he::ImageView *img_vw = new he::ImageView(&img_factory, full_name, f);
 //	btn->AddSubview(img_vw);
 //	view_->AddSubview(btn);
 //	pos.y -= 60;
@@ -117,7 +126,7 @@ void UITest::render(){
 	view_->Render();
 }
 
-void UITest::ButtonHandler(he::ui::Button *sender){
+void UITest::ButtonHandler(he::Button *sender){
 	he_Trace("UITest::ButtonHandler: %d\n",sender->GetTag());
 }
 ///EOF

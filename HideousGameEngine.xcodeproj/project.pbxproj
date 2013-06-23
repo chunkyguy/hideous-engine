@@ -128,7 +128,6 @@
 		19A6E688173278A1006ACD91 /* RectTextureTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E633173278A1006ACD91 /* RectTextureTest.cpp */; };
 		19A6E690173278A1006ACD91 /* TextureBigBangTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E63F173278A1006ACD91 /* TextureBigBangTest.cpp */; };
 		19A6E691173278A1006ACD91 /* TexturedSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E641173278A1006ACD91 /* TexturedSprite.cpp */; };
-		19A6E692173278A1006ACD91 /* Label.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E644173278A1006ACD91 /* Label.cpp */; };
 		19A6E693173278A1006ACD91 /* UITest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A6E646173278A1006ACD91 /* UITest.cpp */; };
 		19A6E694173278A1006ACD91 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A6E649173278A1006ACD91 /* Default-568h@2x.png */; };
 		19A6E695173278A1006ACD91 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A6E64A173278A1006ACD91 /* Default-Landscape@2x~ipad.png */; };
@@ -194,6 +193,7 @@
 		19CF4205176BEB9D006B8B99 /* HideousGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19CF4203176BEB9D006B8B99 /* HideousGame.cpp */; };
 		19E26504176E514400874D58 /* libgoogle_test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19E26503176E514400874D58 /* libgoogle_test.a */; };
 		19E26506176E515400874D58 /* libFreetype2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19E26505176E515400874D58 /* libFreetype2.a */; };
+		19E91BDD1776DD9C00B5432B /* Label.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19E91BDB1776DD9C00B5432B /* Label.cpp */; };
 		19EB949F1738C8F200FAF69C /* easing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19EB949E1738C8F200FAF69C /* easing.cpp */; };
 /* End PBXBuildFile section */
 
@@ -379,8 +379,6 @@
 		19A6E640173278A1006ACD91 /* TextureBigBangTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureBigBangTest.h; sourceTree = "<group>"; };
 		19A6E641173278A1006ACD91 /* TexturedSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TexturedSprite.cpp; sourceTree = "<group>"; };
 		19A6E642173278A1006ACD91 /* TexturedSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TexturedSprite.h; sourceTree = "<group>"; };
-		19A6E644173278A1006ACD91 /* Label.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Label.cpp; sourceTree = "<group>"; };
-		19A6E645173278A1006ACD91 /* Label.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Label.h; sourceTree = "<group>"; };
 		19A6E646173278A1006ACD91 /* UITest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UITest.cpp; sourceTree = "<group>"; };
 		19A6E647173278A1006ACD91 /* UITest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITest.h; sourceTree = "<group>"; };
 		19A6E649173278A1006ACD91 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -461,6 +459,8 @@
 		19CF4206176BEBB8006B8B99 /* HideousGame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HideousGame.h; sourceTree = "<group>"; };
 		19E26503176E514400874D58 /* libgoogle_test.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgoogle_test.a; path = "../../../../../std_lib/gtest/Debug-universal/libgoogle_test.a"; sourceTree = "<group>"; };
 		19E26505176E515400874D58 /* libFreetype2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFreetype2.a; path = ../../../../../std_lib/freetype_2_ios/libFreetype2.a; sourceTree = "<group>"; };
+		19E91BDA1776C77700B5432B /* Label.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Label.h; sourceTree = "<group>"; };
+		19E91BDB1776DD9C00B5432B /* Label.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Label.cpp; sourceTree = "<group>"; };
 		19EB949E1738C8F200FAF69C /* easing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = easing.cpp; sourceTree = "<group>"; };
 		19EB94A01738C92D00FAF69C /* easing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = easing.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1189,8 +1189,6 @@
 		19A6E643173278A1006ACD91 /* UITest */ = {
 			isa = PBXGroup;
 			children = (
-				19A6E644173278A1006ACD91 /* Label.cpp */,
-				19A6E645173278A1006ACD91 /* Label.h */,
 				19A6E646173278A1006ACD91 /* UITest.cpp */,
 				19A6E647173278A1006ACD91 /* UITest.h */,
 			);
@@ -1220,6 +1218,7 @@
 				19A8EDD61769CB9100FD25BF /* ImageView.h */,
 				19A8EDD11769C47D00FD25BF /* Button.h */,
 				191E69201773421E008E7510 /* Sprite.h */,
+				19E91BDA1776C77700B5432B /* Label.h */,
 			);
 			name = UI;
 			path = HideousGameEngine/include/he/UI;
@@ -1232,6 +1231,7 @@
 				19A8EDD21769C4F600FD25BF /* Button.cpp */,
 				19A8EDD71769CCD700FD25BF /* ImageView.cpp */,
 				191E692117735E0E008E7510 /* Sprite.cpp */,
+				19E91BDB1776DD9C00B5432B /* Label.cpp */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1496,7 +1496,6 @@
 				19A6E688173278A1006ACD91 /* RectTextureTest.cpp in Sources */,
 				19A6E690173278A1006ACD91 /* TextureBigBangTest.cpp in Sources */,
 				19A6E691173278A1006ACD91 /* TexturedSprite.cpp in Sources */,
-				19A6E692173278A1006ACD91 /* Label.cpp in Sources */,
 				19A6E693173278A1006ACD91 /* UITest.cpp in Sources */,
 				19EB949F1738C8F200FAF69C /* easing.cpp in Sources */,
 				1962B846173B7070004E9A1C /* SpineTest.cpp in Sources */,
@@ -1580,6 +1579,7 @@
 				19C54C48176D09FD00377317 /* GTests.cpp in Sources */,
 				194B7AE21770C4BE007919BB /* TypesTests.cpp in Sources */,
 				191E692317735E0E008E7510 /* Sprite.cpp in Sources */,
+				19E91BDD1776DD9C00B5432B /* Label.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

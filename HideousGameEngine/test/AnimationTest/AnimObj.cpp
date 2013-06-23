@@ -27,7 +27,7 @@ AnimObj::~AnimObj(){
 
 AnimObj::AnimObj( int ID, he::ColorShader *shader ) :
 id_(ID),
-transform_(),
+transform_(he::Transform(GLKVector3Make(0.0, 0.0f, 0.0f))),
 //tmp_transform_(0),
 //anim_chain_(0)
 shader_(shader),
@@ -145,7 +145,7 @@ void AnimObj::Render(){
 }
 
 void AnimObj::AnimationCallback(int animation_id){
-	transform_ = he::Transform();
+	transform_ = he::Transform(GLKVector3Make(0.0f, 0.0f, 0.0f));
 	render_object_->SetColor( GLKVector4Make(0.0, 0.0, 0.0, 1.0) );
 }
 ///EOF

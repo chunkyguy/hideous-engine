@@ -62,7 +62,7 @@ void MultiFontTest::load_text(){
 	courier_ = new he::Font("Courier New.ttf", 32);
 	simsun_ = new he::Font("SimSun.ttf", 32);
 	
-	he::Transform trans;
+	he::Transform trans(GLKVector3Make(0.0f, 0.0f, 0.0f));
 	trans.SetPosition(GLKVector2Make(-100, 100));
 	whacky_ = new he::Text("Whacky", trans,  GLKVector4Make(0.0, 0.0, 0.0, 1.0));
 	courier_->LoadText(whacky_);

@@ -26,7 +26,8 @@ speed_(GLKVector2Make(0.1 + he::Randf(0.1, 1.0), he::Randf(0.1, 1.0))),
 direction_(GLKVector2Make(rand()%2?-1:1, rand()%2?-1:1)),
 sprite_(0),
 life_state_(kLiving),
-color_(GLKVector4Make(he::Randf(), he::Randf(), he::Randf(),he::Randf()))
+color_(GLKVector4Make(he::Randf(), he::Randf(), he::Randf(),he::Randf())),
+transform_(GLKVector3Make(0, 0, 0))
 {
 	float width = he::Randf(70.0, 100.0);
 	float height = he::Randf(70.0, 100.0);

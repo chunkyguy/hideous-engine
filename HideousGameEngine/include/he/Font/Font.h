@@ -59,7 +59,7 @@ namespace he{
 			TextureVertex *vertex_data_;
 		};
 
-		Text(std::string string = "", Transform transform = Transform(), GLKVector4 color = GLKVector4Make(0,0,0,1));
+		Text(std::string string, Transform transform, GLKVector4 color = GLKVector4Make(0,0,0,1));
 		~Text();
 		void Render();
 		void SetTransform(Transform transform);
@@ -79,21 +79,21 @@ namespace he{
 		void LoadText(Text *text);
 		
 	private:
-		class Library{
-		public:
-			Library();
-			~Library();
-
-			FT_Library object_;
+		struct Resources{
+			Resources();
+			~Resources();
+			
+			TextShader *shader_;
+			FT_Library library_;
 		};
-		Library *GetLibrary();
-		static void CleanLibrary();
+		static void CleanResources();
+		Resources *GetResources();
+		static Resources *resources_;
 
 		std::string name_;
 		FT_Face face_;
 		int glyph_count_;
-		TextShader *shader_;
-		static Library *library_;
+
 	};
 }
 #endif /* defined(__HEAssets__Font__) */

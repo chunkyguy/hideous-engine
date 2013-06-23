@@ -12,13 +12,12 @@
 #include <he/UI/ImageView.h>
 
 namespace he {
-	namespace ui{
 
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		// MARK: Button
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		Button::Button(IButtonListner *listner,
-					  const Frame frame,
+		Button::Button(const Frame frame,
+					   IButtonListner *listner,
 					   int tag) :
 		View(frame),
 //		animation_handle_(0UL),
@@ -95,7 +94,6 @@ namespace he {
 //		}
 		
 		
-	} /*namespace ui*/
 } /*namespace he*/
 
 ///EOF

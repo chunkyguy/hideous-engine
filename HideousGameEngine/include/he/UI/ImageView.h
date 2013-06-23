@@ -23,7 +23,6 @@ namespace he {
 	class TextureShader;
 	class TextureVertex;
 	
-	namespace ui{
 		
 		/** Factory to create ImageView*/
 		struct ImageViewFactory{
@@ -37,10 +36,10 @@ namespace he {
 		class ImageView : public View{
 		public:
 			/** ImageView from texture */
-			ImageView(const ImageViewFactory *factory, const he::TextureVertex *vertex, const he::Texture *texture, const Frame frame = Frame());
+			ImageView(const Frame frame, const ImageViewFactory *factory, const he::TextureVertex *vertex, const he::Texture *texture);
 
 			/** ImageView from atlas */
-			ImageView(const ImageViewFactory *factory, const std::string &image_name, const Frame frane = Frame());
+			ImageView(const Frame frame, const ImageViewFactory *factory, const std::string &image_name);
 			
 			virtual ~ImageView();
 			
@@ -51,7 +50,6 @@ namespace he {
 			RenderObject *render_object_;
 			TextureVertex *vertex_;
 		};
-	}
 }
 
 #endif
