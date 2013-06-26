@@ -14,7 +14,7 @@
 #include "ft2build.h"
 #include FT_FREETYPE_H
 
-#include <he/Utils/Transform.h>
+#include <he/Utils/Frame.h>
 
 //	Instructions to add libFreetype2
 /*
@@ -38,62 +38,29 @@
 
 
 namespace he{
-	
-	class RenderObject;
-	class TextureVertex;
-	class Texture;
-	class TextShader;
-	
-	class Text{
-	public:
-		class Glyph{
-		public:
-			Glyph(std::string font_name, std::string char_name, FT_GlyphSlot &glyph, GLKVector2 penPosition,	TextShader *shader, GLKVector4 color);
-			~Glyph();
-			
-			Transform transform_;
-			RenderObject *render_object_;
-			GLKVector2 size_;
-		private:
-			Texture *texture_;
-			TextureVertex *vertex_data_;
-		};
 
-		Text(std::string string, Transform transform, GLKVector4 color = GLKVector4Make(0,0,0,1));
-		~Text();
-		void Render();
-		void SetTransform(Transform transform);
-		const Transform &GetTransform() const;
-		GLKVector2 GetSize();
-		
-		Glyph ** data_;
-		std::string string_;
-		Transform transform_;
-		GLKVector4 color_;
-	};
-	
+	/** Font class */
 	class Font{
 	public:
-		Font(std::string name, unsigned int size);
+		/** Creates a font 
+		 @param name The name of the font. Can be of type ttf, or whatever supported by Freetype.
+		 @param size The size of the font.
+		 */
+		Font(std::string font_path, unsigned int size);
 		~Font();
-		void LoadText(Text *text);
+		const FT_Face &GetFace() const;
 		
 	private:
-		struct Resources{
-			Resources();
-			~Resources();
-			
-			TextShader *shader_;
-			FT_Library library_;
-		};
-		static void CleanResources();
-		Resources *GetResources();
-		static Resources *resources_;
-
-		std::string name_;
 		FT_Face face_;
-		int glyph_count_;
-
 	};
+	
+	class FontLibrary{
+	public:
+		FontLibrary();
+		~FontLibrary();
+		
+		FT_Library library_;
+	};
+	extern FontLibrary *g_FontLib;
 }
 #endif /* defined(__HEAssets__Font__) */

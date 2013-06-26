@@ -74,24 +74,24 @@ namespace he{
 		}
 
 		void ApplyTransform(V2 &slf, const Transform &transform){
-			GLKMatrix4 mv = transform.GetMV();
-			he_Trace("Vertex::ApplyTransform:transform\n%@\n",mv);
+			GLKMatrix4 mv = Transform_GetMV(&transform);
+			//			he_Trace("Vertex::ApplyTransform:transform\n%@\n",mv);
 			
 			GLKVector2 a = GetVertex(slf, kA);
 			GLKVector4 a_new = mv * GLKVector4Make(a.x, a.y, 0.0f, 1.0f);
-			he_Trace("Vertex::ApplyTransform:A:\n%@\n%@\n",a,a_new);
+			//			he_Trace("Vertex::ApplyTransform:A:\n%@\n%@\n",a,a_new);
 
 			GLKVector2 b = GetVertex(slf, kB);
 			GLKVector4 b_new = mv * GLKVector4Make(b.x, b.y, 0.0f, 1.0f);
-			he_Trace("Vertex::ApplyTransform:B:\n%@\n%@\n",b,b_new);
+			//he_Trace("Vertex::ApplyTransform:B:\n%@\n%@\n",b,b_new);
 			
 			GLKVector2 c = GetVertex(slf, kC);
 			GLKVector4 c_new = mv * GLKVector4Make(c.x, c.y, 0.0f, 1.0f);
-			he_Trace("Vertex::ApplyTransform:C:\n%@\n%@\n",c,c_new);
+			//			he_Trace("Vertex::ApplyTransform:C:\n%@\n%@\n",c,c_new);
 
 			GLKVector2 d = GetVertex(slf, kD);
 			GLKVector4 d_new = mv * GLKVector4Make(d.x, d.y, 0.0f, 1.0f);
-			he_Trace("Vertex::ApplyTransform:D:\n%@\n%@\n",d,d_new);
+			//			he_Trace("Vertex::ApplyTransform:D:\n%@\n%@\n",d,d_new);
 
 			Set(slf, a_new.v, kA);
 			Set(slf, b_new.v, kB);

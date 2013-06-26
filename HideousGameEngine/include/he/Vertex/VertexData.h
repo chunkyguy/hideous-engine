@@ -130,10 +130,10 @@ namespace he{
 		// Transform
 		template <typename V>
 		void ApplyTransform(V &slf, const Transform &transform){
-			Set(slf, (transform.GetMV() * GetVertex(slf, kA)).v, kA);
-			Set(slf, (transform.GetMV() * GetVertex(slf, kB)).v, kB);
-			Set(slf, (transform.GetMV() * GetVertex(slf, kC)).v, kC);
-			Set(slf, (transform.GetMV() * GetVertex(slf, kD)).v, kD);
+			Set(slf, (Transform_GetMV(&transform) * GetVertex(slf, kA)).v, kA);
+			Set(slf, (Transform_GetMV(&transform) * GetVertex(slf, kB)).v, kB);
+			Set(slf, (Transform_GetMV(&transform) * GetVertex(slf, kC)).v, kC);
+			Set(slf, (Transform_GetMV(&transform) * GetVertex(slf, kD)).v, kD);
 		}
 		
 		// Translate each point
@@ -165,11 +165,11 @@ namespace he{
 		bool Equal(const V &one, const V &two){
 			int i = 0;
 			for(; i < V::vertex_count && F32Eq(one.data[i], two.data[i]); ++i){
-				he_Trace("%f == %f\n",one.data[i],two.data[i]);
+				//				he_Trace("%f == %f\n",one.data[i],two.data[i]);
 			}
-			if(i < V::vertex_count){
-				he_Trace("%f != %f\n",one.data[i],two.data[i]);
-			}
+//			if(i < V::vertex_count){
+//				he_Trace("%f != %f\n",one.data[i],two.data[i]);
+//			}
 			return !(i < V::vertex_count);
 		}
 

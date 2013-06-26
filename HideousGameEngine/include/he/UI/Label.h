@@ -14,28 +14,28 @@
 #include <he/Utils/Asset.h>
 
 namespace he{
-	class Font;
-	class Text;
-	
-		
-		struct LabelFactory{
-			LabelFactory(Font *fnt);
-			
-			Asset<Font> font;
-		};
-		
-		class Label : public View {
-		public:
-			Label(const Frame frame, const LabelFactory *factory, const std::string &string, const GLKVector4 color = GLKVector4Make(0.0f, 0.0f, 0.0f, 1.0f));
-			virtual ~Label();
-			
-		protected:
-			virtual void update(float dt);
-			virtual void render();
-			
-		private:
-			Text *text_;
-		};
+//	class Font;
+//	class Text;
+//	
+//		
+//		struct LabelFactory{
+//			LabelFactory(Font *fnt);
+//			
+//			Asset<Font> font;
+//		};
+//		
+//		class Label : public View {
+//		public:
+//			Label(const Frame frame, const LabelFactory *factory, const std::string &string, const GLKVector4 color = GLKVector4Make(0.0f, 0.0f, 0.0f, 1.0f));
+//			virtual ~Label();
+//			
+//		protected:
+//			virtual void update(float dt);
+//			virtual void render();
+//			
+//		private:
+//			Text *text_;
+//		};
 		
 }
 

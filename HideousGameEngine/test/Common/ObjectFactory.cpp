@@ -8,17 +8,19 @@
 
 #include "ObjectFactory.h"
 
+
 #include <he/Font/Font.h>
+#include <he/Font/Text.h>
 #include <he/RenderObject/RenderObject.h>
 #include <he/Shaders/ColorShader.h>
+#include <he/Shaders/TextShader.h>
 #include <he/Shaders/TextureShader.h>
 #include <he/Texture/Texture.h>
 #include <he/Texture/TextureAtlas.h>
-#include <he/Utils/Utils.h>
 #include <he/Utils/ResourcePath.hpp>
+#include <he/Utils/Utils.h>
 #include <he/Vertex/ColorVertex.h>
 #include <he/Vertex/TextureVertex.h>
-
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //	MARK: ObjectFactory
@@ -38,7 +40,7 @@ TextureObj *ObjectFactory::CreateTexturedObject(){
 	return new TextureObj(tex_sh_, texture_, vert_);
 }
 TextObj *ObjectFactory::CreateTextObject(){
-	return new TextObj(font_);
+	return new TextObj(txt_factory_);
 }
 
 void ObjectFactory::load_assets(){
@@ -52,8 +54,9 @@ void ObjectFactory::load_assets(){
 	tex_sh_ = new he::TextureShader;
 	
 	// text obj
-	font_ = new he::Font("Silom.ttf", 48);
-	
+	font_ = new he::Font(he::ResourcePath() + "Silom.ttf", 48);
+	txt_sh_ = new he::TextShader;
+	txt_factory_ = new he::TextFactory(font_, txt_sh_);
 }
 void ObjectFactory::unload_assets(){
 	delete col_sh_;
@@ -64,6 +67,8 @@ void ObjectFactory::unload_assets(){
 	delete tex_sh_;
 	
 	delete font_;
+	delete txt_sh_;
+	delete txt_factory_;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -73,9 +78,8 @@ ColObj::~ColObj(){
 	delete vert_;
 	delete object_;
 }
-ColObj::ColObj(he::ColorShader *shader) :
-transform_(he::Transform(GLKVector3Make(0.0f, 0.0f, 0.0f)))
-{
+ColObj::ColObj(he::ColorShader *shader){
+	transform_ = he::Transform_Create(GLKVector2Make(0.0f, 0.0f));
 	float dimension = he::Randf() * he::g_Screen->width_/2 + 10.0;
 	he::ColorVertex::Data min = {GLKVector2Make(-dimension/2.0f, -dimension/2.0f), GLKVector4Make(1.0, 0.0, 0.0, 1.0)};
 	he::ColorVertex::Data max = {GLKVector2Make(dimension/2.0f, dimension/2.0f), GLKVector4Make(0.0, 1.0, 0.0, 1.0)};
@@ -83,11 +87,11 @@ transform_(he::Transform(GLKVector3Make(0.0f, 0.0f, 0.0f)))
 	vert_ = new he::ColorVertex(min, max);
 	GLKVector4 color = GLKVector4Make(he::Randf(), he::Randf(), he::Randf(), 0.8);
 	object_ = new he::RenderObject(vert_, shader, 0, he::g_Screen->projection_, color);
-	transform_.SetPosition( GLKVector3Make(he::Randf()*he::g_Screen->width_ - he::g_Screen->width_/2, he::Randf()*he::g_Screen->height_ - he::g_Screen->height_/2, 0.0f));
+	transform_.position = GLKVector3Make(he::Randf()*he::g_Screen->width_ - he::g_Screen->width_/2, he::Randf()*he::g_Screen->height_ - he::g_Screen->height_/2, he::g_Screen->z_);
 }
 
 void ColObj::Render(){
-	object_->mvp_ = transform_.GetMVP();
+	object_->mvp_ = he::Transform_GetMVP(&transform_);
 	object_->Render();
 }
 
@@ -97,13 +101,12 @@ void ColObj::Render(){
 TextureObj::~TextureObj(){
 	delete object_;
 }
-TextureObj::TextureObj(he::TextureShader *shader, he::Texture *texture, 	he::TextureVertex *vert) :
-transform_(he::Transform(GLKVector3Make(0.0f, 0.0f, 0.0f)))
-{	object_ = new he::RenderObject(vert, shader, texture, he::g_Screen->projection_);
-	transform_.SetPosition( GLKVector2Make(he::Randf()*he::g_Screen->width_ - he::g_Screen->width_/2, he::Randf()*he::g_Screen->height_ - he::g_Screen->height_/2) );
+TextureObj::TextureObj(he::TextureShader *shader, he::Texture *texture, he::TextureVertex *vert){
+	transform_ = he::Transform_Create(GLKVector2Make(he::Randf()*he::g_Screen->width_ - he::g_Screen->width_/2, he::Randf()*he::g_Screen->height_ - he::g_Screen->height_/2));
+	object_ = new he::RenderObject(vert, shader, texture, he::g_Screen->projection_);
 }
 void TextureObj::Render(){
-	object_->mvp_ = transform_.GetMVP();
+	object_->mvp_ = he::Transform_GetMVP(&transform_);
 	object_->Render();
 }
 
@@ -114,12 +117,11 @@ TextObj::~TextObj(){
 	delete text_;
 }
 
-TextObj::TextObj(he::Font *font) :
-transform_(he::Transform(GLKVector3Make(0.0f, 0.0f, 0.0f)))
-{
-	text_ = new he::Text("Whacky", he::Transform(GLKVector3Make(0.0f, 0.0f, 0.0f)));
-	font->LoadText(text_);
-	transform_.SetPosition(GLKVector3Make(he::Randf()*he::g_Screen->width_ - he::g_Screen->width_/2, he::Randf()*he::g_Screen->height_ - he::g_Screen->height_/2, 0.0f));
+TextObj::TextObj(he::TextFactory *factory){
+	text_ = new he::Text(he::Frame(he::Transform_Create(GLKVector2Make(he::Randf()*he::g_Screen->width_ - he::g_Screen->width_/2, he::Randf()*he::g_Screen->height_ - he::g_Screen->height_/2))), factory, "Whacky");
+}
+void TextObj::Update(float dt){
+	text_->Update(dt);
 }
 void TextObj::Render(){
 	text_->Render();

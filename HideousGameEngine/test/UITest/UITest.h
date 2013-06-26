@@ -20,6 +20,7 @@ namespace he{
 	class TextureVertex;
 	class TextureAtlas;
 	class Font;
+	class TextShader;
 	
 	namespace ui{
 		class View;
@@ -45,6 +46,7 @@ private:
 	he::Asset<he::TextureAtlas> atlas2_;
 	he::Asset<he::ButtonListner<UITest> > btn_listener_;
 	he::Asset<he::Font> font;
+	he::Asset<he::TextShader> txt_shader_;
 };
 
 

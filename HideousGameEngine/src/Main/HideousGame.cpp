@@ -14,6 +14,7 @@
 #include <he/Animation/AnimationLoop.h>
 #include <he/EventLoop/Gesture.h>
 #include <he/Utils/Screen.h>
+#include <he/Font/Font.h>
 
 namespace he {
 	
@@ -23,6 +24,7 @@ namespace he {
 		g_Screen = new Screen(window_size.x, window_size.y);
 		g_EventLoop = new EventLoop;
 		g_AnimationLoop = new AnimationLoop;
+		g_FontLib = new FontLibrary;
 		
 		init();
 		he_Trace("he::Game: loaded");
@@ -32,6 +34,7 @@ namespace he {
 		delete g_Screen;
 		delete g_EventLoop;
 		delete g_AnimationLoop;
+		delete g_FontLib;
 		he_Trace("he::Game: unloaded\n");
 	}
 		

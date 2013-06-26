@@ -17,7 +17,7 @@ TEST(View, Destructor){
 	he::g_Screen = new he::Screen(480, 320);
 
 	// load view
-	he::Frame view_frame(he::Transform(GLKVector3Make(0.0f, 0.0f, 0.0f)));
+	he::Frame view_frame(he::Transform_Create(GLKVector3Make(0.0f, 0.0f, 0.0f)));
 	he::View *view =  new he::View(view_frame);
 	view->AddSubview(new he::View(view_frame));
 	delete view;
@@ -31,23 +31,24 @@ TEST(View, Destructor){
 TEST(View, SubviewUpdate){
 	he::g_Screen = new he::Screen(480, 320);
 	
-	he::Frame view_frame(he::Transform(GLKVector3Make(0.0f, 0.0f, 0.0f)));
+	he::Frame view_frame(he::Transform_Create(GLKVector3Make(0.0f, 0.0f, 0.0f)));
 	he::View *view =  new he::View(view_frame);
 
-	he::Frame subvw_frame(he::Transform(GLKVector3Make(0.0f, 0.0f, 0.0f)));
+	he::Frame subvw_frame(he::Transform_Create(GLKVector3Make(0.0f, 0.0f, 0.0f)));
 	he::View *subview = new he::View(subvw_frame);
 	view->AddSubview(subview);
 
-	he_Trace("1 One:\n%@\nTwo:\n%@\n",view->GetFrame().GetTransform().GetMVP(), subview->GetFrame().GetTransform().GetMVP());
+	//he_Trace("1 One:\n%@\nTwo:\n%@\n",he::Transform_GetMVP(&(view->GetFrame().GetTransform())), he::Transform_GetMVP(&(subview->GetFrame().GetTransform())));
 
-	he::Frame new_frame(he::Transform(GLKVector3Make(100.0f, 100.0f, he::g_Screen->z_)));
+	he::Frame new_frame(he::Transform_Create(GLKVector2Make(100.0f, 100.0f)));
 	view->SetFrame(new_frame);
 //	GLKVector2 new_pos = GLKVector2Make(100, 100);
 //	view->GetFrame().GetTransformPtr()->SetPosition(new_pos);
 	
 	view->Update(0.0);
-	he_Trace("2 One:\n%@\nTwo:\n%@\n",view->GetFrame().GetTransform().GetMVP(), subview->GetFrame().GetTransform().GetMVP());
-	ASSERT_TRUE(view->GetFrame().GetTransform().GetMVP() == subview->GetFrame().GetTransform().GetMVP());
+	//he_Trace("2 One:\n%@\nTwo:\n%@\n",he::Transform_GetMVP(&(view->GetFrame().GetTransform())), he::Transform_GetMVP(&(subview->GetFrame().GetTransform())));
+
+	ASSERT_TRUE(he::Transform_GetMVP(&(view->GetFrame().GetTransform())) == he::Transform_GetMVP(&(subview->GetFrame().GetTransform())));
 	delete view;
 	delete he::g_Screen;
 }

@@ -29,7 +29,7 @@ TEST(VertexData, GlobalTransformTranslate){
 	he::Vertex::V2 end;
 	he::Vertex::Set(end, GLKVector2Make(0, 0), GLKVector2Make(200, 100));
 	
-	he::Transform global(GLKVector3Make(-100, -50, he::g_Screen->z_));
+	he::Transform global = he::Transform_Create(GLKVector2Make(-100, -50));
 	he::Vertex::ApplyTransform(end, global);
 
 	ASSERT_TRUE(he::Vertex::Equal(start, end));
@@ -46,7 +46,7 @@ TEST(VertexData, GlobalTransformRotate){
 	he::Vertex::V2 end;
 	he::Vertex::Set(end, GLKVector2Make(50, -100), GLKVector2Make(50, 100), GLKVector2Make(-50, -100), GLKVector2Make(-50, 100));
 	
-	he::Transform global(GLKVector3Make(0, 0, he::g_Screen->z_), GLKMathDegreesToRadians(90), GLKVector3Make(0, 0, 1));
+	he::Transform global = he::Transform_Create(GLKVector2Make(0, 0), GLKVector4Make(0, 0, 1, GLKMathDegreesToRadians(90)));
 	he::Vertex::ApplyTransform(start, global);
 	
 	ASSERT_TRUE(he::Vertex::Equal(start, end));

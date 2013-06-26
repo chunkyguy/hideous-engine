@@ -12,17 +12,19 @@
 #include <list>
 #include <he/Utils/GLKMath_Additions.h>
 
-#include <he/Utils/Transform.h>
+#include <he/Utils/Frame.h>
 
 namespace he{
-	class Font;
-	class Text;
 	class ColorShader;
-	class TextureShader;
+	class ColorVertex;
+	class Font;
 	class RenderObject;
+	class Text;
+	class TextFactory;
+	class TextShader;
 	class Texture;
 	class TextureAtlas;
-	class ColorVertex;
+	class TextureShader;
 	class TextureVertex;
 };
 
@@ -52,12 +54,12 @@ private:
 class TextObj{
 public:
 	~TextObj();
-	TextObj(he::Font *font);
+	TextObj(he::TextFactory *factory);
+	void Update(float dt);
 	void Render();
 	
 private:
 	he::Text *text_;
-	he::Transform transform_;
 };
 
 class ObjectFactory{
@@ -82,6 +84,8 @@ private:
 	
 	// text obj
 	he::Font *font_;
+	he::TextFactory *txt_factory_;
+	he::TextShader *txt_sh_;
 };
 
 #endif /* defined(__HEAssets__ObjectFactory__) */

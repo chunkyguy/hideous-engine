@@ -57,7 +57,7 @@ namespace he {
 				add_to_->next_ = view;
 				add_to_ = view;
 			}
-			view->frame_.GetTransformPtr()->SetParent(frame_.GetTransformPtr());
+			view->frame_.GetTransformPtr()->parent = frame_.GetTransformPtr();
 		}
 		
 		void View::SetFrame(const he::Frame &frame){

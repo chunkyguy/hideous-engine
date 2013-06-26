@@ -12,7 +12,6 @@
 #include <he/Shaders/TextureShader.h>
 #include <he/Texture/Texture.h>
 #include <he/Texture/TextureAtlas.h>
-#include <he/Utils/DebugLog.h>
 #include <he/Utils/ResourcePath.hpp>
 #include <he/Utils/Utils.h>
 #include <he/Vertex/TextureVertex.h>
@@ -20,10 +19,6 @@
 TextureBigBangTest::TextureBigBangTest(){}
 
 void TextureBigBangTest::init(){
-	//debugger
-	const std::string loglevel("DEBUG1");
-	FILELog::ReportingLevel() = FILELog::FromString(loglevel);
-	FILE_LOG(logDEBUG) << "Logging Enabled: " << loglevel << std::endl;
 
 	//random
 	srand(time(NULL));
@@ -44,9 +39,7 @@ TextureBigBangTest::~TextureBigBangTest(){
 }
 
 void TextureBigBangTest::load(GLKVector2 at){
-	FILE_LOG(logDEBUG) << "load";
-	he::Transform trans(GLKVector3Make(0.0f, 0.0f, 0.0f));
-	trans.SetPosition(at);
+	he::Transform trans = he::Transform_Create(at);
 	squares_ = new TexturedSprite *[kTotal_tex_sprites];
 	for(int i = 0; i < kTotal_tex_sprites; i++){
 		squares_[i] = new TexturedSprite;
@@ -56,7 +49,6 @@ void TextureBigBangTest::load(GLKVector2 at){
 	delay_ = 0.0;
 }
 void TextureBigBangTest::unload(){
-	FILE_LOG(logDEBUG) << "unload";
 	for(int i = 0; i < kTotal_tex_sprites; i++){
 		if(squares_[i]){
 			delete squares_[i];

@@ -15,7 +15,7 @@ namespace he{
 	transform_(transform),
 	size_(size)
 	{
-		GLKVector2 trans_pos = GLKVector2Make(transform_.GetPosition().x, transform_.GetPosition().y);
+		GLKVector2 trans_pos = Transform_GetPosition(transform_);
 		Vertex::Set(rect_, trans_pos-size_/2.0f, trans_pos+size_/2.0f);
 		assert(size_ == (Vertex::GetVertex(rect_, Vertex::kD) - Vertex::GetVertex(rect_, Vertex::kA)));
 	}
@@ -26,8 +26,7 @@ namespace he{
 	
 	void Frame::SetOrigin(const GLKVector2 &origin){
 		Vertex::Translate(rect_, origin);
-		GLKVector3 org = GLKVector3Make(origin.x, origin.y, 0.0f );
-		transform_.SetPosition(org - transform_.GetPosition());
+		Transform_SetPosition(&transform_, origin - Transform_GetPosition(transform_));
 	}
 	
 	GLKVector2 Frame::GetSize() const{
@@ -47,7 +46,7 @@ namespace he{
 	}
 	
 	void Frame::SetTransform(const he::Transform &transform){
-		Vertex::Translate(rect_, transform.GetPosition() - transform_.GetPosition());
+		Vertex::Translate(rect_, Transform_GetPosition(transform) - Transform_GetPosition(transform_));
 		transform_ = transform;
 	}
 	
@@ -63,7 +62,7 @@ namespace he{
 	void Frame::SetRect(const Vertex::V2 &rect){
 		rect_ = rect;
 		size_ = Vertex::GetVertex(rect_, Vertex::kD) - Vertex::GetVertex(rect_, Vertex::kA);
-		transform_.SetPosition(size_/2.0f);
+		Transform_SetPosition(&transform_, size_/2.0f);
 	}
 	
 	std::ostream &operator<<(std::ostream &os, const Frame &frame){

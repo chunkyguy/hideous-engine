@@ -22,9 +22,10 @@ speed_(GLKVector2Make(0.1 + he::Randf()*5.0, 0.1 + he::Randf()*5.0)),
 direction_(GLKVector2Make(rand()%2?-1:1, rand()%2?-1:1)),
 //position_(GLKVector2Make(-he::g_Screen.width/2+he::Randf()*he::g_Screen.width, -he::g_Screen.height/2+he::Randf()*he::g_Screen.height)),
 sprite_(0),
-life_state_(kLiving),
-transform_(GLKVector3Make(0.0f, 0.0f, 0.0f))
-{}
+life_state_(kLiving)
+{
+	transform_ = he::Transform_Create(GLKVector2Make(0.0f, 0.0f));
+}
 
 bool TexturedSprite::Init(int iD, he::RenderObject *sp, he::Transform transform){
 	ID_ = iD;
@@ -39,13 +40,13 @@ void TexturedSprite::Update(){
 
 	//setPos(position_);
 
-	GLKVector2 pos_incr = direction_ * speed_;
-	GLKVector3 newPos = transform_.GetPosition() + GLKVector3Make(pos_incr.x, pos_incr.y, 0.0f);
+	GLKVector2 newPos = he::Transform_GetPosition(transform_) +  (direction_ * speed_);
 	if(newPos.x < -he::g_Screen->width_/2 || newPos.x > he::g_Screen->width_/2 || newPos.y < -he::g_Screen->height_/2 || newPos.y > he::g_Screen->height_/2){
 		life_state_ = kZombie;
 	}else{
-		transform_.SetPosition(newPos);
-		sprite_->mvp_ = transform_.GetMVP();
+		he::Transform_SetPosition(&transform_, newPos);
+		assert(transform_.position.z < 0);
+		sprite_->SetMVP(he::Transform_GetMVP(&transform_));
 	}
 }
 

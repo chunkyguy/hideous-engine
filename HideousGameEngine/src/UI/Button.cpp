@@ -60,7 +60,7 @@ namespace he {
 				
 				//				if(gesture.state_ == he::Gesture::kBegin){
 					GLKVector2 pt = gesture.GetHitPoint();
-				he_Trace("\nButton[%d]::HandleGesture:\n%@\nFrame:\n%@\nMV: \n%@\nPoint:%@\n",tag_,gesture,GetFrame().GetRect(),GetFrame().GetTransform().GetMV(),pt);
+				he_Trace("\nButton[%d]::HandleGesture:\n%@\nFrame:\n%@\nMV: \n%@\nPoint:%@\n",tag_,gesture,GetFrame().GetRect(),Transform_GetMV(&(GetFrame().GetTransform())),pt);
 				if(he::Vertex::Contains(GetFrame().GetGlobalRect(), pt)){
 									listner_->Hit(this);
 //						GLKVector2 scale_points[2] = {original_transform_.scale_, GLKVector2Multiply(original_transform_.scale_, GLKVector2Make(1.05, 1.05))};

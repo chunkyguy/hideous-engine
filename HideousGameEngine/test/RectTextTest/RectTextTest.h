@@ -15,6 +15,8 @@
 namespace he{
 	class Font;
 	class Text;
+	class TextFactory;
+	class TextShader;
 }
 
 class RectTextTest : public he::Game{
@@ -33,6 +35,8 @@ private:
 
 	he::Font *font_;
 	he::Text *text_;
+	he::TextFactory *factory_;
+	he::TextShader *shader_;
 	he::GestureListener<RectTextTest> *gesture_listener_;
 };
 #endif /* defined(__HideousGameEngine__RectTextTest__) */

@@ -7,194 +7,42 @@
 //
 
 #include <he/Font/Font.h>
-#include <he/RenderObject/RenderObject.h>
-#include <he/Shaders/TextShader.h>
-#include <he/Texture/Texture.h>
-#include <he/Utils/DebugLog.h>
-#include <he/Utils/ResourcePath.hpp>
-#include <he/Utils/Utils.h>
-#include <he/Vertex/TextureVertex.h>
+
+#include <he/Utils/DebugHelper.h>
 
 namespace he{
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
 	// MARK: Font
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
-	Font::~Font(){
-		FT_Done_Face(face_);
-	}
-	Font::Font(std::string name, unsigned int size) :
-	name_(name)
+	Font::Font(std::string font_path, unsigned int size)
 	{
-		FILE_LOG(logDEBUG) << "loading font: " << name;
+		he_Trace("loading font: %@\n", font_path);
 		
-		std::string fontPath = ResourcePath() + name;
-		FT_Error error = FT_New_Face(GetResources()->library_, fontPath.c_str(), 0, &face_);
+		FT_Error error = FT_New_Face(g_FontLib->library_, font_path.c_str(), 0, &face_);
 		assert(error != FT_Err_Unknown_File_Format);		//"Font format not supported"
 		assert(!error); // "Unable to open font"
 		FT_Set_Pixel_Sizes(face_, 0, size);
 	}
-	
-	void Font::LoadText(Text *text){
-		///Create new
-		GLKVector2 pen_position = GLKVector2Make(0,0);
-		int pos = 0;
-		for(std::string::iterator it = text->string_.begin(); it != text->string_.end(); ++it){
-			const char ch = *it;
-			if(FT_Load_Char(face_, ch, FT_LOAD_RENDER)){
-				FILE_LOG(logERROR) << "Couldn't load char : " << *it;
-			}
-			FT_GlyphSlot glyph_slot = (face_)->glyph;
-		
-			Text::Glyph *g = new Text::Glyph(name_, std::string(1, ch), glyph_slot, pen_position, GetResources()->shader_, text->color_);
-			
-			// For Some Twisted Reason, FreeType Measures Font Size
-			// In Terms Of 1/64ths Of Pixels.  Thus, To Make A Font
-			//Advance for next char.. if looping
-			pen_position.x += (glyph_slot->advance.x >> 6);
-			pen_position.y += (glyph_slot->advance.y >> 6);
-			
-			text->data_[pos++] = g;
-		}
+
+	Font::~Font(){
+		FT_Done_Face(face_);
+	}
+
+	const FT_Face &Font::GetFace() const{
+		return face_;
 	}
 
 	
-	Font::Resources *Font::resources_ = 0;
-	Font::Resources *Font::GetResources(){
-		if(!resources_){
-			resources_ = new Resources;
-			atexit(&CleanResources);
-		}
-		return resources_;
-	}
-	void Font::CleanResources(){
-		delete resources_; resources_ = 0;
-	}
-	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
-	// MARK: Font::Resources
+	// MARK: FontLibrary
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
-	Font::Resources::Resources(){
-		shader_ = new TextShader;
+	FontLibrary *g_FontLib = nullptr;
+
+	FontLibrary::FontLibrary(){
 		FT_Error error = FT_Init_FreeType(&library_);
 		assert(!error);
 	}
-	Font::Resources::~Resources(){
-		delete shader_;
+	FontLibrary::~FontLibrary(){
 		FT_Done_FreeType(library_);
 	}
-
-	/////////////////////////////////////////////////////////////////////////////////////////////////////
-	// MARK: Text
-	/////////////////////////////////////////////////////////////////////////////////////////////////////
-	Text::Text(std::string string, Transform transform, 	GLKVector4 color) :
-	string_(string),
-	transform_(transform),
-	color_(color)
-	{
-		data_ = new Glyph *[string_.size()];
-	}
-	
-	Text::~Text(){
-		for(int i = 0; i < string_.size(); ++i){
-			delete data_[i];
-		}
-		delete [] data_;
-	}
-	
-	void Text::Render(){
-		for(int i = 0; i < string_.size(); ++i){
-			he::RenderObject *object = data_[i]->render_object_;
-			object->mvp_ = transform_.GetMVP();
-			object->Render();
-		}
-	}
-	
-	void Text::SetTransform(Transform transform){
-		transform_ = transform;
-	}
-	
-	const Transform &Text::GetTransform() const{
-		return transform_;
-	}
-	
-	GLKVector2 Text::GetSize(){
-		GLKVector2 size = GLKVector2Make(0,0);
-		for(int i = 0; i < string_.size(); ++i){
-			GLKVector2 it_sz = data_[i]->size_;
-			size.x += it_sz.x;
-			size.y = (size.y > it_sz.y) ? size.y: it_sz.y;
-		}
-		return size;
-	}
-	
-	
-	/////////////////////////////////////////////////////////////////////////////////////////////////////
-	// MARK: Text::Glyph
-	/////////////////////////////////////////////////////////////////////////////////////////////////////
-	Text::Glyph::~Glyph(){
-		FILE_LOG(logDEBUG) << "~GlyphData" << std::endl;
-		delete texture_;
-		delete render_object_;
-		delete vertex_data_;
-	}
-	
-	Text::Glyph::Glyph(std::string font_name, std::string char_name, FT_GlyphSlot &glyph, GLKVector2 penPos, TextShader *shader, GLKVector4 color) :
-	transform_(Transform(GLKVector3Make(0.0f, 0.0f, 0.0f)))
-	{
-		//FILE_LOG(logDEBUG) << "GlyphData" << std::endl;
-		int w = NextPOT(glyph->bitmap.width);
-		int h = NextPOT(glyph->bitmap.rows);
-		
-		size_ = GLKVector2Make(w, h);
-		
-		GLubyte *pixels = new GLubyte [2 * w * h];
-		GLubyte *bp = pixels;
-		for(int j=0; j <h; j++) {
-			for(int i=0; i < w; i++){
-				*bp = 0;
-				if(i < glyph->bitmap.width && j < glyph->bitmap.rows){
-					*bp = glyph->bitmap.buffer[i + glyph->bitmap.width*j];
-				}
-				bp++;
-			}
-		}
-		
-		GLKVector3 pos = GLKVector3Make(penPos.x + glyph->bitmap_left, -penPos.y - glyph->bitmap_top, 0.0f);
-		transform_.SetPosition(pos);
-		GLfloat p_data[] = {
-			transform_.GetPosition().x,		-transform_.GetPosition().y,
-			transform_.GetPosition().x+w,	-transform_.GetPosition().y,
-			transform_.GetPosition().x,		-transform_.GetPosition().y-h,
-			transform_.GetPosition().x+w,	-transform_.GetPosition().y-h
-		};
-		GLfloat t_data[] = {
-			0, 0,
-			1, 0,
-			0, 1,
-			1, 1
-		};
-		
-		texture_ = new Texture(font_name + char_name, pixels, GLKVector2Make(w,h), 1);
-		delete [] pixels;
-		Vertex::V2 position_data;
-		Vertex::Set(position_data, p_data);
-		Vertex::V2 texture_data;
-		Vertex::Set(texture_data, t_data);
-		vertex_data_ = new TextureVertex(position_data, texture_data);
-		render_object_ = new RenderObject(vertex_data_, shader, texture_, GLKMatrix4Identity, color);
-	}
-	
-	//	void GlyphData::Render(){
-	//		GLfloat box[] = {
-	//			x,		-y,		0, 0,
-	//			x+w,		-y,		1, 0,
-	//			x,		-y-h,	0, 1,
-	//			x+w,		-y-h,	1, 1
-	//		};
-	//
-	//		glTexImage2D(GL_TEXTURE_2D, 0, GL_ALPHA, w, h, 0, GL_ALPHA, GL_UNSIGNED_BYTE, pixels);
-	//		glBufferData(GL_ARRAY_BUFFER, sizeof(box), box, GL_DYNAMIC_DRAW);
-	//		glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-	//	}
-
 }

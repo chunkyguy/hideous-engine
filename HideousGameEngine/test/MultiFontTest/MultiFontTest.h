@@ -15,6 +15,8 @@
 namespace he{
 	class Font;
 	class Text;
+	class TextFactory;
+	class TextShader;
 };
 
 class MultiFontTest : public he::Game{
@@ -29,10 +31,14 @@ private:
 	virtual void render();
 
 	he::Font *courier_;
+	he::TextFactory *courier_factory_;
 	he::Font *simsun_;
+	he::TextFactory *simsun_factory_;
 	
 	he::Text *whacky_;
 	he::Text *labs_;
+
+	he::TextShader *shader_;
 	
 	he::GestureListener<MultiFontTest> *gesture_listner_;
 	

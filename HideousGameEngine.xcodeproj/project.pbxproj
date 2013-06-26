@@ -61,6 +61,8 @@
 		19041F13176CCD87007119B1 /* UtilsTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EEC176CCD87007119B1 /* UtilsTests.cpp */; };
 		19041F14176CCD87007119B1 /* HideousEngineTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 19041EEE176CCD87007119B1 /* HideousEngineTests.mm */; };
 		19041F15176CCD87007119B1 /* HideousGameTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EEF176CCD87007119B1 /* HideousGameTests.cpp */; };
+		190DCD481777376B00E26D5D /* Text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 190DCD461777376B00E26D5D /* Text.cpp */; };
+		190DCD4B1777377B00E26D5D /* Glyph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 190DCD491777377B00E26D5D /* Glyph.cpp */; };
 		191B223B176072B1001F6F1C /* FlashTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 191B2239176072B1001F6F1C /* FlashTest.cpp */; };
 		191B223F1760C644001F6F1C /* DebugHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 191B223D1760C644001F6F1C /* DebugHelper.cpp */; };
 		191E692317735E0E008E7510 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 191E692117735E0E008E7510 /* Sprite.cpp */; };
@@ -241,6 +243,10 @@
 		19041EEF176CCD87007119B1 /* HideousGameTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HideousGameTests.cpp; sourceTree = "<group>"; };
 		19062FD8174C9E7D00E42681 /* GLKMath_Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLKMath_Additions.h; sourceTree = "<group>"; };
 		19062FD9174C9F1D00E42681 /* HideousGameEngine-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HideousGameEngine-Prefix.pch"; sourceTree = "<group>"; };
+		190DCD441777355700E26D5D /* Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Text.h; path = HideousGameEngine/include/he/Font/Text.h; sourceTree = SOURCE_ROOT; };
+		190DCD45177735C900E26D5D /* Glyph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Glyph.h; path = HideousGameEngine/include/he/Font/Glyph.h; sourceTree = SOURCE_ROOT; };
+		190DCD461777376B00E26D5D /* Text.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Text.cpp; sourceTree = "<group>"; };
+		190DCD491777377B00E26D5D /* Glyph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Glyph.cpp; sourceTree = "<group>"; };
 		191B2239176072B1001F6F1C /* FlashTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FlashTest.cpp; sourceTree = "<group>"; };
 		191B223A176072B1001F6F1C /* FlashTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashTest.h; sourceTree = "<group>"; };
 		191B223D1760C644001F6F1C /* DebugHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DebugHelper.cpp; sourceTree = "<group>"; };
@@ -763,6 +769,8 @@
 			isa = PBXGroup;
 			children = (
 				199582571734575F0094714E /* Font.h */,
+				190DCD441777355700E26D5D /* Text.h */,
+				190DCD45177735C900E26D5D /* Glyph.h */,
 				199582581734575F0094714E /* ft2build.h */,
 			);
 			path = Font;
@@ -986,6 +994,8 @@
 			isa = PBXGroup;
 			children = (
 				19A6E5EB173278A1006ACD91 /* Font.cpp */,
+				190DCD491777377B00E26D5D /* Glyph.cpp */,
+				190DCD461777376B00E26D5D /* Text.cpp */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -1580,6 +1590,8 @@
 				194B7AE21770C4BE007919BB /* TypesTests.cpp in Sources */,
 				191E692317735E0E008E7510 /* Sprite.cpp in Sources */,
 				19E91BDD1776DD9C00B5432B /* Label.cpp in Sources */,
+				190DCD481777376B00E26D5D /* Text.cpp in Sources */,
+				190DCD4B1777377B00E26D5D /* Glyph.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -85,6 +85,9 @@ void MultiShadersTest::update(float dt){
 	if(particles_){
 		particles_->Update(dt);
 	}
+	if(text_object_){
+		text_object_->Update(dt);
+	}
 }
 
 void MultiShadersTest::load_objects(){

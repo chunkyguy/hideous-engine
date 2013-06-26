@@ -11,95 +11,70 @@
 #include <he/Utils/DebugHelper.h>
 
 namespace he{
-	Transform::Transform(const GLKVector3 position,
-						 const float rotation_angle,
-						 const GLKVector3 rotation,
-						 const GLKVector3 scale,
-						 const Transform *parent) :
-	position_(position),
-	angle_(rotation_angle),
-	rotation_(rotation),
-	scale_(scale),
-	parent_(parent)
-	{}
-
 	
-	GLKMatrix4 Transform::GetMV() const{
-//		GLKMatrix4 parent_matrix = parent_ ? parent_->GetMV() : GLKMatrix4Identity;
-//		GLKMatrix4 tMat = GLKMatrix4Translate(parent_matrix, position_.x, position_.y, position_.z);
-//		GLKMatrix4 rMat = GLKMatrix4Rotate(parent_matrix, angle_, rotation_.x, rotation_.y, rotation_.z);
-//		GLKMatrix4 sMat = GLKMatrix4Scale(parent_matrix, scale_.x, scale_.y, 1.0);
+	Transform Transform_Create(const GLKVector3 pos,
+							  const GLKVector4 rot,
+							  const GLKVector3 sc,
+							  const Transform *p)
+	{
+		Transform t;
+		t.position = pos;
+		t.rotation = rot;
+		t.scale = sc;
+		t.parent = p;
+		return t;
+	}
 
-		GLKMatrix4 tMat = GLKMatrix4MakeTranslation(position_.x, position_.y, position_.z);
-		GLKMatrix4 rMat = GLKMatrix4MakeRotation(angle_, rotation_.x, rotation_.y, rotation_.z);
-		GLKMatrix4 sMat = GLKMatrix4MakeScale(scale_.x, scale_.y, 1.0);
-
+	Transform Transform_Create(const GLKVector2 pos,
+							  const GLKVector4 rot,
+							  const GLKVector3 sc,
+							  const Transform *p)
+	{
+		return Transform_Create(GLKVector3Make(pos.x, pos.y, g_Screen->z_), rot, sc, p);
+	}
+	
+	GLKMatrix4 Transform_GetMV(const Transform *slf){
+		GLKMatrix4 tMat = GLKMatrix4MakeTranslation(slf->position.x, slf->position.y, slf->position.z);
+		GLKMatrix4 rMat = GLKMatrix4MakeRotation(slf->rotation.w, slf->rotation.x, slf->rotation.y, slf->rotation.z);
+		GLKMatrix4 sMat = GLKMatrix4MakeScale(slf->scale.x, slf->scale.y, 1.0);
 		GLKMatrix4 mv = GLKMatrix4Multiply(GLKMatrix4Multiply(tMat, rMat), sMat);
-
-//		he_Trace("GetMV: tMat:\n%@",tMat);
-//		he_Trace("GetMV: rMat:\n%@",rMat);
-//		he_Trace("GetMV: sMat:\n%@",sMat);
-//		he_Trace("GetMV: mv:\n%@",mv);
-		if(parent_){
-			mv = GLKMatrix4Multiply(mv, parent_->GetMV());
-			//			he_Trace("GetMV: mv':\n%@",mv);
+		if(slf->parent){
+			mv = GLKMatrix4Multiply(mv, Transform_GetMV(slf->parent));
 		}
 		return mv;
 	}
 	
-	GLKMatrix4 Transform::GetMVP() const{
-		return GLKMatrix4Multiply(he::g_Screen->projection_, GetMV());
+	GLKMatrix4 Transform_GetMVP(const Transform *slf){
+		return GLKMatrix4Multiply(he::g_Screen->projection_, Transform_GetMV(slf));
 	}
 
-	const GLKVector3 &Transform::GetPosition() const{
-		return position_;
+	Transform operator+(const Transform &one, const Transform &two){
+		assert(one.parent == two.parent);
+		return Transform_Create(one.position+two.position,
+							   one.rotation+two.rotation,
+							   one.scale+two.scale);
 	}
-	void Transform::SetPosition(const GLKVector3 &position){
-		position_ = position;
+	Transform operator-(const Transform &one, const Transform &two){
+		assert(one.parent == two.parent);
+		return Transform_Create(one.position-two.position,
+							   one.rotation-two.rotation,
+							   one.scale-two.scale);
 	}
-	void Transform::SetPosition(const GLKVector2 &position){
-		SetPosition(GLKVector3Make(position.x, position.y, g_Screen->z_));
+	Transform operator*(const Transform &one, float two){
+		return Transform_Create(one.position*two,
+							   one.rotation*two,
+							   one.scale*two);
+	}
+	Transform operator*(float one, const Transform &two){
+		return two * one;
 	}
 
-	const GLKVector3 &Transform::GetRotation() const{
-		return rotation_;
+	void Transform_SetPosition(Transform *slf, const GLKVector2 pos){
+		slf->position.x = pos.x;
+		slf->position.y = pos.y;
 	}
-	void Transform::SetRotation(const GLKVector3 &rotation){
-		rotation_ = rotation;
-	}
-
-	const float &Transform::GetRotationAngle() const{
-		return angle_;
-	}
-	void Transform::SetRotationAngle(const float angle){
-		angle_ = angle;
-	}
-	
-	const GLKVector3 &Transform::GetScale() const{
-		return scale_;
-	}
-	void Transform::SetScale(const GLKVector3 &scale){
-		scale_ = scale;
-	}
-	
-	const Transform *Transform::GetParent() const{
-		return parent_;
-	}
-	void Transform::SetParent(const he::Transform *parent){
-		parent_ = parent;
-	}
-	
-	GLKVector3 *Transform::GetPositionPtr(){
-		return &position_;
-	}
-	GLKVector3 *Transform::GetRotationPtr(){
-		return &rotation_;
-	}
-	float *Transform::GetRotationAnglePtr(){
-		return &angle_;
-	}
-	GLKVector3 *Transform::GetScalePtr(){
-		return &scale_;
+	GLKVector2 Transform_GetPosition(const Transform &slf){
+		return GLKVector2Make(slf.position.x, slf.position.y);
 	}
 
 }

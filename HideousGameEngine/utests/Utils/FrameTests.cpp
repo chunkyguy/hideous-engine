@@ -13,7 +13,7 @@
 
 TEST(Frame, Equality){
 	he::g_Screen = new he::Screen(480, 320);
-	he::Frame fr(he::Transform(GLKVector3Make(0.0f, 0.0f, 0.0f)));
+	he::Frame fr(he::Transform_Create(GLKVector3Make(0.0f, 0.0f, 0.0f)));
 	EXPECT_TRUE(he::Vertex::Equal(fr.GetRect(), fr.GetRect()));
 	delete he::g_Screen;
 }
