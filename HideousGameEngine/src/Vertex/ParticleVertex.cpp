@@ -33,7 +33,7 @@ namespace he{
 		data_[eff_indx+1] = data.y;
 	}
 	
-	const GLfloat *ParticleVertex::GetRawData(const DataType dt) const{
+	const GLfloat *ParticleVertex::raw_data(const DataType dt) const{
 		switch(dt){
 			case IVertex::kPosition:
 				return data_; break;

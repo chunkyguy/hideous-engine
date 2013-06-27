@@ -47,11 +47,9 @@ namespace he {
 		}
 
 		void Button::update(float dt){
-			View::update(dt);
 		}
 		
 		void Button::render(){
-			View::render();
 		}
 		
 		void Button::HandleGesture(const he::Gesture &gesture){

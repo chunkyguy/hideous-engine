@@ -71,7 +71,7 @@ namespace he{
 		}
 	}
 
-	const GLfloat *TextureVertex::GetRawData(const DataType dt) const{
+	const GLfloat *TextureVertex::raw_data(const DataType dt) const{
 		switch(dt){
 			case IVertex::kPosition:
 				return &position_data_.data[0]; break;

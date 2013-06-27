@@ -15,10 +15,12 @@
 #include <he/UI/Button.h>
 
 namespace he{
-	class Texture;
+
 	class TextureShader;
-	class TextureVertex;
-	class TextureAtlas;
+	class ImageViewFactory;
+	
+	class ColorShader;
+	class ColorVertex;
 	class Font;
 	class TextShader;
 	
@@ -39,14 +41,16 @@ private:
 	virtual void render();
 
 	he::View *view_;
-	he::Asset<he::Texture> texture_;
-	he::Asset<he::TextureVertex> vertex_;
-	he::Asset<he::TextureShader> shader_;
-	he::Asset<he::TextureAtlas> atlas_;
-	he::Asset<he::TextureAtlas> atlas2_;
+	he::Asset<he::ImageViewFactory> bg_factory_;
+	he::Asset<he::ImageViewFactory> homescreen_factory_;
+	he::Asset<he::ImageViewFactory> fishmotion_factory_;
+	he::Asset<he::TextureShader> texture_shader_;
+
 	he::Asset<he::ButtonListner<UITest> > btn_listener_;
 	he::Asset<he::Font> font;
 	he::Asset<he::TextShader> txt_shader_;
+	he::Asset<he::ColorVertex> clr_vertex_;
+	he::Asset<he::ColorShader> clr_sh_;
 };
 
 

@@ -10,21 +10,25 @@
 
 #include <string>
 
+#include <he/Font/Font.h>
+#include <he/UI/Text.h>
+#include <he/Shaders/TextShader.h>
 #include <he/Shaders/TextureShader.h>
+#include <he/Shaders/ColorShader.h>
 #include <he/Texture/Texture.h>
 #include <he/Texture/TextureAtlas.h>
 #include <he/Texture/TextureAtlasRegion.h>
 #include <he/UI/ImageView.h>
+#include <he/UI/Sprite.h>
+#include <he/UI/GradientView.h>
 #include <he/Utils/DebugHelper.h>
+#include <he/Utils/Frame.h>
 #include <he/Utils/ResourcePath.hpp>
 #include <he/Utils/Utils.h>
-#include <he/Utils/Frame.h>
 #include <he/Vertex/TextureVertex.h>
-#include <he/UI/Sprite.h>
+#include <he/Vertex/ColorVertex.h>
+#include <he/UI/ImageViewFactory.h>
 //#include <he/UI/Label.h>
-#include <he/Font/Font.h>
-#include <he/Font/Text.h>
-#include <he/Shaders/TextShader.h>
 
 UITest::UITest() :
 view_(nullptr)
@@ -36,74 +40,67 @@ UITest::~UITest(){
 
 void UITest::init(){
 	srand(time(NULL));
-	
-	shader_.Load(new he::TextureShader, true);
-	texture_.Load(new he::Texture(he::ResourcePath() + "ship_144.png"), true);
-	vertex_.Load(new he::TextureVertex(texture_.Get()->GetSize()), true);
-	std::string atlas_data_path(he::ResourcePath() + "homescreen_ss.xml");
-	std::string atlas_img_path(he::ResourcePath() + "homescreen_ss.png");
-	atlas_.Load(new he::TextureAtlas(atlas_data_path, atlas_img_path, he::TextureAtlas::kStarling), true);
-	btn_listener_.Load(new he::ButtonListner<UITest>(this, &UITest::ButtonHandler), true);
-	
-	he::ImageViewFactory img_factory(shader_.Get(), atlas_.Get());
+
+	// Create shader
+	texture_shader_.Move(new he::TextureShader, false);
 	
 	//main view
 	he::Frame frame(he::Transform_Create(GLKVector2Make(0, 0)));
 	view_ = new he::View(frame);
 	
-	//bg view
-	he::Frame bg_vw_frame(he::Transform_Create(GLKVector3Make(0, 50, 0)));
-	he::ImageView *bg_vw = new he::ImageView(bg_vw_frame, &img_factory, vertex_.Get(), texture_.Get());
-	view_->AddSubview(bg_vw);
+	//bg_factory: Single texture based factory
+	bg_factory_.Move(new he::ImageViewFactory(texture_shader_.Get(), he::ResourcePath() + "ship_144.png"));
+	//bg: image view - from texture
+	he::ImageView *bg_vw = bg_factory_.Get()->CreateImageView(he::Transform_Create(GLKVector3Make(0, 50, 0)));
+	view_->MoveSubview(bg_vw);
 	
-	//mission image view
-	std::string mission_full_name(he::FlashFullName("mission"));
-	const he::TextureAtlasRegion mission_region = atlas_.Get()->GetTextureAtlasRegion(mission_full_name);
-	GLKVector3 mission_pos = GLKVector3Make(100, 0, 0.0f);
-	he::Transform mission_trans = he::Transform_Create(mission_pos);
-	he_Trace("UITest:init: %@\n",mission_region.sprite_size_);
-	he::Frame mission_frame(mission_trans, mission_region.sprite_size_);
-	he::ImageView *mission_img_vw = new he::ImageView(mission_frame, &img_factory, mission_full_name);
-	bg_vw->AddSubview(mission_img_vw);
+	// homescreen factory
+	std::string home_atlas_data_path(he::ResourcePath() + "homescreen_ss.xml");
+	std::string home_atlas_img_path(he::ResourcePath() + "homescreen_ss.png");
+	homescreen_factory_.Move(new he::ImageViewFactory(texture_shader_.Get(), home_atlas_data_path, home_atlas_img_path, he::TextureAtlas::kStarling ));
+
+	//mission: image view - from atlas
+	he::ImageView *mission_vw = homescreen_factory_.Get()->CreateImageView(he::Transform_Create(GLKVector3Make(100, 0, 0.0f)), he::FlashFullName("mission"));
+	bg_vw->MoveSubview(mission_vw);
 
 	//button
-	he::Frame btn_frame(he::Transform_Create(GLKVector3Make(0, 0, 0)), mission_region.sprite_size_);
+	btn_listener_.Move(new he::ButtonListner<UITest>(this, &UITest::ButtonHandler), false);
+	he::Frame btn_frame(he::Transform_Create(GLKVector3Make(0, 0, 0)), mission_vw->GetFrame().GetSize());
 	he::Button *btn = new he::Button(btn_frame, btn_listener_.Get(), 99);
-	mission_img_vw->AddSubview(btn);
+	mission_vw->MoveSubview(btn);
 
-	//tutorial image view
-	std::string tutorial_full_name(he::FlashFullName("tutorial"));
-	const he::TextureAtlasRegion tutorial_region = atlas_.Get()->GetTextureAtlasRegion(tutorial_full_name);
-	GLKVector3 tutorial_pos = GLKVector3Make(-50, 50, 0.0f);
-	he::Transform tutorial_trans = he::Transform_Create(tutorial_pos);
-	he::Frame tutorial_frame(tutorial_trans, tutorial_region.sprite_size_);
-	he::ImageView *tutorial_img_vw = new he::ImageView(tutorial_frame, &img_factory, tutorial_full_name);
-	mission_img_vw->AddSubview(tutorial_img_vw);
+	//tutorial: image view - from atlas
+	he::ImageView *tutorial_vw = homescreen_factory_.Get()->CreateImageView(he::Transform_Create(GLKVector3Make(-50, 50, 0.0f)), he::FlashFullName("tutorial"));
+	mission_vw->MoveSubview(tutorial_vw);
 
 	//another factory
-	std::string atlas_data_path2(he::ResourcePath() + "fishmotion.xml");
-	std::string atlas_img_path2(he::ResourcePath() + "fishmotion.png");
-	atlas2_.Load( new he::TextureAtlas(atlas_data_path2, atlas_img_path2, he::TextureAtlas::kStarling), true);
-	
-	he::ImageViewFactory img_factory2(shader_.Get(), atlas2_.Get());
+	std::string fish_atlas_data_path(he::ResourcePath() + "fishmotion.xml");
+	std::string fish_atlas_img_path(he::ResourcePath() + "fishmotion.png");
+	fishmotion_factory_.Move(new he::ImageViewFactory(texture_shader_.Get(), fish_atlas_data_path, fish_atlas_img_path, he::TextureAtlas::kStarling));
 
-	//sprite
-	std::string sprite_name("fishmoving");
-	//const he::TextureAtlasRegion *sprite_region = leakyatlas->GetTextureAtlasRegion(mission_full_name);
-	GLKVector3 sprite_pos = GLKVector3Make(0, -100, 0.0f);
-	he::Transform sprite_trans = he::Transform_Create(sprite_pos);
-	he::Frame sprite_frame(sprite_trans, GLKVector2Make(0, 0));
-	he::Sprite *sprite = new he::Sprite(sprite_frame, &img_factory2, sprite_name, -1, 24);
-	view_->AddSubview(sprite);
+	//fish sprite
+	he::Sprite *fish_sprite = fishmotion_factory_.Get()->CreateSprite(he::Transform_Create(GLKVector3Make(0, -100, 0.0f)), "fishmoving", -1, 0, 24.0f);
+	view_->MoveSubview(fish_sprite);
 
-	//text
-	font.Load( new he::Font(he::ResourcePath() + "Silom.ttf", 48), true );
-	txt_shader_.Load( new he::TextShader, true);
+	//text factory
+	font.Move( new he::Font(he::ResourcePath() + "Silom.ttf", 48), false );
+	txt_shader_.Move( new he::TextShader, false);
 	
+	//text view
 	he::TextFactory txt_factory(font.Get(), txt_shader_.Get());
-	he::Frame txt_frame(he::Frame(he::Transform_Create(GLKVector3Make(0.0, 0.0, 0.0))));
+	he::Frame txt_frame(he::Transform_Create(GLKVector3Make(0.0, 0.0, 0.0)), GLKVector2Make(0, 0));
 	he::Text *txt = new he::Text(txt_frame, &txt_factory, "hello");
-	bg_vw->AddSubview(txt);
+	bg_vw->MoveSubview(txt);
+
+	//gradient factory
+	clr_sh_.Move(new he::ColorShader, false);
+	clr_vertex_.Move(new he::ColorVertex({GLKVector2Make(0, 0), GLKVector4Make(1.0, 0.0, 0.0, 1.0)}, {GLKVector2Make(100, 100), GLKVector4Make(0.0, 1.0, 0.0, 1.0)}), false);
+
+	//gradient view
+	he::Frame gr_frame(he::Transform_Create(GLKVector3Make(0.0, 0.0, 0.0)));
+	he::GradientView::Factory *gv_factory = new he::GradientView::Factory(clr_sh_.Get(), clr_vertex_.Get());
+	he::GradientView *g_vw = new he::GradientView(gr_frame, gv_factory);
+	bg_vw->MoveSubview(g_vw);
 	
 //	he::LabelFactory lbl_factory(font.Get());
 //	he::Frame txt_frame(he::Transform(GLKVector3Make(0, 0, he::g_Screen->z_)));

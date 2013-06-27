@@ -15,7 +15,12 @@ namespace he{
 	class IShader{
 	public:
 		virtual ~IShader(){}
-		virtual void Render(RenderObject *) = 0;
+		void Render(const RenderObject *ro) const{
+			render(ro);
+		}
+		
+	private:
+		virtual void render(const RenderObject *ro) const = 0;
 	};
 }
 #endif

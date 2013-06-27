@@ -24,7 +24,9 @@ namespace he{
 	public:
 		ParticleShader();
 		~ParticleShader();
-		void Render(RenderObject *render_object);
+		
+	private:
+		void render(const RenderObject *render_object) const;
 		
 		Program *program_;
 		//Attribs

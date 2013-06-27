@@ -21,18 +21,22 @@ namespace he{
 			GLKVector4 color;
 		};
 		
-		const GLfloat *GetRawData(const IVertex::DataType dt) const;
-
 		// As square of two colors
 		ColorVertex(const Data &a, const Data &d);
 		// As rect of 4 colors
 		ColorVertex(const Data &a, const Data &b, const Data &c, const Data &d);
-		const Vertex::V2 &GetVertexData() const;
-		const Vertex::V4 &GetColorData() const;
+		
+		/** Get Position data */
+		const Vertex::V2 &GetVertexPositionData() const;
+		
+		/** Get Color data */
+		const Vertex::V4 &GetVertexColorData() const;
 		
 	private:
-		Vertex::V2 position_data_;
-		Vertex::V4 color_data_;
+		virtual const GLfloat *raw_data(const DataType dt) const;
+		
+		Vertex::V2 position_data_;	/**< The position data */
+		Vertex::V4 color_data_;		/**< The color data */
 	};
 }
 

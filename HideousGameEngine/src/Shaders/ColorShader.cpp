@@ -30,7 +30,7 @@ namespace he{
 		delete program_;
 	}
 
-	void ColorShader::Render(RenderObject *render_object){
+	void ColorShader::render(const RenderObject *render_object) const{
 		assert(program_->object_);	// program prepared
 		assert(render_object->GetVertexData()->GetRawData(IVertex::kPosition)); // should have position data
 		assert(render_object->GetVertexData()->GetRawData(IVertex::kColor));	// should have color data

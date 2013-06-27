@@ -9,7 +9,7 @@
 #include "MultiFontTest.h"
 
 #include <he/Font/Font.h>
-#include <he/Font/Text.h>
+#include <he/UI/Text.h>
 #include <he/RenderObject/RenderObject.h>
 #include <he/Shaders/TextShader.h>
 #include <he/Utils/DebugLog.h>

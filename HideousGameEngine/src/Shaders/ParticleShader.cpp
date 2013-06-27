@@ -34,7 +34,7 @@ namespace he{
 		delete program_;
 	}
 
-	void ParticleShader::Render(RenderObject *render_object){
+	void ParticleShader::render(const RenderObject *render_object) const{
 		assert(program_->object_);	// program prepared
 		assert(render_object->texture_->object_);	//texture prepared
 		assert(render_object->GetVertexData()->GetRawData(IVertex::kPosition)); // should have position data
@@ -53,7 +53,7 @@ namespace he{
 		glUniform4f(u_clr, render_object->color_.r, render_object->color_.g, render_object->color_.b, render_object->color_.a);
 		glUniformMatrix4fv(u_mvp, 1, GL_FALSE, render_object->mvp_.m);
 		glUniform1i(u_tex, 1);
-		glUniform1f(u_size, static_cast<ParticleVertex *>(render_object->GetVertexData())->GetPointSize());
+		glUniform1f(u_size, static_cast<const ParticleVertex *>(render_object->GetVertexData())->GetPointSize());
 		
 		glDrawArrays(GL_POINTS, 0, render_object->GetVertexData()->GetCount());
 		

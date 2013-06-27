@@ -16,18 +16,25 @@ namespace he{
 		enum DataType {kPosition, kTexture, kColor};
 
 		IVertex(GLint count = 4) : count_(count){}
-		virtual ~IVertex(){
-		}
-		virtual const GLfloat *GetRawData(const DataType dt) const{
-			return nullptr;
+		
+		virtual ~IVertex(){}
+		
+		const GLfloat *GetRawData(const DataType dt) const{
+			return raw_data(dt);
 		};
+		
 		const GLint GetCount() const{
 			return count_;
 		}
+		
 		void SetCount(GLint count){
 			count_ = count;
 		}
+		
 	private:
+		
+		virtual const GLfloat *raw_data(const DataType dt) const = 0;
+		
 		GLint count_;
 	};
 }

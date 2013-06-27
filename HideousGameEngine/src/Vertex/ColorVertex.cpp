@@ -17,7 +17,7 @@ namespace he{
 	position_data_()
 	{
 		Vertex::Set(position_data_, a.position, b.position, c.position, d.position);
-		Vertex::Set(color_data_, a.color, a.color, d.color, d.color);
+		Vertex::Set(color_data_, a.color, b.color, c.color, d.color);
 	}
 
 	ColorVertex::ColorVertex(const Data &a, const Data &d) :
@@ -33,7 +33,7 @@ namespace he{
 		he_Trace("color: \n%@\n",color_data_);
 	}
 	
-	const GLfloat *ColorVertex::GetRawData(const DataType dt) const{
+	const GLfloat *ColorVertex::raw_data(const DataType dt) const{
 		switch(dt){
 			case IVertex::kPosition:
 				return &position_data_.data[0]; break;
@@ -46,10 +46,12 @@ namespace he{
 		}
 		return nullptr;
 	}
-	const Vertex::V2 &ColorVertex::GetVertexData() const{
+	
+	const Vertex::V2 &ColorVertex::GetVertexPositionData() const{
 		return position_data_;
 	}
-	const Vertex::V4 &ColorVertex::GetColorData() const{
+
+	const Vertex::V4 &ColorVertex::GetVertexColorData() const{
 		return color_data_;
 	}
 

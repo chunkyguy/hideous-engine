@@ -18,33 +18,33 @@ namespace he{
 	
 	class RenderObject{
 	public:
-		RenderObject(IVertex *vertex_data = 0,
-					 IShader *shader = 0,
-					 Texture *texture = 0,
-					 GLKMatrix4 mvp = GLKMatrix4Identity,
- 					 GLKVector4 color = GLKVector4Make(1.0,1.0,1.0,1.0));
-		void Render();
+		RenderObject(const IVertex *vertex_data = 0,
+					 const IShader *shader = 0,
+					 const Texture *texture = 0,
+					 const GLKMatrix4 mvp = GLKMatrix4Identity,
+ 					 const GLKVector4 color = GLKVector4Make(1.0,1.0,1.0,1.0));
+		void Render() const;
 		
-		void SetColor(const GLKVector4 &color);
-		GLKVector4 GetColor() const;
+		void SetVertexData(const IVertex *data);
+		const IVertex *GetVertexData() const;
+
+		void SetShader(const IShader *shader);
+		const IShader *GetShader() const;
 		
+		void SetTexture(const Texture *texture);
+		const Texture *GetTexture() const;
+
 		void SetMVP(const GLKMatrix4 &mvp);
-		GLKMatrix4 GetMVP() const;
+		const GLKMatrix4 GetMVP() const;
+
+		void SetColor(const GLKVector4 &color);
+		const GLKVector4 GetColor() const;
 		
-		void SetShader(IShader *shader);
-		IShader *GetShader() const;
-		
-		void SetTexture(Texture *texture);
-		Texture *GetTexture() const;
-		
-		void SetVertexData(IVertex *data);
-		IVertex *GetVertexData() const;
-		
-		GLKVector4 color_;
+		const IVertex *vertex_data_;
+		const IShader *shader_;
+		const Texture *texture_;
 		GLKMatrix4 mvp_;
-		IShader *shader_;
-		Texture *texture_;
-		IVertex *vertex_data_;
+		GLKVector4 color_;
 	};
 }
 #endif /* defined(__HEAssets__RenderObject__) */

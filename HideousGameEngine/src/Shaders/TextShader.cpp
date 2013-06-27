@@ -35,7 +35,7 @@ namespace he{
 		delete program_;
 	}
 
-	void TextShader::Render(RenderObject *render_object){
+	void TextShader::render(const RenderObject *render_object) const{
 		assert(program_->object_);	// program prepared
 		assert(render_object->texture_->object_);	//texture prepared
 		assert(render_object->GetVertexData()->GetRawData(IVertex::kPosition)); // should have position data

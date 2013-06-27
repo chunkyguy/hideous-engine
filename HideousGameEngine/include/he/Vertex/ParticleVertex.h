@@ -21,8 +21,6 @@ namespace he{
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
 	class ParticleVertex : public IVertex{
 	public:
-		const GLfloat *GetRawData(const IVertex::DataType dt) const;
-
 		~ParticleVertex();
 		ParticleVertex(int count, float point_size = 15.0);
 		void SetData(int index, const GLKVector2 &data);
@@ -30,6 +28,8 @@ namespace he{
 		GLsizei GetSize() const;
 
 	private:
+		virtual const GLfloat *raw_data(const DataType dt) const;
+
 		GLfloat *data_;
 		GLsizei size_;
 		float point_size_;

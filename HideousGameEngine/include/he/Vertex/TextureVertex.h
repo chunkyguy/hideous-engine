@@ -22,12 +22,6 @@ namespace he{
 	class TextureVertex : public IVertex{
 	public:
 		
-		/** Returns raw data.
-		 Expected to be used in a shader.
-		 Impl the virtual method of IVertex
-		 */
-		const GLfloat *GetRawData(const IVertex::DataType dt) const;
-		
 		/** Create vertex data for explicitly provided values.
 		 @param size The height width of the texture
 		 @param aspect_lock Aspect lock is applicable for disproportioned texCoords not posCoords
@@ -55,6 +49,12 @@ namespace he{
 		const Vertex::V2 &GetVertexTextureData() const;
 
 	private:
+		/** Returns raw data.
+		 Expected to be used in a shader.
+		 Impl the virtual method of IVertex
+		 */
+		virtual const GLfloat *raw_data(const DataType dt) const;
+
 		/** Common method to set create vertex datas from position and texture coords */
 		void set_data(const GLKVector4 &pos_coords, const GLKVector4 &tex_coords, const bool aspect_lock);
 		

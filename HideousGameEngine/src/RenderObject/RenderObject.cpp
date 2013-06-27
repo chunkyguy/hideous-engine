@@ -12,7 +12,7 @@
 #include <he/Vertex/IVertex.h>
 
 namespace he{
-	RenderObject::RenderObject(IVertex *vertex_data, IShader *shader, Texture *texture, GLKMatrix4 mvp, GLKVector4 color) :
+	RenderObject::RenderObject(const IVertex *vertex_data, const IShader *shader, const Texture *texture, const GLKMatrix4 mvp, const GLKVector4 color) :
 	vertex_data_(vertex_data),
 	shader_(shader),
 	texture_(texture),
@@ -20,7 +20,7 @@ namespace he{
 	color_(color)
 	{	}
 	
-	void RenderObject::Render(){
+	void RenderObject::Render() const{
 		if(shader_){
 			shader_->Render(this);
 		}
@@ -29,37 +29,35 @@ namespace he{
 	void RenderObject::SetColor(const GLKVector4 &color){
 		color_ = color;
 	}
-	GLKVector4 RenderObject::GetColor() const{
+	const GLKVector4 RenderObject::GetColor() const{
 		return color_;
 	}
 	
 	void RenderObject::SetMVP(const GLKMatrix4 &mvp){
 		mvp_ = mvp;
 	}
-	GLKMatrix4 RenderObject::GetMVP() const{
+	const GLKMatrix4 RenderObject::GetMVP() const{
 		return mvp_;
 	}
 	
-	void RenderObject::SetShader(IShader *shader){
+	void RenderObject::SetShader(const IShader *shader){
 		shader_ = shader;
 	}
-	IShader *RenderObject::GetShader() const{
+	const IShader *RenderObject::GetShader() const{
 		return shader_;
 	}
 	
-	void RenderObject::SetTexture(Texture *texture){
+	void RenderObject::SetTexture(const Texture *texture){
 		texture_ = texture;
 	}
-	Texture *RenderObject::GetTexture() const{
+	const Texture *RenderObject::GetTexture() const{
 		return texture_;
 	}
 	
-	void RenderObject::SetVertexData(IVertex *data){
+	void RenderObject::SetVertexData(const IVertex *data){
 		vertex_data_ = data;
 	}
-	IVertex *RenderObject::GetVertexData() const{
+	const IVertex *RenderObject::GetVertexData() const{
 		return vertex_data_;
 	}
-
-
 }

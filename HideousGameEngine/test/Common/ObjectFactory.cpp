@@ -10,7 +10,7 @@
 
 
 #include <he/Font/Font.h>
-#include <he/Font/Text.h>
+#include <he/UI/Text.h>
 #include <he/RenderObject/RenderObject.h>
 #include <he/Shaders/ColorShader.h>
 #include <he/Shaders/TextShader.h>

@@ -18,15 +18,15 @@ namespace he {
 	template <typename T>
 	class Asset{
 	public:
-		/** Load an asset
+		/** Default construct Asset with blank values
 		 @param	asset The asset to be loaded into the memory
 		 @param	self_destruct If true, deletes the asset as soon goes out of scope. By default false
 		 @note	Set self_destruct false, if the asset is not owned by the class constructing the asset
 				Another case could be when the asset is to be used shared among many contexts.
 		 */
-		Asset(T *asset = nullptr, bool self_destruct = false) :
-		asset_(asset),
-		self_destruct_(self_destruct)
+		Asset() :
+		asset_(nullptr),
+		self_destruct_(false)
 		{	}
 		
 		/** Destroys the contained asset, if self_destruct was enabled. */
@@ -35,33 +35,40 @@ namespace he {
 				delete asset_;
 			}
 		}
+
+		/** Check if the asset is empty */
+		bool IsEmpty() const{
+			return (asset_ == nullptr);
+		}
 		
 		/** Get a reference to the asset */
 		T* Get() const{
 			return asset_;
 		}
-		
-		/** Load asset
-			Load only if not loaded already. Otherwise, skip.
+
+		/** Set asset
+		 @param asset The asset.
+		 @param clean Clean the loaded asset, if any.
 		 */
-		void Load(T* asset, bool self_destruct){
-			if(!asset_){
-				asset_ = asset;
-			}
-			self_destruct_ = self_destruct;
-			assert(asset_);
-		}
-		
-		/* Reload asset
-			If already loaded, delete the original asset and create new
-		 */
-		void Reload(T* asset, bool self_destruct){
-			if(asset_){
+		void Set(T* asset, bool clean = false){
+			if(clean && asset_){
 				delete asset_;
 			}
 			asset_ = asset;
-			self_destruct_ = self_destruct;
-			assert(asset_);
+			self_destruct_ = false;
+		}
+
+		
+		/** Move asset
+		 @param asset The asset.
+		 @param clean Clean the loaded asset, if any.
+		 */
+		void Move(T* asset, bool clean = false){
+			if(clean && asset_){
+				delete asset;
+			}
+			asset_ = asset;
+			self_destruct_ = true;
 		}
 		
 	private:

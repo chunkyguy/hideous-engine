@@ -9,7 +9,7 @@
 #include "RectTextTest.h"
 
 #include <he/Font/Font.h>
-#include <he/Font/Text.h>
+#include <he/UI/Text.h>
 #include <he/RenderObject/RenderObject.h>
 #include <he/Shaders/TextShader.h>
 #include <he/Utils/DebugLog.h>
@@ -63,14 +63,14 @@ void RectTextTest::load_text(){
 		unload_text();
 	}
 	//Draw a text
-	font_ = new he::Font(he::ResourcePath() + "Silom.ttf", 48);
+	font_ = new he::Font(he::ResourcePath() + "Silom.ttf", 18);
 	
 	assert(font_);
 	assert(shader_);
 	factory_ = new he::TextFactory(font_, shader_);
 	
-	he::Frame frame(he::Transform_Create(GLKVector2Make(-100.0f, 0.0f)));
-	text_ = new he::Text(frame, factory_, "Whacky ?!", GLKVector4Make(he::Randf(), he::Randf(), he::Randf(), 1.0));
+	he::Frame frame(he::Transform_Create(GLKVector2Make(-220.0f, 0.0f)));
+	text_ = new he::Text(frame, factory_, "The quick brown fox jumps over the lazy dog", GLKVector4Make(he::Randf(), he::Randf(), he::Randf(), 1.0));
 }
 
 void RectTextTest::unload_text(){

@@ -61,7 +61,6 @@
 		19041F13176CCD87007119B1 /* UtilsTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EEC176CCD87007119B1 /* UtilsTests.cpp */; };
 		19041F14176CCD87007119B1 /* HideousEngineTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 19041EEE176CCD87007119B1 /* HideousEngineTests.mm */; };
 		19041F15176CCD87007119B1 /* HideousGameTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19041EEF176CCD87007119B1 /* HideousGameTests.cpp */; };
-		190DCD481777376B00E26D5D /* Text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 190DCD461777376B00E26D5D /* Text.cpp */; };
 		190DCD4B1777377B00E26D5D /* Glyph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 190DCD491777377B00E26D5D /* Glyph.cpp */; };
 		191B223B176072B1001F6F1C /* FlashTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 191B2239176072B1001F6F1C /* FlashTest.cpp */; };
 		191B223F1760C644001F6F1C /* DebugHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 191B223D1760C644001F6F1C /* DebugHelper.cpp */; };
@@ -85,6 +84,7 @@
 		194B7AE21770C4BE007919BB /* TypesTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 194B7AE01770C4BE007919BB /* TypesTests.cpp */; };
 		194F4D421762EDEB002AD10E /* GLKMath_Additions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 194F4D401762EDEB002AD10E /* GLKMath_Additions.cpp */; };
 		1962B846173B7070004E9A1C /* SpineTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1962B844173B7068004E9A1C /* SpineTest.cpp */; };
+		198219FF177B10C200B92C84 /* GradientView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 198219FD177B10C200B92C84 /* GradientView.cpp */; };
 		198403AC1761B86B00D0B7EA /* TextureAtlasRegion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 198403AA1761B86A00D0B7EA /* TextureAtlasRegion.cpp */; };
 		198403B21761EA2F00D0B7EA /* AnimationLoop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 198403B01761EA2F00D0B7EA /* AnimationLoop.cpp */; };
 		198403B51761EAAA00D0B7EA /* AnimationUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 198403B31761EAAA00D0B7EA /* AnimationUtils.cpp */; };
@@ -173,6 +173,8 @@
 		19A8EE271769E78600FD25BF /* homescreen_ss.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A8EE251769E78600FD25BF /* homescreen_ss.png */; };
 		19A8EE281769E78600FD25BF /* homescreen_ss.xml in Resources */ = {isa = PBXBuildFile; fileRef = 19A8EE261769E78600FD25BF /* homescreen_ss.xml */; };
 		19A8EE2D1769FA0800FD25BF /* Frame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A8EE2B1769FA0800FD25BF /* Frame.cpp */; };
+		19ACB43D177BF06200C99C91 /* Text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19ACB43C177BF06200C99C91 /* Text.cpp */; };
+		19ACB441177C285400C99C91 /* ImageViewFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19ACB43F177C285400C99C91 /* ImageViewFactory.cpp */; };
 		19B0EBCC1765AF0900CD3D79 /* TextureShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19B0EBC81765AF0900CD3D79 /* TextureShader.cpp */; };
 		19B0EBCD1765AF0900CD3D79 /* TextShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19B0EBC91765AF0900CD3D79 /* TextShader.cpp */; };
 		19B0EBCE1765AF0900CD3D79 /* ParticleShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19B0EBCA1765AF0900CD3D79 /* ParticleShader.cpp */; };
@@ -195,7 +197,6 @@
 		19CF4205176BEB9D006B8B99 /* HideousGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19CF4203176BEB9D006B8B99 /* HideousGame.cpp */; };
 		19E26504176E514400874D58 /* libgoogle_test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19E26503176E514400874D58 /* libgoogle_test.a */; };
 		19E26506176E515400874D58 /* libFreetype2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19E26505176E515400874D58 /* libFreetype2.a */; };
-		19E91BDD1776DD9C00B5432B /* Label.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19E91BDB1776DD9C00B5432B /* Label.cpp */; };
 		19EB949F1738C8F200FAF69C /* easing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19EB949E1738C8F200FAF69C /* easing.cpp */; };
 /* End PBXBuildFile section */
 
@@ -243,9 +244,7 @@
 		19041EEF176CCD87007119B1 /* HideousGameTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HideousGameTests.cpp; sourceTree = "<group>"; };
 		19062FD8174C9E7D00E42681 /* GLKMath_Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLKMath_Additions.h; sourceTree = "<group>"; };
 		19062FD9174C9F1D00E42681 /* HideousGameEngine-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HideousGameEngine-Prefix.pch"; sourceTree = "<group>"; };
-		190DCD441777355700E26D5D /* Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Text.h; path = HideousGameEngine/include/he/Font/Text.h; sourceTree = SOURCE_ROOT; };
 		190DCD45177735C900E26D5D /* Glyph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Glyph.h; path = HideousGameEngine/include/he/Font/Glyph.h; sourceTree = SOURCE_ROOT; };
-		190DCD461777376B00E26D5D /* Text.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Text.cpp; sourceTree = "<group>"; };
 		190DCD491777377B00E26D5D /* Glyph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Glyph.cpp; sourceTree = "<group>"; };
 		191B2239176072B1001F6F1C /* FlashTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FlashTest.cpp; sourceTree = "<group>"; };
 		191B223A176072B1001F6F1C /* FlashTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashTest.h; sourceTree = "<group>"; };
@@ -293,6 +292,8 @@
 		1962B844173B7068004E9A1C /* SpineTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpineTest.cpp; sourceTree = "<group>"; };
 		1962B845173B706C004E9A1C /* SpineTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpineTest.h; sourceTree = "<group>"; };
 		197ADE82176833D8001CBA53 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = HideousGameEngine/include/he/README.md; sourceTree = SOURCE_ROOT; };
+		198219FC177B0D4D00B92C84 /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
+		198219FD177B10C200B92C84 /* GradientView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GradientView.cpp; sourceTree = "<group>"; };
 		198403A91761B80B00D0B7EA /* TextureAtlasRegion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextureAtlasRegion.h; sourceTree = "<group>"; };
 		198403AA1761B86A00D0B7EA /* TextureAtlasRegion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextureAtlasRegion.cpp; sourceTree = "<group>"; };
 		198403AD1761E8C700D0B7EA /* RawAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RawAnimation.h; sourceTree = "<group>"; };
@@ -434,6 +435,10 @@
 		19A8EE261769E78600FD25BF /* homescreen_ss.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = homescreen_ss.xml; sourceTree = "<group>"; };
 		19A8EE2A1769F9EC00FD25BF /* Frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Frame.h; path = HideousGameEngine/include/he/Utils/Frame.h; sourceTree = SOURCE_ROOT; };
 		19A8EE2B1769FA0800FD25BF /* Frame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Frame.cpp; sourceTree = "<group>"; };
+		19ACB43B177BF04B00C99C91 /* Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Text.h; sourceTree = "<group>"; };
+		19ACB43C177BF06200C99C91 /* Text.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Text.cpp; sourceTree = "<group>"; };
+		19ACB43E177C271B00C99C91 /* ImageViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewFactory.h; sourceTree = "<group>"; };
+		19ACB43F177C285400C99C91 /* ImageViewFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageViewFactory.cpp; sourceTree = "<group>"; };
 		19B0EBC41765ADC300CD3D79 /* TextureShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TextureShader.h; path = HideousGameEngine/include/he/Shaders/TextureShader.h; sourceTree = SOURCE_ROOT; };
 		19B0EBC51765ADC300CD3D79 /* TextShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TextShader.h; path = HideousGameEngine/include/he/Shaders/TextShader.h; sourceTree = SOURCE_ROOT; };
 		19B0EBC61765ADC300CD3D79 /* ParticleShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ParticleShader.h; path = HideousGameEngine/include/he/Shaders/ParticleShader.h; sourceTree = SOURCE_ROOT; };
@@ -465,8 +470,6 @@
 		19CF4206176BEBB8006B8B99 /* HideousGame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HideousGame.h; sourceTree = "<group>"; };
 		19E26503176E514400874D58 /* libgoogle_test.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgoogle_test.a; path = "../../../../../std_lib/gtest/Debug-universal/libgoogle_test.a"; sourceTree = "<group>"; };
 		19E26505176E515400874D58 /* libFreetype2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFreetype2.a; path = ../../../../../std_lib/freetype_2_ios/libFreetype2.a; sourceTree = "<group>"; };
-		19E91BDA1776C77700B5432B /* Label.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Label.h; sourceTree = "<group>"; };
-		19E91BDB1776DD9C00B5432B /* Label.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Label.cpp; sourceTree = "<group>"; };
 		19EB949E1738C8F200FAF69C /* easing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = easing.cpp; sourceTree = "<group>"; };
 		19EB94A01738C92D00FAF69C /* easing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = easing.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -769,7 +772,6 @@
 			isa = PBXGroup;
 			children = (
 				199582571734575F0094714E /* Font.h */,
-				190DCD441777355700E26D5D /* Text.h */,
 				190DCD45177735C900E26D5D /* Glyph.h */,
 				199582581734575F0094714E /* ft2build.h */,
 			);
@@ -995,7 +997,6 @@
 			children = (
 				19A6E5EB173278A1006ACD91 /* Font.cpp */,
 				190DCD491777377B00E26D5D /* Glyph.cpp */,
-				190DCD461777376B00E26D5D /* Text.cpp */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -1228,7 +1229,9 @@
 				19A8EDD61769CB9100FD25BF /* ImageView.h */,
 				19A8EDD11769C47D00FD25BF /* Button.h */,
 				191E69201773421E008E7510 /* Sprite.h */,
-				19E91BDA1776C77700B5432B /* Label.h */,
+				198219FC177B0D4D00B92C84 /* GradientView.h */,
+				19ACB43B177BF04B00C99C91 /* Text.h */,
+				19ACB43E177C271B00C99C91 /* ImageViewFactory.h */,
 			);
 			name = UI;
 			path = HideousGameEngine/include/he/UI;
@@ -1241,7 +1244,9 @@
 				19A8EDD21769C4F600FD25BF /* Button.cpp */,
 				19A8EDD71769CCD700FD25BF /* ImageView.cpp */,
 				191E692117735E0E008E7510 /* Sprite.cpp */,
-				19E91BDB1776DD9C00B5432B /* Label.cpp */,
+				198219FD177B10C200B92C84 /* GradientView.cpp */,
+				19ACB43C177BF06200C99C91 /* Text.cpp */,
+				19ACB43F177C285400C99C91 /* ImageViewFactory.cpp */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1589,9 +1594,10 @@
 				19C54C48176D09FD00377317 /* GTests.cpp in Sources */,
 				194B7AE21770C4BE007919BB /* TypesTests.cpp in Sources */,
 				191E692317735E0E008E7510 /* Sprite.cpp in Sources */,
-				19E91BDD1776DD9C00B5432B /* Label.cpp in Sources */,
-				190DCD481777376B00E26D5D /* Text.cpp in Sources */,
 				190DCD4B1777377B00E26D5D /* Glyph.cpp in Sources */,
+				198219FF177B10C200B92C84 /* GradientView.cpp in Sources */,
+				19ACB43D177BF06200C99C91 /* Text.cpp in Sources */,
+				19ACB441177C285400C99C91 /* ImageViewFactory.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

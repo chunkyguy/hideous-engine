@@ -19,7 +19,7 @@ TEST(View, Destructor){
 	// load view
 	he::Frame view_frame(he::Transform_Create(GLKVector3Make(0.0f, 0.0f, 0.0f)));
 	he::View *view =  new he::View(view_frame);
-	view->AddSubview(new he::View(view_frame));
+	view->MoveSubview(new he::View(view_frame));
 	delete view;
 	ASSERT_TRUE(1);
 	delete he::g_Screen;
@@ -36,7 +36,7 @@ TEST(View, SubviewUpdate){
 
 	he::Frame subvw_frame(he::Transform_Create(GLKVector3Make(0.0f, 0.0f, 0.0f)));
 	he::View *subview = new he::View(subvw_frame);
-	view->AddSubview(subview);
+	view->MoveSubview(subview);
 
 	//he_Trace("1 One:\n%@\nTwo:\n%@\n",he::Transform_GetMVP(&(view->GetFrame().GetTransform())), he::Transform_GetMVP(&(subview->GetFrame().GetTransform())));
 

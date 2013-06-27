@@ -22,7 +22,9 @@ namespace he{
 	public:
 		ColorShader();
 		~ColorShader();
-		void Render(RenderObject *render_object);
+		
+	private:
+		void render(const RenderObject *render_object) const;
 		
 		he::Program *program_;
 		GLint a_position;

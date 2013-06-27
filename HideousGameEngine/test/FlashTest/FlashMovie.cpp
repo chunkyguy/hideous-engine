@@ -71,7 +71,7 @@ void FlashMovie::Update(double dt){
 }
 
 void FlashMovie::Render(){
-	he::TextureVertex *v = dynamic_cast<he::TextureVertex *>(render_object_->GetVertexData());
+	const he::TextureVertex *v = dynamic_cast<const he::TextureVertex *>(render_object_->GetVertexData());
 	assert(v);
 	render_object_->Render();
 }

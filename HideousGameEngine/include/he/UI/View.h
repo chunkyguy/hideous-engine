@@ -28,7 +28,7 @@ namespace he {
 			void Render();
 			
 			/** Owns the passed component */
-			void AddSubview(View *view);
+			void MoveSubview(View *view);
 			
 			/** Update frame */
 			void SetFrame(const Frame &frame);

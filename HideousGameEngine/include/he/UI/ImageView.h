@@ -11,45 +11,29 @@
 #include <string>
 
 #include <he/UI/View.h>
-
 #include <he/Utils/Frame.h>
-#include <he/Utils/Asset.h>
 
 namespace he {
 	
 	class RenderObject;
 	class Texture;
-	class TextureAtlas;
-	class TextureShader;
 	class TextureVertex;
+	class TextureShader;
 	
+	/** Draw static images */
+	class ImageView : public View{
+	public:
+		/** ImageView from texture */
+		ImageView(const Frame frame, const TextureVertex *vertex_m, const TextureShader *shader, const Texture *texture);
+		virtual ~ImageView();
 		
-		/** Factory to create ImageView*/
-		struct ImageViewFactory{
-			ImageViewFactory(TextureShader *shdr, TextureAtlas *atls = nullptr);
-			
-			Asset<TextureAtlas> atlas;
-			Asset<TextureShader> shader;
-		};
+	protected:
+		virtual void update(float dt);
+		virtual void render();
 		
-		/** Draw static images */
-		class ImageView : public View{
-		public:
-			/** ImageView from texture */
-			ImageView(const Frame frame, const ImageViewFactory *factory, const he::TextureVertex *vertex, const he::Texture *texture);
-
-			/** ImageView from atlas */
-			ImageView(const Frame frame, const ImageViewFactory *factory, const std::string &image_name);
-			
-			virtual ~ImageView();
-			
-		protected:
-			virtual void update(float dt);
-			virtual void render();
-
-			RenderObject *render_object_;
-			TextureVertex *vertex_;
-		};
+		const TextureVertex *vertex_;
+		RenderObject *render_object_;
+	};
 }
 
 #endif

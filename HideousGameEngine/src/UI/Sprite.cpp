@@ -12,30 +12,36 @@
 #include <he/RenderObject/RenderObject.h>
 #include <he/Vertex/TextureVertex.h>
 #include <he/Utils/Utils.h>
+#include <he/Texture/TextureAtlas.h>
+#include <he/Shaders/TextureShader.h>
+#include <he/Texture/Texture.h>
+#include <he/Vertex/TextureVertex.h>
 
 namespace he{
-	Sprite::Sprite(const Frame frame, const ImageViewFactory *factory, const std::string &image_name,
+	Sprite::Sprite(const Frame frame, const std::string &animation_name, const TextureShader *shader, const TextureAtlas *atlas,
 				   const int repeat_count, const int final_frame, const float fps) :
-	ImageView(frame, factory, FlashFullName(image_name))
+	View(frame),
+	vertex_(nullptr),
+	render_object_(new RenderObject(vertex_, shader, atlas->GetTexture(), Transform_GetMVP(&(frame.GetTransform()))))
 	{
-		he::SpriteAnimation *animation = new he::SpriteAnimation(&vertex_, factory->atlas.Get(), image_name, repeat_count, final_frame, fps);
-		assert(animation);
-		
+		he::SpriteAnimation *animation = new he::SpriteAnimation(&vertex_, atlas, animation_name, repeat_count, final_frame, fps);
 		he::g_AnimationLoop->AddAnimation(animation);
-		
 	}
-
+	
 	Sprite::~Sprite(){
-		
+		if(vertex_) {
+			delete vertex_;
+		}
+		delete render_object_;
 	}
 	
 	void Sprite::update(float dt){
 		render_object_->SetVertexData(vertex_);
-		ImageView::update(dt);
+		render_object_->SetMVP(Transform_GetMVP(&(GetFrame().GetTransform())));
 	}
 	
 	void Sprite::render(){
-		ImageView::render();
+		render_object_->Render();
 	}
 } 
 ///EOF
