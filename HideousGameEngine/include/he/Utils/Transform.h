@@ -28,21 +28,26 @@ namespace he{
 	
 	/** Construct a new coordinate system transforms.
 	 @param position The position vector. Default is in the world-space, as it is the most used.
-	 @param rotation_angle The angle.
-	 @param rotation The rotation vector.
+	 @param rotation The rotation vector + w component is the angle.
 	 @param scale The scale vector.
 	 @param parent transform system.
 	 */
-	
 	Transform Transform_Create(const GLKVector3 position,
 							  const GLKVector4 rotation = GLKVector4Make( 0.0f, 0.0f, 1.0f, 0.0f),
 							  const GLKVector3 scale = GLKVector3Make( 1.0f, 1.0f, 1.0f),
-							  const Transform *p = nullptr);
+							  const Transform *parent = nullptr);
 	
+	/** Construct a new coordinate system transforms.
+	 @param position The position vector. Default is in the world-space, as it is the most used. 
+	 position.z = Screen::z. Helpful when loading view to the world coord-system, instead of some other coord-system
+	 @param rotation The rotation vector + w component is the angle.
+	 @param scale The scale vector.
+	 @param parent transform system.
+	 */
 	Transform Transform_Create(const GLKVector2 position,
 							  const GLKVector4 rotation = GLKVector4Make( 0.0f, 0.0f, 1.0f, 0.0f),
 							  const GLKVector3 scale = GLKVector3Make( 1.0f, 1.0f, 1.0f),
-							  const Transform *p = nullptr);
+							  const Transform *parent = nullptr);
 
 	/** Set the {x, y} component of the position */
 	void Transform_SetPosition(Transform *slf, const GLKVector2 pos);

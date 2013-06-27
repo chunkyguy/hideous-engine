@@ -103,60 +103,43 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __HideousGameEngine__Transform__</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_g_l_k_math___additions_8h.html">he/Utils/GLKMath_Additions.h</a>&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_screen_8h.html">he/Utils/Screen.h</a>&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">namespace </span>he{</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="classhe_1_1_transform.html">   22</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classhe_1_1_transform.html">Transform</a>{</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="classhe_1_1_transform.html#a12862bd8caeef51d885045b97cd8ad34">Transform</a>(<span class="keyword">const</span> GLKVector3 position = GLKVector3Make( 0.0f, 0.0f, <a class="code" href="namespacehe.html#ae61f2278b263127bc4506a38ff5e3a8e">g_Screen</a>-&gt;<a class="code" href="classhe_1_1_screen.html#a08907fb5ef4257e95d647a69442d5d4c">z_</a>),</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                           <span class="keyword">const</span> <span class="keywordtype">float</span> rotation_angle = 0.0f,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                           <span class="keyword">const</span> GLKVector3 rotation = GLKVector3Make( 1.0f, 1.0f, 1.0f),</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                           <span class="keyword">const</span> GLKVector3 scale = GLKVector3Make( 1.0f, 1.0f, 1.0f),</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                           <span class="keyword">const</span> <a class="code" href="classhe_1_1_transform.html">Transform</a> *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        GLKMatrix4 <a class="code" href="classhe_1_1_transform.html#ad7867b9c90521dec7ebc9c977368b4d8">GetMV</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        GLKMatrix4 <a class="code" href="classhe_1_1_transform.html#a9e053d3b772061690e09d95f7d2627da">GetMVP</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">const</span> GLKVector3 &amp;<a class="code" href="classhe_1_1_transform.html#a56ba51d5801d2cd7119b69ed1fe0c98e">GetPosition</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_transform.html#affcd73cb4067cffe8bfa930929107465">SetPosition</a>(<span class="keyword">const</span> GLKVector3 &amp;position);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_transform.html#affcd73cb4067cffe8bfa930929107465">SetPosition</a>(<span class="keyword">const</span> GLKVector2 &amp;position);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">const</span> GLKVector3 &amp;<a class="code" href="classhe_1_1_transform.html#a2da4307b925d318c777106dd976cdbd8">GetRotation</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_transform.html#abd608c43e0dc23daa26105ac14fb4f47">SetRotation</a>(<span class="keyword">const</span> GLKVector3 &amp;rotation);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">float</span> &amp;<a class="code" href="classhe_1_1_transform.html#a07807a637547da03d00091b28f4aa845">GetRotationAngle</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_transform.html#ab5ab78ead530d89df4e8b0877ba3d3e8">SetRotationAngle</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> angle);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">const</span> GLKVector3 &amp;<a class="code" href="classhe_1_1_transform.html#a76de21c56bb1e59891769897653a6a03">GetScale</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_transform.html#a237432c88437f339fd157a1bcee9f947">SetScale</a>(<span class="keyword">const</span> GLKVector3 &amp;scale);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keyword">const</span> <a class="code" href="classhe_1_1_transform.html">Transform</a> *<a class="code" href="classhe_1_1_transform.html#abdc92469da7dfb35deceb605066c24f0">GetParent</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_transform.html#ac2b8819f09c32de78bd9eb76333e1830">SetParent</a>(<span class="keyword">const</span> <a class="code" href="classhe_1_1_transform.html">Transform</a> *parent);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        GLKVector3 *<a class="code" href="classhe_1_1_transform.html#a02fcd5d8f454f6f4177eee4ef1a36cd4">GetPositionPtr</a>();</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        GLKVector3 *<a class="code" href="classhe_1_1_transform.html#a747e867dc33497e8ad5ef59934f55469">GetRotationPtr</a>();</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordtype">float</span> *<a class="code" href="classhe_1_1_transform.html#a374a4d7e954be8c7ee972f9497609e20">GetRotationAnglePtr</a>();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        GLKVector3 *<a class="code" href="classhe_1_1_transform.html#ac0ec1baec1268f94452eb1cfadf75e80">GetScalePtr</a>();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        GLKVector3 position_;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordtype">float</span> angle_;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        GLKVector3 rotation_;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        GLKVector3 scale_;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keyword">const</span> <a class="code" href="classhe_1_1_transform.html">Transform</a> *parent_;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    };</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* defined(__HideousGameEngine__Transform__) */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">namespace </span>he{</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="structhe_1_1_transform.html">   21</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structhe_1_1_transform.html">Transform</a> {</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="structhe_1_1_transform.html#a525ad3f7b0eaa341d8a4f50c7c37d240">   23</a></span>&#160;        GLKVector3 <a class="code" href="structhe_1_1_transform.html#a525ad3f7b0eaa341d8a4f50c7c37d240">position</a>; <span class="comment">//{x, y, z}</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="structhe_1_1_transform.html#a2e83db3772d02df426a8c9ac95fa83c6">   24</a></span>&#160;        GLKVector4 <a class="code" href="structhe_1_1_transform.html#a2e83db3772d02df426a8c9ac95fa83c6">rotation</a>;    <span class="comment">//{x, y, z, angle}</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="structhe_1_1_transform.html#af0011a413810ef836bf2bcdb789990f5">   25</a></span>&#160;        GLKVector3 <a class="code" href="structhe_1_1_transform.html#af0011a413810ef836bf2bcdb789990f5">scale</a>;   <span class="comment">//{x, y, z}</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="structhe_1_1_transform.html#a0023c9983c8eb94b1faa94f50d799dcf">   26</a></span>&#160;        <span class="keyword">const</span> <a class="code" href="structhe_1_1_transform.html">Transform</a> *<a class="code" href="structhe_1_1_transform.html#a0023c9983c8eb94b1faa94f50d799dcf">parent</a>;    </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    };</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="structhe_1_1_transform.html">Transform</a> <a class="code" href="namespacehe.html#a022384ac5a838f384eefeffbe7f7857b">Transform_Create</a>(<span class="keyword">const</span> GLKVector3 position,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                              <span class="keyword">const</span> GLKVector4 rotation = GLKVector4Make( 0.0f, 0.0f, 1.0f, 0.0f),</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                              <span class="keyword">const</span> GLKVector3 scale = GLKVector3Make( 1.0f, 1.0f, 1.0f),</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                              <span class="keyword">const</span> <a class="code" href="structhe_1_1_transform.html">Transform</a> *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="structhe_1_1_transform.html">Transform</a> <a class="code" href="namespacehe.html#a022384ac5a838f384eefeffbe7f7857b">Transform_Create</a>(<span class="keyword">const</span> GLKVector2 position,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                              <span class="keyword">const</span> GLKVector4 rotation = GLKVector4Make( 0.0f, 0.0f, 1.0f, 0.0f),</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                              <span class="keyword">const</span> GLKVector3 scale = GLKVector3Make( 1.0f, 1.0f, 1.0f),</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                              <span class="keyword">const</span> <a class="code" href="structhe_1_1_transform.html">Transform</a> *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacehe.html#a939e55461e51424ae14125456da14b89">Transform_SetPosition</a>(<a class="code" href="structhe_1_1_transform.html">Transform</a> *slf, <span class="keyword">const</span> GLKVector2 pos);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    GLKVector2 <a class="code" href="namespacehe.html#a0f8044d503e86895274b001ccec2aa78">Transform_GetPosition</a>(<span class="keyword">const</span> <a class="code" href="structhe_1_1_transform.html">Transform</a> &amp;slf);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="structhe_1_1_transform.html">Transform</a> <a class="code" href="namespacehe.html#aa42cf5bc96944f559e407fb4749e2910">operator+</a>(<span class="keyword">const</span> <a class="code" href="structhe_1_1_transform.html">Transform</a> &amp;one, <span class="keyword">const</span> <a class="code" href="structhe_1_1_transform.html">Transform</a> &amp;two);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="structhe_1_1_transform.html">Transform</a> <a class="code" href="namespacehe.html#a5edd506d790a5dd08634895941cd7c60">operator-</a>(<span class="keyword">const</span> <a class="code" href="structhe_1_1_transform.html">Transform</a> &amp;one, <span class="keyword">const</span> <a class="code" href="structhe_1_1_transform.html">Transform</a> &amp;two);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="structhe_1_1_transform.html">Transform</a> <a class="code" href="namespacehe.html#a08cd50e44ff8f9bc91bba61683154342">operator*</a>(<span class="keyword">const</span> <a class="code" href="structhe_1_1_transform.html">Transform</a> &amp;one, <span class="keywordtype">float</span> two);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="structhe_1_1_transform.html">Transform</a> <a class="code" href="namespacehe.html#a08cd50e44ff8f9bc91bba61683154342">operator*</a>(<span class="keywordtype">float</span> one, <span class="keyword">const</span> <a class="code" href="structhe_1_1_transform.html">Transform</a> &amp;two);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    GLKMatrix4 <a class="code" href="namespacehe.html#af12619e935ba353427c12f9d02f53361">Transform_GetMV</a>(<span class="keyword">const</span> <a class="code" href="structhe_1_1_transform.html">Transform</a> *slf);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    GLKMatrix4 <a class="code" href="namespacehe.html#ad70e9272d193474f16de5ca4e51f759e">Transform_GetMVP</a>(<span class="keyword">const</span> <a class="code" href="structhe_1_1_transform.html">Transform</a> *slf);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* defined(__HideousGameEngine__Transform__) */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 21 2013 14:17:33 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 27 2013 15:33:30 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

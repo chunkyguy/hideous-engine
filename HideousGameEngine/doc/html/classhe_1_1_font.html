@@ -90,7 +90,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classhe_1_1_font-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -102,15 +101,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a94081678eefd22242277f350ceefffa6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_font.html#a94081678eefd22242277f350ceefffa6">Font</a> (std::string name, unsigned int size)</td></tr>
-<tr class="separator:a94081678eefd22242277f350ceefffa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8140b4f7ad7cdde79a699d02d470a602"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_font.html#a8140b4f7ad7cdde79a699d02d470a602">Font</a> (std::string font_path, unsigned int size)</td></tr>
+<tr class="separator:a8140b4f7ad7cdde79a699d02d470a602"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4b57ced7395159f073afd2b94dd0a56"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_font.html#ae4b57ced7395159f073afd2b94dd0a56">~Font</a> ()</td></tr>
 <tr class="separator:ae4b57ced7395159f073afd2b94dd0a56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7815d568db6df5b5eed3255b79583035"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_font.html#a7815d568db6df5b5eed3255b79583035">LoadText</a> (<a class="el" href="classhe_1_1_text.html">Text</a> *text)</td></tr>
-<tr class="separator:a7815d568db6df5b5eed3255b79583035"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81dde781a5524a6d21b1f5212b7bc68b"><td class="memItemLeft" align="right" valign="top">const FT_Face &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_font.html#a81dde781a5524a6d21b1f5212b7bc68b">GetFace</a> () const </td></tr>
+<tr class="separator:a81dde781a5524a6d21b1f5212b7bc68b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a94081678eefd22242277f350ceefffa6"></a>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="classhe_1_1_font.html">Font</a> class </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a8140b4f7ad7cdde79a699d02d470a602"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -118,7 +119,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">he::Font::Font </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
+          <td class="paramname"><em>font_path</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -133,6 +134,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Creates a font </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">font_path</td><td>The path of the font. Can be of type ttf, or whatever supported by Freetype. </td></tr>
+    <tr><td class="paramname">size</td><td>The size of the font. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -152,16 +161,15 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a7815d568db6df5b5eed3255b79583035"></a>
+<a class="anchor" id="a81dde781a5524a6d21b1f5212b7bc68b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void he::Font::LoadText </td>
+          <td class="memname">const FT_Face&amp; he::Font::GetFace </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classhe_1_1_text.html">Text</a> *&#160;</td>
-          <td class="paramname"><em>text</em>)</td><td></td>
-          <td></td>
+          <td class="paramname">)</td><td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -174,7 +182,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 21 2013 14:17:33 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 27 2013 15:33:30 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

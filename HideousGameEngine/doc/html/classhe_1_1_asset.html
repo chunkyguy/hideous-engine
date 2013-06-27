@@ -101,16 +101,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a97c00f7fb051f5779c7bb6bd3bc75185"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_asset.html#a97c00f7fb051f5779c7bb6bd3bc75185">Asset</a> (T *asset=nullptr, bool self_destruct=false)</td></tr>
-<tr class="separator:a97c00f7fb051f5779c7bb6bd3bc75185"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a353a16ee251c7cc5314c0340490390ff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_asset.html#a353a16ee251c7cc5314c0340490390ff">Asset</a> ()</td></tr>
+<tr class="separator:a353a16ee251c7cc5314c0340490390ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b8b0b74fe585c9cf61df431bedf0295"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_asset.html#a1b8b0b74fe585c9cf61df431bedf0295">~Asset</a> ()</td></tr>
 <tr class="separator:a1b8b0b74fe585c9cf61df431bedf0295"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4867ba7f6efa2b07e6a867accd40262e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_asset.html#a4867ba7f6efa2b07e6a867accd40262e">IsEmpty</a> () const </td></tr>
+<tr class="separator:a4867ba7f6efa2b07e6a867accd40262e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9fe0d7837681fe0ebae279c7276c453"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_asset.html#ae9fe0d7837681fe0ebae279c7276c453">Get</a> () const </td></tr>
 <tr class="separator:ae9fe0d7837681fe0ebae279c7276c453"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b5451953674bea1d280c329526f1f5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_asset.html#a2b5451953674bea1d280c329526f1f5c">Load</a> (T *asset, bool self_destruct)</td></tr>
-<tr class="separator:a2b5451953674bea1d280c329526f1f5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7898af4430d588ce4a44cee44bba5efb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_asset.html#a7898af4430d588ce4a44cee44bba5efb">Reload</a> (T *asset, bool self_destruct)</td></tr>
-<tr class="separator:a7898af4430d588ce4a44cee44bba5efb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad02e4c2c7a058dd2a58a3bb499604e6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_asset.html#ad02e4c2c7a058dd2a58a3bb499604e6a">Set</a> (T *asset, bool clean=false)</td></tr>
+<tr class="separator:ad02e4c2c7a058dd2a58a3bb499604e6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a225a4db3053e88fe2b3ec64330fcad92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_asset.html#a225a4db3053e88fe2b3ec64330fcad92">Move</a> (T *asset, bool clean=false)</td></tr>
+<tr class="separator:a225a4db3053e88fe2b3ec64330fcad92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename T&gt;<br/>
@@ -118,7 +120,7 @@ class he::Asset&lt; T &gt;</h3>
 
 <p>RAII for any asset that lives in memory Best use is for creating factories those instanciate objects. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a97c00f7fb051f5779c7bb6bd3bc75185"></a>
+<a class="anchor" id="a353a16ee251c7cc5314c0340490390ff"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -130,19 +132,8 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classhe_1_1_asset.html">he::Asset</a>&lt; T &gt;::<a class="el" href="classhe_1_1_asset.html">Asset</a> </td>
           <td>(</td>
-          <td class="paramtype">T *&#160;</td>
-          <td class="paramname"><em>asset</em> = <code>nullptr</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname">)</td><td></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>self_destruct</em> = <code>false</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -151,14 +142,7 @@ template&lt;typename T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Load an asset </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">asset</td><td>The asset to be loaded into the memory </td></tr>
-    <tr><td class="paramname">self_destruct</td><td>If true, deletes the asset as soon goes out of scope. By default false </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Default construct <a class="el" href="classhe_1_1_asset.html">Asset</a> with blank values </p>
 <dl class="section note"><dt>Note</dt><dd>Set self_destruct false, if the asset is not owned by the class constructing the asset Another case could be when the asset is to be used shared among many contexts. </dd></dl>
 
 </div>
@@ -216,7 +200,7 @@ template&lt;typename T&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a2b5451953674bea1d280c329526f1f5c"></a>
+<a class="anchor" id="a4867ba7f6efa2b07e6a867accd40262e"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -226,21 +210,10 @@ template&lt;typename T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classhe_1_1_asset.html">he::Asset</a>&lt; T &gt;::Load </td>
+          <td class="memname">bool <a class="el" href="classhe_1_1_asset.html">he::Asset</a>&lt; T &gt;::IsEmpty </td>
           <td>(</td>
-          <td class="paramtype">T *&#160;</td>
-          <td class="paramname"><em>asset</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>self_destruct</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramname">)</td><td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -249,11 +222,11 @@ template&lt;typename T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Load asset Load only if not loaded already. Otherwise, skip. </p>
+<p>Check if the asset is empty </p>
 
 </div>
 </div>
-<a class="anchor" id="a7898af4430d588ce4a44cee44bba5efb"></a>
+<a class="anchor" id="a225a4db3053e88fe2b3ec64330fcad92"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -263,7 +236,7 @@ template&lt;typename T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classhe_1_1_asset.html">he::Asset</a>&lt; T &gt;::Reload </td>
+          <td class="memname">void <a class="el" href="classhe_1_1_asset.html">he::Asset</a>&lt; T &gt;::Move </td>
           <td>(</td>
           <td class="paramtype">T *&#160;</td>
           <td class="paramname"><em>asset</em>, </td>
@@ -272,7 +245,7 @@ template&lt;typename T&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>self_destruct</em>&#160;</td>
+          <td class="paramname"><em>clean</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -286,6 +259,58 @@ template&lt;typename T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Move asset </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">asset</td><td>The asset. </td></tr>
+    <tr><td class="paramname">clean</td><td>Clean the loaded asset, if any. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad02e4c2c7a058dd2a58a3bb499604e6a"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classhe_1_1_asset.html">he::Asset</a>&lt; T &gt;::Set </td>
+          <td>(</td>
+          <td class="paramtype">T *&#160;</td>
+          <td class="paramname"><em>asset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>clean</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Set asset </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">asset</td><td>The asset. </td></tr>
+    <tr><td class="paramname">clean</td><td>Clean the loaded asset, if any. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -295,7 +320,7 @@ template&lt;typename T&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 21 2013 14:17:33 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 27 2013 15:33:30 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

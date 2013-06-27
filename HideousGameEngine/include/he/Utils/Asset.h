@@ -19,8 +19,6 @@ namespace he {
 	class Asset{
 	public:
 		/** Default construct Asset with blank values
-		 @param	asset The asset to be loaded into the memory
-		 @param	self_destruct If true, deletes the asset as soon goes out of scope. By default false
 		 @note	Set self_destruct false, if the asset is not owned by the class constructing the asset
 				Another case could be when the asset is to be used shared among many contexts.
 		 */

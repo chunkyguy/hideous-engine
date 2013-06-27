@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['render_5fobject_5f',['render_object_',['../classhe_1_1_text_1_1_glyph.html#a1a7de65fd078ff2d9d2216738af14421',1,'he::Text::Glyph::render_object_()'],['../classhe_1_1ui_1_1_image_view.html#a9a65d88d8b5de7a1299558401c1a3d7a',1,'he::ui::ImageView::render_object_()']]]
+  ['render_5fobject_5f',['render_object_',['../classhe_1_1_glyph.html#a6365a4ab67647050a71f09893766bdbe',1,'he::Glyph::render_object_()'],['../classhe_1_1_image_view.html#a691bfe5e8afdc213cd11b87edc4a3247',1,'he::ImageView::render_object_()'],['../classhe_1_1_sprite.html#a58a108ad175a56a06d921c69d22e0226',1,'he::Sprite::render_object_()']]],
+  ['rotation',['rotation',['../structhe_1_1_transform.html#a2e83db3772d02df426a8c9ac95fa83c6',1,'he::Transform']]]
 ];

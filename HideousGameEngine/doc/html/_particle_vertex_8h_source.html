@@ -112,15 +112,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">// MARK: ParticleVertex</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="classhe_1_1_particle_vertex.html">   22</a></span>&#160;<span class="comment"></span>    <span class="keyword">class </span><a class="code" href="classhe_1_1_particle_vertex.html">ParticleVertex</a> : <span class="keyword">public</span> <a class="code" href="classhe_1_1_i_vertex.html">IVertex</a>{</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">const</span> GLfloat *<a class="code" href="classhe_1_1_particle_vertex.html#ae60e097dbca17e37bc740991a5bdbf65">GetRawData</a>(<span class="keyword">const</span> <a class="code" href="classhe_1_1_i_vertex.html#ab6d3131e5b1346470cc257469be2645c">IVertex::DataType</a> dt) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="classhe_1_1_particle_vertex.html#a9b5ead73628c6290f8b96a58e99d1877">~ParticleVertex</a>();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="classhe_1_1_particle_vertex.html#a92298e717f3ee9ca1c253822a88e03a1">ParticleVertex</a>(<span class="keywordtype">int</span> count, <span class="keywordtype">float</span> point_size = 15.0);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_particle_vertex.html#a3220c5a709a3fa596a1919c81eb4e9c7">SetData</a>(<span class="keywordtype">int</span> index, <span class="keyword">const</span> GLKVector2 &amp;data);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        GLfloat <a class="code" href="classhe_1_1_particle_vertex.html#a0a4dfb15d9b24dc5ce9d2b29ec146afb">GetPointSize</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        GLsizei <a class="code" href="classhe_1_1_particle_vertex.html#a2390b260c89f01ba74a26adf7e1ccdbe">GetSize</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="classhe_1_1_particle_vertex.html#a9b5ead73628c6290f8b96a58e99d1877">~ParticleVertex</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="classhe_1_1_particle_vertex.html#a92298e717f3ee9ca1c253822a88e03a1">ParticleVertex</a>(<span class="keywordtype">int</span> count, <span class="keywordtype">float</span> point_size = 15.0);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_particle_vertex.html#a3220c5a709a3fa596a1919c81eb4e9c7">SetData</a>(<span class="keywordtype">int</span> index, <span class="keyword">const</span> GLKVector2 &amp;data);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        GLfloat <a class="code" href="classhe_1_1_particle_vertex.html#a0a4dfb15d9b24dc5ce9d2b29ec146afb">GetPointSize</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        GLsizei <a class="code" href="classhe_1_1_particle_vertex.html#a2390b260c89f01ba74a26adf7e1ccdbe">GetSize</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">virtual</span> <span class="keyword">const</span> GLfloat *raw_data(<span class="keyword">const</span> <a class="code" href="classhe_1_1_i_vertex.html#ab6d3131e5b1346470cc257469be2645c">DataType</a> dt) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        GLfloat *data_;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        GLsizei size_;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">float</span> point_size_;</div>
@@ -130,7 +130,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 21 2013 14:17:33 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 27 2013 15:33:30 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

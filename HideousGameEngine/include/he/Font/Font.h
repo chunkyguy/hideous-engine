@@ -43,7 +43,7 @@ namespace he{
 	class Font{
 	public:
 		/** Creates a font 
-		 @param name The name of the font. Can be of type ttf, or whatever supported by Freetype.
+		 @param font_path The path of the font. Can be of type ttf, or whatever supported by Freetype.
 		 @param size The size of the font.
 		 */
 		Font(std::string font_path, unsigned int size);

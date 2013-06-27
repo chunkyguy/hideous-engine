@@ -110,8 +110,6 @@ Inheritance diagram for he::TextureVertex:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a086f9b20fff0b45d0424c20a51b17aa2"><td class="memItemLeft" align="right" valign="top">const GLfloat *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_texture_vertex.html#a086f9b20fff0b45d0424c20a51b17aa2">GetRawData</a> (const <a class="el" href="classhe_1_1_i_vertex.html#ab6d3131e5b1346470cc257469be2645c">IVertex::DataType</a> dt) const </td></tr>
-<tr class="separator:a086f9b20fff0b45d0424c20a51b17aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab519398dbd766ffb0b459a843b334c08"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_texture_vertex.html#ab519398dbd766ffb0b459a843b334c08">TextureVertex</a> (const GLKVector2 &amp;size, const bool aspect_lock=true, const GLKVector4 texture_coords=GLKVector4Make(0, 0, 1, 1))</td></tr>
 <tr class="separator:ab519398dbd766ffb0b459a843b334c08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a473b03796084a1369c7f86a55c0a27ee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_texture_vertex.html#a473b03796084a1369c7f86a55c0a27ee">TextureVertex</a> (const <a class="el" href="structhe_1_1_vertex_1_1_v2.html">Vertex::V2</a> &amp;position_data, const <a class="el" href="structhe_1_1_vertex_1_1_v2.html">Vertex::V2</a> &amp;texture_data)</td></tr>
@@ -127,6 +125,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9e7337a023d41d353a475854684be8c8 inherit pub_methods_classhe_1_1_i_vertex"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a071e8581419f3b324f85cd6921f96828 inherit pub_methods_classhe_1_1_i_vertex"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_i_vertex.html#a071e8581419f3b324f85cd6921f96828">~IVertex</a> ()</td></tr>
 <tr class="separator:a071e8581419f3b324f85cd6921f96828 inherit pub_methods_classhe_1_1_i_vertex"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6481f2c39e70519d120f07fdaf11e685 inherit pub_methods_classhe_1_1_i_vertex"><td class="memItemLeft" align="right" valign="top">const GLfloat *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_i_vertex.html#a6481f2c39e70519d120f07fdaf11e685">GetRawData</a> (const <a class="el" href="classhe_1_1_i_vertex.html#ab6d3131e5b1346470cc257469be2645c">DataType</a> dt) const </td></tr>
+<tr class="separator:a6481f2c39e70519d120f07fdaf11e685 inherit pub_methods_classhe_1_1_i_vertex"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae50d934ce47314194341515fb5aaf872 inherit pub_methods_classhe_1_1_i_vertex"><td class="memItemLeft" align="right" valign="top">const GLint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_i_vertex.html#ae50d934ce47314194341515fb5aaf872">GetCount</a> () const </td></tr>
 <tr class="separator:ae50d934ce47314194341515fb5aaf872 inherit pub_methods_classhe_1_1_i_vertex"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6efd88c92997806cf5a561ea174f3763 inherit pub_methods_classhe_1_1_i_vertex"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_i_vertex.html#a6efd88c92997806cf5a561ea174f3763">SetCount</a> (GLint count)</td></tr>
@@ -261,33 +261,6 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a086f9b20fff0b45d0424c20a51b17aa2"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const GLfloat* he::TextureVertex::GetRawData </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classhe_1_1_i_vertex.html#ab6d3131e5b1346470cc257469be2645c">IVertex::DataType</a>&#160;</td>
-          <td class="paramname"><em>dt</em>)</td><td></td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Returns raw data. Expected to be used in a shader. Impl the virtual method of <a class="el" href="classhe_1_1_i_vertex.html">IVertex</a> </p>
-
-<p>Reimplemented from <a class="el" href="classhe_1_1_i_vertex.html#a2001617f3ae58c3ac5ea6173f5ce584f">he::IVertex</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="a194d0ae9afec67b530d1a72ca2e1f408"></a>
 <div class="memitem">
 <div class="memproto">
@@ -326,7 +299,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 21 2013 14:17:34 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 27 2013 15:33:30 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>
