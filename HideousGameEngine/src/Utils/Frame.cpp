@@ -70,6 +70,10 @@ namespace he{
 		return os;
 	}
 
+	Frame CreateLocalFrame(const Frame &frame){
+		return he::Frame(he::Transform_Create(GLKVector3Make(0, 0, 0)), frame.GetSize());
+	}
+
 }
 
 ///EOF

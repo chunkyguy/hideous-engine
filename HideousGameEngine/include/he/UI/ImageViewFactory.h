@@ -11,6 +11,7 @@
 #include <string>
 
 #include <he/Texture/TextureAtlas.h>
+#include <he/Texture/Texture.h>
 #include <he/Utils/Asset.h>
 #include <he/Utils/Transform.h>
 

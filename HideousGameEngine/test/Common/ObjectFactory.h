@@ -83,7 +83,6 @@ private:
 	he::TextureShader *tex_sh_;
 	
 	// text obj
-	he::Font *font_;
 	he::TextFactory *txt_factory_;
 	he::TextShader *txt_sh_;
 };

@@ -13,6 +13,7 @@
 #include "ft2build.h"
 #include FT_FREETYPE_H
 
+#include <he/UI/View.h>
 #include <he/Utils/GLKMath_Additions.h>
 #include <he/Utils/Frame.h>
 
@@ -22,16 +23,40 @@ namespace he {
 	class Texture;
 	class TextureVertex;
 	
-	class Glyph{
+	struct GlyphData{
+		struct Size{
+			Size(int width, int height) : w(width), h(height)
+			{}
+			
+			int w; int h;
+		};
+
+		GlyphData(char charctr, FT_GlyphSlot &glyph_slot, GLKVector3 pen_pos);
+		~GlyphData();
+
+		char ch;
+		GLubyte *tex_data;
+		Size tex_size;
+		Size size;
+		Size bearing;
+		GLKVector3 pen_pos;
+	};
+
+	std::ostream &operator<<(std::ostream &os, const GlyphData::Size &sz);
+	std::ostream &operator<<(std::ostream &os, const GlyphData &gd);
+
+	
+	class Glyph : public View{
 	public:
-		Glyph(std::string glyph_name, FT_GlyphSlot &glyph, GLKVector2 penPosition, TextShader *shader, GLKVector4 color);
-		~Glyph();
+		Glyph(Frame frame, GlyphData *data, TextShader *shader, GLKVector4 color);
+		virtual ~Glyph();
 		
-		Frame frame_;
-		RenderObject *render_object_;
-		GLKVector2 size_;
+	protected:
+		void update(float dt);
+		void render();
 		
 	private:
+		RenderObject *render_object_;
 		Texture *texture_;
 		TextureVertex *vertex_data_;
 	};

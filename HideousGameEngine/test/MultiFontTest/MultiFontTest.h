@@ -30,9 +30,7 @@ private:
 	virtual void update(float dt);
 	virtual void render();
 
-	he::Font *courier_;
 	he::TextFactory *courier_factory_;
-	he::Font *simsun_;
 	he::TextFactory *simsun_factory_;
 	
 	he::Text *whacky_;

@@ -65,8 +65,7 @@ void UITest::init(){
 
 	//button
 	btn_listener_.Move(new he::ButtonListner<UITest>(this, &UITest::ButtonHandler), false);
-	he::Frame btn_frame(he::Transform_Create(GLKVector3Make(0, 0, 0)), mission_vw->GetFrame().GetSize());
-	he::Button *btn = new he::Button(btn_frame, btn_listener_.Get(), 99);
+	he::Button *btn = new he::Button(CreateLocalFrame(mission_vw->GetFrame()), btn_listener_.Get(), 99);
 	mission_vw->MoveSubview(btn);
 
 	//tutorial: image view - from atlas
@@ -83,45 +82,29 @@ void UITest::init(){
 	view_->MoveSubview(fish_sprite);
 
 	//text factory
-	font.Move( new he::Font(he::ResourcePath() + "Silom.ttf", 48), false );
 	txt_shader_.Move( new he::TextShader, false);
+	txt_factory_.Move(new he::TextFactory(txt_shader_.Get(), new he::Font(he::ResourcePath() + "Silom.ttf", 48)));
 	
 	//text view
-	he::TextFactory txt_factory(font.Get(), txt_shader_.Get());
-	he::Frame txt_frame(he::Transform_Create(GLKVector3Make(0.0, 0.0, 0.0)), GLKVector2Make(0, 0));
-	he::Text *txt = new he::Text(txt_frame, &txt_factory, "hello");
-	bg_vw->MoveSubview(txt);
+	he::Text *txt = txt_factory_.Get()->CreateText(he::Transform_Create(GLKVector3Make(0.0, 0.0, 0.0)), "hello");
+	view_->MoveSubview(txt);
 
 	//gradient factory
 	clr_sh_.Move(new he::ColorShader, false);
-	clr_vertex_.Move(new he::ColorVertex({GLKVector2Make(0, 0), GLKVector4Make(1.0, 0.0, 0.0, 1.0)}, {GLKVector2Make(100, 100), GLKVector4Make(0.0, 1.0, 0.0, 1.0)}), false);
+	gradient_view_factory_.Move(new he::GradientViewFactory(clr_sh_.Get()));
 
-	//gradient view
-	he::Frame gr_frame(he::Transform_Create(GLKVector3Make(0.0, 0.0, 0.0)));
-	he::GradientView::Factory *gv_factory = new he::GradientView::Factory(clr_sh_.Get(), clr_vertex_.Get());
-	he::GradientView *g_vw = new he::GradientView(gr_frame, gv_factory);
-	bg_vw->MoveSubview(g_vw);
+	//gradient view - mono
+	he::GradientView *gr_mono_vw = gradient_view_factory_.Get()->CreateGradientView(he::Frame(he::Transform_Create(GLKVector3Make(-100.0, 20.0, he::g_Screen->z_)), GLKVector2Make(30.0f, 30.0f)), GLKVector4Make(1.0f, 0.0f, 0.0f, 1.0f));
+	view_->MoveSubview(gr_mono_vw);
 	
-//	he::LabelFactory lbl_factory(font.Get());
-//	he::Frame txt_frame(he::Transform(GLKVector3Make(0, 0, he::g_Screen->z_)));
-//	std::string str("hello");
-//	he::Label *lbl = new he::Label(txt_frame, &lbl_factory, str, GLKVector4Make(0.1, 1.0, 0.4, 1.0));
-//	view_->AddSubview(lbl);
-	
-//	std::string btn_titles[] = {	"mission", "tutorial", "credits"	};
-//	GLKVector3 pos = GLKVector3Make(0, 60, 0.0f);
-//	he_Trace("\ni = %d\n",i);
-//	std::string full_name(he::FlashFullName(btn_titles[i]));
-//	const he::TextureAtlasRegion *region = atlas_.Get()->GetTextureAtlasRegion(full_name);
-//	he::Transform trans(pos);
-//	he_Trace("trans.pos = %@\n",trans.GetPosition());
-//	he::Frame f(trans, region->sprite_size_);
-//	he_Trace("f.rect = %@\n",f.GetRect());
-//	he::Button *btn = new he::Button(btn_listener_.Get(), f, i);
-//	he::ImageView *img_vw = new he::ImageView(&img_factory, full_name, f);
-//	btn->AddSubview(img_vw);
-//	view_->AddSubview(btn);
-//	pos.y -= 60;
+	//gradient view - dual
+	he::GradientView *gr_dual_vw = gradient_view_factory_.Get()->CreateGradientView(he::Frame(he::Transform_Create(GLKVector3Make(0.0, 40.0, he::g_Screen->z_)), GLKVector2Make(30.0f, 30.0f)), GLKVector4Make(1.0f, 0.0f, 0.0f, 1.0f), GLKVector4Make(0.0f, 1.0f, 0.0f, 1.0f));
+	view_->MoveSubview(gr_dual_vw);
+
+	//gradient view - quad
+	he::GradientView *gr_quad_vw = gradient_view_factory_.Get()->CreateGradientView(he::Frame(he::Transform_Create(GLKVector3Make(100.0, 60.0, he::g_Screen->z_)), GLKVector2Make(30.0f, 30.0f)), GLKVector4Make(1.0f, 0.0f, 0.0f, 1.0f), GLKVector4Make(0.0f, 1.0f, 0.0f, 1.0f), GLKVector4Make(0.0f, 0.0f, 1.0f, 1.0f), GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f));
+	view_->MoveSubview(gr_quad_vw);
+
 }
 
 void UITest::update(float dt){

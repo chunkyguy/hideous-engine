@@ -51,7 +51,7 @@ namespace he{
 		std::map<const std::string, TextureAtlasRegion>::const_iterator itr = map.find(image_name);
 		he_Trace("TextureAtlas: fullname '%@' = %@\n",image_name,(itr != map.end())?"Y":"N");
 		assert(itr != map.end());
-		he_Trace("TextureAtlas: GetTextureAtlasRegion:\n%@\n",itr->second);
+		//he_Trace("TextureAtlas: GetTextureAtlasRegion:\n%@\n",itr->second);
 		return itr->second;
 	}
 	

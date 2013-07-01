@@ -20,13 +20,10 @@ namespace he{
 	class ImageViewFactory;
 	
 	class ColorShader;
-	class ColorVertex;
-	class Font;
-	class TextShader;
+	class GradientViewFactory;
 	
-	namespace ui{
-		class View;
-	}
+	class TextShader;
+	class TextFactory;
 }
 
 class UITest : public he::Game{
@@ -46,11 +43,13 @@ private:
 	he::Asset<he::ImageViewFactory> fishmotion_factory_;
 	he::Asset<he::TextureShader> texture_shader_;
 
-	he::Asset<he::ButtonListner<UITest> > btn_listener_;
-	he::Asset<he::Font> font;
-	he::Asset<he::TextShader> txt_shader_;
-	he::Asset<he::ColorVertex> clr_vertex_;
 	he::Asset<he::ColorShader> clr_sh_;
+	he::Asset<he::GradientViewFactory> gradient_view_factory_;
+	
+	he::Asset<he::ButtonListner<UITest> > btn_listener_;
+	
+	he::Asset<he::TextShader> txt_shader_;
+	he::Asset<he::TextFactory> txt_factory_;
 };
 
 

@@ -54,9 +54,8 @@ void ObjectFactory::load_assets(){
 	tex_sh_ = new he::TextureShader;
 	
 	// text obj
-	font_ = new he::Font(he::ResourcePath() + "Silom.ttf", 48);
 	txt_sh_ = new he::TextShader;
-	txt_factory_ = new he::TextFactory(font_, txt_sh_);
+	txt_factory_ = new he::TextFactory(txt_sh_, new he::Font(he::ResourcePath() + "Silom.ttf", 48));
 }
 void ObjectFactory::unload_assets(){
 	delete col_sh_;
@@ -66,7 +65,6 @@ void ObjectFactory::unload_assets(){
 	delete atlas_;
 	delete tex_sh_;
 	
-	delete font_;
 	delete txt_sh_;
 	delete txt_factory_;
 }
@@ -118,7 +116,7 @@ TextObj::~TextObj(){
 }
 
 TextObj::TextObj(he::TextFactory *factory){
-	text_ = new he::Text(he::Frame(he::Transform_Create(GLKVector2Make(he::Randf()*he::g_Screen->width_ - he::g_Screen->width_/2, he::Randf()*he::g_Screen->height_ - he::g_Screen->height_/2))), factory, "Whacky");
+	text_ = factory->CreateText(he::Transform_Create(GLKVector2Make(he::Randf()*he::g_Screen->width_ - he::g_Screen->width_/2, he::Randf()*he::g_Screen->height_ - he::g_Screen->height_/2)), "WhackyLabs");
 }
 void TextObj::Update(float dt){
 	text_->Update(dt);

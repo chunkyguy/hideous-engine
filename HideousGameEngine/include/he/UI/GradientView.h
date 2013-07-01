@@ -21,14 +21,7 @@ namespace he {
 	
 	class GradientView : public View{
 	public:
-		struct Factory{
-			Factory(ColorShader *sh, ColorVertex *v);
-			
-			Asset<ColorShader> shader;
-			Asset<ColorVertex> vertex;
-		};
-		
-		GradientView(const Frame frame, const Factory *gv_factory);
+		GradientView(const Frame frame, const ColorVertex *vertex_m, const ColorShader *shader);
 		virtual ~GradientView();
 		
 	protected:
@@ -37,8 +30,19 @@ namespace he {
 		
 	private:
 		RenderObject *render_object_;
+		const ColorVertex *vertex_;
 	};
+
 	
+	class GradientViewFactory{
+	public:
+		GradientViewFactory(ColorShader *shadr);
+		GradientView *CreateGradientView(Frame frame, GLKVector4 colorA);
+		GradientView *CreateGradientView(Frame frame, GLKVector4 colorA, GLKVector4 colorD);
+		GradientView *CreateGradientView(Frame frame, GLKVector4 colorA, GLKVector4 colorB, GLKVector4 colorC, GLKVector4 colorD);
+	private:
+		Asset<ColorShader> shader;
+	};
 }
 
 

@@ -25,8 +25,10 @@ RectTextTest::~RectTextTest(){
 }
 
 RectTextTest::RectTextTest() :
-font_(nullptr),
-text_(nullptr),
+text_small_(nullptr),
+text_caps_(nullptr),
+text_nums_(nullptr),
+text_sp_(nullptr),
 gesture_listener_(nullptr)
 {}
 
@@ -48,35 +50,41 @@ void RectTextTest::init(){
 }
 
 void RectTextTest::update(float dt){
-	if(text_){
-		text_->Update(dt);
+	if(text_small_){
+		text_small_->Update(dt);
+		text_caps_->Update(dt);
+		text_nums_->Update(dt);
+		text_sp_->Update(dt);
 	}
 }
 void RectTextTest::render(){
-	if(text_){
-		text_->Render();
+	if(text_small_){
+		text_small_->Render();
+		text_caps_->Render();
+		text_nums_->Render();
+		text_sp_->Render();
 	}
 }
 
 void RectTextTest::load_text(){
-	if(font_){
+	if(factory_){
 		unload_text();
 	}
 	//Draw a text
-	font_ = new he::Font(he::ResourcePath() + "Silom.ttf", 18);
-	
-	assert(font_);
 	assert(shader_);
-	factory_ = new he::TextFactory(font_, shader_);
-	
-	he::Frame frame(he::Transform_Create(GLKVector2Make(-220.0f, 0.0f)));
-	text_ = new he::Text(frame, factory_, "The quick brown fox jumps over the lazy dog", GLKVector4Make(he::Randf(), he::Randf(), he::Randf(), 1.0));
+	factory_ = new he::TextFactory(shader_, new he::Font(he::ResourcePath() + "Silom.ttf", 17));
+	text_small_ = factory_->CreateText(he::Transform_Create(GLKVector3Make(0.0f, -100.0f, he::g_Screen->z_)), "the quick brown fox jumps over the lazy dog");
+	text_caps_ = factory_->CreateText(he::Transform_Create(GLKVector3Make(0.0f, -50.0f, he::g_Screen->z_)), "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG");
+	text_nums_ = factory_->CreateText(he::Transform_Create(GLKVector3Make(0.0f, 50.0f, he::g_Screen->z_)), "0123456789");
+	text_sp_ = factory_->CreateText(he::Transform_Create(GLKVector3Make(0.0f, 100.0f, he::g_Screen->z_)), "~!@#$%^&*()_+-={}\\|;:'\"<>?,./");
 }
 
 void RectTextTest::unload_text(){
-	delete font_; font_ = 0;
 	delete factory_; factory_ = 0;
-	delete text_; text_ = 0;
+	delete text_small_; text_small_ = 0;
+	delete text_caps_; text_caps_ = 0;
+	delete text_nums_; text_nums_ = 0;
+	delete text_sp_; text_sp_ = 0;
 }
 
 void RectTextTest::HandleGesture(const he::Gesture &gesture){

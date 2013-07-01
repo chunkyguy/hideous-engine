@@ -12,10 +12,60 @@
 #include <he/Texture/Texture.h>
 #include <he/Vertex/TextureVertex.h>
 #include <he/Utils/DebugHelper.h>
-#include <he/Utils/Utils.h>
 #include <he/Shaders/TextShader.h>
+#include <he/Utils/Utils.h>
+
+static void PrintGlyph(GLubyte *data, int w, int h){
+	for(int j=0; j <h; j++) {
+		for(int i=0; i < w; i++){
+			printf("%d",*data++==0?0:1);
+			//			printf("%d",(*data++ == 0) ? 0 : 1 );
+		}
+		printf("\n");
+	}
+}
 
 namespace he{
+
+	GlyphData::GlyphData(char charctr, FT_GlyphSlot &glyph_slot, GLKVector3 pen_position) :
+	ch(charctr),
+	pen_pos(pen_position),
+	size(Size(glyph_slot->bitmap.width, glyph_slot->bitmap.rows)),
+	bearing(Size(glyph_slot->bitmap_left, glyph_slot->bitmap_top)),
+	tex_size(Size(NextPOT(glyph_slot->bitmap.width), NextPOT(glyph_slot->bitmap.rows))),
+	tex_data(nullptr)
+	{
+		tex_data = new GLubyte [2 * tex_size.w * tex_size.h];
+		GLubyte *bp = tex_data;
+		for(int j=0; j <tex_size.h; j++) {
+			for(int i=0; i < tex_size.w; i++){
+				*bp = 0;
+				if(i < size.w && j < size.h){
+					*bp = glyph_slot->bitmap.buffer[i + size.w*j];
+				}
+				bp++;
+			}
+		}
+	}
+	
+	GlyphData::~GlyphData(){
+		delete tex_data;
+	}
+
+	std::ostream &operator<<(std::ostream &os, const GlyphData::Size &sz){
+		os << "{" << sz.w << "," << sz.h << "}";
+		return os;
+	}
+
+	std::ostream &operator<<(std::ostream &os, const GlyphData &gd){
+		PrintGlyph(gd.tex_data, gd.tex_size.w, gd.tex_size.h);
+		os << "Char: " << gd.ch << std::endl;
+		os << "Pen-position: " << gd.pen_pos << std::endl;
+		os << "Size: " << gd.size << std::endl;
+		os << "Bearing: " << gd.bearing << std::endl;
+		os << "Tex-size: " << gd.tex_size;
+		return os;
+	}
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
 	// MARK: Text::Glyph
@@ -27,49 +77,35 @@ namespace he{
 		delete vertex_data_;
 	}
 	
-	Glyph::Glyph(std::string glyph_name, FT_GlyphSlot &glyph, GLKVector2 penPos, TextShader *shader, GLKVector4 color) :
-	frame_(Frame((Transform_Create(GLKVector3Make(0.0f, 0.0f, 0.0f)))))
+	Glyph::Glyph(Frame frame, GlyphData *data, TextShader *shader, GLKVector4 color) :
+	View(frame)
 	{
-		//FILE_LOG(logDEBUG) << "GlyphData" << std::endl;
-		int w = NextPOT(glyph->bitmap.width);
-		int h = NextPOT(glyph->bitmap.rows);
-		
-		size_ = GLKVector2Make(w, h);
-		
-		GLubyte *pixels = new GLubyte [2 * w * h];
-		GLubyte *bp = pixels;
-		for(int j=0; j <h; j++) {
-			for(int i=0; i < w; i++){
-				*bp = 0;
-				if(i < glyph->bitmap.width && j < glyph->bitmap.rows){
-					*bp = glyph->bitmap.buffer[i + glyph->bitmap.width*j];
-				}
-				bp++;
-			}
-		}
-		
-		GLKVector2 trans_pos = GLKVector2Make(penPos.x + glyph->bitmap_left, -penPos.y - glyph->bitmap_top);
-		Transform_SetPosition(frame_.GetTransformPtr(), trans_pos);
-		//		frame_.GetTransformPtr()->position = pos;
-		//		GLKVector2 trans_pos = Transform_GetPosition(frame_.GetTransform());
+//		GLKVector3 trans_pos = GetFrame().GetTransform().position;
+//		trans_pos.x = trans_pos.x + glyph->bitmap_left;
+//		trans_pos.y = -trans_pos.y - glyph->bitmap_top;
+//		GetFramePtr()->GetTransformPtr()->position = trans_pos;
+//GLKVector2 trans_pos = GLKVector2Make(glyph->bitmap_left, glyph->bitmap_top);
+		GLKVector2 trans_pos = frame.GetSize();
 		GLfloat p_data[] = {
-			trans_pos.x,		-trans_pos.y,
-			trans_pos.x+w,		-trans_pos.y,
-			trans_pos.x,		-trans_pos.y-h,
-			trans_pos.x+w,		-trans_pos.y-h
-		};
-		GLfloat t_data[] = {
-			0, 0,
-			1, 0,
-			0, 1,
-			1, 1
+			-trans_pos.x/2.0f,	-trans_pos.y/2.0f,
+			trans_pos.x/2.0f,	-trans_pos.y/2.0f,
+			-trans_pos.x/2.0f,	trans_pos.y/2.0f,
+			trans_pos.x/2.0f,	trans_pos.y/2.0f
 		};
 		
-		texture_ = new Texture(glyph_name, pixels, GLKVector2Make(w,h), 1);
-		delete [] pixels;
+		GLfloat s = static_cast<GLfloat>(data->size.w)/static_cast<GLfloat>(data->tex_size.w);
+		GLfloat t = static_cast<GLfloat>(data->size.h)/static_cast<GLfloat>(data->tex_size.h);
+		GLfloat t_data[] = {
+			0.0f,	t,
+			s,		t,
+			0.0f,	0.0f,
+			s,		0.0f
+		};
+		
+		texture_ = new Texture(std::string(1, data->ch), data->tex_data, GLKVector2Make(data->tex_size.w, data->tex_size.h), 1);
 		Vertex::V2 position_data;
 		Vertex::Set(position_data, p_data);
-		he_Trace("Glyph:%@\n%@\n%@\n",glyph_name,trans_pos,position_data);
+		//		he_Trace("Glyph:%@\n%@\n%@\n%@\n",glyph_name,trans_pos,frame.GetSize(),position_data);
 		Vertex::V2 texture_data;
 		Vertex::Set(texture_data, t_data);
 		vertex_data_ = new TextureVertex(position_data, texture_data);
@@ -89,6 +125,14 @@ namespace he{
 	//		glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 	//	}
 
+
+	void Glyph::update(float dt){
+		render_object_->SetMVP(Transform_GetMVP(&(GetFrame().GetTransform())));
+	}
+	
+	void Glyph::render(){
+		render_object_->Render();
+	}
 	
 }
 ///EOF

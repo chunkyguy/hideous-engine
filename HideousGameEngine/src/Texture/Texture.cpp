@@ -48,7 +48,7 @@ namespace he{
 	
 	Texture::~Texture(){
 		if(destructible_){
-			FILE_LOG(logDEBUG) << "Destroying texture: " << path_;
+			//FILE_LOG(logDEBUG) << "Destroying texture: " << path_;
 			glDeleteTextures(1, &object_);
 			object_ = 0;
 		}

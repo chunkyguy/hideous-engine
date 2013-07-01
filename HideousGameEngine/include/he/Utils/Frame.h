@@ -44,6 +44,11 @@ namespace he {
 		Transform transform_;
 	};
 
+	/** Create local frame out of the frame 
+	 @param frame The requested frame
+	 */
+	Frame CreateLocalFrame(const Frame &frame);
+	
 	std::ostream &operator<<(std::ostream &os, const Frame &frame);
 
 }//ns he

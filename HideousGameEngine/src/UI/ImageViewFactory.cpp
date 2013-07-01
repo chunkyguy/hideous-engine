@@ -9,7 +9,6 @@
 #include <he/UI/ImageViewFactory.h>
 
 #include <he/Shaders/TextureShader.h>
-#include <he/Texture/Texture.h>
 #include <he/Texture/TextureAtlasRegion.h>
 #include <he/Vertex/TextureVertex.h>
 #include <he/Utils/Frame.h>

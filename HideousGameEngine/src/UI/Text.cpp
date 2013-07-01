@@ -13,73 +13,101 @@
 #include <he/Font/Glyph.h>
 #include <he/Shaders/TextShader.h>
 #include <he/Utils/DebugHelper.h>
+#include <he/Utils/Utils.h>
 
 namespace he{
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
 	// MARK: Text
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
-	Text::Text(Frame frame, TextFactory *factory, std::string string, GLKVector4 color) :
-	View(frame)
-	{
-		data_len_ = string.size();
-		data_ = new Glyph *[data_len_];
+//	Text::Text(Frame frame, Glyph **data_m, unsigned int data_len, GLKVector4 color) :
+//	View(frame),
+//	data_(data_m),
+//	data_len_(data_len)
+//	{	}
+//	
+//	Text::~Text(){
+//		for(int i = 0; i < data_len_; ++i){
+//			delete data_[i];
+//		}
+//		delete [] data_;
+//	}
+//
+//	void Text::update(float dt){
+//		for(int i = 0; i < data_len_; ++i){
+//			he::RenderObject *object = data_[i]->render_object_;
+//			object->SetMVP(Transform_GetMVP(&(GetFrame().GetTransform())));
+//		}
+//	}
+//	void Text::render(){
+//		for(int i = 0; i < data_len_; ++i){
+//			he::RenderObject *object = data_[i]->render_object_;
+//			object->Render();
+//		}
+//	}
+//		
+//	GLKVector2 Text::GetActualSize() const{
+//		return eff_size_;
+//	}
+
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// MARK: TextFactory
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	TextFactory::TextFactory(TextShader *shdr, Font *fnt_m){
+		shader.Set(shdr, true);
+		font.Move(fnt_m, true);
+	}
+
+	Text *TextFactory::CreateText(Transform transform, std::string string, GLKVector4 color){
+		Text *txt = new Text(Frame(transform));
 		
-		eff_size_ = GLKVector2Make(0,0);
-		GLKVector2 pen_position = GLKVector2Make(0,0);
-		int pos = 0;
-		const FT_Face face = factory->font.Get()->GetFace();
-		for(std::string::iterator it = string.begin(); it != string.end(); ++it){
+		const FT_Face face = font.Get()->GetFace();
+		GlyphData **gdata = new GlyphData* [string.size()];
+		// create textures
+		GLKVector3 pen_position = GLKVector3Make(0.0f, 0.0f, 0.0f);	// initial assumption
+																	//	GLKVector3 last_pen_position = pen_position;
+		GLKVector2 total_glyph_size = GLKVector2Make(0.0f, 0.0f);
+		int gdata_index = 0;
+		for(std::string::iterator it = string.begin(); it != string.end(); ++it){			
 			const char ch = *it;
 			FT_Error ret = FT_Load_Char(face, ch, FT_LOAD_RENDER);
 			assert(ret == 0); //"Couldn't load char
 			FT_GlyphSlot glyph_slot = face->glyph;
+			gdata[gdata_index] = new GlyphData(ch, glyph_slot, pen_position);
 			
-			Glyph *g = new Glyph(std::string(1, ch), glyph_slot, pen_position, factory->shader.Get(), color);
-			
-			// For Some Twisted Reason, FreeType Measures Font Size
-			// In Terms Of 1/64ths Of Pixels.  Thus, To Make A Font
-			//Advance for next char.. if looping
+			GLKVector2 eff_curr_glyph_size = GLKVector2Make(gdata[gdata_index]->bearing.w + gdata[gdata_index]->size.w,
+															gdata[gdata_index]->size.h);
+			total_glyph_size.x += eff_curr_glyph_size.x;
+			if(eff_curr_glyph_size.y > total_glyph_size.y){
+				total_glyph_size.y = eff_curr_glyph_size.y;
+			}
+			he_Trace("%c\t%@\t%@\n",ch, eff_curr_glyph_size, total_glyph_size);
+			// For some twisted Reason, FreeType measures font size in terms of 1/64ths of pixels.
+			//Thus, to make a font advance for next char.. if looping
+			//last_pen_position = pen_position;
 			pen_position.x += (glyph_slot->advance.x >> 6);
 			pen_position.y += (glyph_slot->advance.y >> 6);
-			
-			data_[pos++] = g;
-			
-			GLKVector2 it_sz = g->size_;
-			eff_size_.x += it_sz.x;
-			eff_size_.y = (eff_size_.y > it_sz.y) ? eff_size_.y: it_sz.y;
+			gdata_index++;
 		}
-		he_Trace("Text:eff_size: %@\n",eff_size_);
-	}
-	
-	Text::~Text(){
-		for(int i = 0; i < data_len_; ++i){
-			delete data_[i];
-		}
-		delete [] data_;
-	}
-
-	void Text::update(float dt){
-		for(int i = 0; i < data_len_; ++i){
-			he::RenderObject *object = data_[i]->render_object_;
-			object->SetMVP(Transform_GetMVP(&(GetFrame().GetTransform())));
-		}
-	}
-	void Text::render(){
-		for(int i = 0; i < data_len_; ++i){
-			he::RenderObject *object = data_[i]->render_object_;
-			object->Render();
-		}
-	}
 		
-	GLKVector2 Text::GetActualSize() const{
-		return eff_size_;
-	}
+		// Create glyphs
+		pen_position = GLKVector3Make(-total_glyph_size.x/2.0f, -total_glyph_size.y/2.0f, 0.0f);	// final assumption
+		gdata_index = 0;
+		for(std::string::iterator it = string.begin(); it != string.end(); ++it){
+			float trans_x = pen_position.x + gdata[gdata_index]->pen_pos.x + gdata[gdata_index]->size.w/2.0f + gdata[gdata_index]->bearing.w;
+			float trans_y = pen_position.y + gdata[gdata_index]->pen_pos.y + gdata[gdata_index]->size.h/2.0f;
+			GLKVector3 trans = GLKVector3Make(trans_x, trans_y, 0.0f);
+			he_Trace("Pen: %@\ttrans: %@\n%@\n",pen_position,trans,*(gdata[gdata_index]));
+			txt->MoveSubview(new Glyph(Frame(Transform_Create(trans), GLKVector2Make(gdata[gdata_index]->size.w,gdata[gdata_index]->size.h)), gdata[gdata_index], shader.Get(), color));
+			gdata_index++;
+		}
 
-	
-	TextFactory::TextFactory(Font *fnt, TextShader *sh){
-		font.Set(fnt, true);
-		shader.Set(sh, true);
+		gdata_index = 0;
+		for(std::string::iterator it = string.begin(); it != string.end(); ++it){
+			delete gdata[gdata_index];
+			gdata_index++;
+		}
+		delete gdata;
+		return txt;
 	}
-
 }
 ///EOF

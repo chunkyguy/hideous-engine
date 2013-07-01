@@ -26,6 +26,6 @@ TEST(Transform, Rotate){
 	he::Transform end = he::Transform_Create(GLKVector3Make(0, 0, 0), GLKVector4Make(0, 0, 1, GLKMathDegreesToRadians(45)));
 	
 	start.rotation.w = GLKMathDegreesToRadians(45);
-	he_Trace("Test:Transform:Rotate:\n%@\n",he::Transform_GetMV(&start));
+	//he_Trace("Test:Transform:Rotate:\n%@\n",he::Transform_GetMV(&start));
 	ASSERT_TRUE(he::Transform_GetMV(&start) == he::Transform_GetMV(&end));
 }

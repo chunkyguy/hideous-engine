@@ -33,8 +33,10 @@ private:
 	void load_text();
 	void unload_text();
 
-	he::Font *font_;
-	he::Text *text_;
+	he::Text *text_small_;
+	he::Text *text_caps_;
+	he::Text *text_nums_;
+	he::Text *text_sp_;
 	he::TextFactory *factory_;
 	he::TextShader *shader_;
 	he::GestureListener<RectTextTest> *gesture_listener_;

@@ -18,7 +18,7 @@ namespace he{
 		NSString *path_str = [[NSString alloc] initWithCString:path.c_str() encoding:NSASCIIStringEncoding];
 		NSData *texData = [[NSData alloc] initWithContentsOfFile:path_str];
 		UIImage *image = [[UIImage alloc] initWithData:texData];
-		NSLog(@"Loading texture: %@",path_str);
+		//		NSLog(@"Loading texture: %@",path_str);
 		assert(image);
 		width_ = NextPOT(CGImageGetWidth(image.CGImage));
 		height_ = NextPOT(CGImageGetHeight(image.CGImage));

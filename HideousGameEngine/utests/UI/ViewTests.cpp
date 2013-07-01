@@ -52,3 +52,18 @@ TEST(View, SubviewUpdate){
 	delete view;
 	delete he::g_Screen;
 }
+
+/** Test if creating view with another view's frame works */
+TEST(View, CreateViewWithAnotherViewsFrame){
+	he::g_Screen = new he::Screen(480, 320);
+	
+	he::Frame view_frame(he::Transform_Create(GLKVector3Make(0.0f, 0.0f, 0.0f)));
+	he::View *view =  new he::View(view_frame);
+	
+	he::Frame sub_frame1(he::Transform_Create(GLKVector3Make(0, 0, 0)), view->GetFrame().GetSize());
+	he::View *sub_view1 = new he::View(sub_frame1);
+
+	he::View *sub_view2 = new he::View(view->GetFrame());
+	
+	EXPECT_EQ(sub_view1->GetFrame().GetGlobalRect(), sub_view2->GetFrame().GetGlobalRect());
+}

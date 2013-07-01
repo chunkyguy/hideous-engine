@@ -162,7 +162,7 @@ namespace he{
 		// MARK: Operations
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		template<typename V>
-		bool Equal(const V &one, const V &two){
+		bool operator==(const V &one, const V &two){
 			int i = 0;
 			for(; i < V::vertex_count && F32Eq(one.data[i], two.data[i]); ++i){
 				//				he_Trace("%f == %f\n",one.data[i],two.data[i]);
