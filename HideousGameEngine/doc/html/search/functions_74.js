@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['text',['Text',['../classhe_1_1_text.html#ad85a653105a8f2880579169bf629ae9b',1,'he::Text']]],
-  ['textfactory',['TextFactory',['../classhe_1_1_text_factory.html#ac8da4501739eb480003e9d69a6c682fa',1,'he::TextFactory']]],
+  ['text',['Text',['../classhe_1_1_text.html#a9b73c3c1a93c482480ca1f13ae30e279',1,'he::Text']]],
+  ['textfactory',['TextFactory',['../classhe_1_1_text_factory.html#acca57f1a2d6fc385d2f6b3ccdd23df67',1,'he::TextFactory']]],
   ['textshader',['TextShader',['../classhe_1_1_text_shader.html#ae1fcc22012b21d7e828e9bc4a47a6327',1,'he::TextShader']]],
   ['texture',['Texture',['../classhe_1_1_texture.html#aea115b36ae2e5d140d9bdbaea2ae255e',1,'he::Texture::Texture(std::string path, GLint align=4)'],['../classhe_1_1_texture.html#a80952c9b985a1241594b08f654ec0eb4',1,'he::Texture::Texture(std::string path, GLubyte *data, GLKVector2 size, GLint align=4)'],['../classhe_1_1_texture.html#ab8c1fc7359d322356ed8833470735082',1,'he::Texture::Texture(Texture *texture)']]],
   ['textureatlas',['TextureAtlas',['../classhe_1_1_texture_atlas.html#a3f6e0e4d631d52185b214ef48697d601',1,'he::TextureAtlas']]],

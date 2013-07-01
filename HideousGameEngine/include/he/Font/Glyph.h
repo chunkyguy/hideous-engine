@@ -23,7 +23,8 @@ namespace he {
 	class Texture;
 	class TextureVertex;
 	
-	struct GlyphData{
+	class GlyphData{
+	public:
 		struct Size{
 			Size(int width, int height) : w(width), h(height)
 			{}
@@ -34,6 +35,14 @@ namespace he {
 		GlyphData(char charctr, FT_GlyphSlot &glyph_slot, GLKVector3 pen_pos);
 		~GlyphData();
 
+		char GetChar() const;
+		GLubyte *GetTexData() const;
+		GLKVector2 GetTexSize() const;
+		GLKVector2 GetSize() const;
+		GLKVector2 GetBearing() const;
+		GLKVector3 GetPenPosition() const;
+
+	private:
 		char ch;
 		GLubyte *tex_data;
 		Size tex_size;

@@ -9,7 +9,6 @@ var searchData=
   ['endanimationfunctor',['EndAnimationFunctor',['../classhe_1_1_end_animation_functor.html',1,'he']]],
   ['endanimationswithid',['EndAnimationsWithID',['../namespacehe.html#ac8b351e8488a0161c50e55b6f9336b43',1,'he']]],
   ['environment_5f',['environment_',['../classhe_1_1_particle.html#adc7de550eb4777aa1ff4066bac7829f9',1,'he::Particle']]],
-  ['equal',['Equal',['../namespacehe_1_1_vertex.html#a9d3b34dd9453794f708deaf3d5cf0575',1,'he::Vertex']]],
   ['eventloop',['EventLoop',['../classhe_1_1_event_loop.html',1,'he']]],
   ['eventloop',['EventLoop',['../classhe_1_1_event_loop.html#ae5ce3d2b95fc9a7f818328216997c814',1,'he::EventLoop']]],
   ['exponentialeasein',['ExponentialEaseIn',['../namespacehe.html#a30221957465af6b17e1d41885e0b31ea',1,'he']]],

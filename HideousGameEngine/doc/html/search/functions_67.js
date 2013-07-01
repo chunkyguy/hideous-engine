@@ -5,7 +5,6 @@ var searchData=
   ['gesturelistenable',['GestureListenable',['../classhe_1_1_gesture_listenable.html#a7175010c1ead315cd7c7e7f9baf941dd',1,'he::GestureListenable']]],
   ['gesturelistener',['GestureListener',['../classhe_1_1_gesture_listener.html#ab8d581ea9389f246bb36a21b6c434630',1,'he::GestureListener']]],
   ['get',['Get',['../classhe_1_1_asset.html#ae9fe0d7837681fe0ebae279c7276c453',1,'he::Asset::Get()'],['../class_debug_log.html#a18698a6a96494f248cbaa037addfa7ca',1,'DebugLog::Get()']]],
-  ['getactualsize',['GetActualSize',['../classhe_1_1_text.html#af1f9cefa9f520de9700816feb0f69a79',1,'he::Text']]],
   ['getcolor',['GetColor',['../classhe_1_1_render_object.html#a0061501bca16bccacf0a54ad7ca36ecc',1,'he::RenderObject']]],
   ['getcount',['GetCount',['../classhe_1_1_i_vertex.html#ae50d934ce47314194341515fb5aaf872',1,'he::IVertex']]],
   ['getdata',['GetData',['../classhe_1_1_file_buffer.html#a5ec946e2ae11922242c92eed9d173a22',1,'he::FileBuffer']]],
@@ -38,6 +37,8 @@ var searchData=
   ['getvertexdata',['GetVertexData',['../classhe_1_1_render_object.html#a4b825fad591daf12dae67925d033dc0b',1,'he::RenderObject']]],
   ['getvertexpositiondata',['GetVertexPositionData',['../classhe_1_1_color_vertex.html#ae9e540acfbdf993439a57f7b6061882c',1,'he::ColorVertex::GetVertexPositionData()'],['../classhe_1_1_texture_vertex.html#a194d0ae9afec67b530d1a72ca2e1f408',1,'he::TextureVertex::GetVertexPositionData()']]],
   ['getvertextexturedata',['GetVertexTextureData',['../classhe_1_1_texture_vertex.html#a9b10d95c557e76921b43646e6041a28c',1,'he::TextureVertex']]],
-  ['glyph',['Glyph',['../classhe_1_1_glyph.html#a56fa427c40692425e97cf5f874cc8f33',1,'he::Glyph']]],
-  ['gradientview',['GradientView',['../classhe_1_1_gradient_view.html#a5d87826f3184050264f0cb38f3e8befc',1,'he::GradientView']]]
+  ['glyph',['Glyph',['../classhe_1_1_glyph.html#a71c65655d166f9819f0266e978c994a1',1,'he::Glyph']]],
+  ['glyphdata',['GlyphData',['../structhe_1_1_glyph_data.html#a5df6af244108179e7b7b1d12917b4f68',1,'he::GlyphData']]],
+  ['gradientview',['GradientView',['../classhe_1_1_gradient_view.html#a7177a0ec3125c48c5ba15d47ac436280',1,'he::GradientView']]],
+  ['gradientviewfactory',['GradientViewFactory',['../classhe_1_1_gradient_view_factory.html#a68e5806c7846b968f89e0c3be1241cf5',1,'he::GradientViewFactory']]]
 ];

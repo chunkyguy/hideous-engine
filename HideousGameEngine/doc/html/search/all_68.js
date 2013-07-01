@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['h',['h',['../structhe_1_1_glyph_data_1_1_size.html#abb0994a848cb4d217d242fd74d6c9d46',1,'he::GlyphData::Size']]],
   ['handlegesture',['HandleGesture',['../classhe_1_1_button.html#a48da4dd8b4eedddacb623af9d32fd266',1,'he::Button']]],
   ['he',['he',['../namespacehe.html',1,'']]],
   ['he_5ftrace',['he_Trace',['../_debug_helper_8h.html#a76249a55c335bb9d1ea7c6ffd1215b42',1,'he_Trace(const char *s):&#160;DebugHelper.h'],['../_debug_helper_8h.html#a727a0beeb767b969588169fbe5f46c2d',1,'he_Trace(const char *s, const T &amp;value, const Args &amp;...args):&#160;DebugHelper.h']]],

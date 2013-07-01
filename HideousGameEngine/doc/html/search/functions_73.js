@@ -23,6 +23,7 @@ var searchData=
   ['sineeasein',['SineEaseIn',['../namespacehe.html#a624f73fd271ca4d420b8a1af584c2ef2',1,'he']]],
   ['sineeaseinout',['SineEaseInOut',['../namespacehe.html#a3a7381338a8a5330eae7772b3ab98543',1,'he']]],
   ['sineeaseout',['SineEaseOut',['../namespacehe.html#a9008ce73b55240fb14283b6d90660781',1,'he']]],
+  ['size',['Size',['../structhe_1_1_glyph_data_1_1_size.html#a1fad0fe54b7cd09ba6082d0cb9b8c52d',1,'he::GlyphData::Size']]],
   ['sprite',['Sprite',['../classhe_1_1_sprite.html#ae96ed621e41ee6e376d080aac04cffc4',1,'he::Sprite']]],
   ['spriteanimation',['SpriteAnimation',['../classhe_1_1_sprite_animation.html#a84fc46549380c60d7d480643b7f9cace',1,'he::SpriteAnimation']]],
   ['starlingdataparser',['StarlingDataParser',['../classhe_1_1_starling_data_parser.html#aca0db266b258321d7a1f53a209195086',1,'he::StarlingDataParser']]],

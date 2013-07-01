@@ -592,33 +592,95 @@
               </Subnodes>
              </Node>
              <Node>
+              <Name>GlyphData</Name>
+              <Path>structhe_1_1_glyph_data.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>Size</Name>
+                <Path>structhe_1_1_glyph_data_1_1_size.html</Path>
+                <Subnodes>
+                 <Node>
+                  <Name>Size</Name>
+                  <Path>structhe_1_1_glyph_data_1_1_size.html</Path>
+                  <Anchor>a1fad0fe54b7cd09ba6082d0cb9b8c52d</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>h</Name>
+                  <Path>structhe_1_1_glyph_data_1_1_size.html</Path>
+                  <Anchor>abb0994a848cb4d217d242fd74d6c9d46</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>w</Name>
+                  <Path>structhe_1_1_glyph_data_1_1_size.html</Path>
+                  <Anchor>a7931cce78b5725c7b1c84d13639be01d</Anchor>
+                 </Node>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>GlyphData</Name>
+                <Path>structhe_1_1_glyph_data.html</Path>
+                <Anchor>a5df6af244108179e7b7b1d12917b4f68</Anchor>
+               </Node>
+               <Node>
+                <Name>~GlyphData</Name>
+                <Path>structhe_1_1_glyph_data.html</Path>
+                <Anchor>ab311bda60496d975a0af615534b42417</Anchor>
+               </Node>
+               <Node>
+                <Name>bearing</Name>
+                <Path>structhe_1_1_glyph_data.html</Path>
+                <Anchor>ac7e6f62ae33c2c669884813a03c0e6b0</Anchor>
+               </Node>
+               <Node>
+                <Name>ch</Name>
+                <Path>structhe_1_1_glyph_data.html</Path>
+                <Anchor>a8e1080fdac6c8a4f78cb74d5ba3c8098</Anchor>
+               </Node>
+               <Node>
+                <Name>pen_pos</Name>
+                <Path>structhe_1_1_glyph_data.html</Path>
+                <Anchor>a31c14f73654339d950abdbea9ac3b653</Anchor>
+               </Node>
+               <Node>
+                <Name>size</Name>
+                <Path>structhe_1_1_glyph_data.html</Path>
+                <Anchor>ae04260ccf8f54cf85f337fec3a84b621</Anchor>
+               </Node>
+               <Node>
+                <Name>tex_data</Name>
+                <Path>structhe_1_1_glyph_data.html</Path>
+                <Anchor>a7a8ef56971ae2dab0a21c5c4ef8d0723</Anchor>
+               </Node>
+               <Node>
+                <Name>tex_size</Name>
+                <Path>structhe_1_1_glyph_data.html</Path>
+                <Anchor>a83d5feb45380b4cc7cbe8c5847be3bcd</Anchor>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
               <Name>Glyph</Name>
               <Path>classhe_1_1_glyph.html</Path>
               <Subnodes>
                <Node>
                 <Name>Glyph</Name>
                 <Path>classhe_1_1_glyph.html</Path>
-                <Anchor>a56fa427c40692425e97cf5f874cc8f33</Anchor>
+                <Anchor>a71c65655d166f9819f0266e978c994a1</Anchor>
                </Node>
                <Node>
                 <Name>~Glyph</Name>
                 <Path>classhe_1_1_glyph.html</Path>
-                <Anchor>a9c4f78f08e0587e9014be891b3276b52</Anchor>
+                <Anchor>ac8e7eb2a0ed7dc1b3e2f10c31374bfb0</Anchor>
                </Node>
                <Node>
-                <Name>frame_</Name>
+                <Name>render</Name>
                 <Path>classhe_1_1_glyph.html</Path>
-                <Anchor>a4f454c453efcf6a1769bc1944b65ba78</Anchor>
+                <Anchor>a3640c897c540676066060412e3ff04d6</Anchor>
                </Node>
                <Node>
-                <Name>render_object_</Name>
+                <Name>update</Name>
                 <Path>classhe_1_1_glyph.html</Path>
-                <Anchor>a6365a4ab67647050a71f09893766bdbe</Anchor>
-               </Node>
-               <Node>
-                <Name>size_</Name>
-                <Path>classhe_1_1_glyph.html</Path>
-                <Anchor>af9cf925bb66272dd6255b9462ab0b167</Anchor>
+                <Anchor>a0d5d6da5fa992b074f7ba7d957a378d3</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -1363,30 +1425,9 @@
               <Path>classhe_1_1_gradient_view.html</Path>
               <Subnodes>
                <Node>
-                <Name>Factory</Name>
-                <Path>structhe_1_1_gradient_view_1_1_factory.html</Path>
-                <Subnodes>
-                 <Node>
-                  <Name>Factory</Name>
-                  <Path>structhe_1_1_gradient_view_1_1_factory.html</Path>
-                  <Anchor>a59e0dec600f777aa205f1b0acebbce55</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>shader</Name>
-                  <Path>structhe_1_1_gradient_view_1_1_factory.html</Path>
-                  <Anchor>aafd87b168bf42a52cf31453d21dba1b9</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>vertex</Name>
-                  <Path>structhe_1_1_gradient_view_1_1_factory.html</Path>
-                  <Anchor>acd0feb29e4f4a94cb180d6b6acfdadb8</Anchor>
-                 </Node>
-                </Subnodes>
-               </Node>
-               <Node>
                 <Name>GradientView</Name>
                 <Path>classhe_1_1_gradient_view.html</Path>
-                <Anchor>a5d87826f3184050264f0cb38f3e8befc</Anchor>
+                <Anchor>a7177a0ec3125c48c5ba15d47ac436280</Anchor>
                </Node>
                <Node>
                 <Name>~GradientView</Name>
@@ -1402,6 +1443,32 @@
                 <Name>update</Name>
                 <Path>classhe_1_1_gradient_view.html</Path>
                 <Anchor>a605274c34167346462123fbcca2ffdcf</Anchor>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>GradientViewFactory</Name>
+              <Path>classhe_1_1_gradient_view_factory.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>GradientViewFactory</Name>
+                <Path>classhe_1_1_gradient_view_factory.html</Path>
+                <Anchor>a68e5806c7846b968f89e0c3be1241cf5</Anchor>
+               </Node>
+               <Node>
+                <Name>CreateGradientView</Name>
+                <Path>classhe_1_1_gradient_view_factory.html</Path>
+                <Anchor>a22ad6a1765aacee654bba877ded682ef</Anchor>
+               </Node>
+               <Node>
+                <Name>CreateGradientView</Name>
+                <Path>classhe_1_1_gradient_view_factory.html</Path>
+                <Anchor>a92787e66c3d1375ba9e7449fc4f84e17</Anchor>
+               </Node>
+               <Node>
+                <Name>CreateGradientView</Name>
+                <Path>classhe_1_1_gradient_view_factory.html</Path>
+                <Anchor>a5e3e5ff5de177154f251033401f9a0d7</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -1514,54 +1581,34 @@
               </Subnodes>
              </Node>
              <Node>
-              <Name>TextFactory</Name>
-              <Path>classhe_1_1_text_factory.html</Path>
-              <Subnodes>
-               <Node>
-                <Name>TextFactory</Name>
-                <Path>classhe_1_1_text_factory.html</Path>
-                <Anchor>ac8da4501739eb480003e9d69a6c682fa</Anchor>
-               </Node>
-               <Node>
-                <Name>font</Name>
-                <Path>classhe_1_1_text_factory.html</Path>
-                <Anchor>a5401fe4ec548d37f5113913a08d42a2c</Anchor>
-               </Node>
-               <Node>
-                <Name>shader</Name>
-                <Path>classhe_1_1_text_factory.html</Path>
-                <Anchor>a93161e1ae4890d6bdfdd9d3a49ea44b9</Anchor>
-               </Node>
-              </Subnodes>
-             </Node>
-             <Node>
               <Name>Text</Name>
               <Path>classhe_1_1_text.html</Path>
               <Subnodes>
                <Node>
                 <Name>Text</Name>
                 <Path>classhe_1_1_text.html</Path>
-                <Anchor>ad85a653105a8f2880579169bf629ae9b</Anchor>
+                <Anchor>a9b73c3c1a93c482480ca1f13ae30e279</Anchor>
                </Node>
                <Node>
                 <Name>~Text</Name>
                 <Path>classhe_1_1_text.html</Path>
                 <Anchor>ac5a4b71c27415408bce3b9d1069dc242</Anchor>
                </Node>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>TextFactory</Name>
+              <Path>classhe_1_1_text_factory.html</Path>
+              <Subnodes>
                <Node>
-                <Name>GetActualSize</Name>
-                <Path>classhe_1_1_text.html</Path>
-                <Anchor>af1f9cefa9f520de9700816feb0f69a79</Anchor>
+                <Name>TextFactory</Name>
+                <Path>classhe_1_1_text_factory.html</Path>
+                <Anchor>acca57f1a2d6fc385d2f6b3ccdd23df67</Anchor>
                </Node>
                <Node>
-                <Name>render</Name>
-                <Path>classhe_1_1_text.html</Path>
-                <Anchor>a372bf35028551f22d7d670d5548b1c3a</Anchor>
-               </Node>
-               <Node>
-                <Name>update</Name>
-                <Path>classhe_1_1_text.html</Path>
-                <Anchor>afe8dbdb23b207910f89fdec7960d7afa</Anchor>
+                <Name>CreateText</Name>
+                <Path>classhe_1_1_text_factory.html</Path>
+                <Anchor>a043e1a6f0853edfdbe4fe70af69df406</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -2171,10 +2218,6 @@
             <Path>classhe_1_1_asset.html</Path>
            </Node>
            <Node>
-            <Name>he::Asset&lt; he::ColorVertex &gt;</Name>
-            <Path>classhe_1_1_asset.html</Path>
-           </Node>
-           <Node>
             <Name>he::Asset&lt; he::Font &gt;</Name>
             <Path>classhe_1_1_asset.html</Path>
            </Node>
@@ -2229,10 +2272,6 @@
             <Path>classhe_1_1_event_loop.html</Path>
            </Node>
            <Node>
-            <Name>he::GradientView::Factory</Name>
-            <Path>structhe_1_1_gradient_view_1_1_factory.html</Path>
-           </Node>
-           <Node>
             <Name>he::FileBuffer</Name>
             <Path>classhe_1_1_file_buffer.html</Path>
            </Node>
@@ -2285,8 +2324,12 @@
             </Subnodes>
            </Node>
            <Node>
-            <Name>he::Glyph</Name>
-            <Path>classhe_1_1_glyph.html</Path>
+            <Name>he::GlyphData</Name>
+            <Path>structhe_1_1_glyph_data.html</Path>
+           </Node>
+           <Node>
+            <Name>he::GradientViewFactory</Name>
+            <Path>classhe_1_1_gradient_view_factory.html</Path>
            </Node>
            <Node>
             <Name>he::IButtonListner</Name>
@@ -2381,6 +2424,10 @@
             <Path>classhe_1_1_screen.html</Path>
            </Node>
            <Node>
+            <Name>he::GlyphData::Size</Name>
+            <Path>structhe_1_1_glyph_data_1_1_size.html</Path>
+           </Node>
+           <Node>
             <Name>he::TextFactory</Name>
             <Path>classhe_1_1_text_factory.html</Path>
            </Node>
@@ -2461,6 +2508,10 @@
              <Node>
               <Name>he::Button</Name>
               <Path>classhe_1_1_button.html</Path>
+             </Node>
+             <Node>
+              <Name>he::Glyph</Name>
+              <Path>classhe_1_1_glyph.html</Path>
              </Node>
              <Node>
               <Name>he::GradientView</Name>
@@ -3510,35 +3561,128 @@
                     <Path>_glyph_8h.html</Path>
                     <Subnodes>
                      <Node>
+                      <Name>GlyphData</Name>
+                      <Path>structhe_1_1_glyph_data.html</Path>
+                      <Subnodes>
+                       <Node>
+                        <Name>Size</Name>
+                        <Path>structhe_1_1_glyph_data_1_1_size.html</Path>
+                        <Subnodes>
+                         <Node>
+                          <Name>Size</Name>
+                          <Path>structhe_1_1_glyph_data_1_1_size.html</Path>
+                          <Anchor>a1fad0fe54b7cd09ba6082d0cb9b8c52d</Anchor>
+                         </Node>
+                         <Node>
+                          <Name>h</Name>
+                          <Path>structhe_1_1_glyph_data_1_1_size.html</Path>
+                          <Anchor>abb0994a848cb4d217d242fd74d6c9d46</Anchor>
+                         </Node>
+                         <Node>
+                          <Name>w</Name>
+                          <Path>structhe_1_1_glyph_data_1_1_size.html</Path>
+                          <Anchor>a7931cce78b5725c7b1c84d13639be01d</Anchor>
+                         </Node>
+                        </Subnodes>
+                       </Node>
+                       <Node>
+                        <Name>GlyphData</Name>
+                        <Path>structhe_1_1_glyph_data.html</Path>
+                        <Anchor>a5df6af244108179e7b7b1d12917b4f68</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>~GlyphData</Name>
+                        <Path>structhe_1_1_glyph_data.html</Path>
+                        <Anchor>ab311bda60496d975a0af615534b42417</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>bearing</Name>
+                        <Path>structhe_1_1_glyph_data.html</Path>
+                        <Anchor>ac7e6f62ae33c2c669884813a03c0e6b0</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>ch</Name>
+                        <Path>structhe_1_1_glyph_data.html</Path>
+                        <Anchor>a8e1080fdac6c8a4f78cb74d5ba3c8098</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>pen_pos</Name>
+                        <Path>structhe_1_1_glyph_data.html</Path>
+                        <Anchor>a31c14f73654339d950abdbea9ac3b653</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>size</Name>
+                        <Path>structhe_1_1_glyph_data.html</Path>
+                        <Anchor>ae04260ccf8f54cf85f337fec3a84b621</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>tex_data</Name>
+                        <Path>structhe_1_1_glyph_data.html</Path>
+                        <Anchor>a7a8ef56971ae2dab0a21c5c4ef8d0723</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>tex_size</Name>
+                        <Path>structhe_1_1_glyph_data.html</Path>
+                        <Anchor>a83d5feb45380b4cc7cbe8c5847be3bcd</Anchor>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>Size</Name>
+                      <Path>structhe_1_1_glyph_data_1_1_size.html</Path>
+                      <Subnodes>
+                       <Node>
+                        <Name>Size</Name>
+                        <Path>structhe_1_1_glyph_data_1_1_size.html</Path>
+                        <Anchor>a1fad0fe54b7cd09ba6082d0cb9b8c52d</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>h</Name>
+                        <Path>structhe_1_1_glyph_data_1_1_size.html</Path>
+                        <Anchor>abb0994a848cb4d217d242fd74d6c9d46</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>w</Name>
+                        <Path>structhe_1_1_glyph_data_1_1_size.html</Path>
+                        <Anchor>a7931cce78b5725c7b1c84d13639be01d</Anchor>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                     <Node>
                       <Name>Glyph</Name>
                       <Path>classhe_1_1_glyph.html</Path>
                       <Subnodes>
                        <Node>
                         <Name>Glyph</Name>
                         <Path>classhe_1_1_glyph.html</Path>
-                        <Anchor>a56fa427c40692425e97cf5f874cc8f33</Anchor>
+                        <Anchor>a71c65655d166f9819f0266e978c994a1</Anchor>
                        </Node>
                        <Node>
                         <Name>~Glyph</Name>
                         <Path>classhe_1_1_glyph.html</Path>
-                        <Anchor>a9c4f78f08e0587e9014be891b3276b52</Anchor>
+                        <Anchor>ac8e7eb2a0ed7dc1b3e2f10c31374bfb0</Anchor>
                        </Node>
                        <Node>
-                        <Name>frame_</Name>
+                        <Name>render</Name>
                         <Path>classhe_1_1_glyph.html</Path>
-                        <Anchor>a4f454c453efcf6a1769bc1944b65ba78</Anchor>
+                        <Anchor>a3640c897c540676066060412e3ff04d6</Anchor>
                        </Node>
                        <Node>
-                        <Name>render_object_</Name>
+                        <Name>update</Name>
                         <Path>classhe_1_1_glyph.html</Path>
-                        <Anchor>a6365a4ab67647050a71f09893766bdbe</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>size_</Name>
-                        <Path>classhe_1_1_glyph.html</Path>
-                        <Anchor>af9cf925bb66272dd6255b9462ab0b167</Anchor>
+                        <Anchor>a0d5d6da5fa992b074f7ba7d957a378d3</Anchor>
                        </Node>
                       </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>operator&lt;&lt;</Name>
+                      <Path>_glyph_8h.html</Path>
+                      <Anchor>a17ef3b3d9ff9ffc72a3dd98444843ab2</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>operator&lt;&lt;</Name>
+                      <Path>_glyph_8h.html</Path>
+                      <Anchor>ad6e3e0455de871fe5abe08e2a4d8b27f</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>
@@ -4461,30 +4605,9 @@
                       <Path>classhe_1_1_gradient_view.html</Path>
                       <Subnodes>
                        <Node>
-                        <Name>Factory</Name>
-                        <Path>structhe_1_1_gradient_view_1_1_factory.html</Path>
-                        <Subnodes>
-                         <Node>
-                          <Name>Factory</Name>
-                          <Path>structhe_1_1_gradient_view_1_1_factory.html</Path>
-                          <Anchor>a59e0dec600f777aa205f1b0acebbce55</Anchor>
-                         </Node>
-                         <Node>
-                          <Name>shader</Name>
-                          <Path>structhe_1_1_gradient_view_1_1_factory.html</Path>
-                          <Anchor>aafd87b168bf42a52cf31453d21dba1b9</Anchor>
-                         </Node>
-                         <Node>
-                          <Name>vertex</Name>
-                          <Path>structhe_1_1_gradient_view_1_1_factory.html</Path>
-                          <Anchor>acd0feb29e4f4a94cb180d6b6acfdadb8</Anchor>
-                         </Node>
-                        </Subnodes>
-                       </Node>
-                       <Node>
                         <Name>GradientView</Name>
                         <Path>classhe_1_1_gradient_view.html</Path>
-                        <Anchor>a5d87826f3184050264f0cb38f3e8befc</Anchor>
+                        <Anchor>a7177a0ec3125c48c5ba15d47ac436280</Anchor>
                        </Node>
                        <Node>
                         <Name>~GradientView</Name>
@@ -4504,23 +4627,28 @@
                       </Subnodes>
                      </Node>
                      <Node>
-                      <Name>Factory</Name>
-                      <Path>structhe_1_1_gradient_view_1_1_factory.html</Path>
+                      <Name>GradientViewFactory</Name>
+                      <Path>classhe_1_1_gradient_view_factory.html</Path>
                       <Subnodes>
                        <Node>
-                        <Name>Factory</Name>
-                        <Path>structhe_1_1_gradient_view_1_1_factory.html</Path>
-                        <Anchor>a59e0dec600f777aa205f1b0acebbce55</Anchor>
+                        <Name>GradientViewFactory</Name>
+                        <Path>classhe_1_1_gradient_view_factory.html</Path>
+                        <Anchor>a68e5806c7846b968f89e0c3be1241cf5</Anchor>
                        </Node>
                        <Node>
-                        <Name>shader</Name>
-                        <Path>structhe_1_1_gradient_view_1_1_factory.html</Path>
-                        <Anchor>aafd87b168bf42a52cf31453d21dba1b9</Anchor>
+                        <Name>CreateGradientView</Name>
+                        <Path>classhe_1_1_gradient_view_factory.html</Path>
+                        <Anchor>a22ad6a1765aacee654bba877ded682ef</Anchor>
                        </Node>
                        <Node>
-                        <Name>vertex</Name>
-                        <Path>structhe_1_1_gradient_view_1_1_factory.html</Path>
-                        <Anchor>acd0feb29e4f4a94cb180d6b6acfdadb8</Anchor>
+                        <Name>CreateGradientView</Name>
+                        <Path>classhe_1_1_gradient_view_factory.html</Path>
+                        <Anchor>a92787e66c3d1375ba9e7449fc4f84e17</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>CreateGradientView</Name>
+                        <Path>classhe_1_1_gradient_view_factory.html</Path>
+                        <Anchor>a5e3e5ff5de177154f251033401f9a0d7</Anchor>
                        </Node>
                       </Subnodes>
                      </Node>
@@ -4657,54 +4785,34 @@
                     <Path>_text_8h.html</Path>
                     <Subnodes>
                      <Node>
-                      <Name>TextFactory</Name>
-                      <Path>classhe_1_1_text_factory.html</Path>
-                      <Subnodes>
-                       <Node>
-                        <Name>TextFactory</Name>
-                        <Path>classhe_1_1_text_factory.html</Path>
-                        <Anchor>ac8da4501739eb480003e9d69a6c682fa</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>font</Name>
-                        <Path>classhe_1_1_text_factory.html</Path>
-                        <Anchor>a5401fe4ec548d37f5113913a08d42a2c</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>shader</Name>
-                        <Path>classhe_1_1_text_factory.html</Path>
-                        <Anchor>a93161e1ae4890d6bdfdd9d3a49ea44b9</Anchor>
-                       </Node>
-                      </Subnodes>
-                     </Node>
-                     <Node>
                       <Name>Text</Name>
                       <Path>classhe_1_1_text.html</Path>
                       <Subnodes>
                        <Node>
                         <Name>Text</Name>
                         <Path>classhe_1_1_text.html</Path>
-                        <Anchor>ad85a653105a8f2880579169bf629ae9b</Anchor>
+                        <Anchor>a9b73c3c1a93c482480ca1f13ae30e279</Anchor>
                        </Node>
                        <Node>
                         <Name>~Text</Name>
                         <Path>classhe_1_1_text.html</Path>
                         <Anchor>ac5a4b71c27415408bce3b9d1069dc242</Anchor>
                        </Node>
+                      </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>TextFactory</Name>
+                      <Path>classhe_1_1_text_factory.html</Path>
+                      <Subnodes>
                        <Node>
-                        <Name>GetActualSize</Name>
-                        <Path>classhe_1_1_text.html</Path>
-                        <Anchor>af1f9cefa9f520de9700816feb0f69a79</Anchor>
+                        <Name>TextFactory</Name>
+                        <Path>classhe_1_1_text_factory.html</Path>
+                        <Anchor>acca57f1a2d6fc385d2f6b3ccdd23df67</Anchor>
                        </Node>
                        <Node>
-                        <Name>render</Name>
-                        <Path>classhe_1_1_text.html</Path>
-                        <Anchor>a372bf35028551f22d7d670d5548b1c3a</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>update</Name>
-                        <Path>classhe_1_1_text.html</Path>
-                        <Anchor>afe8dbdb23b207910f89fdec7960d7afa</Anchor>
+                        <Name>CreateText</Name>
+                        <Path>classhe_1_1_text_factory.html</Path>
+                        <Anchor>a043e1a6f0853edfdbe4fe70af69df406</Anchor>
                        </Node>
                       </Subnodes>
                      </Node>
@@ -5014,6 +5122,11 @@
                         <Anchor>a6d2af0c26cc861e37638756337c171ce</Anchor>
                        </Node>
                       </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>CreateLocalFrame</Name>
+                      <Path>_frame_8h.html</Path>
+                      <Anchor>a58e2e464b176ea2b3058417d061de29d</Anchor>
                      </Node>
                      <Node>
                       <Name>operator&lt;&lt;</Name>
@@ -5627,11 +5740,6 @@
                       <Anchor>a67abed613f1301d2bdcb14c18a1d5c6f</Anchor>
                      </Node>
                      <Node>
-                      <Name>Equal</Name>
-                      <Path>_vertex_data_8h.html</Path>
-                      <Anchor>a9d3b34dd9453794f708deaf3d5cf0575</Anchor>
-                     </Node>
-                     <Node>
                       <Name>GetSize</Name>
                       <Path>_vertex_data_8h.html</Path>
                       <Anchor>aaba7172a45fc29c71428bc1627de475b</Anchor>
@@ -5665,6 +5773,11 @@
                       <Name>operator&lt;&lt;</Name>
                       <Path>_vertex_data_8h.html</Path>
                       <Anchor>a0d00842ac6dea54eb3d9deacc8422ff9</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>operator==</Name>
+                      <Path>_vertex_data_8h.html</Path>
+                      <Anchor>ad28023468464e17c29ed2eaa069cf33d</Anchor>
                      </Node>
                      <Node>
                       <Name>Scale</Name>

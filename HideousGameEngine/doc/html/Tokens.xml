@@ -459,6 +459,28 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>operator&lt;&lt;</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe.html</Path>
+    <Anchor>a17ef3b3d9ff9ffc72a3dd98444843ab2</Anchor>
+    <DeclaredIn>Glyph.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator&lt;&lt;</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe.html</Path>
+    <Anchor>ad6e3e0455de871fe5abe08e2a4d8b27f</Anchor>
+    <DeclaredIn>Glyph.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>HideousEngineInit</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
@@ -638,6 +660,17 @@
     <Path>_debug_log_8h.html</Path>
     <Anchor>a2341a2a7c04d08eb40d2cb0b18b0b778a176f7407a8bfb98d35382c989ca453df</Anchor>
     <DeclaredIn>DebugLog.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CreateLocalFrame</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe.html</Path>
+    <Anchor>a58e2e464b176ea2b3058417d061de29d</Anchor>
+    <DeclaredIn>Frame.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1014,13 +1047,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>Equal</Name>
+      <Name>operator==</Name>
       <APILanguage>cpp</APILanguage>
       <Type>func</Type>
       <Scope>he::Vertex</Scope>
     </TokenIdentifier>
     <Path>namespacehe_1_1_vertex.html</Path>
-    <Anchor>a9d3b34dd9453794f708deaf3d5cf0575</Anchor>
+    <Anchor>ad28023468464e17c29ed2eaa069cf33d</Anchor>
     <DeclaredIn>VertexData.h</DeclaredIn>
   </Token>
   <Token>
@@ -1821,6 +1854,28 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>operator&lt;&lt;</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe.html</Path>
+    <Anchor>a17ef3b3d9ff9ffc72a3dd98444843ab2</Anchor>
+    <DeclaredIn>Glyph.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator&lt;&lt;</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe.html</Path>
+    <Anchor>ad6e3e0455de871fe5abe08e2a4d8b27f</Anchor>
+    <DeclaredIn>Glyph.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>CreateTextureData</Name>
       <APILanguage>cpp</APILanguage>
       <Type>func</Type>
@@ -1840,6 +1895,17 @@
     <Path>namespacehe.html</Path>
     <Anchor>a20919da1caca24a1638ec57e4bbd58dd</Anchor>
     <DeclaredIn>TextureAtlasRegion.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CreateLocalFrame</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe.html</Path>
+    <Anchor>a58e2e464b176ea2b3058417d061de29d</Anchor>
+    <DeclaredIn>Frame.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -3310,6 +3376,139 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>he::GlyphData</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>he::GlyphData</Scope>
+    </TokenIdentifier>
+    <Path>structhe_1_1_glyph_data.html</Path>
+    <DeclaredIn>Glyph.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GlyphData</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he::GlyphData</Scope>
+    </TokenIdentifier>
+    <Path>structhe_1_1_glyph_data.html</Path>
+    <Anchor>a5df6af244108179e7b7b1d12917b4f68</Anchor>
+    <DeclaredIn>Glyph.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~GlyphData</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he::GlyphData</Scope>
+    </TokenIdentifier>
+    <Path>structhe_1_1_glyph_data.html</Path>
+    <Anchor>ab311bda60496d975a0af615534b42417</Anchor>
+    <DeclaredIn>Glyph.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ch</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>he::GlyphData</Scope>
+    </TokenIdentifier>
+    <Path>structhe_1_1_glyph_data.html</Path>
+    <Anchor>a8e1080fdac6c8a4f78cb74d5ba3c8098</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>tex_data</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>he::GlyphData</Scope>
+    </TokenIdentifier>
+    <Path>structhe_1_1_glyph_data.html</Path>
+    <Anchor>a7a8ef56971ae2dab0a21c5c4ef8d0723</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>tex_size</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>he::GlyphData</Scope>
+    </TokenIdentifier>
+    <Path>structhe_1_1_glyph_data.html</Path>
+    <Anchor>a83d5feb45380b4cc7cbe8c5847be3bcd</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>size</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>he::GlyphData</Scope>
+    </TokenIdentifier>
+    <Path>structhe_1_1_glyph_data.html</Path>
+    <Anchor>ae04260ccf8f54cf85f337fec3a84b621</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>bearing</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>he::GlyphData</Scope>
+    </TokenIdentifier>
+    <Path>structhe_1_1_glyph_data.html</Path>
+    <Anchor>ac7e6f62ae33c2c669884813a03c0e6b0</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>pen_pos</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>he::GlyphData</Scope>
+    </TokenIdentifier>
+    <Path>structhe_1_1_glyph_data.html</Path>
+    <Anchor>a31c14f73654339d950abdbea9ac3b653</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>he::GlyphData::Size</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>he::GlyphData::Size</Scope>
+    </TokenIdentifier>
+    <Path>structhe_1_1_glyph_data_1_1_size.html</Path>
+    <DeclaredIn>Glyph.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Size</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he::GlyphData::Size</Scope>
+    </TokenIdentifier>
+    <Path>structhe_1_1_glyph_data_1_1_size.html</Path>
+    <Anchor>a1fad0fe54b7cd09ba6082d0cb9b8c52d</Anchor>
+    <DeclaredIn>Glyph.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>w</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>he::GlyphData::Size</Scope>
+    </TokenIdentifier>
+    <Path>structhe_1_1_glyph_data_1_1_size.html</Path>
+    <Anchor>a7931cce78b5725c7b1c84d13639be01d</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>h</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>he::GlyphData::Size</Scope>
+    </TokenIdentifier>
+    <Path>structhe_1_1_glyph_data_1_1_size.html</Path>
+    <Anchor>abb0994a848cb4d217d242fd74d6c9d46</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>he::Glyph</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -3326,7 +3525,7 @@
       <Scope>he::Glyph</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_glyph.html</Path>
-    <Anchor>a56fa427c40692425e97cf5f874cc8f33</Anchor>
+    <Anchor>a71c65655d166f9819f0266e978c994a1</Anchor>
     <DeclaredIn>Glyph.h</DeclaredIn>
   </Token>
   <Token>
@@ -3337,38 +3536,118 @@
       <Scope>he::Glyph</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_glyph.html</Path>
-    <Anchor>a9c4f78f08e0587e9014be891b3276b52</Anchor>
+    <Anchor>ac8e7eb2a0ed7dc1b3e2f10c31374bfb0</Anchor>
     <DeclaredIn>Glyph.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>frame_</Name>
+      <Name>View</Name>
       <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>he::Glyph</Scope>
+      <Type>instm</Type>
+      <Scope>he::View</Scope>
     </TokenIdentifier>
-    <Path>classhe_1_1_glyph.html</Path>
-    <Anchor>a4f454c453efcf6a1769bc1944b65ba78</Anchor>
+    <Path>classhe_1_1_view.html</Path>
+    <Anchor>a908e9a465868336bf150e7da3c351802</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>render_object_</Name>
+      <Name>~View</Name>
       <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>he::Glyph</Scope>
+      <Type>instm</Type>
+      <Scope>he::View</Scope>
     </TokenIdentifier>
-    <Path>classhe_1_1_glyph.html</Path>
-    <Anchor>a6365a4ab67647050a71f09893766bdbe</Anchor>
+    <Path>classhe_1_1_view.html</Path>
+    <Anchor>a1fe7bb5e03647f9cad7c1e31ce8e1a8f</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>size_</Name>
+      <Name>Update</Name>
       <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
+      <Type>instm</Type>
+      <Scope>he::View</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_view.html</Path>
+    <Anchor>a7f330ef32e846fb486572a9134c7a59c</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Render</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::View</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_view.html</Path>
+    <Anchor>a065bdc08a7de80e2267e83804eb34e0e</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MoveSubview</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::View</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_view.html</Path>
+    <Anchor>a27dada8c1932d6031ce66a2e2eda9f53</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SetFrame</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::View</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_view.html</Path>
+    <Anchor>aac8de95dc8c5e093ba4c69c0d9191312</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetFrame</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::View</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_view.html</Path>
+    <Anchor>ab1b1934e38f262db490d4ae04dff14f7</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetFramePtr</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::View</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_view.html</Path>
+    <Anchor>a95fe9d710c493a571271819bb52c7f40</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>update</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
       <Scope>he::Glyph</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_glyph.html</Path>
-    <Anchor>af9cf925bb66272dd6255b9462ab0b167</Anchor>
+    <Anchor>a0d5d6da5fa992b074f7ba7d957a378d3</Anchor>
+    <DeclaredIn>Glyph.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>render</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Glyph</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_glyph.html</Path>
+    <Anchor>a3640c897c540676066060412e3ff04d6</Anchor>
+    <DeclaredIn>Glyph.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -5083,7 +5362,7 @@
       <Scope>he::GradientView</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_gradient_view.html</Path>
-    <Anchor>a5d87826f3184050264f0cb38f3e8befc</Anchor>
+    <Anchor>a7177a0ec3125c48c5ba15d47ac436280</Anchor>
     <DeclaredIn>GradientView.h</DeclaredIn>
   </Token>
   <Token>
@@ -5209,44 +5488,57 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>he::GradientView::Factory</Name>
+      <Name>he::GradientViewFactory</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
-      <Scope>he::GradientView::Factory</Scope>
+      <Scope>he::GradientViewFactory</Scope>
     </TokenIdentifier>
-    <Path>structhe_1_1_gradient_view_1_1_factory.html</Path>
+    <Path>classhe_1_1_gradient_view_factory.html</Path>
     <DeclaredIn>GradientView.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>Factory</Name>
+      <Name>GradientViewFactory</Name>
       <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
-      <Scope>he::GradientView::Factory</Scope>
+      <Type>instm</Type>
+      <Scope>he::GradientViewFactory</Scope>
     </TokenIdentifier>
-    <Path>structhe_1_1_gradient_view_1_1_factory.html</Path>
-    <Anchor>a59e0dec600f777aa205f1b0acebbce55</Anchor>
+    <Path>classhe_1_1_gradient_view_factory.html</Path>
+    <Anchor>a68e5806c7846b968f89e0c3be1241cf5</Anchor>
     <DeclaredIn>GradientView.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>shader</Name>
+      <Name>CreateGradientView</Name>
       <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>he::GradientView::Factory</Scope>
+      <Type>instm</Type>
+      <Scope>he::GradientViewFactory</Scope>
     </TokenIdentifier>
-    <Path>structhe_1_1_gradient_view_1_1_factory.html</Path>
-    <Anchor>aafd87b168bf42a52cf31453d21dba1b9</Anchor>
+    <Path>classhe_1_1_gradient_view_factory.html</Path>
+    <Anchor>a22ad6a1765aacee654bba877ded682ef</Anchor>
+    <DeclaredIn>GradientView.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>vertex</Name>
+      <Name>CreateGradientView</Name>
       <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>he::GradientView::Factory</Scope>
+      <Type>instm</Type>
+      <Scope>he::GradientViewFactory</Scope>
     </TokenIdentifier>
-    <Path>structhe_1_1_gradient_view_1_1_factory.html</Path>
-    <Anchor>acd0feb29e4f4a94cb180d6b6acfdadb8</Anchor>
+    <Path>classhe_1_1_gradient_view_factory.html</Path>
+    <Anchor>a92787e66c3d1375ba9e7449fc4f84e17</Anchor>
+    <DeclaredIn>GradientView.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CreateGradientView</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::GradientViewFactory</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_gradient_view_factory.html</Path>
+    <Anchor>a5e3e5ff5de177154f251033401f9a0d7</Anchor>
+    <DeclaredIn>GradientView.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -5494,6 +5786,7 @@
       <Scope>he::Sprite</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_sprite.html</Path>
+    <Abstract>Sprite is an animated texture object. The texture has to be provided as an atlas. ...</Abstract>
     <DeclaredIn>Sprite.h</DeclaredIn>
   </Token>
   <Token>
@@ -5650,53 +5943,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>he::TextFactory</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>he::TextFactory</Scope>
-    </TokenIdentifier>
-    <Path>classhe_1_1_text_factory.html</Path>
-    <DeclaredIn>Text.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>TextFactory</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>he::TextFactory</Scope>
-    </TokenIdentifier>
-    <Path>classhe_1_1_text_factory.html</Path>
-    <Anchor>ac8da4501739eb480003e9d69a6c682fa</Anchor>
-    <DeclaredIn>Text.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>font</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>he::TextFactory</Scope>
-    </TokenIdentifier>
-    <Path>classhe_1_1_text_factory.html</Path>
-    <Anchor>a5401fe4ec548d37f5113913a08d42a2c</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>shader</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>he::TextFactory</Scope>
-    </TokenIdentifier>
-    <Path>classhe_1_1_text_factory.html</Path>
-    <Anchor>a93161e1ae4890d6bdfdd9d3a49ea44b9</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>he::Text</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
       <Scope>he::Text</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_text.html</Path>
+    <Abstract>This could be different from the passed frome, as it is calculated at run time based on the font size...</Abstract>
     <DeclaredIn>Text.h</DeclaredIn>
   </Token>
   <Token>
@@ -5707,7 +5960,7 @@
       <Scope>he::Text</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_text.html</Path>
-    <Anchor>ad85a653105a8f2880579169bf629ae9b</Anchor>
+    <Anchor>a9b73c3c1a93c482480ca1f13ae30e279</Anchor>
     <DeclaredIn>Text.h</DeclaredIn>
   </Token>
   <Token>
@@ -5719,18 +5972,6 @@
     </TokenIdentifier>
     <Path>classhe_1_1_text.html</Path>
     <Anchor>ac5a4b71c27415408bce3b9d1069dc242</Anchor>
-    <DeclaredIn>Text.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>GetActualSize</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>he::Text</Scope>
-    </TokenIdentifier>
-    <Path>classhe_1_1_text.html</Path>
-    <Anchor>af1f9cefa9f520de9700816feb0f69a79</Anchor>
-    <Abstract>This could be different from the passed frome, as it is calculated at run time based on the font size...</Abstract>
     <DeclaredIn>Text.h</DeclaredIn>
   </Token>
   <Token>
@@ -5826,21 +6067,53 @@
       <Name>update</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>he::Text</Scope>
+      <Scope>he::View</Scope>
     </TokenIdentifier>
-    <Path>classhe_1_1_text.html</Path>
-    <Anchor>afe8dbdb23b207910f89fdec7960d7afa</Anchor>
-    <DeclaredIn>Text.h</DeclaredIn>
+    <Path>classhe_1_1_view.html</Path>
+    <Anchor>afb9e07fcef0e4dc94c6aab415f450fe8</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>render</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>he::Text</Scope>
+      <Scope>he::View</Scope>
     </TokenIdentifier>
-    <Path>classhe_1_1_text.html</Path>
-    <Anchor>a372bf35028551f22d7d670d5548b1c3a</Anchor>
+    <Path>classhe_1_1_view.html</Path>
+    <Anchor>a1b99c623e4056631f07dfdbe94d8f62f</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>he::TextFactory</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>he::TextFactory</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_text_factory.html</Path>
+    <DeclaredIn>Text.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>TextFactory</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::TextFactory</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_text_factory.html</Path>
+    <Anchor>acca57f1a2d6fc385d2f6b3ccdd23df67</Anchor>
+    <DeclaredIn>Text.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CreateText</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::TextFactory</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_text_factory.html</Path>
+    <Anchor>a043e1a6f0853edfdbe4fe70af69df406</Anchor>
     <DeclaredIn>Text.h</DeclaredIn>
   </Token>
   <Token>
@@ -7107,13 +7380,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>Equal</Name>
+      <Name>operator==</Name>
       <APILanguage>cpp</APILanguage>
       <Type>func</Type>
       <Scope>he::Vertex</Scope>
     </TokenIdentifier>
     <Path>namespacehe_1_1_vertex.html</Path>
-    <Anchor>a9d3b34dd9453794f708deaf3d5cf0575</Anchor>
+    <Anchor>ad28023468464e17c29ed2eaa069cf33d</Anchor>
     <DeclaredIn>VertexData.h</DeclaredIn>
   </Token>
   <Token>

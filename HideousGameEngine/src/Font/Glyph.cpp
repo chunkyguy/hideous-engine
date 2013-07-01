@@ -49,7 +49,26 @@ namespace he{
 	}
 	
 	GlyphData::~GlyphData(){
-		delete tex_data;
+		delete [] tex_data;
+	}
+
+	char GlyphData::GetChar() const{
+		return ch;
+	}
+	GLubyte *GlyphData::GetTexData() const{
+		return tex_data;
+	}
+	GLKVector2 GlyphData::GetTexSize() const{
+		return GLKVector2Make(tex_size.w, tex_size.h);
+	}
+	GLKVector2 GlyphData::GetSize() const{
+		return GLKVector2Make(size.w, size.h);
+	}
+	GLKVector2 GlyphData::GetBearing() const{
+		return GLKVector2Make(bearing.w, bearing.h);
+	}
+	GLKVector3 GlyphData::GetPenPosition() const{
+		return pen_pos;
 	}
 
 	std::ostream &operator<<(std::ostream &os, const GlyphData::Size &sz){
@@ -58,12 +77,12 @@ namespace he{
 	}
 
 	std::ostream &operator<<(std::ostream &os, const GlyphData &gd){
-		PrintGlyph(gd.tex_data, gd.tex_size.w, gd.tex_size.h);
-		os << "Char: " << gd.ch << std::endl;
-		os << "Pen-position: " << gd.pen_pos << std::endl;
-		os << "Size: " << gd.size << std::endl;
-		os << "Bearing: " << gd.bearing << std::endl;
-		os << "Tex-size: " << gd.tex_size;
+		PrintGlyph(gd.GetTexData(), gd.GetTexSize().x, gd.GetTexSize().y);
+		os << "Char: " << gd.GetChar() << std::endl;
+		os << "Pen-position: " << gd.GetPenPosition() << std::endl;
+		os << "Size: " << gd.GetSize() << std::endl;
+		os << "Bearing: " << gd.GetBearing() << std::endl;
+		os << "Tex-size: " << gd.GetTexSize();
 		return os;
 	}
 
@@ -93,16 +112,15 @@ namespace he{
 			trans_pos.x/2.0f,	trans_pos.y/2.0f
 		};
 		
-		GLfloat s = static_cast<GLfloat>(data->size.w)/static_cast<GLfloat>(data->tex_size.w);
-		GLfloat t = static_cast<GLfloat>(data->size.h)/static_cast<GLfloat>(data->tex_size.h);
+		GLKVector2 st_coords = data->GetSize() / data->GetTexSize();
 		GLfloat t_data[] = {
-			0.0f,	t,
-			s,		t,
+			0.0f,	st_coords.y,
+			st_coords.x,		st_coords.y,
 			0.0f,	0.0f,
-			s,		0.0f
+			st_coords.x,		0.0f
 		};
 		
-		texture_ = new Texture(std::string(1, data->ch), data->tex_data, GLKVector2Make(data->tex_size.w, data->tex_size.h), 1);
+		texture_ = new Texture(std::string(1, data->GetChar()), data->GetTexData(), data->GetTexSize(), 1);
 		Vertex::V2 position_data;
 		Vertex::Set(position_data, p_data);
 		//		he_Trace("Glyph:%@\n%@\n%@\n%@\n",glyph_name,trans_pos,frame.GetSize(),position_data);

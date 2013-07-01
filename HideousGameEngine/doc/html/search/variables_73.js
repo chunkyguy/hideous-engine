@@ -1,9 +1,9 @@
 var searchData=
 [
   ['scale',['scale',['../structhe_1_1_transform.html#af0011a413810ef836bf2bcdb789990f5',1,'he::Transform']]],
-  ['shader',['shader',['../structhe_1_1_gradient_view_1_1_factory.html#aafd87b168bf42a52cf31453d21dba1b9',1,'he::GradientView::Factory::shader()'],['../classhe_1_1_text_factory.html#a93161e1ae4890d6bdfdd9d3a49ea44b9',1,'he::TextFactory::shader()']]],
   ['shader_5f',['shader_',['../classhe_1_1_render_object.html#aa3a961fd6c45291f10c6f2c89e1df925',1,'he::RenderObject']]],
-  ['size_5f',['size_',['../classhe_1_1_glyph.html#af9cf925bb66272dd6255b9462ab0b167',1,'he::Glyph::size_()'],['../classhe_1_1_texture.html#a427faf178ce45f8ce15dd7c6d0ba68ac',1,'he::Texture::size_()']]],
+  ['size',['size',['../structhe_1_1_glyph_data.html#ae04260ccf8f54cf85f337fec3a84b621',1,'he::GlyphData']]],
+  ['size_5f',['size_',['../classhe_1_1_texture.html#a427faf178ce45f8ce15dd7c6d0ba68ac',1,'he::Texture']]],
   ['sprite_5fcolor_5frect_5f',['sprite_color_rect_',['../classhe_1_1_texture_atlas_region.html#a29dda4e7e00823c8d559fd6ea13a783f',1,'he::TextureAtlasRegion']]],
   ['sprite_5foffset_5f',['sprite_offset_',['../classhe_1_1_texture_atlas_region.html#a095ec0de612d7654e02eecbae88b7fba',1,'he::TextureAtlasRegion']]],
   ['sprite_5fsize_5f',['sprite_size_',['../classhe_1_1_texture_atlas_region.html#a5032846b0d89707727148f39ac961eb1',1,'he::TextureAtlasRegion']]],

@@ -72,9 +72,9 @@ void RectTextTest::load_text(){
 	}
 	//Draw a text
 	assert(shader_);
-	factory_ = new he::TextFactory(shader_, new he::Font(he::ResourcePath() + "Silom.ttf", 17));
-	text_small_ = factory_->CreateText(he::Transform_Create(GLKVector3Make(0.0f, -100.0f, he::g_Screen->z_)), "the quick brown fox jumps over the lazy dog");
+	factory_ = new he::TextFactory(shader_, new he::Font(he::ResourcePath() + "Courier New.ttf", 14));
 	text_caps_ = factory_->CreateText(he::Transform_Create(GLKVector3Make(0.0f, -50.0f, he::g_Screen->z_)), "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG");
+	text_small_ = factory_->CreateText(he::Transform_Create(GLKVector3Make(0.0f, 0.0f, he::g_Screen->z_)), "the quick brown fox jumps over the lazy dog");
 	text_nums_ = factory_->CreateText(he::Transform_Create(GLKVector3Make(0.0f, 50.0f, he::g_Screen->z_)), "0123456789");
 	text_sp_ = factory_->CreateText(he::Transform_Create(GLKVector3Make(0.0f, 100.0f, he::g_Screen->z_)), "~!@#$%^&*()_+-={}\\|;:'\"<>?,./");
 }
