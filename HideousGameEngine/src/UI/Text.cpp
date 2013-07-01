@@ -93,8 +93,8 @@ namespace he{
 		pen_position = GLKVector3Make(-total_glyph_size.x/2.0f, 0.0f, 0.0f);	// final assumption
 		gdata_index = 0;
 		for(std::string::iterator it = string.begin(); it != string.end(); ++it){
-			float trans_x = pen_position.x + gdata[gdata_index]->GetPenPosition().x + gdata[gdata_index]->GetSize().x/2.0f + gdata[gdata_index]->GetBearing().x;
-			float trans_y = pen_position.y + gdata[gdata_index]->GetBearing().y/2.0f;
+			float trans_x = pen_position.x + gdata[gdata_index]->GetPenPosition().x + gdata[gdata_index]->GetBearing().x + gdata[gdata_index]->GetSize().x/2.0f ;
+			float trans_y = pen_position.y + gdata[gdata_index]->GetPenPosition().y + gdata[gdata_index]->GetBearing().y/2.0f;
 			GLKVector3 trans = GLKVector3Make(trans_x, trans_y, 0.0f);
 			he_Trace("Pen: %@\ttrans: %@\n%@\n",pen_position,trans,*(gdata[gdata_index]));
 			txt->MoveSubview(new Glyph(Frame(Transform_Create(trans), gdata[gdata_index]->GetSize()), gdata[gdata_index], shader.Get(), color));
