@@ -55,7 +55,9 @@ namespace he{
 	}
 	Vertex::V2 Frame::GetGlobalRect() const{
 		Vertex::V2 world_frame(rect_);
+		//	he_Trace("Frame::GetGlobalRect:BEF\n%@\n",world_frame);
 		he::Vertex::ApplyTransform(world_frame, transform_);
+		//	he_Trace("Frame::GetGlobalRect:AFT\n%@\n",world_frame);
 		return world_frame;
 		
 	}

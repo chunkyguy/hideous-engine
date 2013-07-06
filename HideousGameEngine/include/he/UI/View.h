@@ -29,7 +29,10 @@ namespace he {
 			
 			/** Owns the passed component */
 			void MoveSubview(View *view);
-			
+
+			/** Remove the passed component */
+			void RemoveSubview(View *view);
+
 			/** Update frame */
 			void SetFrame(const Frame &frame);
 			/** Get the current frame */

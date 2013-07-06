@@ -22,10 +22,12 @@ namespace he{
 				   const int repeat_count, const int final_frame, const float fps) :
 	View(frame),
 	vertex_(nullptr),
-	render_object_(new RenderObject(vertex_, shader, atlas->GetTexture(), Transform_GetMVP(&(frame.GetTransform()))))
+	render_object_()
 	{
 		he::SpriteAnimation *animation = new he::SpriteAnimation(&vertex_, atlas, animation_name, repeat_count, final_frame, fps);
-		he::g_AnimationLoop->AddAnimation(animation);
+		he::g_AnimationLoop->MoveAnimation(animation);
+		assert(vertex_);		// There is some default vertex data.
+		render_object_ = new RenderObject(vertex_, shader, atlas->GetTexture(), Transform_GetMVP(&(frame.GetTransform())));
 	}
 	
 	Sprite::~Sprite(){

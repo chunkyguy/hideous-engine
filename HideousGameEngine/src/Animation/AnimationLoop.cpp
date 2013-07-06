@@ -53,7 +53,7 @@ namespace he {
 		}
 	}
 	
-	void AnimationLoop::AddAnimation( Animation *a){
+	void AnimationLoop::MoveAnimation( Animation *a){
 		//FILE_LOG(logDEBUG) << "AnimationLoop: AddAnimation(" << a << "|" << a->GetID() << "|" << a->GetDescentID() << ")";
 		if(!new_head_){
 			new_tail_ = new_head_ = a;

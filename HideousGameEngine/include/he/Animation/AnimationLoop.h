@@ -30,7 +30,7 @@ namespace he {
 		~AnimationLoop();
 		
 		// Add an animation in a seperate linked list. List is merged with the main list at next update.
-		void AddAnimation(Animation *a);
+		void MoveAnimation(Animation *a);
 		
 		//	Simple way to traverse all animation.
 		//	Needs a function pointer, functor, whatever as argument.

@@ -57,6 +57,7 @@ namespace he{
 			he_Trace("SpriteAnimation: t-data:\n%@",tail_->vertex_->GetVertexTextureData());
 		}
 		assert(final_vertex_data_);		// No data to load when the animation end, maybe the frame index provided is out of range.
+		assert(*vertex_data_);		// Default vertex data not set
 	}
 
 	SpriteAnimation::~SpriteAnimation(){

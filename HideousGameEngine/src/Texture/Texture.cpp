@@ -8,7 +8,7 @@
 
 #include <he/Texture/Texture.h>
 #include <he/Texture/TextureData.h>
-#include <he/Utils/DebugLog.h>
+#include <he/Utils/DebugHelper.h>
 
 namespace he{
 	///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -20,7 +20,7 @@ namespace he{
 	path_(path),
 	size_(GLKVector2Make(0,0))
 	{
-		//FILE_LOG(logDEBUG) << "Creating texture: " << name << "." << extn;
+		he_Trace("Texture: %@\n",path);
 		TextureData texData(path_);
 		assert(texData.data_);
 		size_ = GLKVector2Make(texData.width_, texData.height_);
@@ -35,7 +35,7 @@ namespace he{
 	path_(path),
 	size_(size)
 	{
-		FILE_LOG(logDEBUG) << "Creating texture: " << path;
+		he_Trace("Texture: %@\n",path);
 		load_texture(data, align);
 	}
 
@@ -48,7 +48,7 @@ namespace he{
 	
 	Texture::~Texture(){
 		if(destructible_){
-			//FILE_LOG(logDEBUG) << "Destroying texture: " << path_;
+			he_Trace("~Texture: %@\n",path_);
 			glDeleteTextures(1, &object_);
 			object_ = 0;
 		}
@@ -72,6 +72,7 @@ namespace he{
 				glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, size_.x, size_.y, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
 				break;
 		}
+		assert(object_);		// Texture not loaded
 	}
 	
 	GLKVector2 Texture::GetSize(){

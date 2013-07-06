@@ -26,7 +26,7 @@ namespace he{
 					child_->Die(); delete child_; child_ = nullptr;
 				}else{
 					// From this moment on child is responsibilty of the AnimationLoop.
-					g_AnimationLoop->AddAnimation(child_);
+					g_AnimationLoop->MoveAnimation(child_);
 				}
 			}
 			if(listener_){		// callback

@@ -18,17 +18,17 @@ namespace he {
 		
 		/** Interface of the protocol */
 		class Button;
-		struct IButtonListner{
-			virtual ~IButtonListner(){}
+		struct IButtonListener{
+			virtual ~IButtonListener(){}
 			virtual void Hit(Button *sender) = 0;
 		};
 		
 		/**	Anon delegate */
 		template<typename T>
-		class ButtonListner : public IButtonListner{
+		class ButtonListener : public IButtonListener{
 		public:
 			typedef void(T::*callback)(Button *sender);
-			ButtonListner(T *object, callback callback) :
+			ButtonListener(T *object, callback callback) :
 			object_(object),
 			method_(callback)
 			{}
@@ -44,7 +44,7 @@ namespace he {
 		
 		class Button : public View{
 		public:
-			Button(const Frame frame, IButtonListner *listner, int tag = -1);
+			Button(const Frame frame, IButtonListener *listner, int tag = -1);
 			virtual ~Button();
 			
 			/** Animatiion finish callback.
@@ -73,7 +73,7 @@ namespace he {
 			int tag_;	/**< tag to identify the object */
 			//unsigned long animation_handle_; /**< animation handle to kill the animation if required */
 			GestureListener<Button> *gesture_listener_; /**< Registered gesture listener */
-			IButtonListner *listner_;	/**< Registered button listener */
+			IButtonListener *listner_;	/**< Registered button listener */
 			//		AnimationListener<Button> *animation_listener_; /**< Registered animation listener */
 		};
 } /*namespace he*/
