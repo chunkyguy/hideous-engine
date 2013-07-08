@@ -11,6 +11,8 @@
 
 #include <gtest/internal/gtest-internal.h>
 
+#define M_TAU 6.28318530717958647692528676655900576		/* 2*M_PI */
+
 namespace he{
 	/** A 32 bit floating-point num used for operations like cmp */
 	typedef testing::internal::FloatingPoint<float> F32;

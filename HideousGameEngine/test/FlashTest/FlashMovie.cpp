@@ -46,7 +46,7 @@ vertex_data_(nullptr)
 	he::SpriteAnimation *animation = new he::SpriteAnimation(&vertex_data_, assets->GetAtlas(), name, -1, final_frame, fps);
 	assert(animation);
 	
-	he::g_AnimationLoop->AddAnimation(animation);
+	he::g_AnimationLoop->MoveAnimation(animation);
 }
 
 FlashMovie::~FlashMovie(){
@@ -95,7 +95,7 @@ void FlashMovie::TouchPoint(const GLKVector2 &point){
 	he::RawAnimation<GLKVector2> *trans_anim = new he::RawAnimation<GLKVector2>(&position_, he::Tweener<GLKVector2>(he::CubicEaseInOut, position_, point), 30);
 	//	rot_anim->AddChild(trans_anim);
 
-	he::g_AnimationLoop->AddAnimation(trans_anim);
+	he::g_AnimationLoop->MoveAnimation(trans_anim);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

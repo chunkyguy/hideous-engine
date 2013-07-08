@@ -67,3 +67,17 @@ TEST(View, CreateViewWithAnotherViewsFrame){
 	
 	EXPECT_EQ(sub_view1->GetFrame().GetGlobalRect(), sub_view2->GetFrame().GetGlobalRect());
 }
+
+/** Test if creating view with another view's frame works */
+TEST(View, CreateViewWithViewsFrame){
+	he::g_Screen = new he::Screen(480, 320);
+	
+	he::View *vw = new he::View(he::Frame(he::Transform_Create(GLKVector3Make(0, 50, 0)), GLKVector2Make(256.0f, 256.0f)));
+	
+	he::Frame sub_frame1(he::Transform_Create(GLKVector3Make(0, 0, 0)), vw->GetFrame().GetSize());
+	he::Frame sub_frame2 = CreateLocalFrame(vw->GetFrame());
+	
+	EXPECT_EQ(sub_frame1.GetRect(), sub_frame2.GetRect());
+	delete vw;
+	delete he::g_Screen;
+}

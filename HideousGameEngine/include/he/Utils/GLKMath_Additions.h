@@ -30,6 +30,7 @@
 
 #include <GLKit/GLKMath.h>
 
+#include <he/Utils/Types.h>
 #ifdef __cplusplus
 
 
@@ -84,7 +85,12 @@ inline GLKVector2 operator / (const GLKVector2& left, const float& right) {
 }
 
 inline bool operator == (const GLKVector2& left, const GLKVector2& right) {
-	return GLKVector2AllEqualToVector2(left, right);
+	if(GLKVector2AllEqualToVector2(left, right)){
+		return true;
+	}
+	
+	return	he::F32Eq(left.x, right.x) &&
+			he::F32Eq(left.y, right.y);
 }
 
 inline bool operator != (const GLKVector2& left, const GLKVector2& right) {
@@ -227,7 +233,12 @@ inline GLKVector3 operator / (const GLKVector3& left, const float& right) {
 }
 
 inline bool operator == (const GLKVector3& left, const GLKVector3& right) {
-	return GLKVector3AllEqualToVector3(left, right);
+	if( GLKVector3AllEqualToVector3(left, right)){
+		return true;
+	}
+	return	he::F32Eq(left.x, right.x) &&
+			he::F32Eq(left.y, right.y) &&
+			he::F32Eq(left.z, right.z);
 }
 
 inline bool operator != (const GLKVector3& left, const GLKVector3& right) {
@@ -371,7 +382,13 @@ inline GLKVector4 operator / (const GLKVector4& left, const float& right) {
 }
 
 inline bool operator == (const GLKVector4& left, const GLKVector4& right) {
-	return GLKVector4AllEqualToVector4(left, right);
+	if( GLKVector4AllEqualToVector4(left, right)){
+		return true;
+	}
+	return	he::F32Eq(left.x, right.x) &&
+	he::F32Eq(left.y, right.y) &&
+	he::F32Eq(left.z, right.z) &&
+	he::F32Eq(left.w, right.w);
 }
 
 inline bool operator != (const GLKVector4& left, const GLKVector4& right) {
@@ -534,10 +551,20 @@ inline GLKVector3 operator * (const GLKMatrix4& left, const GLKVector3& right) {
 //		//return GLKMatrix4MultiplyVector3WithTranslation(left, right);
 //	}
 inline bool operator == (const GLKMatrix4 &left, const GLKMatrix4 &right){
-	int i = 0;
-	for(; i < 16 && (left.m[i] == right.m[i]); ++i){
+	bool ret =
+	(left.m00 == right.m00) && (left.m01 == right.m01) &&	(left.m02 == right.m02) && (left.m03 == right.m03) &&
+	(left.m10 == right.m10) && (left.m11 == right.m11) && (left.m12 == right.m12) && (left.m13 == right.m13) &&
+	(left.m20 == right.m20) && (left.m21 == right.m21) &&	(left.m22 == right.m22) && (left.m23 == right.m23) &&
+	(left.m30 == right.m30) && (left.m31 == right.m31) && (left.m32 == right.m32) && (left.m33 == right.m33);
+	if(ret){
+		return true;
 	}
-	return !(i < 16);
+
+	return
+	he::F32Eq(left.m00, right.m00) && he::F32Eq(left.m01, right.m01) &&	he::F32Eq(left.m02, right.m02) && he::F32Eq(left.m03, right.m03) &&
+	he::F32Eq(left.m10, right.m10) && he::F32Eq(left.m11, right.m11) && he::F32Eq(left.m12, right.m12) && he::F32Eq(left.m13, right.m13) &&
+	he::F32Eq(left.m20, right.m20) && he::F32Eq(left.m21, right.m21) &&	he::F32Eq(left.m22, right.m22) && he::F32Eq(left.m23, right.m23) &&
+	he::F32Eq(left.m30, right.m30) && he::F32Eq(left.m31, right.m31) && he::F32Eq(left.m32, right.m32) && he::F32Eq(left.m33, right.m33);
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // MARK: GLKQuaternion

@@ -64,7 +64,7 @@ void UITest::init(){
 	bg_vw->MoveSubview(mission_vw);
 
 	//button
-	btn_listener_.Move(new he::ButtonListner<UITest>(this, &UITest::ButtonHandler), false);
+	btn_listener_.Move(new he::ButtonListener<UITest>(this, &UITest::ButtonHandler), false);
 	he::Button *btn = new he::Button(CreateLocalFrame(mission_vw->GetFrame()), btn_listener_.Get(), 99);
 	mission_vw->MoveSubview(btn);
 

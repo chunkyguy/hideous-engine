@@ -46,7 +46,7 @@ private:
 	he::Asset<he::ColorShader> clr_sh_;
 	he::Asset<he::GradientViewFactory> gradient_view_factory_;
 	
-	he::Asset<he::ButtonListner<UITest> > btn_listener_;
+	he::Asset<he::ButtonListener<UITest> > btn_listener_;
 	
 	he::Asset<he::TextShader> txt_shader_;
 	he::Asset<he::TextFactory> txt_factory_;

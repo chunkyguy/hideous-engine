@@ -91,7 +91,7 @@ void AnimObj::TouchEnd(GLKVector2 pt){
 //	scale_down_anim->AddChild(color_switch);
 //	scale_animation->AddChild(scale_down_anim);
 
-	he::g_AnimationLoop->AddAnimation(scale_animation);
+	he::g_AnimationLoop->MoveAnimation(scale_animation);
 	scale_anim_descent_id_ = scale_animation->GetDescentID();
 
 	he::RawAnimation<GLKVector3> *trans_animation = new he::RawAnimation<GLKVector3>(&(transform_.position),
@@ -101,7 +101,7 @@ void AnimObj::TouchEnd(GLKVector2 pt){
 																	he::Tweener<float>(he::Linear, transform_.rotation.w, GLKMathDegreesToRadians(45.0f)),
 																	10);
 	trans_animation->AddChild(rot_anim);
-	he::g_AnimationLoop->AddAnimation(trans_animation);
+	he::g_AnimationLoop->MoveAnimation(trans_animation);
 	trans_anim_descent_id_ = trans_animation->GetDescentID();
 	
 	/*

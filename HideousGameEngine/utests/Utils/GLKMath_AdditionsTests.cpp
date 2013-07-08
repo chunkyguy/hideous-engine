@@ -10,6 +10,43 @@
 
 #include <gtest.h>
 
+TEST(GLKVector2, Equality){
+	GLKVector2 a = GLKVector2Make(0.5f, 0.5f);
+	GLKVector2 b = GLKVector2Make(0.5f, 0.5f);
+	EXPECT_TRUE(a == b);
+}
+
+TEST(GLKVector2, AlmostEquality){
+	GLKVector2 a = GLKVector2Make(0.5f, 0.5f);
+	GLKVector2 b = GLKVector2Make(0.5000001f, 0.5000001f);
+	EXPECT_TRUE(a == b);
+}
+
+TEST(GLKVector3, Equality){
+	GLKVector3 a = GLKVector3Make(0.5f, 0.5f, 0.5f);
+	GLKVector3 b = GLKVector3Make(0.5f, 0.5f, 0.5f);
+	EXPECT_TRUE(a == b);
+}
+
+TEST(GLKVector3, AlmostEquality){
+	GLKVector3 a = GLKVector3Make(0.5f, 0.5f, 0.5f);
+	GLKVector3 b = GLKVector3Make(0.5000001f, 0.5000001f, 0.5000001f);
+	EXPECT_TRUE(a == b);
+}
+
+TEST(GLKVector4, Equality){
+	GLKVector4 a = GLKVector4Make(0.5f, 0.5f, 0.5f, 0.5f);
+	GLKVector4 b = GLKVector4Make(0.5f, 0.5f, 0.5f, 0.5f);
+	EXPECT_TRUE(a == b);
+}
+
+TEST(GLKVector4, AlmostEquality){
+	GLKVector4 a = GLKVector4Make(0.5f, 0.5f, 0.5f, 0.5f);
+	GLKVector4 b = GLKVector4Make(0.5000001f, 0.5000001f, 0.5000001f, 0.5000001f);
+	EXPECT_TRUE(a == b);
+}
+
+
 TEST(GLKMatrix4, Equality){
 	GLKMatrix4 a = GLKMatrix4MakeXRotation(1);
 	GLKMatrix4 b = GLKMatrix4MakeXRotation(1);
