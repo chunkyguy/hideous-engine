@@ -31,10 +31,10 @@ namespace he {
 	}
 	
 	void ImageView::update(float dt){
-		render_object_->SetMVP(Transform_GetMVP(&(GetFrame().GetTransform())));
 	}
 	
 	void ImageView::render(){
+		render_object_->SetMVP(Transform_GetMVP(&(GetFrame().GetTransform())));
 		render_object_->Render();
 	}
 	

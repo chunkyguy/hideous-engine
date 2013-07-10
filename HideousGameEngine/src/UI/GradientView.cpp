@@ -29,10 +29,10 @@ namespace he{
 	}
 	
 	void GradientView::update(float dt){
-		render_object_->SetMVP(Transform_GetMVP(&(GetFrame().GetTransform())));
 	}
 	
 	void GradientView::render(){
+		render_object_->SetMVP(Transform_GetMVP(&(GetFrame().GetTransform())));
 		render_object_->Render();
 	}
 	

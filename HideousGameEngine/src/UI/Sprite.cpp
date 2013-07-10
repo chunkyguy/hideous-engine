@@ -38,11 +38,11 @@ namespace he{
 	}
 	
 	void Sprite::update(float dt){
-		render_object_->SetVertexData(vertex_);
-		render_object_->SetMVP(Transform_GetMVP(&(GetFrame().GetTransform())));
 	}
 	
 	void Sprite::render(){
+		render_object_->SetVertexData(vertex_);
+		render_object_->SetMVP(Transform_GetMVP(&(GetFrame().GetTransform())));
 		render_object_->Render();
 	}
 } 
