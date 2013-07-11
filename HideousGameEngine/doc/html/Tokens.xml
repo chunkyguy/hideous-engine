@@ -828,6 +828,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>M_TAU</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>_types_8h.html</Path>
+    <Anchor>ae0f7f25bda391b76da8251153e463a17</Anchor>
+    <DeclaredIn>Types.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>F32</Name>
       <APILanguage>cpp</APILanguage>
       <Type>tdef</Type>
@@ -2459,13 +2469,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>AddAnimation</Name>
+      <Name>MoveAnimation</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>he::AnimationLoop</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_animation_loop.html</Path>
-    <Anchor>a8e774dda8b03c33343b77bcc08aa3213</Anchor>
+    <Anchor>ad95cc27b86412448901b445ee40bbe37</Anchor>
     <DeclaredIn>AnimationLoop.h</DeclaredIn>
   </Token>
   <Token>
@@ -3381,17 +3391,17 @@
       <Type>cl</Type>
       <Scope>he::GlyphData</Scope>
     </TokenIdentifier>
-    <Path>structhe_1_1_glyph_data.html</Path>
+    <Path>classhe_1_1_glyph_data.html</Path>
     <DeclaredIn>Glyph.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>GlyphData</Name>
       <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
+      <Type>instm</Type>
       <Scope>he::GlyphData</Scope>
     </TokenIdentifier>
-    <Path>structhe_1_1_glyph_data.html</Path>
+    <Path>classhe_1_1_glyph_data.html</Path>
     <Anchor>a5df6af244108179e7b7b1d12917b4f68</Anchor>
     <DeclaredIn>Glyph.h</DeclaredIn>
   </Token>
@@ -3399,72 +3409,78 @@
     <TokenIdentifier>
       <Name>~GlyphData</Name>
       <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
+      <Type>instm</Type>
       <Scope>he::GlyphData</Scope>
     </TokenIdentifier>
-    <Path>structhe_1_1_glyph_data.html</Path>
+    <Path>classhe_1_1_glyph_data.html</Path>
     <Anchor>ab311bda60496d975a0af615534b42417</Anchor>
     <DeclaredIn>Glyph.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>ch</Name>
+      <Name>GetChar</Name>
       <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
+      <Type>instm</Type>
       <Scope>he::GlyphData</Scope>
     </TokenIdentifier>
-    <Path>structhe_1_1_glyph_data.html</Path>
-    <Anchor>a8e1080fdac6c8a4f78cb74d5ba3c8098</Anchor>
+    <Path>classhe_1_1_glyph_data.html</Path>
+    <Anchor>adbcdaa12825bfdb9dbc1bbe3ec9b3723</Anchor>
+    <DeclaredIn>Glyph.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>tex_data</Name>
+      <Name>GetTexData</Name>
       <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
+      <Type>instm</Type>
       <Scope>he::GlyphData</Scope>
     </TokenIdentifier>
-    <Path>structhe_1_1_glyph_data.html</Path>
-    <Anchor>a7a8ef56971ae2dab0a21c5c4ef8d0723</Anchor>
+    <Path>classhe_1_1_glyph_data.html</Path>
+    <Anchor>ac055b1365053994fa4148d2595fc3a5b</Anchor>
+    <DeclaredIn>Glyph.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>tex_size</Name>
+      <Name>GetTexSize</Name>
       <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
+      <Type>instm</Type>
       <Scope>he::GlyphData</Scope>
     </TokenIdentifier>
-    <Path>structhe_1_1_glyph_data.html</Path>
-    <Anchor>a83d5feb45380b4cc7cbe8c5847be3bcd</Anchor>
+    <Path>classhe_1_1_glyph_data.html</Path>
+    <Anchor>a41ddbf5f533e3d61023a124033feee59</Anchor>
+    <DeclaredIn>Glyph.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>size</Name>
+      <Name>GetSize</Name>
       <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
+      <Type>instm</Type>
       <Scope>he::GlyphData</Scope>
     </TokenIdentifier>
-    <Path>structhe_1_1_glyph_data.html</Path>
-    <Anchor>ae04260ccf8f54cf85f337fec3a84b621</Anchor>
+    <Path>classhe_1_1_glyph_data.html</Path>
+    <Anchor>ab8a65b0a28a2760878e24e8c9ab34f2c</Anchor>
+    <DeclaredIn>Glyph.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>bearing</Name>
+      <Name>GetBearing</Name>
       <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
+      <Type>instm</Type>
       <Scope>he::GlyphData</Scope>
     </TokenIdentifier>
-    <Path>structhe_1_1_glyph_data.html</Path>
-    <Anchor>ac7e6f62ae33c2c669884813a03c0e6b0</Anchor>
+    <Path>classhe_1_1_glyph_data.html</Path>
+    <Anchor>aeb61e6755b6b9aa8895fca91be043c23</Anchor>
+    <DeclaredIn>Glyph.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>pen_pos</Name>
+      <Name>GetPenPosition</Name>
       <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
+      <Type>instm</Type>
       <Scope>he::GlyphData</Scope>
     </TokenIdentifier>
-    <Path>structhe_1_1_glyph_data.html</Path>
-    <Anchor>a31c14f73654339d950abdbea9ac3b653</Anchor>
+    <Path>classhe_1_1_glyph_data.html</Path>
+    <Anchor>a5339a20f0268b3766fab63a1de31b368</Anchor>
+    <DeclaredIn>Glyph.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -3592,6 +3608,17 @@
     </TokenIdentifier>
     <Path>classhe_1_1_view.html</Path>
     <Anchor>a27dada8c1932d6031ce66a2e2eda9f53</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>RemoveSubview</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::View</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_view.html</Path>
+    <Anchor>a83371549dc53cff3ad765d4a2c6cffcf</Anchor>
     <DeclaredIn>View.h</DeclaredIn>
   </Token>
   <Token>
@@ -3925,13 +3952,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>SetPosition</Name>
+      <Name>SetMVP</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>he::ParticleBatch</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_particle_batch.html</Path>
-    <Anchor>a4565e96cb369e4bd0089b5006289a02b</Anchor>
+    <Anchor>a13bbb9eb0c3f95039ee9c948622e011a</Anchor>
     <DeclaredIn>Particle.h</DeclaredIn>
   </Token>
   <Token>
@@ -5119,23 +5146,23 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>he::IButtonListner</Name>
+      <Name>he::IButtonListener</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
-      <Scope>he::IButtonListner</Scope>
+      <Scope>he::IButtonListener</Scope>
     </TokenIdentifier>
-    <Path>structhe_1_1_i_button_listner.html</Path>
+    <Path>structhe_1_1_i_button_listener.html</Path>
     <DeclaredIn>Button.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>~IButtonListner</Name>
+      <Name>~IButtonListener</Name>
       <APILanguage>cpp</APILanguage>
       <Type>func</Type>
-      <Scope>he::IButtonListner</Scope>
+      <Scope>he::IButtonListener</Scope>
     </TokenIdentifier>
-    <Path>structhe_1_1_i_button_listner.html</Path>
-    <Anchor>a7f8dd77cfa6f29d26e4a1fd5d9a74179</Anchor>
+    <Path>structhe_1_1_i_button_listener.html</Path>
+    <Anchor>ae9c749c999fefd6de7d1ced7c1ccb847</Anchor>
     <DeclaredIn>Button.h</DeclaredIn>
   </Token>
   <Token>
@@ -5143,20 +5170,20 @@
       <Name>Hit</Name>
       <APILanguage>cpp</APILanguage>
       <Type>func</Type>
-      <Scope>he::IButtonListner</Scope>
+      <Scope>he::IButtonListener</Scope>
     </TokenIdentifier>
-    <Path>structhe_1_1_i_button_listner.html</Path>
-    <Anchor>aa36ac8ef0bd1d0371beef6bb3e4bac82</Anchor>
+    <Path>structhe_1_1_i_button_listener.html</Path>
+    <Anchor>aa5c2cfd23b6d28739106c8f013a0f074</Anchor>
     <DeclaredIn>Button.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>he::ButtonListner</Name>
+      <Name>he::ButtonListener</Name>
       <APILanguage>c</APILanguage>
       <Type>tmplt</Type>
-      <Scope>he::ButtonListner</Scope>
+      <Scope>he::ButtonListener</Scope>
     </TokenIdentifier>
-    <Path>classhe_1_1_button_listner.html</Path>
+    <Path>classhe_1_1_button_listener.html</Path>
     <DeclaredIn>Button.h</DeclaredIn>
   </Token>
   <Token>
@@ -5164,20 +5191,20 @@
       <Name>callback</Name>
       <APILanguage>cpp</APILanguage>
       <Type>tdef</Type>
-      <Scope>he::ButtonListner</Scope>
+      <Scope>he::ButtonListener</Scope>
     </TokenIdentifier>
-    <Path>classhe_1_1_button_listner.html</Path>
-    <Anchor>a314e2fd3cd4854b35ce918c1c419f946</Anchor>
+    <Path>classhe_1_1_button_listener.html</Path>
+    <Anchor>a094fdd18b21a9693eddeb293d992fb21</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>ButtonListner</Name>
+      <Name>ButtonListener</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>he::ButtonListner</Scope>
+      <Scope>he::ButtonListener</Scope>
     </TokenIdentifier>
-    <Path>classhe_1_1_button_listner.html</Path>
-    <Anchor>adfb6c7247af48d5fc052d1af85966e7d</Anchor>
+    <Path>classhe_1_1_button_listener.html</Path>
+    <Anchor>a289fb589f4486f28e1bb16b8a343782a</Anchor>
     <DeclaredIn>Button.h</DeclaredIn>
   </Token>
   <Token>
@@ -5185,21 +5212,21 @@
       <Name>Hit</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>he::ButtonListner</Scope>
+      <Scope>he::ButtonListener</Scope>
     </TokenIdentifier>
-    <Path>classhe_1_1_button_listner.html</Path>
-    <Anchor>aee01860c45338cca4c6a824df4c7d776</Anchor>
+    <Path>classhe_1_1_button_listener.html</Path>
+    <Anchor>ae7efff86ed5afc43c28879b8a9cbab42</Anchor>
     <DeclaredIn>Button.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>~IButtonListner</Name>
+      <Name>~IButtonListener</Name>
       <APILanguage>cpp</APILanguage>
       <Type>func</Type>
-      <Scope>he::IButtonListner</Scope>
+      <Scope>he::IButtonListener</Scope>
     </TokenIdentifier>
-    <Path>structhe_1_1_i_button_listner.html</Path>
-    <Anchor>a7f8dd77cfa6f29d26e4a1fd5d9a74179</Anchor>
+    <Path>structhe_1_1_i_button_listener.html</Path>
+    <Anchor>ae9c749c999fefd6de7d1ced7c1ccb847</Anchor>
     <DeclaredIn>Button.h</DeclaredIn>
   </Token>
   <Token>
@@ -5220,7 +5247,7 @@
       <Scope>he::Button</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_button.html</Path>
-    <Anchor>aaabe6a3ff2b3b609590526fd75beb10b</Anchor>
+    <Anchor>a07b8c9d415b92403436be5083e2c5c33</Anchor>
     <DeclaredIn>Button.h</DeclaredIn>
   </Token>
   <Token>
@@ -5309,6 +5336,17 @@
     </TokenIdentifier>
     <Path>classhe_1_1_view.html</Path>
     <Anchor>a27dada8c1932d6031ce66a2e2eda9f53</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>RemoveSubview</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::View</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_view.html</Path>
+    <Anchor>a83371549dc53cff3ad765d4a2c6cffcf</Anchor>
     <DeclaredIn>View.h</DeclaredIn>
   </Token>
   <Token>
@@ -5429,6 +5467,17 @@
     </TokenIdentifier>
     <Path>classhe_1_1_view.html</Path>
     <Anchor>a27dada8c1932d6031ce66a2e2eda9f53</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>RemoveSubview</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::View</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_view.html</Path>
+    <Anchor>a83371549dc53cff3ad765d4a2c6cffcf</Anchor>
     <DeclaredIn>View.h</DeclaredIn>
   </Token>
   <Token>
@@ -5629,6 +5678,17 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>RemoveSubview</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::View</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_view.html</Path>
+    <Anchor>a83371549dc53cff3ad765d4a2c6cffcf</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>SetFrame</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
@@ -5780,6 +5840,191 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>he::ParticleView</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>he::ParticleView</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_particle_view.html</Path>
+    <DeclaredIn>ParticleView.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ParticleView</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::ParticleView</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_particle_view.html</Path>
+    <Anchor>a5bc70c96adddf1aff7e50dd3b67c0c21</Anchor>
+    <DeclaredIn>ParticleView.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~ParticleView</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::ParticleView</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_particle_view.html</Path>
+    <Anchor>aa6629827c9d3a9f11a1995a85f21fad6</Anchor>
+    <DeclaredIn>ParticleView.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>View</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::View</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_view.html</Path>
+    <Anchor>a908e9a465868336bf150e7da3c351802</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~View</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::View</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_view.html</Path>
+    <Anchor>a1fe7bb5e03647f9cad7c1e31ce8e1a8f</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Update</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::View</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_view.html</Path>
+    <Anchor>a7f330ef32e846fb486572a9134c7a59c</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Render</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::View</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_view.html</Path>
+    <Anchor>a065bdc08a7de80e2267e83804eb34e0e</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MoveSubview</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::View</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_view.html</Path>
+    <Anchor>a27dada8c1932d6031ce66a2e2eda9f53</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>RemoveSubview</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::View</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_view.html</Path>
+    <Anchor>a83371549dc53cff3ad765d4a2c6cffcf</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SetFrame</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::View</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_view.html</Path>
+    <Anchor>aac8de95dc8c5e093ba4c69c0d9191312</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetFrame</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::View</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_view.html</Path>
+    <Anchor>ab1b1934e38f262db490d4ae04dff14f7</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetFramePtr</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::View</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_view.html</Path>
+    <Anchor>a95fe9d710c493a571271819bb52c7f40</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>update</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::ParticleView</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_particle_view.html</Path>
+    <Anchor>ac13d1d6b862dd8e3b3129f63a359beb9</Anchor>
+    <DeclaredIn>ParticleView.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>render</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::ParticleView</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_particle_view.html</Path>
+    <Anchor>a39609711cb94b1f16f4d57d2efb4280c</Anchor>
+    <DeclaredIn>ParticleView.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>he::ParticleViewFactory</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>he::ParticleViewFactory</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_particle_view_factory.html</Path>
+    <DeclaredIn>ParticleView.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ParticleViewFactory</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::ParticleViewFactory</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_particle_view_factory.html</Path>
+    <Anchor>abb2fc15af4ad98546b83d63d89466c3c</Anchor>
+    <DeclaredIn>ParticleView.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CreateParticleView</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::ParticleViewFactory</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_particle_view_factory.html</Path>
+    <Anchor>a9b4990010edb8846e83984653633ec4d</Anchor>
+    <DeclaredIn>ParticleView.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>he::Sprite</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -5864,6 +6109,17 @@
     </TokenIdentifier>
     <Path>classhe_1_1_view.html</Path>
     <Anchor>a27dada8c1932d6031ce66a2e2eda9f53</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>RemoveSubview</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::View</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_view.html</Path>
+    <Anchor>a83371549dc53cff3ad765d4a2c6cffcf</Anchor>
     <DeclaredIn>View.h</DeclaredIn>
   </Token>
   <Token>
@@ -6031,6 +6287,17 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>RemoveSubview</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::View</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_view.html</Path>
+    <Anchor>a83371549dc53cff3ad765d4a2c6cffcf</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>SetFrame</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
@@ -6179,6 +6446,17 @@
     </TokenIdentifier>
     <Path>classhe_1_1_view.html</Path>
     <Anchor>a27dada8c1932d6031ce66a2e2eda9f53</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>RemoveSubview</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::View</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_view.html</Path>
+    <Anchor>a83371549dc53cff3ad765d4a2c6cffcf</Anchor>
     <DeclaredIn>View.h</DeclaredIn>
   </Token>
   <Token>

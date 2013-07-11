@@ -10,7 +10,7 @@ var searchData=
   ['hideousengine_2eh',['HideousEngine.h',['../_hideous_engine_8h.html',1,'']]],
   ['hideousengineinit',['HideousEngineInit',['../_hideous_engine_8h.html#aae48837376121d1c87fdc3be04d638b2',1,'HideousEngine.h']]],
   ['hideousgame_2eh',['HideousGame.h',['../_hideous_game_8h.html',1,'']]],
-  ['hit',['Hit',['../structhe_1_1_i_button_listner.html#aa36ac8ef0bd1d0371beef6bb3e4bac82',1,'he::IButtonListner::Hit()'],['../classhe_1_1_button_listner.html#aee01860c45338cca4c6a824df4c7d776',1,'he::ButtonListner::Hit()']]],
+  ['hit',['Hit',['../structhe_1_1_i_button_listener.html#aa5c2cfd23b6d28739106c8f013a0f074',1,'he::IButtonListener::Hit()'],['../classhe_1_1_button_listener.html#ae7efff86ed5afc43c28879b8a9cbab42',1,'he::ButtonListener::Hit()']]],
   ['hideous_20game_20engine',['Hideous Game Engine',['../index.html',1,'']]],
   ['vertex',['Vertex',['../namespacehe_1_1_vertex.html',1,'he']]]
 ];

@@ -110,32 +110,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span>he {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">class </span>Button;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="structhe_1_1_i_button_listner.html">   21</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="structhe_1_1_i_button_listner.html">IButtonListner</a>{</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="structhe_1_1_i_button_listner.html#a7f8dd77cfa6f29d26e4a1fd5d9a74179">   22</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="structhe_1_1_i_button_listner.html#a7f8dd77cfa6f29d26e4a1fd5d9a74179">~IButtonListner</a>(){}</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structhe_1_1_i_button_listner.html#aa36ac8ef0bd1d0371beef6bb3e4bac82">Hit</a>(<a class="code" href="classhe_1_1_button.html">Button</a> *sender) = 0;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="structhe_1_1_i_button_listener.html">   21</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="structhe_1_1_i_button_listener.html">IButtonListener</a>{</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="structhe_1_1_i_button_listener.html#ae9c749c999fefd6de7d1ced7c1ccb847">   22</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="structhe_1_1_i_button_listener.html#ae9c749c999fefd6de7d1ced7c1ccb847">~IButtonListener</a>(){}</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structhe_1_1_i_button_listener.html#aa5c2cfd23b6d28739106c8f013a0f074">Hit</a>(<a class="code" href="classhe_1_1_button.html">Button</a> *sender) = 0;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        };</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="classhe_1_1_button_listner.html">   28</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classhe_1_1_button_listner.html">ButtonListner</a> : <span class="keyword">public</span> <a class="code" href="structhe_1_1_i_button_listner.html">IButtonListner</a>{</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="classhe_1_1_button_listener.html">   28</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classhe_1_1_button_listener.html">ButtonListener</a> : <span class="keyword">public</span> <a class="code" href="structhe_1_1_i_button_listener.html">IButtonListener</a>{</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="classhe_1_1_button_listner.html#a314e2fd3cd4854b35ce918c1c419f946">   30</a></span>&#160;            <span class="keyword">typedef</span> void(T::*<a class="code" href="classhe_1_1_button_listner.html#a314e2fd3cd4854b35ce918c1c419f946">callback</a>)(<a class="code" href="classhe_1_1_button.html">Button</a> *sender);</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="classhe_1_1_button_listner.html#adfb6c7247af48d5fc052d1af85966e7d">   31</a></span>&#160;            <a class="code" href="classhe_1_1_button_listner.html#adfb6c7247af48d5fc052d1af85966e7d">ButtonListner</a>(T *<span class="keywordtype">object</span>, <a class="code" href="classhe_1_1_button_listner.html#a314e2fd3cd4854b35ce918c1c419f946">callback</a> <a class="code" href="classhe_1_1_button_listner.html#a314e2fd3cd4854b35ce918c1c419f946">callback</a>) :</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="classhe_1_1_button_listener.html#a094fdd18b21a9693eddeb293d992fb21">   30</a></span>&#160;            <span class="keyword">typedef</span> void(T::*<a class="code" href="classhe_1_1_button_listener.html#a094fdd18b21a9693eddeb293d992fb21">callback</a>)(<a class="code" href="classhe_1_1_button.html">Button</a> *sender);</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="classhe_1_1_button_listener.html#a289fb589f4486f28e1bb16b8a343782a">   31</a></span>&#160;            <a class="code" href="classhe_1_1_button_listener.html#a289fb589f4486f28e1bb16b8a343782a">ButtonListener</a>(T *<span class="keywordtype">object</span>, <a class="code" href="classhe_1_1_button_listener.html#a094fdd18b21a9693eddeb293d992fb21">callback</a> <a class="code" href="classhe_1_1_button_listener.html#a094fdd18b21a9693eddeb293d992fb21">callback</a>) :</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            object_(object),</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            method_(callback)</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            {}</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            </div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="classhe_1_1_button_listner.html#aee01860c45338cca4c6a824df4c7d776">   36</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_button_listner.html#aee01860c45338cca4c6a824df4c7d776">Hit</a>(<a class="code" href="classhe_1_1_button.html">Button</a> *sender){</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="classhe_1_1_button_listener.html#ae7efff86ed5afc43c28879b8a9cbab42">   36</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_button_listener.html#ae7efff86ed5afc43c28879b8a9cbab42">Hit</a>(<a class="code" href="classhe_1_1_button.html">Button</a> *sender){</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                (object_-&gt;*method_)(sender);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            }</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            T *object_;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <a class="code" href="classhe_1_1_button_listner.html#a314e2fd3cd4854b35ce918c1c419f946">callback</a> method_;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <a class="code" href="classhe_1_1_button_listener.html#a094fdd18b21a9693eddeb293d992fb21">callback</a> method_;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        };</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        </div>
 <div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="classhe_1_1_button.html">   45</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classhe_1_1_button.html">Button</a> : <span class="keyword">public</span> <a class="code" href="classhe_1_1_view.html">View</a>{</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <a class="code" href="classhe_1_1_button.html#aaabe6a3ff2b3b609590526fd75beb10b">Button</a>(<span class="keyword">const</span> <a class="code" href="classhe_1_1_frame.html">Frame</a> frame, <a class="code" href="structhe_1_1_i_button_listner.html">IButtonListner</a> *listner, <span class="keywordtype">int</span> tag = -1);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <a class="code" href="classhe_1_1_button.html#a07b8c9d415b92403436be5083e2c5c33">Button</a>(<span class="keyword">const</span> <a class="code" href="classhe_1_1_frame.html">Frame</a> frame, <a class="code" href="structhe_1_1_i_button_listener.html">IButtonListener</a> *listner, <span class="keywordtype">int</span> tag = -1);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keyword">virtual</span> <a class="code" href="classhe_1_1_button.html#abe8991a178b2635e91ca201acf06c4e7">~Button</a>();</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="comment">//      void AnimationFinish(int animation_id);</span></div>
@@ -153,7 +153,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordtype">int</span> tag_;   </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="comment">//unsigned long animation_handle_; /**&lt; animation handle to kill the animation if required */</span></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <a class="code" href="classhe_1_1_gesture_listener.html">GestureListener&lt;Button&gt;</a> *gesture_listener_; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <a class="code" href="structhe_1_1_i_button_listner.html">IButtonListner</a> *listner_;   </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <a class="code" href="structhe_1_1_i_button_listener.html">IButtonListener</a> *listner_;  </div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="comment">//      AnimationListener&lt;Button&gt; *animation_listener_; /**&lt; Registered animation listener */</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        };</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;} <span class="comment">/*namespace he*/</span></div>
@@ -264,7 +264,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 1 2013 13:08:40 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jul 11 2013 11:51:23 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

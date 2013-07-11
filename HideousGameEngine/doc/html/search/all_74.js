@@ -2,8 +2,6 @@ var searchData=
 [
   ['taps_5f',['taps_',['../classhe_1_1_gesture.html#a2f9be683d514682a8d8e8357bbf935d3',1,'he::Gesture']]],
   ['tex_5fcoords_5f',['tex_coords_',['../classhe_1_1_texture_atlas_region.html#ae3350a46f7ca87a8697b91c5f909ce36',1,'he::TextureAtlasRegion']]],
-  ['tex_5fdata',['tex_data',['../structhe_1_1_glyph_data.html#a7a8ef56971ae2dab0a21c5c4ef8d0723',1,'he::GlyphData']]],
-  ['tex_5fsize',['tex_size',['../structhe_1_1_glyph_data.html#a83d5feb45380b4cc7cbe8c5847be3bcd',1,'he::GlyphData']]],
   ['text',['Text',['../classhe_1_1_text.html',1,'he']]],
   ['text',['Text',['../classhe_1_1_text.html#a9b73c3c1a93c482480ca1f13ae30e279',1,'he::Text']]],
   ['text_2eh',['Text.h',['../_text_8h.html',1,'']]],
@@ -26,8 +24,8 @@ var searchData=
   ['textureatlasregion',['TextureAtlasRegion',['../classhe_1_1_texture_atlas_region.html#a539c4a80c3834a008f8bbf6e8188da1e',1,'he::TextureAtlasRegion::TextureAtlasRegion(const std::string &amp;name, const GLKVector4 &amp;texture_rect, const GLKVector2 &amp;total_texture_size, const GLKVector2 &amp;sprite_offset, const GLKVector2 &amp;sprite_size, const bool sprite_trimmed, const bool texture_rotated, const GLKVector4 &amp;sprite_color_rect, const GLKVector2 &amp;sprite_source_size)'],['../classhe_1_1_texture_atlas_region.html#a7669610fe1602a7631b07e6a6d0d81a2',1,'he::TextureAtlasRegion::TextureAtlasRegion(const std::string &amp;name, const GLKVector4 &amp;texture_rect, const GLKVector2 &amp;total_texture_size, const GLKVector2 &amp;sprite_offset=GLKVector2Make(0, 0), const GLKVector2 &amp;sprite_size=GLKVector2Make(0, 0), const bool sprite_trimmed=false, const bool texture_rotated=false)']]],
   ['textureatlasregion',['TextureAtlasRegion',['../classhe_1_1_texture_atlas_region.html',1,'he']]],
   ['textureatlasregion_2eh',['TextureAtlasRegion.h',['../_texture_atlas_region_8h.html',1,'']]],
-  ['texturedata',['TextureData',['../classhe_1_1_texture_data.html#a8c9ae7addab83805b16181c8af27180f',1,'he::TextureData']]],
   ['texturedata',['TextureData',['../classhe_1_1_texture_data.html',1,'he']]],
+  ['texturedata',['TextureData',['../classhe_1_1_texture_data.html#a8c9ae7addab83805b16181c8af27180f',1,'he::TextureData']]],
   ['texturedata_2eh',['TextureData.h',['../_texture_data_8h.html',1,'']]],
   ['textureshader',['TextureShader',['../classhe_1_1_texture_shader.html',1,'he']]],
   ['textureshader',['TextureShader',['../classhe_1_1_texture_shader.html#aa59ce6f924a0941589c2c419487d5056',1,'he::TextureShader']]],
@@ -50,8 +48,8 @@ var searchData=
   ['transform_5fsetposition',['Transform_SetPosition',['../namespacehe.html#a939e55461e51424ae14125456da14b89',1,'he']]],
   ['translate',['Translate',['../namespacehe_1_1_vertex.html#a3126ad77e4c739555e6329390003fdff',1,'he::Vertex']]],
   ['traverseanimations',['TraverseAnimations',['../classhe_1_1_animation_loop.html#a3686e0b46e8070dafcad4246fcc89cfb',1,'he::AnimationLoop']]],
-  ['tweener',['Tweener',['../classhe_1_1_tweener.html#aeda61d6bcb5bf20fc03a3b46faebb07d',1,'he::Tweener']]],
   ['tweener',['Tweener',['../classhe_1_1_tweener.html',1,'he']]],
+  ['tweener',['Tweener',['../classhe_1_1_tweener.html#aeda61d6bcb5bf20fc03a3b46faebb07d',1,'he::Tweener']]],
   ['tweener_2eh',['Tweener.h',['../_tweener_8h.html',1,'']]],
   ['types_2eh',['Types.h',['../_types_8h.html',1,'']]]
 ];

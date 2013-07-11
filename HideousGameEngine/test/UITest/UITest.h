@@ -24,6 +24,11 @@ namespace he{
 	
 	class TextShader;
 	class TextFactory;
+	
+	class ParticleShader;
+	class ParticleViewFactory;
+	class ParticleEnv;
+	
 }
 
 class UITest : public he::Game{
@@ -50,6 +55,10 @@ private:
 	
 	he::Asset<he::TextShader> txt_shader_;
 	he::Asset<he::TextFactory> txt_factory_;
+	
+	he::Asset<he::ParticleShader> par_shader_;
+	he::Asset<he::ParticleViewFactory> par_factory_;
+	he::Asset<he::ParticleEnv> par_env_;
 };
 
 

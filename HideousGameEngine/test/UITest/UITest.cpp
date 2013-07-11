@@ -28,7 +28,9 @@
 #include <he/Vertex/TextureVertex.h>
 #include <he/Vertex/ColorVertex.h>
 #include <he/UI/ImageViewFactory.h>
-//#include <he/UI/Label.h>
+#include <he/Shaders/ParticleShader.h>
+#include <he/UI/ParticleView.h>
+#include <he/ParticleSystem/ParticleEnv.h>
 
 UITest::UITest() :
 view_(nullptr)
@@ -105,6 +107,25 @@ void UITest::init(){
 	he::GradientView *gr_quad_vw = gradient_view_factory_.Get()->CreateGradientView(he::Frame(he::Transform_Create(GLKVector3Make(100.0, 60.0, he::g_Screen->z_)), GLKVector2Make(30.0f, 30.0f)), GLKVector4Make(1.0f, 0.0f, 0.0f, 1.0f), GLKVector4Make(0.0f, 1.0f, 0.0f, 1.0f), GLKVector4Make(0.0f, 0.0f, 1.0f, 1.0f), GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f));
 	view_->MoveSubview(gr_quad_vw);
 
+	//particle factory
+	par_shader_.Move(new he::ParticleShader, false);
+	par_factory_.Move(new he::ParticleViewFactory(par_shader_.Get()));
+
+	//particle factory
+	float point_size = 15.0;
+	GLKVector2 box[2] = {GLKVector2Make(-30, -3), GLKVector2Make(30, 3)};
+	float life_range[2] = {0.1, 0.5};
+	float deathrate_range[2] = {0.05, 0.08};
+	float birth_delay_range[2] = {0.1, 0.3};
+	float birth_rate_range[2] = {0.01, 0.3};
+	GLKVector2 vel_range[2] = {GLKVector2Make(-25.0, 0.0), GLKVector2Make(-5.0, 20.0)};
+	GLKVector4 color = GLKVector4Make(0.0, 0.0, 1.0, 1.0);
+	par_env_.Move(new he::ParticleEnv(point_size, birth_delay_range, birth_rate_range,
+									  box, color, deathrate_range, life_range,
+									  vel_range));
+	int count  = 50;
+	he::ParticleView *par_vw = par_factory_.Get()->CreateParticleView(he::Transform_Create(GLKVector3Make(30.0f, -5.0f, 0.0f)) ,par_env_.Get(), count);
+	fish_sprite->MoveSubview(par_vw);
 }
 
 void UITest::update(float dt){

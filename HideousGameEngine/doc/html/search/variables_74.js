@@ -2,8 +2,6 @@ var searchData=
 [
   ['taps_5f',['taps_',['../classhe_1_1_gesture.html#a2f9be683d514682a8d8e8357bbf935d3',1,'he::Gesture']]],
   ['tex_5fcoords_5f',['tex_coords_',['../classhe_1_1_texture_atlas_region.html#ae3350a46f7ca87a8697b91c5f909ce36',1,'he::TextureAtlasRegion']]],
-  ['tex_5fdata',['tex_data',['../structhe_1_1_glyph_data.html#a7a8ef56971ae2dab0a21c5c4ef8d0723',1,'he::GlyphData']]],
-  ['tex_5fsize',['tex_size',['../structhe_1_1_glyph_data.html#a83d5feb45380b4cc7cbe8c5847be3bcd',1,'he::GlyphData']]],
   ['texture_5f',['texture_',['../classhe_1_1_render_object.html#a707fd3b514ced0030d33072819d8bf73',1,'he::RenderObject']]],
   ['texture_5frect_5f',['texture_rect_',['../classhe_1_1_texture_atlas_region.html#a501d86b12d1b92f25a547e30f7e045a3',1,'he::TextureAtlasRegion']]],
   ['texture_5frotated_5f',['texture_rotated_',['../classhe_1_1_texture_atlas_region.html#acbe20dc1efe079cbbe4dc06eac036abd',1,'he::TextureAtlasRegion']]],

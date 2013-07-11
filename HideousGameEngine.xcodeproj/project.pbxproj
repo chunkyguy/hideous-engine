@@ -83,6 +83,7 @@
 		193A5EDB1743F8AA00CB945B /* SpineAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 193A5ED91743F8A200CB945B /* SpineAnimation.cpp */; };
 		194B7AE21770C4BE007919BB /* TypesTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 194B7AE01770C4BE007919BB /* TypesTests.cpp */; };
 		194F4D421762EDEB002AD10E /* GLKMath_Additions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 194F4D401762EDEB002AD10E /* GLKMath_Additions.cpp */; };
+		19592592178E6ED500842FB3 /* ParticleView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19592590178E6ED500842FB3 /* ParticleView.cpp */; };
 		1962B846173B7070004E9A1C /* SpineTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1962B844173B7068004E9A1C /* SpineTest.cpp */; };
 		198219FF177B10C200B92C84 /* GradientView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 198219FD177B10C200B92C84 /* GradientView.cpp */; };
 		198403AC1761B86B00D0B7EA /* TextureAtlasRegion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 198403AA1761B86A00D0B7EA /* TextureAtlasRegion.cpp */; };
@@ -289,8 +290,10 @@
 		194B7ADF1770C320007919BB /* Types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Types.h; path = HideousGameEngine/include/he/Utils/Types.h; sourceTree = SOURCE_ROOT; };
 		194B7AE01770C4BE007919BB /* TypesTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TypesTests.cpp; sourceTree = "<group>"; };
 		194F4D401762EDEB002AD10E /* GLKMath_Additions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLKMath_Additions.cpp; sourceTree = "<group>"; };
+		19592590178E6ED500842FB3 /* ParticleView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParticleView.cpp; sourceTree = "<group>"; };
 		1962B844173B7068004E9A1C /* SpineTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpineTest.cpp; sourceTree = "<group>"; };
 		1962B845173B706C004E9A1C /* SpineTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpineTest.h; sourceTree = "<group>"; };
+		19754B71178D5FEA00A5D4F9 /* ParticleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticleView.h; sourceTree = "<group>"; };
 		197ADE82176833D8001CBA53 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = HideousGameEngine/include/he/README.md; sourceTree = SOURCE_ROOT; };
 		198219FC177B0D4D00B92C84 /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
 		198219FD177B10C200B92C84 /* GradientView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GradientView.cpp; sourceTree = "<group>"; };
@@ -1232,6 +1235,7 @@
 				198219FC177B0D4D00B92C84 /* GradientView.h */,
 				19ACB43B177BF04B00C99C91 /* Text.h */,
 				19ACB43E177C271B00C99C91 /* ImageViewFactory.h */,
+				19754B71178D5FEA00A5D4F9 /* ParticleView.h */,
 			);
 			name = UI;
 			path = HideousGameEngine/include/he/UI;
@@ -1247,6 +1251,7 @@
 				198219FD177B10C200B92C84 /* GradientView.cpp */,
 				19ACB43C177BF06200C99C91 /* Text.cpp */,
 				19ACB43F177C285400C99C91 /* ImageViewFactory.cpp */,
+				19592590178E6ED500842FB3 /* ParticleView.cpp */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1598,6 +1603,7 @@
 				198219FF177B10C200B92C84 /* GradientView.cpp in Sources */,
 				19ACB43D177BF06200C99C91 /* Text.cpp in Sources */,
 				19ACB441177C285400C99C91 /* ImageViewFactory.cpp in Sources */,
+				19592592178E6ED500842FB3 /* ParticleView.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

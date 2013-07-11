@@ -53,7 +53,7 @@ namespace he{
 	public:
 		ParticleBatch(int count, ParticleEnv *environment, const GLKVector2 &position, ParticleShader *shader, Texture *texture, const GLKVector4 &color);
 		~ParticleBatch();
-		void SetPosition(const GLKVector2 &position);
+		void SetMVP(const GLKMatrix4 &mvp);
 		void Update(float dt);
 		void Render();
 		

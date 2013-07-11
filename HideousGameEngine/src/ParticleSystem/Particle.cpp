@@ -105,11 +105,15 @@ namespace he{
 		delete render_object_;
 	}
 
-	void ParticleBatch::SetPosition(const GLKVector2 &position){
-		GLKMatrix4 tMat = GLKMatrix4MakeTranslation(position.x, position.y, -0.1);
-		GLKMatrix4 mvp = GLKMatrix4Multiply(he::g_Screen->projection_, tMat);
+	void ParticleBatch::SetMVP(const GLKMatrix4 &mvp){
 		render_object_->SetMVP(mvp);
 	}
+
+//	void ParticleBatch::SetPosition(const GLKVector2 &position){
+//		GLKMatrix4 tMat = GLKMatrix4MakeTranslation(position.x, position.y, -0.1);
+//		GLKMatrix4 mvp = GLKMatrix4Multiply(he::g_Screen->projection_, tMat);
+//		render_object_->SetMVP(mvp);
+//	}
 	
 	void ParticleBatch::Update(float dt){
 		for( int i = 0; i < count_; ++i){
