@@ -19,20 +19,35 @@ namespace he {
 	class Texture;
 	class TextureVertex;
 	class TextureShader;
+	class TextureAtlas;
 	
 	/** Draw static images */
+	class Image {
+	public:
+		Image(const TextureVertex *vertex_m, const TextureShader *shader, const Texture *texture);
+		~Image();
+		void Render(const Frame &frame);
+
+	private:
+		const TextureVertex *vertex_;
+		RenderObject *render_object_;
+	};
+	
+	namespace image {
+		Image *Create(const TextureShader *shader, const Texture *texture);
+		Image *Create(const TextureShader *shader, const TextureAtlas *texture_atlas, const std::string &region);
+	}
+	
 	class ImageView : public View{
 	public:
 		/** ImageView from texture */
-		ImageView(const Frame frame, const TextureVertex *vertex_m, const TextureShader *shader, const Texture *texture);
+		ImageView(const Frame frame, Image *image);
 		virtual ~ImageView();
+		virtual void Update(float dt);
+		virtual void Render();
 		
-	protected:
-		virtual void update(float dt);
-		virtual void render();
-		
-		const TextureVertex *vertex_;
-		RenderObject *render_object_;
+	private:
+		Image *image_;
 	};
 }
 

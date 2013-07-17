@@ -26,6 +26,10 @@ namespace he {
 						const int final_frame_index	 = 0,	/*Frame index to be used when animation is over. Default 0*/
 						const float fps = 24.0f);			/*Desired fps. Default is 24*/
 		~SpriteAnimation();
+
+		void SetRepeatCount(int c);
+		void SetFinalFrameIndex(int i);
+		void SetFPS(float fps);
 		
 	private:
 		// Internal structure. Data for each frame of the animation.

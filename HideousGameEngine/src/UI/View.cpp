@@ -32,20 +32,16 @@ namespace he {
 	}
 	
 	void View::Update(float dt){
-		update(dt);
 		for(View *p = head_; p; p = p->next_){
 			p->Update(dt);
 		}
 	}
-	void View::update(float dt){		}
 	
 	void View::Render(){
-		render();
 		for(View *p = head_; p; p = p->next_){
 			p->Render();
 		}
 	}
-	void View::render(){		}
 	
 	/** Owns the passed component */
 	void View::MoveSubview(View *view){

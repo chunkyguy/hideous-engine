@@ -45,25 +45,34 @@ namespace he {
 		}
 
 		/** Set asset
+		 @brief Doesn't owns the asset. If any asset is attached and clean flag is set, asset gets overridden.
 		 @param asset The asset.
 		 @param clean Clean the loaded asset, if any.
 		 */
 		void Set(T* asset, bool clean = false){
-			if(clean && asset_){
-				delete asset_;
+			if(asset_){
+				if(clean) {
+					asset_ = asset;
+				}
+			} else {
+				asset_ = asset;
 			}
-			asset_ = asset;
 			self_destruct_ = false;
 		}
 
 		
 		/** Move asset
+		 @brief Owns the asset. If any asset is attached, and clean flag is set, deletes the asset, and assigns requested asset.
 		 @param asset The asset.
 		 @param clean Clean the loaded asset, if any.
 		 */
 		void Move(T* asset, bool clean = false){
-			if(clean && asset_){
-				delete asset;
+			if(asset_) {
+				if(clean) {
+					delete asset;
+				} else {
+					return;	// Can not assign requested asset, as it will leak the memory!
+				}
 			}
 			asset_ = asset;
 			self_destruct_ = true;

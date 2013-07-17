@@ -11,26 +11,27 @@
 #include <string>
 
 #include <he/Font/Font.h>
-#include <he/UI/Text.h>
+#include <he/ParticleSystem/ParticleEnv.h>
+#include <he/Shaders/ColorShader.h>
+#include <he/Shaders/ParticleShader.h>
 #include <he/Shaders/TextShader.h>
 #include <he/Shaders/TextureShader.h>
-#include <he/Shaders/ColorShader.h>
 #include <he/Texture/Texture.h>
 #include <he/Texture/TextureAtlas.h>
 #include <he/Texture/TextureAtlasRegion.h>
-#include <he/UI/ImageView.h>
-#include <he/UI/Sprite.h>
 #include <he/UI/GradientView.h>
+#include <he/UI/ImageView.h>
+#include <he/UI/ImageViewFactory.h>
+#include <he/UI/ParticleView.h>
+#include <he/UI/Sprite.h>
+#include <he/UI/Text.h>
 #include <he/Utils/DebugHelper.h>
 #include <he/Utils/Frame.h>
 #include <he/Utils/ResourcePath.hpp>
+#include <he/Utils/Transform.h>
 #include <he/Utils/Utils.h>
-#include <he/Vertex/TextureVertex.h>
 #include <he/Vertex/ColorVertex.h>
-#include <he/UI/ImageViewFactory.h>
-#include <he/Shaders/ParticleShader.h>
-#include <he/UI/ParticleView.h>
-#include <he/ParticleSystem/ParticleEnv.h>
+#include <he/Vertex/TextureVertex.h>
 
 UITest::UITest() :
 view_(nullptr)
@@ -50,66 +51,85 @@ void UITest::init(){
 	he::Frame frame(he::Transform_Create(GLKVector2Make(0, 0)));
 	view_ = new he::View(frame);
 	
-	//bg_factory: Single texture based factory
-	bg_factory_.Move(new he::ImageViewFactory(texture_shader_.Get(), he::ResourcePath() + "ship_144.png"));
+	//Single texture
+	ship_tex_.Move(new he::Texture(he::ResourcePath() + "ship_144.png"));
+	ship_img_.Move(he::image::Create(texture_shader_.Get(), ship_tex_.Get()));
+
 	//bg: image view - from texture
-	he::ImageView *bg_vw = bg_factory_.Get()->CreateImageView(he::Transform_Create(GLKVector3Make(0, 50, 0)));
+	he::Transform bg_vw_trans = he::Transform_Create(GLKVector3Make(0, 50, 0));
+	he::ImageView *bg_vw = new he::ImageView(he::Frame(bg_vw_trans, ship_tex_.Get()->GetSize()), ship_img_.Get());
 	view_->MoveSubview(bg_vw);
 	
-	// homescreen factory
+	// homescreen atlas
 	std::string home_atlas_data_path(he::ResourcePath() + "homescreen_ss.xml");
 	std::string home_atlas_img_path(he::ResourcePath() + "homescreen_ss.png");
-	homescreen_factory_.Move(new he::ImageViewFactory(texture_shader_.Get(), home_atlas_data_path, home_atlas_img_path, he::TextureAtlas::kStarling ));
+	home_screen_atlas_.Move(new he::TextureAtlas(home_atlas_data_path, home_atlas_img_path, he::TextureAtlas::kStarling));
 
 	//mission: image view - from atlas
-	he::ImageView *mission_vw = homescreen_factory_.Get()->CreateImageView(he::Transform_Create(GLKVector3Make(100, 0, 0.0f)), he::FlashFullName("mission"));
+	std::string mission_vw_img_name = he::FlashFullName("mission");
+	mission_img_.Move(he::image::Create(texture_shader_.Get(), home_screen_atlas_.Get(), mission_vw_img_name));
+	he::Transform mission_vw_trans = he::Transform_Create(GLKVector3Make(100, 0, 0.0f));
+	GLKVector2 mission_vw_sz = home_screen_atlas_.Get()->GetTextureAtlasRegion(mission_vw_img_name).sprite_size_;
+	he::ImageView *mission_vw = new he::ImageView(he::Frame(mission_vw_trans, mission_vw_sz), mission_img_.Get());
 	bg_vw->MoveSubview(mission_vw);
 
 	//button
 	btn_listener_.Move(new he::ButtonListener<UITest>(this, &UITest::ButtonHandler), false);
-	he::Button *btn = new he::Button(CreateLocalFrame(mission_vw->GetFrame()), btn_listener_.Get(), 99);
+	he::ButtonView *btn = new he::ButtonView(CreateLocalFrame(mission_vw->GetFrame()), btn_listener_.Get(), 99);
 	mission_vw->MoveSubview(btn);
 
 	//tutorial: image view - from atlas
-	he::ImageView *tutorial_vw = homescreen_factory_.Get()->CreateImageView(he::Transform_Create(GLKVector3Make(-50, 50, 0.0f)), he::FlashFullName("tutorial"));
+	std::string tutorial_img_name = he::FlashFullName("tutorial");
+	tutorial_img_.Move(he::image::Create(texture_shader_.Get(), home_screen_atlas_.Get(), tutorial_img_name));
+	he::Transform tutorial_vw_trans = he::Transform_Create(GLKVector3Make(-50, 50, 0.0f));
+	GLKVector2 tutorial_vw_sz = home_screen_atlas_.Get()->GetTextureAtlasRegion(tutorial_img_name).sprite_size_;
+	he::ImageView *tutorial_vw = new he::ImageView(he::Frame(tutorial_vw_trans, tutorial_vw_sz), tutorial_img_.Get());
 	mission_vw->MoveSubview(tutorial_vw);
 
 	//another factory
 	std::string fish_atlas_data_path(he::ResourcePath() + "fishmotion.xml");
 	std::string fish_atlas_img_path(he::ResourcePath() + "fishmotion.png");
-	fishmotion_factory_.Move(new he::ImageViewFactory(texture_shader_.Get(), fish_atlas_data_path, fish_atlas_img_path, he::TextureAtlas::kStarling));
+	fish_atlas_.Move(new he::TextureAtlas(fish_atlas_data_path, fish_atlas_img_path, he::TextureAtlas::kStarling));
 
 	//fish sprite
-	he::Sprite *fish_sprite = fishmotion_factory_.Get()->CreateSprite(he::Transform_Create(GLKVector3Make(0, -100, 0.0f)), "fishmoving", -1, 0, 24.0f);
+	std::string fish_sprite_name("fishmoving");
+	fish_sprite_.Move(he::sprite::Create(texture_shader_.Get(), fish_atlas_.Get(), fish_sprite_name, -1, 0, 30.0f));
+	he::Transform fish_trans = he::Transform_Create(GLKVector3Make(0, -100, 0.0f));
+	GLKVector2 fish_sprite_sz = fish_atlas_.Get()->GetTextureAtlasRegion(he::FlashFullName(fish_sprite_name)).sprite_size_;
+	he::SpriteView *fish_sprite = new he::SpriteView(he::Frame(fish_trans, fish_sprite_sz), fish_sprite_.Get());
 	view_->MoveSubview(fish_sprite);
 
 	//text factory
 	txt_shader_.Move( new he::TextShader, false);
-	txt_factory_.Move(new he::TextFactory(txt_shader_.Get(), new he::Font(he::ResourcePath() + "Silom.ttf", 48)));
+	txt_factory_.Move(new he::TextViewFactory(txt_shader_.Get(), new he::Font(he::ResourcePath() + "Silom.ttf", 48)));
 	
 	//text view
-	he::Text *txt = txt_factory_.Get()->CreateText(he::Transform_Create(GLKVector3Make(0.0, 0.0, 0.0)), "hello");
+	he::TextView *txt = txt_factory_.Get()->CreateTextView(he::Transform_Create(GLKVector3Make(0.0, 0.0, 0.0)), "hello");
 	view_->MoveSubview(txt);
 
-	//gradient factory
+	//gradient shader
 	clr_sh_.Move(new he::ColorShader, false);
-	gradient_view_factory_.Move(new he::GradientViewFactory(clr_sh_.Get()));
-
+	
 	//gradient view - mono
-	he::GradientView *gr_mono_vw = gradient_view_factory_.Get()->CreateGradientView(he::Frame(he::Transform_Create(GLKVector3Make(-100.0, 20.0, he::g_Screen->z_)), GLKVector2Make(30.0f, 30.0f)), GLKVector4Make(1.0f, 0.0f, 0.0f, 1.0f));
+	gr_mono_.Move(he::gradient::Create(GLKVector2Make(50.0f, 50.0f), clr_sh_.Get(), GLKVector4Make(1.0f, 0.0f, 0.4f, 0.8f)));
+	he::Frame gr_mono_frame(he::Transform_Create(GLKVector3Make(-100.0, 20.0, he::g_Screen->z_)), GLKVector2Make(30.0f, 30.0f));
+	he::GradientView *gr_mono_vw = new he::GradientView(gr_mono_frame, gr_mono_.Get());
 	view_->MoveSubview(gr_mono_vw);
 	
 	//gradient view - dual
-	he::GradientView *gr_dual_vw = gradient_view_factory_.Get()->CreateGradientView(he::Frame(he::Transform_Create(GLKVector3Make(0.0, 40.0, he::g_Screen->z_)), GLKVector2Make(30.0f, 30.0f)), GLKVector4Make(1.0f, 0.0f, 0.0f, 1.0f), GLKVector4Make(0.0f, 1.0f, 0.0f, 1.0f));
+	gr_dual_.Move(he::gradient::Create(GLKVector2Make(50.0f, 50.0f), clr_sh_.Get(),GLKVector4Make(1.0f, 0.0f, 0.0f, 1.0f), GLKVector4Make(0.0f, 1.0f, 0.0f, 1.0f)));
+	he::Frame gr_dual_frame(he::Frame(he::Transform_Create(GLKVector3Make(0.0, 40.0, he::g_Screen->z_)), GLKVector2Make(30.0f, 30.0f)));
+	he::GradientView *gr_dual_vw = new he::GradientView(gr_dual_frame, gr_dual_.Get());
 	view_->MoveSubview(gr_dual_vw);
 
 	//gradient view - quad
-	he::GradientView *gr_quad_vw = gradient_view_factory_.Get()->CreateGradientView(he::Frame(he::Transform_Create(GLKVector3Make(100.0, 60.0, he::g_Screen->z_)), GLKVector2Make(30.0f, 30.0f)), GLKVector4Make(1.0f, 0.0f, 0.0f, 1.0f), GLKVector4Make(0.0f, 1.0f, 0.0f, 1.0f), GLKVector4Make(0.0f, 0.0f, 1.0f, 1.0f), GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f));
+	gr_quad_.Move(he::gradient::Create(GLKVector2Make(50.0f, 50.0f), clr_sh_.Get(), GLKVector4Make(1.0f, 0.0f, 0.0f, 1.0f), GLKVector4Make(0.0f, 1.0f, 0.0f, 1.0f), GLKVector4Make(0.0f, 0.0f, 1.0f, 1.0f), GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f)));
+	he::Frame gr_quad_frame(he::Transform_Create(GLKVector3Make(100.0, 60.0, he::g_Screen->z_)), GLKVector2Make(30.0f, 30.0f));
+	he::GradientView *gr_quad_vw = new he::GradientView(gr_quad_frame, gr_quad_.Get());
 	view_->MoveSubview(gr_quad_vw);
 
 	//particle factory
 	par_shader_.Move(new he::ParticleShader, false);
-	par_factory_.Move(new he::ParticleViewFactory(par_shader_.Get()));
 
 	//particle factory
 	float point_size = 15.0;
@@ -123,6 +143,8 @@ void UITest::init(){
 	par_env_.Move(new he::ParticleEnv(point_size, birth_delay_range, birth_rate_range,
 									  box, color, deathrate_range, life_range,
 									  vel_range));
+	par_factory_.Move(new he::ParticleViewFactory(par_shader_.Get(), new he::Texture(he::ResourcePath() + "snow_particle.png")));
+
 	int count  = 50;
 	he::ParticleView *par_vw = par_factory_.Get()->CreateParticleView(he::Transform_Create(GLKVector3Make(30.0f, -5.0f, 0.0f)) ,par_env_.Get(), count);
 	fish_sprite->MoveSubview(par_vw);
@@ -136,7 +158,7 @@ void UITest::render(){
 	view_->Render();
 }
 
-void UITest::ButtonHandler(he::Button *sender){
+void UITest::ButtonHandler(he::ButtonView *sender){
 	he_Trace("UITest::ButtonHandler: %d\n",sender->GetTag());
 }
 ///EOF

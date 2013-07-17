@@ -20,7 +20,7 @@ namespace he{
 			GLKVector2 position;
 			GLKVector4 color;
 		};
-		
+
 		// As square of two colors
 		ColorVertex(const Data &a, const Data &d);
 		// As rect of 4 colors

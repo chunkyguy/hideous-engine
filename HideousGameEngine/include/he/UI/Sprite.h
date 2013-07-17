@@ -20,7 +20,7 @@ namespace he {
 	/** Sprite object.
 	 @brief		Sprite is an animated texture object. The texture has to be provided as an atlas.
 	 */
-	class Sprite : public View{
+	class Sprite {
 	public:
 		/**	Construct Sprite.
 		 @note	Use ImageFactory to create sprites in a easy way.
@@ -32,16 +32,30 @@ namespace he {
 		 @param final_frame		What frame to display when the animation is over. Default is the first frame (= 0).
 		 @param fps				The speed of the animation. Default is 24 FPS.
 		 */
-		Sprite(const Frame frame, const std::string &animation_name, const TextureShader *shader, const TextureAtlas *atlas,
+		Sprite(const std::string &animation_name, const TextureShader *shader, const TextureAtlas *atlas,
 			   const int repeat_count = -1, const int final_frame = 0, const float fps = 24.0f);
-		virtual ~Sprite();
+		~Sprite();
+
+		void Render(const Frame &frame);
 		
-	protected:
-		virtual void update(float dt);
-		virtual void render();
-		
+	private:
 		TextureVertex *vertex_;
 		RenderObject *render_object_;
+	};
+
+	namespace sprite {
+		Sprite *Create(const TextureShader *shader, const TextureAtlas *texture_atlas, const std::string &region,
+					   const int repeat_count = -1, const int final_frame = 0, const float fps = 24.0f);
+	}
+	
+	class SpriteView : public View {
+	public:
+		SpriteView(const Frame &frame, Sprite *sprite);
+		virtual void Update(float dt);
+		virtual void Render();
+		
+	private:
+		Sprite *sprite_;
 	};
 }
 

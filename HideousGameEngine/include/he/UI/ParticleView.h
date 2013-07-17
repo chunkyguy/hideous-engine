@@ -15,22 +15,20 @@
 #include <he/Utils/Screen.h>
 #include <he/Utils/ResourcePath.hpp>
 #include <he/Texture/Texture.h>
+#include <he/ParticleSystem/Particle.h>
 
 namespace he {
 	
 	class Texture;
 	class ParticleEnv;
-	class ParticleBatch;
 	class ParticleShader;
 
 	class ParticleView : public View {
 	public:
-		ParticleView(const Frame &frame, const int count, ParticleEnv *environment, ParticleShader *shader, Texture *texture);
-		~ParticleView();
+		ParticleView(const Frame &frame, ParticleBatch *particles);
 		
-	protected:
-		virtual void update(float dt);
-		virtual void render();
+		virtual void Update(float dt);
+		virtual void Render();
 		
 	private:
 		ParticleBatch *particles_;
@@ -38,12 +36,13 @@ namespace he {
 	
 	class ParticleViewFactory {
 	public:
-		ParticleViewFactory(ParticleShader *shader, Texture *texture_m = new he::Texture(ResourcePath() + "snow_particle.png"));
+		ParticleViewFactory(ParticleShader *shader, Texture *texture_m);
 		ParticleView *CreateParticleView(const Transform &trans, he::ParticleEnv *environment, int count);
 		
 	private:
-		Asset<ParticleShader> shader;
-		Asset<Texture> texture;
+		Asset<ParticleShader> shader_;
+		Asset<Texture> texture_m_;
+		Asset<ParticleBatch> particles_m_;
 	};
 }
 

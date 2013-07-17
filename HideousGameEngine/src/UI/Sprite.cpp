@@ -18,16 +18,18 @@
 #include <he/Vertex/TextureVertex.h>
 
 namespace he{
-	Sprite::Sprite(const Frame frame, const std::string &animation_name, const TextureShader *shader, const TextureAtlas *atlas,
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// MARK: Sprite
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	Sprite::Sprite(const std::string &animation_name, const TextureShader *shader, const TextureAtlas *atlas,
 				   const int repeat_count, const int final_frame, const float fps) :
-	View(frame),
 	vertex_(nullptr),
 	render_object_()
 	{
 		he::SpriteAnimation *animation = new he::SpriteAnimation(&vertex_, atlas, animation_name, repeat_count, final_frame, fps);
 		he::g_AnimationLoop->MoveAnimation(animation);
 		assert(vertex_);		// There is some default vertex data.
-		render_object_ = new RenderObject(vertex_, shader, atlas->GetTexture(), Transform_GetMVP(&(frame.GetTransform())));
+		render_object_ = new RenderObject(vertex_, shader, atlas->GetTexture());
 	}
 	
 	Sprite::~Sprite(){
@@ -37,13 +39,34 @@ namespace he{
 		delete render_object_;
 	}
 	
-	void Sprite::update(float dt){
+	void Sprite::Render(const Frame &frame){
+		render_object_->SetVertexData(vertex_);
+		render_object_->SetMVP(Transform_GetMVP(&(frame.GetTransform())));
+		render_object_->Render();
 	}
 	
-	void Sprite::render(){
-		render_object_->SetVertexData(vertex_);
-		render_object_->SetMVP(Transform_GetMVP(&(GetFrame().GetTransform())));
-		render_object_->Render();
+	//Utility
+	namespace sprite {
+		Sprite *Create(const TextureShader *shader, const TextureAtlas *texture_atlas, const std::string &region_name,
+					   const int repeat_count, const int final_frame, const float fps){
+			return new Sprite(region_name, shader, texture_atlas, repeat_count, final_frame, fps);
+		}
+	}
+	
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// MARK: SpriteView
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	SpriteView::SpriteView(const Frame &frame, Sprite *sprite) :
+	View(frame),
+	sprite_(sprite)
+	{}
+	
+	void SpriteView::Update(float dt) {
+		View::Update(dt);
+	}
+	
+	void SpriteView::Render() {
+		sprite_->Render(GetFrame());
 	}
 } 
 ///EOF

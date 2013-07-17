@@ -12,71 +12,53 @@
 
 #include <he/Utils/Frame.h>
 #include <he/Utils/Asset.h>
+#include <he/Vertex/ColorVertex.h>
 
 namespace he {
 	
 	class ColorShader;
 	class RenderObject;
-	class ColorVertex;
 
 	/** A multi-colored rectangle.
 		@note Use GradientViewFactory to create GradientView's easily.
 	 */
-	class GradientView : public View{
+	class Gradient {
 	public:
 		/** Construct a GradientView.
-			@param frame		The frame.
 			@param vertex_m	The vertex data. Owns it.
 			@param shader	The color shader.
 		 */
-		GradientView(const Frame frame, const ColorVertex *vertex_m, const ColorShader *shader);
-		virtual ~GradientView();
+		Gradient(const ColorVertex *vertex_m, const ColorShader *shader);
+		~Gradient();
 		
-	protected:
-		virtual void update(float dt);
-		virtual void render();
+		void Render(const Frame &frame);
 		
 	private:
 		RenderObject *render_object_;
 		const ColorVertex *vertex_;
 	};
 
-
-	/** Creates GradientView's 
-		@note Could be configured to have single, double or quad colors.
+	/** Creates GradientView's
+	 @warning Attach ColorShader and Frame before creating a GradientView.
+	 Each time the color is updated, the old reference is lost.
+	 Use multiple factories for multiple configurations.
+	 @brief Could be configured to have single, double or quad colors.
 	 */
-	class GradientViewFactory{
+	namespace gradient {
+		Gradient *Create(const GLKVector2 &size, ColorShader *shader, GLKVector4 colorA);
+		Gradient *Create(const GLKVector2 &size, ColorShader *shader, GLKVector4 colorA, GLKVector4 colorD);
+		Gradient *Create(const GLKVector2 &size, ColorShader *shader, GLKVector4 colorA, GLKVector4 colorB, GLKVector4 colorC, GLKVector4 colorD);
+	}
+
+
+	class GradientView : public View {
 	public:
-		/** Contruct a GradientViewFactory 
-		 @param	shadr	The color-shader.
-		 */
-		GradientViewFactory(ColorShader *shadr);
-		
-		/** Create GradientView with a single color 
-		 @param frame The frame.
-		 @param colorA The fill color.
-		 */
-		GradientView *CreateGradientView(Frame frame, GLKVector4 colorA);
-
-		/** Create GradientView with a two colors
-		 @param frame The frame.
-		 @param colorA The fill color at end A (bottom-left).
-		 @param colorD The fill color at end D (top-right).
-		 @note The colors at end B and C are interpolated.
-		 */
-		GradientView *CreateGradientView(Frame frame, GLKVector4 colorA, GLKVector4 colorD);
-
-		/** Create GradientView with a four colors
-		 @param frame The frame.
-		 @param colorA The fill color at end A.
-		 @param colorB The fill color at end B.
-		 @param colorC The fill color at end C.
-		 @param colorD The fill color at end D.
-		 */
-		GradientView *CreateGradientView(Frame frame, GLKVector4 colorA, GLKVector4 colorB, GLKVector4 colorC, GLKVector4 colorD);
+		GradientView(const Frame &frame, Gradient *gradient);
+		virtual void Update(float dt);
+		virtual void Render();
 		
 	private:
-		Asset<ColorShader> shader;
+		Gradient *gradient_;
 	};
 }
 

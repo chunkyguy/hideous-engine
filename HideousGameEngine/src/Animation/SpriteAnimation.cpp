@@ -60,6 +60,24 @@ namespace he{
 		assert(*vertex_data_);		// Default vertex data not set
 	}
 
+	void SpriteAnimation::SetRepeatCount(int c) {
+		repeat_count_ = c;
+	}
+	
+	void SpriteAnimation::SetFinalFrameIndex(int ffi) {
+		Frame *f;
+		for(f = head_; ffi--; f = f->next_){
+		}
+		assert(f);
+		delete final_vertex_data_;
+		final_vertex_data_ = new TextureVertex(f->vertex_->GetVertexPositionData(), f->vertex_->GetVertexTextureData());
+	}
+	
+	void SpriteAnimation::SetFPS(float fps) {
+		delay_ = 1.0f/fps;
+	}
+
+	
 	SpriteAnimation::~SpriteAnimation(){
 		Frame *del = nullptr;
 		for(Frame *f = head_; f; f = f->next_){

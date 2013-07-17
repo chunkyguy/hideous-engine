@@ -19,48 +19,30 @@ namespace he{
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
 	// MARK: Text
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
-//	Text::Text(Frame frame, Glyph **data_m, unsigned int data_len, GLKVector4 color) :
-//	View(frame),
-//	data_(data_m),
-//	data_len_(data_len)
-//	{	}
-//	
-//	Text::~Text(){
-//		for(int i = 0; i < data_len_; ++i){
-//			delete data_[i];
-//		}
-//		delete [] data_;
-//	}
-//
-//	void Text::update(float dt){
-//		for(int i = 0; i < data_len_; ++i){
-//			he::RenderObject *object = data_[i]->render_object_;
-//			object->SetMVP(Transform_GetMVP(&(GetFrame().GetTransform())));
-//		}
-//	}
-//	void Text::render(){
-//		for(int i = 0; i < data_len_; ++i){
-//			he::RenderObject *object = data_[i]->render_object_;
-//			object->Render();
-//		}
-//	}
-//		
-//	GLKVector2 Text::GetActualSize() const{
-//		return eff_size_;
-//	}
-
+	TextView::TextView(const Frame &frame) :
+	View(frame)
+	{}
+	
+	void TextView::Update(float dt) {
+		View::Update(dt);
+	}
+	
+	void TextView::Render() {
+		View::Render();
+	}
+	
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// MARK: TextFactory
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	TextFactory::TextFactory(TextShader *shdr, Font *fnt_m){
-		shader.Set(shdr, true);
-		font.Move(fnt_m, true);
+	TextViewFactory::TextViewFactory(TextShader *shader, Font *font_m) {
+		font_m_.Move(font_m);
+		shader_.Set(shader);
 	}
 
-	Text *TextFactory::CreateText(Transform transform, std::string string, GLKVector4 color){
-		Text *txt = new Text(Frame(transform));
+	TextView *TextViewFactory::CreateTextView(Transform transform, std::string string, GLKVector4 color){
+		TextView *txt = new TextView(Frame(transform));
 		
-		const FT_Face face = font.Get()->GetFace();
+		const FT_Face face = font_m_.Get()->GetFace();
 		GlyphData **gdata = new GlyphData* [string.size()];
 		// create textures
 		GLKVector3 pen_position = GLKVector3Make(0.0f, 0.0f, 0.0f);	// initial assumption
@@ -97,7 +79,7 @@ namespace he{
 			float trans_y = pen_position.y + gdata[gdata_index]->GetPenPosition().y + gdata[gdata_index]->GetBearing().y/2.0f;
 			GLKVector3 trans = GLKVector3Make(trans_x, trans_y, 0.0f);
 			he_Trace("Pen: %@\ttrans: %@\n%@\n",pen_position,trans,*(gdata[gdata_index]));
-			txt->MoveSubview(new Glyph(Frame(Transform_Create(trans), gdata[gdata_index]->GetSize()), gdata[gdata_index], shader.Get(), color));
+			txt->MoveSubview(new Glyph(Frame(Transform_Create(trans), gdata[gdata_index]->GetSize()), gdata[gdata_index], shader_.Get(), color));
 			gdata_index++;
 		}
 

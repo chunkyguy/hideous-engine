@@ -20,7 +20,7 @@ namespace he{
 		Texture(std::string path, GLubyte *data, GLKVector2 size, GLint align = 4);
 		explicit Texture(Texture *texture);
 		~Texture();
-		GLKVector2 GetSize();
+		GLKVector2 GetSize() const;
 		
 		GLuint object_;
 		std::string path_;

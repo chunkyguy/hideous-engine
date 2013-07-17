@@ -71,11 +71,13 @@ void MultiFontTest::load_text(){
 	if(courier_factory_){
 		unload_text();
 	}
+
 	
-	courier_factory_ = new he::TextFactory(shader_, new he::Font(he::ResourcePath() + "Courier New.ttf", 32));
-	simsun_factory_ = new he::TextFactory(shader_, new he::Font(he::ResourcePath() + "SimSun.ttf", 32));
-	whacky_ = simsun_factory_->CreateText(he::Transform_Create(GLKVector2Make(-100.0f, 100.0f)), "Whacky");
-	labs_ = courier_factory_->CreateText(he::Transform_Create(GLKVector2Make(-100.0f, -100.0f)), "Labs");
+	courier_factory_ = new he::TextViewFactory(shader_, new he::Font(he::ResourcePath() + "Courier New.ttf", 32));
+	simsun_factory_ = new he::TextViewFactory(shader_, new he::Font(he::ResourcePath() + "SimSun.ttf", 32));
+	
+	whacky_ = simsun_factory_->CreateTextView(he::Transform_Create(GLKVector2Make(-100.0f, 100.0f)), "Whacky");
+	labs_ = courier_factory_->CreateTextView(he::Transform_Create(GLKVector2Make(-100.0f, -100.0f)), "Labs");
 }
 
 void MultiFontTest::unload_text(){

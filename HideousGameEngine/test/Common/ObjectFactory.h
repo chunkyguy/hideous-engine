@@ -19,8 +19,8 @@ namespace he{
 	class ColorVertex;
 	class Font;
 	class RenderObject;
-	class Text;
-	class TextFactory;
+	class TextView;
+	class TextViewFactory;
 	class TextShader;
 	class Texture;
 	class TextureAtlas;
@@ -54,12 +54,12 @@ private:
 class TextObj{
 public:
 	~TextObj();
-	TextObj(he::TextFactory *factory);
+	TextObj(he::TextViewFactory *factory);
 	void Update(float dt);
 	void Render();
 	
 private:
-	he::Text *text_;
+	he::TextView *text_;
 };
 
 class ObjectFactory{
@@ -83,7 +83,7 @@ private:
 	he::TextureShader *tex_sh_;
 	
 	// text obj
-	he::TextFactory *txt_factory_;
+	he::TextViewFactory *txt_factory_;
 	he::TextShader *txt_sh_;
 };
 

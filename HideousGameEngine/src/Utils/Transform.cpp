@@ -34,13 +34,28 @@ namespace he{
 	}
 	
 	GLKMatrix4 Transform_GetMV(const Transform *slf){
-		GLKMatrix4 tMat = GLKMatrix4MakeTranslation(slf->position.x, slf->position.y, slf->position.z);
-		GLKMatrix4 rMat = GLKMatrix4MakeRotation(slf->rotation.w, slf->rotation.x, slf->rotation.y, slf->rotation.z);
-		GLKMatrix4 sMat = GLKMatrix4MakeScale(slf->scale.x, slf->scale.y, 1.0);
-		GLKMatrix4 mv = GLKMatrix4Multiply(GLKMatrix4Multiply(tMat, rMat), sMat);
-		if(slf->parent){
-			mv = GLKMatrix4Multiply(mv, Transform_GetMV(slf->parent));
+
+		GLKMatrix4 mv = GLKMatrix4Identity;
+		mv = GLKMatrix4Translate(mv, slf->position.x, slf->position.y, slf->position.z);
+		mv = GLKMatrix4Rotate(mv, slf->rotation.w, slf->rotation.x, slf->rotation.y, slf->rotation.z);
+		mv = GLKMatrix4Scale(mv, slf->scale.x, slf->scale.y, slf->scale.z);
+		if (slf->parent) {
+			mv = GLKMatrix4Multiply(Transform_GetMV(slf->parent), mv);
 		}
+			
+		
+		
+//		GLKMatrix4 pMat = (slf->parent) ? Transform_GetMV(slf->parent): GLKMatrix4Identity;
+//		GLKMatrix4 tMat = GLKMatrix4MakeTranslation(slf->position.x, slf->position.y, slf->position.z);
+//		GLKMatrix4 rMat = GLKMatrix4MakeRotation(slf->rotation.w, slf->rotation.x, slf->rotation.y, slf->rotation.z);
+//		GLKMatrix4 sMat = GLKMatrix4MakeScale(slf->scale.x, slf->scale.y, slf->scale.z);
+//		GLKMatrix4 mv = pMat * tMat * rMat * sMat;
+
+		//GLKMatrix4 mv = sMat * rMat * tMat;
+		//		GLKMatrix4 mv = GLKMatrix4Multiply(GLKMatrix4Multiply(tMat, rMat), sMat);
+//		if(slf->parent){
+//			mv = GLKMatrix4Multiply(Transform_GetMV(slf->parent), mv);
+//		}
 		return mv;
 	}
 	

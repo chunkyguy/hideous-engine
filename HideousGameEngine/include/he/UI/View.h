@@ -22,10 +22,10 @@ namespace he {
 			virtual ~View();
 			
 			/** Update self. Update all children in draw order */
-			void Update(float dt);
+			virtual void Update(float dt);
 						
 			/** Render self. Render all children in draw order */
-			void Render();
+			virtual void Render();
 			
 			/** Owns the passed component */
 			void MoveSubview(View *view);
@@ -42,17 +42,6 @@ namespace he {
 			@warning This is more like a design bug, can get modified in future. Use minimum.
 			 */
 			Frame *GetFramePtr();
-		
-		protected:
-			/** Actual update 
-			 @note Needs to call superclass Update() after doing all the self updating.
-			 */
-			virtual void update(float dt);
-
-			/** Actual render 
-			 @note Needs to call superclass Render(), after doing all the self rendinring.
-			 */
-			virtual void render();
 
 		private:
 		

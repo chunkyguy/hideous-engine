@@ -43,37 +43,34 @@ namespace he {
 //	};
 //
 	
-	/** Render the string 
+	/** Render the string
 		@note Currently Text is just a placeholder name for View.
 			I'm not even sure if this name is going to live in future iterations as it serves no special thing.
 	 */
-	class Text : public View{
+	class TextView : public View{
 	public:
-		Text(Frame frame) : View(frame){}
-		virtual ~Text(){}
+		TextView(const Frame &frame);
+		virtual void Update(float dt);
+		virtual void Render();
 	};
 	
+	
 	/** Create textviews */
-	class TextFactory {
+	class TextViewFactory {
 	public:
-		/** Construct TextFactory 
-			@param shdr The text-shader
-			@param fnt_m The font object. Owns it.
-		 */
-		TextFactory(TextShader *shdr, Font *fnt_m);
+		TextViewFactory(TextShader *shader, Font *font_m);
 		
 		/** Create a text-view
 			@param transform		The transform object.
 			@param string		The string to be rendered.
 			@param color			The color of the font. Default is black.
 		 */
-		Text *CreateText(Transform transform, std::string string, GLKVector4 color = GLKVector4Make(0.0f, 0.0f, 0.0f, 1.0f));
+		TextView *CreateTextView(Transform transform, std::string string, GLKVector4 color = GLKVector4Make(0.0f, 0.0f, 0.0f, 1.0f));
 		
 	private:
-		Asset<Font> font; /**< font asset. Dies with the factory */
-		Asset<TextShader> shader; /**< shader asset */
+		Asset<Font> font_m_; /**< font asset. Dies with the factory */
+		Asset<TextShader> shader_; /**< shader asset */
 	};
-
 }
 
 #endif

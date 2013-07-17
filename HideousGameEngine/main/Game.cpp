@@ -20,7 +20,7 @@
 #include "../test/ParticleTest/ParticleTest.h"
 #include "../test/SpineTest/SpineTest.h"
 #include "../test/FlashTest/FlashTest.h"
-
+#include "../test/TransformTest/TransformTest.h"
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 // MARK: Helper
@@ -35,9 +35,10 @@
 //#define TEST_TEXTURE_BIG_BANG
 //#define TEST_GESTURE
 //#define TEST_PARTICLES
-#define TEST_UI
+//#define TEST_UI
 //#define TEST_SPINE
 //#define TEST_FLASH
+#define TEST_TRANSFORM
 
 template <typename T>
 T* AllocGameInstance(){
@@ -77,6 +78,8 @@ he::Game* GameConfig::alloc_game(){
 	return AllocGameInstance<SpineTest>();
 #elif defined(TEST_FLASH)
 	return AllocGameInstance<FlashTest>();
+#elif defined(TEST_TRANSFORM)
+	return AllocGameInstance<TransformTest>();
 #endif
 	
 }

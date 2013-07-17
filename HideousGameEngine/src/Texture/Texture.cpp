@@ -75,7 +75,7 @@ namespace he{
 		assert(object_);		// Texture not loaded
 	}
 	
-	GLKVector2 Texture::GetSize(){
+	GLKVector2 Texture::GetSize() const{
 		return size_;
 	}
 	

@@ -10,14 +10,14 @@
 #define __HideousGameEngine__Transform__
 
 #include <he/Utils/GLKMath_Additions.h>
-
-/**	Handle transformations of a coordinate system
- Every object has its own coordinate system in reference to some parent coordinate system.
- At the root level there is the Device's coordinate system (the world space) which is located at {0, 0, Screen::z}
- 
- Use GetMVP() to get the matrix that will help coordinates to world-space.
+/** @file Transform.h
  */
 namespace he{
+	/**	@struct Transform
+	 Handle transformations of a coordinate system
+	 Every object has its own coordinate system in reference to some parent coordinate system.
+	 At the root level there is the Device's coordinate system (the world space) which is located at {0, 0, Screen::z}	 
+	 */
 	struct Transform {
 		/** Get position in object space. */
 		GLKVector3 position; //{x, y, z}
@@ -26,11 +26,13 @@ namespace he{
 		const Transform *parent;	
 	};
 	
-	/** Construct a new coordinate system transforms.
+	/** @fn Transform_Create
+	 @brief Construct a new coordinate system Transform.
 	 @param position The position vector. Default is in the world-space, as it is the most used.
 	 @param rotation The rotation vector + w component is the angle.
 	 @param scale The scale vector.
 	 @param parent transform system.
+	 @return A Transform instance.
 	 */
 	Transform Transform_Create(const GLKVector3 position,
 							  const GLKVector4 rotation = GLKVector4Make( 0.0f, 0.0f, 1.0f, 0.0f),

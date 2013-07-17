@@ -16,38 +16,43 @@ namespace he{
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// MARK: ParticleView
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	ParticleView::ParticleView(const Frame &frame, const int count, ParticleEnv *environment, ParticleShader *shader, Texture *texture) :
-	View(frame)
-	{
-		GLKVector3 pos = frame.GetTransform().position;
-		particles_ = new ParticleBatch(count, environment, GLKVector2Make(pos.x, pos.y), shader, texture, environment->color_);
-	}
+	ParticleView::ParticleView(const Frame &frame, ParticleBatch *p_batch) :
+	View(frame),
+	particles_(p_batch)
+	{	}
 
-	ParticleView::~ParticleView(){
-		delete particles_;
-	}
 	
-	void ParticleView::update(float dt){
+	void ParticleView::Update(float dt){
+		View::Update(dt);
+		
 		particles_->Update(dt);
 	}
 	
-	void ParticleView::render(){
+	void ParticleView::Render(){
 		particles_->SetMVP(Transform_GetMVP(&(GetFrame().GetTransform())));
 		particles_->Render();
+		
+		View::Render();
 	}
 	
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// MARK: ParticleViewFactory
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	ParticleViewFactory::ParticleViewFactory(ParticleShader *sh, Texture *texture_m){
-		shader.Set(sh);
-		texture.Move(texture_m);
+	ParticleViewFactory::ParticleViewFactory(ParticleShader *shader, Texture *texture_m) {
+		shader_.Set(shader);
+		texture_m_.Move(texture_m);
 	}
 	
-	ParticleView *ParticleViewFactory::CreateParticleView(const Transform &t, he::ParticleEnv *environment, int count){
+	ParticleView *ParticleViewFactory::CreateParticleView(const Transform &transform, he::ParticleEnv *environment, int count){
+		assert(!texture_m_.IsEmpty());
+		assert(!shader_.IsEmpty());
+		
+		GLKVector3 pos = transform.position;
+		particles_m_.Move(new ParticleBatch(count, environment, GLKVector2Make(pos.x, pos.y), shader_.Get(), texture_m_.Get(), environment->color_), true);
+		
 		GLKVector2 size = environment->box_[1] - environment->box_[0];
-		he::Frame frame(t, size);
-		return new ParticleView(frame, count, environment, shader.Get(), texture.Get());
+		he::Frame frame(transform, size);
+		return new ParticleView(frame, particles_m_.Get());
 	}
 }
 // EOF //

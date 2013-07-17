@@ -14,8 +14,8 @@
 
 namespace he{
 	class Font;
-	class Text;
-	class TextFactory;
+	class TextView;
+	class TextViewFactory;
 	class TextShader;
 }
 
@@ -33,11 +33,11 @@ private:
 	void load_text();
 	void unload_text();
 
-	he::Text *text_small_;
-	he::Text *text_caps_;
-	he::Text *text_nums_;
-	he::Text *text_sp_;
-	he::TextFactory *factory_;
+	he::TextView *text_small_;
+	he::TextView *text_caps_;
+	he::TextView *text_nums_;
+	he::TextView *text_sp_;
+	he::TextViewFactory *factory_;
 	he::TextShader *shader_;
 	he::GestureListener<RectTextTest> *gesture_listener_;
 };

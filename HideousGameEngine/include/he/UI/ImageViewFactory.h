@@ -16,6 +16,9 @@
 #include <he/Utils/Transform.h>
 
 namespace he {
+	class Sprite;
+	class SpriteView;
+	class Image;
 	class ImageView;
 	class Sprite;
 	class Texture;
@@ -27,12 +30,8 @@ namespace he {
 	 */
 	class ImageViewFactory{
 	public:
-		/** Create ImageViewFactory
-		 @param shader The texture shader. Does not owns
-		 @param atlas_m The atlas. Owns it.
-		 @param texture_m The texture. Owns it.
-		 */
-		ImageViewFactory(TextureShader *shader, TextureAtlas *atlas_m = nullptr, Texture *texture_m = nullptr);
+		
+		ImageViewFactory(TextureShader *shader);
 		
 		/** Create with atlas 
 		 @param shader The texture shader. Does not owns
@@ -40,26 +39,26 @@ namespace he {
 		 @param img_path The image path of the texture-atlas
 		 @param format The texture-atlas format
 		 */
-		ImageViewFactory(TextureShader *shader, const std::string &data_path, const std::string &img_path, TextureAtlas::AtlasFormat format);
+		void SetAtlas(const std::string &data_path, const std::string &img_path, TextureAtlas::AtlasFormat format);
 		
 		/** Create with texture 
 		 @param shader The texture shader. Does not owns
 		 @param img_path The image path of the texture
 		 */
-		ImageViewFactory(TextureShader *shader, const std::string &img_path);
+		void SetImage(const std::string &img_path);
 		
 		/** Creates ImageView from attached texture
 		 @param trans The transform of the view
 		 @returns ImageView instance
 		 */
-		ImageView *CreateImageView(Transform trans);
+		ImageView *CreateImageView(Transform &transform);
 		
 		/** Create ImageView from attached texture atlas
 		 @param trans The transform of the view
 		 @param region_name The name stored in the atlas.
 		 @returns ImageView instance
 		 */
-		ImageView *CreateImageView(Transform trans, const std::string region_name);
+		ImageView *CreateImageView(Transform &transform, const std::string &region_name);
 
 		/** Create Sprite from attached texture atlas
 		 @param trans The transform of the view
@@ -69,13 +68,18 @@ namespace he {
 		 @param fps The speed of the animation. Default is 24
 		 @returns Sprite instance
 		 */
-		Sprite *CreateSprite(Transform trans, const std::string region_name,
+		void LoadSprite(const std::string region_name,
 							 const int repeat_count = -1, const int final_frame = 0, const float fps = 24.0f);
 
+		SpriteView *CreateSpriteView(Transform &transform);
+
 	private:
-		Asset<TextureAtlas> atlas;
-		Asset<TextureShader> shader;
-		Asset<Texture> texture;
+		Asset<TextureAtlas> atlas_m_;
+		Asset<Texture> texture_m_;
+		Asset<TextureShader> shader_;
+		Asset<Image> image_m_;
+		Asset<Sprite> sprite_m_;
+		Asset<TextureVertex> tex_vertex_m_;
 	};
 }
 

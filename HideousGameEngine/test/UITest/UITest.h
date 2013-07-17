@@ -17,25 +17,29 @@
 namespace he{
 
 	class TextureShader;
-	class ImageViewFactory;
+	class Texture;
+	class Image;
+	class TextureAtlas;
+
+	class Sprite;
 	
 	class ColorShader;
-	class GradientViewFactory;
+
+	class Gradient;
 	
 	class TextShader;
-	class TextFactory;
+	class TextViewFactory;
 	
 	class ParticleShader;
 	class ParticleViewFactory;
 	class ParticleEnv;
-	
 }
 
 class UITest : public he::Game{
 public:
 	~UITest();
 	UITest();
-	void ButtonHandler(he::Button *sender);
+	void ButtonHandler(he::ButtonView *sender);
 	
 private:
 	virtual void init();
@@ -43,18 +47,30 @@ private:
 	virtual void render();
 
 	he::View *view_;
-	he::Asset<he::ImageViewFactory> bg_factory_;
-	he::Asset<he::ImageViewFactory> homescreen_factory_;
-	he::Asset<he::ImageViewFactory> fishmotion_factory_;
 	he::Asset<he::TextureShader> texture_shader_;
+	
+	he::Asset<he::Texture>ship_tex_;
+	he::Asset<he::Image> ship_img_;
+	
+	he::Asset<he::TextureAtlas> home_screen_atlas_;
 
+	he::Asset<he::Image> mission_img_;
+	he::Asset<he::Image> tutorial_img_;
+
+	he::Asset<he::TextureAtlas> fish_atlas_;
+
+	he::Asset<he::Sprite> fish_sprite_;
+	
 	he::Asset<he::ColorShader> clr_sh_;
-	he::Asset<he::GradientViewFactory> gradient_view_factory_;
 	
 	he::Asset<he::ButtonListener<UITest> > btn_listener_;
 	
 	he::Asset<he::TextShader> txt_shader_;
-	he::Asset<he::TextFactory> txt_factory_;
+	he::Asset<he::TextViewFactory> txt_factory_;
+	
+	he::Asset<he::Gradient> gr_mono_;
+	he::Asset<he::Gradient> gr_dual_;
+	he::Asset<he::Gradient> gr_quad_;
 	
 	he::Asset<he::ParticleShader> par_shader_;
 	he::Asset<he::ParticleViewFactory> par_factory_;

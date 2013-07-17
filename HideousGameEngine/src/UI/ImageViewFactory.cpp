@@ -21,52 +21,50 @@ namespace he{
 	///////////////////////////////////////////////////////////////////////////////////////////////////
 	// MARK: ImageViewFactory
 	///////////////////////////////////////////////////////////////////////////////////////////////////
-	ImageViewFactory::ImageViewFactory(TextureShader *shdr, TextureAtlas *atlas_m, Texture *texture_m){
-		shader.Set(shdr);
-		if(atlas_m){
-			atlas.Set(atlas_m);
-		}
-		if(texture_m){
-			texture.Set(texture_m);
-		}
+	ImageViewFactory::ImageViewFactory(TextureShader *shader) {
+		shader_.Set(shader);
 	}
 	
-	ImageViewFactory::ImageViewFactory(TextureShader *shdr, const std::string &data_path, const std::string &img_path, TextureAtlas::AtlasFormat format){
-		shader.Set(shdr);
-		atlas.Move( new TextureAtlas(data_path, img_path, format));
+	void ImageViewFactory::SetAtlas(const std::string &data_path, const std::string &img_path, TextureAtlas::AtlasFormat format){
+		atlas_m_.Move( new TextureAtlas(data_path, img_path, format));
 	}
 	
-	ImageViewFactory::ImageViewFactory(TextureShader *shdr, const std::string &img_path){
-		shader.Set(shdr);
-		texture.Move(new Texture(img_path));
+	void ImageViewFactory::SetImage(const std::string &img_path){
+		assert(!shader_.IsEmpty());
+		
+		texture_m_.Move(new Texture(img_path));
+		tex_vertex_m_.Move(new TextureVertex(texture_m_.Get()->GetSize()), true);
+		image_m_.Move(new Image(tex_vertex_m_.Get(), shader_.Get(), texture_m_.Get()), true);
 	}
 	
-	ImageView *ImageViewFactory::CreateImageView(Transform trans){
-		return new ImageView(Frame(trans, texture.Get()->GetSize()),				//	Frame
-							 new TextureVertex(texture.Get()->GetSize()),		//	Vertex-data
-							 shader.Get(),										//	Shader
-							 texture.Get());										//	Texture
+	ImageView *ImageViewFactory::CreateImageView(Transform &transform){
+		assert(!texture_m_.IsEmpty());
+		assert(!image_m_.IsEmpty());
+		return new ImageView(Frame(transform, texture_m_.Get()->GetSize()), image_m_.Get());
 	}
 	
-	ImageView *ImageViewFactory::CreateImageView(Transform trans, const std::string region_name){
-		const TextureAtlasRegion region = atlas.Get()->GetTextureAtlasRegion(region_name);
-		return new ImageView(Frame(trans, region.sprite_size_),					//	Frame
-							 new TextureVertex(region),							//	Vertex-data
-							 shader.Get(),										//	Shader
-							 atlas.Get()->GetTexture());							//	Texture
+	ImageView *ImageViewFactory::CreateImageView(Transform &transform, const std::string &region_name){
+		assert(!atlas_m_.IsEmpty());
+		assert(!shader_.IsEmpty());
+		
+		const TextureAtlasRegion region = atlas_m_.Get()->GetTextureAtlasRegion(region_name);
+		tex_vertex_m_.Move(new TextureVertex(region), true);
+		image_m_.Move(new Image(tex_vertex_m_.Get(), shader_.Get(), atlas_m_.Get()->GetTexture()), true);
+		return new ImageView(Frame(transform, region.sprite_size_),	image_m_.Get());
 	}
 
-	Sprite *ImageViewFactory::CreateSprite(Transform trans, const std::string region_name,
+	void ImageViewFactory::LoadSprite(const std::string region_name,
 										   const int repeat_count, const int final_frame, const float fps){
-		const TextureAtlasRegion region = atlas.Get()->GetTextureAtlasRegion(FlashFullName(region_name));
-		return new Sprite(Frame(trans, region.sprite_size_),					//	Frame
-						  region_name,										//	Vertex-data
-						  shader.Get(),										//	Shader
-						  atlas.Get(),										//	TextureAtlas
-						  repeat_count,
-						  final_frame,
-						  fps);
+		assert(!atlas_m_.IsEmpty());
+		assert(!shader_.IsEmpty());
+		
+		const TextureAtlasRegion region = atlas_m_.Get()->GetTextureAtlasRegion(FlashFullName(region_name));
+		sprite_m_.Move(new Sprite(region_name, shader_.Get(), atlas_m_.Get(), repeat_count, final_frame, fps), true);
 	}
 
+	SpriteView *ImageViewFactory::CreateSpriteView(Transform &transform) {
+		assert(!sprite_m_.IsEmpty());
+		return new SpriteView(Frame(transform), sprite_m_.Get());
+	}
 	
 }
