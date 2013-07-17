@@ -16,6 +16,7 @@
 #include <he/Shaders/TextureShader.h>
 #include <he/Texture/Texture.h>
 #include <he/Vertex/TextureVertex.h>
+#include <he/Texture/TextureAtlasRegion.h>
 
 namespace he{
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -24,7 +25,8 @@ namespace he{
 	Sprite::Sprite(const std::string &animation_name, const TextureShader *shader, const TextureAtlas *atlas,
 				   const int repeat_count, const int final_frame, const float fps) :
 	vertex_(nullptr),
-	render_object_()
+	render_object_(),
+	size_(atlas->GetTextureAtlasRegion(he::FlashFullName(animation_name)).sprite_size_)
 	{
 		he::SpriteAnimation *animation = new he::SpriteAnimation(&vertex_, atlas, animation_name, repeat_count, final_frame, fps);
 		he::g_AnimationLoop->MoveAnimation(animation);
@@ -39,12 +41,15 @@ namespace he{
 		delete render_object_;
 	}
 	
-	void Sprite::Render(const Frame &frame){
+	void Sprite::Render(const Transform &transform){
 		render_object_->SetVertexData(vertex_);
-		render_object_->SetMVP(Transform_GetMVP(&(frame.GetTransform())));
+		render_object_->SetMVP(Transform_GetMVP(&transform));
 		render_object_->Render();
 	}
-	
+
+	GLKVector2 Sprite::GetSize() const {
+		return size_;
+	}
 	//Utility
 	namespace sprite {
 		Sprite *Create(const TextureShader *shader, const TextureAtlas *texture_atlas, const std::string &region_name,
@@ -56,8 +61,8 @@ namespace he{
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// MARK: SpriteView
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	SpriteView::SpriteView(const Frame &frame, Sprite *sprite) :
-	View(frame),
+	SpriteView::SpriteView(const Transform &transform, Sprite *sprite) :
+	View(transform),
 	sprite_(sprite)
 	{}
 	
@@ -66,7 +71,11 @@ namespace he{
 	}
 	
 	void SpriteView::Render() {
-		sprite_->Render(GetFrame());
+		sprite_->Render(GetTransform());
+	}
+	
+	GLKVector2 SpriteView::GetSize() const {
+		return sprite_->GetSize();
 	}
 } 
 ///EOF

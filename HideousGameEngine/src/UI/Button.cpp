@@ -15,10 +15,11 @@ namespace he {
 	// MARK: ButtonView
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	ButtonView::ButtonView(const Frame &frame, IButtonListener *listner, int tag) :
-	View(frame),
+	View(frame.GetTransform()),
 	listner_(listner),
 	gesture_listener_(nullptr),
-	tag_(tag)
+	tag_(tag),
+	frame_(frame)
 	{
 		// add gesture listener
 		gesture_listener_ = new he::GestureListener<ButtonView>(this, &ButtonView::HandleGesture);
@@ -38,10 +39,14 @@ namespace he {
 		View::Render();
 	}
 	
+	GLKVector2 ButtonView::GetSize() const {
+		return frame_.GetSize();
+	}
+	
 	void ButtonView::HandleGesture(const he::Gesture &gesture){
 		if(gesture.action_ == he::Gesture::kTap && gesture.state_ == he::Gesture::kEnd){
 			GLKVector2 pt = gesture.GetHitPoint();
-			if(he::Vertex::Contains(GetFrame().GetGlobalRect(), pt)){
+			if(he::Vertex::Contains(frame_.GetGlobalRect(), pt)){
 				listner_->Hit(this);
 			}
 		}

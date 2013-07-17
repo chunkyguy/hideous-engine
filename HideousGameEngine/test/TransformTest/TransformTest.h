@@ -24,36 +24,19 @@ namespace he {
 
 class Universe : public he::View {
 public:
-	Universe(const he::Frame &frame) :
-	View(frame)
-	{}
-	
-	virtual void Update(float dt) {
-		View::Update(dt);
-	}
-	
-	virtual void Render() {
-		View::Render();
-	}
-	
+	Universe(const he::Transform &transform);
+	virtual void Update(float dt);
+	virtual void Render();	
 private:
 };
 
 class HeavenlyBody : public he::GradientView {
 public:
-	HeavenlyBody(const he::Frame &frame, he::Gradient *grad) :
-	he::GradientView(frame, grad)
-	{}
-	
-	virtual void Update(float dt) {
-		GradientView::Update(dt);
-	}
-	
-	virtual void Render() {
-		GradientView::Render();
-	}
-
+	HeavenlyBody(const he::Transform &transform, he::Gradient *grad, float speed);
+	virtual void Update(float dt);
+	virtual void Render();
 private:
+	float speed_;
 };
 
 

@@ -91,6 +91,13 @@ namespace he{
 	GLKVector2 Transform_GetPosition(const Transform &slf){
 		return GLKVector2Make(slf.position.x, slf.position.y);
 	}
+	bool operator==(const Transform &one, const Transform &two) {
+		return (one.parent		== two.parent	&&
+				one.position		== two.position	&&
+				one.rotation		== two.rotation	&&
+				one.scale		==	two.scale);
+	}
 
+	
 }
 ///EOF

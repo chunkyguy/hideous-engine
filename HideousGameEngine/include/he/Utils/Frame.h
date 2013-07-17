@@ -47,7 +47,7 @@ namespace he {
 	/** Create local frame out of the frame 
 	 @param frame The requested frame
 	 */
-	Frame CreateLocalFrame(const Frame &frame);
+	Frame CreateLocalFrame(const GLKVector2 &size);
 	
 	std::ostream &operator<<(std::ostream &os, const Frame &frame);
 

@@ -46,7 +46,7 @@ void RectTextTest::init(){
 	
 	shader_ = new he::TextShader;
 	
-		//waiting for input
+	load_text();
 }
 
 void RectTextTest::update(float dt){

@@ -21,8 +21,9 @@ namespace he {
 	///////////////////////////////////////////////////////////////////////////////////////////////////
 	Image::Image(const TextureVertex *vertex_m, const TextureShader *shader, const Texture *texture) :
 	vertex_(vertex_m),
-	render_object_(new RenderObject(const_cast<TextureVertex *>(vertex_m), shader, const_cast<Texture *>(texture)))
-	{}
+	render_object_(new RenderObject(const_cast<TextureVertex *>(vertex_m), shader, const_cast<Texture *>(texture))),
+	size_(texture->GetSize())
+	{	}
 
 	Image::~Image() {
 		if(vertex_) {
@@ -31,9 +32,13 @@ namespace he {
 		delete render_object_;
 	}
 	
-	void Image::Render(const Frame &frame) {
-		render_object_->SetMVP(Transform_GetMVP(&(frame.GetTransform())));
+	void Image::Render(const Transform &transform) {
+		render_object_->SetMVP(Transform_GetMVP(&transform));
 		render_object_->Render();
+	}
+	
+	GLKVector2 Image::GetSize() const {
+		return size_;
 	}
 
 	// Utility
@@ -51,8 +56,8 @@ namespace he {
 	///////////////////////////////////////////////////////////////////////////////////////////////////
 	// MARK: ImageView
 	///////////////////////////////////////////////////////////////////////////////////////////////////
-	ImageView::ImageView(const Frame frame, Image *image) :
-	View(frame),
+	ImageView::ImageView(const Transform &transform, Image *image) :
+	View(transform),
 	image_(image)
 	{}
 	
@@ -64,11 +69,14 @@ namespace he {
 	}
 	
 	void ImageView::Render(){
-		image_->Render(GetFrame());
+		image_->Render(GetTransform());
 
 		View::Render();
 	}
-	
+
+	GLKVector2 ImageView::GetSize() const {
+		return image_->GetSize();
+	}
 }/*namespace he*/
 
 ///EOF

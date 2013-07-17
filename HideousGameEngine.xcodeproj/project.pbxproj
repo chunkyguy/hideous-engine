@@ -93,6 +93,7 @@
 		198403BC1761F85000D0B7EA /* SpriteAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 198403BA1761F85000D0B7EA /* SpriteAnimation.cpp */; };
 		199C766C174C885700882A9C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 199C766B174C885600882A9C /* CoreFoundation.framework */; };
 		19A1C4B8176BD6A500C36FEF /* HideousEngine.mm in Sources */ = {isa = PBXBuildFile; fileRef = 19A1C4B6176BD6A500C36FEF /* HideousEngine.mm */; };
+		19A5694C1792FC1100948E01 /* TransformTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A5694A1792FC1100948E01 /* TransformTest.cpp */; };
 		19A6E5791732781F006ACD91 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A6E5781732781F006ACD91 /* UIKit.framework */; };
 		19A6E57B1732781F006ACD91 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A6E57A1732781F006ACD91 /* Foundation.framework */; };
 		19A6E57D1732781F006ACD91 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A6E57C1732781F006ACD91 /* CoreGraphics.framework */; };
@@ -334,6 +335,8 @@
 		199C766B174C885600882A9C /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		19A1C4B5176BD69000C36FEF /* HideousEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HideousEngine.h; sourceTree = "<group>"; };
 		19A1C4B6176BD6A500C36FEF /* HideousEngine.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HideousEngine.mm; sourceTree = "<group>"; };
+		19A5694A1792FC1100948E01 /* TransformTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TransformTest.cpp; sourceTree = "<group>"; };
+		19A5694B1792FC1100948E01 /* TransformTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransformTest.h; sourceTree = "<group>"; };
 		19A6E5751732781F006ACD91 /* HideousGameEngine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HideousGameEngine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19A6E5781732781F006ACD91 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		19A6E57A1732781F006ACD91 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -880,6 +883,15 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		19A569491792FBB900948E01 /* TransformTest */ = {
+			isa = PBXGroup;
+			children = (
+				19A5694A1792FC1100948E01 /* TransformTest.cpp */,
+				19A5694B1792FC1100948E01 /* TransformTest.h */,
+			);
+			path = TransformTest;
+			sourceTree = "<group>";
+		};
 		19A6E56C1732781E006ACD91 = {
 			isa = PBXGroup;
 			children = (
@@ -1082,6 +1094,7 @@
 		19A6E60D173278A1006ACD91 /* test */ = {
 			isa = PBXGroup;
 			children = (
+				19A569491792FBB900948E01 /* TransformTest */,
 				19A8EDDC1769E4A300FD25BF /* assets */,
 				191B22381760728C001F6F1C /* FlashTest */,
 				19A6E629173278A1006ACD91 /* RectColorTest */,
@@ -1604,6 +1617,7 @@
 				19ACB43D177BF06200C99C91 /* Text.cpp in Sources */,
 				19ACB441177C285400C99C91 /* ImageViewFactory.cpp in Sources */,
 				19592592178E6ED500842FB3 /* ParticleView.cpp in Sources */,
+				19A5694C1792FC1100948E01 /* TransformTest.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

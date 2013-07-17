@@ -19,8 +19,9 @@ namespace he{
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
 	// MARK: Text
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
-	TextView::TextView(const Frame &frame) :
-	View(frame)
+	TextView::TextView(const Transform &transform) :
+	View(transform),
+	size_(GLKVector2Make(0.0f, 0.0f))
 	{}
 	
 	void TextView::Update(float dt) {
@@ -29,6 +30,14 @@ namespace he{
 	
 	void TextView::Render() {
 		View::Render();
+	}
+
+	GLKVector2 TextView::GetSize() const {
+		return size_;
+	}
+	
+	void TextView::SetSize(const GLKVector2 &size) {
+		size_ = size;
 	}
 	
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -39,8 +48,8 @@ namespace he{
 		shader_.Set(shader);
 	}
 
-	TextView *TextViewFactory::CreateTextView(Transform transform, std::string string, GLKVector4 color){
-		TextView *txt = new TextView(Frame(transform));
+	TextView *TextViewFactory::CreateTextView(const Transform &transform, const std::string &string, GLKVector4 color){
+		TextView *txt = new TextView(transform);
 		
 		const FT_Face face = font_m_.Get()->GetFace();
 		GlyphData **gdata = new GlyphData* [string.size()];
@@ -49,7 +58,7 @@ namespace he{
 																	//GLKVector3 last_pen_position = pen_position;
 		GLKVector2 total_glyph_size = GLKVector2Make(0.0f, 0.0f);
 		int gdata_index = 0;
-		for(std::string::iterator it = string.begin(); it != string.end(); ++it){			
+		for(std::string::const_iterator it = string.begin(); it != string.end(); ++it){
 			const char ch = *it;
 			FT_Error ret = FT_Load_Char(face, ch, FT_LOAD_RENDER);
 			assert(ret == 0); //"Couldn't load char
@@ -70,11 +79,12 @@ namespace he{
 			pen_position.y += (glyph_slot->advance.y >> 6);
 			gdata_index++;
 		}
+		txt->SetSize(total_glyph_size);
 		
 		// Create glyphs
 		pen_position = GLKVector3Make(-total_glyph_size.x/2.0f, 0.0f, 0.0f);	// final assumption
 		gdata_index = 0;
-		for(std::string::iterator it = string.begin(); it != string.end(); ++it){
+		for(std::string::const_iterator it = string.begin(); it != string.end(); ++it){
 			float trans_x = pen_position.x + gdata[gdata_index]->GetPenPosition().x + gdata[gdata_index]->GetBearing().x + gdata[gdata_index]->GetSize().x/2.0f ;
 			float trans_y = pen_position.y + gdata[gdata_index]->GetPenPosition().y + gdata[gdata_index]->GetBearing().y/2.0f;
 			GLKVector3 trans = GLKVector3Make(trans_x, trans_y, 0.0f);
@@ -84,7 +94,7 @@ namespace he{
 		}
 
 		gdata_index = 0;
-		for(std::string::iterator it = string.begin(); it != string.end(); ++it){
+		for(std::string::const_iterator it = string.begin(); it != string.end(); ++it){
 			delete gdata[gdata_index];
 			gdata_index++;
 		}

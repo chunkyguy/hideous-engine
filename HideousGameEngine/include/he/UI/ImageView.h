@@ -26,9 +26,11 @@ namespace he {
 	public:
 		Image(const TextureVertex *vertex_m, const TextureShader *shader, const Texture *texture);
 		~Image();
-		void Render(const Frame &frame);
-
+		void Render(const Transform &transform);
+		GLKVector2 GetSize() const;
+		
 	private:
+		GLKVector2 size_;
 		const TextureVertex *vertex_;
 		RenderObject *render_object_;
 	};
@@ -41,10 +43,11 @@ namespace he {
 	class ImageView : public View{
 	public:
 		/** ImageView from texture */
-		ImageView(const Frame frame, Image *image);
+		ImageView(const Transform &transform, Image *image);
 		virtual ~ImageView();
 		virtual void Update(float dt);
 		virtual void Render();
+		virtual GLKVector2 GetSize() const;
 		
 	private:
 		Image *image_;

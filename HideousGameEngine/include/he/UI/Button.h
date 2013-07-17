@@ -48,11 +48,13 @@ namespace he {
 		virtual ~ButtonView();
 		virtual void Update(float dt);
 		virtual void Render();
-
+		virtual GLKVector2 GetSize() const;
+		
 		void HandleGesture(const Gesture &g);
 		int GetTag() const;
 
 	private:
+		Frame frame_;
 		int tag_;	/**< tag to identify the object */
 		GestureListener<ButtonView> *gesture_listener_; /**< Registered gesture listener */
 		IButtonListener *listner_;	/**< Registered button listener */

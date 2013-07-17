@@ -72,8 +72,8 @@ namespace he{
 		return os;
 	}
 
-	Frame CreateLocalFrame(const Frame &frame){
-		return he::Frame(he::Transform_Create(GLKVector3Make(0, 0, 0)), frame.GetSize());
+	Frame CreateLocalFrame(const GLKVector2 &size){
+		return he::Frame(he::Transform_Create(GLKVector3Make(0, 0, 0)), size);
 	}
 
 }

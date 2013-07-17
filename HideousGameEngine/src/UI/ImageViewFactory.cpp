@@ -40,7 +40,7 @@ namespace he{
 	ImageView *ImageViewFactory::CreateImageView(Transform &transform){
 		assert(!texture_m_.IsEmpty());
 		assert(!image_m_.IsEmpty());
-		return new ImageView(Frame(transform, texture_m_.Get()->GetSize()), image_m_.Get());
+		return new ImageView(transform, image_m_.Get());
 	}
 	
 	ImageView *ImageViewFactory::CreateImageView(Transform &transform, const std::string &region_name){
@@ -50,7 +50,7 @@ namespace he{
 		const TextureAtlasRegion region = atlas_m_.Get()->GetTextureAtlasRegion(region_name);
 		tex_vertex_m_.Move(new TextureVertex(region), true);
 		image_m_.Move(new Image(tex_vertex_m_.Get(), shader_.Get(), atlas_m_.Get()->GetTexture()), true);
-		return new ImageView(Frame(transform, region.sprite_size_),	image_m_.Get());
+		return new ImageView(transform,	image_m_.Get());
 	}
 
 	void ImageViewFactory::LoadSprite(const std::string region_name,
@@ -64,7 +64,7 @@ namespace he{
 
 	SpriteView *ImageViewFactory::CreateSpriteView(Transform &transform) {
 		assert(!sprite_m_.IsEmpty());
-		return new SpriteView(Frame(transform), sprite_m_.Get());
+		return new SpriteView(transform, sprite_m_.Get());
 	}
 	
 }

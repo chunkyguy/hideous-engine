@@ -29,15 +29,17 @@ namespace he {
 		
 		virtual void Update(float dt);
 		virtual void Render();
+		virtual GLKVector2 GetSize() const;
 		
 	private:
+		Frame frame_;
 		ParticleBatch *particles_;
 	};
 	
 	class ParticleViewFactory {
 	public:
 		ParticleViewFactory(ParticleShader *shader, Texture *texture_m);
-		ParticleView *CreateParticleView(const Transform &trans, he::ParticleEnv *environment, int count);
+		ParticleView *CreateParticleView(const Transform &trans, he::ParticleEnv *environment, const int count);
 		
 	private:
 		Asset<ParticleShader> shader_;

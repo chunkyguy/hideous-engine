@@ -17,8 +17,9 @@ namespace he{
 	// MARK: ParticleView
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	ParticleView::ParticleView(const Frame &frame, ParticleBatch *p_batch) :
-	View(frame),
-	particles_(p_batch)
+	View(frame.GetTransform()),
+	particles_(p_batch),
+	frame_(frame)
 	{	}
 
 	
@@ -29,10 +30,14 @@ namespace he{
 	}
 	
 	void ParticleView::Render(){
-		particles_->SetMVP(Transform_GetMVP(&(GetFrame().GetTransform())));
+		particles_->SetMVP(Transform_GetMVP(&GetTransform()));
 		particles_->Render();
 		
 		View::Render();
+	}
+	
+	GLKVector2 ParticleView::GetSize() const {
+		return frame_.GetSize();
 	}
 	
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -43,7 +48,7 @@ namespace he{
 		texture_m_.Move(texture_m);
 	}
 	
-	ParticleView *ParticleViewFactory::CreateParticleView(const Transform &transform, he::ParticleEnv *environment, int count){
+	ParticleView *ParticleViewFactory::CreateParticleView(const Transform &transform, he::ParticleEnv *environment, const int count){
 		assert(!texture_m_.IsEmpty());
 		assert(!shader_.IsEmpty());
 		

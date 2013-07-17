@@ -18,7 +18,7 @@ namespace he {
 		 */
 		class View{
 		public:
-			View(const Frame &frame);
+			View(const Transform &transform);
 			virtual ~View();
 			
 			/** Update self. Update all children in draw order */
@@ -27,6 +27,8 @@ namespace he {
 			/** Render self. Render all children in draw order */
 			virtual void Render();
 			
+			virtual GLKVector2 GetSize() const;
+			
 			/** Owns the passed component */
 			void MoveSubview(View *view);
 
@@ -34,23 +36,25 @@ namespace he {
 			void RemoveSubview(View *view);
 
 			/** Update frame */
-			void SetFrame(const Frame &frame);
+			void SetTransform(const Transform &transform);
 			/** Get the current frame */
-			const Frame &GetFrame() const;
+			const Transform &GetTransform() const;
 			
-			/** Returns pointer to frame
-			@warning This is more like a design bug, can get modified in future. Use minimum.
-			 */
-			Frame *GetFramePtr();
+//			/** Returns pointer to frame
+//			@warning This is more like a design bug, can get modified in future. Use minimum.
+//			 */
+//			Frame *GetFramePtr();
+
+		protected:
+			Transform transform_; /**< The frame of the view */
 
 		private:
-		
-			Frame frame_; /**< The frame of the view */
 			View *add_to_;	/**< Next Submit adds to this node. */
 			View *head_;	/**< The head pointer to the first child UIComponent. Starts drawing from here */
 			View *next_;	/**< Points to the next sibling UIComponent */
 	};
-	
+
+	Frame CreateFrame(const View *view);
 } /*namespace he*/
 
 #endif

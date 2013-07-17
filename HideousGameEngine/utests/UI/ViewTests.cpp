@@ -17,9 +17,9 @@ TEST(View, Destructor){
 	he::g_Screen = new he::Screen(480, 320);
 
 	// load view
-	he::Frame view_frame(he::Transform_Create(GLKVector3Make(0.0f, 0.0f, 0.0f)));
-	he::View *view =  new he::View(view_frame);
-	view->MoveSubview(new he::View(view_frame));
+	he::Transform view_trans(he::Transform_Create(GLKVector3Make(0.0f, 0.0f, 0.0f)));
+	he::View *view =  new he::View(view_trans);
+	view->MoveSubview(new he::View(view_trans));
 	delete view;
 	ASSERT_TRUE(1);
 	delete he::g_Screen;
@@ -31,24 +31,24 @@ TEST(View, Destructor){
 TEST(View, SubviewUpdate){
 	he::g_Screen = new he::Screen(480, 320);
 	
-	he::Frame view_frame(he::Transform_Create(GLKVector3Make(0.0f, 0.0f, 0.0f)));
-	he::View *view =  new he::View(view_frame);
+	he::Transform view_trans(he::Transform_Create(GLKVector3Make(0.0f, 0.0f, 0.0f)));
+	he::View *view =  new he::View(view_trans);
 
-	he::Frame subvw_frame(he::Transform_Create(GLKVector3Make(0.0f, 0.0f, 0.0f)));
-	he::View *subview = new he::View(subvw_frame);
+	he::Transform subvw_trans(he::Transform_Create(GLKVector3Make(0.0f, 0.0f, 0.0f)));
+	he::View *subview = new he::View(subvw_trans);
 	view->MoveSubview(subview);
 
 	//he_Trace("1 One:\n%@\nTwo:\n%@\n",he::Transform_GetMVP(&(view->GetFrame().GetTransform())), he::Transform_GetMVP(&(subview->GetFrame().GetTransform())));
 
-	he::Frame new_frame(he::Transform_Create(GLKVector2Make(100.0f, 100.0f)));
-	view->SetFrame(new_frame);
+	he::Transform new_trans(he::Transform_Create(GLKVector2Make(100.0f, 100.0f)));
+	view->SetTransform(new_trans);
 //	GLKVector2 new_pos = GLKVector2Make(100, 100);
 //	view->GetFrame().GetTransformPtr()->SetPosition(new_pos);
 	
 	view->Update(0.0);
 	//he_Trace("2 One:\n%@\nTwo:\n%@\n",he::Transform_GetMVP(&(view->GetFrame().GetTransform())), he::Transform_GetMVP(&(subview->GetFrame().GetTransform())));
 
-	ASSERT_TRUE(he::Transform_GetMVP(&(view->GetFrame().GetTransform())) == he::Transform_GetMVP(&(subview->GetFrame().GetTransform())));
+	ASSERT_TRUE(he::Transform_GetMVP(&(view->GetTransform())) == he::Transform_GetMVP(&(subview->GetTransform())));
 	delete view;
 	delete he::g_Screen;
 }
@@ -57,27 +57,14 @@ TEST(View, SubviewUpdate){
 TEST(View, CreateViewWithAnotherViewsFrame){
 	he::g_Screen = new he::Screen(480, 320);
 	
-	he::Frame view_frame(he::Transform_Create(GLKVector3Make(0.0f, 0.0f, 0.0f)));
-	he::View *view =  new he::View(view_frame);
+	he::Transform view_trans(he::Transform_Create(GLKVector3Make(0.0f, 0.0f, 0.0f)));
+	he::View *view =  new he::View(view_trans);
 	
-	he::Frame sub_frame1(he::Transform_Create(GLKVector3Make(0, 0, 0)), view->GetFrame().GetSize());
-	he::View *sub_view1 = new he::View(sub_frame1);
+	he::Transform sub_trans1(he::Transform_Create(GLKVector3Make(0, 0, 0)));
+	//, view->GetFrame().GetSize());
+	he::View *sub_view1 = new he::View(sub_trans1);
 
-	he::View *sub_view2 = new he::View(view->GetFrame());
+	he::View *sub_view2 = new he::View(view->GetTransform());
 	
-	EXPECT_EQ(sub_view1->GetFrame().GetGlobalRect(), sub_view2->GetFrame().GetGlobalRect());
-}
-
-/** Test if creating view with another view's frame works */
-TEST(View, CreateViewWithViewsFrame){
-	he::g_Screen = new he::Screen(480, 320);
-	
-	he::View *vw = new he::View(he::Frame(he::Transform_Create(GLKVector3Make(0, 50, 0)), GLKVector2Make(256.0f, 256.0f)));
-	
-	he::Frame sub_frame1(he::Transform_Create(GLKVector3Make(0, 0, 0)), vw->GetFrame().GetSize());
-	he::Frame sub_frame2 = CreateLocalFrame(vw->GetFrame());
-	
-	EXPECT_EQ(sub_frame1.GetRect(), sub_frame2.GetRect());
-	delete vw;
-	delete he::g_Screen;
+	EXPECT_EQ(he::CreateFrame(sub_view1).GetGlobalRect(), he::CreateFrame(sub_view2).GetGlobalRect());
 }

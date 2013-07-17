@@ -28,14 +28,16 @@ namespace he {
 			@param vertex_m	The vertex data. Owns it.
 			@param shader	The color shader.
 		 */
-		Gradient(const ColorVertex *vertex_m, const ColorShader *shader);
+		Gradient(const ColorVertex *vertex_m, const ColorShader *shader, const GLKVector2 size);
 		~Gradient();
 		
-		void Render(const Frame &frame);
+		void Render(const Transform &transform);
+		GLKVector2 GetSize() const;
 		
 	private:
 		RenderObject *render_object_;
 		const ColorVertex *vertex_;
+		GLKVector2 size_;
 	};
 
 	/** Creates GradientView's
@@ -53,9 +55,10 @@ namespace he {
 
 	class GradientView : public View {
 	public:
-		GradientView(const Frame &frame, Gradient *gradient);
+		GradientView(const Transform &transform, Gradient *gradient);
 		virtual void Update(float dt);
 		virtual void Render();
+		virtual GLKVector2 GetSize() const;
 		
 	private:
 		Gradient *gradient_;

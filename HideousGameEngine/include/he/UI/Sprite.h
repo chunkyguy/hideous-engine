@@ -36,9 +36,12 @@ namespace he {
 			   const int repeat_count = -1, const int final_frame = 0, const float fps = 24.0f);
 		~Sprite();
 
-		void Render(const Frame &frame);
+		void Render(const Transform &transform);
+
+		GLKVector2 GetSize() const;
 		
 	private:
+		GLKVector2 size_;
 		TextureVertex *vertex_;
 		RenderObject *render_object_;
 	};
@@ -50,9 +53,10 @@ namespace he {
 	
 	class SpriteView : public View {
 	public:
-		SpriteView(const Frame &frame, Sprite *sprite);
+		SpriteView(const Transform &transform, Sprite *sprite);
 		virtual void Update(float dt);
 		virtual void Render();
+		virtual GLKVector2 GetSize() const;
 		
 	private:
 		Sprite *sprite_;

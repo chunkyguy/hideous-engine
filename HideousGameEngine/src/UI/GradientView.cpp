@@ -16,9 +16,10 @@ namespace he{
 	///////////////////////////////////////////////////////////////////////////////////////////////////
 	// MARK: Gradient
 	///////////////////////////////////////////////////////////////////////////////////////////////////
-	Gradient::Gradient(const ColorVertex *vertex_m, const ColorShader *shader) :
+	Gradient::Gradient(const ColorVertex *vertex_m, const ColorShader *shader, const GLKVector2 size) :
 	vertex_(vertex_m),
-	render_object_(new RenderObject(vertex_m, shader, nullptr))
+	render_object_(new RenderObject(vertex_m, shader, nullptr)),
+	size_(size)
 	{	}
 	
 	Gradient::~Gradient(){
@@ -26,17 +27,20 @@ namespace he{
 		delete vertex_;
 	}
 	
-	void Gradient::Render(const Frame &frame){
-		render_object_->SetMVP(Transform_GetMVP(&(frame.GetTransform())));
+	void Gradient::Render(const Transform &transform){
+		render_object_->SetMVP(Transform_GetMVP(&transform));
 		render_object_->Render();
 	}
-	
+
+	GLKVector2 Gradient::GetSize() const {
+		return size_;
+	}
 	
 	///////////////////////////////////////////////////////////////////////////////////////////////////
 	// MARK: GradientView
 	///////////////////////////////////////////////////////////////////////////////////////////////////
-	GradientView::GradientView(const Frame &frame, Gradient *gradient) :
-	View(frame),
+	GradientView::GradientView(const Transform &transform, Gradient *gradient) :
+	View(transform),
 	gradient_(gradient)
 	{}
 	
@@ -45,10 +49,14 @@ namespace he{
 	}
 	
 	void GradientView::Render() {
-		gradient_->Render(GetFrame());
+		gradient_->Render(GetTransform());
 		View::Render();
 	}
-	
+
+	GLKVector2 GradientView::GetSize() const {
+		return gradient_->GetSize();
+	}
+
 	///////////////////////////////////////////////////////////////////////////////////////////////////
 	// MARK: Utility
 	///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -59,14 +67,14 @@ namespace he{
 		Gradient *Create(const GLKVector2 &size, ColorShader *shader, GLKVector4 colorA, GLKVector4 colorD) {
 			Frame frame(Transform_Create(GLKVector3Make(0.0f, 0.0f, 0.0f)), size);
 			return new Gradient(new ColorVertex({Vertex::GetVertex(frame.GetRect(), Vertex::kA), colorA},
-												{Vertex::GetVertex(frame.GetRect(), Vertex::kD), colorD}), shader);
+												{Vertex::GetVertex(frame.GetRect(), Vertex::kD), colorD}), shader, size);
 		}
 		Gradient *Create(const GLKVector2 &size, ColorShader *shader, GLKVector4 colorA, GLKVector4 colorB, GLKVector4 colorC, GLKVector4 colorD) {
 			Frame frame(Transform_Create(GLKVector3Make(0.0f, 0.0f, 0.0f)), size);
 			return new Gradient(new ColorVertex({Vertex::GetVertex(frame.GetRect(), Vertex::kA), colorA},
 												{Vertex::GetVertex(frame.GetRect(), Vertex::kB), colorB},
 												{Vertex::GetVertex(frame.GetRect(), Vertex::kC), colorC},
-												{Vertex::GetVertex(frame.GetRect(), Vertex::kD), colorD}), shader);
+												{Vertex::GetVertex(frame.GetRect(), Vertex::kD), colorD}), shader, size);
 		}
 	}
 }

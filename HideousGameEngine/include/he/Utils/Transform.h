@@ -70,5 +70,7 @@ namespace he{
 	/** Get the model-view-projection in world-space.
 	 */
 	GLKMatrix4 Transform_GetMVP(const Transform *slf);
+	
+	bool operator==(const Transform &one, const Transform &two);
 }
 #endif /* defined(__HideousGameEngine__Transform__) */

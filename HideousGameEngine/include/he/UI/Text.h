@@ -49,9 +49,14 @@ namespace he {
 	 */
 	class TextView : public View{
 	public:
-		TextView(const Frame &frame);
+		TextView(const Transform &transform);
 		virtual void Update(float dt);
 		virtual void Render();
+		virtual GLKVector2 GetSize() const;
+		void SetSize(const GLKVector2 &size);
+		
+	private:
+		GLKVector2 size_;
 	};
 	
 	
@@ -65,7 +70,7 @@ namespace he {
 			@param string		The string to be rendered.
 			@param color			The color of the font. Default is black.
 		 */
-		TextView *CreateTextView(Transform transform, std::string string, GLKVector4 color = GLKVector4Make(0.0f, 0.0f, 0.0f, 1.0f));
+		TextView *CreateTextView(const Transform &transform, const std::string &string, GLKVector4 color = GLKVector4Make(0.0f, 0.0f, 0.0f, 1.0f));
 		
 	private:
 		Asset<Font> font_m_; /**< font asset. Dies with the factory */

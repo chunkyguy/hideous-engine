@@ -97,7 +97,8 @@ namespace he{
 	}
 	
 	Glyph::Glyph(Frame frame, GlyphData *data, TextShader *shader, GLKVector4 color) :
-	View(frame)
+	View(frame.GetTransform()),
+	frame_(frame)
 	{
 //		GLKVector3 trans_pos = GetFrame().GetTransform().position;
 //		trans_pos.x = trans_pos.x + glyph->bitmap_left;
@@ -144,13 +145,19 @@ namespace he{
 	//	}
 
 
-	void Glyph::update(float dt){
-		render_object_->SetMVP(Transform_GetMVP(&(GetFrame().GetTransform())));
+	void Glyph::Update(float dt){
+		View::Update(dt);
+		
+		render_object_->SetMVP(Transform_GetMVP(&(GetTransform())));
 	}
 	
-	void Glyph::render(){
+	void Glyph::Render(){
 		render_object_->Render();
+		View::Render();
 	}
-	
+
+	GLKVector2 Glyph::GetSize() const {
+		return frame_.GetSize();
+	}
 }
 ///EOF

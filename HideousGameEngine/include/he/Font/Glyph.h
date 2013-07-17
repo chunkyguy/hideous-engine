@@ -59,15 +59,15 @@ namespace he {
 	public:
 		Glyph(Frame frame, GlyphData *data, TextShader *shader, GLKVector4 color);
 		virtual ~Glyph();
-		
-	protected:
-		void update(float dt);
-		void render();
+		virtual void Update(float dt);
+		virtual void Render();
+		virtual GLKVector2 GetSize() const;
 		
 	private:
 		RenderObject *render_object_;
 		Texture *texture_;
 		TextureVertex *vertex_data_;
+		Frame frame_;
 	};
 }
 

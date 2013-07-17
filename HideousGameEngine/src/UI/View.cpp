@@ -9,11 +9,11 @@
 #include <he/UI/View.h>
 
 namespace he {
-	View::View(const Frame &frame) :
+	View::View(const Transform &transform) :
 	add_to_(nullptr),
 	head_(nullptr),
 	next_(nullptr),
-	frame_(frame)
+	transform_(transform)
 	{}
 	
 	View::~View(){
@@ -43,6 +43,10 @@ namespace he {
 		}
 	}
 	
+	GLKVector2 View::GetSize() const {
+		return GLKVector2Make(0.0f, 0.0f);
+	}
+	
 	/** Owns the passed component */
 	void View::MoveSubview(View *view){
 		if(!head_){
@@ -51,7 +55,7 @@ namespace he {
 			add_to_->next_ = view;
 			add_to_ = view;
 		}
-		view->frame_.GetTransformPtr()->parent = frame_.GetTransformPtr();
+		view->transform_.parent = &transform_;
 	}
 	
 	void View::RemoveSubview(View *view){
@@ -66,17 +70,22 @@ namespace he {
 		delete view;
 		view = nullptr;
 	}
-	void View::SetFrame(const he::Frame &frame){
-		frame_ = frame;
+
+	void View::SetTransform(const he::Transform &transform) {
+		transform_ = transform;
 	}
 	
-	const Frame &View::GetFrame() const{
-		return frame_;
+	const Transform &View::GetTransform() const{
+		return transform_;
 	}
 	
-	Frame *View::GetFramePtr(){
-		return &frame_;
+	Frame CreateFrame(const View *view) {
+		return Frame(view->GetTransform(), view->GetSize());
 	}
+
+//	Frame *View::GetFramePtr(){
+//		return &frame_;
+//	}
 	
 	//		const GLKMatrix4 View::GetMVP() const{
 	//			return frame_.GetTransform().GetMVP();

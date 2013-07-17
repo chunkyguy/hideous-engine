@@ -48,8 +48,7 @@ void UITest::init(){
 	texture_shader_.Move(new he::TextureShader, false);
 	
 	//main view
-	he::Frame frame(he::Transform_Create(GLKVector2Make(0, 0)));
-	view_ = new he::View(frame);
+	view_ = new he::View(he::Transform_Create(GLKVector2Make(0.0f, 0.0f)));
 	
 	//Single texture
 	ship_tex_.Move(new he::Texture(he::ResourcePath() + "ship_144.png"));
@@ -57,7 +56,7 @@ void UITest::init(){
 
 	//bg: image view - from texture
 	he::Transform bg_vw_trans = he::Transform_Create(GLKVector3Make(0, 50, 0));
-	he::ImageView *bg_vw = new he::ImageView(he::Frame(bg_vw_trans, ship_tex_.Get()->GetSize()), ship_img_.Get());
+	he::ImageView *bg_vw = new he::ImageView(bg_vw_trans, ship_img_.Get());
 	view_->MoveSubview(bg_vw);
 	
 	// homescreen atlas
@@ -69,21 +68,21 @@ void UITest::init(){
 	std::string mission_vw_img_name = he::FlashFullName("mission");
 	mission_img_.Move(he::image::Create(texture_shader_.Get(), home_screen_atlas_.Get(), mission_vw_img_name));
 	he::Transform mission_vw_trans = he::Transform_Create(GLKVector3Make(100, 0, 0.0f));
-	GLKVector2 mission_vw_sz = home_screen_atlas_.Get()->GetTextureAtlasRegion(mission_vw_img_name).sprite_size_;
-	he::ImageView *mission_vw = new he::ImageView(he::Frame(mission_vw_trans, mission_vw_sz), mission_img_.Get());
+	//GLKVector2 mission_vw_sz = home_screen_atlas_.Get()->GetTextureAtlasRegion(mission_vw_img_name).sprite_size_;
+	he::ImageView *mission_vw = new he::ImageView(mission_vw_trans, mission_img_.Get());
 	bg_vw->MoveSubview(mission_vw);
 
 	//button
 	btn_listener_.Move(new he::ButtonListener<UITest>(this, &UITest::ButtonHandler), false);
-	he::ButtonView *btn = new he::ButtonView(CreateLocalFrame(mission_vw->GetFrame()), btn_listener_.Get(), 99);
+	he::ButtonView *btn = new he::ButtonView(he::CreateLocalFrame(mission_vw->GetSize()), btn_listener_.Get(), 99);
 	mission_vw->MoveSubview(btn);
 
 	//tutorial: image view - from atlas
 	std::string tutorial_img_name = he::FlashFullName("tutorial");
 	tutorial_img_.Move(he::image::Create(texture_shader_.Get(), home_screen_atlas_.Get(), tutorial_img_name));
 	he::Transform tutorial_vw_trans = he::Transform_Create(GLKVector3Make(-50, 50, 0.0f));
-	GLKVector2 tutorial_vw_sz = home_screen_atlas_.Get()->GetTextureAtlasRegion(tutorial_img_name).sprite_size_;
-	he::ImageView *tutorial_vw = new he::ImageView(he::Frame(tutorial_vw_trans, tutorial_vw_sz), tutorial_img_.Get());
+	//	GLKVector2 tutorial_vw_sz = home_screen_atlas_.Get()->GetTextureAtlasRegion(tutorial_img_name).sprite_size_;
+	he::ImageView *tutorial_vw = new he::ImageView(tutorial_vw_trans, tutorial_img_.Get());
 	mission_vw->MoveSubview(tutorial_vw);
 
 	//another factory
@@ -95,8 +94,8 @@ void UITest::init(){
 	std::string fish_sprite_name("fishmoving");
 	fish_sprite_.Move(he::sprite::Create(texture_shader_.Get(), fish_atlas_.Get(), fish_sprite_name, -1, 0, 30.0f));
 	he::Transform fish_trans = he::Transform_Create(GLKVector3Make(0, -100, 0.0f));
-	GLKVector2 fish_sprite_sz = fish_atlas_.Get()->GetTextureAtlasRegion(he::FlashFullName(fish_sprite_name)).sprite_size_;
-	he::SpriteView *fish_sprite = new he::SpriteView(he::Frame(fish_trans, fish_sprite_sz), fish_sprite_.Get());
+	//GLKVector2 fish_sprite_sz = fish_atlas_.Get()->GetTextureAtlasRegion(he::FlashFullName(fish_sprite_name)).sprite_size_;
+	he::SpriteView *fish_sprite = new he::SpriteView(fish_trans, fish_sprite_.Get());
 	view_->MoveSubview(fish_sprite);
 
 	//text factory
@@ -112,20 +111,20 @@ void UITest::init(){
 	
 	//gradient view - mono
 	gr_mono_.Move(he::gradient::Create(GLKVector2Make(50.0f, 50.0f), clr_sh_.Get(), GLKVector4Make(1.0f, 0.0f, 0.4f, 0.8f)));
-	he::Frame gr_mono_frame(he::Transform_Create(GLKVector3Make(-100.0, 20.0, he::g_Screen->z_)), GLKVector2Make(30.0f, 30.0f));
-	he::GradientView *gr_mono_vw = new he::GradientView(gr_mono_frame, gr_mono_.Get());
+	//he::Frame gr_mono_frame(he::Transform_Create(GLKVector3Make(-100.0, 20.0, he::g_Screen->z_)), GLKVector2Make(30.0f, 30.0f));
+	he::GradientView *gr_mono_vw = new he::GradientView(he::Transform_Create(GLKVector3Make(-100.0, 20.0, he::g_Screen->z_)), gr_mono_.Get());
 	view_->MoveSubview(gr_mono_vw);
 	
 	//gradient view - dual
 	gr_dual_.Move(he::gradient::Create(GLKVector2Make(50.0f, 50.0f), clr_sh_.Get(),GLKVector4Make(1.0f, 0.0f, 0.0f, 1.0f), GLKVector4Make(0.0f, 1.0f, 0.0f, 1.0f)));
-	he::Frame gr_dual_frame(he::Frame(he::Transform_Create(GLKVector3Make(0.0, 40.0, he::g_Screen->z_)), GLKVector2Make(30.0f, 30.0f)));
-	he::GradientView *gr_dual_vw = new he::GradientView(gr_dual_frame, gr_dual_.Get());
+	//he::Frame gr_dual_frame(he::Frame(he::Transform_Create(GLKVector3Make(0.0, 40.0, he::g_Screen->z_)), GLKVector2Make(30.0f, 30.0f)));
+	he::GradientView *gr_dual_vw = new he::GradientView(he::Transform_Create(GLKVector3Make(0.0, 40.0, he::g_Screen->z_)), gr_dual_.Get());
 	view_->MoveSubview(gr_dual_vw);
 
 	//gradient view - quad
 	gr_quad_.Move(he::gradient::Create(GLKVector2Make(50.0f, 50.0f), clr_sh_.Get(), GLKVector4Make(1.0f, 0.0f, 0.0f, 1.0f), GLKVector4Make(0.0f, 1.0f, 0.0f, 1.0f), GLKVector4Make(0.0f, 0.0f, 1.0f, 1.0f), GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f)));
-	he::Frame gr_quad_frame(he::Transform_Create(GLKVector3Make(100.0, 60.0, he::g_Screen->z_)), GLKVector2Make(30.0f, 30.0f));
-	he::GradientView *gr_quad_vw = new he::GradientView(gr_quad_frame, gr_quad_.Get());
+	//he::Frame gr_quad_frame(he::Transform_Create(GLKVector3Make(100.0, 60.0, he::g_Screen->z_)), GLKVector2Make(30.0f, 30.0f));
+	he::GradientView *gr_quad_vw = new he::GradientView(he::Transform_Create(GLKVector3Make(100.0, 60.0, he::g_Screen->z_)), gr_quad_.Get());
 	view_->MoveSubview(gr_quad_vw);
 
 	//particle factory
