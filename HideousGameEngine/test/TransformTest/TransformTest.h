@@ -32,11 +32,12 @@ private:
 
 class HeavenlyBody : public he::GradientView {
 public:
-	HeavenlyBody(const he::Transform &transform, he::Gradient *grad, float speed);
+	HeavenlyBody(const he::Transform &transform, he::Gradient *grad, GLKVector3 speed, float anglular_rotation);
 	virtual void Update(float dt);
 	virtual void Render();
 private:
-	float speed_;
+	GLKVector3 speed_;
+	float ang_rot_;
 };
 
 

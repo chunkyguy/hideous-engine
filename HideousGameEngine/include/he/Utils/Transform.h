@@ -72,5 +72,6 @@ namespace he{
 	GLKMatrix4 Transform_GetMVP(const Transform *slf);
 	
 	bool operator==(const Transform &one, const Transform &two);
+	std::ostream &operator<<(std::ostream &os, const Transform &trans);
 }
 #endif /* defined(__HideousGameEngine__Transform__) */

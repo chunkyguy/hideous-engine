@@ -97,6 +97,13 @@ namespace he{
 				one.rotation		== two.rotation	&&
 				one.scale		==	two.scale);
 	}
+	std::ostream &operator<<(std::ostream &os, const Transform &trans) {
+		os << "Position: " << trans.position;
+		os << "Rotation: " << trans.rotation;
+		os << "Scale: " << trans.scale;
+		os << "Parent: " << (trans.parent == nullptr);
+		return os;
+	}
 
 	
 }

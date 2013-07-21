@@ -27,7 +27,7 @@ namespace he {
 		g_FontLib = new FontLibrary;
 		
 		init();
-		he_Trace("he::Game: loaded");
+		he_Trace("he::Game: loaded\n");
 	}
 	
 	Game::~Game(){
