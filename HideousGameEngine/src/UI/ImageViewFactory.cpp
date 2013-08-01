@@ -34,7 +34,7 @@ namespace he{
 		
 		texture_m_.Move(new Texture(img_path));
 		tex_vertex_m_.Move(new TextureVertex(texture_m_.Get()->GetSize()), true);
-		image_m_.Move(new Image(tex_vertex_m_.Get(), shader_.Get(), texture_m_.Get()), true);
+		image_m_.Move(new Image(tex_vertex_m_.Get(), shader_.Get(), texture_m_.Get(), texture_m_.Get()->GetSize()), true);
 	}
 	
 	ImageView *ImageViewFactory::CreateImageView(Transform &transform){
@@ -49,7 +49,7 @@ namespace he{
 		
 		const TextureAtlasRegion region = atlas_m_.Get()->GetTextureAtlasRegion(region_name);
 		tex_vertex_m_.Move(new TextureVertex(region), true);
-		image_m_.Move(new Image(tex_vertex_m_.Get(), shader_.Get(), atlas_m_.Get()->GetTexture()), true);
+		image_m_.Move(new Image(tex_vertex_m_.Get(), shader_.Get(), atlas_m_.Get()->GetTexture(), region.sprite_size_), true);
 		return new ImageView(transform,	image_m_.Get());
 	}
 

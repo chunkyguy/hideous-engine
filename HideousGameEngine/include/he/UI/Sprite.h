@@ -10,13 +10,15 @@
 #define HideousGameEngine_Sprite_h
 #include <he/UI/View.h>
 #include <he/Utils/Frame.h>
+#include <he/Animation/Animation.h>
 
 namespace he {
 	class RenderObject;
 	class TextureAtlas;
 	class TextureVertex;
 	class TextureShader;
-
+	class SpriteAnimation;
+	
 	/** Sprite object.
 	 @brief		Sprite is an animated texture object. The texture has to be provided as an atlas.
 	 */
@@ -44,6 +46,7 @@ namespace he {
 		GLKVector2 size_;
 		TextureVertex *vertex_;
 		RenderObject *render_object_;
+		Animation::ID anim_id_;
 	};
 
 	namespace sprite {

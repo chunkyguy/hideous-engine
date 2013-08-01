@@ -60,48 +60,91 @@ namespace he{
 	 */
 	class Animation{
 	public:
+		typedef unsigned long long ID;
+		/**
+		 *	Create blank animation with default state
+		 */
 		Animation();
-
-		// This could happen under two circumstances:
-		//	1. Natural Death:
-		//	Adds child (if any) to the animation loop and calls the callback.
-		//	Assuming that the callback isn't going to refer to this animation anymore directly or indirectly.
-		//	2. Suicide:
-		//	Forcibly kills the child (and subsquently the whole family tree) without calling the registered callback (if any)
+		
+		/**
+		 *	Destroy animation.
+		 *
+		 *	@brief This could happen under two circumstances:
+		 *	1. Natural Death:
+		 *	Adds child (if any) to the animation loop and calls the callback.
+		 *	Assuming that the callback isn't going to refer to this animation anymore directly or indirectly.
+		 *	2. Suicide:
+		 *	Forcibly kills the child (and subsquently the whole family tree) without calling the registered callback (if any)
+		 */
 		virtual ~Animation();
 		
-		//	Nothing to do here, invokes updates on derived class.
-		//	The derived class then updates till it runs out of frames,
-		//	in that case the AnimationLoop kills it naturally.
+		/**
+		 *	Update
+		 *
+		 *	@brief	Nothing to do here, invokes updates on derived class.
+		 *	The derived class then updates till it runs out of frames,
+		 *	in that case the AnimationLoop kills it naturally.
+		 *
+		 *	@param	dt	delta time.
+		 */
 		void Update(float dt);
 		
-		//	Registers a child, to be executed after self is finished.
-		//	Owns it.
-		void AddChild(Animation *child);
+		/**
+		 *	Registers a child, to be executed after self is finished. Owns it.
+		 *
+		 *	@param	child	The child animation.
+		 */
+		void MoveChild(Animation *child);
 		
-		//	Registers a listener. Calls it as soon as the animation finishes (after the child gets active)
+		/**
+		 *	Registers a listener. Calls it as soon as the animation finishes (after the child gets active)
+		 *
+		 *	@param	listener		The listener.
+		 */
 		void SetListener(AnimationListenable *listener);
 		
-		//	All id are > 0
-		//	Get the animation id associated.
-		unsigned long GetID() const;
+		/**
+		 *	Get the animation id associated.
+		 *
+		 *	@note		All id are > 0
+		 *
+		 *	@return	The unique animation ID.
+		 */
+		ID GetID() const;
 		
-		//	Get associated descent id. All parent-child share same descent id.
-		unsigned long GetDescentID() const;
+		/**
+		 *	Get associated descent id. All parent-child share same descent id.
+		 *
+		 *	@return	The unique descent id.
+		 */
+		ID GetDescentID() const;
 		
-		//	Done = true, means the animation doesn't wants to live anymore (natural death or suicide)
-		//	Used by AnimationLoop to kick out of the loop.
+		/**
+		 *	Done = true, means the animation doesn't wants to live anymore (natural death or suicide)
+		 *
+		 *	@brief		Used by AnimationLoop to kick out of the loop.
+		 *
+		 *	@return	True is still active, else false.
+		 */
 		bool Done() const;
 
-		//	Commits suicide.
-		//	Anyone is free to call this anytime.
-		//	Doesn't means that memory will be released immediately. It just sets a flag, kicked out of loop by AnimationLoop
+		/**
+		 *	Commits suicide.
+		 *
+		 *	@brief	Anyone is free to call this anytime.
+		 *	Doesn't means that memory will be released immediately. It just sets a flag, kicked out of loop by AnimationLoop
+		 */
 		void Die();
 		
-		//	Never expected to be used from any place else other than the AnimationLoop.
-		//	Points to the next sibling.
+		/**
+		 *	Never expected to be used from any place else other than the AnimationLoop.
+		 *	Points to the next sibling.
+		 */
 		Animation *next_;
-		//	Points to the next child in waiting.
+		
+		/**
+		 *	Points to the next child in waiting.
+		 */
 		Animation *child_;
 
 	protected:
@@ -113,14 +156,14 @@ namespace he{
 
 		virtual void update(float dt) = 0;
 
-		unsigned long id_;
-		unsigned long descent_id_;
+		ID id_;
+		ID descent_id_;
 		AnimationListenable *listener_;
 		
 		//	The id's are generated from 1 to sizeof(unsigned long). Someday if someone plays for too long, the game will crash.
 		// TODO: Fix this sometime in future.
-		static unsigned long uid;
-		static unsigned long d_uid;
+		static ID uid;
+		static ID d_uid;
 	};
 	
 	

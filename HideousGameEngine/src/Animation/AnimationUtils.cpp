@@ -8,7 +8,6 @@
 
 #include <he/Animation/AnimationUtils.h>
 
-#include <he/Animation/Animation.h>
 #include <he/Animation/AnimationLoop.h>
 
 namespace he {
@@ -16,19 +15,19 @@ namespace he {
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// MARK: Helpers
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////
-	EndAnimationFunctor::EndAnimationFunctor(IDType type, unsigned long ID) :
+	EndAnimationFunctor::EndAnimationFunctor(IDType type, Animation::ID ID) :
 	id_(ID),
 	type_(type)
 	{}
 	
 	void EndAnimationFunctor::operator()(Animation *animation){
-		unsigned long ID = (type_ == kAnimationID) ? animation->GetID(): animation->GetDescentID();
+		Animation::ID ID = (type_ == kAnimationID) ? animation->GetID(): animation->GetDescentID();
 		if(ID == id_){
 			animation->Die();
 		}
 	}
 	
-	void EndAnimationsWithID(EndAnimationFunctor::IDType type, unsigned long ID){
+	void EndAnimationsWithID(EndAnimationFunctor::IDType type, Animation::ID ID){
 		g_AnimationLoop->TraverseAnimations(EndAnimationFunctor(type, ID));
 	}
 	

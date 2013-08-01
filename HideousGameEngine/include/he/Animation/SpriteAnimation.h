@@ -30,6 +30,7 @@ namespace he {
 		void SetRepeatCount(int c);
 		void SetFinalFrameIndex(int i);
 		void SetFPS(float fps);
+		void RetainCurrVertex();
 		
 	private:
 		// Internal structure. Data for each frame of the animation.

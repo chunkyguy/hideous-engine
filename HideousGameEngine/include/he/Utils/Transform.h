@@ -55,7 +55,8 @@ namespace he{
 	void Transform_SetPosition(Transform *slf, const GLKVector2 pos);
 	/** Get the {x, y} component of the position */
 	GLKVector2 Transform_GetPosition(const Transform &slf);
-	
+	GLKVector3 Transform_GetLocalPosition(const Transform &slf, GLKVector3 world_position);
+
 
 	Transform operator+(const Transform &one, const Transform &two);
 	Transform operator-(const Transform &one, const Transform &two);
@@ -70,6 +71,7 @@ namespace he{
 	/** Get the model-view-projection in world-space.
 	 */
 	GLKMatrix4 Transform_GetMVP(const Transform *slf);
+
 	
 	bool operator==(const Transform &one, const Transform &two);
 	std::ostream &operator<<(std::ostream &os, const Transform &trans);

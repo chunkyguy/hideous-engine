@@ -38,8 +38,8 @@ private:
 	he::ColorShader *shader_;
 	he::Transform transform_;
 	he::AnimationListener<AnimObj> *animation_listener_;
-	unsigned long scale_anim_descent_id_;
-	unsigned long trans_anim_descent_id_;
+	he::Animation::ID scale_anim_descent_id_;
+	he::Animation::ID trans_anim_descent_id_;
 	//he::Transform *tmp_transform_;	//While animating hold transform vars.
 									//he::AnimationChain *anim_chain_;
 };

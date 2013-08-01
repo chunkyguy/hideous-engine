@@ -24,7 +24,7 @@ namespace he {
 	/** Draw static images */
 	class Image {
 	public:
-		Image(const TextureVertex *vertex_m, const TextureShader *shader, const Texture *texture);
+		Image(const TextureVertex *vertex_m, const TextureShader *shader, const Texture *texture, const GLKVector2 &size);
 		~Image();
 		void Render(const Transform &transform);
 		GLKVector2 GetSize() const;

@@ -67,6 +67,10 @@ namespace he{
 		Transform_SetPosition(&transform_, size_/2.0f);
 	}
 	
+	bool Frame::Contains(const GLKVector2 point) const {
+		return Vertex::Contains(rect_, point);
+	}
+
 	std::ostream &operator<<(std::ostream &os, const Frame &frame){
 		os << frame.GetRect();
 		return os;
@@ -76,6 +80,7 @@ namespace he{
 		return he::Frame(he::Transform_Create(GLKVector3Make(0, 0, 0)), size);
 	}
 
+	
 }
 
 ///EOF

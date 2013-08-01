@@ -91,6 +91,7 @@
 		198403B51761EAAA00D0B7EA /* AnimationUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 198403B31761EAAA00D0B7EA /* AnimationUtils.cpp */; };
 		198403B91761F10300D0B7EA /* FlashMovie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 198403B71761F10300D0B7EA /* FlashMovie.cpp */; };
 		198403BC1761F85000D0B7EA /* SpriteAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 198403BA1761F85000D0B7EA /* SpriteAnimation.cpp */; };
+		19848BCF17A13BD700C90C9A /* SpriteTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19848BCD17A13BD700C90C9A /* SpriteTest.cpp */; };
 		199C766C174C885700882A9C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 199C766B174C885600882A9C /* CoreFoundation.framework */; };
 		19A1C4B8176BD6A500C36FEF /* HideousEngine.mm in Sources */ = {isa = PBXBuildFile; fileRef = 19A1C4B6176BD6A500C36FEF /* HideousEngine.mm */; };
 		19A5694C1792FC1100948E01 /* TransformTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19A5694A1792FC1100948E01 /* TransformTest.cpp */; };
@@ -309,6 +310,8 @@
 		198403B71761F10300D0B7EA /* FlashMovie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FlashMovie.cpp; sourceTree = "<group>"; };
 		198403B81761F10300D0B7EA /* FlashMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashMovie.h; sourceTree = "<group>"; };
 		198403BA1761F85000D0B7EA /* SpriteAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpriteAnimation.cpp; sourceTree = "<group>"; };
+		19848BCD17A13BD700C90C9A /* SpriteTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpriteTest.cpp; sourceTree = "<group>"; };
+		19848BCE17A13BD700C90C9A /* SpriteTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteTest.h; sourceTree = "<group>"; };
 		199582521734575F0094714E /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
 		199582541734575F0094714E /* Gesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gesture.h; sourceTree = "<group>"; };
 		199582551734575F0094714E /* GestureCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureCollector.h; sourceTree = "<group>"; };
@@ -722,6 +725,15 @@
 			path = src;
 			sourceTree = "<group>";
 		};
+		19848BCC17A13BBA00C90C9A /* SpriteTest */ = {
+			isa = PBXGroup;
+			children = (
+				19848BCD17A13BD700C90C9A /* SpriteTest.cpp */,
+				19848BCE17A13BD700C90C9A /* SpriteTest.h */,
+			);
+			path = SpriteTest;
+			sourceTree = "<group>";
+		};
 		1995824F1734575F0094714E /* include */ = {
 			isa = PBXGroup;
 			children = (
@@ -1094,8 +1106,8 @@
 		19A6E60D173278A1006ACD91 /* test */ = {
 			isa = PBXGroup;
 			children = (
+				19848BCC17A13BBA00C90C9A /* SpriteTest */,
 				19A569491792FBB900948E01 /* TransformTest */,
-				19A8EDDC1769E4A300FD25BF /* assets */,
 				191B22381760728C001F6F1C /* FlashTest */,
 				19A6E629173278A1006ACD91 /* RectColorTest */,
 				19A6E60E173278A1006ACD91 /* AnimationTest */,
@@ -1109,6 +1121,7 @@
 				19A6E63D173278A1006ACD91 /* TextureBigBangTest */,
 				1962B7F8173B6C46004E9A1C /* SpineTest */,
 				19A6E643173278A1006ACD91 /* UITest */,
+				19A8EDDC1769E4A300FD25BF /* assets */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -1618,6 +1631,7 @@
 				19ACB441177C285400C99C91 /* ImageViewFactory.cpp in Sources */,
 				19592592178E6ED500842FB3 /* ParticleView.cpp in Sources */,
 				19A5694C1792FC1100948E01 /* TransformTest.cpp in Sources */,
+				19848BCF17A13BD700C90C9A /* SpriteTest.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

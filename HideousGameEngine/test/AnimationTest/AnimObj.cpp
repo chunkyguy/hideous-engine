@@ -81,7 +81,7 @@ void AnimObj::TouchEnd(GLKVector2 pt){
 	he::RawAnimation<GLKVector3> *scale_down_anim = new he::RawAnimation<GLKVector3>(&(transform_.scale),
 																					 he::Tweener<GLKVector3>(he::BounceEaseOut, scale_points[1], scale_points[0]),
 																					 25);
-	scale_animation->AddChild(scale_down_anim);
+	scale_animation->MoveChild(scale_down_anim);
 	scale_down_anim->SetListener(animation_listener_);
 //	GLKVector4 rand_color = GLKVector4Make(he::Randf(),he::Randf(),he::Randf(),1.0);
 //	he::RawAnimation<GLKVector4> *color_switch = new he::RawAnimation<GLKVector4>(&render_object_->color_,
@@ -100,7 +100,7 @@ void AnimObj::TouchEnd(GLKVector2 pt){
 	he::RawAnimation<float> *rot_anim = new he::RawAnimation<float>(&(transform_.rotation.w),
 																	he::Tweener<float>(he::Linear, transform_.rotation.w, GLKMathDegreesToRadians(45.0f)),
 																	10);
-	trans_animation->AddChild(rot_anim);
+	trans_animation->MoveChild(rot_anim);
 	he::g_AnimationLoop->MoveAnimation(trans_animation);
 	trans_anim_descent_id_ = trans_animation->GetDescentID();
 	
@@ -128,7 +128,7 @@ void AnimObj::TouchEnd(GLKVector2 pt){
 }
 
 struct end_anim {
-	end_anim(unsigned long des_id) : des_id_(des_id)	{}
+	end_anim(he::Animation::ID des_id) : des_id_(des_id)	{}
 	
 	void operator()(he::Animation *animation){
 		if(animation->GetDescentID() == des_id_){

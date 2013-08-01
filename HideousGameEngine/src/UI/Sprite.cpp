@@ -9,6 +9,7 @@
 #include <he/UI/Sprite.h>
 #include <he/Animation/AnimationLoop.h>
 #include <he/Animation/SpriteAnimation.h>
+#include <he/Animation/AnimationUtils.h>
 #include <he/RenderObject/RenderObject.h>
 #include <he/Vertex/TextureVertex.h>
 #include <he/Utils/Utils.h>
@@ -19,6 +20,31 @@
 #include <he/Texture/TextureAtlasRegion.h>
 
 namespace he{
+	namespace {
+		class SpriteEndAnimationFunctor {
+		public:
+			SpriteEndAnimationFunctor(Animation::ID ID) :
+			id_(ID) {}
+			
+			void operator()(Animation *anim) {
+				SpriteAnimation *animation = static_cast<SpriteAnimation*>(anim);
+				Animation::ID ID = animation->GetID();
+				if(ID == id_){
+					animation->RetainCurrVertex();
+					animation->Die();
+				}
+			}
+			
+		private:
+			Animation::ID id_;
+		};
+		
+		
+		void SpriteEndAnimationsWithID(Animation::ID ID){
+			g_AnimationLoop->TraverseAnimations(SpriteEndAnimationFunctor(ID));
+		}
+	}
+	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// MARK: Sprite
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -28,16 +54,28 @@ namespace he{
 	render_object_(),
 	size_(atlas->GetTextureAtlasRegion(he::FlashFullName(animation_name)).sprite_size_)
 	{
-		he::SpriteAnimation *animation = new he::SpriteAnimation(&vertex_, atlas, animation_name, repeat_count, final_frame, fps);
+		he:SpriteAnimation *animation = new he::SpriteAnimation(&vertex_, atlas, animation_name, repeat_count, final_frame, fps);
+		anim_id_ = animation->GetID();
 		he::g_AnimationLoop->MoveAnimation(animation);
 		assert(vertex_);		// There is some default vertex data.
 		render_object_ = new RenderObject(vertex_, shader, atlas->GetTexture());
 	}
-	
+
 	Sprite::~Sprite(){
-		if(vertex_) {
-			delete vertex_;
-		}
+		/*
+		 Case 1: The Sprite dies after the SpriteAnimation.
+		 1. Call the SpriteEndAnimationFunctor, would do no harm, as no anim_id_ exists.
+		 2. Before dying the SpriteAnimation must have passed an allocated copy to vertex_.
+		 3. Can safely delete the vertex_ now.
+		 
+		 Case 2: The SpriteAnimation dies after Sprite.
+		 1. The SpriteEndAnimationFunctor asks the SpriteAnimation to retain current-vertex.
+		 2. Since 'this' is not NULL yet, so can be used to create an allocated copy for SpriteAnimation::Frame's vertex object.
+		 3. Can safely delete the vertex_ now.
+		 */
+		SpriteEndAnimationsWithID(anim_id_);
+		delete vertex_;
+		vertex_ = nullptr;
 		delete render_object_;
 	}
 	

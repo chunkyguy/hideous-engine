@@ -91,6 +91,14 @@ namespace he{
 	GLKVector2 Transform_GetPosition(const Transform &slf){
 		return GLKVector2Make(slf.position.x, slf.position.y);
 	}
+	GLKVector3 Transform_GetLocalPosition(const Transform &slf, GLKVector3 world_position) {
+		bool inv_result;
+		GLKMatrix4 transform_inv = GLKMatrix4Invert(he::Transform_GetMV(&slf), &inv_result);
+		assert(inv_result);	// the matrix should be invertible.
+		GLKVector4 position4 = transform_inv * GLKVector4Make(world_position.x, world_position.y, world_position.z, 1.0f);
+		return GLKVector3Make(position4.x, position4.y, position4.z);
+	}
+
 	bool operator==(const Transform &one, const Transform &two) {
 		return (one.parent		== two.parent	&&
 				one.position		== two.position	&&

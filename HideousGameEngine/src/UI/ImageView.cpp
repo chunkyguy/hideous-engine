@@ -19,10 +19,10 @@ namespace he {
 	///////////////////////////////////////////////////////////////////////////////////////////////////
 	// MARK: Image
 	///////////////////////////////////////////////////////////////////////////////////////////////////
-	Image::Image(const TextureVertex *vertex_m, const TextureShader *shader, const Texture *texture) :
+	Image::Image(const TextureVertex *vertex_m, const TextureShader *shader, const Texture *texture, const GLKVector2 &size) :
 	vertex_(vertex_m),
 	render_object_(new RenderObject(const_cast<TextureVertex *>(vertex_m), shader, const_cast<Texture *>(texture))),
-	size_(texture->GetSize())
+	size_(size)
 	{	}
 
 	Image::~Image() {
@@ -44,11 +44,11 @@ namespace he {
 	// Utility
 	namespace image {
 		Image *Create(const TextureShader *shader, const Texture *texture) {
-			return new Image(new TextureVertex(texture->GetSize()), shader, texture);
+			return new Image(new TextureVertex(texture->GetSize()), shader, texture, texture->GetSize());
 		}
 		Image *Create(const TextureShader *shader, const TextureAtlas *texture_atlas, const std::string &region_name) {
 			const TextureAtlasRegion region = texture_atlas->GetTextureAtlasRegion(region_name);
-			return new Image(new TextureVertex(region), shader, texture_atlas->GetTexture());
+			return new Image(new TextureVertex(region), shader, texture_atlas->GetTexture(), region.sprite_size_);
 		}
 	}
 

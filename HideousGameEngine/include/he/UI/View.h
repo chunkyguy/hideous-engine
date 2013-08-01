@@ -29,8 +29,17 @@ namespace he {
 			
 			virtual GLKVector2 GetSize() const;
 			
-			/** Owns the passed component */
-			void MoveSubview(View *view);
+			/**
+			 *	Owns the passed component
+			 *
+			 *	@param	view	 The view to be moved. Is owned.
+			 *
+			 *	@return	Reference to the view.
+			 *
+			 *	@note	Use like: View *my_view = some_view->MoveSubview(new View(...));
+			 *			The point is to keep new inside the MoveSubview all the time. It's just a matter of convention.
+			 */
+			View *MoveSubview(View *view);
 
 			/** Remove the passed component */
 			void RemoveSubview(View *view);
@@ -40,10 +49,10 @@ namespace he {
 			/** Get the current frame */
 			const Transform &GetTransform() const;
 			
-//			/** Returns pointer to frame
+//			/** Returns pointer to transform
 //			@warning This is more like a design bug, can get modified in future. Use minimum.
 //			 */
-//			Frame *GetFramePtr();
+//			Transform *GetTransformPtr();
 
 		protected:
 			Transform transform_; /**< The frame of the view */

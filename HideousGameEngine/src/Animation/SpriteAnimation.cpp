@@ -7,7 +7,6 @@
 //
 #include <he/Animation/SpriteAnimation.h>
 
-
 #include <he/RenderObject/RenderObject.h>
 #include <he/Texture/TextureAtlas.h>
 #include <he/Texture/TextureAtlasRegion.h>
@@ -51,7 +50,7 @@ namespace he{
 			}
 			if(frame_count == final_frame_index){
 				assert(!final_vertex_data_);		//Should not be loaded already. If allowed, might be a memory leak.
-				final_vertex_data_ = new TextureVertex(region, false, region.sprite_size_);
+				final_vertex_data_ = v_data;// new TextureVertex(region, false, region.sprite_size_);
 			}
 			he_Trace("SpriteAnimation: v-data:\n%@",tail_->vertex_->GetVertexPositionData());
 			he_Trace("SpriteAnimation: t-data:\n%@",tail_->vertex_->GetVertexTextureData());
@@ -69,16 +68,24 @@ namespace he{
 		for(f = head_; ffi--; f = f->next_){
 		}
 		assert(f);
-		delete final_vertex_data_;
-		final_vertex_data_ = new TextureVertex(f->vertex_->GetVertexPositionData(), f->vertex_->GetVertexTextureData());
+		//		delete final_vertex_data_;
+		final_vertex_data_ = f->vertex_;// new TextureVertex(f->vertex_->GetVertexPositionData(), f->vertex_->GetVertexTextureData());
 	}
 	
 	void SpriteAnimation::SetFPS(float fps) {
 		delay_ = 1.0f/fps;
 	}
 
+	void SpriteAnimation::RetainCurrVertex() {
+		for(Frame *f = head_; f; f = f->next_){
+			if (f->vertex_ == *vertex_data_) {
+				f->vertex_ = new TextureVertex((*vertex_data_)->GetVertexPositionData(), (*vertex_data_)->GetVertexTextureData());
+			}
+		}
+	}
+
 	
-	SpriteAnimation::~SpriteAnimation(){
+	SpriteAnimation::~SpriteAnimation(){		
 		Frame *del = nullptr;
 		for(Frame *f = head_; f; f = f->next_){
 			if(del){
@@ -100,7 +107,8 @@ namespace he{
 			if(!active_frame_){									// animation done
 				if(--repeat_count_ == 0){						// no repeats left
 					state_ = kNaturalDeath;						// make zombie. Will be removed at next update cycle.
-					*vertex_data_ = final_vertex_data_;			// set the sprite state to final state (picked at ctor)
+																// set the sprite state to final state (released at ~Sprite()).
+					*vertex_data_ = new TextureVertex(final_vertex_data_->GetVertexPositionData(), final_vertex_data_->GetVertexTextureData());
 				}else{	//restart loop
 					active_frame_ = head_;						// set active-frame to head
 					*vertex_data_ = active_frame_->vertex_;		// move to next frame

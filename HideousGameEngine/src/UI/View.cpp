@@ -48,7 +48,7 @@ namespace he {
 	}
 	
 	/** Owns the passed component */
-	void View::MoveSubview(View *view){
+	View *View::MoveSubview(View *view){
 		if(!head_){
 			head_ = add_to_ = view;
 		}else{
@@ -56,6 +56,7 @@ namespace he {
 			add_to_ = view;
 		}
 		view->transform_.parent = &transform_;
+		return view;
 	}
 	
 	void View::RemoveSubview(View *view){

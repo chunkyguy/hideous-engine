@@ -58,7 +58,8 @@ gesture_listner_(nullptr)
 void GestureTest::init(){
 	//random
 	srand(time(NULL));
-	
+
+	//gesture_listner_ = he::CreateGestureListener<GestureTest>(this, &GestureTest::HandleGesture);
 	gesture_listner_ = new he::GestureListener<GestureTest>(this, &GestureTest::HandleGesture);
 	he::g_EventLoop->AddListener(gesture_listner_);
 	
@@ -67,6 +68,8 @@ void GestureTest::init(){
 }
 GestureTest::~GestureTest(){
 	delete obj_;
+
+	//he::DestroyGestureListener(gesture_listner_);
 	he::g_EventLoop->RemoveListener(gesture_listner_);
 	delete gesture_listner_;
 }

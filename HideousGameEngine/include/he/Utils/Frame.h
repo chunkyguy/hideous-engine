@@ -35,6 +35,8 @@ namespace he {
 		Vertex::V2 GetGlobalRect() const;
 		
 		void SetRect(const Vertex::V2 &rect);
+		
+		bool Contains(const GLKVector2 point) const;
 
 	private:
 		void update_values();

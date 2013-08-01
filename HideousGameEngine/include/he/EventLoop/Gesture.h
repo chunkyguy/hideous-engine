@@ -96,5 +96,36 @@ namespace he{
 	
 	// Call the he/Utils/Utils.h => GlobalsCreate() at init stage of the game to create this
 	extern EventLoop *g_EventLoop;
+	
+	///////////////////////////////////////////////////////////////////////////////////////////////////
+	// MARK: Utility
+	///////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	/**
+	 *	Create a new gesture listener and activate it for listening.
+	 *
+	 *	@param	object	The listener object. Most probably the this pointer.
+	 *	@param	method	The callback to be registered.
+	 *
+	 *	@return	The listener object
+	 */
+	template <typename T> GestureListener<T> *CreateGestureListener(T *object, typename GestureListener<T>::callback method) {
+		GestureListener<T> *gl = new he::GestureListener<T>(object, method);
+		g_EventLoop->AddListener(gl);
+		return gl;
+	}
+
+	template<typename T>
+	struct GestureListenerDeleter {
+		/**
+		 *	Destroy and deactivate the listener object.
+		 *
+		 *	@param	gl	The gesture listener object.
+		 */
+		void operator()(GestureListener<T> *gl) {
+			g_EventLoop->RemoveListener(gl);
+			delete gl;
+		}
+	};
 }
 #endif /* defined(__HideousGameEngine__Gesture__) */

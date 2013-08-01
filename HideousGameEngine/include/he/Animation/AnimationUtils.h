@@ -9,9 +9,9 @@
 #ifndef HideousGameEngine_AnimationUtils_h
 #define HideousGameEngine_AnimationUtils_h
 
-namespace he {
+#include <he/Animation/Animation.h>
 
-	class Animation;
+namespace he {
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// MARK: Helpers
@@ -21,15 +21,15 @@ namespace he {
 	class EndAnimationFunctor {
 	public:
 		typedef enum {kAnimationID, kDescentID} IDType;
-		EndAnimationFunctor(IDType type, unsigned long ID);
-		void operator()(he::Animation *animation);
+		EndAnimationFunctor(IDType type, Animation::ID ID);
+		void operator()(Animation *animation);
 		
 	private:
-		unsigned long id_;
+		Animation::ID id_;
 		IDType type_;
 	};
 
-	void EndAnimationsWithID(EndAnimationFunctor::IDType type, unsigned long ID);
+	void EndAnimationsWithID(EndAnimationFunctor::IDType type, Animation::ID ID);
 
 }
 

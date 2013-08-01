@@ -67,4 +67,9 @@ TEST(View, CreateViewWithAnotherViewsFrame){
 	he::View *sub_view2 = new he::View(view->GetTransform());
 	
 	EXPECT_EQ(he::CreateFrame(sub_view1).GetGlobalRect(), he::CreateFrame(sub_view2).GetGlobalRect());
+	
+	delete he::g_Screen;
+	delete view;
+	delete sub_view1;
+	delete sub_view2;
 }

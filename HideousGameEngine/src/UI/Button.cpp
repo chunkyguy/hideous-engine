@@ -45,10 +45,21 @@ namespace he {
 	
 	void ButtonView::HandleGesture(const he::Gesture &gesture){
 		if(gesture.action_ == he::Gesture::kTap && gesture.state_ == he::Gesture::kEnd){
-			GLKVector2 pt = gesture.GetHitPoint();
-			if(he::Vertex::Contains(frame_.GetGlobalRect(), pt)){
+			GLKVector2 point = gesture.GetHitPoint();
+			GLKVector2 size = frame_.GetSize();
+			GLKVector4 center = GLKMatrix4GetColumn(Transform_GetMV(&transform_), 3);
+			if (point.x > center.x-(size.x/2.0f) &&
+				point.x < center.x+(size.x/2.0f) &&
+				point.y > center.y-(size.y/2.0f) &&
+				point.y < center.y+(size.y/2.0f)) {
+				he_Trace("ButtonView: A %d, hit\n",tag_);
 				listner_->Hit(this);
 			}
+
+//			if(he::Vertex::Contains(frame_.GetGlobalRect(), point)){
+//				he_Trace("ButtonView: B %d, hit\n",tag_);
+//				//listner_->Hit(this);
+//			}
 		}
 	}
 	
