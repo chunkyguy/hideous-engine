@@ -103,168 +103,61 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define HideousGameEngine_Button_h</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;<a class="code" href="_view_8h.html">he/UI/View.h</a>&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">//#include &lt;he/Animation/Animation.h&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_gesture_8h.html">he/EventLoop/Gesture.h</a>&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_frame_8h.html">he/Utils/Frame.h</a>&gt;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span>he {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">class </span>Button;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="structhe_1_1_i_button_listener.html">   21</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="structhe_1_1_i_button_listener.html">IButtonListener</a>{</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="structhe_1_1_i_button_listener.html#ae9c749c999fefd6de7d1ced7c1ccb847">   22</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="structhe_1_1_i_button_listener.html#ae9c749c999fefd6de7d1ced7c1ccb847">~IButtonListener</a>(){}</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structhe_1_1_i_button_listener.html#aa5c2cfd23b6d28739106c8f013a0f074">Hit</a>(<a class="code" href="classhe_1_1_button.html">Button</a> *sender) = 0;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        };</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="classhe_1_1_button_listener.html">   28</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classhe_1_1_button_listener.html">ButtonListener</a> : <span class="keyword">public</span> <a class="code" href="structhe_1_1_i_button_listener.html">IButtonListener</a>{</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="classhe_1_1_button_listener.html#a094fdd18b21a9693eddeb293d992fb21">   30</a></span>&#160;            <span class="keyword">typedef</span> void(T::*<a class="code" href="classhe_1_1_button_listener.html#a094fdd18b21a9693eddeb293d992fb21">callback</a>)(<a class="code" href="classhe_1_1_button.html">Button</a> *sender);</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="classhe_1_1_button_listener.html#a289fb589f4486f28e1bb16b8a343782a">   31</a></span>&#160;            <a class="code" href="classhe_1_1_button_listener.html#a289fb589f4486f28e1bb16b8a343782a">ButtonListener</a>(T *<span class="keywordtype">object</span>, <a class="code" href="classhe_1_1_button_listener.html#a094fdd18b21a9693eddeb293d992fb21">callback</a> <a class="code" href="classhe_1_1_button_listener.html#a094fdd18b21a9693eddeb293d992fb21">callback</a>) :</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            object_(object),</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            method_(callback)</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            {}</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            </div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="classhe_1_1_button_listener.html#ae7efff86ed5afc43c28879b8a9cbab42">   36</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_button_listener.html#ae7efff86ed5afc43c28879b8a9cbab42">Hit</a>(<a class="code" href="classhe_1_1_button.html">Button</a> *sender){</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                (object_-&gt;*method_)(sender);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            T *object_;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <a class="code" href="classhe_1_1_button_listener.html#a094fdd18b21a9693eddeb293d992fb21">callback</a> method_;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        };</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        </div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="classhe_1_1_button.html">   45</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classhe_1_1_button.html">Button</a> : <span class="keyword">public</span> <a class="code" href="classhe_1_1_view.html">View</a>{</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <a class="code" href="classhe_1_1_button.html#a07b8c9d415b92403436be5083e2c5c33">Button</a>(<span class="keyword">const</span> <a class="code" href="classhe_1_1_frame.html">Frame</a> frame, <a class="code" href="structhe_1_1_i_button_listener.html">IButtonListener</a> *listner, <span class="keywordtype">int</span> tag = -1);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keyword">virtual</span> <a class="code" href="classhe_1_1_button.html#abe8991a178b2635e91ca201acf06c4e7">~Button</a>();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="comment">//      void AnimationFinish(int animation_id);</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_button.html#a48da4dd8b4eedddacb623af9d32fd266">HandleGesture</a>(<span class="keyword">const</span> <a class="code" href="classhe_1_1_gesture.html">Gesture</a> &amp;g);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordtype">int</span> <a class="code" href="classhe_1_1_button.html#ace371050acfc3f2057383a14bfa1e427">GetTag</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> update(<span class="keywordtype">float</span> dt);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> render();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordtype">int</span> tag_;   </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="comment">//unsigned long animation_handle_; /**&lt; animation handle to kill the animation if required */</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <a class="code" href="classhe_1_1_gesture_listener.html">GestureListener&lt;Button&gt;</a> *gesture_listener_; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <a class="code" href="structhe_1_1_i_button_listener.html">IButtonListener</a> *listner_;  </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="comment">//      AnimationListener&lt;Button&gt; *animation_listener_; /**&lt; Registered animation listener */</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        };</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;} <span class="comment">/*namespace he*/</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">//namespace he {</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">//  class Font;</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">//  class RenderObject;</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">//  class Text;</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">//  class TextureShader;</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">//  class TextureAtlas;</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">//  class TextureVertex;</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">//  namespace ui{</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">//      /** Interface of the protocol */</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">//      class Button;</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">//      struct IButtonListner{</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">//          virtual ~IButtonListner(){}</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">//          virtual void Hit(Button *sender) = 0;</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">//      };</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">//      /** Anon delegate */</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">//      template&lt;typename T&gt;</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">//      class ButtonListner : public IButtonListner{</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">//      public:</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">//          typedef void(T::*callback)(Button *sender);</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">//          ButtonListner(T *object, callback callback) :</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">//          object_(object),</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">//          method_(callback)</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">//          {}</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">//          void Hit(Button *sender){</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">//              (object_-&gt;*method_)(sender);</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">//          }</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">//      private:</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">//          T *object_;</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">//          callback method_;</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment">//      };</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment">//      /** Create buttons.</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment">//       Holds all assets necessary to create a button.</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">//       */</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">//      struct ButtonFactory{</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment">//          ButtonFactory(TextureShader *shdr, TextureAtlas *atls = nullptr, Font *fnt = nullptr);</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">//          Asset&lt;Font&gt; font;</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">//          Asset&lt;TextureAtlas&gt; atlas;</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment">//          Asset&lt;TextureShader&gt; shader;</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">//      };</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment">//      /** Button</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment">//       Can register and event and a callback.</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">//       Can be created with a plain text/font or a image</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment">//       */</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">//      class Button : public View{</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment">//      public:</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment">//          Button(const ButtonFactory *factory,        /**&lt; The factory that provides assets */</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="comment">//                 IButtonListner *listner,         /**&lt; The listener for any event callbacks */</span></div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="comment">//                 int tag = -1,                        /**&lt; The tag value can be used to differentiate between buttons*/</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="comment">//                 const std::string &amp;image_name = &quot;&quot;,      /**&lt; The name of the image. Optional */</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="comment">//                 const std::string &amp;string = &quot;&quot;,              /**&lt; The text to be displayed. Optional */</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment">//                 const Transform transform = Transform(), /**&lt; The transform value of the UI */</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment">//                 const GLKVector4 color = GLKVector4Make(0,0,0,0));   /** The color tint, if any. Optional */</span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment">//          ~Button();</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment">//          /** Animatiion finish callback.</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment">//           Called in case an animation is registered.</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment">//           @warning Don&#39;t call explicitly, expected to be called from AnimationLoop.</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment">//           */</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">//          void AnimationFinish(int animation_id);</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment">//          /** The Gesture event callback.</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment">//           @warning Don&#39;t call explicitly, expected to be called only from the EventLoop.</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="comment">//           */</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment">//          void HandleGesture(const Gesture &amp;g);</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment">//      private:</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment">//          /** Implementation of the virtual UIComponent::update</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment">//           */</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment">//          void update(float dt);</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="comment">//          /** Implementation of the virtual UIComponent::render</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment">//           */</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment">//          void render();</span></div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment">//          int tag_;   /**&lt; tag to identify the object */</span></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment">//          unsigned long animation_handle_; /**&lt; animation handle to kill the animation if required */</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="comment">//          RenderObject *background_; /**&lt; background texture to be rendered, if any */</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="comment">//          TextureVertex *background_data_; /**&lt; background texture data */</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="comment">//          GestureListener&lt;Button&gt; *gesture_listener_; /**&lt; Registered gesture listener */</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="comment">//          IButtonListner *listner_;   /**&lt; Registered button listener */</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="comment">//          AnimationListener&lt;Button&gt; *animation_listener_; /**&lt; Registered animation listener */</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment">//          Text *text_;    /**&lt; Text to be rendered, if any */</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment">//          Transform transform_; /**&lt; Transform property of the object */</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment">//          Transform original_transform_;  /**&lt; Used in case of animation to cache the original transform value */</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment">//      };</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment">//  } /*namespace ui*/</span></div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="comment">//} /*namespace he*/</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_gesture_8h.html">he/EventLoop/Gesture.h</a>&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_frame_8h.html">he/Utils/Frame.h</a>&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span>he {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">class </span>ButtonView;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="structhe_1_1_i_button_listener.html">   21</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structhe_1_1_i_button_listener.html">IButtonListener</a>{</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="structhe_1_1_i_button_listener.html#ae9c749c999fefd6de7d1ced7c1ccb847">   22</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="structhe_1_1_i_button_listener.html#ae9c749c999fefd6de7d1ced7c1ccb847">~IButtonListener</a>(){}</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structhe_1_1_i_button_listener.html#ab882c245ab6b653a4def18fd588e7b4e">Hit</a>(<a class="code" href="classhe_1_1_button_view.html">ButtonView</a> *sender) = 0;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    };</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="classhe_1_1_button_listener.html">   28</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classhe_1_1_button_listener.html">ButtonListener</a> : <span class="keyword">public</span> <a class="code" href="structhe_1_1_i_button_listener.html">IButtonListener</a>{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="classhe_1_1_button_listener.html#ae5c204f2187f6dccabd1b7b5fa364230">   30</a></span>&#160;        <span class="keyword">typedef</span> void(T::*<a class="code" href="classhe_1_1_button_listener.html#ae5c204f2187f6dccabd1b7b5fa364230">callback</a>)(<a class="code" href="classhe_1_1_button_view.html">ButtonView</a> *sender);</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="classhe_1_1_button_listener.html#a289fb589f4486f28e1bb16b8a343782a">   31</a></span>&#160;        <a class="code" href="classhe_1_1_button_listener.html#a289fb589f4486f28e1bb16b8a343782a">ButtonListener</a>(T *<span class="keywordtype">object</span>, <a class="code" href="classhe_1_1_button_listener.html#ae5c204f2187f6dccabd1b7b5fa364230">callback</a> <a class="code" href="classhe_1_1_button_listener.html#ae5c204f2187f6dccabd1b7b5fa364230">callback</a>) :</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        object_(object),</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        method_(callback)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        {}</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="classhe_1_1_button_listener.html#aadcb751e5b60fd2dd740aedb035d0674">   36</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_button_listener.html#aadcb751e5b60fd2dd740aedb035d0674">Hit</a>(<a class="code" href="classhe_1_1_button_view.html">ButtonView</a> *sender){</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            (object_-&gt;*method_)(sender);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        T *object_;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="classhe_1_1_button_listener.html#ae5c204f2187f6dccabd1b7b5fa364230">callback</a> method_;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    };</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="classhe_1_1_button_view.html">   45</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classhe_1_1_button_view.html">ButtonView</a> : <span class="keyword">public</span> <a class="code" href="classhe_1_1_view.html">View</a> {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="classhe_1_1_button_view.html#a9f31a62f351a26b7012325f85bd906f4">ButtonView</a>(<span class="keyword">const</span> <a class="code" href="classhe_1_1_frame.html">Frame</a> &amp;frame, <a class="code" href="structhe_1_1_i_button_listener.html">IButtonListener</a> *listner, <span class="keywordtype">int</span> tag = -1);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classhe_1_1_button_view.html#a2bcc88bc2c3822c32a2f8b30b7bd95ae">~ButtonView</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_button_view.html#afe2e779222e848fe1e3f4ae3df163c7b">Update</a>(<span class="keywordtype">float</span> dt);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_button_view.html#aa5fb2e09820398bd0ec4805b20c44deb">Render</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">virtual</span> GLKVector2 <a class="code" href="classhe_1_1_button_view.html#a98c8390d0fefe4be60296e2ad7f96e19">GetSize</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_button_view.html#a7496f24405c898636a205c24241e5e89">HandleGesture</a>(<span class="keyword">const</span> <a class="code" href="classhe_1_1_gesture.html">Gesture</a> &amp;g);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classhe_1_1_button_view.html#acc4ae5d2b40fa0e7984894bdb2ecb1f4">GetTag</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="classhe_1_1_frame.html">Frame</a> frame_;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordtype">int</span> tag_;   </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="classhe_1_1_gesture_listener.html">GestureListener&lt;ButtonView&gt;</a> *gesture_listener_; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="structhe_1_1_i_button_listener.html">IButtonListener</a> *listner_;  </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    };</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;} <span class="comment">/*namespace he*/</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 14 2013 10:24:05 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 2 2013 16:56:00 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

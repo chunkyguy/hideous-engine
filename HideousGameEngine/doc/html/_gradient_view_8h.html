@@ -90,7 +90,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#namespaces">Constant Groups</a>  </div>
+<a href="#namespaces">Constant Groups</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">GradientView.h File Reference</div>  </div>
 </div><!--header-->
@@ -98,14 +99,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><code>#include &lt;<a class="el" href="_view_8h_source.html">he/UI/View.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="_frame_8h_source.html">he/Utils/Frame.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="_asset_8h_source.html">he/Utils/Asset.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="_color_vertex_8h_source.html">he/Vertex/ColorVertex.h</a>&gt;</code><br/>
 </div>
 <p><a href="_gradient_view_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_gradient_view.html">he::GradientView</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_gradient.html">he::Gradient</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_gradient_view_factory.html">he::GradientViewFactory</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_gradient_view.html">he::GradientView</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -113,17 +115,32 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespacehe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehe.html">he</a></td></tr>
 <tr class="memdesc:namespacehe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the path to the resource folder. <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacehe_1_1gradient"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehe_1_1gradient.html">he::gradient</a></td></tr>
+<tr class="memdesc:namespacehe_1_1gradient"><td class="mdescLeft">&#160;</td><td class="mdescRight">Could be configured to have single, double or quad colors. <br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Constant Groups</h2></td></tr>
 <tr class="memitem:namespacehe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehe.html">he</a></td></tr>
 <tr class="memdesc:namespacehe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the path to the resource folder. <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacehe_1_1gradient"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehe_1_1gradient.html">he::gradient</a></td></tr>
+<tr class="memdesc:namespacehe_1_1gradient"><td class="mdescLeft">&#160;</td><td class="mdescRight">Could be configured to have single, double or quad colors. <br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a866a509539bf9303192fb7092276eba1"><td class="memItemLeft" align="right" valign="top">Gradient *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehe_1_1gradient.html#a866a509539bf9303192fb7092276eba1">he::gradient::Create</a> (const GLKVector2 &amp;size, ColorShader *shader, GLKVector4 colorA)</td></tr>
+<tr class="separator:a866a509539bf9303192fb7092276eba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ab14591905495d6010e645e8185651b"><td class="memItemLeft" align="right" valign="top">Gradient *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehe_1_1gradient.html#a5ab14591905495d6010e645e8185651b">he::gradient::Create</a> (const GLKVector2 &amp;size, ColorShader *shader, GLKVector4 colorA, GLKVector4 colorD)</td></tr>
+<tr class="separator:a5ab14591905495d6010e645e8185651b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a3d3d8ef3d15683ca62ae35f1d12eea"><td class="memItemLeft" align="right" valign="top">Gradient *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehe_1_1gradient.html#a7a3d3d8ef3d15683ca62ae35f1d12eea">he::gradient::Create</a> (const GLKVector2 &amp;size, ColorShader *shader, GLKVector4 colorA, GLKVector4 colorB, GLKVector4 colorC, GLKVector4 colorD)</td></tr>
+<tr class="separator:a7a3d3d8ef3d15683ca62ae35f1d12eea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 14 2013 10:24:05 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 2 2013 16:56:01 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

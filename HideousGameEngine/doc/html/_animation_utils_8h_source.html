@@ -102,9 +102,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef HideousGameEngine_AnimationUtils_h</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define HideousGameEngine_AnimationUtils_h</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span>he {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_animation_8h.html">he/Animation/Animation.h</a>&gt;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">class </span>Animation;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span>he {</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment">// MARK: Helpers</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"></span>    <span class="comment">//  Committing suicide at destructors is such a common task, that we have a helper for it.</span></div>
@@ -112,15 +112,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="classhe_1_1_end_animation_functor.html">   21</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classhe_1_1_end_animation_functor.html">EndAnimationFunctor</a> {</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="classhe_1_1_end_animation_functor.html#a41ab82542d30bfba28a5132be648158baf09dacc289f3f6b3b3d487e955e1d4f6">   23</a></span>&#160;        <span class="keyword">typedef</span> <span class="keyword">enum</span> {<a class="code" href="classhe_1_1_end_animation_functor.html#a41ab82542d30bfba28a5132be648158ba4aeb717b5ccba9c3bbbbc190e3fd5912">kAnimationID</a>, <a class="code" href="classhe_1_1_end_animation_functor.html#a41ab82542d30bfba28a5132be648158baf09dacc289f3f6b3b3d487e955e1d4f6">kDescentID</a>} <a class="code" href="classhe_1_1_end_animation_functor.html#a41ab82542d30bfba28a5132be648158b">IDType</a>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="classhe_1_1_end_animation_functor.html#a714ed8108e702c71bb5ffc96aade2137">EndAnimationFunctor</a>(<a class="code" href="classhe_1_1_end_animation_functor.html#a41ab82542d30bfba28a5132be648158b">IDType</a> type, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> ID);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_end_animation_functor.html#a07606fa9ac0e6397fbc6f873f94f217d">operator()</a>(<a class="code" href="classhe_1_1_animation.html">he::Animation</a> *animation);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="classhe_1_1_end_animation_functor.html#aa7c562c3f04225625bd6baa90f7365f4">EndAnimationFunctor</a>(<a class="code" href="classhe_1_1_end_animation_functor.html#a41ab82542d30bfba28a5132be648158b">IDType</a> type, <a class="code" href="classhe_1_1_animation.html#a5ec4f04a171ed0ded89028593283b738">Animation::ID</a> ID);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_end_animation_functor.html#a30c51e9f163f3cafe347d83702e5bf8b">operator()</a>(<a class="code" href="classhe_1_1_animation.html">Animation</a> *animation);</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> id_;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="classhe_1_1_animation.html#a5ec4f04a171ed0ded89028593283b738">Animation::ID</a> id_;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="classhe_1_1_end_animation_functor.html#a41ab82542d30bfba28a5132be648158b">IDType</a> type_;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    };</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacehe.html#ac8b351e8488a0161c50e55b6f9336b43">EndAnimationsWithID</a>(<a class="code" href="classhe_1_1_end_animation_functor.html#a41ab82542d30bfba28a5132be648158b">EndAnimationFunctor::IDType</a> type, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> ID);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacehe.html#a3bc1864645dff436a9537dedfcfa6ad9">EndAnimationsWithID</a>(<a class="code" href="classhe_1_1_end_animation_functor.html#a41ab82542d30bfba28a5132be648158b">EndAnimationFunctor::IDType</a> type, <a class="code" href="classhe_1_1_animation.html#a5ec4f04a171ed0ded89028593283b738">Animation::ID</a> ID);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
@@ -128,7 +128,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 14 2013 10:24:04 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 2 2013 16:56:00 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

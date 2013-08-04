@@ -176,12 +176,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    </div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// Call the he/Utils/Utils.h =&gt; GlobalsCreate() at init stage of the game to create this</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">extern</span> <a class="code" href="classhe_1_1_event_loop.html">EventLoop</a> *<a class="code" href="namespacehe.html#ab48a6ac2e4c3b2c580d5f4fc09d51849">g_EventLoop</a>;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* defined(__HideousGameEngine__Gesture__) */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">// MARK: Utility</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment"></span>    </div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="code" href="namespacehe.html#a1677414e560656feec0abb2249ca2fa0">  112</a></span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <a class="code" href="classhe_1_1_gesture_listener.html">GestureListener&lt;T&gt;</a> *<a class="code" href="namespacehe.html#a1677414e560656feec0abb2249ca2fa0">CreateGestureListener</a>(T *<span class="keywordtype">object</span>, <span class="keyword">typename</span> <a class="code" href="classhe_1_1_gesture_listener.html">GestureListener&lt;T&gt;::callback</a> method) {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <a class="code" href="classhe_1_1_gesture_listener.html">GestureListener&lt;T&gt;</a> *gl = <span class="keyword">new</span> <a class="code" href="classhe_1_1_gesture_listener.html">he::GestureListener&lt;T&gt;</a>(object, method);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <a class="code" href="namespacehe.html#ab48a6ac2e4c3b2c580d5f4fc09d51849">g_EventLoop</a>-&gt;<a class="code" href="classhe_1_1_event_loop.html#a9065c41189d0ef085c86201f81818fb9">AddListener</a>(gl);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">return</span> gl;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="code" href="structhe_1_1_gesture_listener_deleter.html">  119</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structhe_1_1_gesture_listener_deleter.html">GestureListenerDeleter</a> {</div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="code" href="structhe_1_1_gesture_listener_deleter.html#af304f2366fe987247334e69cfec70a48">  125</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structhe_1_1_gesture_listener_deleter.html#af304f2366fe987247334e69cfec70a48">operator()</a>(<a class="code" href="classhe_1_1_gesture_listener.html">GestureListener&lt;T&gt;</a> *gl) {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <a class="code" href="namespacehe.html#ab48a6ac2e4c3b2c580d5f4fc09d51849">g_EventLoop</a>-&gt;<a class="code" href="classhe_1_1_event_loop.html#af91af78322fb536240ceec4439db091e">RemoveListener</a>(gl);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="keyword">delete</span> gl;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    };</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* defined(__HideousGameEngine__Gesture__) */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 14 2013 10:24:05 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 2 2013 16:56:00 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

@@ -22,6 +22,18 @@
             <Path>namespacehe.html</Path>
             <Subnodes>
              <Node>
+              <Name>gradient</Name>
+              <Path>namespacehe_1_1gradient.html</Path>
+             </Node>
+             <Node>
+              <Name>image</Name>
+              <Path>namespacehe_1_1image.html</Path>
+             </Node>
+             <Node>
+              <Name>sprite</Name>
+              <Path>namespacehe_1_1sprite.html</Path>
+             </Node>
+             <Node>
               <Name>Vertex</Name>
               <Path>namespacehe_1_1_vertex.html</Path>
              </Node>
@@ -65,6 +77,18 @@
             <Name>he</Name>
             <Path>namespacehe.html</Path>
             <Subnodes>
+             <Node>
+              <Name>gradient</Name>
+              <Path>namespacehe_1_1gradient.html</Path>
+             </Node>
+             <Node>
+              <Name>image</Name>
+              <Path>namespacehe_1_1image.html</Path>
+             </Node>
+             <Node>
+              <Name>sprite</Name>
+              <Path>namespacehe_1_1sprite.html</Path>
+             </Node>
              <Node>
               <Name>Vertex</Name>
               <Path>namespacehe_1_1_vertex.html</Path>
@@ -161,6 +185,11 @@
               <Path>classhe_1_1_animation.html</Path>
               <Subnodes>
                <Node>
+                <Name>ID</Name>
+                <Path>classhe_1_1_animation.html</Path>
+                <Anchor>a5ec4f04a171ed0ded89028593283b738</Anchor>
+               </Node>
+               <Node>
                 <Name>State</Name>
                 <Path>classhe_1_1_animation.html</Path>
                 <Anchor>a5888d347656cb507a56975a9d7edaae9</Anchor>
@@ -193,11 +222,6 @@
                 <Anchor>a25e0bfa956820ae868d106e82acf7dff</Anchor>
                </Node>
                <Node>
-                <Name>AddChild</Name>
-                <Path>classhe_1_1_animation.html</Path>
-                <Anchor>ae98f32b897773d0c76e46b900e98d3d3</Anchor>
-               </Node>
-               <Node>
                 <Name>Die</Name>
                 <Path>classhe_1_1_animation.html</Path>
                 <Anchor>a15a2d511f43c26260c6fa0923f5a07fe</Anchor>
@@ -210,12 +234,17 @@
                <Node>
                 <Name>GetDescentID</Name>
                 <Path>classhe_1_1_animation.html</Path>
-                <Anchor>a1e6b6b23fd3beb8a0618b2a9b67e8e3e</Anchor>
+                <Anchor>a0e238298b99f8e961b629ef63346855d</Anchor>
                </Node>
                <Node>
                 <Name>GetID</Name>
                 <Path>classhe_1_1_animation.html</Path>
-                <Anchor>a9544828f102ace474ce4b332943d8bb9</Anchor>
+                <Anchor>a17667002f783da515c7b1427d3421f6c</Anchor>
+               </Node>
+               <Node>
+                <Name>MoveChild</Name>
+                <Path>classhe_1_1_animation.html</Path>
+                <Anchor>a1ef898ff2a3f8dd727d873b6f67be1e3</Anchor>
                </Node>
                <Node>
                 <Name>SetListener</Name>
@@ -299,12 +328,12 @@
                <Node>
                 <Name>EndAnimationFunctor</Name>
                 <Path>classhe_1_1_end_animation_functor.html</Path>
-                <Anchor>a714ed8108e702c71bb5ffc96aade2137</Anchor>
+                <Anchor>aa7c562c3f04225625bd6baa90f7365f4</Anchor>
                </Node>
                <Node>
                 <Name>operator()</Name>
                 <Path>classhe_1_1_end_animation_functor.html</Path>
-                <Anchor>a07606fa9ac0e6397fbc6f873f94f217d</Anchor>
+                <Anchor>a30c51e9f163f3cafe347d83702e5bf8b</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -337,6 +366,26 @@
                 <Name>~SpriteAnimation</Name>
                 <Path>classhe_1_1_sprite_animation.html</Path>
                 <Anchor>a7fcdede68f9af24db1b79adf607787b8</Anchor>
+               </Node>
+               <Node>
+                <Name>RetainCurrVertex</Name>
+                <Path>classhe_1_1_sprite_animation.html</Path>
+                <Anchor>a6c8f1d00bfa5b75e82097f8780813798</Anchor>
+               </Node>
+               <Node>
+                <Name>SetFinalFrameIndex</Name>
+                <Path>classhe_1_1_sprite_animation.html</Path>
+                <Anchor>a31c689c96392a829e8b8199f43923265</Anchor>
+               </Node>
+               <Node>
+                <Name>SetFPS</Name>
+                <Path>classhe_1_1_sprite_animation.html</Path>
+                <Anchor>a4eb6c5d02501610dc85b74f53b37d5a2</Anchor>
+               </Node>
+               <Node>
+                <Name>SetRepeatCount</Name>
+                <Path>classhe_1_1_sprite_animation.html</Path>
+                <Anchor>a35cdf966b32fe40b87f9a085d316c84d</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -550,6 +599,17 @@
               </Subnodes>
              </Node>
              <Node>
+              <Name>GestureListenerDeleter</Name>
+              <Path>structhe_1_1_gesture_listener_deleter.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>operator()</Name>
+                <Path>structhe_1_1_gesture_listener_deleter.html</Path>
+                <Anchor>af304f2366fe987247334e69cfec70a48</Anchor>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
               <Name>Font</Name>
               <Path>classhe_1_1_font.html</Path>
               <Subnodes>
@@ -673,14 +733,19 @@
                 <Anchor>ac8e7eb2a0ed7dc1b3e2f10c31374bfb0</Anchor>
                </Node>
                <Node>
-                <Name>render</Name>
+                <Name>GetSize</Name>
                 <Path>classhe_1_1_glyph.html</Path>
-                <Anchor>a3640c897c540676066060412e3ff04d6</Anchor>
+                <Anchor>aeda7be009bc7c4610f5e41dc751ad873</Anchor>
                </Node>
                <Node>
-                <Name>update</Name>
+                <Name>Render</Name>
                 <Path>classhe_1_1_glyph.html</Path>
-                <Anchor>a0d5d6da5fa992b074f7ba7d957a378d3</Anchor>
+                <Anchor>a8fb24c5a16307c1db7f408e0a1fbfead</Anchor>
+               </Node>
+               <Node>
+                <Name>Update</Name>
+                <Path>classhe_1_1_glyph.html</Path>
+                <Anchor>a768d18e591c9660a53087c118a5d24a9</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -1135,7 +1200,7 @@
                <Node>
                 <Name>GetSize</Name>
                 <Path>classhe_1_1_texture.html</Path>
-                <Anchor>ac85730ee5f91133ec6655ffd2550ca93</Anchor>
+                <Anchor>a15cae12561986da58a53007f6479a524</Anchor>
                </Node>
                <Node>
                 <Name>object_</Name>
@@ -1369,7 +1434,7 @@
                <Node>
                 <Name>Hit</Name>
                 <Path>structhe_1_1_i_button_listener.html</Path>
-                <Anchor>aa5c2cfd23b6d28739106c8f013a0f074</Anchor>
+                <Anchor>ab882c245ab6b653a4def18fd588e7b4e</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -1380,7 +1445,7 @@
                <Node>
                 <Name>callback</Name>
                 <Path>classhe_1_1_button_listener.html</Path>
-                <Anchor>a094fdd18b21a9693eddeb293d992fb21</Anchor>
+                <Anchor>ae5c204f2187f6dccabd1b7b5fa364230</Anchor>
                </Node>
                <Node>
                 <Name>ButtonListener</Name>
@@ -1390,33 +1455,74 @@
                <Node>
                 <Name>Hit</Name>
                 <Path>classhe_1_1_button_listener.html</Path>
-                <Anchor>ae7efff86ed5afc43c28879b8a9cbab42</Anchor>
+                <Anchor>aadcb751e5b60fd2dd740aedb035d0674</Anchor>
                </Node>
               </Subnodes>
              </Node>
              <Node>
-              <Name>Button</Name>
-              <Path>classhe_1_1_button.html</Path>
+              <Name>ButtonView</Name>
+              <Path>classhe_1_1_button_view.html</Path>
               <Subnodes>
                <Node>
-                <Name>Button</Name>
-                <Path>classhe_1_1_button.html</Path>
-                <Anchor>a07b8c9d415b92403436be5083e2c5c33</Anchor>
+                <Name>ButtonView</Name>
+                <Path>classhe_1_1_button_view.html</Path>
+                <Anchor>a9f31a62f351a26b7012325f85bd906f4</Anchor>
                </Node>
                <Node>
-                <Name>~Button</Name>
-                <Path>classhe_1_1_button.html</Path>
-                <Anchor>abe8991a178b2635e91ca201acf06c4e7</Anchor>
+                <Name>~ButtonView</Name>
+                <Path>classhe_1_1_button_view.html</Path>
+                <Anchor>a2bcc88bc2c3822c32a2f8b30b7bd95ae</Anchor>
+               </Node>
+               <Node>
+                <Name>GetSize</Name>
+                <Path>classhe_1_1_button_view.html</Path>
+                <Anchor>a98c8390d0fefe4be60296e2ad7f96e19</Anchor>
                </Node>
                <Node>
                 <Name>GetTag</Name>
-                <Path>classhe_1_1_button.html</Path>
-                <Anchor>ace371050acfc3f2057383a14bfa1e427</Anchor>
+                <Path>classhe_1_1_button_view.html</Path>
+                <Anchor>acc4ae5d2b40fa0e7984894bdb2ecb1f4</Anchor>
                </Node>
                <Node>
                 <Name>HandleGesture</Name>
-                <Path>classhe_1_1_button.html</Path>
-                <Anchor>a48da4dd8b4eedddacb623af9d32fd266</Anchor>
+                <Path>classhe_1_1_button_view.html</Path>
+                <Anchor>a7496f24405c898636a205c24241e5e89</Anchor>
+               </Node>
+               <Node>
+                <Name>Render</Name>
+                <Path>classhe_1_1_button_view.html</Path>
+                <Anchor>aa5fb2e09820398bd0ec4805b20c44deb</Anchor>
+               </Node>
+               <Node>
+                <Name>Update</Name>
+                <Path>classhe_1_1_button_view.html</Path>
+                <Anchor>afe2e779222e848fe1e3f4ae3df163c7b</Anchor>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>Gradient</Name>
+              <Path>classhe_1_1_gradient.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>Gradient</Name>
+                <Path>classhe_1_1_gradient.html</Path>
+                <Anchor>a7d9b226501f080e62eae6166227a7c8b</Anchor>
+               </Node>
+               <Node>
+                <Name>~Gradient</Name>
+                <Path>classhe_1_1_gradient.html</Path>
+                <Anchor>a6d71bf3838cb1d622f86452cb580d92a</Anchor>
+               </Node>
+               <Node>
+                <Name>GetSize</Name>
+                <Path>classhe_1_1_gradient.html</Path>
+                <Anchor>aca5cc8e798fa39ddb87fb9be5b7e3014</Anchor>
+               </Node>
+               <Node>
+                <Name>Render</Name>
+                <Path>classhe_1_1_gradient.html</Path>
+                <Anchor>aaa07fc79b4b5d8efadc8d02277f3c05b</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -1427,48 +1533,48 @@
                <Node>
                 <Name>GradientView</Name>
                 <Path>classhe_1_1_gradient_view.html</Path>
-                <Anchor>a7177a0ec3125c48c5ba15d47ac436280</Anchor>
+                <Anchor>ae9f00d0a5256cdfdb4e9fea9777d45f3</Anchor>
                </Node>
                <Node>
-                <Name>~GradientView</Name>
+                <Name>GetSize</Name>
                 <Path>classhe_1_1_gradient_view.html</Path>
-                <Anchor>abd6b1f4c3405b8435d8008c07eabe1a6</Anchor>
+                <Anchor>a38df87cd24d94779965092c4d246f0e4</Anchor>
                </Node>
                <Node>
-                <Name>render</Name>
+                <Name>Render</Name>
                 <Path>classhe_1_1_gradient_view.html</Path>
-                <Anchor>a95385db5b2da5287e1f89d22b2385ea8</Anchor>
+                <Anchor>a68d4f41c4d872f01d2b05dcd799b8073</Anchor>
                </Node>
                <Node>
-                <Name>update</Name>
+                <Name>Update</Name>
                 <Path>classhe_1_1_gradient_view.html</Path>
-                <Anchor>a605274c34167346462123fbcca2ffdcf</Anchor>
+                <Anchor>ac81d124612f8d31772798fe06ff99bfe</Anchor>
                </Node>
               </Subnodes>
              </Node>
              <Node>
-              <Name>GradientViewFactory</Name>
-              <Path>classhe_1_1_gradient_view_factory.html</Path>
+              <Name>Image</Name>
+              <Path>classhe_1_1_image.html</Path>
               <Subnodes>
                <Node>
-                <Name>GradientViewFactory</Name>
-                <Path>classhe_1_1_gradient_view_factory.html</Path>
-                <Anchor>a68e5806c7846b968f89e0c3be1241cf5</Anchor>
+                <Name>Image</Name>
+                <Path>classhe_1_1_image.html</Path>
+                <Anchor>a8d9bc929281de434c385b978d60cea46</Anchor>
                </Node>
                <Node>
-                <Name>CreateGradientView</Name>
-                <Path>classhe_1_1_gradient_view_factory.html</Path>
-                <Anchor>a22ad6a1765aacee654bba877ded682ef</Anchor>
+                <Name>~Image</Name>
+                <Path>classhe_1_1_image.html</Path>
+                <Anchor>ae442766545a1071f58e8064056d07b0e</Anchor>
                </Node>
                <Node>
-                <Name>CreateGradientView</Name>
-                <Path>classhe_1_1_gradient_view_factory.html</Path>
-                <Anchor>a92787e66c3d1375ba9e7449fc4f84e17</Anchor>
+                <Name>GetSize</Name>
+                <Path>classhe_1_1_image.html</Path>
+                <Anchor>ac3a224195e128f16c91d9aca7d4e543a</Anchor>
                </Node>
                <Node>
-                <Name>CreateGradientView</Name>
-                <Path>classhe_1_1_gradient_view_factory.html</Path>
-                <Anchor>a5e3e5ff5de177154f251033401f9a0d7</Anchor>
+                <Name>Render</Name>
+                <Path>classhe_1_1_image.html</Path>
+                <Anchor>a2ee34abc6fe2077422fc4bd15545e42b</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -1479,7 +1585,7 @@
                <Node>
                 <Name>ImageView</Name>
                 <Path>classhe_1_1_image_view.html</Path>
-                <Anchor>abefc5bae34dbf7bada0363447d5d9c65</Anchor>
+                <Anchor>ac4f085af65c3c754bdaaf05d17c4df82</Anchor>
                </Node>
                <Node>
                 <Name>~ImageView</Name>
@@ -1487,24 +1593,19 @@
                 <Anchor>a9d8126d5a210e735320f271b2217317f</Anchor>
                </Node>
                <Node>
-                <Name>render</Name>
+                <Name>GetSize</Name>
                 <Path>classhe_1_1_image_view.html</Path>
-                <Anchor>a9971df32276becd5671dd0ed4c851c84</Anchor>
+                <Anchor>a4c3da9abb2d5663b86c5de9f7077b822</Anchor>
                </Node>
                <Node>
-                <Name>update</Name>
+                <Name>Render</Name>
                 <Path>classhe_1_1_image_view.html</Path>
-                <Anchor>ac40e54b674c6b9ca3af30afcd7689ead</Anchor>
+                <Anchor>a15bd6e6b74eafedb20e26180fa699168</Anchor>
                </Node>
                <Node>
-                <Name>render_object_</Name>
+                <Name>Update</Name>
                 <Path>classhe_1_1_image_view.html</Path>
-                <Anchor>a691bfe5e8afdc213cd11b87edc4a3247</Anchor>
-               </Node>
-               <Node>
-                <Name>vertex_</Name>
-                <Path>classhe_1_1_image_view.html</Path>
-                <Anchor>a8cd7b48ea1222bae470fd2f895f9a794</Anchor>
+                <Anchor>ad06f7a42260da26a7956df1f747f26c8</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -1515,32 +1616,37 @@
                <Node>
                 <Name>ImageViewFactory</Name>
                 <Path>classhe_1_1_image_view_factory.html</Path>
-                <Anchor>a84fec5ef17911732fda933a61eeeb89f</Anchor>
-               </Node>
-               <Node>
-                <Name>ImageViewFactory</Name>
-                <Path>classhe_1_1_image_view_factory.html</Path>
-                <Anchor>ae02cc0ceebc7ed8779fd6eb7ec00754a</Anchor>
-               </Node>
-               <Node>
-                <Name>ImageViewFactory</Name>
-                <Path>classhe_1_1_image_view_factory.html</Path>
-                <Anchor>a0d433f3d922757392fcd0359056b1017</Anchor>
+                <Anchor>a713919892736bfbe14a5682c90deba77</Anchor>
                </Node>
                <Node>
                 <Name>CreateImageView</Name>
                 <Path>classhe_1_1_image_view_factory.html</Path>
-                <Anchor>a4575a03ae884b4ce66c7ae32eefd3a96</Anchor>
+                <Anchor>a4d0b6b783af5635abef79cc613a10d39</Anchor>
                </Node>
                <Node>
                 <Name>CreateImageView</Name>
                 <Path>classhe_1_1_image_view_factory.html</Path>
-                <Anchor>a8010d6f3efffcdf8d481e46767eb62d2</Anchor>
+                <Anchor>a85c46f9a21f5c08d10974703378f1b3f</Anchor>
                </Node>
                <Node>
-                <Name>CreateSprite</Name>
+                <Name>CreateSpriteView</Name>
                 <Path>classhe_1_1_image_view_factory.html</Path>
-                <Anchor>a591e6f68bd6ddf979812c7e4d691a57b</Anchor>
+                <Anchor>a22303e188cd03814fa62ba8c7751013c</Anchor>
+               </Node>
+               <Node>
+                <Name>LoadSprite</Name>
+                <Path>classhe_1_1_image_view_factory.html</Path>
+                <Anchor>ac41b9c738ae2dc1b0fc8f4725de86cd1</Anchor>
+               </Node>
+               <Node>
+                <Name>SetAtlas</Name>
+                <Path>classhe_1_1_image_view_factory.html</Path>
+                <Anchor>adf11b141575e27ac4ae4cc8210fd0af7</Anchor>
+               </Node>
+               <Node>
+                <Name>SetImage</Name>
+                <Path>classhe_1_1_image_view_factory.html</Path>
+                <Anchor>a4bb5aa83215222bcbe44cf46ed5f8530</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -1551,22 +1657,22 @@
                <Node>
                 <Name>ParticleView</Name>
                 <Path>classhe_1_1_particle_view.html</Path>
-                <Anchor>a5bc70c96adddf1aff7e50dd3b67c0c21</Anchor>
+                <Anchor>a47f05622895a97ff45636cb6b6f2fa20</Anchor>
                </Node>
                <Node>
-                <Name>~ParticleView</Name>
+                <Name>GetSize</Name>
                 <Path>classhe_1_1_particle_view.html</Path>
-                <Anchor>aa6629827c9d3a9f11a1995a85f21fad6</Anchor>
+                <Anchor>ae85dc0b1322a99bde38e6ef9cb951b33</Anchor>
                </Node>
                <Node>
-                <Name>render</Name>
+                <Name>Render</Name>
                 <Path>classhe_1_1_particle_view.html</Path>
-                <Anchor>a39609711cb94b1f16f4d57d2efb4280c</Anchor>
+                <Anchor>a5f818437fe7985bdb177c1fb36435bb8</Anchor>
                </Node>
                <Node>
-                <Name>update</Name>
+                <Name>Update</Name>
                 <Path>classhe_1_1_particle_view.html</Path>
-                <Anchor>ac13d1d6b862dd8e3b3129f63a359beb9</Anchor>
+                <Anchor>ae6359fc40580a310e3bd7d3a611f637a</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -1577,12 +1683,12 @@
                <Node>
                 <Name>ParticleViewFactory</Name>
                 <Path>classhe_1_1_particle_view_factory.html</Path>
-                <Anchor>abb2fc15af4ad98546b83d63d89466c3c</Anchor>
+                <Anchor>a0c611bd5d026ff524887ba373795fc7e</Anchor>
                </Node>
                <Node>
                 <Name>CreateParticleView</Name>
                 <Path>classhe_1_1_particle_view_factory.html</Path>
-                <Anchor>a9b4990010edb8846e83984653633ec4d</Anchor>
+                <Anchor>acf9314eabd88955184b0efc2d5bd7b5d</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -1593,64 +1699,95 @@
                <Node>
                 <Name>Sprite</Name>
                 <Path>classhe_1_1_sprite.html</Path>
-                <Anchor>ae96ed621e41ee6e376d080aac04cffc4</Anchor>
+                <Anchor>ac5018b179be15c37d4bcfeb81d862d26</Anchor>
                </Node>
                <Node>
                 <Name>~Sprite</Name>
                 <Path>classhe_1_1_sprite.html</Path>
-                <Anchor>aef36dfe6c0812d5c4292c2f3f600e485</Anchor>
+                <Anchor>a0c45a0978d0f73e1d9defc17e2252d9b</Anchor>
                </Node>
                <Node>
-                <Name>render</Name>
+                <Name>GetSize</Name>
                 <Path>classhe_1_1_sprite.html</Path>
-                <Anchor>a6f063193e0608a3434ae47dfb1674a2a</Anchor>
+                <Anchor>a75afdecd0863b5c765eb17eb87015718</Anchor>
                </Node>
                <Node>
-                <Name>update</Name>
+                <Name>Render</Name>
                 <Path>classhe_1_1_sprite.html</Path>
-                <Anchor>a2d932d9109a9c8873d8e4bf887780bf4</Anchor>
-               </Node>
-               <Node>
-                <Name>render_object_</Name>
-                <Path>classhe_1_1_sprite.html</Path>
-                <Anchor>a58a108ad175a56a06d921c69d22e0226</Anchor>
-               </Node>
-               <Node>
-                <Name>vertex_</Name>
-                <Path>classhe_1_1_sprite.html</Path>
-                <Anchor>a89ede44857fa0f4685723bbad822af2d</Anchor>
+                <Anchor>abb560f9a80eab59669aa8d7028e637dd</Anchor>
                </Node>
               </Subnodes>
              </Node>
              <Node>
-              <Name>Text</Name>
-              <Path>classhe_1_1_text.html</Path>
+              <Name>SpriteView</Name>
+              <Path>classhe_1_1_sprite_view.html</Path>
               <Subnodes>
                <Node>
-                <Name>Text</Name>
-                <Path>classhe_1_1_text.html</Path>
-                <Anchor>a9b73c3c1a93c482480ca1f13ae30e279</Anchor>
+                <Name>SpriteView</Name>
+                <Path>classhe_1_1_sprite_view.html</Path>
+                <Anchor>af7e9a6ac8e7625990130aa700cb07c26</Anchor>
                </Node>
                <Node>
-                <Name>~Text</Name>
-                <Path>classhe_1_1_text.html</Path>
-                <Anchor>ac5a4b71c27415408bce3b9d1069dc242</Anchor>
+                <Name>GetSize</Name>
+                <Path>classhe_1_1_sprite_view.html</Path>
+                <Anchor>ab1ea35a0461871706c9d4ca48b71d75f</Anchor>
+               </Node>
+               <Node>
+                <Name>Render</Name>
+                <Path>classhe_1_1_sprite_view.html</Path>
+                <Anchor>a062f44507bed19adbb519b3324559452</Anchor>
+               </Node>
+               <Node>
+                <Name>Update</Name>
+                <Path>classhe_1_1_sprite_view.html</Path>
+                <Anchor>aab691da07818e95e62c75f9bae629b90</Anchor>
                </Node>
               </Subnodes>
              </Node>
              <Node>
-              <Name>TextFactory</Name>
-              <Path>classhe_1_1_text_factory.html</Path>
+              <Name>TextView</Name>
+              <Path>classhe_1_1_text_view.html</Path>
               <Subnodes>
                <Node>
-                <Name>TextFactory</Name>
-                <Path>classhe_1_1_text_factory.html</Path>
-                <Anchor>acca57f1a2d6fc385d2f6b3ccdd23df67</Anchor>
+                <Name>TextView</Name>
+                <Path>classhe_1_1_text_view.html</Path>
+                <Anchor>aae7f9c303a62cad19d934ebcca5b1cbb</Anchor>
                </Node>
                <Node>
-                <Name>CreateText</Name>
-                <Path>classhe_1_1_text_factory.html</Path>
-                <Anchor>a043e1a6f0853edfdbe4fe70af69df406</Anchor>
+                <Name>GetSize</Name>
+                <Path>classhe_1_1_text_view.html</Path>
+                <Anchor>a5738dd27a78c7e3e38c2bbd9f934cd85</Anchor>
+               </Node>
+               <Node>
+                <Name>Render</Name>
+                <Path>classhe_1_1_text_view.html</Path>
+                <Anchor>a529c81ae5dbaddc4303af58971b5eda4</Anchor>
+               </Node>
+               <Node>
+                <Name>SetSize</Name>
+                <Path>classhe_1_1_text_view.html</Path>
+                <Anchor>a7032bff86090732affa1e38b58b17d70</Anchor>
+               </Node>
+               <Node>
+                <Name>Update</Name>
+                <Path>classhe_1_1_text_view.html</Path>
+                <Anchor>a29553d7a38e5fdcc18715f28b9a3ea95</Anchor>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>TextViewFactory</Name>
+              <Path>classhe_1_1_text_view_factory.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>TextViewFactory</Name>
+                <Path>classhe_1_1_text_view_factory.html</Path>
+                <Anchor>aba8617bd21006e3c1998a3c676292985</Anchor>
+               </Node>
+               <Node>
+                <Name>CreateTextView</Name>
+                <Path>classhe_1_1_text_view_factory.html</Path>
+                <Anchor>ab4999e4f0525803afbb762fe7125437b</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -1661,7 +1798,7 @@
                <Node>
                 <Name>View</Name>
                 <Path>classhe_1_1_view.html</Path>
-                <Anchor>a908e9a465868336bf150e7da3c351802</Anchor>
+                <Anchor>af196503911b62b5060440515040dc935</Anchor>
                </Node>
                <Node>
                 <Name>~View</Name>
@@ -1669,19 +1806,19 @@
                 <Anchor>a1fe7bb5e03647f9cad7c1e31ce8e1a8f</Anchor>
                </Node>
                <Node>
-                <Name>GetFrame</Name>
+                <Name>GetSize</Name>
                 <Path>classhe_1_1_view.html</Path>
-                <Anchor>ab1b1934e38f262db490d4ae04dff14f7</Anchor>
+                <Anchor>a3ae476c6a3c32abe5d1158b41e9c23c0</Anchor>
                </Node>
                <Node>
-                <Name>GetFramePtr</Name>
+                <Name>GetTransform</Name>
                 <Path>classhe_1_1_view.html</Path>
-                <Anchor>a95fe9d710c493a571271819bb52c7f40</Anchor>
+                <Anchor>a8feaf9a4afd8b556c28cffee5c2ca7bd</Anchor>
                </Node>
                <Node>
                 <Name>MoveSubview</Name>
                 <Path>classhe_1_1_view.html</Path>
-                <Anchor>a27dada8c1932d6031ce66a2e2eda9f53</Anchor>
+                <Anchor>a5e6b4ced736f53fa46aac303a61c5ebf</Anchor>
                </Node>
                <Node>
                 <Name>RemoveSubview</Name>
@@ -1691,27 +1828,22 @@
                <Node>
                 <Name>Render</Name>
                 <Path>classhe_1_1_view.html</Path>
-                <Anchor>a065bdc08a7de80e2267e83804eb34e0e</Anchor>
+                <Anchor>a27834ec6abde44c05b0ceed596b625b0</Anchor>
                </Node>
                <Node>
-                <Name>render</Name>
+                <Name>SetTransform</Name>
                 <Path>classhe_1_1_view.html</Path>
-                <Anchor>a1b99c623e4056631f07dfdbe94d8f62f</Anchor>
-               </Node>
-               <Node>
-                <Name>SetFrame</Name>
-                <Path>classhe_1_1_view.html</Path>
-                <Anchor>aac8de95dc8c5e093ba4c69c0d9191312</Anchor>
+                <Anchor>ae237f7673f48ba14dffdf7dda59fb8a4</Anchor>
                </Node>
                <Node>
                 <Name>Update</Name>
                 <Path>classhe_1_1_view.html</Path>
-                <Anchor>a7f330ef32e846fb486572a9134c7a59c</Anchor>
+                <Anchor>a084f19eb481688e83bc8a1857e3980c2</Anchor>
                </Node>
                <Node>
-                <Name>update</Name>
+                <Name>transform_</Name>
                 <Path>classhe_1_1_view.html</Path>
-                <Anchor>afb9e07fcef0e4dc94c6aab415f450fe8</Anchor>
+                <Anchor>a6fd41e72fc30379d5fcae57d3dcd1cda</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -1759,6 +1891,11 @@
                 <Name>Frame</Name>
                 <Path>classhe_1_1_frame.html</Path>
                 <Anchor>ae977ca83f8908961b4bfc2cdd9c44acd</Anchor>
+               </Node>
+               <Node>
+                <Name>Contains</Name>
+                <Path>classhe_1_1_frame.html</Path>
+                <Anchor>a968fe87f50d6186a19736008a792f05e</Anchor>
                </Node>
                <Node>
                 <Name>GetGlobalRect</Name>
@@ -2261,15 +2398,23 @@
             <Path>classhe_1_1_asset.html</Path>
            </Node>
            <Node>
-            <Name>he::Asset&lt; he::ColorShader &gt;</Name>
-            <Path>classhe_1_1_asset.html</Path>
-           </Node>
-           <Node>
             <Name>he::Asset&lt; he::Font &gt;</Name>
             <Path>classhe_1_1_asset.html</Path>
            </Node>
            <Node>
+            <Name>he::Asset&lt; he::Image &gt;</Name>
+            <Path>classhe_1_1_asset.html</Path>
+           </Node>
+           <Node>
+            <Name>he::Asset&lt; he::ParticleBatch &gt;</Name>
+            <Path>classhe_1_1_asset.html</Path>
+           </Node>
+           <Node>
             <Name>he::Asset&lt; he::ParticleShader &gt;</Name>
+            <Path>classhe_1_1_asset.html</Path>
+           </Node>
+           <Node>
+            <Name>he::Asset&lt; he::Sprite &gt;</Name>
             <Path>classhe_1_1_asset.html</Path>
            </Node>
            <Node>
@@ -2286,6 +2431,10 @@
            </Node>
            <Node>
             <Name>he::Asset&lt; he::TextureShader &gt;</Name>
+            <Path>classhe_1_1_asset.html</Path>
+           </Node>
+           <Node>
+            <Name>he::Asset&lt; he::TextureVertex &gt;</Name>
             <Path>classhe_1_1_asset.html</Path>
            </Node>
            <Node>
@@ -2355,7 +2504,7 @@
             <Path>classhe_1_1_gesture_listenable.html</Path>
             <Subnodes>
              <Node>
-              <Name>he::GestureListener&lt; he::Button &gt;</Name>
+              <Name>he::GestureListener&lt; he::ButtonView &gt;</Name>
               <Path>classhe_1_1_gesture_listener.html</Path>
              </Node>
              <Node>
@@ -2363,6 +2512,10 @@
               <Path>classhe_1_1_gesture_listener.html</Path>
              </Node>
             </Subnodes>
+           </Node>
+           <Node>
+            <Name>he::GestureListenerDeleter&lt; T &gt;</Name>
+            <Path>structhe_1_1_gesture_listener_deleter.html</Path>
            </Node>
            <Node>
             <Name>GLKViewController</Name>
@@ -2379,8 +2532,8 @@
             <Path>classhe_1_1_glyph_data.html</Path>
            </Node>
            <Node>
-            <Name>he::GradientViewFactory</Name>
-            <Path>classhe_1_1_gradient_view_factory.html</Path>
+            <Name>he::Gradient</Name>
+            <Path>classhe_1_1_gradient.html</Path>
            </Node>
            <Node>
             <Name>he::IButtonListener</Name>
@@ -2391,6 +2544,10 @@
               <Path>classhe_1_1_button_listener.html</Path>
              </Node>
             </Subnodes>
+           </Node>
+           <Node>
+            <Name>he::Image</Name>
+            <Path>classhe_1_1_image.html</Path>
            </Node>
            <Node>
             <Name>he::ImageViewFactory</Name>
@@ -2483,8 +2640,8 @@
             <Path>structhe_1_1_glyph_data_1_1_size.html</Path>
            </Node>
            <Node>
-            <Name>he::TextFactory</Name>
-            <Path>classhe_1_1_text_factory.html</Path>
+            <Name>he::Sprite</Name>
+            <Path>classhe_1_1_sprite.html</Path>
            </Node>
            <Node>
             <Name>he::Texture</Name>
@@ -2515,6 +2672,10 @@
            <Node>
             <Name>he::TextureData</Name>
             <Path>classhe_1_1_texture_data.html</Path>
+           </Node>
+           <Node>
+            <Name>he::TextViewFactory</Name>
+            <Path>classhe_1_1_text_view_factory.html</Path>
            </Node>
            <Node>
             <Name>he::Transform</Name>
@@ -2561,8 +2722,8 @@
             <Path>classhe_1_1_view.html</Path>
             <Subnodes>
              <Node>
-              <Name>he::Button</Name>
-              <Path>classhe_1_1_button.html</Path>
+              <Name>he::ButtonView</Name>
+              <Path>classhe_1_1_button_view.html</Path>
              </Node>
              <Node>
               <Name>he::Glyph</Name>
@@ -2581,12 +2742,12 @@
               <Path>classhe_1_1_particle_view.html</Path>
              </Node>
              <Node>
-              <Name>he::Sprite</Name>
-              <Path>classhe_1_1_sprite.html</Path>
+              <Name>he::SpriteView</Name>
+              <Path>classhe_1_1_sprite_view.html</Path>
              </Node>
              <Node>
-              <Name>he::Text</Name>
-              <Path>classhe_1_1_text.html</Path>
+              <Name>he::TextView</Name>
+              <Path>classhe_1_1_text_view.html</Path>
              </Node>
             </Subnodes>
            </Node>
@@ -2735,6 +2896,10 @@
               <Path>functions_func_0x69.html</Path>
              </Node>
              <Node>
+              <Name>l</Name>
+              <Path>functions_func_0x6c.html</Path>
+             </Node>
+             <Node>
               <Name>m</Name>
               <Path>functions_func_0x6d.html</Path>
              </Node>
@@ -2870,6 +3035,11 @@
                       <Path>classhe_1_1_animation.html</Path>
                       <Subnodes>
                        <Node>
+                        <Name>ID</Name>
+                        <Path>classhe_1_1_animation.html</Path>
+                        <Anchor>a5ec4f04a171ed0ded89028593283b738</Anchor>
+                       </Node>
+                       <Node>
                         <Name>State</Name>
                         <Path>classhe_1_1_animation.html</Path>
                         <Anchor>a5888d347656cb507a56975a9d7edaae9</Anchor>
@@ -2902,11 +3072,6 @@
                         <Anchor>a25e0bfa956820ae868d106e82acf7dff</Anchor>
                        </Node>
                        <Node>
-                        <Name>AddChild</Name>
-                        <Path>classhe_1_1_animation.html</Path>
-                        <Anchor>ae98f32b897773d0c76e46b900e98d3d3</Anchor>
-                       </Node>
-                       <Node>
                         <Name>Die</Name>
                         <Path>classhe_1_1_animation.html</Path>
                         <Anchor>a15a2d511f43c26260c6fa0923f5a07fe</Anchor>
@@ -2919,12 +3084,17 @@
                        <Node>
                         <Name>GetDescentID</Name>
                         <Path>classhe_1_1_animation.html</Path>
-                        <Anchor>a1e6b6b23fd3beb8a0618b2a9b67e8e3e</Anchor>
+                        <Anchor>a0e238298b99f8e961b629ef63346855d</Anchor>
                        </Node>
                        <Node>
                         <Name>GetID</Name>
                         <Path>classhe_1_1_animation.html</Path>
-                        <Anchor>a9544828f102ace474ce4b332943d8bb9</Anchor>
+                        <Anchor>a17667002f783da515c7b1427d3421f6c</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>MoveChild</Name>
+                        <Path>classhe_1_1_animation.html</Path>
+                        <Anchor>a1ef898ff2a3f8dd727d873b6f67be1e3</Anchor>
                        </Node>
                        <Node>
                         <Name>SetListener</Name>
@@ -3025,19 +3195,19 @@
                        <Node>
                         <Name>EndAnimationFunctor</Name>
                         <Path>classhe_1_1_end_animation_functor.html</Path>
-                        <Anchor>a714ed8108e702c71bb5ffc96aade2137</Anchor>
+                        <Anchor>aa7c562c3f04225625bd6baa90f7365f4</Anchor>
                        </Node>
                        <Node>
                         <Name>operator()</Name>
                         <Path>classhe_1_1_end_animation_functor.html</Path>
-                        <Anchor>a07606fa9ac0e6397fbc6f873f94f217d</Anchor>
+                        <Anchor>a30c51e9f163f3cafe347d83702e5bf8b</Anchor>
                        </Node>
                       </Subnodes>
                      </Node>
                      <Node>
                       <Name>EndAnimationsWithID</Name>
                       <Path>_animation_utils_8h.html</Path>
-                      <Anchor>ac8b351e8488a0161c50e55b6f9336b43</Anchor>
+                      <Anchor>a3bc1864645dff436a9537dedfcfa6ad9</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>
@@ -3251,6 +3421,26 @@
                         <Name>~SpriteAnimation</Name>
                         <Path>classhe_1_1_sprite_animation.html</Path>
                         <Anchor>a7fcdede68f9af24db1b79adf607787b8</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>RetainCurrVertex</Name>
+                        <Path>classhe_1_1_sprite_animation.html</Path>
+                        <Anchor>a6c8f1d00bfa5b75e82097f8780813798</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>SetFinalFrameIndex</Name>
+                        <Path>classhe_1_1_sprite_animation.html</Path>
+                        <Anchor>a31c689c96392a829e8b8199f43923265</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>SetFPS</Name>
+                        <Path>classhe_1_1_sprite_animation.html</Path>
+                        <Anchor>a4eb6c5d02501610dc85b74f53b37d5a2</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>SetRepeatCount</Name>
+                        <Path>classhe_1_1_sprite_animation.html</Path>
+                        <Anchor>a35cdf966b32fe40b87f9a085d316c84d</Anchor>
                        </Node>
                       </Subnodes>
                      </Node>
@@ -3480,6 +3670,22 @@
                         <Anchor>a33a5fcb0ebe984fcd4f9db4093fcc02f</Anchor>
                        </Node>
                       </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>GestureListenerDeleter</Name>
+                      <Path>structhe_1_1_gesture_listener_deleter.html</Path>
+                      <Subnodes>
+                       <Node>
+                        <Name>operator()</Name>
+                        <Path>structhe_1_1_gesture_listener_deleter.html</Path>
+                        <Anchor>af304f2366fe987247334e69cfec70a48</Anchor>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>CreateGestureListener</Name>
+                      <Path>_gesture_8h.html</Path>
+                      <Anchor>a1677414e560656feec0abb2249ca2fa0</Anchor>
                      </Node>
                      <Node>
                       <Name>operator&lt;&lt;</Name>
@@ -3722,14 +3928,19 @@
                         <Anchor>ac8e7eb2a0ed7dc1b3e2f10c31374bfb0</Anchor>
                        </Node>
                        <Node>
-                        <Name>render</Name>
+                        <Name>GetSize</Name>
                         <Path>classhe_1_1_glyph.html</Path>
-                        <Anchor>a3640c897c540676066060412e3ff04d6</Anchor>
+                        <Anchor>aeda7be009bc7c4610f5e41dc751ad873</Anchor>
                        </Node>
                        <Node>
-                        <Name>update</Name>
+                        <Name>Render</Name>
                         <Path>classhe_1_1_glyph.html</Path>
-                        <Anchor>a0d5d6da5fa992b074f7ba7d957a378d3</Anchor>
+                        <Anchor>a8fb24c5a16307c1db7f408e0a1fbfead</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>Update</Name>
+                        <Path>classhe_1_1_glyph.html</Path>
+                        <Anchor>a768d18e591c9660a53087c118a5d24a9</Anchor>
                        </Node>
                       </Subnodes>
                      </Node>
@@ -4322,7 +4533,7 @@
                        <Node>
                         <Name>GetSize</Name>
                         <Path>classhe_1_1_texture.html</Path>
-                        <Anchor>ac85730ee5f91133ec6655ffd2550ca93</Anchor>
+                        <Anchor>a15cae12561986da58a53007f6479a524</Anchor>
                        </Node>
                        <Node>
                         <Name>object_</Name>
@@ -4602,7 +4813,7 @@
                        <Node>
                         <Name>Hit</Name>
                         <Path>structhe_1_1_i_button_listener.html</Path>
-                        <Anchor>aa5c2cfd23b6d28739106c8f013a0f074</Anchor>
+                        <Anchor>ab882c245ab6b653a4def18fd588e7b4e</Anchor>
                        </Node>
                       </Subnodes>
                      </Node>
@@ -4613,7 +4824,7 @@
                        <Node>
                         <Name>callback</Name>
                         <Path>classhe_1_1_button_listener.html</Path>
-                        <Anchor>a094fdd18b21a9693eddeb293d992fb21</Anchor>
+                        <Anchor>ae5c204f2187f6dccabd1b7b5fa364230</Anchor>
                        </Node>
                        <Node>
                         <Name>ButtonListener</Name>
@@ -4623,33 +4834,48 @@
                        <Node>
                         <Name>Hit</Name>
                         <Path>classhe_1_1_button_listener.html</Path>
-                        <Anchor>ae7efff86ed5afc43c28879b8a9cbab42</Anchor>
+                        <Anchor>aadcb751e5b60fd2dd740aedb035d0674</Anchor>
                        </Node>
                       </Subnodes>
                      </Node>
                      <Node>
-                      <Name>Button</Name>
-                      <Path>classhe_1_1_button.html</Path>
+                      <Name>ButtonView</Name>
+                      <Path>classhe_1_1_button_view.html</Path>
                       <Subnodes>
                        <Node>
-                        <Name>Button</Name>
-                        <Path>classhe_1_1_button.html</Path>
-                        <Anchor>a07b8c9d415b92403436be5083e2c5c33</Anchor>
+                        <Name>ButtonView</Name>
+                        <Path>classhe_1_1_button_view.html</Path>
+                        <Anchor>a9f31a62f351a26b7012325f85bd906f4</Anchor>
                        </Node>
                        <Node>
-                        <Name>~Button</Name>
-                        <Path>classhe_1_1_button.html</Path>
-                        <Anchor>abe8991a178b2635e91ca201acf06c4e7</Anchor>
+                        <Name>~ButtonView</Name>
+                        <Path>classhe_1_1_button_view.html</Path>
+                        <Anchor>a2bcc88bc2c3822c32a2f8b30b7bd95ae</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>GetSize</Name>
+                        <Path>classhe_1_1_button_view.html</Path>
+                        <Anchor>a98c8390d0fefe4be60296e2ad7f96e19</Anchor>
                        </Node>
                        <Node>
                         <Name>GetTag</Name>
-                        <Path>classhe_1_1_button.html</Path>
-                        <Anchor>ace371050acfc3f2057383a14bfa1e427</Anchor>
+                        <Path>classhe_1_1_button_view.html</Path>
+                        <Anchor>acc4ae5d2b40fa0e7984894bdb2ecb1f4</Anchor>
                        </Node>
                        <Node>
                         <Name>HandleGesture</Name>
-                        <Path>classhe_1_1_button.html</Path>
-                        <Anchor>a48da4dd8b4eedddacb623af9d32fd266</Anchor>
+                        <Path>classhe_1_1_button_view.html</Path>
+                        <Anchor>a7496f24405c898636a205c24241e5e89</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>Render</Name>
+                        <Path>classhe_1_1_button_view.html</Path>
+                        <Anchor>aa5fb2e09820398bd0ec4805b20c44deb</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>Update</Name>
+                        <Path>classhe_1_1_button_view.html</Path>
+                        <Anchor>afe2e779222e848fe1e3f4ae3df163c7b</Anchor>
                        </Node>
                       </Subnodes>
                      </Node>
@@ -4660,56 +4886,71 @@
                     <Path>_gradient_view_8h.html</Path>
                     <Subnodes>
                      <Node>
+                      <Name>Gradient</Name>
+                      <Path>classhe_1_1_gradient.html</Path>
+                      <Subnodes>
+                       <Node>
+                        <Name>Gradient</Name>
+                        <Path>classhe_1_1_gradient.html</Path>
+                        <Anchor>a7d9b226501f080e62eae6166227a7c8b</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>~Gradient</Name>
+                        <Path>classhe_1_1_gradient.html</Path>
+                        <Anchor>a6d71bf3838cb1d622f86452cb580d92a</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>GetSize</Name>
+                        <Path>classhe_1_1_gradient.html</Path>
+                        <Anchor>aca5cc8e798fa39ddb87fb9be5b7e3014</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>Render</Name>
+                        <Path>classhe_1_1_gradient.html</Path>
+                        <Anchor>aaa07fc79b4b5d8efadc8d02277f3c05b</Anchor>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                     <Node>
                       <Name>GradientView</Name>
                       <Path>classhe_1_1_gradient_view.html</Path>
                       <Subnodes>
                        <Node>
                         <Name>GradientView</Name>
                         <Path>classhe_1_1_gradient_view.html</Path>
-                        <Anchor>a7177a0ec3125c48c5ba15d47ac436280</Anchor>
+                        <Anchor>ae9f00d0a5256cdfdb4e9fea9777d45f3</Anchor>
                        </Node>
                        <Node>
-                        <Name>~GradientView</Name>
+                        <Name>GetSize</Name>
                         <Path>classhe_1_1_gradient_view.html</Path>
-                        <Anchor>abd6b1f4c3405b8435d8008c07eabe1a6</Anchor>
+                        <Anchor>a38df87cd24d94779965092c4d246f0e4</Anchor>
                        </Node>
                        <Node>
-                        <Name>render</Name>
+                        <Name>Render</Name>
                         <Path>classhe_1_1_gradient_view.html</Path>
-                        <Anchor>a95385db5b2da5287e1f89d22b2385ea8</Anchor>
+                        <Anchor>a68d4f41c4d872f01d2b05dcd799b8073</Anchor>
                        </Node>
                        <Node>
-                        <Name>update</Name>
+                        <Name>Update</Name>
                         <Path>classhe_1_1_gradient_view.html</Path>
-                        <Anchor>a605274c34167346462123fbcca2ffdcf</Anchor>
+                        <Anchor>ac81d124612f8d31772798fe06ff99bfe</Anchor>
                        </Node>
                       </Subnodes>
                      </Node>
                      <Node>
-                      <Name>GradientViewFactory</Name>
-                      <Path>classhe_1_1_gradient_view_factory.html</Path>
-                      <Subnodes>
-                       <Node>
-                        <Name>GradientViewFactory</Name>
-                        <Path>classhe_1_1_gradient_view_factory.html</Path>
-                        <Anchor>a68e5806c7846b968f89e0c3be1241cf5</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>CreateGradientView</Name>
-                        <Path>classhe_1_1_gradient_view_factory.html</Path>
-                        <Anchor>a22ad6a1765aacee654bba877ded682ef</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>CreateGradientView</Name>
-                        <Path>classhe_1_1_gradient_view_factory.html</Path>
-                        <Anchor>a92787e66c3d1375ba9e7449fc4f84e17</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>CreateGradientView</Name>
-                        <Path>classhe_1_1_gradient_view_factory.html</Path>
-                        <Anchor>a5e3e5ff5de177154f251033401f9a0d7</Anchor>
-                       </Node>
-                      </Subnodes>
+                      <Name>Create</Name>
+                      <Path>_gradient_view_8h.html</Path>
+                      <Anchor>a866a509539bf9303192fb7092276eba1</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>Create</Name>
+                      <Path>_gradient_view_8h.html</Path>
+                      <Anchor>a5ab14591905495d6010e645e8185651b</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>Create</Name>
+                      <Path>_gradient_view_8h.html</Path>
+                      <Anchor>a7a3d3d8ef3d15683ca62ae35f1d12eea</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>
@@ -4718,13 +4959,39 @@
                     <Path>_image_view_8h.html</Path>
                     <Subnodes>
                      <Node>
+                      <Name>Image</Name>
+                      <Path>classhe_1_1_image.html</Path>
+                      <Subnodes>
+                       <Node>
+                        <Name>Image</Name>
+                        <Path>classhe_1_1_image.html</Path>
+                        <Anchor>a8d9bc929281de434c385b978d60cea46</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>~Image</Name>
+                        <Path>classhe_1_1_image.html</Path>
+                        <Anchor>ae442766545a1071f58e8064056d07b0e</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>GetSize</Name>
+                        <Path>classhe_1_1_image.html</Path>
+                        <Anchor>ac3a224195e128f16c91d9aca7d4e543a</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>Render</Name>
+                        <Path>classhe_1_1_image.html</Path>
+                        <Anchor>a2ee34abc6fe2077422fc4bd15545e42b</Anchor>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                     <Node>
                       <Name>ImageView</Name>
                       <Path>classhe_1_1_image_view.html</Path>
                       <Subnodes>
                        <Node>
                         <Name>ImageView</Name>
                         <Path>classhe_1_1_image_view.html</Path>
-                        <Anchor>abefc5bae34dbf7bada0363447d5d9c65</Anchor>
+                        <Anchor>ac4f085af65c3c754bdaaf05d17c4df82</Anchor>
                        </Node>
                        <Node>
                         <Name>~ImageView</Name>
@@ -4732,26 +4999,31 @@
                         <Anchor>a9d8126d5a210e735320f271b2217317f</Anchor>
                        </Node>
                        <Node>
-                        <Name>render</Name>
+                        <Name>GetSize</Name>
                         <Path>classhe_1_1_image_view.html</Path>
-                        <Anchor>a9971df32276becd5671dd0ed4c851c84</Anchor>
+                        <Anchor>a4c3da9abb2d5663b86c5de9f7077b822</Anchor>
                        </Node>
                        <Node>
-                        <Name>update</Name>
+                        <Name>Render</Name>
                         <Path>classhe_1_1_image_view.html</Path>
-                        <Anchor>ac40e54b674c6b9ca3af30afcd7689ead</Anchor>
+                        <Anchor>a15bd6e6b74eafedb20e26180fa699168</Anchor>
                        </Node>
                        <Node>
-                        <Name>render_object_</Name>
+                        <Name>Update</Name>
                         <Path>classhe_1_1_image_view.html</Path>
-                        <Anchor>a691bfe5e8afdc213cd11b87edc4a3247</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>vertex_</Name>
-                        <Path>classhe_1_1_image_view.html</Path>
-                        <Anchor>a8cd7b48ea1222bae470fd2f895f9a794</Anchor>
+                        <Anchor>ad06f7a42260da26a7956df1f747f26c8</Anchor>
                        </Node>
                       </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>Create</Name>
+                      <Path>_image_view_8h.html</Path>
+                      <Anchor>a7ba483d1fea2060fd081f2fea94138d7</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>Create</Name>
+                      <Path>_image_view_8h.html</Path>
+                      <Anchor>a54b00d919e3e8fcc75c774f7d02e7de4</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>
@@ -4766,32 +5038,37 @@
                        <Node>
                         <Name>ImageViewFactory</Name>
                         <Path>classhe_1_1_image_view_factory.html</Path>
-                        <Anchor>a84fec5ef17911732fda933a61eeeb89f</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>ImageViewFactory</Name>
-                        <Path>classhe_1_1_image_view_factory.html</Path>
-                        <Anchor>ae02cc0ceebc7ed8779fd6eb7ec00754a</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>ImageViewFactory</Name>
-                        <Path>classhe_1_1_image_view_factory.html</Path>
-                        <Anchor>a0d433f3d922757392fcd0359056b1017</Anchor>
+                        <Anchor>a713919892736bfbe14a5682c90deba77</Anchor>
                        </Node>
                        <Node>
                         <Name>CreateImageView</Name>
                         <Path>classhe_1_1_image_view_factory.html</Path>
-                        <Anchor>a4575a03ae884b4ce66c7ae32eefd3a96</Anchor>
+                        <Anchor>a4d0b6b783af5635abef79cc613a10d39</Anchor>
                        </Node>
                        <Node>
                         <Name>CreateImageView</Name>
                         <Path>classhe_1_1_image_view_factory.html</Path>
-                        <Anchor>a8010d6f3efffcdf8d481e46767eb62d2</Anchor>
+                        <Anchor>a85c46f9a21f5c08d10974703378f1b3f</Anchor>
                        </Node>
                        <Node>
-                        <Name>CreateSprite</Name>
+                        <Name>CreateSpriteView</Name>
                         <Path>classhe_1_1_image_view_factory.html</Path>
-                        <Anchor>a591e6f68bd6ddf979812c7e4d691a57b</Anchor>
+                        <Anchor>a22303e188cd03814fa62ba8c7751013c</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>LoadSprite</Name>
+                        <Path>classhe_1_1_image_view_factory.html</Path>
+                        <Anchor>ac41b9c738ae2dc1b0fc8f4725de86cd1</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>SetAtlas</Name>
+                        <Path>classhe_1_1_image_view_factory.html</Path>
+                        <Anchor>adf11b141575e27ac4ae4cc8210fd0af7</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>SetImage</Name>
+                        <Path>classhe_1_1_image_view_factory.html</Path>
+                        <Anchor>a4bb5aa83215222bcbe44cf46ed5f8530</Anchor>
                        </Node>
                       </Subnodes>
                      </Node>
@@ -4808,22 +5085,22 @@
                        <Node>
                         <Name>ParticleView</Name>
                         <Path>classhe_1_1_particle_view.html</Path>
-                        <Anchor>a5bc70c96adddf1aff7e50dd3b67c0c21</Anchor>
+                        <Anchor>a47f05622895a97ff45636cb6b6f2fa20</Anchor>
                        </Node>
                        <Node>
-                        <Name>~ParticleView</Name>
+                        <Name>GetSize</Name>
                         <Path>classhe_1_1_particle_view.html</Path>
-                        <Anchor>aa6629827c9d3a9f11a1995a85f21fad6</Anchor>
+                        <Anchor>ae85dc0b1322a99bde38e6ef9cb951b33</Anchor>
                        </Node>
                        <Node>
-                        <Name>render</Name>
+                        <Name>Render</Name>
                         <Path>classhe_1_1_particle_view.html</Path>
-                        <Anchor>a39609711cb94b1f16f4d57d2efb4280c</Anchor>
+                        <Anchor>a5f818437fe7985bdb177c1fb36435bb8</Anchor>
                        </Node>
                        <Node>
-                        <Name>update</Name>
+                        <Name>Update</Name>
                         <Path>classhe_1_1_particle_view.html</Path>
-                        <Anchor>ac13d1d6b862dd8e3b3129f63a359beb9</Anchor>
+                        <Anchor>ae6359fc40580a310e3bd7d3a611f637a</Anchor>
                        </Node>
                       </Subnodes>
                      </Node>
@@ -4834,12 +5111,12 @@
                        <Node>
                         <Name>ParticleViewFactory</Name>
                         <Path>classhe_1_1_particle_view_factory.html</Path>
-                        <Anchor>abb2fc15af4ad98546b83d63d89466c3c</Anchor>
+                        <Anchor>a0c611bd5d026ff524887ba373795fc7e</Anchor>
                        </Node>
                        <Node>
                         <Name>CreateParticleView</Name>
                         <Path>classhe_1_1_particle_view_factory.html</Path>
-                        <Anchor>a9b4990010edb8846e83984653633ec4d</Anchor>
+                        <Anchor>acf9314eabd88955184b0efc2d5bd7b5d</Anchor>
                        </Node>
                       </Subnodes>
                      </Node>
@@ -4856,34 +5133,55 @@
                        <Node>
                         <Name>Sprite</Name>
                         <Path>classhe_1_1_sprite.html</Path>
-                        <Anchor>ae96ed621e41ee6e376d080aac04cffc4</Anchor>
+                        <Anchor>ac5018b179be15c37d4bcfeb81d862d26</Anchor>
                        </Node>
                        <Node>
                         <Name>~Sprite</Name>
                         <Path>classhe_1_1_sprite.html</Path>
-                        <Anchor>aef36dfe6c0812d5c4292c2f3f600e485</Anchor>
+                        <Anchor>a0c45a0978d0f73e1d9defc17e2252d9b</Anchor>
                        </Node>
                        <Node>
-                        <Name>render</Name>
+                        <Name>GetSize</Name>
                         <Path>classhe_1_1_sprite.html</Path>
-                        <Anchor>a6f063193e0608a3434ae47dfb1674a2a</Anchor>
+                        <Anchor>a75afdecd0863b5c765eb17eb87015718</Anchor>
                        </Node>
                        <Node>
-                        <Name>update</Name>
+                        <Name>Render</Name>
                         <Path>classhe_1_1_sprite.html</Path>
-                        <Anchor>a2d932d9109a9c8873d8e4bf887780bf4</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>render_object_</Name>
-                        <Path>classhe_1_1_sprite.html</Path>
-                        <Anchor>a58a108ad175a56a06d921c69d22e0226</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>vertex_</Name>
-                        <Path>classhe_1_1_sprite.html</Path>
-                        <Anchor>a89ede44857fa0f4685723bbad822af2d</Anchor>
+                        <Anchor>abb560f9a80eab59669aa8d7028e637dd</Anchor>
                        </Node>
                       </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>SpriteView</Name>
+                      <Path>classhe_1_1_sprite_view.html</Path>
+                      <Subnodes>
+                       <Node>
+                        <Name>SpriteView</Name>
+                        <Path>classhe_1_1_sprite_view.html</Path>
+                        <Anchor>af7e9a6ac8e7625990130aa700cb07c26</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>GetSize</Name>
+                        <Path>classhe_1_1_sprite_view.html</Path>
+                        <Anchor>ab1ea35a0461871706c9d4ca48b71d75f</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>Render</Name>
+                        <Path>classhe_1_1_sprite_view.html</Path>
+                        <Anchor>a062f44507bed19adbb519b3324559452</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>Update</Name>
+                        <Path>classhe_1_1_sprite_view.html</Path>
+                        <Anchor>aab691da07818e95e62c75f9bae629b90</Anchor>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>Create</Name>
+                      <Path>_sprite_8h.html</Path>
+                      <Anchor>ac99181018d81375f3a0dfb58c6497966</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>
@@ -4892,34 +5190,49 @@
                     <Path>_text_8h.html</Path>
                     <Subnodes>
                      <Node>
-                      <Name>Text</Name>
-                      <Path>classhe_1_1_text.html</Path>
+                      <Name>TextView</Name>
+                      <Path>classhe_1_1_text_view.html</Path>
                       <Subnodes>
                        <Node>
-                        <Name>Text</Name>
-                        <Path>classhe_1_1_text.html</Path>
-                        <Anchor>a9b73c3c1a93c482480ca1f13ae30e279</Anchor>
+                        <Name>TextView</Name>
+                        <Path>classhe_1_1_text_view.html</Path>
+                        <Anchor>aae7f9c303a62cad19d934ebcca5b1cbb</Anchor>
                        </Node>
                        <Node>
-                        <Name>~Text</Name>
-                        <Path>classhe_1_1_text.html</Path>
-                        <Anchor>ac5a4b71c27415408bce3b9d1069dc242</Anchor>
+                        <Name>GetSize</Name>
+                        <Path>classhe_1_1_text_view.html</Path>
+                        <Anchor>a5738dd27a78c7e3e38c2bbd9f934cd85</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>Render</Name>
+                        <Path>classhe_1_1_text_view.html</Path>
+                        <Anchor>a529c81ae5dbaddc4303af58971b5eda4</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>SetSize</Name>
+                        <Path>classhe_1_1_text_view.html</Path>
+                        <Anchor>a7032bff86090732affa1e38b58b17d70</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>Update</Name>
+                        <Path>classhe_1_1_text_view.html</Path>
+                        <Anchor>a29553d7a38e5fdcc18715f28b9a3ea95</Anchor>
                        </Node>
                       </Subnodes>
                      </Node>
                      <Node>
-                      <Name>TextFactory</Name>
-                      <Path>classhe_1_1_text_factory.html</Path>
+                      <Name>TextViewFactory</Name>
+                      <Path>classhe_1_1_text_view_factory.html</Path>
                       <Subnodes>
                        <Node>
-                        <Name>TextFactory</Name>
-                        <Path>classhe_1_1_text_factory.html</Path>
-                        <Anchor>acca57f1a2d6fc385d2f6b3ccdd23df67</Anchor>
+                        <Name>TextViewFactory</Name>
+                        <Path>classhe_1_1_text_view_factory.html</Path>
+                        <Anchor>aba8617bd21006e3c1998a3c676292985</Anchor>
                        </Node>
                        <Node>
-                        <Name>CreateText</Name>
-                        <Path>classhe_1_1_text_factory.html</Path>
-                        <Anchor>a043e1a6f0853edfdbe4fe70af69df406</Anchor>
+                        <Name>CreateTextView</Name>
+                        <Path>classhe_1_1_text_view_factory.html</Path>
+                        <Anchor>ab4999e4f0525803afbb762fe7125437b</Anchor>
                        </Node>
                       </Subnodes>
                      </Node>
@@ -4936,7 +5249,7 @@
                        <Node>
                         <Name>View</Name>
                         <Path>classhe_1_1_view.html</Path>
-                        <Anchor>a908e9a465868336bf150e7da3c351802</Anchor>
+                        <Anchor>af196503911b62b5060440515040dc935</Anchor>
                        </Node>
                        <Node>
                         <Name>~View</Name>
@@ -4944,19 +5257,19 @@
                         <Anchor>a1fe7bb5e03647f9cad7c1e31ce8e1a8f</Anchor>
                        </Node>
                        <Node>
-                        <Name>GetFrame</Name>
+                        <Name>GetSize</Name>
                         <Path>classhe_1_1_view.html</Path>
-                        <Anchor>ab1b1934e38f262db490d4ae04dff14f7</Anchor>
+                        <Anchor>a3ae476c6a3c32abe5d1158b41e9c23c0</Anchor>
                        </Node>
                        <Node>
-                        <Name>GetFramePtr</Name>
+                        <Name>GetTransform</Name>
                         <Path>classhe_1_1_view.html</Path>
-                        <Anchor>a95fe9d710c493a571271819bb52c7f40</Anchor>
+                        <Anchor>a8feaf9a4afd8b556c28cffee5c2ca7bd</Anchor>
                        </Node>
                        <Node>
                         <Name>MoveSubview</Name>
                         <Path>classhe_1_1_view.html</Path>
-                        <Anchor>a27dada8c1932d6031ce66a2e2eda9f53</Anchor>
+                        <Anchor>a5e6b4ced736f53fa46aac303a61c5ebf</Anchor>
                        </Node>
                        <Node>
                         <Name>RemoveSubview</Name>
@@ -4966,29 +5279,29 @@
                        <Node>
                         <Name>Render</Name>
                         <Path>classhe_1_1_view.html</Path>
-                        <Anchor>a065bdc08a7de80e2267e83804eb34e0e</Anchor>
+                        <Anchor>a27834ec6abde44c05b0ceed596b625b0</Anchor>
                        </Node>
                        <Node>
-                        <Name>render</Name>
+                        <Name>SetTransform</Name>
                         <Path>classhe_1_1_view.html</Path>
-                        <Anchor>a1b99c623e4056631f07dfdbe94d8f62f</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>SetFrame</Name>
-                        <Path>classhe_1_1_view.html</Path>
-                        <Anchor>aac8de95dc8c5e093ba4c69c0d9191312</Anchor>
+                        <Anchor>ae237f7673f48ba14dffdf7dda59fb8a4</Anchor>
                        </Node>
                        <Node>
                         <Name>Update</Name>
                         <Path>classhe_1_1_view.html</Path>
-                        <Anchor>a7f330ef32e846fb486572a9134c7a59c</Anchor>
+                        <Anchor>a084f19eb481688e83bc8a1857e3980c2</Anchor>
                        </Node>
                        <Node>
-                        <Name>update</Name>
+                        <Name>transform_</Name>
                         <Path>classhe_1_1_view.html</Path>
-                        <Anchor>afb9e07fcef0e4dc94c6aab415f450fe8</Anchor>
+                        <Anchor>a6fd41e72fc30379d5fcae57d3dcd1cda</Anchor>
                        </Node>
                       </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>CreateFrame</Name>
+                      <Path>_view_8h.html</Path>
+                      <Anchor>a72d9d7533276c84bf8f7fcc5bc8a140a</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>
@@ -5184,6 +5497,11 @@
                         <Anchor>ae977ca83f8908961b4bfc2cdd9c44acd</Anchor>
                        </Node>
                        <Node>
+                        <Name>Contains</Name>
+                        <Path>classhe_1_1_frame.html</Path>
+                        <Anchor>a968fe87f50d6186a19736008a792f05e</Anchor>
+                       </Node>
+                       <Node>
                         <Name>GetGlobalRect</Name>
                         <Path>classhe_1_1_frame.html</Path>
                         <Anchor>ab30b7377db7fa46ba69b057de96b4002</Anchor>
@@ -5238,7 +5556,7 @@
                      <Node>
                       <Name>CreateLocalFrame</Name>
                       <Path>_frame_8h.html</Path>
-                      <Anchor>a58e2e464b176ea2b3058417d061de29d</Anchor>
+                      <Anchor>a943aeeb0b37402a0681ec6a350184c99</Anchor>
                      </Node>
                      <Node>
                       <Name>operator&lt;&lt;</Name>
@@ -5452,6 +5770,16 @@
                       <Anchor>a5edd506d790a5dd08634895941cd7c60</Anchor>
                      </Node>
                      <Node>
+                      <Name>operator&lt;&lt;</Name>
+                      <Path>_transform_8h.html</Path>
+                      <Anchor>ac00b7dc43b789a77d57d5acefd9ce0e9</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>operator==</Name>
+                      <Path>_transform_8h.html</Path>
+                      <Anchor>a1debabb58bbdb77d6cdf53937c14d1ab</Anchor>
+                     </Node>
+                     <Node>
                       <Name>Transform_Create</Name>
                       <Path>_transform_8h.html</Path>
                       <Anchor>a022384ac5a838f384eefeffbe7f7857b</Anchor>
@@ -5460,6 +5788,11 @@
                       <Name>Transform_Create</Name>
                       <Path>_transform_8h.html</Path>
                       <Anchor>aab432714155803ab1f75441cc3d6c3fd</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>Transform_GetLocalPosition</Name>
+                      <Path>_transform_8h.html</Path>
+                      <Anchor>a4a3f2052766d1e8e6dd09958f8b5ce01</Anchor>
                      </Node>
                      <Node>
                       <Name>Transform_GetMV</Name>

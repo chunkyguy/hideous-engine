@@ -25,8 +25,6 @@ namespace he {
 	class Sprite {
 	public:
 		/**	Construct Sprite.
-		 @note	Use ImageFactory to create sprites in a easy way.
-		 @param frame			The frame.
 		 @param animation_name	The symbol stored on the atlas data file. Only expecting a flash like naming convention for now,
 		 @param shader			The texture-shader.
 		 @param atlas			The atlas

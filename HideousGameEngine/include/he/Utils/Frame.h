@@ -47,7 +47,8 @@ namespace he {
 	};
 
 	/** Create local frame out of the frame 
-	 @param frame The requested frame
+	 @param size The size of the frame
+	 @return The frame in local space.
 	 */
 	Frame CreateLocalFrame(const GLKVector2 &size);
 	

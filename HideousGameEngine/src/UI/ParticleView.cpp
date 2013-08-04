@@ -30,7 +30,7 @@ namespace he{
 	}
 	
 	void ParticleView::Render(){
-		particles_->SetMVP(Transform_GetMVP(&GetTransform()));
+		particles_->SetMVP(Transform_GetMV(&transform_));
 		particles_->Render();
 		
 		View::Render();

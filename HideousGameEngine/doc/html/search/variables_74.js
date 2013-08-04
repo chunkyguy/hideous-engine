@@ -6,5 +6,6 @@ var searchData=
   ['texture_5frect_5f',['texture_rect_',['../classhe_1_1_texture_atlas_region.html#a501d86b12d1b92f25a547e30f7e045a3',1,'he::TextureAtlasRegion']]],
   ['texture_5frotated_5f',['texture_rotated_',['../classhe_1_1_texture_atlas_region.html#acbe20dc1efe079cbbe4dc06eac036abd',1,'he::TextureAtlasRegion']]],
   ['total_5ftexture_5fsize_5f',['total_texture_size_',['../classhe_1_1_texture_atlas_region.html#a83738a9a317326c6bb7e5bb7e4b52a62',1,'he::TextureAtlasRegion']]],
-  ['touch_5fpoint_5f',['touch_point_',['../classhe_1_1_gesture.html#ac2b583a4153b5c575c6f89b24ebd183d',1,'he::Gesture']]]
+  ['touch_5fpoint_5f',['touch_point_',['../classhe_1_1_gesture.html#ac2b583a4153b5c575c6f89b24ebd183d',1,'he::Gesture']]],
+  ['transform_5f',['transform_',['../classhe_1_1_view.html#a6fd41e72fc30379d5fcae57d3dcd1cda',1,'he::View']]]
 ];

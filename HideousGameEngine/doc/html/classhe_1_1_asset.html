@@ -110,8 +110,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae9fe0d7837681fe0ebae279c7276c453"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_asset.html#ae9fe0d7837681fe0ebae279c7276c453">Get</a> () const </td></tr>
 <tr class="separator:ae9fe0d7837681fe0ebae279c7276c453"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad02e4c2c7a058dd2a58a3bb499604e6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_asset.html#ad02e4c2c7a058dd2a58a3bb499604e6a">Set</a> (T *asset, bool clean=false)</td></tr>
+<tr class="memdesc:ad02e4c2c7a058dd2a58a3bb499604e6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Doesn't owns the asset. If any asset is attached and clean flag is set, asset gets overridden.  <a href="#ad02e4c2c7a058dd2a58a3bb499604e6a">More...</a><br/></td></tr>
 <tr class="separator:ad02e4c2c7a058dd2a58a3bb499604e6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a225a4db3053e88fe2b3ec64330fcad92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_asset.html#a225a4db3053e88fe2b3ec64330fcad92">Move</a> (T *asset, bool clean=false)</td></tr>
+<tr class="memdesc:a225a4db3053e88fe2b3ec64330fcad92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Owns the asset. If any asset is attached, and clean flag is set, deletes the asset, and assigns requested asset.  <a href="#a225a4db3053e88fe2b3ec64330fcad92">More...</a><br/></td></tr>
 <tr class="separator:a225a4db3053e88fe2b3ec64330fcad92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -259,6 +261,8 @@ template&lt;typename T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Owns the asset. If any asset is attached, and clean flag is set, deletes the asset, and assigns requested asset. </p>
 <p>Move asset </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -303,6 +307,8 @@ template&lt;typename T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Doesn't owns the asset. If any asset is attached and clean flag is set, asset gets overridden. </p>
 <p>Set asset </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -320,7 +326,7 @@ template&lt;typename T&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 14 2013 10:24:05 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 2 2013 16:56:01 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

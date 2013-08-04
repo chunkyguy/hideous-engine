@@ -136,30 +136,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//  };</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    </div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="classhe_1_1_text.html">   50</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classhe_1_1_text.html" title="This could be different from the passed frome, as it is calculated at run time based on the font size...">Text</a> : <span class="keyword">public</span> <a class="code" href="classhe_1_1_view.html">View</a>{</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="classhe_1_1_text_view.html">   50</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classhe_1_1_text_view.html" title="This could be different from the passed frome, as it is calculated at run time based on the font size...">TextView</a> : <span class="keyword">public</span> <a class="code" href="classhe_1_1_view.html">View</a>{</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="classhe_1_1_text.html#a9b73c3c1a93c482480ca1f13ae30e279">   52</a></span>&#160;        <a class="code" href="classhe_1_1_text.html#a9b73c3c1a93c482480ca1f13ae30e279">Text</a>(<a class="code" href="classhe_1_1_frame.html">Frame</a> frame) : <a class="code" href="classhe_1_1_view.html">View</a>(frame){}</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="code" href="classhe_1_1_text.html#ac5a4b71c27415408bce3b9d1069dc242">   53</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classhe_1_1_text.html#ac5a4b71c27415408bce3b9d1069dc242">~Text</a>(){}</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    };</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    </div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="classhe_1_1_text_factory.html">   57</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classhe_1_1_text_factory.html">TextFactory</a> {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="classhe_1_1_text_factory.html#acca57f1a2d6fc385d2f6b3ccdd23df67">TextFactory</a>(<a class="code" href="classhe_1_1_text_shader.html">TextShader</a> *shdr, <a class="code" href="classhe_1_1_font.html">Font</a> *fnt_m);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="classhe_1_1_text.html" title="This could be different from the passed frome, as it is calculated at run time based on the font size...">Text</a> *<a class="code" href="classhe_1_1_text_factory.html#a043e1a6f0853edfdbe4fe70af69df406">CreateText</a>(<a class="code" href="structhe_1_1_transform.html">Transform</a> transform, std::string <span class="keywordtype">string</span>, GLKVector4 color = GLKVector4Make(0.0f, 0.0f, 0.0f, 1.0f));</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="classhe_1_1_asset.html">Asset&lt;Font&gt;</a> font; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="classhe_1_1_asset.html">Asset&lt;TextShader&gt;</a> shader; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    };</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="classhe_1_1_text_view.html#aae7f9c303a62cad19d934ebcca5b1cbb">TextView</a>(<span class="keyword">const</span> <a class="code" href="structhe_1_1_transform.html">Transform</a> &amp;transform);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_text_view.html#a29553d7a38e5fdcc18715f28b9a3ea95">Update</a>(<span class="keywordtype">float</span> dt);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_text_view.html#a529c81ae5dbaddc4303af58971b5eda4">Render</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">virtual</span> GLKVector2 <a class="code" href="classhe_1_1_text_view.html#a5738dd27a78c7e3e38c2bbd9f934cd85">GetSize</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_text_view.html#a7032bff86090732affa1e38b58b17d70">SetSize</a>(<span class="keyword">const</span> GLKVector2 &amp;size);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        GLKVector2 size_;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    };</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="classhe_1_1_text_view_factory.html">   64</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classhe_1_1_text_view_factory.html">TextViewFactory</a> {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="classhe_1_1_text_view_factory.html#aba8617bd21006e3c1998a3c676292985">TextViewFactory</a>(<a class="code" href="classhe_1_1_text_shader.html">TextShader</a> *shader, <a class="code" href="classhe_1_1_font.html">Font</a> *font_m);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="classhe_1_1_text_view.html" title="This could be different from the passed frome, as it is calculated at run time based on the font size...">TextView</a> *<a class="code" href="classhe_1_1_text_view_factory.html#ab4999e4f0525803afbb762fe7125437b">CreateTextView</a>(<span class="keyword">const</span> <a class="code" href="structhe_1_1_transform.html">Transform</a> &amp;transform, <span class="keyword">const</span> std::string &amp;<span class="keywordtype">string</span>, GLKVector4 color = GLKVector4Make(0.0f, 0.0f, 0.0f, 1.0f));</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="classhe_1_1_asset.html">Asset&lt;Font&gt;</a> font_m_; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="classhe_1_1_asset.html">Asset&lt;TextShader&gt;</a> shader_; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    };</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 14 2013 10:24:05 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 2 2013 16:56:00 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

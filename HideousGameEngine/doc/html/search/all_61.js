@@ -2,7 +2,6 @@ var searchData=
 [
   ['action',['Action',['../classhe_1_1_gesture.html#af12c544c2a15c8de44b281e4f2db31f6',1,'he::Gesture']]],
   ['action_5f',['action_',['../classhe_1_1_gesture.html#abc83e0589fefd117467b1acf412de9ea',1,'he::Gesture']]],
-  ['addchild',['AddChild',['../classhe_1_1_animation.html#ae98f32b897773d0c76e46b900e98d3d3',1,'he::Animation']]],
   ['addlistener',['AddListener',['../classhe_1_1_event_loop.html#a9065c41189d0ef085c86201f81818fb9',1,'he::EventLoop']]],
   ['ahfloat',['AHFloat',['../easing_8h.html#ab9fe3616046a8cb15706399d4de4dbb9',1,'easing.h']]],
   ['animation',['Animation',['../classhe_1_1_animation.html',1,'he']]],
@@ -19,12 +18,15 @@ var searchData=
   ['asset',['Asset',['../classhe_1_1_asset.html',1,'he']]],
   ['asset',['Asset',['../classhe_1_1_asset.html#a353a16ee251c7cc5314c0340490390ff',1,'he::Asset']]],
   ['asset_2eh',['Asset.h',['../_asset_8h.html',1,'']]],
-  ['asset_3c_20he_3a_3acolorshader_20_3e',['Asset&lt; he::ColorShader &gt;',['../classhe_1_1_asset.html',1,'he']]],
   ['asset_3c_20he_3a_3afont_20_3e',['Asset&lt; he::Font &gt;',['../classhe_1_1_asset.html',1,'he']]],
+  ['asset_3c_20he_3a_3aimage_20_3e',['Asset&lt; he::Image &gt;',['../classhe_1_1_asset.html',1,'he']]],
+  ['asset_3c_20he_3a_3aparticlebatch_20_3e',['Asset&lt; he::ParticleBatch &gt;',['../classhe_1_1_asset.html',1,'he']]],
   ['asset_3c_20he_3a_3aparticleshader_20_3e',['Asset&lt; he::ParticleShader &gt;',['../classhe_1_1_asset.html',1,'he']]],
+  ['asset_3c_20he_3a_3asprite_20_3e',['Asset&lt; he::Sprite &gt;',['../classhe_1_1_asset.html',1,'he']]],
   ['asset_3c_20he_3a_3atextshader_20_3e',['Asset&lt; he::TextShader &gt;',['../classhe_1_1_asset.html',1,'he']]],
   ['asset_3c_20he_3a_3atexture_20_3e',['Asset&lt; he::Texture &gt;',['../classhe_1_1_asset.html',1,'he']]],
   ['asset_3c_20he_3a_3atextureatlas_20_3e',['Asset&lt; he::TextureAtlas &gt;',['../classhe_1_1_asset.html',1,'he']]],
   ['asset_3c_20he_3a_3atextureshader_20_3e',['Asset&lt; he::TextureShader &gt;',['../classhe_1_1_asset.html',1,'he']]],
+  ['asset_3c_20he_3a_3atexturevertex_20_3e',['Asset&lt; he::TextureVertex &gt;',['../classhe_1_1_asset.html',1,'he']]],
   ['atlasformat',['AtlasFormat',['../classhe_1_1_texture_atlas.html#a0273278a392e3a0e3440b9da6db44e60',1,'he::TextureAtlas']]]
 ];

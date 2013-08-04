@@ -24,9 +24,11 @@ namespace he {
 	 */
 	class Gradient {
 	public:
-		/** Construct a GradientView.
-			@param vertex_m	The vertex data. Owns it.
-			@param shader	The color shader.
+		/**
+		 *	Construct a GradientView.
+		 *	@param vertex_m	The vertex data. Owns it.
+		 *	@param shader	The color shader.
+		 *	@param size		The size.
 		 */
 		Gradient(const ColorVertex *vertex_m, const ColorShader *shader, const GLKVector2 size);
 		~Gradient();

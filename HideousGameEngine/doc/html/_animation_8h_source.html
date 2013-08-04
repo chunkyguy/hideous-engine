@@ -141,76 +141,55 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00061"></a><span class="lineno"><a class="code" href="classhe_1_1_animation.html">   61</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classhe_1_1_animation.html">Animation</a>{</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="classhe_1_1_animation.html#a77abf74ace18da986bad92b8e9868157">Animation</a>();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="comment">// This could happen under two circumstances:</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="comment">//  1. Natural Death:</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="comment">//  Adds child (if any) to the animation loop and calls the callback.</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="comment">//  Assuming that the callback isn&#39;t going to refer to this animation anymore directly or indirectly.</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="comment">//  2. Suicide:</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="comment">//  Forcibly kills the child (and subsquently the whole family tree) without calling the registered callback (if any)</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classhe_1_1_animation.html#a25e0bfa956820ae868d106e82acf7dff">~Animation</a>();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="comment">//  Nothing to do here, invokes updates on derived class.</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="comment">//  The derived class then updates till it runs out of frames,</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="comment">//  in that case the AnimationLoop kills it naturally.</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_animation.html#a36fcf8ed3f835e6dafce384b3a538e81">Update</a>(<span class="keywordtype">float</span> dt);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="comment">//  Registers a child, to be executed after self is finished.</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="comment">//  Owns it.</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_animation.html#ae98f32b897773d0c76e46b900e98d3d3">AddChild</a>(<a class="code" href="classhe_1_1_animation.html">Animation</a> *child);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="comment">//  Registers a listener. Calls it as soon as the animation finishes (after the child gets active)</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_animation.html#a56ee974621f9eeb5ed8a1de5ce2c0db0">SetListener</a>(<a class="code" href="structhe_1_1_animation_listenable.html">AnimationListenable</a> *listener);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="comment">//  All id are &gt; 0</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="comment">//  Get the animation id associated.</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="classhe_1_1_animation.html#a9544828f102ace474ce4b332943d8bb9">GetID</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="comment">//  Get associated descent id. All parent-child share same descent id.</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="classhe_1_1_animation.html#a1e6b6b23fd3beb8a0618b2a9b67e8e3e">GetDescentID</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="code" href="classhe_1_1_animation.html#a5ec4f04a171ed0ded89028593283b738">   63</a></span>&#160;        <span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code" href="classhe_1_1_animation.html#a5ec4f04a171ed0ded89028593283b738">ID</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="classhe_1_1_animation.html#a77abf74ace18da986bad92b8e9868157">Animation</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classhe_1_1_animation.html#a25e0bfa956820ae868d106e82acf7dff" title="This could happen under two circumstances: ">~Animation</a>();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_animation.html#a36fcf8ed3f835e6dafce384b3a538e81" title="Nothing to do here, invokes updates on derived class. The derived class then updates till it runs out...">Update</a>(<span class="keywordtype">float</span> dt);</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="comment">//  Done = true, means the animation doesn&#39;t wants to live anymore (natural death or suicide)</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="comment">//  Used by AnimationLoop to kick out of the loop.</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classhe_1_1_animation.html#aff73f2ef7157d5e1a71e256d697207d9">Done</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="comment">//  Commits suicide.</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="comment">//  Anyone is free to call this anytime.</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="comment">//  Doesn&#39;t means that memory will be released immediately. It just sets a flag, kicked out of loop by AnimationLoop</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_animation.html#a15a2d511f43c26260c6fa0923f5a07fe">Die</a>();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="comment">//  Never expected to be used from any place else other than the AnimationLoop.</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="comment">//  Points to the next sibling.</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno"><a class="code" href="classhe_1_1_animation.html#ad437ec1660c26525c274fb8a09a60ff8">  103</a></span>&#160;        <a class="code" href="classhe_1_1_animation.html">Animation</a> *<a class="code" href="classhe_1_1_animation.html#ad437ec1660c26525c274fb8a09a60ff8">next_</a>;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="comment">//  Points to the next child in waiting.</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno"><a class="code" href="classhe_1_1_animation.html#a37071694e89069169b0799964013310d">  105</a></span>&#160;        <a class="code" href="classhe_1_1_animation.html">Animation</a> *<a class="code" href="classhe_1_1_animation.html#a37071694e89069169b0799964013310d">child_</a>;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00108"></a><span class="lineno"><a class="code" href="classhe_1_1_animation.html#a5888d347656cb507a56975a9d7edaae9">  108</a></span>&#160;        <span class="keyword">typedef</span> <span class="keyword">enum</span>{<a class="code" href="classhe_1_1_animation.html#a5888d347656cb507a56975a9d7edaae9a320a5aa31326bee58f54fe6e568cb281">kAlive</a>, <a class="code" href="classhe_1_1_animation.html#a5888d347656cb507a56975a9d7edaae9a5201ef5e8e9c3ec0c3308a2ce7ddc9d6">kNaturalDeath</a>, <a class="code" href="classhe_1_1_animation.html#a5888d347656cb507a56975a9d7edaae9a1a0ff48ee9afa90681e2eaa0c542657f">kSuicide</a>} <a class="code" href="classhe_1_1_animation.html#a5888d347656cb507a56975a9d7edaae9">State</a>;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno"><a class="code" href="classhe_1_1_animation.html#a9098d04104805aaa1cc31903b1e0f079">  110</a></span>&#160;        <a class="code" href="classhe_1_1_animation.html#a5888d347656cb507a56975a9d7edaae9">State</a> <a class="code" href="classhe_1_1_animation.html#a9098d04104805aaa1cc31903b1e0f079">state_</a>;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> update(<span class="keywordtype">float</span> dt) = 0;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> id_;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> descent_id_;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <a class="code" href="structhe_1_1_animation_listenable.html">AnimationListenable</a> *listener_;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="comment">//  The id&#39;s are generated from 1 to sizeof(unsigned long). Someday if someone plays for too long, the game will crash.</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="comment">// TODO: Fix this sometime in future.</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> uid;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> d_uid;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    };</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* defined(__HideousGameEngine__Animation__) */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_animation.html#a1ef898ff2a3f8dd727d873b6f67be1e3">MoveChild</a>(<a class="code" href="classhe_1_1_animation.html">Animation</a> *child);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_animation.html#a56ee974621f9eeb5ed8a1de5ce2c0db0">SetListener</a>(<a class="code" href="structhe_1_1_animation_listenable.html">AnimationListenable</a> *listener);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <a class="code" href="classhe_1_1_animation.html#a5ec4f04a171ed0ded89028593283b738">ID</a> <a class="code" href="classhe_1_1_animation.html#a17667002f783da515c7b1427d3421f6c">GetID</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <a class="code" href="classhe_1_1_animation.html#a5ec4f04a171ed0ded89028593283b738">ID</a> <a class="code" href="classhe_1_1_animation.html#a0e238298b99f8e961b629ef63346855d">GetDescentID</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classhe_1_1_animation.html#aff73f2ef7157d5e1a71e256d697207d9" title="Used by AnimationLoop to kick out of the loop. ">Done</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_animation.html#a15a2d511f43c26260c6fa0923f5a07fe" title="Anyone is free to call this anytime. Doesn&#39;t means that memory will be released immediately. It just sets a flag, kicked out of loop by AnimationLoop. ">Die</a>();</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        </div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="code" href="classhe_1_1_animation.html#ad437ec1660c26525c274fb8a09a60ff8">  143</a></span>&#160;        <a class="code" href="classhe_1_1_animation.html">Animation</a> *<a class="code" href="classhe_1_1_animation.html#ad437ec1660c26525c274fb8a09a60ff8">next_</a>;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        </div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="code" href="classhe_1_1_animation.html#a37071694e89069169b0799964013310d">  148</a></span>&#160;        <a class="code" href="classhe_1_1_animation.html">Animation</a> *<a class="code" href="classhe_1_1_animation.html#a37071694e89069169b0799964013310d">child_</a>;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="code" href="classhe_1_1_animation.html#a5888d347656cb507a56975a9d7edaae9">  151</a></span>&#160;        <span class="keyword">typedef</span> <span class="keyword">enum</span>{<a class="code" href="classhe_1_1_animation.html#a5888d347656cb507a56975a9d7edaae9a320a5aa31326bee58f54fe6e568cb281">kAlive</a>, <a class="code" href="classhe_1_1_animation.html#a5888d347656cb507a56975a9d7edaae9a5201ef5e8e9c3ec0c3308a2ce7ddc9d6">kNaturalDeath</a>, <a class="code" href="classhe_1_1_animation.html#a5888d347656cb507a56975a9d7edaae9a1a0ff48ee9afa90681e2eaa0c542657f">kSuicide</a>} <a class="code" href="classhe_1_1_animation.html#a5888d347656cb507a56975a9d7edaae9">State</a>;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="code" href="classhe_1_1_animation.html#a9098d04104805aaa1cc31903b1e0f079">  153</a></span>&#160;        <a class="code" href="classhe_1_1_animation.html#a5888d347656cb507a56975a9d7edaae9">State</a> <a class="code" href="classhe_1_1_animation.html#a9098d04104805aaa1cc31903b1e0f079">state_</a>;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> update(<span class="keywordtype">float</span> dt) = 0;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <a class="code" href="classhe_1_1_animation.html#a5ec4f04a171ed0ded89028593283b738">ID</a> id_;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <a class="code" href="classhe_1_1_animation.html#a5ec4f04a171ed0ded89028593283b738">ID</a> descent_id_;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <a class="code" href="structhe_1_1_animation_listenable.html">AnimationListenable</a> *listener_;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="comment">//  The id&#39;s are generated from 1 to sizeof(unsigned long). Someday if someone plays for too long, the game will crash.</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="comment">// TODO: Fix this sometime in future.</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keyword">static</span> <a class="code" href="classhe_1_1_animation.html#a5ec4f04a171ed0ded89028593283b738">ID</a> uid;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keyword">static</span> <a class="code" href="classhe_1_1_animation.html#a5ec4f04a171ed0ded89028593283b738">ID</a> d_uid;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    };</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    </div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;}</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* defined(__HideousGameEngine__Animation__) */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 14 2013 10:24:04 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 2 2013 16:56:00 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>
