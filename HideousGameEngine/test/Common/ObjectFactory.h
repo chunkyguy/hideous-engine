@@ -20,7 +20,7 @@ namespace he{
 	class Font;
 	class RenderObject;
 	class TextView;
-	class TextViewFactory;
+	class Text;
 	class TextShader;
 	class Texture;
 	class TextureAtlas;
@@ -54,12 +54,13 @@ private:
 class TextObj{
 public:
 	~TextObj();
-	TextObj(he::TextViewFactory *factory);
+	TextObj(he::Font *font, he::TextShader *shader);
 	void Update(float dt);
 	void Render();
 	
 private:
-	he::TextView *text_;
+	he::Text *text_;
+	he::TextView *text_vw_;
 };
 
 class ObjectFactory{
@@ -83,7 +84,7 @@ private:
 	he::TextureShader *tex_sh_;
 	
 	// text obj
-	he::TextViewFactory *txt_factory_;
+	he::Font *font_;
 	he::TextShader *txt_sh_;
 };
 

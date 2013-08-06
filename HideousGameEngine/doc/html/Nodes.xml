@@ -1745,13 +1745,59 @@
               </Subnodes>
              </Node>
              <Node>
+              <Name>Text</Name>
+              <Path>classhe_1_1_text.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>Text</Name>
+                <Path>classhe_1_1_text.html</Path>
+                <Anchor>a7d849f47b441c88a12098dd514e951fb</Anchor>
+               </Node>
+               <Node>
+                <Name>~Text</Name>
+                <Path>classhe_1_1_text.html</Path>
+                <Anchor>af27b4a6744e800bf53b098c7d55d262b</Anchor>
+               </Node>
+               <Node>
+                <Name>CreateGlyph</Name>
+                <Path>classhe_1_1_text.html</Path>
+                <Anchor>a99519cd2ef807f40d5bdedab4f6eca74</Anchor>
+               </Node>
+               <Node>
+                <Name>GetGlyphSize</Name>
+                <Path>classhe_1_1_text.html</Path>
+                <Anchor>a2b7be05e5297d95b3954b669390d5271</Anchor>
+               </Node>
+               <Node>
+                <Name>GetGlyphTransform</Name>
+                <Path>classhe_1_1_text.html</Path>
+                <Anchor>a79d4c5731d712f1dd82171734bf291a0</Anchor>
+               </Node>
+               <Node>
+                <Name>GetLength</Name>
+                <Path>classhe_1_1_text.html</Path>
+                <Anchor>a78605523e754661940f18d39bc4c4f5c</Anchor>
+               </Node>
+               <Node>
+                <Name>GetSize</Name>
+                <Path>classhe_1_1_text.html</Path>
+                <Anchor>aa0f88661d50774916ceaf9e3312d0b48</Anchor>
+               </Node>
+               <Node>
+                <Name>SetString</Name>
+                <Path>classhe_1_1_text.html</Path>
+                <Anchor>a4abf02e62d949f55ee8e7e32e1422c2c</Anchor>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
               <Name>TextView</Name>
               <Path>classhe_1_1_text_view.html</Path>
               <Subnodes>
                <Node>
                 <Name>TextView</Name>
                 <Path>classhe_1_1_text_view.html</Path>
-                <Anchor>aae7f9c303a62cad19d934ebcca5b1cbb</Anchor>
+                <Anchor>ac25658eccf3a00679bd72ae281327614</Anchor>
                </Node>
                <Node>
                 <Name>GetSize</Name>
@@ -1764,30 +1810,9 @@
                 <Anchor>a529c81ae5dbaddc4303af58971b5eda4</Anchor>
                </Node>
                <Node>
-                <Name>SetSize</Name>
-                <Path>classhe_1_1_text_view.html</Path>
-                <Anchor>a7032bff86090732affa1e38b58b17d70</Anchor>
-               </Node>
-               <Node>
                 <Name>Update</Name>
                 <Path>classhe_1_1_text_view.html</Path>
                 <Anchor>a29553d7a38e5fdcc18715f28b9a3ea95</Anchor>
-               </Node>
-              </Subnodes>
-             </Node>
-             <Node>
-              <Name>TextViewFactory</Name>
-              <Path>classhe_1_1_text_view_factory.html</Path>
-              <Subnodes>
-               <Node>
-                <Name>TextViewFactory</Name>
-                <Path>classhe_1_1_text_view_factory.html</Path>
-                <Anchor>aba8617bd21006e3c1998a3c676292985</Anchor>
-               </Node>
-               <Node>
-                <Name>CreateTextView</Name>
-                <Path>classhe_1_1_text_view_factory.html</Path>
-                <Anchor>ab4999e4f0525803afbb762fe7125437b</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -2398,10 +2423,6 @@
             <Path>classhe_1_1_asset.html</Path>
            </Node>
            <Node>
-            <Name>he::Asset&lt; he::Font &gt;</Name>
-            <Path>classhe_1_1_asset.html</Path>
-           </Node>
-           <Node>
             <Name>he::Asset&lt; he::Image &gt;</Name>
             <Path>classhe_1_1_asset.html</Path>
            </Node>
@@ -2415,10 +2436,6 @@
            </Node>
            <Node>
             <Name>he::Asset&lt; he::Sprite &gt;</Name>
-            <Path>classhe_1_1_asset.html</Path>
-           </Node>
-           <Node>
-            <Name>he::Asset&lt; he::TextShader &gt;</Name>
             <Path>classhe_1_1_asset.html</Path>
            </Node>
            <Node>
@@ -2644,6 +2661,10 @@
             <Path>classhe_1_1_sprite.html</Path>
            </Node>
            <Node>
+            <Name>he::Text</Name>
+            <Path>classhe_1_1_text.html</Path>
+           </Node>
+           <Node>
             <Name>he::Texture</Name>
             <Path>classhe_1_1_texture.html</Path>
            </Node>
@@ -2672,10 +2693,6 @@
            <Node>
             <Name>he::TextureData</Name>
             <Path>classhe_1_1_texture_data.html</Path>
-           </Node>
-           <Node>
-            <Name>he::TextViewFactory</Name>
-            <Path>classhe_1_1_text_view_factory.html</Path>
            </Node>
            <Node>
             <Name>he::Transform</Name>
@@ -5190,13 +5207,59 @@
                     <Path>_text_8h.html</Path>
                     <Subnodes>
                      <Node>
+                      <Name>Text</Name>
+                      <Path>classhe_1_1_text.html</Path>
+                      <Subnodes>
+                       <Node>
+                        <Name>Text</Name>
+                        <Path>classhe_1_1_text.html</Path>
+                        <Anchor>a7d849f47b441c88a12098dd514e951fb</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>~Text</Name>
+                        <Path>classhe_1_1_text.html</Path>
+                        <Anchor>af27b4a6744e800bf53b098c7d55d262b</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>CreateGlyph</Name>
+                        <Path>classhe_1_1_text.html</Path>
+                        <Anchor>a99519cd2ef807f40d5bdedab4f6eca74</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>GetGlyphSize</Name>
+                        <Path>classhe_1_1_text.html</Path>
+                        <Anchor>a2b7be05e5297d95b3954b669390d5271</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>GetGlyphTransform</Name>
+                        <Path>classhe_1_1_text.html</Path>
+                        <Anchor>a79d4c5731d712f1dd82171734bf291a0</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>GetLength</Name>
+                        <Path>classhe_1_1_text.html</Path>
+                        <Anchor>a78605523e754661940f18d39bc4c4f5c</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>GetSize</Name>
+                        <Path>classhe_1_1_text.html</Path>
+                        <Anchor>aa0f88661d50774916ceaf9e3312d0b48</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>SetString</Name>
+                        <Path>classhe_1_1_text.html</Path>
+                        <Anchor>a4abf02e62d949f55ee8e7e32e1422c2c</Anchor>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                     <Node>
                       <Name>TextView</Name>
                       <Path>classhe_1_1_text_view.html</Path>
                       <Subnodes>
                        <Node>
                         <Name>TextView</Name>
                         <Path>classhe_1_1_text_view.html</Path>
-                        <Anchor>aae7f9c303a62cad19d934ebcca5b1cbb</Anchor>
+                        <Anchor>ac25658eccf3a00679bd72ae281327614</Anchor>
                        </Node>
                        <Node>
                         <Name>GetSize</Name>
@@ -5209,30 +5272,9 @@
                         <Anchor>a529c81ae5dbaddc4303af58971b5eda4</Anchor>
                        </Node>
                        <Node>
-                        <Name>SetSize</Name>
-                        <Path>classhe_1_1_text_view.html</Path>
-                        <Anchor>a7032bff86090732affa1e38b58b17d70</Anchor>
-                       </Node>
-                       <Node>
                         <Name>Update</Name>
                         <Path>classhe_1_1_text_view.html</Path>
                         <Anchor>a29553d7a38e5fdcc18715f28b9a3ea95</Anchor>
-                       </Node>
-                      </Subnodes>
-                     </Node>
-                     <Node>
-                      <Name>TextViewFactory</Name>
-                      <Path>classhe_1_1_text_view_factory.html</Path>
-                      <Subnodes>
-                       <Node>
-                        <Name>TextViewFactory</Name>
-                        <Path>classhe_1_1_text_view_factory.html</Path>
-                        <Anchor>aba8617bd21006e3c1998a3c676292985</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>CreateTextView</Name>
-                        <Path>classhe_1_1_text_view_factory.html</Path>
-                        <Anchor>ab4999e4f0525803afbb762fe7125437b</Anchor>
                        </Node>
                       </Subnodes>
                      </Node>

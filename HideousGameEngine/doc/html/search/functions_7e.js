@@ -30,6 +30,7 @@ var searchData=
   ['_7esprite',['~Sprite',['../classhe_1_1_sprite.html#a0c45a0978d0f73e1d9defc17e2252d9b',1,'he::Sprite']]],
   ['_7espriteanimation',['~SpriteAnimation',['../classhe_1_1_sprite_animation.html#a7fcdede68f9af24db1b79adf607787b8',1,'he::SpriteAnimation']]],
   ['_7estarlingdataparser',['~StarlingDataParser',['../classhe_1_1_starling_data_parser.html#abd809ec9bba95578687a1ac8f88383e7',1,'he::StarlingDataParser']]],
+  ['_7etext',['~Text',['../classhe_1_1_text.html#af27b4a6744e800bf53b098c7d55d262b',1,'he::Text']]],
   ['_7etextshader',['~TextShader',['../classhe_1_1_text_shader.html#a7ca5ba545ed3a92e2e2d9b17be3377ac',1,'he::TextShader']]],
   ['_7etexture',['~Texture',['../classhe_1_1_texture.html#a470e164a5b4a32d6d190991175b99531',1,'he::Texture']]],
   ['_7etextureatlas',['~TextureAtlas',['../classhe_1_1_texture_atlas.html#a6d86705aca952dae1e1c50448c887e5b',1,'he::TextureAtlas']]],

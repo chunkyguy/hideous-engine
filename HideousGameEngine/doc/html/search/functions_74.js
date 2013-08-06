@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['text',['Text',['../classhe_1_1_text.html#a7d849f47b441c88a12098dd514e951fb',1,'he::Text']]],
   ['textshader',['TextShader',['../classhe_1_1_text_shader.html#ae1fcc22012b21d7e828e9bc4a47a6327',1,'he::TextShader']]],
   ['texture',['Texture',['../classhe_1_1_texture.html#aea115b36ae2e5d140d9bdbaea2ae255e',1,'he::Texture::Texture(std::string path, GLint align=4)'],['../classhe_1_1_texture.html#a80952c9b985a1241594b08f654ec0eb4',1,'he::Texture::Texture(std::string path, GLubyte *data, GLKVector2 size, GLint align=4)'],['../classhe_1_1_texture.html#ab8c1fc7359d322356ed8833470735082',1,'he::Texture::Texture(Texture *texture)']]],
   ['textureatlas',['TextureAtlas',['../classhe_1_1_texture_atlas.html#a3f6e0e4d631d52185b214ef48697d601',1,'he::TextureAtlas']]],
@@ -7,8 +8,7 @@ var searchData=
   ['texturedata',['TextureData',['../classhe_1_1_texture_data.html#a8c9ae7addab83805b16181c8af27180f',1,'he::TextureData']]],
   ['textureshader',['TextureShader',['../classhe_1_1_texture_shader.html#aa59ce6f924a0941589c2c419487d5056',1,'he::TextureShader']]],
   ['texturevertex',['TextureVertex',['../classhe_1_1_texture_vertex.html#ab519398dbd766ffb0b459a843b334c08',1,'he::TextureVertex::TextureVertex(const GLKVector2 &amp;size, const bool aspect_lock=true, const GLKVector4 texture_coords=GLKVector4Make(0, 0, 1, 1))'],['../classhe_1_1_texture_vertex.html#a473b03796084a1369c7f86a55c0a27ee',1,'he::TextureVertex::TextureVertex(const Vertex::V2 &amp;position_data, const Vertex::V2 &amp;texture_data)'],['../classhe_1_1_texture_vertex.html#a6d04dc17c1c0d705a2ad681c2f4dd26b',1,'he::TextureVertex::TextureVertex(const TextureAtlasRegion &amp;region, const bool aspect_lock=false, GLKVector2 size=GLKVector2Make(-1,-1))']]],
-  ['textview',['TextView',['../classhe_1_1_text_view.html#aae7f9c303a62cad19d934ebcca5b1cbb',1,'he::TextView']]],
-  ['textviewfactory',['TextViewFactory',['../classhe_1_1_text_view_factory.html#aba8617bd21006e3c1998a3c676292985',1,'he::TextViewFactory']]],
+  ['textview',['TextView',['../classhe_1_1_text_view.html#ac25658eccf3a00679bd72ae281327614',1,'he::TextView']]],
   ['tostring',['ToString',['../class_debug_log.html#a7495b928469b05f946954a51398ba6b8',1,'DebugLog']]],
   ['touches_3aaction_3awithevent_3a',['touches:action:withEvent:',['../interface_gesture_collector.html#a2d67bab9872e5ce0799d7fc833ae7ddb',1,'GestureCollector']]],
   ['transform_5fcreate',['Transform_Create',['../namespacehe.html#a022384ac5a838f384eefeffbe7f7857b',1,'he::Transform_Create(const GLKVector3 position, const GLKVector4 rotation=GLKVector4Make(0.0f, 0.0f, 1.0f, 0.0f), const GLKVector3 scale=GLKVector3Make(1.0f, 1.0f, 1.0f), const Transform *parent=nullptr)'],['../namespacehe.html#aab432714155803ab1f75441cc3d6c3fd',1,'he::Transform_Create(const GLKVector2 position, const GLKVector4 rotation=GLKVector4Make(0.0f, 0.0f, 1.0f, 0.0f), const GLKVector3 scale=GLKVector3Make(1.0f, 1.0f, 1.0f), const Transform *parent=nullptr)']]],

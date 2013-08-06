@@ -27,8 +27,9 @@ namespace he{
 
 	class Gradient;
 	
+	class Text;
 	class TextShader;
-	class TextViewFactory;
+	class Font;
 	
 	class ParticleShader;
 	class ParticleViewFactory;
@@ -66,7 +67,8 @@ private:
 	he::Asset<he::ButtonListener<UITest> > btn_listener_;
 	
 	he::Asset<he::TextShader> txt_shader_;
-	he::Asset<he::TextViewFactory> txt_factory_;
+	he::Asset<he::Font> font_;
+	he::Asset<he::Text> text_;
 	
 	he::Asset<he::Gradient> gr_mono_;
 	he::Asset<he::Gradient> gr_dual_;

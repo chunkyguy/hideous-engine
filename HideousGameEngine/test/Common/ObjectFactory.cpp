@@ -40,7 +40,7 @@ TextureObj *ObjectFactory::CreateTexturedObject(){
 	return new TextureObj(tex_sh_, texture_, vert_);
 }
 TextObj *ObjectFactory::CreateTextObject(){
-	return new TextObj(txt_factory_);
+	return new TextObj(font_, txt_sh_);
 }
 
 void ObjectFactory::load_assets(){
@@ -55,7 +55,7 @@ void ObjectFactory::load_assets(){
 	
 	// text obj
 	txt_sh_ = new he::TextShader;
-	txt_factory_ = new he::TextViewFactory(txt_sh_,new he::Font(he::ResourcePath() + "Silom.ttf", 48));
+	font_ = new he::Font(he::ResourcePath() + "Silom.ttf", 48);
 }
 void ObjectFactory::unload_assets(){
 	delete col_sh_;
@@ -66,7 +66,7 @@ void ObjectFactory::unload_assets(){
 	delete tex_sh_;
 	
 	delete txt_sh_;
-	delete txt_factory_;
+	delete font_;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -115,13 +115,14 @@ TextObj::~TextObj(){
 	delete text_;
 }
 
-TextObj::TextObj(he::TextViewFactory *factory){
-	text_ = factory->CreateTextView(he::Transform_Create(GLKVector2Make(he::Randf()*he::g_Screen->width_ - he::g_Screen->width_/2, he::Randf()*he::g_Screen->height_ - he::g_Screen->height_/2)), "WhackyLabs");
+TextObj::TextObj(he::Font *font, he::TextShader *shader){
+	text_ = new he::Text(shader, font, "WhackyLabs");
+	text_vw_ = new he::TextView(he::Transform_Create(GLKVector2Make(he::Randf()*he::g_Screen->width_ - he::g_Screen->width_/2, he::Randf()*he::g_Screen->height_ - he::g_Screen->height_/2)), text_);
 }
 void TextObj::Update(float dt){
-	text_->Update(dt);
+	text_vw_->Update(dt);
 }
 void TextObj::Render(){
-	text_->Render();
+	text_vw_->Render();
 }
 //EOF

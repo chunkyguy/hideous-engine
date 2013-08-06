@@ -11,13 +11,35 @@
 #include <he/Main/HideousGame.h>
 
 #include <he/EventLoop/Gesture.h>
+#include <he/Utils/Transform.h>
+#include <he/UI/View.h>
 
 namespace he{
 	class Font;
+	class Text;
 	class TextView;
-	class TextViewFactory;
 	class TextShader;
 }
+
+class AnimatedTextView : public he::View {
+public:
+	AnimatedTextView(const he::Transform &transform, he::TextShader *shader, he::Font *font,
+					 const std::string &string, GLKVector4 color = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f));
+	virtual ~AnimatedTextView();
+	virtual void Update(float dt);
+	virtual void Render();
+	virtual GLKVector2 GetSize() const;
+	
+private:
+	void update_string();
+	
+	he::TextView *txt_vw_;
+	he::Text *text_;
+	std::string string_;
+	float clock_;
+	unsigned int length_;
+	GLKVector4 color_;
+};
 
 class RectTextTest : public he::Game{
 public:
@@ -33,12 +55,16 @@ private:
 	void load_text();
 	void unload_text();
 
-	he::TextView *text_small_;
-	he::TextView *text_caps_;
-	he::TextView *text_nums_;
-	he::TextView *text_sp_;
-	he::TextViewFactory *factory_;
+	he::Text *text_small_;
+	he::Text *text_caps_;
+	he::Text *text_nums_;
+	he::Text *text_sp_;
+//	he::TextViewFactory *factory_;
+	he::Font *font_;
+	he::View *view_;
 	he::TextShader *shader_;
 	he::GestureListener<RectTextTest> *gesture_listener_;
+	
+	AnimatedTextView *anim_txt_vw_;
 };
 #endif /* defined(__HideousGameEngine__RectTextTest__) */

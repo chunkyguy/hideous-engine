@@ -29,7 +29,7 @@
 //Enable only one of these
 //#define TEST_RECT_COLOR
 //#define TEST_RECT_TEXTURE
-//#define TEST_RECT_TEXT
+#define TEST_RECT_TEXT
 //#define TEST_MULTI_SHADERS
 //#define TEST_MULTI_FONT
 //#define TEST_ANIMATION
@@ -40,7 +40,7 @@
 //#define TEST_SPINE
 //#define TEST_FLASH
 //#define TEST_TRANSFORM
-#define TEST_SPRITE
+//#define TEST_SPRITE
 
 template <typename T>
 T* AllocGameInstance(){

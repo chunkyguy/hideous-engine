@@ -25,8 +25,8 @@ MultiFontTest::~MultiFontTest(){
 }
 
 MultiFontTest::MultiFontTest() :
-courier_factory_(nullptr),
-simsun_factory_(nullptr),
+courier_(nullptr),
+simsun_(nullptr),
 whacky_(nullptr),
 labs_(nullptr),
 gesture_listner_(nullptr),
@@ -68,22 +68,29 @@ void MultiFontTest::render(){
 }
 
 void MultiFontTest::load_text(){
-	if(courier_factory_){
+	if(courier_){
 		unload_text();
 	}
 
 	
-	courier_factory_ = new he::TextViewFactory(shader_, new he::Font(he::ResourcePath() + "Courier New.ttf", 32));
-	simsun_factory_ = new he::TextViewFactory(shader_, new he::Font(he::ResourcePath() + "SimSun.ttf", 32));
+	courier_ = new he::Font(he::ResourcePath() + "Courier New.ttf", 32);
+	simsun_ = new he::Font(he::ResourcePath() + "SimSun.ttf", 32);
 	
-	whacky_ = simsun_factory_->CreateTextView(he::Transform_Create(GLKVector2Make(-100.0f, 100.0f)), "Whacky");
-	labs_ = courier_factory_->CreateTextView(he::Transform_Create(GLKVector2Make(-100.0f, -100.0f)), "Labs");
+	whacky_txt_ = new he::Text(shader_, courier_, "Whacky");
+	whacky_ = new he::TextView(he::Transform_Create(GLKVector2Make(-100.0f, 100.0f)), whacky_txt_);
+
+	labs_txt_ = new he::Text(shader_, simsun_, "Labs");
+	labs_ = new he::TextView(he::Transform_Create(GLKVector2Make(-100.0f, -100.0f)), labs_txt_);
 }
 
 void MultiFontTest::unload_text(){
-	delete courier_factory_; courier_factory_ = 0;
-	delete simsun_factory_; simsun_factory_ = 0;
+	delete courier_; courier_ = 0;
+	delete simsun_; simsun_ = 0;
+	
+	delete whacky_txt_; whacky_txt_ = 0;
 	delete whacky_; whacky_ = 0;
+
+	delete labs_txt_; labs_txt_= 0;
 	delete labs_; labs_ = 0;
 }
 

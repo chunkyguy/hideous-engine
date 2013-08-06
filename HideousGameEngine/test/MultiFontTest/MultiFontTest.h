@@ -15,7 +15,7 @@
 namespace he{
 	class Font;
 	class TextView;
-	class TextViewFactory;
+	class Text;
 	class TextShader;
 };
 
@@ -30,10 +30,13 @@ private:
 	virtual void update(float dt);
 	virtual void render();
 
-	he::TextViewFactory *courier_factory_;
-	he::TextViewFactory *simsun_factory_;
-	
+	he::Font *courier_;
+	he::Font *simsun_;
+
+	he::Text *whacky_txt_;
 	he::TextView *whacky_;
+	
+	he::Text *labs_txt_;
 	he::TextView *labs_;
 
 	he::TextShader *shader_;

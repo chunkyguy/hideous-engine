@@ -100,11 +100,11 @@ void UITest::init(){
 
 	//text factory
 	txt_shader_.Move( new he::TextShader, false);
-	txt_factory_.Move(new he::TextViewFactory(txt_shader_.Get(), new he::Font(he::ResourcePath() + "Silom.ttf", 48)));
+	font_.Move(new he::Font(he::ResourcePath() + "Silom.ttf", 48));
 	
 	//text view
-	he::TextView *txt = txt_factory_.Get()->CreateTextView(he::Transform_Create(GLKVector3Make(0.0, 0.0, 0.0)), "hello");
-	view_->MoveSubview(txt);
+	text_.Move(new he::Text(txt_shader_.Get(), font_.Get(), "hello"));
+	view_->MoveSubview(new he::TextView(he::Transform_Create(GLKVector3Make(0.0, 0.0, 0.0)), text_.Get()));
 
 	//gradient shader
 	clr_sh_.Move(new he::ColorShader, false);

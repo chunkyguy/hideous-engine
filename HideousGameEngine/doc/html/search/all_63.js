@@ -20,12 +20,12 @@ var searchData=
   ['createframe',['CreateFrame',['../namespacehe.html#a72d9d7533276c84bf8f7fcc5bc8a140a',1,'he']]],
   ['creategame',['CreateGame',['../classhe_1_1_game_config.html#a5278d1d1d8cb035297846733b15612bc',1,'he::GameConfig']]],
   ['creategesturelistener',['CreateGestureListener',['../namespacehe.html#a1677414e560656feec0abb2249ca2fa0',1,'he']]],
+  ['createglyph',['CreateGlyph',['../classhe_1_1_text.html#a99519cd2ef807f40d5bdedab4f6eca74',1,'he::Text']]],
   ['createimageview',['CreateImageView',['../classhe_1_1_image_view_factory.html#a4d0b6b783af5635abef79cc613a10d39',1,'he::ImageViewFactory::CreateImageView(Transform &amp;transform)'],['../classhe_1_1_image_view_factory.html#a85c46f9a21f5c08d10974703378f1b3f',1,'he::ImageViewFactory::CreateImageView(Transform &amp;transform, const std::string &amp;region_name)']]],
   ['createlocalframe',['CreateLocalFrame',['../namespacehe.html#a943aeeb0b37402a0681ec6a350184c99',1,'he']]],
   ['createparticleview',['CreateParticleView',['../classhe_1_1_particle_view_factory.html#acf9314eabd88955184b0efc2d5bd7b5d',1,'he::ParticleViewFactory']]],
   ['createspriteview',['CreateSpriteView',['../classhe_1_1_image_view_factory.html#a22303e188cd03814fa62ba8c7751013c',1,'he::ImageViewFactory']]],
   ['createtexturedata',['CreateTextureData',['../namespacehe.html#aeb4bf8c0bd33277ad582045ca1ea48b9',1,'he']]],
-  ['createtextview',['CreateTextView',['../classhe_1_1_text_view_factory.html#ab4999e4f0525803afbb762fe7125437b',1,'he::TextViewFactory']]],
   ['cubiceasein',['CubicEaseIn',['../namespacehe.html#a4f26de4e81f76720b83ef687287666fb',1,'he']]],
   ['cubiceaseinout',['CubicEaseInOut',['../namespacehe.html#aed1492cc201c87416eac4d8a08d6107d',1,'he']]],
   ['cubiceaseout',['CubicEaseOut',['../namespacehe.html#a8c8217fc3b53bba4fca2bc9addd79750',1,'he']]]

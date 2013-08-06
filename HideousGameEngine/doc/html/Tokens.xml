@@ -6478,13 +6478,110 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>he::Text</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>he::Text</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_text.html</Path>
+    <DeclaredIn>Text.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Text</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Text</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_text.html</Path>
+    <Anchor>a7d849f47b441c88a12098dd514e951fb</Anchor>
+    <DeclaredIn>Text.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~Text</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Text</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_text.html</Path>
+    <Anchor>af27b4a6744e800bf53b098c7d55d262b</Anchor>
+    <DeclaredIn>Text.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SetString</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Text</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_text.html</Path>
+    <Anchor>a4abf02e62d949f55ee8e7e32e1422c2c</Anchor>
+    <DeclaredIn>Text.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetSize</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Text</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_text.html</Path>
+    <Anchor>aa0f88661d50774916ceaf9e3312d0b48</Anchor>
+    <DeclaredIn>Text.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetLength</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Text</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_text.html</Path>
+    <Anchor>a78605523e754661940f18d39bc4c4f5c</Anchor>
+    <DeclaredIn>Text.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetGlyphTransform</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Text</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_text.html</Path>
+    <Anchor>a79d4c5731d712f1dd82171734bf291a0</Anchor>
+    <DeclaredIn>Text.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetGlyphSize</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Text</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_text.html</Path>
+    <Anchor>a2b7be05e5297d95b3954b669390d5271</Anchor>
+    <DeclaredIn>Text.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CreateGlyph</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Text</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_text.html</Path>
+    <Anchor>a99519cd2ef807f40d5bdedab4f6eca74</Anchor>
+    <DeclaredIn>Text.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>he::TextView</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
       <Scope>he::TextView</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_text_view.html</Path>
-    <Abstract>This could be different from the passed frome, as it is calculated at run time based on the font size...</Abstract>
     <DeclaredIn>Text.h</DeclaredIn>
   </Token>
   <Token>
@@ -6495,7 +6592,7 @@
       <Scope>he::TextView</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_text_view.html</Path>
-    <Anchor>aae7f9c303a62cad19d934ebcca5b1cbb</Anchor>
+    <Anchor>ac25658eccf3a00679bd72ae281327614</Anchor>
     <DeclaredIn>Text.h</DeclaredIn>
   </Token>
   <Token>
@@ -6529,17 +6626,6 @@
     </TokenIdentifier>
     <Path>classhe_1_1_text_view.html</Path>
     <Anchor>a5738dd27a78c7e3e38c2bbd9f934cd85</Anchor>
-    <DeclaredIn>Text.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>SetSize</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>he::TextView</Scope>
-    </TokenIdentifier>
-    <Path>classhe_1_1_text_view.html</Path>
-    <Anchor>a7032bff86090732affa1e38b58b17d70</Anchor>
     <DeclaredIn>Text.h</DeclaredIn>
   </Token>
   <Token>
@@ -6617,38 +6703,6 @@
     </TokenIdentifier>
     <Path>classhe_1_1_view.html</Path>
     <Anchor>a6fd41e72fc30379d5fcae57d3dcd1cda</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>he::TextViewFactory</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>he::TextViewFactory</Scope>
-    </TokenIdentifier>
-    <Path>classhe_1_1_text_view_factory.html</Path>
-    <DeclaredIn>Text.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>TextViewFactory</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>he::TextViewFactory</Scope>
-    </TokenIdentifier>
-    <Path>classhe_1_1_text_view_factory.html</Path>
-    <Anchor>aba8617bd21006e3c1998a3c676292985</Anchor>
-    <DeclaredIn>Text.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>CreateTextView</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>he::TextViewFactory</Scope>
-    </TokenIdentifier>
-    <Path>classhe_1_1_text_view_factory.html</Path>
-    <Anchor>ab4999e4f0525803afbb762fe7125437b</Anchor>
-    <DeclaredIn>Text.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
