@@ -30,7 +30,8 @@ text_small_(nullptr),
 text_caps_(nullptr),
 text_nums_(nullptr),
 text_sp_(nullptr),
-gesture_listener_(nullptr)
+gesture_listener_(nullptr),
+view_(nullptr)
 {}
 
 void RectTextTest::init(){
