@@ -27,9 +27,15 @@ namespace he {
 		}
 	}
 	
-	void EndAnimationsWithID(EndAnimationFunctor::IDType type, Animation::ID ID){
-		g_AnimationLoop->TraverseAnimations(EndAnimationFunctor(type, ID));
+	namespace animation {
+
+		void EndAnimationsWithID(EndAnimationFunctor::IDType type, Animation::ID ID){
+			g_AnimationLoop->TraverseAnimations(EndAnimationFunctor(type, ID));
+		}
+		
+		unsigned int GetFramesInDuration(float duration, float fps) {
+			return static_cast<unsigned int>( duration * fps );
+		}
 	}
-	
 	
 }

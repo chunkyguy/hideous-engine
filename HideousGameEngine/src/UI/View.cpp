@@ -10,8 +10,8 @@
 
 namespace he {
 	View::View(const Transform &transform) :
-	add_to_(nullptr),
 	head_(nullptr),
+	tail_(nullptr),
 	next_(nullptr),
 	transform_(transform)
 	{}
@@ -50,23 +50,29 @@ namespace he {
 	/** Owns the passed component */
 	View *View::MoveSubview(View *view){
 		if(!head_){
-			head_ = add_to_ = view;
+			head_ = tail_ = view;
 		}else{
-			add_to_->next_ = view;
-			add_to_ = view;
+			tail_->next_ = view;
+			tail_ = view;
 		}
 		view->transform_.parent = &transform_;
 		return view;
 	}
 	
 	void View::RemoveSubview(View *view){
-		View *p = nullptr;
 		if(view == head_){
 			head_ = head_->next_;
+			if (view == tail_) {		// if only one node exists. Adjust the tail_ too.
+				tail_ = head_;
+			}
 		}else{
+			View *p = nullptr;
 			for(p = head_; p->next_ != view; p = p->next_){
 			}
 			p->next_ = view->next_;
+			if (view == tail_) {	// if deleting the last node. Move tail_ one step back.
+				tail_ = p;
+			}
 		}
 		delete view;
 		view = nullptr;

@@ -58,8 +58,8 @@ namespace he {
 			Transform transform_; /**< The frame of the view */
 
 		private:
-			View *add_to_;	/**< Next Submit adds to this node. */
-			View *head_;	/**< The head pointer to the first child UIComponent. Starts drawing from here */
+			View *head_;		/**< The head pointer to the first child UIComponent. Starts drawing from here */
+			View *tail_;	/**< Next Submit adds to this node. */
 			View *next_;	/**< Points to the next sibling UIComponent */
 	};
 

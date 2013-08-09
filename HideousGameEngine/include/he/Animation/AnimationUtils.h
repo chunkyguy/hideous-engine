@@ -29,7 +29,10 @@ namespace he {
 		IDType type_;
 	};
 
-	void EndAnimationsWithID(EndAnimationFunctor::IDType type, Animation::ID ID);
+	namespace animation {
+		void EndAnimationsWithID(EndAnimationFunctor::IDType type, Animation::ID ID);
+		unsigned int GetFramesInDuration(float duration, float fps);
+	}
 
 }
 
