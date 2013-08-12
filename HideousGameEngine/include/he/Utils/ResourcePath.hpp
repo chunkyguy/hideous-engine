@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////
 //
 // SFML - Simple and Fast Multimedia Library
-// Copyright (C) 2007-2012 Marco Antognini (antognini.marco@gmail.com), 
-//                         Laurent Gomila (laurent.gom@gmail.com), 
+// Copyright (C) 2007-2012 Marco Antognini (antognini.marco@gmail.com),
+//                         Laurent Gomila (laurent.gom@gmail.com),
 //
 // This software is provided 'as-is', without any express or implied warranty.
 // In no event will the authors be held liable for any damages arising from the use of this software.
@@ -23,6 +23,10 @@
 //
 ////////////////////////////////////////////////////////////
 
+/*****************************************************************************************************************************************
+*	Code additions by Sidharth Juyal.
+ *****************************************************************************************************************************************/
+
 #ifndef RESOURCE_PATH_HPP
 #define RESOURCE_PATH_HPP
 
@@ -39,9 +43,8 @@
 ///
 ////////////////////////////////////////////////////////////
 namespace he{
-	
 
-std::string ResourcePath(void);
-
+	std::string ResourcePath(void);
+	std::string DocumentsPath(void);
 }
 #endif

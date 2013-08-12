@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////
 //
 // SFML - Simple and Fast Multimedia Library
-// Copyright (C) 2007-2012 Marco Antognini (antognini.marco@gmail.com), 
-//                         Laurent Gomila (laurent.gom@gmail.com), 
+// Copyright (C) 2007-2012 Marco Antognini (antognini.marco@gmail.com),
+//                         Laurent Gomila (laurent.gom@gmail.com),
 //
 // This software is provided 'as-is', without any express or implied warranty.
 // In no event will the authors be held liable for any damages arising from the use of this software.
@@ -23,6 +23,10 @@
 //
 ////////////////////////////////////////////////////////////
 
+/*****************************************************************************************************************************************
+ *	Code additions by Sidharth Juyal.
+ *****************************************************************************************************************************************/
+
 ////////////////////////////////////////////////////////////
 // Headers
 ////////////////////////////////////////////////////////////
@@ -32,26 +36,42 @@
 ////////////////////////////////////////////////////////////
 namespace he{
 	
+	
+	std::string ResourcePath(void)	{
+		std::string rpath;
 
-std::string ResourcePath(void)
-{
-    NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
-    
-	std::string rpath;
-	NSBundle* bundle = [NSBundle mainBundle];
-    
-	if (bundle == nil) {
+		@autoreleasepool {
+			NSBundle* bundle = [NSBundle mainBundle];
+			if (bundle == nil) {
 #ifdef DEBUG
-		NSLog(@"bundle is nil... thus no resources path can be found.");
+				NSLog(@"bundle is nil... thus no resources path can be found.");
 #endif
-	} else {
-		NSString* path = [bundle resourcePath];
-		rpath = [path UTF8String] + std::string("/");
-	}
-    
-    [pool drain];
-    
-    return rpath;
-}
+			} else {
+				NSString* path = [bundle resourcePath];
+				rpath = [path UTF8String] + std::string("/");
+			}
 
+		}
+
+		return rpath;
+	}
+	
+	std::string DocumentsPath(void) {
+		std::string rpath;
+
+		@autoreleasepool {
+			NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+			if (!paths || ![paths count]) {
+#ifdef DEBUG
+				NSLog(@"No path can be found.");
+#endif
+			} else {
+				NSString *path = [paths objectAtIndex:0];
+				rpath = [path UTF8String] + std::string("/");
+			}
+		}
+		
+		return rpath;
+	}
+	
 }
