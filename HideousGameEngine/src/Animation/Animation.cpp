@@ -61,11 +61,12 @@ namespace he{
 	
 	//	Registers a child, to be executed after it finished.
 	//	Owns it.
-	void Animation::MoveChild(Animation *child){
+	Animation *Animation::MoveChild(Animation *child){
 		child_ = child;
 		for(Animation *child = child_; child; child = child->child_){
 			child->descent_id_ = descent_id_;
 		}
+		return child;
 	}
 	
 	//	Registers a listener. Calls it as soon as the animation finishes (before the child gets active)
