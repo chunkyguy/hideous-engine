@@ -24,7 +24,7 @@ namespace he{
 	 */
 	struct AnimationListenable{
 		virtual ~AnimationListenable(){}
-		virtual void PerformAction(int animation_id) = 0;
+		virtual void PerformAction(unsigned long long animation_id) = 0;
 	};
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -36,14 +36,14 @@ namespace he{
 	template <typename T>
 	class AnimationListener : public AnimationListenable{
 	public:
-		typedef void(T::*callback)(int animation_id);
+		typedef void(T::*callback)(unsigned long long animation_id);
 		AnimationListener(T *object, callback method) :
 		object_(object),
 		method_(method)
 		{}
 
 		// Calls the registered callback.
-		void PerformAction(int animation_id){
+		void PerformAction(unsigned long long animation_id){
 			(object_->*method_)(animation_id);
 		}
 		
@@ -93,8 +93,9 @@ namespace he{
 		 *	Registers a child, to be executed after self is finished. Owns it.
 		 *
 		 *	@param	child	The child animation.
+		 *	@return		The child animation. For chaining.
 		 */
-		void MoveChild(Animation *child);
+		Animation *MoveChild(Animation *child);
 		
 		/**
 		 *	Registers a listener. Calls it as soon as the animation finishes (after the child gets active)
