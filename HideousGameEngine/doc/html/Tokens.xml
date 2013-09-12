@@ -607,7 +607,18 @@
       <Scope>he::sprite</Scope>
     </TokenIdentifier>
     <Path>namespacehe_1_1sprite.html</Path>
-    <Anchor>a09f052d0ab7588e889d726dd2346f76d</Anchor>
+    <Anchor>a265354e16abd8f80b9d738356ab5f024</Anchor>
+    <DeclaredIn>Sprite.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Create</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he::sprite</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe_1_1sprite.html</Path>
+    <Anchor>ab1d4d6428953aa80ca2bce77a7cd5846</Anchor>
     <DeclaredIn>Sprite.h</DeclaredIn>
   </Token>
   <Token>
@@ -806,6 +817,38 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>M_TAU</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>_h_e_types_8h.html</Path>
+    <Anchor>ae0f7f25bda391b76da8251153e463a17</Anchor>
+    <DeclaredIn>HETypes.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>F32</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>tdef</Type>
+      <Scope>he</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe.html</Path>
+    <Anchor>aa02d635220d907caed7fbb667ce4164f</Anchor>
+    <DeclaredIn>HETypes.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>F32Eq</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe.html</Path>
+    <Anchor>a3803b86bd644f10ef78684a9f9b6d62b</Anchor>
+    <DeclaredIn>HETypes.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>ResourcePath</Name>
       <APILanguage>cpp</APILanguage>
       <Type>func</Type>
@@ -979,38 +1022,6 @@
     <Path>namespacehe.html</Path>
     <Anchor>ac00b7dc43b789a77d57d5acefd9ce0e9</Anchor>
     <DeclaredIn>Transform.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>M_TAU</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>_types_8h.html</Path>
-    <Anchor>ae0f7f25bda391b76da8251153e463a17</Anchor>
-    <DeclaredIn>Types.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>F32</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>tdef</Type>
-      <Scope>he</Scope>
-    </TokenIdentifier>
-    <Path>namespacehe.html</Path>
-    <Anchor>aa02d635220d907caed7fbb667ce4164f</Anchor>
-    <DeclaredIn>Types.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>F32Eq</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
-      <Scope>he</Scope>
-    </TokenIdentifier>
-    <Path>namespacehe.html</Path>
-    <Anchor>a3803b86bd644f10ef78684a9f9b6d62b</Anchor>
-    <DeclaredIn>Types.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1651,7 +1662,7 @@
     </TokenIdentifier>
     <Path>namespacehe.html</Path>
     <Anchor>aa02d635220d907caed7fbb667ce4164f</Anchor>
-    <DeclaredIn>Types.h</DeclaredIn>
+    <DeclaredIn>HETypes.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -2106,6 +2117,17 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>F32Eq</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe.html</Path>
+    <Anchor>a3803b86bd644f10ef78684a9f9b6d62b</Anchor>
+    <DeclaredIn>HETypes.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>ResourcePath</Name>
       <APILanguage>cpp</APILanguage>
       <Type>func</Type>
@@ -2268,17 +2290,6 @@
     <Path>namespacehe.html</Path>
     <Anchor>ac00b7dc43b789a77d57d5acefd9ce0e9</Anchor>
     <DeclaredIn>Transform.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>F32Eq</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
-      <Scope>he</Scope>
-    </TokenIdentifier>
-    <Path>namespacehe.html</Path>
-    <Anchor>a3803b86bd644f10ef78684a9f9b6d62b</Anchor>
-    <DeclaredIn>Types.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -3017,6 +3028,123 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>he::SpriteAnimationData</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>he::SpriteAnimationData</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sprite_animation_data.html</Path>
+    <DeclaredIn>SpriteAnimation.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SpriteAnimationData</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::SpriteAnimationData</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sprite_animation_data.html</Path>
+    <Anchor>a049f9b7c9848e782b0268b594ac7f568</Anchor>
+    <DeclaredIn>SpriteAnimation.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~SpriteAnimationData</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::SpriteAnimationData</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sprite_animation_data.html</Path>
+    <Anchor>a4942570188bb83b897650d983e3af0a3</Anchor>
+    <DeclaredIn>SpriteAnimation.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetFrameCount</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::SpriteAnimationData</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sprite_animation_data.html</Path>
+    <Anchor>ac14c82869d6c70e8e66454408d9c9c60</Anchor>
+    <DeclaredIn>SpriteAnimation.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetFrameAtIndex</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::SpriteAnimationData</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sprite_animation_data.html</Path>
+    <Anchor>a37ae6eb479be3caa475fbd9a20688d35</Anchor>
+    <DeclaredIn>SpriteAnimation.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>RetainData</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::SpriteAnimationData</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sprite_animation_data.html</Path>
+    <Anchor>a5fac52cddd9f6bd955606dab8a2fd6c3</Anchor>
+    <DeclaredIn>SpriteAnimation.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>he::SpriteAnimationData::Frame</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>he::SpriteAnimationData::Frame</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sprite_animation_data_1_1_frame.html</Path>
+    <DeclaredIn>SpriteAnimation.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Frame</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::SpriteAnimationData::Frame</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sprite_animation_data_1_1_frame.html</Path>
+    <Anchor>adb936d5cf723354eed50441b2f61391b</Anchor>
+    <DeclaredIn>SpriteAnimation.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~Frame</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::SpriteAnimationData::Frame</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sprite_animation_data_1_1_frame.html</Path>
+    <Anchor>a4d4a6424a460e4e68009dc9967b91149</Anchor>
+    <DeclaredIn>SpriteAnimation.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>vertex_</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>he::SpriteAnimationData::Frame</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sprite_animation_data_1_1_frame.html</Path>
+    <Anchor>acde92dc80c06b25a7d0d7d7accfb7008</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>next_</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>he::SpriteAnimationData::Frame</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sprite_animation_data_1_1_frame.html</Path>
+    <Anchor>a3cc614ee35570df0ac681b2df1c9dee3</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>he::SpriteAnimation</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -3033,7 +3161,7 @@
       <Scope>he::SpriteAnimation</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_sprite_animation.html</Path>
-    <Anchor>a84fc46549380c60d7d480643b7f9cace</Anchor>
+    <Anchor>afd5deaa8e723c93fb06bc3f4a969ba72</Anchor>
     <DeclaredIn>SpriteAnimation.h</DeclaredIn>
   </Token>
   <Token>
@@ -3060,13 +3188,24 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>GoToFrameNumber</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::SpriteAnimation</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sprite_animation.html</Path>
+    <Anchor>acca7c98e76a6e75c76365e6d7a5615a6</Anchor>
+    <DeclaredIn>SpriteAnimation.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>SetFinalFrameIndex</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>he::SpriteAnimation</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_sprite_animation.html</Path>
-    <Anchor>a31c689c96392a829e8b8199f43923265</Anchor>
+    <Anchor>aba2c1fc2865e0b6729d12d5d19c106ef</Anchor>
     <DeclaredIn>SpriteAnimation.h</DeclaredIn>
   </Token>
   <Token>
@@ -3100,6 +3239,17 @@
     </TokenIdentifier>
     <Path>classhe_1_1_sprite_animation.html</Path>
     <Anchor>ae64ec2ac570847c6a98323ad8bf711cf</Anchor>
+    <DeclaredIn>SpriteAnimation.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetFrameCount</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::SpriteAnimation</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sprite_animation.html</Path>
+    <Anchor>a79ff1a977eb0916c516bd3a98ed3ba81</Anchor>
     <DeclaredIn>SpriteAnimation.h</DeclaredIn>
   </Token>
   <Token>
@@ -6354,7 +6504,7 @@
       <Scope>he::Sprite</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_sprite.html</Path>
-    <Anchor>aa586132d8a280e15197fab8d3de0734b</Anchor>
+    <Anchor>ad0bb014a4d43fa7129d2e005e26c10c8</Anchor>
     <DeclaredIn>Sprite.h</DeclaredIn>
   </Token>
   <Token>
@@ -6403,13 +6553,24 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>ResetAnimation</Name>
+      <Name>GoToFrameNumber</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>he::Sprite</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_sprite.html</Path>
-    <Anchor>aed3d5b40153132134d9b0bced072e39a</Anchor>
+    <Anchor>a936fea2a4e5b102277531ac42e62b953</Anchor>
+    <DeclaredIn>Sprite.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetFrameCount</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Sprite</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sprite.html</Path>
+    <Anchor>a4a9f83b4c29503515384f62502725dea</Anchor>
     <DeclaredIn>Sprite.h</DeclaredIn>
   </Token>
   <Token>
@@ -8058,7 +8219,18 @@
       <Scope>he::sprite</Scope>
     </TokenIdentifier>
     <Path>namespacehe_1_1sprite.html</Path>
-    <Anchor>a09f052d0ab7588e889d726dd2346f76d</Anchor>
+    <Anchor>a265354e16abd8f80b9d738356ab5f024</Anchor>
+    <DeclaredIn>Sprite.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Create</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he::sprite</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe_1_1sprite.html</Path>
+    <Anchor>ab1d4d6428953aa80ca2bce77a7cd5846</Anchor>
     <DeclaredIn>Sprite.h</DeclaredIn>
   </Token>
   <Token>

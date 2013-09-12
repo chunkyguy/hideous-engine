@@ -111,58 +111,63 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">class </span>TextureVertex;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">class </span>TextureShader;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">class </span>SpriteAnimation;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">class </span>SpriteAnimationData;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="classhe_1_1_sprite.html">   26</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classhe_1_1_sprite.html" title="Sprite is an animated texture object. The texture has to be provided as an atlas. ...">Sprite</a> {</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="classhe_1_1_sprite.html#aa586132d8a280e15197fab8d3de0734b">Sprite</a>(<span class="keyword">const</span> std::string &amp;animation_name, <span class="keyword">const</span> <a class="code" href="classhe_1_1_texture_shader.html">TextureShader</a> *shader, <span class="keyword">const</span> <a class="code" href="classhe_1_1_texture_atlas.html">TextureAtlas</a> *atlas,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;               <span class="keyword">const</span> <span class="keywordtype">int</span> repeat_count = -1, <a class="code" href="structhe_1_1_animation_listenable.html">AnimationListenable</a> *listener = <span class="keyword">nullptr</span>,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;               <span class="keyword">const</span> <span class="keywordtype">int</span> final_frame = 0, <span class="keyword">const</span> <span class="keywordtype">float</span> fps = 24.0f);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="classhe_1_1_sprite.html#a0c45a0978d0f73e1d9defc17e2252d9b">~Sprite</a>();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="classhe_1_1_animation.html#a5ec4f04a171ed0ded89028593283b738">Animation::ID</a> <a class="code" href="classhe_1_1_sprite.html#a82e2710487d84b6d9524cf3090c2ca9a">GetID</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_sprite.html#abb560f9a80eab59669aa8d7028e637dd">Render</a>(<span class="keyword">const</span> <a class="code" href="structhe_1_1_transform.html">Transform</a> &amp;transform);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        GLKVector2 <a class="code" href="classhe_1_1_sprite.html#a75afdecd0863b5c765eb17eb87015718">GetSize</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_sprite.html#aed3d5b40153132134d9b0bced072e39a">ResetAnimation</a>();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_sprite.html#a9998ab52a718a0f178067e4297db8910">StartAnimation</a>();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        GLKVector2 size_;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="classhe_1_1_texture_vertex.html">TextureVertex</a> *vertex_;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="classhe_1_1_render_object.html">RenderObject</a> *render_object_;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="classhe_1_1_sprite_animation.html">SpriteAnimation</a> *animation_;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="classhe_1_1_animation.html#a5ec4f04a171ed0ded89028593283b738">Animation::ID</a> anim_id_;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    };</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="classhe_1_1_sprite.html#ad0bb014a4d43fa7129d2e005e26c10c8">Sprite</a>(<span class="keyword">const</span> <a class="code" href="classhe_1_1_sprite_animation_data.html">SpriteAnimationData</a> *data, <span class="keyword">const</span> std::string &amp;animation_name,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;               <span class="keyword">const</span> <a class="code" href="classhe_1_1_texture_shader.html">TextureShader</a> *shader, <span class="keyword">const</span> <a class="code" href="classhe_1_1_texture_atlas.html">TextureAtlas</a> *atlas,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;               <span class="keyword">const</span> <span class="keywordtype">int</span> repeat_count = -1, <a class="code" href="structhe_1_1_animation_listenable.html">AnimationListenable</a> *listener = <span class="keyword">nullptr</span>,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;               <span class="keyword">const</span> <span class="keywordtype">int</span> final_frame = 0, <span class="keyword">const</span> <span class="keywordtype">float</span> fps = 24.0f);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="classhe_1_1_sprite.html#a0c45a0978d0f73e1d9defc17e2252d9b">~Sprite</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="classhe_1_1_animation.html#a5ec4f04a171ed0ded89028593283b738">Animation::ID</a> <a class="code" href="classhe_1_1_sprite.html#a82e2710487d84b6d9524cf3090c2ca9a">GetID</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_sprite.html#abb560f9a80eab59669aa8d7028e637dd">Render</a>(<span class="keyword">const</span> <a class="code" href="structhe_1_1_transform.html">Transform</a> &amp;transform);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        GLKVector2 <a class="code" href="classhe_1_1_sprite.html#a75afdecd0863b5c765eb17eb87015718">GetSize</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_sprite.html#a936fea2a4e5b102277531ac42e62b953">GoToFrameNumber</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> frame_num);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classhe_1_1_sprite.html#a4a9f83b4c29503515384f62502725dea">GetFrameCount</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_sprite.html#a9998ab52a718a0f178067e4297db8910">StartAnimation</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        GLKVector2 size_;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="classhe_1_1_texture_vertex.html">TextureVertex</a> *vertex_;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="classhe_1_1_render_object.html">RenderObject</a> *render_object_;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="classhe_1_1_sprite_animation.html">SpriteAnimation</a> *animation_;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="classhe_1_1_animation.html#a5ec4f04a171ed0ded89028593283b738">Animation::ID</a> anim_id_;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    };</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="code" href="namespacehe_1_1sprite.html">   78</a></span>&#160;    <span class="keyword">namespace </span>sprite {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="classhe_1_1_sprite.html" title="Sprite is an animated texture object. The texture has to be provided as an atlas. ...">Sprite</a> *<a class="code" href="namespacehe_1_1sprite.html#a09f052d0ab7588e889d726dd2346f76d">Create</a>(<span class="keyword">const</span> <a class="code" href="classhe_1_1_texture_shader.html">TextureShader</a> *shader, <span class="keyword">const</span> <a class="code" href="classhe_1_1_texture_atlas.html">TextureAtlas</a> *texture_atlas, <span class="keyword">const</span> std::string &amp;region,</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                       <span class="keyword">const</span> <span class="keywordtype">int</span> repeat_count = -1, <a class="code" href="structhe_1_1_animation_listenable.html">AnimationListenable</a> *listener = <span class="keyword">nullptr</span>,</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                       <span class="keyword">const</span> <span class="keywordtype">int</span> final_frame = 0, <span class="keyword">const</span> <span class="keywordtype">float</span> fps = 24.0f);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    </div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="code" href="classhe_1_1_sprite_view.html">   85</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classhe_1_1_sprite_view.html">SpriteView</a> : <span class="keyword">public</span> <a class="code" href="classhe_1_1_view.html">View</a> {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="classhe_1_1_sprite_view.html#af7e9a6ac8e7625990130aa700cb07c26">SpriteView</a>(<span class="keyword">const</span> <a class="code" href="structhe_1_1_transform.html">Transform</a> &amp;transform, <a class="code" href="classhe_1_1_sprite.html" title="Sprite is an animated texture object. The texture has to be provided as an atlas. ...">Sprite</a> *sprite);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_sprite_view.html#aab691da07818e95e62c75f9bae629b90">Update</a>(<span class="keywordtype">float</span> dt);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_sprite_view.html#a062f44507bed19adbb519b3324559452">Render</a>();</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keyword">virtual</span> GLKVector2 <a class="code" href="classhe_1_1_sprite_view.html#ab1ea35a0461871706c9d4ca48b71d75f">GetSize</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="classhe_1_1_sprite.html" title="Sprite is an animated texture object. The texture has to be provided as an atlas. ...">Sprite</a> *sprite_;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    };</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="code" href="namespacehe_1_1sprite.html">   79</a></span>&#160;    <span class="keyword">namespace </span>sprite {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="classhe_1_1_sprite_animation_data.html">SpriteAnimationData</a> *<a class="code" href="namespacehe_1_1sprite.html#a265354e16abd8f80b9d738356ab5f024">Create</a>(<span class="keyword">const</span> <a class="code" href="classhe_1_1_texture_atlas.html">TextureAtlas</a> *texture_atlas,</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                    <span class="keyword">const</span> std::string &amp;region);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="classhe_1_1_sprite.html" title="Sprite is an animated texture object. The texture has to be provided as an atlas. ...">Sprite</a> *<a class="code" href="namespacehe_1_1sprite.html#a265354e16abd8f80b9d738356ab5f024">Create</a>(<span class="keyword">const</span> <a class="code" href="classhe_1_1_sprite_animation_data.html">SpriteAnimationData</a> *data, <span class="keyword">const</span> std::string &amp;region_name,</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                       <span class="keyword">const</span> <a class="code" href="classhe_1_1_texture_shader.html">TextureShader</a> *shader, <span class="keyword">const</span> <a class="code" href="classhe_1_1_texture_atlas.html">TextureAtlas</a> *texture_atlas,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                       <span class="keyword">const</span> <span class="keywordtype">int</span> repeat_count = -1, <a class="code" href="structhe_1_1_animation_listenable.html">AnimationListenable</a> *listener = <span class="keyword">nullptr</span>,</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                       <span class="keyword">const</span> <span class="keywordtype">int</span> final_frame = 0, <span class="keyword">const</span> <span class="keywordtype">float</span> fps = 24.0f);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    </div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="code" href="classhe_1_1_sprite_view.html">   88</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classhe_1_1_sprite_view.html">SpriteView</a> : <span class="keyword">public</span> <a class="code" href="classhe_1_1_view.html">View</a> {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="classhe_1_1_sprite_view.html#af7e9a6ac8e7625990130aa700cb07c26">SpriteView</a>(<span class="keyword">const</span> <a class="code" href="structhe_1_1_transform.html">Transform</a> &amp;transform, <a class="code" href="classhe_1_1_sprite.html" title="Sprite is an animated texture object. The texture has to be provided as an atlas. ...">Sprite</a> *sprite);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_sprite_view.html#aab691da07818e95e62c75f9bae629b90">Update</a>(<span class="keywordtype">float</span> dt);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_sprite_view.html#a062f44507bed19adbb519b3324559452">Render</a>();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keyword">virtual</span> GLKVector2 <a class="code" href="classhe_1_1_sprite_view.html#ab1ea35a0461871706c9d4ca48b71d75f">GetSize</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="classhe_1_1_sprite.html" title="Sprite is an animated texture object. The texture has to be provided as an atlas. ...">Sprite</a> *sprite_;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    };</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 8 2013 14:37:14 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Sep 13 2013 05:17:00 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

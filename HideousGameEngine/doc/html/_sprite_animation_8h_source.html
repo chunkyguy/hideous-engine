@@ -110,55 +110,72 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">class </span>TextureAtlas;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">class </span>TextureVertex;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    </div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="classhe_1_1_sprite_animation.html">   20</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classhe_1_1_sprite_animation.html">SpriteAnimation</a> : <span class="keyword">public</span> <a class="code" href="classhe_1_1_animation.html">Animation</a>{</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="classhe_1_1_sprite_animation_data.html">   20</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classhe_1_1_sprite_animation_data.html">SpriteAnimationData</a> {</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="classhe_1_1_sprite_animation.html#a84fc46549380c60d7d480643b7f9cace">SpriteAnimation</a>(<a class="code" href="classhe_1_1_texture_vertex.html">TextureVertex</a> **vertex_data,            <span class="comment">/*Sprite data to be rendered*/</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                        <span class="keyword">const</span> <a class="code" href="classhe_1_1_texture_atlas.html">TextureAtlas</a> *atlas,          <span class="comment">/*Atlas source*/</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                        <span class="keyword">const</span> std::string &amp;name,                <span class="comment">/*Name of animation in the atlas*/</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                        <span class="keyword">const</span> <span class="keywordtype">int</span> repeat_count = 1,         <span class="comment">/*Num of repeat. -1 means infinite*/</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                        <span class="keyword">const</span> <span class="keywordtype">int</span> final_frame_index  = 0,   <span class="comment">/*Frame index to be used when animation is over. Default 0*/</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                        <span class="keyword">const</span> <span class="keywordtype">float</span> fps = 24.0f);           <span class="comment">/*Desired fps. Default is 24*/</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="classhe_1_1_sprite_animation.html#a7fcdede68f9af24db1b79adf607787b8">~SpriteAnimation</a>();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_sprite_animation.html#a35cdf966b32fe40b87f9a085d316c84d">SetRepeatCount</a>(<span class="keywordtype">int</span> c);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_sprite_animation.html#a31c689c96392a829e8b8199f43923265">SetFinalFrameIndex</a>(<span class="keywordtype">int</span> i);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_sprite_animation.html#a4eb6c5d02501610dc85b74f53b37d5a2">SetFPS</a>(<span class="keywordtype">float</span> fps);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_sprite_animation.html#a6c8f1d00bfa5b75e82097f8780813798">RetainCurrVertex</a>();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_sprite_animation.html#ae64ec2ac570847c6a98323ad8bf711cf">Restart</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="comment">// Internal structure. Data for each frame of the animation.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="classhe_1_1_sprite_animation_data_1_1_frame.html">   23</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classhe_1_1_sprite_animation_data_1_1_frame.html">Frame</a>{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="classhe_1_1_sprite_animation_data_1_1_frame.html#adb936d5cf723354eed50441b2f61391b">Frame</a>(<a class="code" href="classhe_1_1_texture_vertex.html">TextureVertex</a> *vertex);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="classhe_1_1_sprite_animation_data_1_1_frame.html#a4d4a6424a460e4e68009dc9967b91149">~Frame</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="classhe_1_1_sprite_animation_data_1_1_frame.html#acde92dc80c06b25a7d0d7d7accfb7008">   28</a></span>&#160;            <a class="code" href="classhe_1_1_texture_vertex.html">TextureVertex</a> *<a class="code" href="classhe_1_1_sprite_animation_data_1_1_frame.html#acde92dc80c06b25a7d0d7d7accfb7008">vertex_</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="classhe_1_1_sprite_animation_data_1_1_frame.html#a3cc614ee35570df0ac681b2df1c9dee3">   29</a></span>&#160;            <a class="code" href="classhe_1_1_sprite_animation_data_1_1_frame.html">Frame</a> *<a class="code" href="classhe_1_1_sprite_animation_data_1_1_frame.html#a3cc614ee35570df0ac681b2df1c9dee3">next_</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        };</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="classhe_1_1_sprite_animation_data.html#a049f9b7c9848e782b0268b594ac7f568">SpriteAnimationData</a>(<span class="keyword">const</span> <a class="code" href="classhe_1_1_texture_atlas.html">TextureAtlas</a> *atlas, <span class="keyword">const</span> std::string &amp;name);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="classhe_1_1_sprite_animation_data.html#a4942570188bb83b897650d983e3af0a3">~SpriteAnimationData</a>();</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="comment">// Internal structure. Data for each frame of the animation.</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keyword">class </span>Frame{</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            Frame(<a class="code" href="classhe_1_1_texture_vertex.html">TextureVertex</a> *vertex);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            ~Frame();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <a class="code" href="classhe_1_1_texture_vertex.html">TextureVertex</a> *vertex_;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            Frame *<a class="code" href="classhe_1_1_animation.html#ad437ec1660c26525c274fb8a09a60ff8">next_</a>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        };</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">void</span> update(<span class="keywordtype">float</span> dt);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">void</span> next_frame();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="classhe_1_1_texture_vertex.html">TextureVertex</a> **vertex_data_;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="classhe_1_1_texture_vertex.html">TextureVertex</a> *final_vertex_data_;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        Frame *head_;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        Frame *tail_;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        Frame *active_frame_;           <span class="comment">// The frame executing.</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">float</span> clock_;                   <span class="comment">// Clock resets after each frame execution. Relevant only when using delay.</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordtype">float</span> delay_;                   <span class="comment">// Delay between each frame.</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordtype">int</span> repeat_count_;              <span class="comment">// Num of repeats. -ve number will go on for a really long time.</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                        <span class="comment">//  Ex: -1 will loop 4294967294 times (for a animatoin with just a single frame will run for 2+ years at 60 fps)</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    };</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classhe_1_1_sprite_animation_data.html#ac14c82869d6c70e8e66454408d9c9c60">GetFrameCount</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="classhe_1_1_sprite_animation_data_1_1_frame.html">Frame</a> *<a class="code" href="classhe_1_1_sprite_animation_data.html#a37ae6eb479be3caa475fbd9a20688d35">GetFrameAtIndex</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> frame_num) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classhe_1_1_sprite_animation_data.html#a5fac52cddd9f6bd955606dab8a2fd6c3">RetainData</a>(<span class="keyword">const</span> <a class="code" href="classhe_1_1_texture_vertex.html">TextureVertex</a> *data);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="classhe_1_1_sprite_animation_data_1_1_frame.html">Frame</a> *head_;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="classhe_1_1_sprite_animation_data_1_1_frame.html">Frame</a> *tail_;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> t_frame_count_;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    };</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="classhe_1_1_sprite_animation.html">   67</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classhe_1_1_sprite_animation.html">SpriteAnimation</a> : <span class="keyword">public</span> <a class="code" href="classhe_1_1_animation.html">Animation</a>{</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="classhe_1_1_sprite_animation.html#afd5deaa8e723c93fb06bc3f4a969ba72">SpriteAnimation</a>(<a class="code" href="classhe_1_1_texture_vertex.html">TextureVertex</a> **vertex_data,            <span class="comment">/*Sprite data to be rendered*/</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                        <span class="keyword">const</span> <a class="code" href="classhe_1_1_sprite_animation_data.html">SpriteAnimationData</a> *data,            <span class="comment">/* Animation data */</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        <span class="keyword">const</span> <span class="keywordtype">int</span> repeat_count = 1,         <span class="comment">/*Num of repeat. -1 means infinite*/</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                        <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> final_frame_index     = 0,   <span class="comment">/*Frame index to be used when animation is over. Default 0*/</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                        <span class="keyword">const</span> <span class="keywordtype">float</span> fps = 24.0f);           <span class="comment">/*Desired fps. Default is 24*/</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="classhe_1_1_sprite_animation.html#a7fcdede68f9af24db1b79adf607787b8">~SpriteAnimation</a>();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_sprite_animation.html#a35cdf966b32fe40b87f9a085d316c84d">SetRepeatCount</a>(<span class="keywordtype">int</span> c);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_sprite_animation.html#acca7c98e76a6e75c76365e6d7a5615a6">GoToFrameNumber</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> frame_num);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_sprite_animation.html#aba2c1fc2865e0b6729d12d5d19c106ef">SetFinalFrameIndex</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_sprite_animation.html#a4eb6c5d02501610dc85b74f53b37d5a2">SetFPS</a>(<span class="keywordtype">float</span> fps);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_sprite_animation.html#a6c8f1d00bfa5b75e82097f8780813798">RetainCurrVertex</a>();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_sprite_animation.html#ae64ec2ac570847c6a98323ad8bf711cf">Restart</a>();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classhe_1_1_sprite_animation.html#a79ff1a977eb0916c516bd3a98ed3ba81">GetFrameCount</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">void</span> update(<span class="keywordtype">float</span> dt);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordtype">void</span> next_frame();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="classhe_1_1_texture_vertex.html">TextureVertex</a> **vertex_data_;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="classhe_1_1_texture_vertex.html">TextureVertex</a> *final_vertex_data_;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keyword">const</span> <a class="code" href="classhe_1_1_sprite_animation_data.html">SpriteAnimationData</a> *data_;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="classhe_1_1_sprite_animation_data_1_1_frame.html">SpriteAnimationData::Frame</a> *active_frame_;          <span class="comment">// The frame executing.</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordtype">float</span> clock_;                   <span class="comment">// Clock resets after each frame execution. Relevant only when using delay.</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordtype">float</span> delay_;                   <span class="comment">// Delay between each frame.</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordtype">int</span> repeat_count_;              <span class="comment">// Num of repeats. -ve number will go on for a really long time.</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                                        <span class="comment">//  Ex: -1 will loop 4294967294 times (for a animatoin with just a single frame will run for 2+ years at 60 fps)</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    };</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 8 2013 14:37:14 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Sep 13 2013 05:17:00 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

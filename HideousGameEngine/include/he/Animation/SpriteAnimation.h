@@ -58,10 +58,18 @@ namespace he {
 		 */
 		bool RetainData(const TextureVertex *data);
 
+		/**
+		 *	Get the name of the animation.
+		 *
+		 *	@return	Name of the animation.
+		 */
+		std::string GetAnimationName() const;
+		
 	private:
 		Frame *head_;
 		Frame *tail_;
 		unsigned int t_frame_count_;
+		std::string name_;
 	};
 	
 	class SpriteAnimation : public Animation{

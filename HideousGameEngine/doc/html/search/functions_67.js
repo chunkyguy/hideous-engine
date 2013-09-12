@@ -13,6 +13,8 @@ var searchData=
   ['getdescentid',['GetDescentID',['../classhe_1_1_animation.html#a0e238298b99f8e961b629ef63346855d',1,'he::Animation']]],
   ['getdurationforframes',['GetDurationForFrames',['../namespacehe_1_1animation.html#a1873916ae850657addc2a388015222e5',1,'he::animation']]],
   ['getface',['GetFace',['../classhe_1_1_font.html#a81dde781a5524a6d21b1f5212b7bc68b',1,'he::Font']]],
+  ['getframeatindex',['GetFrameAtIndex',['../classhe_1_1_sprite_animation_data.html#a37ae6eb479be3caa475fbd9a20688d35',1,'he::SpriteAnimationData']]],
+  ['getframecount',['GetFrameCount',['../classhe_1_1_sprite_animation_data.html#ac14c82869d6c70e8e66454408d9c9c60',1,'he::SpriteAnimationData::GetFrameCount()'],['../classhe_1_1_sprite_animation.html#a79ff1a977eb0916c516bd3a98ed3ba81',1,'he::SpriteAnimation::GetFrameCount()'],['../classhe_1_1_sprite.html#a4a9f83b4c29503515384f62502725dea',1,'he::Sprite::GetFrameCount()']]],
   ['getframesinduration',['GetFramesInDuration',['../namespacehe_1_1animation.html#a7b12cab6ae1e76742d3fd4b9549dcb59',1,'he::animation']]],
   ['getglobalrect',['GetGlobalRect',['../classhe_1_1_frame.html#ab30b7377db7fa46ba69b057de96b4002',1,'he::Frame']]],
   ['getglyphsize',['GetGlyphSize',['../classhe_1_1_text.html#a2b7be05e5297d95b3954b669390d5271',1,'he::Text']]],
@@ -46,6 +48,7 @@ var searchData=
   ['getvertextexturedata',['GetVertexTextureData',['../classhe_1_1_texture_vertex.html#a9b10d95c557e76921b43646e6041a28c',1,'he::TextureVertex']]],
   ['glyph',['Glyph',['../classhe_1_1_glyph.html#a71c65655d166f9819f0266e978c994a1',1,'he::Glyph']]],
   ['glyphdata',['GlyphData',['../classhe_1_1_glyph_data.html#a5df6af244108179e7b7b1d12917b4f68',1,'he::GlyphData']]],
+  ['gotoframenumber',['GoToFrameNumber',['../classhe_1_1_sprite_animation.html#acca7c98e76a6e75c76365e6d7a5615a6',1,'he::SpriteAnimation::GoToFrameNumber()'],['../classhe_1_1_sprite.html#a936fea2a4e5b102277531ac42e62b953',1,'he::Sprite::GoToFrameNumber()']]],
   ['gradient',['Gradient',['../classhe_1_1_gradient.html#a7d9b226501f080e62eae6166227a7c8b',1,'he::Gradient']]],
   ['gradientview',['GradientView',['../classhe_1_1_gradient_view.html#ae9f00d0a5256cdfdb4e9fea9777d45f3',1,'he::GradientView']]]
 ];

@@ -9,6 +9,7 @@ var searchData=
   ['heappdelegate',['HEAppDelegate',['../interface_h_e_app_delegate.html',1,'']]],
   ['hecontroller',['HEController',['../interface_h_e_controller.html',1,'']]],
   ['height_5f',['height_',['../classhe_1_1_texture_data.html#a247f882ebea584426f9d9a63ab349f5d',1,'he::TextureData::height_()'],['../classhe_1_1_screen.html#a8eb087ce03e9142e722891f03355665a',1,'he::Screen::height_()']]],
+  ['hetypes_2eh',['HETypes.h',['../_h_e_types_8h.html',1,'']]],
   ['hideousengine_2eh',['HideousEngine.h',['../_hideous_engine_8h.html',1,'']]],
   ['hideousengineinit',['HideousEngineInit',['../_hideous_engine_8h.html#aae48837376121d1c87fdc3be04d638b2',1,'HideousEngine.h']]],
   ['hideousgame_2eh',['HideousGame.h',['../_hideous_game_8h.html',1,'']]],

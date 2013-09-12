@@ -48,13 +48,13 @@ namespace he{
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// MARK: Sprite
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	Sprite::Sprite(const SpriteAnimationData *data, const std::string &animation_name,
+	Sprite::Sprite(const SpriteAnimationData *data,
 				   const TextureShader *shader, const TextureAtlas *atlas,
 				   const int repeat_count, AnimationListenable *listener,
 				   const int final_frame, const float fps) :
 	vertex_(nullptr),
 	render_object_(),
-	size_(atlas->GetTextureAtlasRegion(he::FlashFullName(animation_name)).sprite_size_)
+	size_(atlas->GetTextureAtlasRegion(he::FlashFullName(data->GetAnimationName())).sprite_size_)
 	{
 		animation_ = static_cast<SpriteAnimation*>(g_AnimationLoop->MoveAnimation(new SpriteAnimation(&vertex_, data, repeat_count, final_frame, fps)));
 		anim_id_ = animation_->GetID();
@@ -120,10 +120,10 @@ namespace he{
 			return new SpriteAnimationData(texture_atlas, region);
 		}
 
-		Sprite *Create(const SpriteAnimationData *data, const std::string &region_name,
+		Sprite *Create(const SpriteAnimationData *data,
 					   const TextureShader *shader, const TextureAtlas *texture_atlas,
 					   const int repeat_count, AnimationListenable *listener, const int final_frame, const float fps) {
-			return new Sprite(data, region_name, shader, texture_atlas, repeat_count, listener, final_frame, fps);
+			return new Sprite(data, shader, texture_atlas, repeat_count, listener, final_frame, fps);
 		}
 
 	}

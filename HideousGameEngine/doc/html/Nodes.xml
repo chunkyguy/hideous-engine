@@ -382,18 +382,85 @@
               </Subnodes>
              </Node>
              <Node>
+              <Name>SpriteAnimationData</Name>
+              <Path>classhe_1_1_sprite_animation_data.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>Frame</Name>
+                <Path>classhe_1_1_sprite_animation_data_1_1_frame.html</Path>
+                <Subnodes>
+                 <Node>
+                  <Name>Frame</Name>
+                  <Path>classhe_1_1_sprite_animation_data_1_1_frame.html</Path>
+                  <Anchor>adb936d5cf723354eed50441b2f61391b</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>~Frame</Name>
+                  <Path>classhe_1_1_sprite_animation_data_1_1_frame.html</Path>
+                  <Anchor>a4d4a6424a460e4e68009dc9967b91149</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>next_</Name>
+                  <Path>classhe_1_1_sprite_animation_data_1_1_frame.html</Path>
+                  <Anchor>a3cc614ee35570df0ac681b2df1c9dee3</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>vertex_</Name>
+                  <Path>classhe_1_1_sprite_animation_data_1_1_frame.html</Path>
+                  <Anchor>acde92dc80c06b25a7d0d7d7accfb7008</Anchor>
+                 </Node>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>SpriteAnimationData</Name>
+                <Path>classhe_1_1_sprite_animation_data.html</Path>
+                <Anchor>a049f9b7c9848e782b0268b594ac7f568</Anchor>
+               </Node>
+               <Node>
+                <Name>~SpriteAnimationData</Name>
+                <Path>classhe_1_1_sprite_animation_data.html</Path>
+                <Anchor>a4942570188bb83b897650d983e3af0a3</Anchor>
+               </Node>
+               <Node>
+                <Name>GetFrameAtIndex</Name>
+                <Path>classhe_1_1_sprite_animation_data.html</Path>
+                <Anchor>a37ae6eb479be3caa475fbd9a20688d35</Anchor>
+               </Node>
+               <Node>
+                <Name>GetFrameCount</Name>
+                <Path>classhe_1_1_sprite_animation_data.html</Path>
+                <Anchor>ac14c82869d6c70e8e66454408d9c9c60</Anchor>
+               </Node>
+               <Node>
+                <Name>RetainData</Name>
+                <Path>classhe_1_1_sprite_animation_data.html</Path>
+                <Anchor>a5fac52cddd9f6bd955606dab8a2fd6c3</Anchor>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
               <Name>SpriteAnimation</Name>
               <Path>classhe_1_1_sprite_animation.html</Path>
               <Subnodes>
                <Node>
                 <Name>SpriteAnimation</Name>
                 <Path>classhe_1_1_sprite_animation.html</Path>
-                <Anchor>a84fc46549380c60d7d480643b7f9cace</Anchor>
+                <Anchor>afd5deaa8e723c93fb06bc3f4a969ba72</Anchor>
                </Node>
                <Node>
                 <Name>~SpriteAnimation</Name>
                 <Path>classhe_1_1_sprite_animation.html</Path>
                 <Anchor>a7fcdede68f9af24db1b79adf607787b8</Anchor>
+               </Node>
+               <Node>
+                <Name>GetFrameCount</Name>
+                <Path>classhe_1_1_sprite_animation.html</Path>
+                <Anchor>a79ff1a977eb0916c516bd3a98ed3ba81</Anchor>
+               </Node>
+               <Node>
+                <Name>GoToFrameNumber</Name>
+                <Path>classhe_1_1_sprite_animation.html</Path>
+                <Anchor>acca7c98e76a6e75c76365e6d7a5615a6</Anchor>
                </Node>
                <Node>
                 <Name>Restart</Name>
@@ -408,7 +475,7 @@
                <Node>
                 <Name>SetFinalFrameIndex</Name>
                 <Path>classhe_1_1_sprite_animation.html</Path>
-                <Anchor>a31c689c96392a829e8b8199f43923265</Anchor>
+                <Anchor>aba2c1fc2865e0b6729d12d5d19c106ef</Anchor>
                </Node>
                <Node>
                 <Name>SetFPS</Name>
@@ -1691,12 +1758,17 @@
                <Node>
                 <Name>Sprite</Name>
                 <Path>classhe_1_1_sprite.html</Path>
-                <Anchor>aa586132d8a280e15197fab8d3de0734b</Anchor>
+                <Anchor>ad0bb014a4d43fa7129d2e005e26c10c8</Anchor>
                </Node>
                <Node>
                 <Name>~Sprite</Name>
                 <Path>classhe_1_1_sprite.html</Path>
                 <Anchor>a0c45a0978d0f73e1d9defc17e2252d9b</Anchor>
+               </Node>
+               <Node>
+                <Name>GetFrameCount</Name>
+                <Path>classhe_1_1_sprite.html</Path>
+                <Anchor>a4a9f83b4c29503515384f62502725dea</Anchor>
                </Node>
                <Node>
                 <Name>GetID</Name>
@@ -1709,14 +1781,14 @@
                 <Anchor>a75afdecd0863b5c765eb17eb87015718</Anchor>
                </Node>
                <Node>
+                <Name>GoToFrameNumber</Name>
+                <Path>classhe_1_1_sprite.html</Path>
+                <Anchor>a936fea2a4e5b102277531ac42e62b953</Anchor>
+               </Node>
+               <Node>
                 <Name>Render</Name>
                 <Path>classhe_1_1_sprite.html</Path>
                 <Anchor>abb560f9a80eab59669aa8d7028e637dd</Anchor>
-               </Node>
-               <Node>
-                <Name>ResetAnimation</Name>
-                <Path>classhe_1_1_sprite.html</Path>
-                <Anchor>aed3d5b40153132134d9b0bced072e39a</Anchor>
                </Node>
                <Node>
                 <Name>StartAnimation</Name>
@@ -2488,6 +2560,10 @@
             <Path>classhe_1_1_font_library.html</Path>
            </Node>
            <Node>
+            <Name>he::SpriteAnimationData::Frame</Name>
+            <Path>classhe_1_1_sprite_animation_data_1_1_frame.html</Path>
+           </Node>
+           <Node>
             <Name>he::Frame</Name>
             <Path>classhe_1_1_frame.html</Path>
            </Node>
@@ -2642,6 +2718,10 @@
            <Node>
             <Name>he::Sprite</Name>
             <Path>classhe_1_1_sprite.html</Path>
+           </Node>
+           <Node>
+            <Name>he::SpriteAnimationData</Name>
+            <Path>classhe_1_1_sprite_animation_data.html</Path>
            </Node>
            <Node>
             <Name>he::Text</Name>
@@ -3435,18 +3515,111 @@
                     <Path>_sprite_animation_8h.html</Path>
                     <Subnodes>
                      <Node>
+                      <Name>SpriteAnimationData</Name>
+                      <Path>classhe_1_1_sprite_animation_data.html</Path>
+                      <Subnodes>
+                       <Node>
+                        <Name>Frame</Name>
+                        <Path>classhe_1_1_sprite_animation_data_1_1_frame.html</Path>
+                        <Subnodes>
+                         <Node>
+                          <Name>Frame</Name>
+                          <Path>classhe_1_1_sprite_animation_data_1_1_frame.html</Path>
+                          <Anchor>adb936d5cf723354eed50441b2f61391b</Anchor>
+                         </Node>
+                         <Node>
+                          <Name>~Frame</Name>
+                          <Path>classhe_1_1_sprite_animation_data_1_1_frame.html</Path>
+                          <Anchor>a4d4a6424a460e4e68009dc9967b91149</Anchor>
+                         </Node>
+                         <Node>
+                          <Name>next_</Name>
+                          <Path>classhe_1_1_sprite_animation_data_1_1_frame.html</Path>
+                          <Anchor>a3cc614ee35570df0ac681b2df1c9dee3</Anchor>
+                         </Node>
+                         <Node>
+                          <Name>vertex_</Name>
+                          <Path>classhe_1_1_sprite_animation_data_1_1_frame.html</Path>
+                          <Anchor>acde92dc80c06b25a7d0d7d7accfb7008</Anchor>
+                         </Node>
+                        </Subnodes>
+                       </Node>
+                       <Node>
+                        <Name>SpriteAnimationData</Name>
+                        <Path>classhe_1_1_sprite_animation_data.html</Path>
+                        <Anchor>a049f9b7c9848e782b0268b594ac7f568</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>~SpriteAnimationData</Name>
+                        <Path>classhe_1_1_sprite_animation_data.html</Path>
+                        <Anchor>a4942570188bb83b897650d983e3af0a3</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>GetFrameAtIndex</Name>
+                        <Path>classhe_1_1_sprite_animation_data.html</Path>
+                        <Anchor>a37ae6eb479be3caa475fbd9a20688d35</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>GetFrameCount</Name>
+                        <Path>classhe_1_1_sprite_animation_data.html</Path>
+                        <Anchor>ac14c82869d6c70e8e66454408d9c9c60</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>RetainData</Name>
+                        <Path>classhe_1_1_sprite_animation_data.html</Path>
+                        <Anchor>a5fac52cddd9f6bd955606dab8a2fd6c3</Anchor>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>Frame</Name>
+                      <Path>classhe_1_1_sprite_animation_data_1_1_frame.html</Path>
+                      <Subnodes>
+                       <Node>
+                        <Name>Frame</Name>
+                        <Path>classhe_1_1_sprite_animation_data_1_1_frame.html</Path>
+                        <Anchor>adb936d5cf723354eed50441b2f61391b</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>~Frame</Name>
+                        <Path>classhe_1_1_sprite_animation_data_1_1_frame.html</Path>
+                        <Anchor>a4d4a6424a460e4e68009dc9967b91149</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>next_</Name>
+                        <Path>classhe_1_1_sprite_animation_data_1_1_frame.html</Path>
+                        <Anchor>a3cc614ee35570df0ac681b2df1c9dee3</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>vertex_</Name>
+                        <Path>classhe_1_1_sprite_animation_data_1_1_frame.html</Path>
+                        <Anchor>acde92dc80c06b25a7d0d7d7accfb7008</Anchor>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                     <Node>
                       <Name>SpriteAnimation</Name>
                       <Path>classhe_1_1_sprite_animation.html</Path>
                       <Subnodes>
                        <Node>
                         <Name>SpriteAnimation</Name>
                         <Path>classhe_1_1_sprite_animation.html</Path>
-                        <Anchor>a84fc46549380c60d7d480643b7f9cace</Anchor>
+                        <Anchor>afd5deaa8e723c93fb06bc3f4a969ba72</Anchor>
                        </Node>
                        <Node>
                         <Name>~SpriteAnimation</Name>
                         <Path>classhe_1_1_sprite_animation.html</Path>
                         <Anchor>a7fcdede68f9af24db1b79adf607787b8</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>GetFrameCount</Name>
+                        <Path>classhe_1_1_sprite_animation.html</Path>
+                        <Anchor>a79ff1a977eb0916c516bd3a98ed3ba81</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>GoToFrameNumber</Name>
+                        <Path>classhe_1_1_sprite_animation.html</Path>
+                        <Anchor>acca7c98e76a6e75c76365e6d7a5615a6</Anchor>
                        </Node>
                        <Node>
                         <Name>Restart</Name>
@@ -3461,7 +3634,7 @@
                        <Node>
                         <Name>SetFinalFrameIndex</Name>
                         <Path>classhe_1_1_sprite_animation.html</Path>
-                        <Anchor>a31c689c96392a829e8b8199f43923265</Anchor>
+                        <Anchor>aba2c1fc2865e0b6729d12d5d19c106ef</Anchor>
                        </Node>
                        <Node>
                         <Name>SetFPS</Name>
@@ -5121,12 +5294,17 @@
                        <Node>
                         <Name>Sprite</Name>
                         <Path>classhe_1_1_sprite.html</Path>
-                        <Anchor>aa586132d8a280e15197fab8d3de0734b</Anchor>
+                        <Anchor>ad0bb014a4d43fa7129d2e005e26c10c8</Anchor>
                        </Node>
                        <Node>
                         <Name>~Sprite</Name>
                         <Path>classhe_1_1_sprite.html</Path>
                         <Anchor>a0c45a0978d0f73e1d9defc17e2252d9b</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>GetFrameCount</Name>
+                        <Path>classhe_1_1_sprite.html</Path>
+                        <Anchor>a4a9f83b4c29503515384f62502725dea</Anchor>
                        </Node>
                        <Node>
                         <Name>GetID</Name>
@@ -5139,14 +5317,14 @@
                         <Anchor>a75afdecd0863b5c765eb17eb87015718</Anchor>
                        </Node>
                        <Node>
+                        <Name>GoToFrameNumber</Name>
+                        <Path>classhe_1_1_sprite.html</Path>
+                        <Anchor>a936fea2a4e5b102277531ac42e62b953</Anchor>
+                       </Node>
+                       <Node>
                         <Name>Render</Name>
                         <Path>classhe_1_1_sprite.html</Path>
                         <Anchor>abb560f9a80eab59669aa8d7028e637dd</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>ResetAnimation</Name>
-                        <Path>classhe_1_1_sprite.html</Path>
-                        <Anchor>aed3d5b40153132134d9b0bced072e39a</Anchor>
                        </Node>
                        <Node>
                         <Name>StartAnimation</Name>
@@ -5184,7 +5362,12 @@
                      <Node>
                       <Name>Create</Name>
                       <Path>_sprite_8h.html</Path>
-                      <Anchor>a09f052d0ab7588e889d726dd2346f76d</Anchor>
+                      <Anchor>a265354e16abd8f80b9d738356ab5f024</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>Create</Name>
+                      <Path>_sprite_8h.html</Path>
+                      <Anchor>ab1d4d6428953aa80ca2bce77a7cd5846</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>
@@ -5613,6 +5796,27 @@
                     <Path>_g_tests_8h.html</Path>
                    </Node>
                    <Node>
+                    <Name>HETypes.h</Name>
+                    <Path>_h_e_types_8h.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>M_TAU</Name>
+                      <Path>_h_e_types_8h.html</Path>
+                      <Anchor>ae0f7f25bda391b76da8251153e463a17</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>F32</Name>
+                      <Path>_h_e_types_8h.html</Path>
+                      <Anchor>aa02d635220d907caed7fbb667ce4164f</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>F32Eq</Name>
+                      <Path>_h_e_types_8h.html</Path>
+                      <Anchor>a3803b86bd644f10ef78684a9f9b6d62b</Anchor>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                   <Node>
                     <Name>ResourcePath.hpp</Name>
                     <Path>_resource_path_8hpp.html</Path>
                     <Subnodes>
@@ -5846,27 +6050,6 @@
                       <Name>Transform_SetPosition</Name>
                       <Path>_transform_8h.html</Path>
                       <Anchor>a939e55461e51424ae14125456da14b89</Anchor>
-                     </Node>
-                    </Subnodes>
-                   </Node>
-                   <Node>
-                    <Name>Types.h</Name>
-                    <Path>_types_8h.html</Path>
-                    <Subnodes>
-                     <Node>
-                      <Name>M_TAU</Name>
-                      <Path>_types_8h.html</Path>
-                      <Anchor>ae0f7f25bda391b76da8251153e463a17</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>F32</Name>
-                      <Path>_types_8h.html</Path>
-                      <Anchor>aa02d635220d907caed7fbb667ce4164f</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>F32Eq</Name>
-                      <Path>_types_8h.html</Path>
-                      <Anchor>a3803b86bd644f10ef78684a9f9b6d62b</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>

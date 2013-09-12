@@ -98,7 +98,7 @@ SpriteTestView::SpriteTestView(const he::Transform &transform,
 he::View(transform),
 callback_(callback),
 anim_listener_(new he::AnimationListener<SpriteTestView>(this, &SpriteTestView::DoneAnimation)),
-sprite_(he::sprite::Create(sprite_data, "mc_deadfish", texture_shader, atlas, 1, anim_listener_.get(), 14, 12.0f))
+sprite_(he::sprite::Create(sprite_data, texture_shader, atlas, 1, anim_listener_.get(), 14, 12.0f))
 {
 	sprite_->StartAnimation();
 	this->MoveSubview(new he::SpriteView(he::Transform_Create(GLKVector3Make(0.0, 0.0, 0.0)), sprite_.get()));

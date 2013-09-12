@@ -26,7 +26,7 @@ namespace he {
 	class Sprite {
 	public:
 		/**	Construct Sprite.
-		 @param animation_name	The symbol stored on the atlas data file. Only expecting a flash like naming convention for now,
+		 @param data				The sprite animation data.
 		 @param shader			The texture-shader.
 		 @param atlas			The atlas
 		 @param repeat_count		Repeat count. -1 means infinite loop.
@@ -35,7 +35,7 @@ namespace he {
 		 @param fps				The speed of the animation. Default is 24 FPS.
 		 @note	The sprite is loaded by default in paused state. Call StartAnimation to start the animation.
 		 */
-		Sprite(const SpriteAnimationData *data, const std::string &animation_name,
+		Sprite(const SpriteAnimationData *data,
 			   const TextureShader *shader, const TextureAtlas *atlas,
 			   const int repeat_count = -1, AnimationListenable *listener = nullptr,
 			   const int final_frame = 0, const float fps = 24.0f);
@@ -78,7 +78,7 @@ namespace he {
 	namespace sprite {
 		SpriteAnimationData *Create(const TextureAtlas *texture_atlas,
 									const std::string &region);
-		Sprite *Create(const SpriteAnimationData *data, const std::string &region_name,
+		Sprite *Create(const SpriteAnimationData *data, 
 					   const TextureShader *shader, const TextureAtlas *texture_atlas,
 					   const int repeat_count = -1, AnimationListenable *listener = nullptr,
 					   const int final_frame = 0, const float fps = 24.0f);

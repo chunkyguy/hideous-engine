@@ -33,7 +33,8 @@ namespace he{
 	SpriteAnimationData::SpriteAnimationData(const TextureAtlas *atlas, const std::string &name) :
 	head_(nullptr),
 	tail_(nullptr),
-	t_frame_count_(0)
+	t_frame_count_(0),
+	name_(name)
 	{
 		for(; atlas->IsTextureRegionAvailable(FlashFullName(name, t_frame_count_)); t_frame_count_++){
 			const TextureAtlasRegion region = atlas->GetTextureAtlasRegion(FlashFullName(name, t_frame_count_));
@@ -94,6 +95,11 @@ namespace he{
 		return false;
 	}
 
+	std::string SpriteAnimationData::GetAnimationName() const {
+		return name_;
+	}
+
+	
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// MARK: SpriteAnimation
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
