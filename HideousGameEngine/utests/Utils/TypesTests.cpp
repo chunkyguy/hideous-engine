@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 whackylabs. All rights reserved.
 //
 
-#include <he/Utils/Types.h>
+#include <he/Utils/HETypes.h>
 
 #include <gtest.h>
 

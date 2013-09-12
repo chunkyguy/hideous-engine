@@ -9,7 +9,7 @@
 #import "HideousEngine.h"
 #import "Game.h"
 
-int main(int argc, char *argv[]){
+int main(int argc, char *argv[]){ 
 	GameConfig config(GLKVector3Make(0.5, 0.5, 0.5));
 	return HideousEngineInit(argc, argv, config);
 }

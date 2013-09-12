@@ -136,6 +136,16 @@ namespace he{
 		 *	Doesn't means that memory will be released immediately. It just sets a flag, kicked out of loop by AnimationLoop
 		 */
 		void Die();
+
+		/**
+		 *	Start animation. Is paused by default.
+		 */
+		void Run();
+		
+		/**
+		 *	Pause the animation.
+		 */
+		void Pause();
 		
 		/**
 		 *	Never expected to be used from any place else other than the AnimationLoop.
@@ -149,7 +159,7 @@ namespace he{
 		Animation *child_;
 
 	protected:
-		typedef enum{kAlive, kNaturalDeath, kSuicide} State;
+		typedef enum{kRunning, kPaused, kNaturalDeath, kSuicide} State;
 
 		State state_;
 		

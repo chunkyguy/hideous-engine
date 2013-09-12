@@ -13,8 +13,11 @@ var searchData=
   ['renderobject',['RenderObject',['../classhe_1_1_render_object.html#ae1123d0f5a47b332a7bb366f0650fcd3',1,'he::RenderObject']]],
   ['renderobject_2eh',['RenderObject.h',['../_render_object_8h.html',1,'']]],
   ['reportinglevel',['ReportingLevel',['../class_debug_log.html#ad548ee14a4828bdd5a53a73cdc503d99',1,'DebugLog']]],
+  ['resetanimation',['ResetAnimation',['../classhe_1_1_sprite.html#aed3d5b40153132134d9b0bced072e39a',1,'he::Sprite']]],
   ['resourcepath',['ResourcePath',['../namespacehe.html#aa5a29ef8e0a46966530c44bb99ea952a',1,'he']]],
   ['resourcepath_2ehpp',['ResourcePath.hpp',['../_resource_path_8hpp.html',1,'']]],
+  ['restart',['Restart',['../classhe_1_1_sprite_animation.html#ae64ec2ac570847c6a98323ad8bf711cf',1,'he::SpriteAnimation']]],
   ['retaincurrvertex',['RetainCurrVertex',['../classhe_1_1_sprite_animation.html#a6c8f1d00bfa5b75e82097f8780813798',1,'he::SpriteAnimation']]],
-  ['rotation',['rotation',['../structhe_1_1_transform.html#a2e83db3772d02df426a8c9ac95fa83c6',1,'he::Transform']]]
+  ['rotation',['rotation',['../structhe_1_1_transform.html#a2e83db3772d02df426a8c9ac95fa83c6',1,'he::Transform']]],
+  ['run',['Run',['../classhe_1_1_animation.html#a102c01d00d2499435552ec2870133bc3',1,'he::Animation']]]
 ];

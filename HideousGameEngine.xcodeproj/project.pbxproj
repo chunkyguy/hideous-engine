@@ -84,6 +84,11 @@
 		194B7AE21770C4BE007919BB /* TypesTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 194B7AE01770C4BE007919BB /* TypesTests.cpp */; };
 		194F4D421762EDEB002AD10E /* GLKMath_Additions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 194F4D401762EDEB002AD10E /* GLKMath_Additions.cpp */; };
 		19592592178E6ED500842FB3 /* ParticleView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19592590178E6ED500842FB3 /* ParticleView.cpp */; };
+		1960488D17BCCA99008DC297 /* ParticleTest_2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1960488B17BCCA99008DC297 /* ParticleTest_2.cpp */; };
+		1960488F17BCCB31008DC297 /* ParticleShader2.vertsh in Resources */ = {isa = PBXBuildFile; fileRef = 1960488E17BCCB31008DC297 /* ParticleShader2.vertsh */; };
+		1960489117BCCB43008DC297 /* ParticleShader2.fragsh in Resources */ = {isa = PBXBuildFile; fileRef = 1960489017BCCB43008DC297 /* ParticleShader2.fragsh */; };
+		1960A1C017DC7BD400FCB36F /* playscreen_ss.png in Resources */ = {isa = PBXBuildFile; fileRef = 1960A1BE17DC7BD400FCB36F /* playscreen_ss.png */; };
+		1960A1C117DC7BD400FCB36F /* playscreen_ss.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1960A1BF17DC7BD400FCB36F /* playscreen_ss.xml */; };
 		1962B846173B7070004E9A1C /* SpineTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1962B844173B7068004E9A1C /* SpineTest.cpp */; };
 		198219FF177B10C200B92C84 /* GradientView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 198219FD177B10C200B92C84 /* GradientView.cpp */; };
 		198403AC1761B86B00D0B7EA /* TextureAtlasRegion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 198403AA1761B86A00D0B7EA /* TextureAtlasRegion.cpp */; };
@@ -289,10 +294,16 @@
 		193A5ED91743F8A200CB945B /* SpineAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpineAnimation.cpp; sourceTree = "<group>"; };
 		193A5EDA1743F8A500CB945B /* SpineAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpineAnimation.h; sourceTree = "<group>"; };
 		193A5EDD174430BA00CB945B /* GLKMathsAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLKMathsAdditions.h; sourceTree = "<group>"; };
-		194B7ADF1770C320007919BB /* Types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Types.h; path = HideousGameEngine/include/he/Utils/Types.h; sourceTree = SOURCE_ROOT; };
+		194B7ADF1770C320007919BB /* HETypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HETypes.h; path = HideousGameEngine/include/he/Utils/HETypes.h; sourceTree = SOURCE_ROOT; };
 		194B7AE01770C4BE007919BB /* TypesTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TypesTests.cpp; sourceTree = "<group>"; };
 		194F4D401762EDEB002AD10E /* GLKMath_Additions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLKMath_Additions.cpp; sourceTree = "<group>"; };
 		19592590178E6ED500842FB3 /* ParticleView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParticleView.cpp; sourceTree = "<group>"; };
+		1960488B17BCCA99008DC297 /* ParticleTest_2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParticleTest_2.cpp; sourceTree = "<group>"; };
+		1960488C17BCCA99008DC297 /* ParticleTest_2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticleTest_2.h; sourceTree = "<group>"; };
+		1960488E17BCCB31008DC297 /* ParticleShader2.vertsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = ParticleShader2.vertsh; sourceTree = "<group>"; };
+		1960489017BCCB43008DC297 /* ParticleShader2.fragsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = ParticleShader2.fragsh; sourceTree = "<group>"; };
+		1960A1BE17DC7BD400FCB36F /* playscreen_ss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playscreen_ss.png; sourceTree = "<group>"; };
+		1960A1BF17DC7BD400FCB36F /* playscreen_ss.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = playscreen_ss.xml; sourceTree = "<group>"; };
 		1962B844173B7068004E9A1C /* SpineTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpineTest.cpp; sourceTree = "<group>"; };
 		1962B845173B706C004E9A1C /* SpineTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpineTest.h; sourceTree = "<group>"; };
 		19754B71178D5FEA00A5D4F9 /* ParticleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticleView.h; sourceTree = "<group>"; };
@@ -859,7 +870,7 @@
 				19A8EDD51769C6E500FD25BF /* Asset.h */,
 				19A8EE2A1769F9EC00FD25BF /* Frame.h */,
 				19C54C46176D09E200377317 /* GTests.h */,
-				194B7ADF1770C320007919BB /* Types.h */,
+				194B7ADF1770C320007919BB /* HETypes.h */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1182,6 +1193,10 @@
 			children = (
 				19A6E626173278A1006ACD91 /* ParticleTest.cpp */,
 				19A6E627173278A1006ACD91 /* ParticleTest.h */,
+				1960488B17BCCA99008DC297 /* ParticleTest_2.cpp */,
+				1960488C17BCCA99008DC297 /* ParticleTest_2.h */,
+				1960488E17BCCB31008DC297 /* ParticleShader2.vertsh */,
+				1960489017BCCB43008DC297 /* ParticleShader2.fragsh */,
 			);
 			path = ParticleTest;
 			sourceTree = "<group>";
@@ -1285,6 +1300,8 @@
 		19A8EDDC1769E4A300FD25BF /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				1960A1BE17DC7BD400FCB36F /* playscreen_ss.png */,
+				1960A1BF17DC7BD400FCB36F /* playscreen_ss.xml */,
 				19A8EE251769E78600FD25BF /* homescreen_ss.png */,
 				19A8EE261769E78600FD25BF /* homescreen_ss.xml */,
 				19A8EE231769E59C00FD25BF /* ship_144.png */,
@@ -1483,6 +1500,10 @@
 				19A8EE241769E59C00FD25BF /* ship_144.png in Resources */,
 				19A8EE271769E78600FD25BF /* homescreen_ss.png in Resources */,
 				19A8EE281769E78600FD25BF /* homescreen_ss.xml in Resources */,
+				1960488F17BCCB31008DC297 /* ParticleShader2.vertsh in Resources */,
+				1960489117BCCB43008DC297 /* ParticleShader2.fragsh in Resources */,
+				1960A1C017DC7BD400FCB36F /* playscreen_ss.png in Resources */,
+				1960A1C117DC7BD400FCB36F /* playscreen_ss.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1632,6 +1653,7 @@
 				19592592178E6ED500842FB3 /* ParticleView.cpp in Sources */,
 				19A5694C1792FC1100948E01 /* TransformTest.cpp in Sources */,
 				19848BCF17A13BD700C90C9A /* SpriteTest.cpp in Sources */,
+				1960488D17BCCA99008DC297 /* ParticleTest_2.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

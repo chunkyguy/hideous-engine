@@ -19,6 +19,7 @@
 #include <he/Utils/DebugHelper.h>
 #include <he/Utils/Screen.h>
 #include <he/Vertex/TextureVertex.h>
+#include <he/UI/Sprite.h>
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // MARK: FlashMovie
@@ -42,8 +43,8 @@ vertex_data_(nullptr)
 	
 	render_object_ = new he::RenderObject(vertex_data_, sh, tx);
 	assert(render_object_);
-	
-	he::SpriteAnimation *animation = new he::SpriteAnimation(&vertex_data_, assets->GetAtlas(), name, -1, final_frame, fps);
+
+	he::SpriteAnimation *animation = new he::SpriteAnimation(&vertex_data_, assets->GetData(), -1, final_frame, fps);
 	assert(animation);
 	
 	he::g_AnimationLoop->MoveAnimation(animation);
@@ -101,14 +102,16 @@ void FlashMovie::TouchPoint(const GLKVector2 &point){
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // MARK: FlashMovieAssets
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-FlashMovieAssets::FlashMovieAssets(he::TextureAtlas *atlas, he::TextureShader *shader) :
+FlashMovieAssets::FlashMovieAssets(he::TextureAtlas *atlas, he::TextureShader *shader, const std::string &name) :
 atlas_(atlas),
-shader_(shader)
+shader_(shader),
+data_(he::sprite::Create(atlas, name))
 {}
 
 FlashMovieAssets::~FlashMovieAssets(){
 	delete atlas_;
 	delete shader_;
+	delete data_;
 }
 
 
@@ -118,5 +121,9 @@ const he::TextureAtlas *FlashMovieAssets::GetAtlas() const{
 
 const he::TextureShader *FlashMovieAssets::GetShader() const{
 	return shader_;
+}
+
+const he::SpriteAnimationData *FlashMovieAssets::GetData() const {
+	return data_;
 }
 /// EOF

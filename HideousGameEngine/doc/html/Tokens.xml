@@ -16,10 +16,32 @@
       <Name>EndAnimationsWithID</Name>
       <APILanguage>cpp</APILanguage>
       <Type>func</Type>
-      <Scope>he</Scope>
+      <Scope>he::animation</Scope>
     </TokenIdentifier>
-    <Path>namespacehe.html</Path>
-    <Anchor>a3bc1864645dff436a9537dedfcfa6ad9</Anchor>
+    <Path>namespacehe_1_1animation.html</Path>
+    <Anchor>a022116f8d1a449fe8a24877ff81a5014</Anchor>
+    <DeclaredIn>AnimationUtils.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetFramesInDuration</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he::animation</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe_1_1animation.html</Path>
+    <Anchor>a7b12cab6ae1e76742d3fd4b9549dcb59</Anchor>
+    <DeclaredIn>AnimationUtils.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetDurationForFrames</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he::animation</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe_1_1animation.html</Path>
+    <Anchor>a1873916ae850657addc2a388015222e5</Anchor>
     <DeclaredIn>AnimationUtils.h</DeclaredIn>
   </Token>
   <Token>
@@ -585,7 +607,7 @@
       <Scope>he::sprite</Scope>
     </TokenIdentifier>
     <Path>namespacehe_1_1sprite.html</Path>
-    <Anchor>ac99181018d81375f3a0dfb58c6497966</Anchor>
+    <Anchor>a09f052d0ab7588e889d726dd2346f76d</Anchor>
     <DeclaredIn>Sprite.h</DeclaredIn>
   </Token>
   <Token>
@@ -791,6 +813,17 @@
     </TokenIdentifier>
     <Path>namespacehe.html</Path>
     <Anchor>aa5a29ef8e0a46966530c44bb99ea952a</Anchor>
+    <DeclaredIn>ResourcePath.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DocumentsPath</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe.html</Path>
+    <Anchor>a3506008965914e6098219a202fb560ab</Anchor>
     <DeclaredIn>ResourcePath.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -1622,17 +1655,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>EndAnimationsWithID</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
-      <Scope>he</Scope>
-    </TokenIdentifier>
-    <Path>namespacehe.html</Path>
-    <Anchor>a3bc1864645dff436a9537dedfcfa6ad9</Anchor>
-    <DeclaredIn>AnimationUtils.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>Linear</Name>
       <APILanguage>cpp</APILanguage>
       <Type>func</Type>
@@ -2095,6 +2117,17 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>DocumentsPath</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe.html</Path>
+    <Anchor>a3506008965914e6098219a202fb560ab</Anchor>
+    <DeclaredIn>ResourcePath.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>Transform_Create</Name>
       <APILanguage>cpp</APILanguage>
       <Type>func</Type>
@@ -2386,7 +2419,7 @@
       <Scope>he::AnimationListenable</Scope>
     </TokenIdentifier>
     <Path>structhe_1_1_animation_listenable.html</Path>
-    <Anchor>a7748386ddcf646ef7ba33684e72d260e</Anchor>
+    <Anchor>ad8cf7113ec3681c1efb6e77e3eeb1a60</Anchor>
     <DeclaredIn>Animation.h</DeclaredIn>
   </Token>
   <Token>
@@ -2407,7 +2440,7 @@
       <Scope>he::AnimationListener</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_animation_listener.html</Path>
-    <Anchor>ad5d3e98893b2f099bd83fd3d38417121</Anchor>
+    <Anchor>afe61f46ee4e270907696c4842e5b5e20</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -2428,7 +2461,7 @@
       <Scope>he::AnimationListener</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_animation_listener.html</Path>
-    <Anchor>a802696cf7a8d4bb99429ea0bbdab03ed</Anchor>
+    <Anchor>a904da2e389f75355d2f9a5dfad26cb00</Anchor>
     <DeclaredIn>Animation.h</DeclaredIn>
   </Token>
   <Token>
@@ -2505,7 +2538,7 @@
       <Scope>he::Animation</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_animation.html</Path>
-    <Anchor>a1ef898ff2a3f8dd727d873b6f67be1e3</Anchor>
+    <Anchor>afd5df492a39d900468859e9e897aa897</Anchor>
     <DeclaredIn>Animation.h</DeclaredIn>
   </Token>
   <Token>
@@ -2567,6 +2600,28 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>Run</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Animation</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_animation.html</Path>
+    <Anchor>a102c01d00d2499435552ec2870133bc3</Anchor>
+    <DeclaredIn>Animation.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Pause</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Animation</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_animation.html</Path>
+    <Anchor>a6907d384b1e886c02a71532dc20fd226</Anchor>
+    <DeclaredIn>Animation.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>next_</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -2597,13 +2652,23 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>kAlive</Name>
+      <Name>kRunning</Name>
       <APILanguage>cpp</APILanguage>
       <Type>econst</Type>
       <Scope>he::Animation</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_animation.html</Path>
-    <Anchor>a5888d347656cb507a56975a9d7edaae9a320a5aa31326bee58f54fe6e568cb281</Anchor>
+    <Anchor>a5888d347656cb507a56975a9d7edaae9a1ed53394e2bb87d566cace943bd7e259</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>kPaused</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>he::Animation</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_animation.html</Path>
+    <Anchor>a5888d347656cb507a56975a9d7edaae9afe2fca7bcebd0af611d534ad59d00440</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -2665,7 +2730,18 @@
       <Scope>he::AnimationLoop</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_animation_loop.html</Path>
-    <Anchor>ad95cc27b86412448901b445ee40bbe37</Anchor>
+    <Anchor>ac7f18955eada1cd68d4617d5890ab89c</Anchor>
+    <DeclaredIn>AnimationLoop.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MoveAndRunAnimation</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::AnimationLoop</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_animation_loop.html</Path>
+    <Anchor>aa4e9e7feaca33b7d997baac2f70f6fa6</Anchor>
     <DeclaredIn>AnimationLoop.h</DeclaredIn>
   </Token>
   <Token>
@@ -2817,7 +2893,7 @@
       <Scope>he::Animation</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_animation.html</Path>
-    <Anchor>a1ef898ff2a3f8dd727d873b6f67be1e3</Anchor>
+    <Anchor>afd5df492a39d900468859e9e897aa897</Anchor>
     <DeclaredIn>Animation.h</DeclaredIn>
   </Token>
   <Token>
@@ -2875,6 +2951,28 @@
     <Path>classhe_1_1_animation.html</Path>
     <Anchor>a15a2d511f43c26260c6fa0923f5a07fe</Anchor>
     <Abstract>Anyone is free to call this anytime. Doesn&amp;#39;t means that memory will be released immediately. It just sets a flag, kicked out of loop by AnimationLoop. </Abstract>
+    <DeclaredIn>Animation.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Run</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Animation</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_animation.html</Path>
+    <Anchor>a102c01d00d2499435552ec2870133bc3</Anchor>
+    <DeclaredIn>Animation.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Pause</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Animation</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_animation.html</Path>
+    <Anchor>a6907d384b1e886c02a71532dc20fd226</Anchor>
     <DeclaredIn>Animation.h</DeclaredIn>
   </Token>
   <Token>
@@ -2995,6 +3093,17 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>Restart</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::SpriteAnimation</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sprite_animation.html</Path>
+    <Anchor>ae64ec2ac570847c6a98323ad8bf711cf</Anchor>
+    <DeclaredIn>SpriteAnimation.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>Animation</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
@@ -3036,7 +3145,7 @@
       <Scope>he::Animation</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_animation.html</Path>
-    <Anchor>a1ef898ff2a3f8dd727d873b6f67be1e3</Anchor>
+    <Anchor>afd5df492a39d900468859e9e897aa897</Anchor>
     <DeclaredIn>Animation.h</DeclaredIn>
   </Token>
   <Token>
@@ -3094,6 +3203,28 @@
     <Path>classhe_1_1_animation.html</Path>
     <Anchor>a15a2d511f43c26260c6fa0923f5a07fe</Anchor>
     <Abstract>Anyone is free to call this anytime. Doesn&amp;#39;t means that memory will be released immediately. It just sets a flag, kicked out of loop by AnimationLoop. </Abstract>
+    <DeclaredIn>Animation.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Run</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Animation</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_animation.html</Path>
+    <Anchor>a102c01d00d2499435552ec2870133bc3</Anchor>
+    <DeclaredIn>Animation.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Pause</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Animation</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_animation.html</Path>
+    <Anchor>a6907d384b1e886c02a71532dc20fd226</Anchor>
     <DeclaredIn>Animation.h</DeclaredIn>
   </Token>
   <Token>
@@ -6044,93 +6175,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>he::ImageViewFactory</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>he::ImageViewFactory</Scope>
-    </TokenIdentifier>
-    <Path>classhe_1_1_image_view_factory.html</Path>
-    <DeclaredIn>ImageViewFactory.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>ImageViewFactory</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>he::ImageViewFactory</Scope>
-    </TokenIdentifier>
-    <Path>classhe_1_1_image_view_factory.html</Path>
-    <Anchor>a713919892736bfbe14a5682c90deba77</Anchor>
-    <DeclaredIn>ImageViewFactory.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>SetAtlas</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>he::ImageViewFactory</Scope>
-    </TokenIdentifier>
-    <Path>classhe_1_1_image_view_factory.html</Path>
-    <Anchor>adf11b141575e27ac4ae4cc8210fd0af7</Anchor>
-    <DeclaredIn>ImageViewFactory.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>SetImage</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>he::ImageViewFactory</Scope>
-    </TokenIdentifier>
-    <Path>classhe_1_1_image_view_factory.html</Path>
-    <Anchor>a4bb5aa83215222bcbe44cf46ed5f8530</Anchor>
-    <DeclaredIn>ImageViewFactory.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>CreateImageView</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>he::ImageViewFactory</Scope>
-    </TokenIdentifier>
-    <Path>classhe_1_1_image_view_factory.html</Path>
-    <Anchor>a4d0b6b783af5635abef79cc613a10d39</Anchor>
-    <DeclaredIn>ImageViewFactory.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>CreateImageView</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>he::ImageViewFactory</Scope>
-    </TokenIdentifier>
-    <Path>classhe_1_1_image_view_factory.html</Path>
-    <Anchor>a85c46f9a21f5c08d10974703378f1b3f</Anchor>
-    <DeclaredIn>ImageViewFactory.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>LoadSprite</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>he::ImageViewFactory</Scope>
-    </TokenIdentifier>
-    <Path>classhe_1_1_image_view_factory.html</Path>
-    <Anchor>ac41b9c738ae2dc1b0fc8f4725de86cd1</Anchor>
-    <DeclaredIn>ImageViewFactory.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>CreateSpriteView</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>he::ImageViewFactory</Scope>
-    </TokenIdentifier>
-    <Path>classhe_1_1_image_view_factory.html</Path>
-    <Anchor>a22303e188cd03814fa62ba8c7751013c</Anchor>
-    <DeclaredIn>ImageViewFactory.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>he::ParticleView</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -6310,7 +6354,7 @@
       <Scope>he::Sprite</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_sprite.html</Path>
-    <Anchor>ac5018b179be15c37d4bcfeb81d862d26</Anchor>
+    <Anchor>aa586132d8a280e15197fab8d3de0734b</Anchor>
     <DeclaredIn>Sprite.h</DeclaredIn>
   </Token>
   <Token>
@@ -6322,6 +6366,17 @@
     </TokenIdentifier>
     <Path>classhe_1_1_sprite.html</Path>
     <Anchor>a0c45a0978d0f73e1d9defc17e2252d9b</Anchor>
+    <DeclaredIn>Sprite.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetID</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Sprite</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sprite.html</Path>
+    <Anchor>a82e2710487d84b6d9524cf3090c2ca9a</Anchor>
     <DeclaredIn>Sprite.h</DeclaredIn>
   </Token>
   <Token>
@@ -6344,6 +6399,28 @@
     </TokenIdentifier>
     <Path>classhe_1_1_sprite.html</Path>
     <Anchor>a75afdecd0863b5c765eb17eb87015718</Anchor>
+    <DeclaredIn>Sprite.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ResetAnimation</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Sprite</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sprite.html</Path>
+    <Anchor>aed3d5b40153132134d9b0bced072e39a</Anchor>
+    <DeclaredIn>Sprite.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>StartAnimation</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Sprite</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sprite.html</Path>
+    <Anchor>a9998ab52a718a0f178067e4297db8910</Anchor>
     <DeclaredIn>Sprite.h</DeclaredIn>
   </Token>
   <Token>
@@ -7850,6 +7927,48 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>he::animation</Name>
+      <APILanguage>c</APILanguage>
+      <Type>ns</Type>
+      <Scope>he::animation</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe_1_1animation.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>EndAnimationsWithID</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he::animation</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe_1_1animation.html</Path>
+    <Anchor>a022116f8d1a449fe8a24877ff81a5014</Anchor>
+    <DeclaredIn>AnimationUtils.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetFramesInDuration</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he::animation</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe_1_1animation.html</Path>
+    <Anchor>a7b12cab6ae1e76742d3fd4b9549dcb59</Anchor>
+    <DeclaredIn>AnimationUtils.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetDurationForFrames</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he::animation</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe_1_1animation.html</Path>
+    <Anchor>a1873916ae850657addc2a388015222e5</Anchor>
+    <DeclaredIn>AnimationUtils.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>he::gradient</Name>
       <APILanguage>c</APILanguage>
       <Type>ns</Type>
@@ -7939,7 +8058,7 @@
       <Scope>he::sprite</Scope>
     </TokenIdentifier>
     <Path>namespacehe_1_1sprite.html</Path>
-    <Anchor>ac99181018d81375f3a0dfb58c6497966</Anchor>
+    <Anchor>a09f052d0ab7588e889d726dd2346f76d</Anchor>
     <DeclaredIn>Sprite.h</DeclaredIn>
   </Token>
   <Token>

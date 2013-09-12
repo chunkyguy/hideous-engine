@@ -65,6 +65,12 @@ namespace he {
 		//		FILE_LOG(logDEBUG) << "AnimationLoop: AddAnimation: " << a->GetID();
 	}
 	
+	Animation * AnimationLoop::MoveAndRunAnimation(Animation *a) {
+		MoveAnimation(a);
+		a->Run();
+		return a;
+	}
+
 	void AnimationLoop::add_animations(){
 		if(new_tail_){
 			assert(new_head_);

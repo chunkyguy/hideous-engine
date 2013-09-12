@@ -27,7 +27,7 @@ public:
 	void Update(float dt);
 	void Render();
 	void TouchEnd(GLKVector2 pt);
-	void AnimationCallback(int animation_id);
+	void AnimationCallback(he::Animation::ID animation_id);
 	
 private:
 	void end_animations();

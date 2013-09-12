@@ -26,7 +26,7 @@ namespace he{
 					child_->Die(); delete child_; child_ = nullptr;
 				}else{
 					// From this moment on child is responsibilty of the AnimationLoop.
-					g_AnimationLoop->MoveAnimation(child_);
+					g_AnimationLoop->MoveAndRunAnimation(child_);
 				}
 			}
 			if(listener_){		// callback
@@ -44,7 +44,7 @@ namespace he{
 	next_(nullptr),
 	child_(nullptr),
 	listener_(nullptr),
-	state_(kAlive)
+	state_(kPaused)
 	{
 		//		FILE_LOG(logDEBUG) << "Animation: (" << this << "|" << id_ << "|" << descent_id_ << ")";
 	}
@@ -54,7 +54,7 @@ namespace he{
 	//	2. If any listener is registered, call it.
 	//	3. If has any child animation update it.
 	void Animation::Update(float dt){
-		if(state_ == kAlive){
+		if(state_ == kRunning){
 			update(dt);
 		}
 	}
@@ -83,13 +83,21 @@ namespace he{
 	}
 	
 	bool Animation::Done() const{
-		return state_ != kAlive;
+		return (state_ == kNaturalDeath) || (state_ == kSuicide);
 	}
 	
 	void Animation::Die(){
 		state_ = kSuicide;
 	}
-	
+
+	void Animation::Pause() {
+		assert(!Done());		// Error: Issuing command to a dead animation.
+		state_ = kPaused;
+	}
+	void Animation::Run() {
+		assert(!Done());		// Error: Issuing command to a dead animation.
+		state_ = kRunning;
+	}
 	Animation::ID Animation::uid = 0ULL;
 	Animation::ID Animation::d_uid = 0ULL;
 	

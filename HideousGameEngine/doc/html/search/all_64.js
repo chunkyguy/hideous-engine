@@ -11,5 +11,6 @@ var searchData=
   ['debuglog_3c_20output2file_20_3e',['DebugLog&lt; Output2FILE &gt;',['../class_debug_log.html',1,'']]],
   ['die',['Die',['../classhe_1_1_animation.html#a15a2d511f43c26260c6fa0923f5a07fe',1,'he::Animation']]],
   ['disallow_5fcopy_5fand_5fassign',['DISALLOW_COPY_AND_ASSIGN',['../_utils_8h.html#af8df3547bfde53a5acb93e2607b0034a',1,'Utils.h']]],
+  ['documentspath',['DocumentsPath',['../namespacehe.html#a3506008965914e6098219a202fb560ab',1,'he']]],
   ['done',['Done',['../classhe_1_1_animation.html#aff73f2ef7157d5e1a71e256d697207d9',1,'he::Animation']]]
 ];

@@ -15,6 +15,7 @@
 #include <he/Texture/TextureAtlas.h>
 #include <he/Utils/ResourcePath.hpp>
 #include <he/Utils/Utils.h>
+#include <he/UI/Sprite.h>
 
 #include "FlashMovie.h"
 
@@ -24,9 +25,11 @@ void FlashTest::init(){
 	// load
 	std::string data_path(he::ResourcePath() + "fishmotion.xml");
 	std::string img_path(he::ResourcePath() + "fishmotion.png");
-	assets_ = new FlashMovieAssets(new he::TextureAtlas(data_path, img_path, he::TextureAtlas::kStarling), new he::TextureShader);
-	
 	std::string name("fishmoving");
+	assets_ = new FlashMovieAssets(new he::TextureAtlas(data_path, img_path, he::TextureAtlas::kStarling),
+								   new he::TextureShader,
+								   name);
+	
 	movie_ = new FlashMovie(name, assets_, GLKVector2Make(0, 0), 0, 24.0f);
 	
 	gesture_listener_ = new he::GestureListener<FlashTest>(this, &FlashTest::HandleGesture);

@@ -22,6 +22,7 @@ namespace he{
 	class TextureAtlas;
 
 	class Sprite;
+	class SpriteAnimationData;
 	
 	class ColorShader;
 
@@ -60,6 +61,7 @@ private:
 
 	he::Asset<he::TextureAtlas> fish_atlas_;
 
+	he::Asset<he::SpriteAnimationData> fish_sprite_data_;
 	he::Asset<he::Sprite> fish_sprite_;
 	
 	he::Asset<he::ColorShader> clr_sh_;

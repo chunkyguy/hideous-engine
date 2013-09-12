@@ -2,7 +2,6 @@ var searchData=
 [
   ['image',['Image',['../classhe_1_1_image.html#a8d9bc929281de434c385b978d60cea46',1,'he::Image']]],
   ['imageview',['ImageView',['../classhe_1_1_image_view.html#ac4f085af65c3c754bdaaf05d17c4df82',1,'he::ImageView']]],
-  ['imageviewfactory',['ImageViewFactory',['../classhe_1_1_image_view_factory.html#a713919892736bfbe14a5682c90deba77',1,'he::ImageViewFactory']]],
   ['init',['Init',['../classhe_1_1_game.html#a2a4d08c1603eb9a16cab2e3ec1ae0bee',1,'he::Game']]],
   ['initwithview_3a',['initWithView:',['../interface_gesture_collector.html#a39ed210cd36b1462cd5dc6997aab3cd4',1,'GestureCollector']]],
   ['isempty',['IsEmpty',['../classhe_1_1_asset.html#a4867ba7f6efa2b07e6a867accd40262e',1,'he::Asset']]],

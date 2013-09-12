@@ -92,7 +92,9 @@ void UITest::init(){
 
 	//fish sprite
 	std::string fish_sprite_name("fishmoving");
-	fish_sprite_.Move(he::sprite::Create(texture_shader_.Get(), fish_atlas_.Get(), fish_sprite_name, -1, 0, 30.0f));
+	fish_sprite_data_.Move(he::sprite::Create(fish_atlas_.Get(), fish_sprite_name));
+	fish_sprite_.Move(he::sprite::Create(fish_sprite_data_.Get(), fish_sprite_name, texture_shader_.Get(), fish_atlas_.Get(), -1, 0, 30.0f));
+
 	he::Transform fish_trans = he::Transform_Create(GLKVector3Make(0, -100, 0.0f));
 	//GLKVector2 fish_sprite_sz = fish_atlas_.Get()->GetTextureAtlasRegion(he::FlashFullName(fish_sprite_name)).sprite_size_;
 	he::SpriteView *fish_sprite = new he::SpriteView(fish_trans, fish_sprite_.Get());

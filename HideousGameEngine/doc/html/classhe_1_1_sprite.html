@@ -104,20 +104,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac5018b179be15c37d4bcfeb81d862d26"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_sprite.html#ac5018b179be15c37d4bcfeb81d862d26">Sprite</a> (const std::string &amp;animation_name, const <a class="el" href="classhe_1_1_texture_shader.html">TextureShader</a> *shader, const <a class="el" href="classhe_1_1_texture_atlas.html">TextureAtlas</a> *atlas, const int repeat_count=-1, const int final_frame=0, const float fps=24.0f)</td></tr>
-<tr class="separator:ac5018b179be15c37d4bcfeb81d862d26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa586132d8a280e15197fab8d3de0734b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_sprite.html#aa586132d8a280e15197fab8d3de0734b">Sprite</a> (const std::string &amp;animation_name, const <a class="el" href="classhe_1_1_texture_shader.html">TextureShader</a> *shader, const <a class="el" href="classhe_1_1_texture_atlas.html">TextureAtlas</a> *atlas, const int repeat_count=-1, <a class="el" href="structhe_1_1_animation_listenable.html">AnimationListenable</a> *listener=nullptr, const int final_frame=0, const float fps=24.0f)</td></tr>
+<tr class="separator:aa586132d8a280e15197fab8d3de0734b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c45a0978d0f73e1d9defc17e2252d9b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_sprite.html#a0c45a0978d0f73e1d9defc17e2252d9b">~Sprite</a> ()</td></tr>
 <tr class="separator:a0c45a0978d0f73e1d9defc17e2252d9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82e2710487d84b6d9524cf3090c2ca9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classhe_1_1_animation.html#a5ec4f04a171ed0ded89028593283b738">Animation::ID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_sprite.html#a82e2710487d84b6d9524cf3090c2ca9a">GetID</a> () const </td></tr>
+<tr class="separator:a82e2710487d84b6d9524cf3090c2ca9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb560f9a80eab59669aa8d7028e637dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_sprite.html#abb560f9a80eab59669aa8d7028e637dd">Render</a> (const <a class="el" href="structhe_1_1_transform.html">Transform</a> &amp;transform)</td></tr>
 <tr class="separator:abb560f9a80eab59669aa8d7028e637dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75afdecd0863b5c765eb17eb87015718"><td class="memItemLeft" align="right" valign="top">GLKVector2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_sprite.html#a75afdecd0863b5c765eb17eb87015718">GetSize</a> () const </td></tr>
 <tr class="separator:a75afdecd0863b5c765eb17eb87015718"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed3d5b40153132134d9b0bced072e39a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_sprite.html#aed3d5b40153132134d9b0bced072e39a">ResetAnimation</a> ()</td></tr>
+<tr class="separator:aed3d5b40153132134d9b0bced072e39a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9998ab52a718a0f178067e4297db8910"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_sprite.html#a9998ab52a718a0f178067e4297db8910">StartAnimation</a> ()</td></tr>
+<tr class="separator:a9998ab52a718a0f178067e4297db8910"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classhe_1_1_sprite.html" title="Sprite is an animated texture object. The texture has to be provided as an atlas. ...">Sprite</a> is an animated texture object. The texture has to be provided as an atlas. </p>
 <p><a class="el" href="classhe_1_1_sprite.html" title="Sprite is an animated texture object. The texture has to be provided as an atlas. ...">Sprite</a> object. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ac5018b179be15c37d4bcfeb81d862d26"></a>
+<a class="anchor" id="aa586132d8a280e15197fab8d3de0734b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -148,6 +154,12 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="structhe_1_1_animation_listenable.html">AnimationListenable</a> *&#160;</td>
+          <td class="paramname"><em>listener</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>final_frame</em> = <code>0</code>, </td>
         </tr>
@@ -170,12 +182,14 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">animation_name</td><td>The symbol stored on the atlas data file. Only expecting a flash like naming convention for now, </td></tr>
     <tr><td class="paramname">shader</td><td>The texture-shader. </td></tr>
     <tr><td class="paramname">atlas</td><td>The atlas </td></tr>
-    <tr><td class="paramname">repeat_count</td><td>Number of times the animation should run back to back. Default is infinite (= -1). </td></tr>
-    <tr><td class="paramname">final_frame</td><td>What frame to display when the animation is over. Default is the first frame (= 0). </td></tr>
+    <tr><td class="paramname">repeat_count</td><td>Repeat count. -1 means infinite loop. </td></tr>
+    <tr><td class="paramname">listener</td><td>Add a listener for the internal animation. </td></tr>
+    <tr><td class="paramname">final_frame</td><td>The final frame to display when the animation is over. </td></tr>
     <tr><td class="paramname">fps</td><td>The speed of the animation. Default is 24 FPS. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section note"><dt>Note</dt><dd>The sprite is loaded by default in paused state. Call StartAnimation to start the animation. </dd></dl>
 
 </div>
 </div>
@@ -195,6 +209,23 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a82e2710487d84b6d9524cf3090c2ca9a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classhe_1_1_animation.html#a5ec4f04a171ed0ded89028593283b738">Animation::ID</a> he::Sprite::GetID </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the <a class="el" href="classhe_1_1_animation.html#a5ec4f04a171ed0ded89028593283b738">Animation::ID</a> associated with the internal animation. </p>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classhe_1_1_animation.html#a5ec4f04a171ed0ded89028593283b738">Animation::ID</a> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a75afdecd0863b5c765eb17eb87015718"></a>
 <div class="memitem">
 <div class="memproto">
@@ -223,6 +254,45 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Render</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">transform</td><td>The transform at which to render. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aed3d5b40153132134d9b0bced072e39a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void he::Sprite::ResetAnimation </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Move the animation to first frame. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9998ab52a718a0f178067e4297db8910"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void he::Sprite::StartAnimation </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Actually start animating. This method avoids situation where the caller just wishes to create an object and run it at some time later. </p>
 
 </div>
 </div>
@@ -232,7 +302,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 6 2013 22:10:55 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 8 2013 14:37:14 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

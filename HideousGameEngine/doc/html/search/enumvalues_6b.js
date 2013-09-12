@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['kalive',['kAlive',['../classhe_1_1_animation.html#a5888d347656cb507a56975a9d7edaae9a320a5aa31326bee58f54fe6e568cb281',1,'he::Animation']]],
   ['kanimationid',['kAnimationID',['../classhe_1_1_end_animation_functor.html#a41ab82542d30bfba28a5132be648158ba4aeb717b5ccba9c3bbbbc190e3fd5912',1,'he::EndAnimationFunctor']]],
   ['kbegan',['kBegan',['../_gesture_collector_8h.html#aac1054df55e47a5f542c39553b0ae48ca9897c5bbcfd9b4b525638a8326dc118b',1,'GestureCollector.h']]],
   ['kbegin',['kBegin',['../classhe_1_1_gesture.html#ae4664fad3d34df997858f873dba4f57aa3a1460343d583d649d866bef6bbbbbf6',1,'he::Gesture']]],
@@ -21,9 +20,11 @@ var searchData=
   ['kmoved',['kMoved',['../_gesture_collector_8h.html#aac1054df55e47a5f542c39553b0ae48ca1b34f42be1e167f529afd68fcbcce81a',1,'GestureCollector.h']]],
   ['knaturaldeath',['kNaturalDeath',['../classhe_1_1_animation.html#a5888d347656cb507a56975a9d7edaae9a5201ef5e8e9c3ec0c3308a2ce7ddc9d6',1,'he::Animation']]],
   ['knone',['kNone',['../classhe_1_1_gesture.html#af12c544c2a15c8de44b281e4f2db31f6a411519180b727d5e31c56cc1a99b0174',1,'he::Gesture']]],
+  ['kpaused',['kPaused',['../classhe_1_1_animation.html#a5888d347656cb507a56975a9d7edaae9afe2fca7bcebd0af611d534ad59d00440',1,'he::Animation']]],
   ['kposition',['kPosition',['../classhe_1_1_i_vertex.html#ab6d3131e5b1346470cc257469be2645ca3320e7fc502923c1c3e1f856bf4d3134',1,'he::IVertex']]],
   ['kpossible',['kPossible',['../classhe_1_1_gesture.html#ae4664fad3d34df997858f873dba4f57aa5f3a025a83f3a1933e882f5a5a34ac0d',1,'he::Gesture']]],
   ['kright',['kRight',['../classhe_1_1_screen.html#a4b776110a8ca5a454d47c6a38a77f9c6ab8e1b2c4f5e89410aba0ede08c90fd7e',1,'he::Screen']]],
+  ['krunning',['kRunning',['../classhe_1_1_animation.html#a5888d347656cb507a56975a9d7edaae9a1ed53394e2bb87d566cace943bd7e259',1,'he::Animation']]],
   ['kstarling',['kStarling',['../classhe_1_1_texture_atlas.html#a0273278a392e3a0e3440b9da6db44e60a1755244cbb8066322a28a52a4975a92a',1,'he::TextureAtlas']]],
   ['ksuicide',['kSuicide',['../classhe_1_1_animation.html#a5888d347656cb507a56975a9d7edaae9a1a0ff48ee9afa90681e2eaa0c542657f',1,'he::Animation']]],
   ['ktap',['kTap',['../classhe_1_1_gesture.html#af12c544c2a15c8de44b281e4f2db31f6a58298d95facc8da69101003f7c4fd88b',1,'he::Gesture']]],

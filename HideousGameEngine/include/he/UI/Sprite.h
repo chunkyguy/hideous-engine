@@ -18,7 +18,8 @@ namespace he {
 	class TextureVertex;
 	class TextureShader;
 	class SpriteAnimation;
-	
+	class SpriteAnimationData;
+
 	/** Sprite object.
 	 @brief		Sprite is an animated texture object. The texture has to be provided as an atlas.
 	 */
@@ -28,28 +29,59 @@ namespace he {
 		 @param animation_name	The symbol stored on the atlas data file. Only expecting a flash like naming convention for now,
 		 @param shader			The texture-shader.
 		 @param atlas			The atlas
-		 @param repeat_count		Number of times the animation should run back to back. Default is infinite (= -1).
-		 @param final_frame		What frame to display when the animation is over. Default is the first frame (= 0).
+		 @param repeat_count		Repeat count. -1 means infinite loop.
+		 @param listener			Add a listener for the internal animation.
+		 @param final_frame		The final frame to display when the animation is over.
 		 @param fps				The speed of the animation. Default is 24 FPS.
+		 @note	The sprite is loaded by default in paused state. Call StartAnimation to start the animation.
 		 */
-		Sprite(const std::string &animation_name, const TextureShader *shader, const TextureAtlas *atlas,
-			   const int repeat_count = -1, const int final_frame = 0, const float fps = 24.0f);
+		Sprite(const SpriteAnimationData *data, const std::string &animation_name,
+			   const TextureShader *shader, const TextureAtlas *atlas,
+			   const int repeat_count = -1, AnimationListenable *listener = nullptr,
+			   const int final_frame = 0, const float fps = 24.0f);
 		~Sprite();
 
+		/**
+		 *	Get the Animation::ID associated with the internal animation.
+		 *	@return	The Animation::ID
+		 */
+		Animation::ID GetID() const;
+		
+		/**
+		 *	Render
+		 *
+		 *	@param	transform	The transform at which to render.
+		 */
 		void Render(const Transform &transform);
 
 		GLKVector2 GetSize() const;
 		
+		
+		void GoToFrameNumber(unsigned int frame_num);
+		unsigned int GetFrameCount() const;
+
+		/**
+		 *	Actually start animating. This method avoids situation where the caller just wishes to create an object 
+		 *	and run it at some time later.
+		 */
+		void StartAnimation();
+
 	private:
 		GLKVector2 size_;
 		TextureVertex *vertex_;
 		RenderObject *render_object_;
+		SpriteAnimation *animation_;
 		Animation::ID anim_id_;
 	};
 
+
 	namespace sprite {
-		Sprite *Create(const TextureShader *shader, const TextureAtlas *texture_atlas, const std::string &region,
-					   const int repeat_count = -1, const int final_frame = 0, const float fps = 24.0f);
+		SpriteAnimationData *Create(const TextureAtlas *texture_atlas,
+									const std::string &region);
+		Sprite *Create(const SpriteAnimationData *data, const std::string &region_name,
+					   const TextureShader *shader, const TextureAtlas *texture_atlas,
+					   const int repeat_count = -1, AnimationListenable *listener = nullptr,
+					   const int final_frame = 0, const float fps = 24.0f);
 	}
 	
 	class SpriteView : public View {

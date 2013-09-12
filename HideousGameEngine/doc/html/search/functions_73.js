@@ -3,7 +3,6 @@ var searchData=
   ['scale',['Scale',['../namespacehe_1_1_vertex.html#a9914680fdc885e8e9b482dd3a76ed0f3',1,'he::Vertex']]],
   ['screen',['Screen',['../classhe_1_1_screen.html#ae35644a1e8287a09fd37a3bbc0bd920f',1,'he::Screen']]],
   ['set',['Set',['../classhe_1_1_asset.html#ad02e4c2c7a058dd2a58a3bb499604e6a',1,'he::Asset::Set()'],['../namespacehe_1_1_vertex.html#af89442c35d2cdb0e133ffbf02b514c56',1,'he::Vertex::Set(V &amp;slf, const GLfloat *data, int start=0, int end=V::vertex_count *4)'],['../namespacehe_1_1_vertex.html#a7cefdb8eb1f81143d3ac836a676a8bec',1,'he::Vertex::Set(V &amp;slf, const GLfloat *data, Index vi)'],['../namespacehe_1_1_vertex.html#a169d30a1bf31b061e8460718fc7a099c',1,'he::Vertex::Set(V &amp;slf, const GLKVector &amp;a, const GLKVector &amp;b, const GLKVector &amp;c, const GLKVector &amp;d)'],['../namespacehe_1_1_vertex.html#a33b6964f79ab6d837d930ffeaecf6231',1,'he::Vertex::Set(V2 &amp;slf, const GLKVector2 &amp;a, const GLKVector2 &amp;d)']]],
-  ['setatlas',['SetAtlas',['../classhe_1_1_image_view_factory.html#adf11b141575e27ac4ae4cc8210fd0af7',1,'he::ImageViewFactory']]],
   ['setcolor',['SetColor',['../classhe_1_1_render_object.html#ad1ebe0e431048157516708d52926cc99',1,'he::RenderObject']]],
   ['setcount',['SetCount',['../classhe_1_1_i_vertex.html#a6efd88c92997806cf5a561ea174f3763',1,'he::IVertex']]],
   ['setdata',['SetData',['../classhe_1_1_particle_vertex.html#a3220c5a709a3fa596a1919c81eb4e9c7',1,'he::ParticleVertex']]],
@@ -11,7 +10,6 @@ var searchData=
   ['setfinalframeindex',['SetFinalFrameIndex',['../classhe_1_1_sprite_animation.html#a31c689c96392a829e8b8199f43923265',1,'he::SpriteAnimation']]],
   ['setfps',['SetFPS',['../classhe_1_1_sprite_animation.html#a4eb6c5d02501610dc85b74f53b37d5a2',1,'he::SpriteAnimation']]],
   ['setgesture',['SetGesture',['../classhe_1_1_event_loop.html#a33a5fcb0ebe984fcd4f9db4093fcc02f',1,'he::EventLoop']]],
-  ['setimage',['SetImage',['../classhe_1_1_image_view_factory.html#a4bb5aa83215222bcbe44cf46ed5f8530',1,'he::ImageViewFactory']]],
   ['setlistener',['SetListener',['../classhe_1_1_animation.html#a56ee974621f9eeb5ed8a1de5ce2c0db0',1,'he::Animation']]],
   ['setmvp',['SetMVP',['../classhe_1_1_particle_batch.html#a13bbb9eb0c3f95039ee9c948622e011a',1,'he::ParticleBatch::SetMVP()'],['../classhe_1_1_render_object.html#a4863607cc2cbf2aaf635a58247a1f746',1,'he::RenderObject::SetMVP()']]],
   ['setorigin',['SetOrigin',['../classhe_1_1_frame.html#ac10279ebf90431485c47d99e1e5894c3',1,'he::Frame']]],
@@ -28,9 +26,10 @@ var searchData=
   ['sineeaseinout',['SineEaseInOut',['../namespacehe.html#a3a7381338a8a5330eae7772b3ab98543',1,'he']]],
   ['sineeaseout',['SineEaseOut',['../namespacehe.html#a9008ce73b55240fb14283b6d90660781',1,'he']]],
   ['size',['Size',['../structhe_1_1_glyph_data_1_1_size.html#a1fad0fe54b7cd09ba6082d0cb9b8c52d',1,'he::GlyphData::Size']]],
-  ['sprite',['Sprite',['../classhe_1_1_sprite.html#ac5018b179be15c37d4bcfeb81d862d26',1,'he::Sprite']]],
+  ['sprite',['Sprite',['../classhe_1_1_sprite.html#aa586132d8a280e15197fab8d3de0734b',1,'he::Sprite']]],
   ['spriteanimation',['SpriteAnimation',['../classhe_1_1_sprite_animation.html#a84fc46549380c60d7d480643b7f9cace',1,'he::SpriteAnimation']]],
   ['spriteview',['SpriteView',['../classhe_1_1_sprite_view.html#af7e9a6ac8e7625990130aa700cb07c26',1,'he::SpriteView']]],
   ['starlingdataparser',['StarlingDataParser',['../classhe_1_1_starling_data_parser.html#aca0db266b258321d7a1f53a209195086',1,'he::StarlingDataParser']]],
+  ['startanimation',['StartAnimation',['../classhe_1_1_sprite.html#a9998ab52a718a0f178067e4297db8910',1,'he::Sprite']]],
   ['stream',['Stream',['../class_output2_f_i_l_e.html#a10f20b32157af0d88e5ad9710f2dbd6e',1,'Output2FILE']]]
 ];

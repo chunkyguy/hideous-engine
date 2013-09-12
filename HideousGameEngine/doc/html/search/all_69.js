@@ -8,8 +8,6 @@ var searchData=
   ['imageview',['ImageView',['../classhe_1_1_image_view.html',1,'he']]],
   ['imageview',['ImageView',['../classhe_1_1_image_view.html#ac4f085af65c3c754bdaaf05d17c4df82',1,'he::ImageView']]],
   ['imageview_2eh',['ImageView.h',['../_image_view_8h.html',1,'']]],
-  ['imageviewfactory',['ImageViewFactory',['../classhe_1_1_image_view_factory.html',1,'he']]],
-  ['imageviewfactory',['ImageViewFactory',['../classhe_1_1_image_view_factory.html#a713919892736bfbe14a5682c90deba77',1,'he::ImageViewFactory']]],
   ['imageviewfactory_2eh',['ImageViewFactory.h',['../_image_view_factory_8h.html',1,'']]],
   ['index',['Index',['../namespacehe_1_1_vertex.html#ae63fdcfb835ac34485dafa33c1832726',1,'he::Vertex']]],
   ['init',['Init',['../classhe_1_1_game.html#a2a4d08c1603eb9a16cab2e3ec1ae0bee',1,'he::Game']]],

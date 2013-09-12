@@ -48,15 +48,19 @@ namespace he{
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// MARK: Sprite
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	Sprite::Sprite(const std::string &animation_name, const TextureShader *shader, const TextureAtlas *atlas,
-				   const int repeat_count, const int final_frame, const float fps) :
+	Sprite::Sprite(const SpriteAnimationData *data, const std::string &animation_name,
+				   const TextureShader *shader, const TextureAtlas *atlas,
+				   const int repeat_count, AnimationListenable *listener,
+				   const int final_frame, const float fps) :
 	vertex_(nullptr),
 	render_object_(),
 	size_(atlas->GetTextureAtlasRegion(he::FlashFullName(animation_name)).sprite_size_)
 	{
-		he:SpriteAnimation *animation = new he::SpriteAnimation(&vertex_, atlas, animation_name, repeat_count, final_frame, fps);
-		anim_id_ = animation->GetID();
-		he::g_AnimationLoop->MoveAnimation(animation);
+		animation_ = static_cast<SpriteAnimation*>(g_AnimationLoop->MoveAnimation(new SpriteAnimation(&vertex_, data, repeat_count, final_frame, fps)));
+		anim_id_ = animation_->GetID();
+		if (listener) {
+			animation_->SetListener(listener);
+		}
 		assert(vertex_);		// There is some default vertex data.
 		render_object_ = new RenderObject(vertex_, shader, atlas->GetTexture());
 	}
@@ -78,6 +82,10 @@ namespace he{
 		vertex_ = nullptr;
 		delete render_object_;
 	}
+
+	Animation::ID Sprite::GetID() const {
+		return anim_id_;
+	}
 	
 	void Sprite::Render(const Transform &transform){
 		render_object_->SetVertexData(vertex_);
@@ -88,12 +96,36 @@ namespace he{
 	GLKVector2 Sprite::GetSize() const {
 		return size_;
 	}
-	//Utility
+	
+	void Sprite::GoToFrameNumber(unsigned int frame_num) {
+		animation_->GoToFrameNumber(frame_num);
+	}
+	
+	unsigned int Sprite::GetFrameCount() const {
+		return animation_->GetFrameCount();
+	}
+
+	void Sprite::StartAnimation() {
+		animation_->Run();
+	}
+
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// MARK: Utility
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	namespace sprite {
-		Sprite *Create(const TextureShader *shader, const TextureAtlas *texture_atlas, const std::string &region_name,
-					   const int repeat_count, const int final_frame, const float fps){
-			return new Sprite(region_name, shader, texture_atlas, repeat_count, final_frame, fps);
+
+		SpriteAnimationData *Create(const TextureAtlas *texture_atlas,
+									const std::string &region) {
+			return new SpriteAnimationData(texture_atlas, region);
 		}
+
+		Sprite *Create(const SpriteAnimationData *data, const std::string &region_name,
+					   const TextureShader *shader, const TextureAtlas *texture_atlas,
+					   const int repeat_count, AnimationListenable *listener, const int final_frame, const float fps) {
+			return new Sprite(data, region_name, shader, texture_atlas, repeat_count, listener, final_frame, fps);
+		}
+
 	}
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -103,7 +135,7 @@ namespace he{
 	View(transform),
 	sprite_(sprite)
 	{}
-	
+
 	void SpriteView::Update(float dt) {
 		View::Update(dt);
 	}

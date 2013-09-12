@@ -120,15 +120,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="classhe_1_1_end_animation_functor.html#a41ab82542d30bfba28a5132be648158b">IDType</a> type_;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    };</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacehe.html#a3bc1864645dff436a9537dedfcfa6ad9">EndAnimationsWithID</a>(<a class="code" href="classhe_1_1_end_animation_functor.html#a41ab82542d30bfba28a5132be648158b">EndAnimationFunctor::IDType</a> type, <a class="code" href="classhe_1_1_animation.html#a5ec4f04a171ed0ded89028593283b738">Animation::ID</a> ID);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="namespacehe_1_1animation.html">   32</a></span>&#160;    <span class="keyword">namespace </span>animation {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="namespacehe_1_1animation.html#a022116f8d1a449fe8a24877ff81a5014">EndAnimationsWithID</a>(<a class="code" href="classhe_1_1_end_animation_functor.html#a41ab82542d30bfba28a5132be648158b">EndAnimationFunctor::IDType</a> type, <a class="code" href="classhe_1_1_animation.html#a5ec4f04a171ed0ded89028593283b738">Animation::ID</a> ID);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="namespacehe_1_1animation.html#a7b12cab6ae1e76742d3fd4b9549dcb59">   43</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="namespacehe_1_1animation.html#a7b12cab6ae1e76742d3fd4b9549dcb59">GetFramesInDuration</a>(<span class="keywordtype">float</span> duration, <span class="keywordtype">float</span> fps) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>( duration * fps );</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="namespacehe_1_1animation.html#a1873916ae850657addc2a388015222e5">   55</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code" href="namespacehe_1_1animation.html#a1873916ae850657addc2a388015222e5">GetDurationForFrames</a>(<span class="keywordtype">int</span> frames, <span class="keywordtype">float</span> fps) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">return</span> frames / fps;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 6 2013 22:10:55 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 8 2013 14:37:14 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

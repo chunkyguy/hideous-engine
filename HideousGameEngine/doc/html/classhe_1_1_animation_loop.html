@@ -105,8 +105,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa1bb638f52001a3a483c06d7a0b7da6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0291475d174082ed12ffd1e8713e38a5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_animation_loop.html#a0291475d174082ed12ffd1e8713e38a5">~AnimationLoop</a> ()</td></tr>
 <tr class="separator:a0291475d174082ed12ffd1e8713e38a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad95cc27b86412448901b445ee40bbe37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_animation_loop.html#ad95cc27b86412448901b445ee40bbe37">MoveAnimation</a> (<a class="el" href="classhe_1_1_animation.html">Animation</a> *a)</td></tr>
-<tr class="separator:ad95cc27b86412448901b445ee40bbe37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7f18955eada1cd68d4617d5890ab89c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classhe_1_1_animation.html">Animation</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_animation_loop.html#ac7f18955eada1cd68d4617d5890ab89c">MoveAnimation</a> (<a class="el" href="classhe_1_1_animation.html">Animation</a> *a)</td></tr>
+<tr class="separator:ac7f18955eada1cd68d4617d5890ab89c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4e9e7feaca33b7d997baac2f70f6fa6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classhe_1_1_animation.html">Animation</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_animation_loop.html#aa4e9e7feaca33b7d997baac2f70f6fa6">MoveAndRunAnimation</a> (<a class="el" href="classhe_1_1_animation.html">Animation</a> *a)</td></tr>
+<tr class="separator:aa4e9e7feaca33b7d997baac2f70f6fa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3686e0b46e8070dafcad4246fcc89cfb"><td class="memTemplParams" colspan="2">template&lt;typename FUNC &gt; </td></tr>
 <tr class="memitem:a3686e0b46e8070dafcad4246fcc89cfb"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classhe_1_1_animation_loop.html#a3686e0b46e8070dafcad4246fcc89cfb">TraverseAnimations</a> (FUNC func)</td></tr>
 <tr class="separator:a3686e0b46e8070dafcad4246fcc89cfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,16 +145,17 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Removes any pending animation with suicide </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ad95cc27b86412448901b445ee40bbe37"></a>
+<a class="anchor" id="aa4e9e7feaca33b7d997baac2f70f6fa6"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void he::AnimationLoop::MoveAnimation </td>
+          <td class="memname"><a class="el" href="classhe_1_1_animation.html">Animation</a>* he::AnimationLoop::MoveAndRunAnimation </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classhe_1_1_animation.html">Animation</a> *&#160;</td>
           <td class="paramname"><em>a</em>)</td><td></td>
@@ -160,6 +163,38 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Adds animation to the loop and starts running immediately Add an animation in a seperate linked list. List is merged with the main list at next update. Call animation-&gt;Run().</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>animation object.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>animation object, can be used for chaining. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac7f18955eada1cd68d4617d5890ab89c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classhe_1_1_animation.html">Animation</a>* he::AnimationLoop::MoveAnimation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classhe_1_1_animation.html">Animation</a> *&#160;</td>
+          <td class="paramname"><em>a</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Add an animation in a seperate linked list. List is merged with the main list at next update. Remember every animation is in paused state by default, so it's caller's responsiblity to call Run() on the animation.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>animation object.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>animation object, can be used for chaining. </dd></dl>
 
 </div>
 </div>
@@ -186,6 +221,7 @@ template&lt;typename FUNC &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Simple way to traverse all animation. Needs a function pointer, functor, whatever as argument. </p>
 
 </div>
 </div>
@@ -202,6 +238,13 @@ template&lt;typename FUNC &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Need to be called only from a single place. Best the root class, that updates everything.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dt</td><td>Delta time in seconds. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -211,7 +254,7 @@ template&lt;typename FUNC &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 6 2013 22:10:55 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 8 2013 14:37:14 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

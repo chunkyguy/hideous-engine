@@ -30,7 +30,7 @@
 
 #include <GLKit/GLKMath.h>
 
-#include <he/Utils/Types.h>
+#include <he/Utils/HETypes.h>
 #ifdef __cplusplus
 
 

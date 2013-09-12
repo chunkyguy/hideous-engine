@@ -31,7 +31,30 @@ namespace he {
 
 	namespace animation {
 		void EndAnimationsWithID(EndAnimationFunctor::IDType type, Animation::ID ID);
-		unsigned int GetFramesInDuration(float duration, float fps);
+
+		/**
+		 *	Get number of frames when duration and fps are available.
+		 *
+		 *	@param	duration Duration in seconds.
+		 *	@param	fps	Frame per seconds.
+		 *
+		 *	@return	Number of frames
+		 */
+		inline unsigned int GetFramesInDuration(float duration, float fps) {
+			return static_cast<unsigned int>( duration * fps );
+		}
+		
+		/**
+		 *	Get duration in seconds for some frames at some FPS
+		 *
+		 *	@param	frames	Number of frames.
+		 *	@param	fps	Frames per seconds.
+		 *
+		 *	@return	duration in seconds
+		 */
+		inline float GetDurationForFrames(int frames, float fps) {
+			return frames / fps;
+		}
 	}
 
 }

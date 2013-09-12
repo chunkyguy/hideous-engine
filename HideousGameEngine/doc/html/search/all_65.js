@@ -7,7 +7,7 @@ var searchData=
   ['elasticeaseout',['ElasticEaseOut',['../namespacehe.html#a835edd2c49585a8e60b1c71062d5cae4',1,'he']]],
   ['endanimationfunctor',['EndAnimationFunctor',['../classhe_1_1_end_animation_functor.html#aa7c562c3f04225625bd6baa90f7365f4',1,'he::EndAnimationFunctor']]],
   ['endanimationfunctor',['EndAnimationFunctor',['../classhe_1_1_end_animation_functor.html',1,'he']]],
-  ['endanimationswithid',['EndAnimationsWithID',['../namespacehe.html#a3bc1864645dff436a9537dedfcfa6ad9',1,'he']]],
+  ['endanimationswithid',['EndAnimationsWithID',['../namespacehe_1_1animation.html#a022116f8d1a449fe8a24877ff81a5014',1,'he::animation']]],
   ['environment_5f',['environment_',['../classhe_1_1_particle.html#adc7de550eb4777aa1ff4066bac7829f9',1,'he::Particle']]],
   ['eventloop',['EventLoop',['../classhe_1_1_event_loop.html',1,'he']]],
   ['eventloop',['EventLoop',['../classhe_1_1_event_loop.html#ae5ce3d2b95fc9a7f818328216997c814',1,'he::EventLoop']]],

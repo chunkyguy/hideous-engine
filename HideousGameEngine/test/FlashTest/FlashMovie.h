@@ -17,19 +17,21 @@ namespace he {
 	class TextureShader;
 	class TextureAtlas;
 	class TextureVertex;
+	class SpriteAnimationData;
 }
 
 class FlashMovieAssets{
 public:
-	FlashMovieAssets(he::TextureAtlas *atlas, he::TextureShader *shader);
+	FlashMovieAssets(he::TextureAtlas *atlas, he::TextureShader *shader, const std::string &name);
 	~FlashMovieAssets();
 	const he::TextureAtlas *GetAtlas() const;
 	const he::TextureShader *GetShader() const;
+	const he::SpriteAnimationData *GetData() const;
 	
 private:
 	he::TextureAtlas *atlas_;
 	he::TextureShader *shader_;
-
+	he::SpriteAnimationData *data_;
 };
 
 class FlashMovie {

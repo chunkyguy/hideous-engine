@@ -22,6 +22,10 @@
             <Path>namespacehe.html</Path>
             <Subnodes>
              <Node>
+              <Name>animation</Name>
+              <Path>namespacehe_1_1animation.html</Path>
+             </Node>
+             <Node>
               <Name>gradient</Name>
               <Path>namespacehe_1_1gradient.html</Path>
              </Node>
@@ -77,6 +81,10 @@
             <Name>he</Name>
             <Path>namespacehe.html</Path>
             <Subnodes>
+             <Node>
+              <Name>animation</Name>
+              <Path>namespacehe_1_1animation.html</Path>
+             </Node>
              <Node>
               <Name>gradient</Name>
               <Path>namespacehe_1_1gradient.html</Path>
@@ -155,7 +163,7 @@
                <Node>
                 <Name>PerformAction</Name>
                 <Path>structhe_1_1_animation_listenable.html</Path>
-                <Anchor>a7748386ddcf646ef7ba33684e72d260e</Anchor>
+                <Anchor>ad8cf7113ec3681c1efb6e77e3eeb1a60</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -166,7 +174,7 @@
                <Node>
                 <Name>callback</Name>
                 <Path>classhe_1_1_animation_listener.html</Path>
-                <Anchor>ad5d3e98893b2f099bd83fd3d38417121</Anchor>
+                <Anchor>afe61f46ee4e270907696c4842e5b5e20</Anchor>
                </Node>
                <Node>
                 <Name>AnimationListener</Name>
@@ -176,7 +184,7 @@
                <Node>
                 <Name>PerformAction</Name>
                 <Path>classhe_1_1_animation_listener.html</Path>
-                <Anchor>a802696cf7a8d4bb99429ea0bbdab03ed</Anchor>
+                <Anchor>a904da2e389f75355d2f9a5dfad26cb00</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -195,9 +203,14 @@
                 <Anchor>a5888d347656cb507a56975a9d7edaae9</Anchor>
                 <Subnodes>
                  <Node>
-                  <Name>kAlive</Name>
+                  <Name>kRunning</Name>
                   <Path>classhe_1_1_animation.html</Path>
-                  <Anchor>a5888d347656cb507a56975a9d7edaae9a320a5aa31326bee58f54fe6e568cb281</Anchor>
+                  <Anchor>a5888d347656cb507a56975a9d7edaae9a1ed53394e2bb87d566cace943bd7e259</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>kPaused</Name>
+                  <Path>classhe_1_1_animation.html</Path>
+                  <Anchor>a5888d347656cb507a56975a9d7edaae9afe2fca7bcebd0af611d534ad59d00440</Anchor>
                  </Node>
                  <Node>
                   <Name>kNaturalDeath</Name>
@@ -244,7 +257,17 @@
                <Node>
                 <Name>MoveChild</Name>
                 <Path>classhe_1_1_animation.html</Path>
-                <Anchor>a1ef898ff2a3f8dd727d873b6f67be1e3</Anchor>
+                <Anchor>afd5df492a39d900468859e9e897aa897</Anchor>
+               </Node>
+               <Node>
+                <Name>Pause</Name>
+                <Path>classhe_1_1_animation.html</Path>
+                <Anchor>a6907d384b1e886c02a71532dc20fd226</Anchor>
+               </Node>
+               <Node>
+                <Name>Run</Name>
+                <Path>classhe_1_1_animation.html</Path>
+                <Anchor>a102c01d00d2499435552ec2870133bc3</Anchor>
                </Node>
                <Node>
                 <Name>SetListener</Name>
@@ -288,9 +311,14 @@
                 <Anchor>a0291475d174082ed12ffd1e8713e38a5</Anchor>
                </Node>
                <Node>
+                <Name>MoveAndRunAnimation</Name>
+                <Path>classhe_1_1_animation_loop.html</Path>
+                <Anchor>aa4e9e7feaca33b7d997baac2f70f6fa6</Anchor>
+               </Node>
+               <Node>
                 <Name>MoveAnimation</Name>
                 <Path>classhe_1_1_animation_loop.html</Path>
-                <Anchor>ad95cc27b86412448901b445ee40bbe37</Anchor>
+                <Anchor>ac7f18955eada1cd68d4617d5890ab89c</Anchor>
                </Node>
                <Node>
                 <Name>TraverseAnimations</Name>
@@ -366,6 +394,11 @@
                 <Name>~SpriteAnimation</Name>
                 <Path>classhe_1_1_sprite_animation.html</Path>
                 <Anchor>a7fcdede68f9af24db1b79adf607787b8</Anchor>
+               </Node>
+               <Node>
+                <Name>Restart</Name>
+                <Path>classhe_1_1_sprite_animation.html</Path>
+                <Anchor>ae64ec2ac570847c6a98323ad8bf711cf</Anchor>
                </Node>
                <Node>
                 <Name>RetainCurrVertex</Name>
@@ -1610,47 +1643,6 @@
               </Subnodes>
              </Node>
              <Node>
-              <Name>ImageViewFactory</Name>
-              <Path>classhe_1_1_image_view_factory.html</Path>
-              <Subnodes>
-               <Node>
-                <Name>ImageViewFactory</Name>
-                <Path>classhe_1_1_image_view_factory.html</Path>
-                <Anchor>a713919892736bfbe14a5682c90deba77</Anchor>
-               </Node>
-               <Node>
-                <Name>CreateImageView</Name>
-                <Path>classhe_1_1_image_view_factory.html</Path>
-                <Anchor>a4d0b6b783af5635abef79cc613a10d39</Anchor>
-               </Node>
-               <Node>
-                <Name>CreateImageView</Name>
-                <Path>classhe_1_1_image_view_factory.html</Path>
-                <Anchor>a85c46f9a21f5c08d10974703378f1b3f</Anchor>
-               </Node>
-               <Node>
-                <Name>CreateSpriteView</Name>
-                <Path>classhe_1_1_image_view_factory.html</Path>
-                <Anchor>a22303e188cd03814fa62ba8c7751013c</Anchor>
-               </Node>
-               <Node>
-                <Name>LoadSprite</Name>
-                <Path>classhe_1_1_image_view_factory.html</Path>
-                <Anchor>ac41b9c738ae2dc1b0fc8f4725de86cd1</Anchor>
-               </Node>
-               <Node>
-                <Name>SetAtlas</Name>
-                <Path>classhe_1_1_image_view_factory.html</Path>
-                <Anchor>adf11b141575e27ac4ae4cc8210fd0af7</Anchor>
-               </Node>
-               <Node>
-                <Name>SetImage</Name>
-                <Path>classhe_1_1_image_view_factory.html</Path>
-                <Anchor>a4bb5aa83215222bcbe44cf46ed5f8530</Anchor>
-               </Node>
-              </Subnodes>
-             </Node>
-             <Node>
               <Name>ParticleView</Name>
               <Path>classhe_1_1_particle_view.html</Path>
               <Subnodes>
@@ -1699,12 +1691,17 @@
                <Node>
                 <Name>Sprite</Name>
                 <Path>classhe_1_1_sprite.html</Path>
-                <Anchor>ac5018b179be15c37d4bcfeb81d862d26</Anchor>
+                <Anchor>aa586132d8a280e15197fab8d3de0734b</Anchor>
                </Node>
                <Node>
                 <Name>~Sprite</Name>
                 <Path>classhe_1_1_sprite.html</Path>
                 <Anchor>a0c45a0978d0f73e1d9defc17e2252d9b</Anchor>
+               </Node>
+               <Node>
+                <Name>GetID</Name>
+                <Path>classhe_1_1_sprite.html</Path>
+                <Anchor>a82e2710487d84b6d9524cf3090c2ca9a</Anchor>
                </Node>
                <Node>
                 <Name>GetSize</Name>
@@ -1715,6 +1712,16 @@
                 <Name>Render</Name>
                 <Path>classhe_1_1_sprite.html</Path>
                 <Anchor>abb560f9a80eab59669aa8d7028e637dd</Anchor>
+               </Node>
+               <Node>
+                <Name>ResetAnimation</Name>
+                <Path>classhe_1_1_sprite.html</Path>
+                <Anchor>aed3d5b40153132134d9b0bced072e39a</Anchor>
+               </Node>
+               <Node>
+                <Name>StartAnimation</Name>
+                <Path>classhe_1_1_sprite.html</Path>
+                <Anchor>a9998ab52a718a0f178067e4297db8910</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -2423,10 +2430,6 @@
             <Path>classhe_1_1_asset.html</Path>
            </Node>
            <Node>
-            <Name>he::Asset&lt; he::Image &gt;</Name>
-            <Path>classhe_1_1_asset.html</Path>
-           </Node>
-           <Node>
             <Name>he::Asset&lt; he::ParticleBatch &gt;</Name>
             <Path>classhe_1_1_asset.html</Path>
            </Node>
@@ -2435,23 +2438,7 @@
             <Path>classhe_1_1_asset.html</Path>
            </Node>
            <Node>
-            <Name>he::Asset&lt; he::Sprite &gt;</Name>
-            <Path>classhe_1_1_asset.html</Path>
-           </Node>
-           <Node>
             <Name>he::Asset&lt; he::Texture &gt;</Name>
-            <Path>classhe_1_1_asset.html</Path>
-           </Node>
-           <Node>
-            <Name>he::Asset&lt; he::TextureAtlas &gt;</Name>
-            <Path>classhe_1_1_asset.html</Path>
-           </Node>
-           <Node>
-            <Name>he::Asset&lt; he::TextureShader &gt;</Name>
-            <Path>classhe_1_1_asset.html</Path>
-           </Node>
-           <Node>
-            <Name>he::Asset&lt; he::TextureVertex &gt;</Name>
             <Path>classhe_1_1_asset.html</Path>
            </Node>
            <Node>
@@ -2565,10 +2552,6 @@
            <Node>
             <Name>he::Image</Name>
             <Path>classhe_1_1_image.html</Path>
-           </Node>
-           <Node>
-            <Name>he::ImageViewFactory</Name>
-            <Path>classhe_1_1_image_view_factory.html</Path>
            </Node>
            <Node>
             <Name>he::IShader</Name>
@@ -2913,10 +2896,6 @@
               <Path>functions_func_0x69.html</Path>
              </Node>
              <Node>
-              <Name>l</Name>
-              <Path>functions_func_0x6c.html</Path>
-             </Node>
-             <Node>
               <Name>m</Name>
               <Path>functions_func_0x6d.html</Path>
              </Node>
@@ -3022,7 +3001,7 @@
                        <Node>
                         <Name>PerformAction</Name>
                         <Path>structhe_1_1_animation_listenable.html</Path>
-                        <Anchor>a7748386ddcf646ef7ba33684e72d260e</Anchor>
+                        <Anchor>ad8cf7113ec3681c1efb6e77e3eeb1a60</Anchor>
                        </Node>
                       </Subnodes>
                      </Node>
@@ -3033,7 +3012,7 @@
                        <Node>
                         <Name>callback</Name>
                         <Path>classhe_1_1_animation_listener.html</Path>
-                        <Anchor>ad5d3e98893b2f099bd83fd3d38417121</Anchor>
+                        <Anchor>afe61f46ee4e270907696c4842e5b5e20</Anchor>
                        </Node>
                        <Node>
                         <Name>AnimationListener</Name>
@@ -3043,7 +3022,7 @@
                        <Node>
                         <Name>PerformAction</Name>
                         <Path>classhe_1_1_animation_listener.html</Path>
-                        <Anchor>a802696cf7a8d4bb99429ea0bbdab03ed</Anchor>
+                        <Anchor>a904da2e389f75355d2f9a5dfad26cb00</Anchor>
                        </Node>
                       </Subnodes>
                      </Node>
@@ -3062,9 +3041,14 @@
                         <Anchor>a5888d347656cb507a56975a9d7edaae9</Anchor>
                         <Subnodes>
                          <Node>
-                          <Name>kAlive</Name>
+                          <Name>kRunning</Name>
                           <Path>classhe_1_1_animation.html</Path>
-                          <Anchor>a5888d347656cb507a56975a9d7edaae9a320a5aa31326bee58f54fe6e568cb281</Anchor>
+                          <Anchor>a5888d347656cb507a56975a9d7edaae9a1ed53394e2bb87d566cace943bd7e259</Anchor>
+                         </Node>
+                         <Node>
+                          <Name>kPaused</Name>
+                          <Path>classhe_1_1_animation.html</Path>
+                          <Anchor>a5888d347656cb507a56975a9d7edaae9afe2fca7bcebd0af611d534ad59d00440</Anchor>
                          </Node>
                          <Node>
                           <Name>kNaturalDeath</Name>
@@ -3111,7 +3095,17 @@
                        <Node>
                         <Name>MoveChild</Name>
                         <Path>classhe_1_1_animation.html</Path>
-                        <Anchor>a1ef898ff2a3f8dd727d873b6f67be1e3</Anchor>
+                        <Anchor>afd5df492a39d900468859e9e897aa897</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>Pause</Name>
+                        <Path>classhe_1_1_animation.html</Path>
+                        <Anchor>a6907d384b1e886c02a71532dc20fd226</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>Run</Name>
+                        <Path>classhe_1_1_animation.html</Path>
+                        <Anchor>a102c01d00d2499435552ec2870133bc3</Anchor>
                        </Node>
                        <Node>
                         <Name>SetListener</Name>
@@ -3161,9 +3155,14 @@
                         <Anchor>a0291475d174082ed12ffd1e8713e38a5</Anchor>
                        </Node>
                        <Node>
+                        <Name>MoveAndRunAnimation</Name>
+                        <Path>classhe_1_1_animation_loop.html</Path>
+                        <Anchor>aa4e9e7feaca33b7d997baac2f70f6fa6</Anchor>
+                       </Node>
+                       <Node>
                         <Name>MoveAnimation</Name>
                         <Path>classhe_1_1_animation_loop.html</Path>
-                        <Anchor>ad95cc27b86412448901b445ee40bbe37</Anchor>
+                        <Anchor>ac7f18955eada1cd68d4617d5890ab89c</Anchor>
                        </Node>
                        <Node>
                         <Name>TraverseAnimations</Name>
@@ -3224,7 +3223,17 @@
                      <Node>
                       <Name>EndAnimationsWithID</Name>
                       <Path>_animation_utils_8h.html</Path>
-                      <Anchor>a3bc1864645dff436a9537dedfcfa6ad9</Anchor>
+                      <Anchor>a022116f8d1a449fe8a24877ff81a5014</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>GetDurationForFrames</Name>
+                      <Path>_animation_utils_8h.html</Path>
+                      <Anchor>a1873916ae850657addc2a388015222e5</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>GetFramesInDuration</Name>
+                      <Path>_animation_utils_8h.html</Path>
+                      <Anchor>a7b12cab6ae1e76742d3fd4b9549dcb59</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>
@@ -3438,6 +3447,11 @@
                         <Name>~SpriteAnimation</Name>
                         <Path>classhe_1_1_sprite_animation.html</Path>
                         <Anchor>a7fcdede68f9af24db1b79adf607787b8</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>Restart</Name>
+                        <Path>classhe_1_1_sprite_animation.html</Path>
+                        <Anchor>ae64ec2ac570847c6a98323ad8bf711cf</Anchor>
                        </Node>
                        <Node>
                         <Name>RetainCurrVertex</Name>
@@ -5047,49 +5061,6 @@
                    <Node>
                     <Name>ImageViewFactory.h</Name>
                     <Path>_image_view_factory_8h.html</Path>
-                    <Subnodes>
-                     <Node>
-                      <Name>ImageViewFactory</Name>
-                      <Path>classhe_1_1_image_view_factory.html</Path>
-                      <Subnodes>
-                       <Node>
-                        <Name>ImageViewFactory</Name>
-                        <Path>classhe_1_1_image_view_factory.html</Path>
-                        <Anchor>a713919892736bfbe14a5682c90deba77</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>CreateImageView</Name>
-                        <Path>classhe_1_1_image_view_factory.html</Path>
-                        <Anchor>a4d0b6b783af5635abef79cc613a10d39</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>CreateImageView</Name>
-                        <Path>classhe_1_1_image_view_factory.html</Path>
-                        <Anchor>a85c46f9a21f5c08d10974703378f1b3f</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>CreateSpriteView</Name>
-                        <Path>classhe_1_1_image_view_factory.html</Path>
-                        <Anchor>a22303e188cd03814fa62ba8c7751013c</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>LoadSprite</Name>
-                        <Path>classhe_1_1_image_view_factory.html</Path>
-                        <Anchor>ac41b9c738ae2dc1b0fc8f4725de86cd1</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>SetAtlas</Name>
-                        <Path>classhe_1_1_image_view_factory.html</Path>
-                        <Anchor>adf11b141575e27ac4ae4cc8210fd0af7</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>SetImage</Name>
-                        <Path>classhe_1_1_image_view_factory.html</Path>
-                        <Anchor>a4bb5aa83215222bcbe44cf46ed5f8530</Anchor>
-                       </Node>
-                      </Subnodes>
-                     </Node>
-                    </Subnodes>
                    </Node>
                    <Node>
                     <Name>ParticleView.h</Name>
@@ -5150,12 +5121,17 @@
                        <Node>
                         <Name>Sprite</Name>
                         <Path>classhe_1_1_sprite.html</Path>
-                        <Anchor>ac5018b179be15c37d4bcfeb81d862d26</Anchor>
+                        <Anchor>aa586132d8a280e15197fab8d3de0734b</Anchor>
                        </Node>
                        <Node>
                         <Name>~Sprite</Name>
                         <Path>classhe_1_1_sprite.html</Path>
                         <Anchor>a0c45a0978d0f73e1d9defc17e2252d9b</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>GetID</Name>
+                        <Path>classhe_1_1_sprite.html</Path>
+                        <Anchor>a82e2710487d84b6d9524cf3090c2ca9a</Anchor>
                        </Node>
                        <Node>
                         <Name>GetSize</Name>
@@ -5166,6 +5142,16 @@
                         <Name>Render</Name>
                         <Path>classhe_1_1_sprite.html</Path>
                         <Anchor>abb560f9a80eab59669aa8d7028e637dd</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>ResetAnimation</Name>
+                        <Path>classhe_1_1_sprite.html</Path>
+                        <Anchor>aed3d5b40153132134d9b0bced072e39a</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>StartAnimation</Name>
+                        <Path>classhe_1_1_sprite.html</Path>
+                        <Anchor>a9998ab52a718a0f178067e4297db8910</Anchor>
                        </Node>
                       </Subnodes>
                      </Node>
@@ -5198,7 +5184,7 @@
                      <Node>
                       <Name>Create</Name>
                       <Path>_sprite_8h.html</Path>
-                      <Anchor>ac99181018d81375f3a0dfb58c6497966</Anchor>
+                      <Anchor>a09f052d0ab7588e889d726dd2346f76d</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>
@@ -5630,6 +5616,11 @@
                     <Name>ResourcePath.hpp</Name>
                     <Path>_resource_path_8hpp.html</Path>
                     <Subnodes>
+                     <Node>
+                      <Name>DocumentsPath</Name>
+                      <Path>_resource_path_8hpp.html</Path>
+                      <Anchor>a3506008965914e6098219a202fb560ab</Anchor>
+                     </Node>
                      <Node>
                       <Name>ResourcePath</Name>
                       <Path>_resource_path_8hpp.html</Path>

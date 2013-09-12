@@ -16,7 +16,7 @@
 #include <he/Utils/Transform.h>
 #include <he/Utils/GLKMath_Additions.h>
 #include <he/Utils/DebugHelper.h>
-#include <he/Utils/Types.h>
+#include <he/Utils/HETypes.h>
 
 namespace he{
 	

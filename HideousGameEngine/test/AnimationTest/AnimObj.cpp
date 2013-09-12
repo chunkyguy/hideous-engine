@@ -148,7 +148,7 @@ void AnimObj::Render(){
 	render_object_->Render();
 }
 
-void AnimObj::AnimationCallback(int animation_id){
+void AnimObj::AnimationCallback(he::Animation::ID animation_id){
 	transform_ = he::Transform_Create(GLKVector2Make(0.0f, 0.0f));
 	render_object_->SetColor( GLKVector4Make(0.0, 0.0, 0.0, 1.0) );
 }
