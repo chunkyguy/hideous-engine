@@ -85,15 +85,15 @@ namespace he{
 		return f;
 	}
 
-	bool SpriteAnimationData::RetainData(const TextureVertex *data) {
-		for(Frame *f = head_; f; f = f->next_){
-			if (f->vertex_ == data) {
-				f->vertex_ = new TextureVertex((data)->GetVertexPositionData(), (data)->GetVertexTextureData());
-				return true;
-			}
-		}
-		return false;
-	}
+//	bool SpriteAnimationData::RetainData(const TextureVertex *data) {
+//		for(Frame *f = head_; f; f = f->next_){
+//			if (f->vertex_ == data) {
+//				f->vertex_ = new TextureVertex((data)->GetVertexPositionData(), (data)->GetVertexTextureData());
+//				return true;
+//			}
+//		}
+//		return false;
+//	}
 
 	std::string SpriteAnimationData::GetAnimationName() const {
 		return name_;
@@ -152,11 +152,11 @@ namespace he{
 		delay_ = 1.0f/fps;
 	}
 
-	void SpriteAnimation::RetainCurrVertex() {
-		he::SpriteAnimationData *data = const_cast<he::SpriteAnimationData*>(data_);
-		if (data->RetainData(*vertex_data_)) {
-		}
-	}
+//	void SpriteAnimation::RetainCurrVertex() {
+//		he::SpriteAnimationData *data = const_cast<he::SpriteAnimationData*>(data_);
+//		if (data->RetainData(*vertex_data_)) {
+//		}
+//	}
 
 	
 	SpriteAnimation::~SpriteAnimation(){		
@@ -169,8 +169,8 @@ namespace he{
 			if(!active_frame_){									// animation done
 				if(--repeat_count_ == 0){						// no repeats left
 					state_ = kNaturalDeath;						// make zombie. Will be removed at next update cycle.
-																// set the sprite state to final state (released at ~Sprite()).
-					*vertex_data_ = new TextureVertex(final_vertex_data_->GetVertexPositionData(), final_vertex_data_->GetVertexTextureData());
+																// X set the sprite state to final state (released at ~Sprite()).
+																//*vertex_data_ = new TextureVertex(final_vertex_data_->GetVertexPositionData(), final_vertex_data_->GetVertexTextureData());
 				}else{	//restart loop
 					active_frame_ = data_->GetFrameAtIndex(0);						// set active-frame to head
 					*vertex_data_ = active_frame_->vertex_;		// move to next frame

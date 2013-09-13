@@ -56,7 +56,7 @@ namespace he {
 		 *	Crappy method, was just a quick fix. Retains data before the one Sprite object is about to release data.
 		 *	Must die.
 		 */
-		bool RetainData(const TextureVertex *data);
+		//bool RetainData(const TextureVertex *data);
 
 		/**
 		 *	Get the name of the animation.
@@ -85,7 +85,6 @@ namespace he {
 		void GoToFrameNumber(unsigned int frame_num);
 		void SetFinalFrameIndex(unsigned int i);
 		void SetFPS(float fps);
-		void RetainCurrVertex();
 		/**
 		 *	Restart animation, no mater where it is
 		 */
