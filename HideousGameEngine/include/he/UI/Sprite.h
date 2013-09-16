@@ -58,6 +58,8 @@ namespace he {
 		
 		
 		void GoToFrameNumber(unsigned int frame_num);
+		unsigned int GetCurrentFrameNumber() const;
+
 		unsigned int GetFrameCount() const;
 
 		/**

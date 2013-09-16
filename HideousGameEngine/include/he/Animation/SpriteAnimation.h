@@ -52,6 +52,9 @@ namespace he {
 		 */
 		Frame *GetFrameAtIndex(unsigned int frame_num) const;
 
+		unsigned int GetIndexOfFrame(const Frame *frame) const;
+
+		
 		/**
 		 *	Crappy method, was just a quick fix. Retains data before the one Sprite object is about to release data.
 		 *	Must die.
@@ -83,6 +86,7 @@ namespace he {
 
 		void SetRepeatCount(int c);
 		void GoToFrameNumber(unsigned int frame_num);
+		unsigned int GetCurrentFrameNumber() const;
 		void SetFinalFrameIndex(unsigned int i);
 		void SetFPS(float fps);
 		/**

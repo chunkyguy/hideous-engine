@@ -84,6 +84,15 @@ namespace he{
 		}
 		return f;
 	}
+	
+	unsigned int SpriteAnimationData::GetIndexOfFrame(const Frame *frame) const {
+		unsigned int frame_num = 0;
+		for(Frame *f = head_; frame_num-- && f; f = f->next_){
+			frame_num++;
+		}
+		return frame_num;
+	}
+
 
 //	bool SpriteAnimationData::RetainData(const TextureVertex *data) {
 //		for(Frame *f = head_; f; f = f->next_){
@@ -135,6 +144,10 @@ namespace he{
 		active_frame_ = data_->GetFrameAtIndex(0);						// set active-frame to head
 		*vertex_data_ = active_frame_->vertex_;		// move to next frame
 		clock_ = 0.0f;								// reset clock		
+	}
+
+	unsigned int SpriteAnimation::GetCurrentFrameNumber() const {
+		return data_->GetIndexOfFrame(active_frame_);
 	}
 
 	void SpriteAnimation::GoToFrameNumber(unsigned int frame_num) {

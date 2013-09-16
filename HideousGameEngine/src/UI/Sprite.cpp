@@ -100,6 +100,11 @@ namespace he{
 		animation_->GoToFrameNumber(frame_num);
 	}
 	
+	unsigned int Sprite::GetCurrentFrameNumber() const {
+		return animation_->GetCurrentFrameNumber();
+	}
+
+	
 	unsigned int Sprite::GetFrameCount() const {
 		return animation_->GetFrameCount();
 	}
