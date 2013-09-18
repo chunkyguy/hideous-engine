@@ -72,6 +72,15 @@ namespace he{
 	 */
 	GLKMatrix4 Transform_GetMVP(const Transform *slf);
 
+	/**
+	 *	Get world coordinates for a given coordinates in object space.
+	 *	Basically just does the 'vertex * model_view_matrix' operation for each vertex.
+	 *
+	 *	@param	slf		The transform object.
+	 *	@param	size		The size of box in world coordinates.
+	 *	@param	vert		Array of 4 GLKVector2 that will be filled
+	 */
+	void Transform_GetWorldCoordinates(const he::Transform &slf, const GLKVector2 &size, GLKVector2 *vert);
 	
 	bool operator==(const Transform &one, const Transform &two);
 	std::ostream &operator<<(std::ostream &os, const Transform &trans);

@@ -64,6 +64,16 @@ namespace he {
 	};
 
 	Frame CreateFrame(const View *view);
+	
+	/**
+	 *	Collision detection test between two View objects.
+	 *
+	 *	@param	one	View one.
+	 *	@param	two	View two.
+	 *
+	 *	@return	true if the collision happens else false.
+	 */
+	bool HitTest(const he::View *one, const he::View *two);
 } /*namespace he*/
 
 #endif

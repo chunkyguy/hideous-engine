@@ -7,6 +7,7 @@
 //
 
 #include <he/UI/View.h>
+#include <he/Utils/Utils.h>
 
 namespace he {
 	View::View(const Transform &transform) :
@@ -77,7 +78,7 @@ namespace he {
 		delete view;
 		view = nullptr;
 	}
-
+	
 	void View::SetTransform(const he::Transform &transform) {
 		transform_ = transform;
 	}
@@ -89,10 +90,10 @@ namespace he {
 	Frame CreateFrame(const View *view) {
 		return Frame(view->GetTransform(), view->GetSize());
 	}
-
-//	Frame *View::GetFramePtr(){
-//		return &frame_;
-//	}
+	
+	//	Frame *View::GetFramePtr(){
+	//		return &frame_;
+	//	}
 	
 	//		const GLKMatrix4 View::GetMVP() const{
 	//			return frame_.GetTransform().GetMVP();
@@ -101,6 +102,51 @@ namespace he {
 	//		bool View::Contains(const GLKVector2 &point){
 	//			return he::Vertex::Contains(frame_.GetRect(), point);
 	//		}
+	
+	
+	
+	bool HitTest(const he::View *one, const he::View *two) {
+		struct Line {
+			int a, b;
+		} lines[4] = {
+			{0,1},		//AB
+			{0,2},		//AC
+			{1,3},		//BD
+			{2,3}		//CD
+		};
+		
+		GLKVector2 v_one_i[4] = {0};
+		Transform_GetWorldCoordinates(one->GetTransform(), one->GetSize(), v_one_i);
+		
+		GLKVector2 v_two_i[4] = {0};
+		Transform_GetWorldCoordinates(two->GetTransform(), two->GetSize(), v_two_i);
+		
+		
+		int l_one, l_two;
+		bool hit = false;
+		for (l_one = 0; l_one < 4; ++l_one) {
+			for (l_two = 0; l_two < 4; ++l_two) {
+				if (LinesIntersect(v_one_i[lines[l_one].a], v_one_i[lines[l_one].b], v_two_i[lines[l_two].a], v_two_i[lines[l_two].b])) {
+					hit = true;
+					//he_Trace("Line1[%d]: {%@, %@}\nLine2[%d]: {%@, %@}\n",l_one,v_one_i[lines[l_one].a], v_one_i[lines[l_one].b],l_two, v_two_i[lines[l_two].a], v_two_i[lines[l_two].b]);
+				}
+				if (hit) {break;}
+			}
+			if (hit) {break;}
+		}
+		
+//		he_Trace("Trans[0]:%@\nSize[0]:%@\n",one->GetTransform(), one->GetSize());
+//		he_Trace("Trans[1]:%@\nSize[1]:%@\n",two->GetTransform(), two->GetSize());
+		//			he_Trace("View[1]:\n%@\n",two_mv);
+		//			for (int i = 0; i < 4; ++i) {
+		//				he_Trace("one: %d:\t%@\n",i,v_one_i[i]);
+		//			}
+		//			for (int i = 0; i < 4; ++i) {
+		//				he_Trace("two: %d:\t%@\n",i,v_two_i[i]);
+		//			}
+			
+		return hit;
+	}
 	
 } /*namespace he*/
 

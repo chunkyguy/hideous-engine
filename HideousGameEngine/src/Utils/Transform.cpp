@@ -99,6 +99,18 @@ namespace he{
 		return GLKVector3Make(position4.x, position4.y, position4.z);
 	}
 
+	void Transform_GetWorldCoordinates(const he::Transform &slf, const GLKVector2 &size, GLKVector2 *vert) {
+		vert[0] = GLKVector2Make(-size.x/2.0f, -size.y/2.0f);
+		vert[1] = GLKVector2Make(size.x/2.0f, -size.y/2.0f);
+		vert[2] = GLKVector2Make(-size.x/2.0f, size.y/2.0f);
+		vert[3] = GLKVector2Make(size.x/2.0f, size.y/2.0f);
+		GLKMatrix4 one_mv = he::Transform_GetMV(&slf);
+		for (int i = 0; i < 4; ++i) {
+			GLKVector4 tmp = GLKMatrix4MultiplyVector4(one_mv, GLKVector4Make(vert[i].x, vert[i].y, 0.0f, 1.0f));
+			vert[i] = GLKVector2Make(tmp.x, tmp.y);
+		}
+	}
+
 	bool operator==(const Transform &one, const Transform &two) {
 		return (one.parent		== two.parent	&&
 				one.position		== two.position	&&
@@ -109,7 +121,7 @@ namespace he{
 		os << "Position: " << trans.position;
 		os << "Rotation: " << trans.rotation;
 		os << "Scale: " << trans.scale;
-		os << "Parent: " << (trans.parent == nullptr);
+		os << "Parent: " << (trans.parent != nullptr);
 		return os;
 	}
 

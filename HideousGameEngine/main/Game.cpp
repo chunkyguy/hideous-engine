@@ -22,6 +22,7 @@
 #include "../test/FlashTest/FlashTest.h"
 #include "../test/TransformTest/TransformTest.h"
 #include "../test/SpriteTest/SpriteTest.h"
+#include "../test/CollisionTest/CollisionTest.h"
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 // MARK: Helper
@@ -40,7 +41,8 @@
 //#define TEST_SPINE
 //#define TEST_FLASH
 //#define TEST_TRANSFORM
-#define TEST_SPRITE
+//#define TEST_SPRITE
+#define TEST_COLLISION
 
 template <typename T>
 T* AllocGameInstance(){
@@ -84,6 +86,10 @@ he::Game* GameConfig::alloc_game(){
 	return AllocGameInstance<TransformTest>();
 #elif defined(TEST_SPRITE)
 	return AllocGameInstance<SpriteTest>();
+#elif defined(TEST_COLLISION)
+	return AllocGameInstance<CollisionTest>();
+#else 
+	#error No Test allocated
 #endif
 	
 }

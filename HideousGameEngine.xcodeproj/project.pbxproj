@@ -65,6 +65,7 @@
 		191B223B176072B1001F6F1C /* FlashTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 191B2239176072B1001F6F1C /* FlashTest.cpp */; };
 		191B223F1760C644001F6F1C /* DebugHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 191B223D1760C644001F6F1C /* DebugHelper.cpp */; };
 		191E692317735E0E008E7510 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 191E692117735E0E008E7510 /* Sprite.cpp */; };
+		1925485B17E8622D00D59DDE /* CollisionTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1925485917E8622D00D59DDE /* CollisionTest.cpp */; };
 		193A5EC61743F2DB00CB945B /* AnimationState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 193A5EA21743F2DB00CB945B /* AnimationState.cpp */; };
 		193A5EC71743F2DB00CB945B /* AnimationStateData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 193A5EA41743F2DB00CB945B /* AnimationStateData.cpp */; };
 		193A5EC91743F2DB00CB945B /* AtlasAttachmentLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 193A5EA81743F2DB00CB945B /* AtlasAttachmentLoader.cpp */; };
@@ -260,6 +261,8 @@
 		191B22401760C6C6001F6F1C /* DebugHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DebugHelper.h; sourceTree = "<group>"; };
 		191E69201773421E008E7510 /* Sprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sprite.h; sourceTree = "<group>"; };
 		191E692117735E0E008E7510 /* Sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sprite.cpp; sourceTree = "<group>"; };
+		1925485917E8622D00D59DDE /* CollisionTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CollisionTest.cpp; sourceTree = "<group>"; };
+		1925485A17E8622D00D59DDE /* CollisionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollisionTest.h; sourceTree = "<group>"; };
 		193A5EA21743F2DB00CB945B /* AnimationState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AnimationState.cpp; sourceTree = "<group>"; };
 		193A5EA31743F2DB00CB945B /* AnimationState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationState.h; sourceTree = "<group>"; };
 		193A5EA41743F2DB00CB945B /* AnimationStateData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AnimationStateData.cpp; sourceTree = "<group>"; };
@@ -674,6 +677,15 @@
 				198403B81761F10300D0B7EA /* FlashMovie.h */,
 			);
 			path = FlashTest;
+			sourceTree = "<group>";
+		};
+		1925485817E861C700D59DDE /* CollisionTest */ = {
+			isa = PBXGroup;
+			children = (
+				1925485917E8622D00D59DDE /* CollisionTest.cpp */,
+				1925485A17E8622D00D59DDE /* CollisionTest.h */,
+			);
+			path = CollisionTest;
 			sourceTree = "<group>";
 		};
 		193A5E9F1743F2DB00CB945B /* spine */ = {
@@ -1117,6 +1129,7 @@
 		19A6E60D173278A1006ACD91 /* test */ = {
 			isa = PBXGroup;
 			children = (
+				1925485817E861C700D59DDE /* CollisionTest */,
 				19848BCC17A13BBA00C90C9A /* SpriteTest */,
 				19A569491792FBB900948E01 /* TransformTest */,
 				191B22381760728C001F6F1C /* FlashTest */,
@@ -1654,6 +1667,7 @@
 				19A5694C1792FC1100948E01 /* TransformTest.cpp in Sources */,
 				19848BCF17A13BD700C90C9A /* SpriteTest.cpp in Sources */,
 				1960488D17BCCA99008DC297 /* ParticleTest_2.cpp in Sources */,
+				1925485B17E8622D00D59DDE /* CollisionTest.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

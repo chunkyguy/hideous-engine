@@ -24,6 +24,25 @@ TypeName(const TypeName&);               \
 void operator=(const TypeName&)
 
 namespace he{
+
+	/**
+	 *	Determines if the lines intersect.
+	 *	Given two line segments:
+	 *	[p, p+r], [q, q+s]
+	 *	t = ((q-p) x s) / (r x s)
+	 *	u = ((q-p) x r) / (r x s)
+	 *
+	 *	Each cross product is evaluated as the z-component in a 3D cross
+	 *	Like, p x q = (p.x * q.y) - (p.y * q.x)
+	 *
+	 *	@param	p
+	 *	@param	p_plus_s
+	 *	@param	q
+	 *	@param	q_plus_s
+	 *
+	 *	@return	0 if not intersect, else intersect (bool)
+	 */
+	bool LinesIntersect(GLKVector2 p, GLKVector2 p_plus_r, GLKVector2 q, GLKVector2 q_plus_s);
 	
 	// buffer offset calc for VBO data stride
 	inline const GLvoid *BufferOffset(int off){

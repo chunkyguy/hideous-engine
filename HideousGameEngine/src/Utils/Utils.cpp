@@ -55,5 +55,64 @@ namespace he{
 		return length_;
 	}
 
+	//#define ENABLE_COLLISION_TRACE
+	
+#define CROSS_Z(a, b) ((a.x*b.y) - (a.y*b.x))
+	
+	bool LinesIntersect(GLKVector2 p, GLKVector2 p_plus_r, GLKVector2 q, GLKVector2 q_plus_s) {
+		//		printf("Processing: {{%f,%f},{%f,%f}},{{%f,%f},{%f,%f}}\n",p.x,p.y,p_plus_r.x,p_plus_r.y,q.x,q.y,q_plus_s.x,q_plus_s.y);
+		
+		/* Calculate q - p */
+		GLKVector2 q_p	= {
+			q.x - p.x,
+			q.y - p.y
+		};
+		
+		/* Calculate r */
+		GLKVector2 r = {
+			p_plus_r.x - p.x,
+			p_plus_r.y - p.y
+		};
+		
+		/* Calculate s */
+		GLKVector2 s = {
+			q_plus_s.x - q.x,
+			q_plus_s.y - q.y
+		};
+		
+		/* Calculate (q-p) x r */
+		float q_pxr = CROSS_Z(q_p, r);
+		
+		/* Calculate (q-p) x s */
+		float q_pxs = CROSS_Z(q_p, s);
+		
+		/* Calculate (r x s) */
+		float rxs = CROSS_Z(r,s);
+		
+		if (q_pxr == 0.0f) {
+			//			printf("Lines are collinear, and so intersect if they have any overlap.\n");
+			// Assume edge case as failure
+			return false;
+			//		return ((q.x - p.x < 0.0f) != (q.x - p_plus_r.x < 0.0f)) ||
+			//				((q.y - p.y < 0.0f) != (q.y - p_plus_r.y < 0.0f));
+		}
+		
+		if (rxs == 0.0f) {
+			//			printf("Lines are parallel.\n");
+			return false;
+		}
+		
+		/* Calculate 1 / (rxs) */
+		float one_div_rxs = 1.0f / rxs;
+		
+		/* Calculate t */
+		float t = q_pxs * one_div_rxs;
+		
+		/* Calculate u */
+		float u = q_pxr * one_div_rxs;
+		
+		return (t >= 0.0f) && (t <= 1.0f) && (u >= 0.0f) && (u <= 1.0f);
+	}
+
 }
 //EOF
