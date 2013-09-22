@@ -15,6 +15,7 @@
 #include <he/EventLoop/Gesture.h>
 #include <he/Utils/Screen.h>
 #include <he/Font/Font.h>
+#include <he/SoundEngine/SoundPlayer.h>
 
 namespace he {
 	
@@ -25,6 +26,7 @@ namespace he {
 		g_EventLoop = new EventLoop;
 		g_AnimationLoop = new AnimationLoop;
 		g_FontLib = new FontLibrary;
+		g_SoundPlayer = new SoundPlayer;
 		
 		init();
 		he_Trace("he::Game: loaded\n");
@@ -35,6 +37,7 @@ namespace he {
 		delete g_EventLoop;
 		delete g_AnimationLoop;
 		delete g_FontLib;
+		delete g_SoundPlayer;
 		he_Trace("he::Game: unloaded\n");
 	}
 		

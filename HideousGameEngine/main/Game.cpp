@@ -23,6 +23,7 @@
 #include "../test/TransformTest/TransformTest.h"
 #include "../test/SpriteTest/SpriteTest.h"
 #include "../test/CollisionTest/CollisionTest.h"
+#include "../test/SoundTest/SoundTest.h"
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 // MARK: Helper
@@ -42,7 +43,8 @@
 //#define TEST_FLASH
 //#define TEST_TRANSFORM
 //#define TEST_SPRITE
-#define TEST_COLLISION
+//#define TEST_COLLISION
+#define TEST_SOUND
 
 template <typename T>
 T* AllocGameInstance(){
@@ -88,7 +90,9 @@ he::Game* GameConfig::alloc_game(){
 	return AllocGameInstance<SpriteTest>();
 #elif defined(TEST_COLLISION)
 	return AllocGameInstance<CollisionTest>();
-#else 
+#elif defined(TEST_SOUND)
+	return AllocGameInstance<SoundTest>();
+#else
 	#error No Test allocated
 #endif
 	

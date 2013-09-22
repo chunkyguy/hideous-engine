@@ -115,11 +115,23 @@ namespace he {
 			{2,3}		//CD
 		};
 		
-		GLKVector2 v_one_i[4] = {0};
-		Transform_GetWorldCoordinates(one->GetTransform(), one->GetSize(), v_one_i);
+		GLKVector2 size = one->GetSize();
+		GLKVector2 v_one_i[4] = {
+			{-size.x/2.0f, -size.y/2.0f},
+			{size.x/2.0f, -size.y/2.0f},
+			{-size.x/2.0f, size.y/2.0f},
+			{size.x/2.0f, size.y/2.0f}
+		};
+		Transform_GetWorldCoordinates(one->GetTransform(), 4, v_one_i);
 		
-		GLKVector2 v_two_i[4] = {0};
-		Transform_GetWorldCoordinates(two->GetTransform(), two->GetSize(), v_two_i);
+		size = two->GetSize();
+		GLKVector2 v_two_i[4] = {
+			{-size.x/2.0f, -size.y/2.0f},
+			{size.x/2.0f, -size.y/2.0f},
+			{-size.x/2.0f, size.y/2.0f},
+			{size.x/2.0f, size.y/2.0f}
+		};
+		Transform_GetWorldCoordinates(two->GetTransform(), 4, v_two_i);
 		
 		
 		int l_one, l_two;
