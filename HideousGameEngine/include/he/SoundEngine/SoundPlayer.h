@@ -16,7 +16,7 @@ namespace he{
 	
 	class Sound {
 	public:
-		Sound(const char *filename, const char *extn, int loop = -1);
+		Sound(const char *filpath, int loop = -1);
 		~Sound();
 
 		void *player_;	// AVAudioPlayer
@@ -33,8 +33,8 @@ namespace he{
 		int effects_counter;
 	};
 	
-	void SoundPlayer_PlayMusic(SoundPlayer *player, const char *filename, const char *extn);
-	void SoundPlayer_PlayEffect(SoundPlayer *player, const char *filename, const char *extn, int repeat = 0);
+	void SoundPlayer_PlayMusic(SoundPlayer *player, const char *filepath);
+	void SoundPlayer_PlayEffect(SoundPlayer *player, const char *filepath, int repeat = 0);
 	void SoundPlayer_StopAllEffects(SoundPlayer *player);
 
 	extern SoundPlayer *g_SoundPlayer;

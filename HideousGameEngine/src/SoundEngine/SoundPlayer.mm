@@ -44,8 +44,8 @@ namespace he {
    [(AVAudioPlayer*)sound->player_ setNumberOfLoops:repeat];
   }
   
-  AVAudioPlayer * LoadSound(const char *filename, const char *extn){
-   NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:[NSString stringWithUTF8String:filename] ofType:[NSString stringWithUTF8String:extn]]];
+  AVAudioPlayer * LoadSound(const char *filepath){
+   NSURL *url = [NSURL fileURLWithPath:[NSString stringWithUTF8String:filepath]];
    assert(url);
    
    NSError *error = nil;
@@ -59,9 +59,9 @@ namespace he {
  /********************************************************************************************************************************
   * MARK: Sound
   ********************************************************************************************************************************/
- Sound::Sound(const char *filename, const char *extn, int loop) :
- player_(LoadSound(filename, extn)),
- name_(filename)
+ Sound::Sound(const char *filepath, int loop) :
+ player_(LoadSound(filepath)),
+ name_(filepath)
  {
   [(AVAudioPlayer*)player_ setNumberOfLoops:loop];
   [(AVAudioPlayer*)player_ prepareToPlay];
@@ -107,9 +107,9 @@ namespace he {
   }
  }
  
- void SoundPlayer_PlayMusic(SoundPlayer *player, const char *filename, const char *extn) {
+ void SoundPlayer_PlayMusic(SoundPlayer *player, const char *filepath) {
   if (player->music) {
-   if (player->music->name_ == filename) {
+   if (player->music->name_ == filepath) {
     if (!Sound_IsPlaying(player->music)) {
      Sound_Play(player->music);
     }
@@ -118,15 +118,15 @@ namespace he {
    // Must be loading a new sound as music, delete the older one, as only one music file is allowed to play
    delete player->music;
   }
-  player->music = new Sound(filename, extn);
+  player->music = new Sound(filepath);
   Sound_Play(player->music);
  }
  
- void SoundPlayer_PlayEffect(SoundPlayer *player, const char *filename, const char *extn, int repeat) {
+ void SoundPlayer_PlayEffect(SoundPlayer *player, const char *filepath, int repeat) {
   // Search if already loaded
   for (int i = 0; i < MAX_EFFECTS; ++i) {
    Sound *s = player->effects[i];
-   if (s && (s->name_ == filename)) {
+   if (s && (s->name_ == filepath)) {
     if(!Sound_IsPlaying(s)) {	// If not playing, play
      Sound_SetRepeat(s, repeat);
      Sound_Play(s);
@@ -139,7 +139,7 @@ namespace he {
   // Find a empty slot and play (again)
   for (int i = 0; i < MAX_EFFECTS; ++i) {
    if (player->effects[i] == 0) {
-    player->effects[i] = new Sound(filename, extn, repeat);
+    player->effects[i] = new Sound(filepath, repeat);
     Sound_Play(player->effects[i]);
     return;
    }
@@ -150,7 +150,7 @@ namespace he {
   for (int i = 0; i < MAX_EFFECTS; ++i) {
    if (Sound_IsPlaying(player->effects[i])) {
     delete player->effects[i];
-    player->effects[i] = new Sound(filename, extn, repeat);
+    player->effects[i] = new Sound(filepath, repeat);
     Sound_Play(player->effects[i]);
     return;
    }
