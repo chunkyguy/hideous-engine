@@ -24,13 +24,11 @@ he::GameConfig *g_config = nullptr;
 
 @implementation HELoop
 -(void)dealloc{
-	NSLog(@"HELoop: stoping...");
 	[super dealloc];
 }
 -(id)initWithSize:(CGSize)size{
 	self = [super init];
 	if(self){
-		NSLog(@"HELoop: starting...");
 		he::SetDefaultState();
 		GLKVector2 sz = GLKVector2Make(size.width, size.height);
 		game = g_config->CreateGame(sz);
@@ -113,19 +111,15 @@ he::GameConfig *g_config = nullptr;
     [EAGLContext setCurrentContext:self.context];
 }
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-	NSLog(@"ViewController: touchesBegan");
 	[self.gestureCollector touches:touches action:kBegan withEvent:event];
 }
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-	NSLog(@"ViewController: touchesEnded");
 	[self.gestureCollector touches:touches action:kEnded withEvent:event];
 }
 -(void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{
-	NSLog(@"ViewController: touchesCancelled");
 	[self.gestureCollector touches:touches action:kCancelled withEvent:event];
 }
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
-	NSLog(@"ViewController: touchesMoved");
 	[self.gestureCollector touches:touches action:kMoved withEvent:event];
 }
 @end
@@ -149,7 +143,7 @@ he::GameConfig *g_config = nullptr;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
-	NSLog(@"HEAppDelegate: loading window...");
+ [application setStatusBarHidden:YES];
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
 	self.viewController = [[[HEController alloc] initWithNibName:nil bundle:nil] autorelease];

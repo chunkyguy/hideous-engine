@@ -42,9 +42,9 @@
 //#define TEST_SPINE
 //#define TEST_FLASH
 //#define TEST_TRANSFORM
-//#define TEST_SPRITE
+#define TEST_SPRITE
 //#define TEST_COLLISION
-#define TEST_SOUND
+//#define TEST_SOUND
 
 template <typename T>
 T* AllocGameInstance(){

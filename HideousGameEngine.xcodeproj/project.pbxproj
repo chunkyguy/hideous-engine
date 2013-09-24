@@ -1488,6 +1488,11 @@
 				CLASSPREFIX = HE;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = whackylabs;
+				TargetAttributes = {
+					19A6E5741732781F006ACD91 = {
+						DevelopmentTeam = B8H28JR3TT;
+					};
+				};
 			};
 			buildConfigurationList = 19A6E5701732781E006ACD91 /* Build configuration list for PBXProject "HideousGameEngine" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1810,6 +1815,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HideousGameEngine/HideousGameEngine-Prefix.pch";
 				INFOPLIST_FILE = "HideousGameEngine/HideousGameEngine-Info.plist";
@@ -1828,6 +1834,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HideousGameEngine/HideousGameEngine-Prefix.pch";
 				INFOPLIST_FILE = "HideousGameEngine/HideousGameEngine-Info.plist";

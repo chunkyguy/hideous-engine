@@ -34,10 +34,11 @@ namespace he{
 	};
 	
 	void SoundPlayer_PlayMusic(SoundPlayer *player, const char *filename, const char *extn);
-	void SoundPlayer_PlayEffect(SoundPlayer *player, const char *filename, const char *extn);
+	void SoundPlayer_PlayEffect(SoundPlayer *player, const char *filename, const char *extn, int repeat = 0);
 	void SoundPlayer_StopAllEffects(SoundPlayer *player);
+
+	extern SoundPlayer *g_SoundPlayer;
 }
 
-extern he::SoundPlayer *g_SoundPlayer;
 
 #endif
