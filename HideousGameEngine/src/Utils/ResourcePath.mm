@@ -35,43 +35,48 @@
 #include <he/Utils/ResourcePath.hpp>
 ////////////////////////////////////////////////////////////
 namespace he{
-	
-	
-	std::string ResourcePath(void)	{
-		std::string rpath;
 
-		@autoreleasepool {
-			NSBundle* bundle = [NSBundle mainBundle];
-			if (bundle == nil) {
+// char *AbsolutePath(char *absolute_path, const char *filename) {
+//  std::string abs_path(ResourcePath()+filename);
+//  return strcpy(absolute_path, abs_path.c_str());
+// }
+ 
+ 
+ std::string ResourcePath(void)	{
+  std::string rpath;
+  
+  @autoreleasepool {
+   NSBundle* bundle = [NSBundle mainBundle];
+   if (bundle == nil) {
 #ifdef DEBUG
-				NSLog(@"bundle is nil... thus no resources path can be found.");
+    NSLog(@"bundle is nil... thus no resources path can be found.");
 #endif
-			} else {
-				NSString* path = [bundle resourcePath];
-				rpath = [path UTF8String] + std::string("/");
-			}
-
-		}
-
-		return rpath;
-	}
-	
-	std::string DocumentsPath(void) {
-		std::string rpath;
-
-		@autoreleasepool {
-			NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-			if (!paths || ![paths count]) {
+   } else {
+    NSString* path = [bundle resourcePath];
+    rpath = [path UTF8String] + std::string("/");
+   }
+   
+  }
+  
+  return rpath;
+ }
+ 
+ std::string DocumentsPath(void) {
+  std::string rpath;
+  
+  @autoreleasepool {
+   NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+   if (!paths || ![paths count]) {
 #ifdef DEBUG
-				NSLog(@"No path can be found.");
+    NSLog(@"No path can be found.");
 #endif
-			} else {
-				NSString *path = [paths objectAtIndex:0];
-				rpath = [path UTF8String] + std::string("/");
-			}
-		}
-		
-		return rpath;
-	}
-	
+   } else {
+    NSString *path = [paths objectAtIndex:0];
+    rpath = [path UTF8String] + std::string("/");
+   }
+  }
+  
+  return rpath;
+ }
+ 
 }
