@@ -28,7 +28,7 @@ namespace he{
 				break;
 				
 			case kStarling:
-				parser_ = new StarlingDataParser(data_path);
+				parser_ = new StarlingDataParser(data_path, texture_->GetSize());
 				break;
 		}
 		assert(parser_);		// Uninitialized parser

@@ -47,7 +47,7 @@ namespace he{
 	//	Parse the texture altas that is in the xml format created by Flash Professional.
 	class StarlingDataParser : public TextureAtlasParser{
 	public:
-		StarlingDataParser(const std::string &path, const GLKVector2 image_size = GLKVector2Make(1024, 1024));
+		StarlingDataParser(const std::string &path, const GLKVector2 image_size);
 		~StarlingDataParser();
 		const std::map<const std::string, TextureAtlasRegion> &GetTable() const;
 		
