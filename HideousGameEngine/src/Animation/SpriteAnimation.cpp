@@ -87,7 +87,7 @@ namespace he{
 	
 	unsigned int SpriteAnimationData::GetIndexOfFrame(const Frame *frame) const {
 		unsigned int frame_num = 0;
-		for(Frame *f = head_; frame_num-- && f; f = f->next_){
+		for(Frame *f = head_; f && (f != frame); f = f->next_){
 			frame_num++;
 		}
 		return frame_num;

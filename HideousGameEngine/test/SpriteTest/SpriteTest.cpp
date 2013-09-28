@@ -14,8 +14,6 @@
 #include <he/Animation/SpriteAnimation.h>
 
 #pragma mark - SpriteTest -
-const float kNewAnimDelay = 0.5f;
-
 void SpriteTest::init() {
  gesture_listener_.reset((he::CreateGestureListener(this, &SpriteTest::HandleGesture)));
  
