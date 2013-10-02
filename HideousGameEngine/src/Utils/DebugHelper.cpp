@@ -8,6 +8,7 @@
 
 #include <he/Utils/DebugHelper.h>
 
+#ifdef __HideousGameEngine__DEBUG_MODE__
 void he_Trace(const char* s) {
 	while (*s) {
 		if (*s == '%' && *++s != '%'){
@@ -16,3 +17,4 @@ void he_Trace(const char* s) {
 		std::cout << *s++;
 	}
 }
+#endif

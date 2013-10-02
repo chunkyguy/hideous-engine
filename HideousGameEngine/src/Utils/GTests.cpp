@@ -29,8 +29,10 @@
 
 #include <he/Utils/GTests.h>
 
+#ifdef __HideousGameEngine__DEBUG_MODE__
 GTEST_API_ int GTests(int argc, char **argv) {
   he_Trace("Running unit tests\n");
   testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();
 }
+#endif
