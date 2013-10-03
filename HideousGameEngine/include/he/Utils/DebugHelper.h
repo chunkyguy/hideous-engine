@@ -14,7 +14,7 @@
  *	Comment/Uncomment '__HideousGameEngine__DEBUG_MODE__' to disable/enable debug mode.
  ******************************************************************************/
 
-#define __HideousGameEngine__DEBUG_MODE__
+//#define __HideousGameEngine__DEBUG_MODE__
 
 
 #ifdef __HideousGameEngine__DEBUG_MODE__ /* DEBUG MODE */
