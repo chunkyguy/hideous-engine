@@ -18,25 +18,26 @@ namespace he{
 	/**
 	 Base class for Animation.
 	 */
-	Animation::~Animation(){
-		if(state_ == kNaturalDeath){
-			if(child_){
-				//	Check for child's premature death. Could have been called Die() even before this moment arrived.
-				if(child_->Done()){
-					child_->Die(); delete child_; child_ = nullptr;
-				}else{
-					// From this moment on child is responsibilty of the AnimationLoop.
-					g_AnimationLoop->MoveAndRunAnimation(child_);
-				}
-			}
-			if(listener_){		// callback
-				listener_->PerformAction(id_);
-			}
-		}else if(state_ == kSuicide && child_){
-			child_->Die(); delete child_; child_ = nullptr;
-		}
-		//		FILE_LOG(logDEBUG) << "~Animation: (" << this << "|" << id_ << "|" << descent_id_ << ") " << (state_ == kNaturalDeath ? "Natural Death" : "Suicide" );
-	}
+    Animation::~Animation(){
+        if(state_ == kNaturalDeath){
+            if(child_){
+                /*	Check for child's premature death.
+                 * Could have been called Die() even before this moment arrived.
+                 */
+                if(child_->Done()){
+                    child_->Die(); delete child_; child_ = nullptr;
+                }else{
+                    // From this moment on child is responsibilty of the AnimationLoop.
+                    g_AnimationLoop->MoveAndRunAnimation(child_);
+                }
+            }
+            if(listener_){		// callback
+                listener_->PerformAction(id_);
+            }
+        }else if(state_ == kSuicide && child_){
+            child_->Die(); delete child_; child_ = nullptr;
+        }
+    }
 	
 	Animation::Animation() :
 	id_(++uid),

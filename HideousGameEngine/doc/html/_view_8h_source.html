@@ -104,45 +104,48 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;<a class="code" href="_frame_8h.html">he/Utils/Frame.h</a>&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span>he {</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="classhe_1_1_view.html">   19</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classhe_1_1_view.html">View</a>{</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <a class="code" href="classhe_1_1_view.html#af196503911b62b5060440515040dc935">View</a>(<span class="keyword">const</span> <a class="code" href="structhe_1_1_transform.html">Transform</a> &amp;transform);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keyword">virtual</span> <a class="code" href="classhe_1_1_view.html#a1fe7bb5e03647f9cad7c1e31ce8e1a8f">~View</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_view.html#a084f19eb481688e83bc8a1857e3980c2">Update</a>(<span class="keywordtype">float</span> dt);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                        </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_view.html#a27834ec6abde44c05b0ceed596b625b0">Render</a>();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keyword">virtual</span> GLKVector2 <a class="code" href="classhe_1_1_view.html#a3ae476c6a3c32abe5d1158b41e9c23c0">GetSize</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <a class="code" href="classhe_1_1_view.html">View</a> *<a class="code" href="classhe_1_1_view.html#a5e6b4ced736f53fa46aac303a61c5ebf">MoveSubview</a>(<a class="code" href="classhe_1_1_view.html">View</a> *view);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_view.html#a83371549dc53cff3ad765d4a2c6cffcf">RemoveSubview</a>(<a class="code" href="classhe_1_1_view.html">View</a> *view);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_view.html#ae237f7673f48ba14dffdf7dda59fb8a4">SetTransform</a>(<span class="keyword">const</span> <a class="code" href="structhe_1_1_transform.html">Transform</a> &amp;transform);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keyword">const</span> <a class="code" href="structhe_1_1_transform.html">Transform</a> &amp;<a class="code" href="classhe_1_1_view.html#a8feaf9a4afd8b556c28cffee5c2ca7bd">GetTransform</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">//          /** Returns pointer to transform</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">//          @warning This is more like a design bug, can get modified in future. Use minimum.</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">//           */</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">//          Transform *GetTransformPtr();</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="code" href="classhe_1_1_view.html#a6fd41e72fc30379d5fcae57d3dcd1cda">   58</a></span>&#160;            <a class="code" href="structhe_1_1_transform.html">Transform</a> <a class="code" href="classhe_1_1_view.html#a6fd41e72fc30379d5fcae57d3dcd1cda">transform_</a>; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <a class="code" href="classhe_1_1_view.html">View</a> *head_;        </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <a class="code" href="classhe_1_1_view.html">View</a> *tail_;    </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <a class="code" href="classhe_1_1_view.html">View</a> *next_;    </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    };</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="classhe_1_1_frame.html">Frame</a> <a class="code" href="namespacehe.html#a72d9d7533276c84bf8f7fcc5bc8a140a">CreateFrame</a>(<span class="keyword">const</span> <a class="code" href="classhe_1_1_view.html">View</a> *view);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;} <span class="comment">/*namespace he*/</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="classhe_1_1_view.html">   19</a></span>&#160; <span class="keyword">class </span><a class="code" href="classhe_1_1_view.html">View</a>{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="classhe_1_1_view.html#a21c1b9d9484654cb901c47043e3c0e3a">View</a>(<span class="keyword">const</span> <a class="code" href="structhe_1_1_transform.html">Transform</a> &amp;transform, <span class="keyword">const</span> GLKVector2 &amp;size = GLKVector2Make(0.0f, 0.0f));</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classhe_1_1_view.html#a1fe7bb5e03647f9cad7c1e31ce8e1a8f">~View</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_view.html#a084f19eb481688e83bc8a1857e3980c2">Update</a>(<span class="keywordtype">float</span> dt);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_view.html#a27834ec6abde44c05b0ceed596b625b0">Render</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">virtual</span> GLKVector2 <a class="code" href="classhe_1_1_view.html#a3ae476c6a3c32abe5d1158b41e9c23c0">GetSize</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="classhe_1_1_view.html">View</a> *<a class="code" href="classhe_1_1_view.html#a5e6b4ced736f53fa46aac303a61c5ebf">MoveSubview</a>(<a class="code" href="classhe_1_1_view.html">View</a> *view);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_view.html#a83371549dc53cff3ad765d4a2c6cffcf">RemoveSubview</a>(<a class="code" href="classhe_1_1_view.html">View</a> *view);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classhe_1_1_view.html#ae237f7673f48ba14dffdf7dda59fb8a4">SetTransform</a>(<span class="keyword">const</span> <a class="code" href="structhe_1_1_transform.html">Transform</a> &amp;transform);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">const</span> <a class="code" href="structhe_1_1_transform.html">Transform</a> &amp;<a class="code" href="classhe_1_1_view.html#a8feaf9a4afd8b556c28cffee5c2ca7bd">GetTransform</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="comment">//            /** Returns pointer to transform</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="comment">//            @warning This is more like a design bug, can get modified in future. Use minimum.</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="comment">//             */</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="comment">//            Transform *GetTransformPtr();</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="code" href="classhe_1_1_view.html#a6fd41e72fc30379d5fcae57d3dcd1cda">   58</a></span>&#160;  <a class="code" href="structhe_1_1_transform.html">Transform</a> <a class="code" href="classhe_1_1_view.html#a6fd41e72fc30379d5fcae57d3dcd1cda">transform_</a>; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="classhe_1_1_view.html">View</a> *head_;      </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <a class="code" href="classhe_1_1_view.html">View</a> *tail_;  </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <a class="code" href="classhe_1_1_view.html">View</a> *next_;  </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  GLKVector2 default_size_; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; };</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; <a class="code" href="classhe_1_1_frame.html">Frame</a> <a class="code" href="namespacehe.html#a72d9d7533276c84bf8f7fcc5bc8a140a">CreateFrame</a>(<span class="keyword">const</span> <a class="code" href="classhe_1_1_view.html">View</a> *view);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; <span class="keywordtype">bool</span> <a class="code" href="namespacehe.html#a92dd92e6c026a92e5808d6d1aa8fca87">HitTest</a>(<span class="keyword">const</span> <a class="code" href="classhe_1_1_view.html">he::View</a> *one, <span class="keyword">const</span> <a class="code" href="classhe_1_1_view.html">he::View</a> *two);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;} <span class="comment">/*namespace he*/</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 13 2013 05:17:00 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 25 2013 22:37:53 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

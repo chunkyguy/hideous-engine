@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6D157FA2-D7D9-4F66-8D1E-0460A76AAD6D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>gtest</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>360E4B5D1FD0C2CB719C420E43C34BFAD383394F</key>
+		<string>https://bitbucket.org/chunkyguy/hideous-engine.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Externals/gtest/gtest.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>360E4B5D1FD0C2CB719C420E43C34BFAD383394F</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://bitbucket.org/chunkyguy/hideous-engine.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>360E4B5D1FD0C2CB719C420E43C34BFAD383394F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>360E4B5D1FD0C2CB719C420E43C34BFAD383394F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HideousGameEngine</string>
+		</dict>
+	</array>
+</dict>
+</plist>

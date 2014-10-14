@@ -16,6 +16,7 @@ var searchData=
   ['transform_5fgetmv',['Transform_GetMV',['../namespacehe.html#af12619e935ba353427c12f9d02f53361',1,'he']]],
   ['transform_5fgetmvp',['Transform_GetMVP',['../namespacehe.html#ad70e9272d193474f16de5ca4e51f759e',1,'he']]],
   ['transform_5fgetposition',['Transform_GetPosition',['../namespacehe.html#a0f8044d503e86895274b001ccec2aa78',1,'he']]],
+  ['transform_5fgetworldcoordinates',['Transform_GetWorldCoordinates',['../namespacehe.html#acaacac090230ce91e68dc2977b59aac2',1,'he']]],
   ['transform_5fsetposition',['Transform_SetPosition',['../namespacehe.html#a939e55461e51424ae14125456da14b89',1,'he']]],
   ['translate',['Translate',['../namespacehe_1_1_vertex.html#a3126ad77e4c739555e6329390003fdff',1,'he::Vertex']]],
   ['traverseanimations',['TraverseAnimations',['../classhe_1_1_animation_loop.html#a3686e0b46e8070dafcad4246fcc89cfb',1,'he::AnimationLoop']]],

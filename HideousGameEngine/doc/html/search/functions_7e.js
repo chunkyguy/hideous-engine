@@ -28,6 +28,8 @@ var searchData=
   ['_7eparticlevertex',['~ParticleVertex',['../classhe_1_1_particle_vertex.html#a9b5ead73628c6290f8b96a58e99d1877',1,'he::ParticleVertex']]],
   ['_7eprogram',['~Program',['../classhe_1_1_program.html#acf32f7945eff428384b33b0154b44f18',1,'he::Program']]],
   ['_7erawanimation',['~RawAnimation',['../classhe_1_1_raw_animation.html#a7846543fa54b25ebb7159b2c146e4bb0',1,'he::RawAnimation']]],
+  ['_7esound',['~Sound',['../classhe_1_1_sound.html#a7612063f665b76dd3c895fdcd60cddcb',1,'he::Sound']]],
+  ['_7esoundplayer',['~SoundPlayer',['../classhe_1_1_sound_player.html#af3b8c2689192ed2343d8b0da3aaf101b',1,'he::SoundPlayer']]],
   ['_7esprite',['~Sprite',['../classhe_1_1_sprite.html#a0c45a0978d0f73e1d9defc17e2252d9b',1,'he::Sprite']]],
   ['_7espriteanimation',['~SpriteAnimation',['../classhe_1_1_sprite_animation.html#a7fcdede68f9af24db1b79adf607787b8',1,'he::SpriteAnimation']]],
   ['_7espriteanimationdata',['~SpriteAnimationData',['../classhe_1_1_sprite_animation_data.html#a4942570188bb83b897650d983e3af0a3',1,'he::SpriteAnimationData']]],

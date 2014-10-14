@@ -34,15 +34,15 @@
 //#define TEST_RECT_TEXT
 //#define TEST_MULTI_SHADERS
 //#define TEST_MULTI_FONT
-//#define TEST_ANIMATION
+#define TEST_ANIMATION
 //#define TEST_TEXTURE_BIG_BANG
 //#define TEST_GESTURE
-//#define TEST_PARTICLES
+// #define TEST_PARTICLES
 //#define TEST_UI
 //#define TEST_SPINE
 //#define TEST_FLASH
 //#define TEST_TRANSFORM
-#define TEST_SPRITE
+//#define TEST_SPRITE
 //#define TEST_COLLISION
 //#define TEST_SOUND
 

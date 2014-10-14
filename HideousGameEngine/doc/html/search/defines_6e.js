@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['new',['NEW',['../src_2spine_2extension_8h.html#a58876ab69ee866b86efbfdb138ab88b8',1,'NEW():&#160;extension.h'],['../test_2spine_2extension_8h.html#a58876ab69ee866b86efbfdb138ab88b8',1,'NEW():&#160;extension.h']]]
+  ['ndebug',['NDEBUG',['../_debug_helper_8h.html#a8de3ed741dadc9c979a4ff17c0a9116e',1,'DebugHelper.h']]]
 ];

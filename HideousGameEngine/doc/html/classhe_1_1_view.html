@@ -117,8 +117,8 @@ Inheritance diagram for he::View:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af196503911b62b5060440515040dc935"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_view.html#af196503911b62b5060440515040dc935">View</a> (const <a class="el" href="structhe_1_1_transform.html">Transform</a> &amp;transform)</td></tr>
-<tr class="separator:af196503911b62b5060440515040dc935"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21c1b9d9484654cb901c47043e3c0e3a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_view.html#a21c1b9d9484654cb901c47043e3c0e3a">View</a> (const <a class="el" href="structhe_1_1_transform.html">Transform</a> &amp;transform, const GLKVector2 &amp;size=GLKVector2Make(0.0f, 0.0f))</td></tr>
+<tr class="separator:a21c1b9d9484654cb901c47043e3c0e3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fe7bb5e03647f9cad7c1e31ce8e1a8f"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_view.html#a1fe7bb5e03647f9cad7c1e31ce8e1a8f">~View</a> ()</td></tr>
 <tr class="separator:a1fe7bb5e03647f9cad7c1e31ce8e1a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a084f19eb481688e83bc8a1857e3980c2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhe_1_1_view.html#a084f19eb481688e83bc8a1857e3980c2">Update</a> (float dt)</td></tr>
@@ -144,7 +144,7 @@ Protected Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Container of all kind of Views. Adds child component in stack order. If AddSubview-order is like [btn_01, btn_01, bg, icon_01] Draw order will be [btn_01, btn_01, bg, icon_01] </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="af196503911b62b5060440515040dc935"></a>
+<a class="anchor" id="a21c1b9d9484654cb901c47043e3c0e3a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -152,8 +152,18 @@ Protected Attributes</h2></td></tr>
           <td class="memname">he::View::View </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structhe_1_1_transform.html">Transform</a> &amp;&#160;</td>
-          <td class="paramname"><em>transform</em>)</td><td></td>
+          <td class="paramname"><em>transform</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const GLKVector2 &amp;&#160;</td>
+          <td class="paramname"><em>size</em> = <code>GLKVector2Make(0.0f,&#160;0.0f)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -355,7 +365,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<pre class="fragment">            Returns pointer to transform
+<pre class="fragment">                Returns pointer to transform
 </pre> <dl class="section warning"><dt>Warning</dt><dd>This is more like a design bug, can get modified in future. Use minimum.The frame of the view </dd></dl>
 
 </div>
@@ -366,7 +376,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 13 2013 05:17:00 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 25 2013 22:37:53 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

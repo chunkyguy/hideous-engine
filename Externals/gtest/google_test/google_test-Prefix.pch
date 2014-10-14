@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'google_test' target in the 'google_test' project
+//
+
+#ifdef __OBJC__
+	#import <Foundation/Foundation.h>
+#endif

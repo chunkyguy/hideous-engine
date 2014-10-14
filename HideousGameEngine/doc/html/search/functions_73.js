@@ -26,11 +26,16 @@ var searchData=
   ['sineeaseinout',['SineEaseInOut',['../namespacehe.html#a3a7381338a8a5330eae7772b3ab98543',1,'he']]],
   ['sineeaseout',['SineEaseOut',['../namespacehe.html#a9008ce73b55240fb14283b6d90660781',1,'he']]],
   ['size',['Size',['../structhe_1_1_glyph_data_1_1_size.html#a1fad0fe54b7cd09ba6082d0cb9b8c52d',1,'he::GlyphData::Size']]],
-  ['sprite',['Sprite',['../classhe_1_1_sprite.html#ad0bb014a4d43fa7129d2e005e26c10c8',1,'he::Sprite']]],
+  ['sound',['Sound',['../classhe_1_1_sound.html#ab2de57480cc1f88740159fb12a0d8119',1,'he::Sound']]],
+  ['soundplayer',['SoundPlayer',['../classhe_1_1_sound_player.html#a05b07f56c2ff6db779bd815d97a60a96',1,'he::SoundPlayer']]],
+  ['soundplayer_5fplayeffect',['SoundPlayer_PlayEffect',['../namespacehe.html#aeaab903cfb991fb29ee854b007a848e5',1,'he']]],
+  ['soundplayer_5fplaymusic',['SoundPlayer_PlayMusic',['../namespacehe.html#a6c553da586375688bf4cb6de961dbdb3',1,'he']]],
+  ['soundplayer_5fstopalleffects',['SoundPlayer_StopAllEffects',['../namespacehe.html#a6523c2d35fdec1f2598f6a37ba9d807b',1,'he']]],
+  ['sprite',['Sprite',['../classhe_1_1_sprite.html#aa56fe8db86c94e12a6a37ace105ab062',1,'he::Sprite']]],
   ['spriteanimation',['SpriteAnimation',['../classhe_1_1_sprite_animation.html#afd5deaa8e723c93fb06bc3f4a969ba72',1,'he::SpriteAnimation']]],
   ['spriteanimationdata',['SpriteAnimationData',['../classhe_1_1_sprite_animation_data.html#a049f9b7c9848e782b0268b594ac7f568',1,'he::SpriteAnimationData']]],
   ['spriteview',['SpriteView',['../classhe_1_1_sprite_view.html#af7e9a6ac8e7625990130aa700cb07c26',1,'he::SpriteView']]],
-  ['starlingdataparser',['StarlingDataParser',['../classhe_1_1_starling_data_parser.html#aca0db266b258321d7a1f53a209195086',1,'he::StarlingDataParser']]],
+  ['starlingdataparser',['StarlingDataParser',['../classhe_1_1_starling_data_parser.html#a6737764e37371a9f9ab02bbd1cd7ee76',1,'he::StarlingDataParser']]],
   ['startanimation',['StartAnimation',['../classhe_1_1_sprite.html#a9998ab52a718a0f178067e4297db8910',1,'he::Sprite']]],
   ['stream',['Stream',['../class_output2_f_i_l_e.html#a10f20b32157af0d88e5ad9710f2dbd6e',1,'Output2FILE']]]
 ];

@@ -524,6 +524,60 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>MAX_EFFECTS</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>_sound_player_8h.html</Path>
+    <Anchor>a10d4997e12a6984229c6f67c805ad007</Anchor>
+    <DeclaredIn>SoundPlayer.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SoundPlayer_PlayMusic</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe.html</Path>
+    <Anchor>a6c553da586375688bf4cb6de961dbdb3</Anchor>
+    <DeclaredIn>SoundPlayer.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SoundPlayer_PlayEffect</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe.html</Path>
+    <Anchor>aeaab903cfb991fb29ee854b007a848e5</Anchor>
+    <DeclaredIn>SoundPlayer.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SoundPlayer_StopAllEffects</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe.html</Path>
+    <Anchor>a6523c2d35fdec1f2598f6a37ba9d807b</Anchor>
+    <DeclaredIn>SoundPlayer.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>g_SoundPlayer</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>he</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe.html</Path>
+    <Anchor>a3abf8c362cc2dc92617f48cb42b9e9a8</Anchor>
+    <DeclaredIn>SoundPlayer.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>CreateTextureData</Name>
       <APILanguage>cpp</APILanguage>
       <Type>func</Type>
@@ -618,7 +672,7 @@
       <Scope>he::sprite</Scope>
     </TokenIdentifier>
     <Path>namespacehe_1_1sprite.html</Path>
-    <Anchor>ab1d4d6428953aa80ca2bce77a7cd5846</Anchor>
+    <Anchor>a004b1c5a1923c4198fc246cd644bad23</Anchor>
     <DeclaredIn>Sprite.h</DeclaredIn>
   </Token>
   <Token>
@@ -634,32 +688,33 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>__HideousGameEngine__DEBUG_MODE__</Name>
+      <Name>HitTest</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe.html</Path>
+    <Anchor>a92dd92e6c026a92e5808d6d1aa8fca87</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>he_Trace</Name>
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
     <Path>_debug_helper_8h.html</Path>
-    <Anchor>a9df211164b1f76fd71bf31148935eb6d</Anchor>
+    <Anchor>a4435d4e55bcab0023a1ae6f0e4cc89a9</Anchor>
     <DeclaredIn>DebugHelper.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>he_Trace</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
+      <Name>NDEBUG</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
     </TokenIdentifier>
     <Path>_debug_helper_8h.html</Path>
-    <Anchor>a76249a55c335bb9d1ea7c6ffd1215b42</Anchor>
-    <DeclaredIn>DebugHelper.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>he_Trace</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>_debug_helper_8h.html</Path>
-    <Anchor>a727a0beeb767b969588169fbe5f46c2d</Anchor>
+    <Anchor>a8de3ed741dadc9c979a4ff17c0a9116e</Anchor>
     <DeclaredIn>DebugHelper.h</DeclaredIn>
   </Token>
   <Token>
@@ -1003,6 +1058,17 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>Transform_GetWorldCoordinates</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe.html</Path>
+    <Anchor>acaacac090230ce91e68dc2977b59aac2</Anchor>
+    <DeclaredIn>Transform.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>operator==</Name>
       <APILanguage>cpp</APILanguage>
       <Type>func</Type>
@@ -1031,6 +1097,28 @@
     </TokenIdentifier>
     <Path>_utils_8h.html</Path>
     <Anchor>af8df3547bfde53a5acb93e2607b0034a</Anchor>
+    <DeclaredIn>Utils.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Color_HexToRGBA</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe.html</Path>
+    <Anchor>abf274642d1c927b61738d6dce6bf263f</Anchor>
+    <DeclaredIn>Utils.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LinesIntersect</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe.html</Path>
+    <Anchor>afac5892091c232e405fb45acd7a054f7</Anchor>
     <DeclaredIn>Utils.h</DeclaredIn>
   </Token>
   <Token>
@@ -2051,6 +2139,39 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>SoundPlayer_PlayMusic</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe.html</Path>
+    <Anchor>a6c553da586375688bf4cb6de961dbdb3</Anchor>
+    <DeclaredIn>SoundPlayer.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SoundPlayer_PlayEffect</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe.html</Path>
+    <Anchor>aeaab903cfb991fb29ee854b007a848e5</Anchor>
+    <DeclaredIn>SoundPlayer.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SoundPlayer_StopAllEffects</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe.html</Path>
+    <Anchor>a6523c2d35fdec1f2598f6a37ba9d807b</Anchor>
+    <DeclaredIn>SoundPlayer.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>CreateTextureData</Name>
       <APILanguage>cpp</APILanguage>
       <Type>func</Type>
@@ -2080,6 +2201,17 @@
     </TokenIdentifier>
     <Path>namespacehe.html</Path>
     <Anchor>a72d9d7533276c84bf8f7fcc5bc8a140a</Anchor>
+    <DeclaredIn>View.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HitTest</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe.html</Path>
+    <Anchor>a92dd92e6c026a92e5808d6d1aa8fca87</Anchor>
     <DeclaredIn>View.h</DeclaredIn>
   </Token>
   <Token>
@@ -2271,6 +2403,17 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>Transform_GetWorldCoordinates</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe.html</Path>
+    <Anchor>acaacac090230ce91e68dc2977b59aac2</Anchor>
+    <DeclaredIn>Transform.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>operator==</Name>
       <APILanguage>cpp</APILanguage>
       <Type>func</Type>
@@ -2290,6 +2433,28 @@
     <Path>namespacehe.html</Path>
     <Anchor>ac00b7dc43b789a77d57d5acefd9ce0e9</Anchor>
     <DeclaredIn>Transform.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Color_HexToRGBA</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe.html</Path>
+    <Anchor>abf274642d1c927b61738d6dce6bf263f</Anchor>
+    <DeclaredIn>Utils.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LinesIntersect</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>he</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe.html</Path>
+    <Anchor>afac5892091c232e405fb45acd7a054f7</Anchor>
+    <DeclaredIn>Utils.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -2389,6 +2554,17 @@
     <Path>namespacehe.html</Path>
     <Anchor>a8dd96838f7b4075a18fd1f3e08433944</Anchor>
     <DeclaredIn>Font.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>g_SoundPlayer</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>he</Scope>
+    </TokenIdentifier>
+    <Path>namespacehe.html</Path>
+    <Anchor>a3abf8c362cc2dc92617f48cb42b9e9a8</Anchor>
+    <DeclaredIn>SoundPlayer.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -3082,13 +3258,24 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>RetainData</Name>
+      <Name>GetIndexOfFrame</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>he::SpriteAnimationData</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_sprite_animation_data.html</Path>
-    <Anchor>a5fac52cddd9f6bd955606dab8a2fd6c3</Anchor>
+    <Anchor>a5ee6b70e5d621d64ba2653c2ebcb6c27</Anchor>
+    <DeclaredIn>SpriteAnimation.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetAnimationName</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::SpriteAnimationData</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sprite_animation_data.html</Path>
+    <Anchor>aa72813ea9d93af5c06d02c1e7221aeb8</Anchor>
     <DeclaredIn>SpriteAnimation.h</DeclaredIn>
   </Token>
   <Token>
@@ -3199,6 +3386,17 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>GetCurrentFrameNumber</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::SpriteAnimation</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sprite_animation.html</Path>
+    <Anchor>a6f594042dcc8deab1cd7d5d3d512815a</Anchor>
+    <DeclaredIn>SpriteAnimation.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>SetFinalFrameIndex</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
@@ -3217,17 +3415,6 @@
     </TokenIdentifier>
     <Path>classhe_1_1_sprite_animation.html</Path>
     <Anchor>a4eb6c5d02501610dc85b74f53b37d5a2</Anchor>
-    <DeclaredIn>SpriteAnimation.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>RetainCurrVertex</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>he::SpriteAnimation</Scope>
-    </TokenIdentifier>
-    <Path>classhe_1_1_sprite_animation.html</Path>
-    <Anchor>a6c8f1d00bfa5b75e82097f8780813798</Anchor>
     <DeclaredIn>SpriteAnimation.h</DeclaredIn>
   </Token>
   <Token>
@@ -4160,7 +4347,7 @@
       <Scope>he::View</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_view.html</Path>
-    <Anchor>af196503911b62b5060440515040dc935</Anchor>
+    <Anchor>a21c1b9d9484654cb901c47043e3c0e3a</Anchor>
     <DeclaredIn>View.h</DeclaredIn>
   </Token>
   <Token>
@@ -5184,6 +5371,120 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>he::Sound</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>he::Sound</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sound.html</Path>
+    <DeclaredIn>SoundPlayer.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Sound</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Sound</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sound.html</Path>
+    <Anchor>ab2de57480cc1f88740159fb12a0d8119</Anchor>
+    <DeclaredIn>SoundPlayer.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~Sound</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Sound</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sound.html</Path>
+    <Anchor>a7612063f665b76dd3c895fdcd60cddcb</Anchor>
+    <DeclaredIn>SoundPlayer.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>player_</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>he::Sound</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sound.html</Path>
+    <Anchor>a290ea55832113a468f7cfbbef004e002</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>name_</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>he::Sound</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sound.html</Path>
+    <Anchor>a51ea8d850369ac61e1bc63fa7a93ccf8</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>he::SoundPlayer</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>he::SoundPlayer</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sound_player.html</Path>
+    <DeclaredIn>SoundPlayer.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SoundPlayer</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::SoundPlayer</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sound_player.html</Path>
+    <Anchor>a05b07f56c2ff6db779bd815d97a60a96</Anchor>
+    <DeclaredIn>SoundPlayer.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~SoundPlayer</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::SoundPlayer</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sound_player.html</Path>
+    <Anchor>af3b8c2689192ed2343d8b0da3aaf101b</Anchor>
+    <DeclaredIn>SoundPlayer.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>music</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>he::SoundPlayer</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sound_player.html</Path>
+    <Anchor>a60915f75c91560a0e7fae65474bbbe44</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>effects</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>he::SoundPlayer</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sound_player.html</Path>
+    <Anchor>aa3916673136367da65c0b06c92617eaa</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>effects_counter</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>he::SoundPlayer</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sound_player.html</Path>
+    <Anchor>a825c6a0f0c6198a2382a4dd9b92cdc5f</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>he::Texture</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -5466,7 +5767,7 @@
       <Scope>he::StarlingDataParser</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_starling_data_parser.html</Path>
-    <Anchor>aca0db266b258321d7a1f53a209195086</Anchor>
+    <Anchor>a6737764e37371a9f9ab02bbd1cd7ee76</Anchor>
     <DeclaredIn>TextureAtlasParser.h</DeclaredIn>
   </Token>
   <Token>
@@ -5876,7 +6177,7 @@
       <Scope>he::View</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_view.html</Path>
-    <Anchor>af196503911b62b5060440515040dc935</Anchor>
+    <Anchor>a21c1b9d9484654cb901c47043e3c0e3a</Anchor>
     <DeclaredIn>View.h</DeclaredIn>
   </Token>
   <Token>
@@ -6060,7 +6361,7 @@
       <Scope>he::View</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_view.html</Path>
-    <Anchor>af196503911b62b5060440515040dc935</Anchor>
+    <Anchor>a21c1b9d9484654cb901c47043e3c0e3a</Anchor>
     <DeclaredIn>View.h</DeclaredIn>
   </Token>
   <Token>
@@ -6255,7 +6556,7 @@
       <Scope>he::View</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_view.html</Path>
-    <Anchor>af196503911b62b5060440515040dc935</Anchor>
+    <Anchor>a21c1b9d9484654cb901c47043e3c0e3a</Anchor>
     <DeclaredIn>View.h</DeclaredIn>
   </Token>
   <Token>
@@ -6385,7 +6686,7 @@
       <Scope>he::View</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_view.html</Path>
-    <Anchor>af196503911b62b5060440515040dc935</Anchor>
+    <Anchor>a21c1b9d9484654cb901c47043e3c0e3a</Anchor>
     <DeclaredIn>View.h</DeclaredIn>
   </Token>
   <Token>
@@ -6504,7 +6805,7 @@
       <Scope>he::Sprite</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_sprite.html</Path>
-    <Anchor>ad0bb014a4d43fa7129d2e005e26c10c8</Anchor>
+    <Anchor>aa56fe8db86c94e12a6a37ace105ab062</Anchor>
     <DeclaredIn>Sprite.h</DeclaredIn>
   </Token>
   <Token>
@@ -6560,6 +6861,17 @@
     </TokenIdentifier>
     <Path>classhe_1_1_sprite.html</Path>
     <Anchor>a936fea2a4e5b102277531ac42e62b953</Anchor>
+    <DeclaredIn>Sprite.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetCurrentFrameNumber</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>he::Sprite</Scope>
+    </TokenIdentifier>
+    <Path>classhe_1_1_sprite.html</Path>
+    <Anchor>a7cc8e625fb9b57900d497c25617bb1f8</Anchor>
     <DeclaredIn>Sprite.h</DeclaredIn>
   </Token>
   <Token>
@@ -6646,7 +6958,7 @@
       <Scope>he::View</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_view.html</Path>
-    <Anchor>af196503911b62b5060440515040dc935</Anchor>
+    <Anchor>a21c1b9d9484654cb901c47043e3c0e3a</Anchor>
     <DeclaredIn>View.h</DeclaredIn>
   </Token>
   <Token>
@@ -6874,7 +7186,7 @@
       <Scope>he::View</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_view.html</Path>
-    <Anchor>af196503911b62b5060440515040dc935</Anchor>
+    <Anchor>a21c1b9d9484654cb901c47043e3c0e3a</Anchor>
     <DeclaredIn>View.h</DeclaredIn>
   </Token>
   <Token>
@@ -6960,7 +7272,7 @@
       <Scope>he::View</Scope>
     </TokenIdentifier>
     <Path>classhe_1_1_view.html</Path>
-    <Anchor>af196503911b62b5060440515040dc935</Anchor>
+    <Anchor>a21c1b9d9484654cb901c47043e3c0e3a</Anchor>
     <DeclaredIn>View.h</DeclaredIn>
   </Token>
   <Token>
@@ -8230,7 +8542,7 @@
       <Scope>he::sprite</Scope>
     </TokenIdentifier>
     <Path>namespacehe_1_1sprite.html</Path>
-    <Anchor>ab1d4d6428953aa80ca2bce77a7cd5846</Anchor>
+    <Anchor>a004b1c5a1923c4198fc246cd644bad23</Anchor>
     <DeclaredIn>Sprite.h</DeclaredIn>
   </Token>
   <Token>

@@ -12,6 +12,6 @@ var searchData=
   ['vertex_5fdata_5f',['vertex_data_',['../classhe_1_1_render_object.html#a9f377bf82ef68e5fa0f241a534cedaeb',1,'he::RenderObject']]],
   ['vertexdata_2eh',['VertexData.h',['../_vertex_data_8h.html',1,'']]],
   ['view',['View',['../classhe_1_1_view.html',1,'he']]],
-  ['view',['view',['../interface_gesture_collector.html#a7384f75e0b69e1ea5182cd174dccac01',1,'GestureCollector::view()'],['../classhe_1_1_view.html#af196503911b62b5060440515040dc935',1,'he::View::View()']]],
+  ['view',['view',['../interface_gesture_collector.html#a7384f75e0b69e1ea5182cd174dccac01',1,'GestureCollector::view()'],['../classhe_1_1_view.html#a21c1b9d9484654cb901c47043e3c0e3a',1,'he::View::View()']]],
   ['view_2eh',['View.h',['../_view_8h.html',1,'']]]
 ];

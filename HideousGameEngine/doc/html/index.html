@@ -81,95 +81,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Hideous Game Engine </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1>How To Use </h1>
+<div class="textblock"><p>Hideous Engine is a 2D game engine for mobile devices.</p>
+<h2>Features </h2>
 <ol type="1">
-<li>Add followings to User Header Search Path:</li>
+<li>OpenGL ES with C++ (cross-platform support ahead).</li>
+<li>Animation system.</li>
+<li>Particle system.</li>
+<li>Freetype Font rendering.</li>
+<li>Sprite sheet import coupled with Flash Pro and Zwoptex.</li>
+<li>3D coordinate system everywhere (3D upgrade ahead).</li>
+<li>Doxygen based documentation.</li>
+<li>Google test embedded for unit testing. </li>
 </ol>
-<p>'/Volumes/DrivePlusPlus/Languages/std_lib/he/include/' '/Volumes/DrivePlusPlus/Languages/std_lib/freetype_2_ios/include/freetype2'</p>
-<h1>Code Structure </h1>
-<ol type="1">
-<li>All cpp files compile to libhe.a static library.</li>
-<li>The library libhe.a is located at: '/Volumes/DrivePlusPlus/Languages/std_lib/he/'</li>
-<li>The headers files at: '/Volumes/DrivePlusPlus/Languages/repo/he/HideousGameEngine/HideousGameEngine/include/' are just a stable copy of: '/Volumes/DrivePlusPlus/Languages/std_lib/he/include/' Use the ones located at latter location.</li>
-</ol>
-<h1>The Philosophy </h1>
-<p>RenderObject: At the core there is a fat RenderObject. The RenderObject contains ALL the basic elements required by any kind of shader possible. Turns out, they are not as many as you'd expect.</p>
-<p>Currently it holds:</p>
-<ul>
-<li>VertexData (required)</li>
-<li>Shader (required)</li>
-<li>Texture (optional)</li>
-<li>ModelViewProjection Matrix. (optional)</li>
-<li>Color (optional)</li>
-</ul>
-<p>Shaders: Then there are these specific shaders. Each shader is capable of rendering the RenderObject in it's own way.</p>
-<p>VertexData: The data is strongly coupled with Shader, but one kind of VertexData could be used my different Shaders.</p>
-<h1>Demos </h1>
-<h2>RectColorTest </h2>
-<p>Demonstrates how to:</p>
-<ol type="1">
-<li>Run a simple Kalchakra.</li>
-<li>Encapsulate Core's RectColor within your Entity in this case RunningSquare.</li>
-<li>Add/remove entities from the Kalchakra.</li>
-</ol>
-<h2>RectTextureTest </h2>
-<p>How to load textures, standalones or using a texture atlas.</p>
-<h2>RectTextTest </h2>
-<p>How to load text. How to create texture data for text on the fly.</p>
-<h2>MultiShadersTest </h2>
-<p>How to work with different shaders together.</p>
-<h2>MultiFontTest </h2>
-<p>How to work with differnt text objects.</p>
-<h1>How stuff works? </h1>
-<h2>Texture cycle </h2>
-<p>The textures are loaded into memory through RectTexture class objects.</p>
-<ol type="1">
-<li>Texture objects get allocated in memory at the RectTexture ctor. 1.1 That just copies the name/extn for searching purpose (later)</li>
-<li>RectTexture::init calls the loadShaders, that loads the texture. 2.1 There is a singletone class TexturePool, that has a list of all the Texture in the memory. 2.3 TexturePool::get method tries to find the requested Texture. If found, it returns the instance. Else load the Texture into memory by calling Texture::load()</li>
-<li>TexturePool has a inner class SharedTexture. That manages the Textures on retain count basis.</li>
-<li>Each ~RectTexture() does two operations: 4.1 delete Texture. That releases any string or data collected by Texture. The Texture then calls TexturePool::unget() which checks for Texture retain count. If retain count is 0. It calls Texture unload(). That releases the texture data from memnory.</li>
-</ol>
-<h1>Markdown Help </h1>
-<p>Documentation that will appear on the main page</p>
-<h1>This is an level 1 header </h1>
-<h2>This is an level 2 header </h2>
-<blockquote class="doxtable">
-<p>This is a block quote<br/>
- spanning multiple lines</p>
-<p></p>
-</blockquote>
-<ul>
-<li><p class="startli">Item 1</p>
-<p class="startli">More text for this item.</p>
-</li>
-<li>Item 2<ul>
-<li>nested list item.</li>
-<li>another nested item.</li>
-</ul>
-</li>
-<li>Item 3</li>
-</ul>
-<ol type="1">
-<li>First item.</li>
-<li>Second item.</li>
-</ol>
-<p>This a normal paragraph </p>
-<pre class="fragment">This is a code block
-</pre><p>We continue with a normal paragraph again.</p>
-<hr/>
- <hr/>
-<p><em>single asterisks</em></p>
-<p><em>single underscores</em></p>
-<p><b>double asterisks</b></p>
-<p><b>double underscores</b></p>
-<p>Use the <code>printf()</code> function.</p>
-<p>To assign the output of command <code>ls</code> to <code>var</code> use <code>var=`ls</code>`.</p>
-<p><a href="http://example.net/">The link text</a> <a href="http://example.net/" title="Link title">The link text</a> <a href="/relative/path/to/index.html" title="Link title">The link text</a> <a href="somefile.html">The link text</a></p>
-<div class="fragment"><div class="line"><span class="keywordtype">int</span> func(<span class="keywordtype">int</span> a,<span class="keywordtype">int</span> b) { <span class="keywordflow">return</span> a*b; }</div>
-</div><!-- fragment --> </div></div><!-- contents -->
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 13 2013 05:17:01 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 25 2013 22:37:54 for HideousEngine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

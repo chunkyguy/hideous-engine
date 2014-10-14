@@ -92,6 +92,8 @@
 		1960A1C117DC7BD400FCB36F /* playscreen_ss.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1960A1BF17DC7BD400FCB36F /* playscreen_ss.xml */; };
 		1962B846173B7070004E9A1C /* SpineTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1962B844173B7068004E9A1C /* SpineTest.cpp */; };
 		198219FF177B10C200B92C84 /* GradientView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 198219FD177B10C200B92C84 /* GradientView.cpp */; };
+		1982D21319ED100700C59BC6 /* libFreetype2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1982D0E419ED0B4F00C59BC6 /* libFreetype2.a */; };
+		1982D45519ED1C4B00C59BC6 /* libgoogle_test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1982D45219ED1C3900C59BC6 /* libgoogle_test.a */; };
 		198403AC1761B86B00D0B7EA /* TextureAtlasRegion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 198403AA1761B86A00D0B7EA /* TextureAtlasRegion.cpp */; };
 		198403B21761EA2F00D0B7EA /* AnimationLoop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 198403B01761EA2F00D0B7EA /* AnimationLoop.cpp */; };
 		198403B51761EAAA00D0B7EA /* AnimationUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 198403B31761EAAA00D0B7EA /* AnimationUtils.cpp */; };
@@ -210,10 +212,46 @@
 		19D0F5DD17EEE32D00ED2901 /* background.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 19D0F5D817EED6B700ED2901 /* background.m4a */; };
 		19D0F5DE17EEE32D00ED2901 /* sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 19D0F5D917EED6B700ED2901 /* sound.caf */; };
 		19D0F5E017EEFA2C00ED2901 /* splash.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 19D0F5DF17EEFA2C00ED2901 /* splash.aiff */; };
-		19E26504176E514400874D58 /* libgoogle_test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19E26503176E514400874D58 /* libgoogle_test.a */; };
-		19E26506176E515400874D58 /* libFreetype2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19E26505176E515400874D58 /* libFreetype2.a */; };
 		19EB949F1738C8F200FAF69C /* easing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19EB949E1738C8F200FAF69C /* easing.cpp */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1982D0E319ED0B4F00C59BC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1982D0DF19ED0B4F00C59BC6 /* freetype2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6382B1B10FB0FC5100ECAC02;
+			remoteInfo = Freetype2;
+		};
+		1982D0E519ED0B6E00C59BC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1982D0DF19ED0B4F00C59BC6 /* freetype2.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6382B1B00FB0FC5100ECAC02;
+			remoteInfo = Freetype2;
+		};
+		1982D44F19ED1C3900C59BC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1982D44A19ED1C3800C59BC6 /* gtest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 19A1C467176BC7F500C36FEF;
+			remoteInfo = gtest;
+		};
+		1982D45119ED1C3900C59BC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1982D44A19ED1C3800C59BC6 /* gtest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 19A1C4A3176BCAD500C36FEF;
+			remoteInfo = google_test;
+		};
+		1982D45319ED1C4400C59BC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1982D44A19ED1C3800C59BC6 /* gtest.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 19A1C4A2176BCAD500C36FEF;
+			remoteInfo = google_test;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		19041EB6176C5A3C007119B1 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
@@ -319,6 +357,8 @@
 		197ADE82176833D8001CBA53 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = HideousGameEngine/include/he/README.md; sourceTree = SOURCE_ROOT; };
 		198219FC177B0D4D00B92C84 /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
 		198219FD177B10C200B92C84 /* GradientView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GradientView.cpp; sourceTree = "<group>"; };
+		1982D0DF19ED0B4F00C59BC6 /* freetype2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = freetype2.xcodeproj; path = "Externals/freetype2-ios/freetype2.xcodeproj"; sourceTree = "<group>"; };
+		1982D44A19ED1C3800C59BC6 /* gtest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = gtest.xcodeproj; path = Externals/gtest/gtest.xcodeproj; sourceTree = "<group>"; };
 		198403A91761B80B00D0B7EA /* TextureAtlasRegion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextureAtlasRegion.h; sourceTree = "<group>"; };
 		198403AA1761B86A00D0B7EA /* TextureAtlasRegion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextureAtlasRegion.cpp; sourceTree = "<group>"; };
 		198403AD1761E8C700D0B7EA /* RawAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RawAnimation.h; sourceTree = "<group>"; };
@@ -516,6 +556,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1982D45519ED1C4B00C59BC6 /* libgoogle_test.a in Frameworks */,
+				1982D21319ED100700C59BC6 /* libFreetype2.a in Frameworks */,
 				19D0F5D217EEBFAF00ED2901 /* AVFoundation.framework in Frameworks */,
 				19CE12CD174C8F8200F3BE52 /* GLKit.framework in Frameworks */,
 				199C766C174C885700882A9C /* CoreFoundation.framework in Frameworks */,
@@ -523,8 +565,6 @@
 				19A6E57B1732781F006ACD91 /* Foundation.framework in Frameworks */,
 				19A6E57D1732781F006ACD91 /* CoreGraphics.framework in Frameworks */,
 				19A6E5811732781F006ACD91 /* OpenGLES.framework in Frameworks */,
-				19E26504176E514400874D58 /* libgoogle_test.a in Frameworks */,
-				19E26506176E515400874D58 /* libFreetype2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -763,6 +803,23 @@
 			path = src;
 			sourceTree = "<group>";
 		};
+		1982D0E019ED0B4F00C59BC6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1982D0E419ED0B4F00C59BC6 /* libFreetype2.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1982D44B19ED1C3800C59BC6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1982D45019ED1C3900C59BC6 /* gtest.app */,
+				1982D45219ED1C3900C59BC6 /* libgoogle_test.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		19848BCC17A13BBA00C90C9A /* SpriteTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -778,8 +835,8 @@
 				199582501734575F0094714E /* he */,
 			);
 			name = include;
-			path = ../../../../std_lib/he/include;
-			sourceTree = "<group>";
+			path = /Volumes/DrivePlusPlus/Languages/repo/wl/HideousGameEngine/HideousGameEngine/include;
+			sourceTree = "<absolute>";
 		};
 		199582501734575F0094714E /* he */ = {
 			isa = PBXGroup;
@@ -799,8 +856,9 @@
 				1995826F1734575F0094714E /* Utils */,
 				199582771734575F0094714E /* Vertex */,
 			);
-			path = he;
-			sourceTree = "<group>";
+			name = he;
+			path = /Volumes/DrivePlusPlus/Languages/repo/wl/HideousGameEngine/HideousGameEngine/include/he;
+			sourceTree = "<absolute>";
 		};
 		199582511734575F0094714E /* Animation */ = {
 			isa = PBXGroup;
@@ -813,8 +871,9 @@
 				198403AF1761E9B500D0B7EA /* AnimationUtils.h */,
 				198403B61761EFA400D0B7EA /* SpriteAnimation.h */,
 			);
-			path = Animation;
-			sourceTree = "<group>";
+			name = Animation;
+			path = /Volumes/DrivePlusPlus/Languages/repo/wl/HideousGameEngine/HideousGameEngine/include/he/Animation;
+			sourceTree = "<absolute>";
 		};
 		199582531734575F0094714E /* EventLoop */ = {
 			isa = PBXGroup;
@@ -822,8 +881,9 @@
 				199582541734575F0094714E /* Gesture.h */,
 				199582551734575F0094714E /* GestureCollector.h */,
 			);
-			path = EventLoop;
-			sourceTree = "<group>";
+			name = EventLoop;
+			path = /Volumes/DrivePlusPlus/Languages/repo/wl/HideousGameEngine/HideousGameEngine/include/he/EventLoop;
+			sourceTree = "<absolute>";
 		};
 		199582561734575F0094714E /* Font */ = {
 			isa = PBXGroup;
@@ -832,8 +892,9 @@
 				190DCD45177735C900E26D5D /* Glyph.h */,
 				199582581734575F0094714E /* ft2build.h */,
 			);
-			path = Font;
-			sourceTree = "<group>";
+			name = Font;
+			path = /Volumes/DrivePlusPlus/Languages/repo/wl/HideousGameEngine/HideousGameEngine/include/he/Font;
+			sourceTree = "<absolute>";
 		};
 		199582591734575F0094714E /* ParticleSystem */ = {
 			isa = PBXGroup;
@@ -841,24 +902,27 @@
 				1995825A1734575F0094714E /* Particle.h */,
 				1995825B1734575F0094714E /* ParticleEnv.h */,
 			);
-			path = ParticleSystem;
-			sourceTree = "<group>";
+			name = ParticleSystem;
+			path = /Volumes/DrivePlusPlus/Languages/repo/wl/HideousGameEngine/HideousGameEngine/include/he/ParticleSystem;
+			sourceTree = "<absolute>";
 		};
 		1995825C1734575F0094714E /* Program */ = {
 			isa = PBXGroup;
 			children = (
 				1995825D1734575F0094714E /* Program.h */,
 			);
-			path = Program;
-			sourceTree = "<group>";
+			name = Program;
+			path = /Volumes/DrivePlusPlus/Languages/repo/wl/HideousGameEngine/HideousGameEngine/include/he/Program;
+			sourceTree = "<absolute>";
 		};
 		1995825E1734575F0094714E /* RenderObject */ = {
 			isa = PBXGroup;
 			children = (
 				1995825F1734575F0094714E /* RenderObject.h */,
 			);
-			path = RenderObject;
-			sourceTree = "<group>";
+			name = RenderObject;
+			path = /Volumes/DrivePlusPlus/Languages/repo/wl/HideousGameEngine/HideousGameEngine/include/he/RenderObject;
+			sourceTree = "<absolute>";
 		};
 		199582601734575F0094714E /* Shaders */ = {
 			isa = PBXGroup;
@@ -869,8 +933,9 @@
 				19B0EBC61765ADC300CD3D79 /* ParticleShader.h */,
 				19B0EBC71765ADC300CD3D79 /* ColorShader.h */,
 			);
-			path = Shaders;
-			sourceTree = "<group>";
+			name = Shaders;
+			path = /Volumes/DrivePlusPlus/Languages/repo/wl/HideousGameEngine/HideousGameEngine/include/he/Shaders;
+			sourceTree = "<absolute>";
 		};
 		1995826A1734575F0094714E /* Texture */ = {
 			isa = PBXGroup;
@@ -881,8 +946,9 @@
 				1995826E1734575F0094714E /* TextureData.h */,
 				198403A91761B80B00D0B7EA /* TextureAtlasRegion.h */,
 			);
-			path = Texture;
-			sourceTree = "<group>";
+			name = Texture;
+			path = /Volumes/DrivePlusPlus/Languages/repo/wl/HideousGameEngine/HideousGameEngine/include/he/Texture;
+			sourceTree = "<absolute>";
 		};
 		1995826F1734575F0094714E /* Utils */ = {
 			isa = PBXGroup;
@@ -900,8 +966,9 @@
 				19C54C46176D09E200377317 /* GTests.h */,
 				194B7ADF1770C320007919BB /* HETypes.h */,
 			);
-			path = Utils;
-			sourceTree = "<group>";
+			name = Utils;
+			path = /Volumes/DrivePlusPlus/Languages/repo/wl/HideousGameEngine/HideousGameEngine/include/he/Utils;
+			sourceTree = "<absolute>";
 		};
 		199582771734575F0094714E /* Vertex */ = {
 			isa = PBXGroup;
@@ -912,8 +979,9 @@
 				19B0EBE51765B66F00CD3D79 /* ParticleVertex.h */,
 				19B0EBE61765B66F00CD3D79 /* TextureVertex.h */,
 			);
-			path = Vertex;
-			sourceTree = "<group>";
+			name = Vertex;
+			path = /Volumes/DrivePlusPlus/Languages/repo/wl/HideousGameEngine/HideousGameEngine/include/he/Vertex;
+			sourceTree = "<absolute>";
 		};
 		19A1C4B3176BD5DF00C36FEF /* Main */ = {
 			isa = PBXGroup;
@@ -922,8 +990,8 @@
 				19CF4206176BEBB8006B8B99 /* HideousGame.h */,
 			);
 			name = Main;
-			path = HideousGameEngine/include/he/Main;
-			sourceTree = SOURCE_ROOT;
+			path = /Volumes/DrivePlusPlus/Languages/repo/wl/HideousGameEngine/HideousGameEngine/include/he/Main;
+			sourceTree = "<absolute>";
 		};
 		19A1C4B4176BD66000C36FEF /* Main */ = {
 			isa = PBXGroup;
@@ -946,6 +1014,8 @@
 		19A6E56C1732781E006ACD91 = {
 			isa = PBXGroup;
 			children = (
+				1982D44A19ED1C3800C59BC6 /* gtest.xcodeproj */,
+				1982D0DF19ED0B4F00C59BC6 /* freetype2.xcodeproj */,
 				19A6E5821732781F006ACD91 /* HideousGameEngine */,
 				19A6E5771732781F006ACD91 /* Frameworks */,
 				19A6E5761732781F006ACD91 /* Products */,
@@ -1311,8 +1381,8 @@
 				19754B71178D5FEA00A5D4F9 /* ParticleView.h */,
 			);
 			name = UI;
-			path = HideousGameEngine/include/he/UI;
-			sourceTree = SOURCE_ROOT;
+			path = /Volumes/DrivePlusPlus/Languages/repo/wl/HideousGameEngine/HideousGameEngine/include/he/UI;
+			sourceTree = "<absolute>";
 		};
 		19A8EDCC1769C32800FD25BF /* UI */ = {
 			isa = PBXGroup;
@@ -1430,8 +1500,8 @@
 				19D0F5D317EECE3700ED2901 /* SoundPlayer.h */,
 			);
 			name = SoundEngine;
-			path = HideousGameEngine/include/he/SoundEngine;
-			sourceTree = SOURCE_ROOT;
+			path = /Volumes/DrivePlusPlus/Languages/repo/wl/HideousGameEngine/HideousGameEngine/include/he/SoundEngine;
+			sourceTree = "<absolute>";
 		};
 		19D0F5CA17EEBE6E00ED2901 /* SoundEngine */ = {
 			isa = PBXGroup;
@@ -1473,6 +1543,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				1982D45419ED1C4400C59BC6 /* PBXTargetDependency */,
+				1982D0E619ED0B6E00C59BC6 /* PBXTargetDependency */,
 			);
 			name = HideousGameEngine;
 			productName = HideousGameEngine;
@@ -1504,6 +1576,16 @@
 			mainGroup = 19A6E56C1732781E006ACD91;
 			productRefGroup = 19A6E5761732781F006ACD91 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 1982D0E019ED0B4F00C59BC6 /* Products */;
+					ProjectRef = 1982D0DF19ED0B4F00C59BC6 /* freetype2.xcodeproj */;
+				},
+				{
+					ProductGroup = 1982D44B19ED1C3800C59BC6 /* Products */;
+					ProjectRef = 1982D44A19ED1C3800C59BC6 /* gtest.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				19A6E5741732781F006ACD91 /* HideousGameEngine */,
@@ -1511,6 +1593,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		1982D0E419ED0B4F00C59BC6 /* libFreetype2.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libFreetype2.a;
+			remoteRef = 1982D0E319ED0B4F00C59BC6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1982D45019ED1C3900C59BC6 /* gtest.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = gtest.app;
+			remoteRef = 1982D44F19ED1C3900C59BC6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1982D45219ED1C3900C59BC6 /* libgoogle_test.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libgoogle_test.a;
+			remoteRef = 1982D45119ED1C3900C59BC6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		19A6E5731732781F006ACD91 /* Resources */ = {
@@ -1731,6 +1837,19 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		1982D0E619ED0B6E00C59BC6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Freetype2;
+			targetProxy = 1982D0E519ED0B6E00C59BC6 /* PBXContainerItemProxy */;
+		};
+		1982D45419ED1C4400C59BC6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = google_test;
+			targetProxy = 1982D45319ED1C4400C59BC6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		19A6E5851732781F006ACD91 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -1818,12 +1937,13 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HideousGameEngine/HideousGameEngine-Prefix.pch";
-				INFOPLIST_FILE = "HideousGameEngine/HideousGameEngine-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/Externals/gtest/gtest/include",
 					"$(inherited)",
-					"\"$(SRCROOT)/../../../std_lib/freetype_2_ios\"",
-					"\"$(SRCROOT)/../../../std_lib/gtest/Debug-universal\"",
+					/Volumes/DrivePlusPlus/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
+				INFOPLIST_FILE = "HideousGameEngine/HideousGameEngine-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "/Volumes/DrivePlusPlus/Languages/std_lib/he/include/**";
 				WRAPPER_EXTENSION = app;
@@ -1837,12 +1957,13 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HideousGameEngine/HideousGameEngine-Prefix.pch";
-				INFOPLIST_FILE = "HideousGameEngine/HideousGameEngine-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/Externals/gtest/gtest/include",
 					"$(inherited)",
-					"\"$(SRCROOT)/../../../std_lib/freetype_2_ios\"",
-					"\"$(SRCROOT)/../../../std_lib/gtest/Debug-universal\"",
+					/Volumes/DrivePlusPlus/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
+				INFOPLIST_FILE = "HideousGameEngine/HideousGameEngine-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "/Volumes/DrivePlusPlus/Languages/std_lib/he/include/**";
 				WRAPPER_EXTENSION = app;

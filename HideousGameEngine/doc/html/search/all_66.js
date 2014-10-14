@@ -16,8 +16,8 @@ var searchData=
   ['fontlibrary',['FontLibrary',['../classhe_1_1_font_library.html#af5801fceff50de3e34682f631708528e',1,'he::FontLibrary']]],
   ['fontlibrary',['FontLibrary',['../classhe_1_1_font_library.html',1,'he']]],
   ['frame',['Frame',['../classhe_1_1_sprite_animation_data_1_1_frame.html#adb936d5cf723354eed50441b2f61391b',1,'he::SpriteAnimationData::Frame::Frame()'],['../classhe_1_1_frame.html#ae977ca83f8908961b4bfc2cdd9c44acd',1,'he::Frame::Frame()']]],
-  ['frame',['Frame',['../classhe_1_1_sprite_animation_data_1_1_frame.html',1,'he::SpriteAnimationData']]],
   ['frame',['Frame',['../classhe_1_1_frame.html',1,'he']]],
+  ['frame',['Frame',['../classhe_1_1_sprite_animation_data_1_1_frame.html',1,'he::SpriteAnimationData']]],
   ['frame_2eh',['Frame.h',['../_frame_8h.html',1,'']]],
   ['fromstring',['FromString',['../class_debug_log.html#a39f15be4cff94663a31cd832680030a0',1,'DebugLog']]],
   ['ft2build_2eh',['ft2build.h',['../ft2build_8h.html',1,'']]]

@@ -16,8 +16,6 @@ var searchData=
   ['resourcepath',['ResourcePath',['../namespacehe.html#aa5a29ef8e0a46966530c44bb99ea952a',1,'he']]],
   ['resourcepath_2ehpp',['ResourcePath.hpp',['../_resource_path_8hpp.html',1,'']]],
   ['restart',['Restart',['../classhe_1_1_sprite_animation.html#ae64ec2ac570847c6a98323ad8bf711cf',1,'he::SpriteAnimation']]],
-  ['retaincurrvertex',['RetainCurrVertex',['../classhe_1_1_sprite_animation.html#a6c8f1d00bfa5b75e82097f8780813798',1,'he::SpriteAnimation']]],
-  ['retaindata',['RetainData',['../classhe_1_1_sprite_animation_data.html#a5fac52cddd9f6bd955606dab8a2fd6c3',1,'he::SpriteAnimationData']]],
   ['rotation',['rotation',['../structhe_1_1_transform.html#a2e83db3772d02df426a8c9ac95fa83c6',1,'he::Transform']]],
   ['run',['Run',['../classhe_1_1_animation.html#a102c01d00d2499435552ec2870133bc3',1,'he::Animation']]]
 ];

@@ -45,7 +45,7 @@ namespace he{
   *	Like, p x q = (p.x * q.y) - (p.y * q.x)
   *
   *	@param	p
-  *	@param	p_plus_s
+  *	@param	p_plus_r
   *	@param	q
   *	@param	q_plus_s
   *

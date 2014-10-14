@@ -422,6 +422,11 @@
                 <Anchor>a4942570188bb83b897650d983e3af0a3</Anchor>
                </Node>
                <Node>
+                <Name>GetAnimationName</Name>
+                <Path>classhe_1_1_sprite_animation_data.html</Path>
+                <Anchor>aa72813ea9d93af5c06d02c1e7221aeb8</Anchor>
+               </Node>
+               <Node>
                 <Name>GetFrameAtIndex</Name>
                 <Path>classhe_1_1_sprite_animation_data.html</Path>
                 <Anchor>a37ae6eb479be3caa475fbd9a20688d35</Anchor>
@@ -432,9 +437,9 @@
                 <Anchor>ac14c82869d6c70e8e66454408d9c9c60</Anchor>
                </Node>
                <Node>
-                <Name>RetainData</Name>
+                <Name>GetIndexOfFrame</Name>
                 <Path>classhe_1_1_sprite_animation_data.html</Path>
-                <Anchor>a5fac52cddd9f6bd955606dab8a2fd6c3</Anchor>
+                <Anchor>a5ee6b70e5d621d64ba2653c2ebcb6c27</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -453,6 +458,11 @@
                 <Anchor>a7fcdede68f9af24db1b79adf607787b8</Anchor>
                </Node>
                <Node>
+                <Name>GetCurrentFrameNumber</Name>
+                <Path>classhe_1_1_sprite_animation.html</Path>
+                <Anchor>a6f594042dcc8deab1cd7d5d3d512815a</Anchor>
+               </Node>
+               <Node>
                 <Name>GetFrameCount</Name>
                 <Path>classhe_1_1_sprite_animation.html</Path>
                 <Anchor>a79ff1a977eb0916c516bd3a98ed3ba81</Anchor>
@@ -466,11 +476,6 @@
                 <Name>Restart</Name>
                 <Path>classhe_1_1_sprite_animation.html</Path>
                 <Anchor>ae64ec2ac570847c6a98323ad8bf711cf</Anchor>
-               </Node>
-               <Node>
-                <Name>RetainCurrVertex</Name>
-                <Path>classhe_1_1_sprite_animation.html</Path>
-                <Anchor>a6c8f1d00bfa5b75e82097f8780813798</Anchor>
                </Node>
                <Node>
                 <Name>SetFinalFrameIndex</Name>
@@ -1274,6 +1279,63 @@
               </Subnodes>
              </Node>
              <Node>
+              <Name>Sound</Name>
+              <Path>classhe_1_1_sound.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>Sound</Name>
+                <Path>classhe_1_1_sound.html</Path>
+                <Anchor>ab2de57480cc1f88740159fb12a0d8119</Anchor>
+               </Node>
+               <Node>
+                <Name>~Sound</Name>
+                <Path>classhe_1_1_sound.html</Path>
+                <Anchor>a7612063f665b76dd3c895fdcd60cddcb</Anchor>
+               </Node>
+               <Node>
+                <Name>name_</Name>
+                <Path>classhe_1_1_sound.html</Path>
+                <Anchor>a51ea8d850369ac61e1bc63fa7a93ccf8</Anchor>
+               </Node>
+               <Node>
+                <Name>player_</Name>
+                <Path>classhe_1_1_sound.html</Path>
+                <Anchor>a290ea55832113a468f7cfbbef004e002</Anchor>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>SoundPlayer</Name>
+              <Path>classhe_1_1_sound_player.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>SoundPlayer</Name>
+                <Path>classhe_1_1_sound_player.html</Path>
+                <Anchor>a05b07f56c2ff6db779bd815d97a60a96</Anchor>
+               </Node>
+               <Node>
+                <Name>~SoundPlayer</Name>
+                <Path>classhe_1_1_sound_player.html</Path>
+                <Anchor>af3b8c2689192ed2343d8b0da3aaf101b</Anchor>
+               </Node>
+               <Node>
+                <Name>effects</Name>
+                <Path>classhe_1_1_sound_player.html</Path>
+                <Anchor>aa3916673136367da65c0b06c92617eaa</Anchor>
+               </Node>
+               <Node>
+                <Name>effects_counter</Name>
+                <Path>classhe_1_1_sound_player.html</Path>
+                <Anchor>a825c6a0f0c6198a2382a4dd9b92cdc5f</Anchor>
+               </Node>
+               <Node>
+                <Name>music</Name>
+                <Path>classhe_1_1_sound_player.html</Path>
+                <Anchor>a60915f75c91560a0e7fae65474bbbe44</Anchor>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
               <Name>Texture</Name>
               <Path>classhe_1_1_texture.html</Path>
               <Subnodes>
@@ -1411,7 +1473,7 @@
                <Node>
                 <Name>StarlingDataParser</Name>
                 <Path>classhe_1_1_starling_data_parser.html</Path>
-                <Anchor>aca0db266b258321d7a1f53a209195086</Anchor>
+                <Anchor>a6737764e37371a9f9ab02bbd1cd7ee76</Anchor>
                </Node>
                <Node>
                 <Name>~StarlingDataParser</Name>
@@ -1758,12 +1820,17 @@
                <Node>
                 <Name>Sprite</Name>
                 <Path>classhe_1_1_sprite.html</Path>
-                <Anchor>ad0bb014a4d43fa7129d2e005e26c10c8</Anchor>
+                <Anchor>aa56fe8db86c94e12a6a37ace105ab062</Anchor>
                </Node>
                <Node>
                 <Name>~Sprite</Name>
                 <Path>classhe_1_1_sprite.html</Path>
                 <Anchor>a0c45a0978d0f73e1d9defc17e2252d9b</Anchor>
+               </Node>
+               <Node>
+                <Name>GetCurrentFrameNumber</Name>
+                <Path>classhe_1_1_sprite.html</Path>
+                <Anchor>a7cc8e625fb9b57900d497c25617bb1f8</Anchor>
                </Node>
                <Node>
                 <Name>GetFrameCount</Name>
@@ -1902,7 +1969,7 @@
                <Node>
                 <Name>View</Name>
                 <Path>classhe_1_1_view.html</Path>
-                <Anchor>af196503911b62b5060440515040dc935</Anchor>
+                <Anchor>a21c1b9d9484654cb901c47043e3c0e3a</Anchor>
                </Node>
                <Node>
                 <Name>~View</Name>
@@ -2560,12 +2627,12 @@
             <Path>classhe_1_1_font_library.html</Path>
            </Node>
            <Node>
-            <Name>he::SpriteAnimationData::Frame</Name>
-            <Path>classhe_1_1_sprite_animation_data_1_1_frame.html</Path>
-           </Node>
-           <Node>
             <Name>he::Frame</Name>
             <Path>classhe_1_1_frame.html</Path>
+           </Node>
+           <Node>
+            <Name>he::SpriteAnimationData::Frame</Name>
+            <Path>classhe_1_1_sprite_animation_data_1_1_frame.html</Path>
            </Node>
            <Node>
             <Name>he::Game</Name>
@@ -2714,6 +2781,14 @@
            <Node>
             <Name>he::GlyphData::Size</Name>
             <Path>structhe_1_1_glyph_data_1_1_size.html</Path>
+           </Node>
+           <Node>
+            <Name>he::Sound</Name>
+            <Path>classhe_1_1_sound.html</Path>
+           </Node>
+           <Node>
+            <Name>he::SoundPlayer</Name>
+            <Path>classhe_1_1_sound_player.html</Path>
            </Node>
            <Node>
             <Name>he::Sprite</Name>
@@ -3555,6 +3630,11 @@
                         <Anchor>a4942570188bb83b897650d983e3af0a3</Anchor>
                        </Node>
                        <Node>
+                        <Name>GetAnimationName</Name>
+                        <Path>classhe_1_1_sprite_animation_data.html</Path>
+                        <Anchor>aa72813ea9d93af5c06d02c1e7221aeb8</Anchor>
+                       </Node>
+                       <Node>
                         <Name>GetFrameAtIndex</Name>
                         <Path>classhe_1_1_sprite_animation_data.html</Path>
                         <Anchor>a37ae6eb479be3caa475fbd9a20688d35</Anchor>
@@ -3565,9 +3645,9 @@
                         <Anchor>ac14c82869d6c70e8e66454408d9c9c60</Anchor>
                        </Node>
                        <Node>
-                        <Name>RetainData</Name>
+                        <Name>GetIndexOfFrame</Name>
                         <Path>classhe_1_1_sprite_animation_data.html</Path>
-                        <Anchor>a5fac52cddd9f6bd955606dab8a2fd6c3</Anchor>
+                        <Anchor>a5ee6b70e5d621d64ba2653c2ebcb6c27</Anchor>
                        </Node>
                       </Subnodes>
                      </Node>
@@ -3612,6 +3692,11 @@
                         <Anchor>a7fcdede68f9af24db1b79adf607787b8</Anchor>
                        </Node>
                        <Node>
+                        <Name>GetCurrentFrameNumber</Name>
+                        <Path>classhe_1_1_sprite_animation.html</Path>
+                        <Anchor>a6f594042dcc8deab1cd7d5d3d512815a</Anchor>
+                       </Node>
+                       <Node>
                         <Name>GetFrameCount</Name>
                         <Path>classhe_1_1_sprite_animation.html</Path>
                         <Anchor>a79ff1a977eb0916c516bd3a98ed3ba81</Anchor>
@@ -3625,11 +3710,6 @@
                         <Name>Restart</Name>
                         <Path>classhe_1_1_sprite_animation.html</Path>
                         <Anchor>ae64ec2ac570847c6a98323ad8bf711cf</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>RetainCurrVertex</Name>
-                        <Path>classhe_1_1_sprite_animation.html</Path>
-                        <Anchor>a6c8f1d00bfa5b75e82097f8780813798</Anchor>
                        </Node>
                        <Node>
                         <Name>SetFinalFrameIndex</Name>
@@ -4703,6 +4783,100 @@
                   </Subnodes>
                  </Node>
                  <Node>
+                  <Name>SoundEngine</Name>
+                  <Path>dir_417a3235657edd272dc4e84930c37b2f.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>SoundPlayer.h</Name>
+                    <Path>_sound_player_8h.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>Sound</Name>
+                      <Path>classhe_1_1_sound.html</Path>
+                      <Subnodes>
+                       <Node>
+                        <Name>Sound</Name>
+                        <Path>classhe_1_1_sound.html</Path>
+                        <Anchor>ab2de57480cc1f88740159fb12a0d8119</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>~Sound</Name>
+                        <Path>classhe_1_1_sound.html</Path>
+                        <Anchor>a7612063f665b76dd3c895fdcd60cddcb</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>name_</Name>
+                        <Path>classhe_1_1_sound.html</Path>
+                        <Anchor>a51ea8d850369ac61e1bc63fa7a93ccf8</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>player_</Name>
+                        <Path>classhe_1_1_sound.html</Path>
+                        <Anchor>a290ea55832113a468f7cfbbef004e002</Anchor>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>SoundPlayer</Name>
+                      <Path>classhe_1_1_sound_player.html</Path>
+                      <Subnodes>
+                       <Node>
+                        <Name>SoundPlayer</Name>
+                        <Path>classhe_1_1_sound_player.html</Path>
+                        <Anchor>a05b07f56c2ff6db779bd815d97a60a96</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>~SoundPlayer</Name>
+                        <Path>classhe_1_1_sound_player.html</Path>
+                        <Anchor>af3b8c2689192ed2343d8b0da3aaf101b</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>effects</Name>
+                        <Path>classhe_1_1_sound_player.html</Path>
+                        <Anchor>aa3916673136367da65c0b06c92617eaa</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>effects_counter</Name>
+                        <Path>classhe_1_1_sound_player.html</Path>
+                        <Anchor>a825c6a0f0c6198a2382a4dd9b92cdc5f</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>music</Name>
+                        <Path>classhe_1_1_sound_player.html</Path>
+                        <Anchor>a60915f75c91560a0e7fae65474bbbe44</Anchor>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>MAX_EFFECTS</Name>
+                      <Path>_sound_player_8h.html</Path>
+                      <Anchor>a10d4997e12a6984229c6f67c805ad007</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>SoundPlayer_PlayEffect</Name>
+                      <Path>_sound_player_8h.html</Path>
+                      <Anchor>aeaab903cfb991fb29ee854b007a848e5</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>SoundPlayer_PlayMusic</Name>
+                      <Path>_sound_player_8h.html</Path>
+                      <Anchor>a6c553da586375688bf4cb6de961dbdb3</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>SoundPlayer_StopAllEffects</Name>
+                      <Path>_sound_player_8h.html</Path>
+                      <Anchor>a6523c2d35fdec1f2598f6a37ba9d807b</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>g_SoundPlayer</Name>
+                      <Path>_sound_player_8h.html</Path>
+                      <Anchor>a3abf8c362cc2dc92617f48cb42b9e9a8</Anchor>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
                   <Name>Texture</Name>
                   <Path>dir_0e1a65b87fa03293a6e9daab2cb653ba.html</Path>
                   <Subnodes>
@@ -4865,7 +5039,7 @@
                        <Node>
                         <Name>StarlingDataParser</Name>
                         <Path>classhe_1_1_starling_data_parser.html</Path>
-                        <Anchor>aca0db266b258321d7a1f53a209195086</Anchor>
+                        <Anchor>a6737764e37371a9f9ab02bbd1cd7ee76</Anchor>
                        </Node>
                        <Node>
                         <Name>~StarlingDataParser</Name>
@@ -5294,12 +5468,17 @@
                        <Node>
                         <Name>Sprite</Name>
                         <Path>classhe_1_1_sprite.html</Path>
-                        <Anchor>ad0bb014a4d43fa7129d2e005e26c10c8</Anchor>
+                        <Anchor>aa56fe8db86c94e12a6a37ace105ab062</Anchor>
                        </Node>
                        <Node>
                         <Name>~Sprite</Name>
                         <Path>classhe_1_1_sprite.html</Path>
                         <Anchor>a0c45a0978d0f73e1d9defc17e2252d9b</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>GetCurrentFrameNumber</Name>
+                        <Path>classhe_1_1_sprite.html</Path>
+                        <Anchor>a7cc8e625fb9b57900d497c25617bb1f8</Anchor>
                        </Node>
                        <Node>
                         <Name>GetFrameCount</Name>
@@ -5367,7 +5546,7 @@
                      <Node>
                       <Name>Create</Name>
                       <Path>_sprite_8h.html</Path>
-                      <Anchor>ab1d4d6428953aa80ca2bce77a7cd5846</Anchor>
+                      <Anchor>a004b1c5a1923c4198fc246cd644bad23</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>
@@ -5460,7 +5639,7 @@
                        <Node>
                         <Name>View</Name>
                         <Path>classhe_1_1_view.html</Path>
-                        <Anchor>af196503911b62b5060440515040dc935</Anchor>
+                        <Anchor>a21c1b9d9484654cb901c47043e3c0e3a</Anchor>
                        </Node>
                        <Node>
                         <Name>~View</Name>
@@ -5513,6 +5692,11 @@
                       <Name>CreateFrame</Name>
                       <Path>_view_8h.html</Path>
                       <Anchor>a72d9d7533276c84bf8f7fcc5bc8a140a</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>HitTest</Name>
+                      <Path>_view_8h.html</Path>
+                      <Anchor>a92dd92e6c026a92e5808d6d1aa8fca87</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>
@@ -5569,19 +5753,14 @@
                     <Path>_debug_helper_8h.html</Path>
                     <Subnodes>
                      <Node>
-                      <Name>__HideousGameEngine__DEBUG_MODE__</Name>
-                      <Path>_debug_helper_8h.html</Path>
-                      <Anchor>a9df211164b1f76fd71bf31148935eb6d</Anchor>
-                     </Node>
-                     <Node>
                       <Name>he_Trace</Name>
                       <Path>_debug_helper_8h.html</Path>
-                      <Anchor>a76249a55c335bb9d1ea7c6ffd1215b42</Anchor>
+                      <Anchor>a4435d4e55bcab0023a1ae6f0e4cc89a9</Anchor>
                      </Node>
                      <Node>
-                      <Name>he_Trace</Name>
+                      <Name>NDEBUG</Name>
                       <Path>_debug_helper_8h.html</Path>
-                      <Anchor>a727a0beeb767b969588169fbe5f46c2d</Anchor>
+                      <Anchor>a8de3ed741dadc9c979a4ff17c0a9116e</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>
@@ -6047,6 +6226,11 @@
                       <Anchor>a0f8044d503e86895274b001ccec2aa78</Anchor>
                      </Node>
                      <Node>
+                      <Name>Transform_GetWorldCoordinates</Name>
+                      <Path>_transform_8h.html</Path>
+                      <Anchor>acaacac090230ce91e68dc2977b59aac2</Anchor>
+                     </Node>
+                     <Node>
                       <Name>Transform_SetPosition</Name>
                       <Path>_transform_8h.html</Path>
                       <Anchor>a939e55461e51424ae14125456da14b89</Anchor>
@@ -6104,9 +6288,19 @@
                       <Anchor>a5c7b101255c7af87b5bf95896e461e20</Anchor>
                      </Node>
                      <Node>
+                      <Name>Color_HexToRGBA</Name>
+                      <Path>_utils_8h.html</Path>
+                      <Anchor>abf274642d1c927b61738d6dce6bf263f</Anchor>
+                     </Node>
+                     <Node>
                       <Name>FlashFullName</Name>
                       <Path>_utils_8h.html</Path>
                       <Anchor>a34669a268466d23676ac75154cb28aee</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>LinesIntersect</Name>
+                      <Path>_utils_8h.html</Path>
+                      <Anchor>afac5892091c232e405fb45acd7a054f7</Anchor>
                      </Node>
                      <Node>
                       <Name>NextPOT</Name>

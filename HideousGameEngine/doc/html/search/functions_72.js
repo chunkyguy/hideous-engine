@@ -10,7 +10,5 @@ var searchData=
   ['reportinglevel',['ReportingLevel',['../class_debug_log.html#ad548ee14a4828bdd5a53a73cdc503d99',1,'DebugLog']]],
   ['resourcepath',['ResourcePath',['../namespacehe.html#aa5a29ef8e0a46966530c44bb99ea952a',1,'he']]],
   ['restart',['Restart',['../classhe_1_1_sprite_animation.html#ae64ec2ac570847c6a98323ad8bf711cf',1,'he::SpriteAnimation']]],
-  ['retaincurrvertex',['RetainCurrVertex',['../classhe_1_1_sprite_animation.html#a6c8f1d00bfa5b75e82097f8780813798',1,'he::SpriteAnimation']]],
-  ['retaindata',['RetainData',['../classhe_1_1_sprite_animation_data.html#a5fac52cddd9f6bd955606dab8a2fd6c3',1,'he::SpriteAnimationData']]],
   ['run',['Run',['../classhe_1_1_animation.html#a102c01d00d2499435552ec2870133bc3',1,'he::Animation']]]
 ];
