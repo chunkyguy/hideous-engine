@@ -1,5 +1,7 @@
 # Hideous Engine
 
+![img](https://github.com/chunkyguy/hideous-engine/blob/master/logo.png)
+
 Hideous Engine is a 2D game engine for mobile devices.
 
 ## Features:
@@ -12,3 +14,4 @@ Hideous Engine is a 2D game engine for mobile devices.
 * 3D coordinate system everywhere (3D upgrade ahead).
 * Doxygen based documentation.
 * Google test embedded for unit testing.
+
